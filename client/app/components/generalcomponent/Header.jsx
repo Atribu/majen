@@ -19,11 +19,11 @@ export default function Header() {
   return (
     <header
       className={`
-        fixed top-0 left-0 w-full z-50 transition-colors duration-300
+        fixed top-0 left-0 w-full z-50 transition-colors duration-300 
         ${scrolled ? "bg-white text-gray-900" : "bg-transparent text-white"}
       `}
     >
-      <div className="max-w-7xl mx-auto h-16 px-4 flex items-center justify-between">
+      <div className="max-w-screen mx-auto h-16 px-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-2xl font-serif">
          Majen
