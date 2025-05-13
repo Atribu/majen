@@ -3,13 +3,16 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import img from "../../../public/images/doku.webp"
+import img2 from "../../../public/images/doku2.webp"
+import img3 from "../../../public/images/doku3.webp"
 
 const products = [
   {
     id: 1,
     title: "Bianco Rhino",
     category: "Black Series",
-    imageSrc: "/images/products/bianco-rhino.jpg",
+    imageSrc: img,
     href: "/product/bianco-rhino",
     isOnSale: true,
     priceBefore: "$99.00",
@@ -19,7 +22,7 @@ const products = [
     id: 2,
     title: "Milano White",
     category: "Black Series",
-    imageSrc: "/images/products/milano-white.jpg",
+    imageSrc: img2,
     href: "/product/milano-white",
     isOnSale: false,
     price: "$240.00 – $265.00",
@@ -28,7 +31,7 @@ const products = [
     id: 3,
     title: "Calacatta Gold",
     category: "Black Series",
-    imageSrc: "/images/products/calacatta-gold.jpg",
+    imageSrc: img3,
     href: "/product/calacatta-gold",
     isOnSale: true,
     priceBefore: "$99.00",
@@ -38,7 +41,7 @@ const products = [
     id: 5,
     title: "Bianco Rhino",
     category: "Black Series",
-    imageSrc: "/images/products/bianco-rhino.jpg",
+    imageSrc: img3,
     href: "/product/bianco-rhino",
     isOnSale: true,
     priceBefore: "$99.00",
@@ -48,7 +51,7 @@ const products = [
     id: 6,
     title: "Milano White",
     category: "Black Series",
-    imageSrc: "/images/products/milano-white.jpg",
+    imageSrc: img,
     href: "/product/milano-white",
     isOnSale: false,
     price: "$240.00 – $265.00",
@@ -57,7 +60,7 @@ const products = [
     id: 7,
     title: "Calacatta Gold",
     category: "Black Series",
-    imageSrc: "/images/products/calacatta-gold.jpg",
+    imageSrc: img2,
     href: "/product/calacatta-gold",
     isOnSale: true,
     priceBefore: "$99.00",

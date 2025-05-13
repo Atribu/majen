@@ -59,7 +59,7 @@ export default function MainBanner() {
             />
 
             {/* Yarı saydam karartma */}
-            <div className="absolute inset-0 bg-black/35 z-10" />
+            <div className="absolute inset-0 bg-black/40 z-10" />
 
             {/* İçerik: metin bloğu */}
             <div className="absolute inset-0 flex items-center z-20 pointer-events-none">
@@ -99,7 +99,7 @@ export default function MainBanner() {
             onClick={() => setActive(id)}
             className={`
               text-xl font-medium transition-colors
-              ${active === id ? "text-white underline" : "text-gray-300 hover:text-white"}
+              ${active === id ? "text-white border px-2 py-1 shadow-lg" : "text-gray-300 hover:text-white  px-2 py-1"}
             `}
           >
             {id < 10 ? `0${id}` : id}

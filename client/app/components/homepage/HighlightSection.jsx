@@ -2,16 +2,17 @@
 "use client";
 
 import Image from "next/image";
+import img from "../../../public/images/tekli.webp"
 
 export default function HighlightSection() {
   return (
     <section className="relative w-full">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center">
         {/* Sol Görsel */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-[96%]">
           <div className="relative w-full h-80 sm:h-96 lg:h-[600px]">
             <Image
-              src="/images/highlight/kitchen.jpg"
+              src={img}
               alt="Marble Kitchen"
               fill
               className="object-cover"
@@ -23,7 +24,7 @@ export default function HighlightSection() {
         {/* Sağ Card */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <div className="
-              bg-white rounded-xl shadow-xl p-8
+              bg-white shadow-xl p-8
               -mt-12 sm:-mt-16 lg:mt-0
               lg:-translate-x-16 xl:-translate-x-24
               max-w-md

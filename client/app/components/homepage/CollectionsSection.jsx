@@ -3,29 +3,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import img1 from "../../../public/images/figure1.webp"
+import img2 from "../../../public/images/figre2.webp"
+import img3 from "../../../public/images/figure3.webp"
+import img4 from "../../../public/images/figure4.webp"
 
 const collections = [
   {
     title: "LIMESTONE",
-    src: "/images/collections/limestone.jpg",
+    src: img1,
     alt: "Limestone collection",
     href: "/collections/limestone",
   },
   {
     title: "MARBLE",
-    src: "/images/collections/marble.jpg",
+    src: img2,
     alt: "Marble collection",
     href: "/collections/marble",
   },
   {
     title: "GLACIER SPLIT FACE CLADDING",
-    src: "/images/collections/glacier.jpg",
+    src: img3,
     alt: "Glacier Split Face Cladding",
     href: "/collections/glacier",
   },
   {
     title: "DECORATIVE & MOSAIC TILES",
-    src: "/images/collections/mosaic.jpg",
+    src: img4,
     alt: "Decorative and Mosaic Tiles",
     href: "/collections/mosaic",
   },
