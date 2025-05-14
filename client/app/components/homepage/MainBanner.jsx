@@ -62,7 +62,7 @@ export default function MainBanner() {
             <div className="absolute inset-0 flex items-center z-20 pointer-events-none">
               <div
                 className={`
-                  ml-[14%] md:ml-[16%] -mt-[5%] lg:mt-[10%] max-w-lg lg:max-w-[780px]
+                  ml-[14%] mr-[1%] md:ml-[16%] -mt-[5%] lg:mt-[10%] max-w-lg lg:max-w-[780px]
                   text-white pointer-events-auto
                   transform transition-all duration-700 ease-in-out
                   ${isActive
