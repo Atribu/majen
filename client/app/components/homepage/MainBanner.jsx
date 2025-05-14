@@ -46,9 +46,7 @@ export default function MainBanner() {
                 ? "translate-y-0 z-20"
                 : slide.id < active
                 ? "-translate-y-full z-10"
-                : "translate-y-full z-10"}
-            `}
-          >
+                : "translate-y-full z-10"}`}>
             {/* Arka plan görseli */}
             <Image
               src={slide.img}
@@ -57,7 +55,6 @@ export default function MainBanner() {
               className="object-cover"
               priority={slide.id === 1}
             />
-
             {/* Yarı saydam karartma */}
             <div className="absolute inset-0 bg-black/40 z-10" />
 
@@ -65,23 +62,22 @@ export default function MainBanner() {
             <div className="absolute inset-0 flex items-center z-20 pointer-events-none">
               <div
                 className={`
-                  ml-[16%] mt-[10%] max-w-lg lg:max-w-[780px]
+                  ml-[14%] md:ml-[16%] -mt-[5%] lg:mt-[10%] max-w-lg lg:max-w-[780px]
                   text-white pointer-events-auto
                   transform transition-all duration-700 ease-in-out
                   ${isActive
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"}
-                `}
-              >
-                <h1 className="whitespace-pre-wrap text-4xl md:text-5xl lg:text-[60px] font-bold leading-tight">
+                `}>
+                <h1 className="whitespace-pre-wrap text-[32px] md:text-5xl lg:text-[56px] xl:text-[60px] font-bold leading-tight">
                   {slide.title}
                 </h1>
-                <p className="mt-4 text-base md:text-lg leading-relaxed">
+                <p className="mt-4 text-[12px] md:text-base lg:text-lg leading-relaxed">
                   {slide.description}
                 </p>
                 <a
                   href={slide.buttonLink}
-                  className="inline-block mt-6 px-3 py-1 hover:bg-white hover:text-gray-900 transition text-[20px] font-semibold"
+                  className="inline-block mt-6 px-3 py-1 hover:bg-white hover:text-gray-900 transition text-[16px] lg:text-[20px] font-semibold"
                 >
                   {slide.buttonText}
                 </a>
@@ -92,14 +88,14 @@ export default function MainBanner() {
       })}
 
       {/* Kontroller */}
-      <div className="absolute top-1/2 left-8 transform -translate-y-1/2 flex flex-col space-y-4 z-30">
+      <div className="absolute top-1/2 left-3 lg:left-8 transform -translate-y-1/2 flex flex-col space-y-4 z-30">
         {slides.map(({ id }) => (
           <button
             key={id}
             onClick={() => setActive(id)}
             className={`
-              text-xl font-medium transition-colors
-              ${active === id ? "text-white border px-2 py-1 shadow-lg" : "text-gray-300 hover:text-white  px-2 py-1"}
+              text-[14px] md:text-[18px] lg:text-xl font-medium transition-colors
+              ${active === id ? "text-white border px-[6px] py-[2px] md:px-2 md:py-1 shadow-lg" : "text-gray-300 hover:text-white  px-[6px] py-[2px] md:px-2 md:py-1"}
             `}
           >
             {id < 10 ? `0${id}` : id}

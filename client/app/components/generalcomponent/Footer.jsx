@@ -13,11 +13,11 @@ export default function Footer() {
   return (
     <footer className="bg-[#F4E1C5] text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center justify-center items-center lg:items-start lg:justify-start lg:tex-start">
           {/* Logo & Sosyal */}
           <div>
             <h2 className="text-2xl font-serif">Majen</h2>
-            <div className="flex space-x-4 mt-4">
+            <div className="flex space-x-4 mt-4 text-center justify-center items-center lg:items-start lg:justify-start lg:tex-start">
               <Link href="#"><FaYoutube size={20} /></Link>
               <Link href="#"><FaTwitter size={20} /></Link>
               <Link href="#"><FaFacebook size={20} /></Link>

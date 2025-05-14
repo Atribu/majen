@@ -75,10 +75,10 @@ export default function NewestArrivals() {
       {/* Başlık + Buton */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
         <div>
-          <p className="text-sm uppercase tracking-wider text-gray-500">
+          <p className="text-[12px] lg:text-sm uppercase tracking-wider text-gray-500">
             Unveiling the epitome of luxury
           </p>
-          <h2 className="mt-1 text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="mt-1 text-[26px] md:text-3xl lg:text-4xl font-bold text-gray-900">
             Our newest arrivals
           </h2>
         </div>

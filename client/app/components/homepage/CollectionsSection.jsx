@@ -39,11 +39,11 @@ export default function CollectionsSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
       {/* Subtitle */}
-      <p className="text-sm uppercase tracking-wider text-gray-500">
+      <p className="text-[12px] lg:text-sm uppercase tracking-wider text-gray-500">
         Unveiling the Epitome of Luxury
       </p>
       {/* Heading */}
-      <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+      <h2 className="mt-2 text-[28px] sm:text-4xl md:text-5xl font-bold text-gray-900">
         Discover Our Collections
       </h2>
 
@@ -64,7 +64,7 @@ export default function CollectionsSection() {
                 priority
               />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+            <h3 className="mt-4 text-[14px] lg:text-base font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
               {title}
             </h3>
           </Link>
