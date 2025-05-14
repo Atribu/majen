@@ -40,3 +40,79 @@ body {
   transform: skewY(3deg);
   z-index: -1;
 }
+
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulseRing 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeinSlide {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-slide {
+  animation: fadeinSlide 1s ease-in-out infinite;
+}
+
+
+
+
+@keyframes wigglePhone {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+.wiggle-phone{
+  animation: wigglePhone 1.2s ease-in-out infinite;
+}
+
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 1px; /* Scrollbar genişliği */
+  
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 1); /* Scroll çubuğu rengi */
+  border-radius: 10px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Arka plan rengi */
+}
+
+.black-scrollbar::-webkit-scrollbar {
+  width: 1px; /* Scrollbar genişliği */
+  
+}
+
+.black-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0); /* Scroll çubuğu rengi */
+  border-radius: 10px;
+}
+
+.black-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Arka plan rengi */
+}

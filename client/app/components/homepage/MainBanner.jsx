@@ -3,8 +3,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import img1 from "../../../public/images/side.jpg";
-import img2 from "../../../public/images/Seleukeia.jpg";
+import img1 from "../../../public/images/maden.webp";
+import img2 from "../../../public/images/salon.webp";
 
 export default function MainBanner() {
   const [active, setActive] = useState(1);

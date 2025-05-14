@@ -19,15 +19,24 @@ export default function Header() {
   }, []);
 
   const linkClasses = `
-    relative
-    text-gray-900
+      relative
     before:content-['']
     before:absolute before:left-0 before:bottom-0
     before:h-[2px] before:w-0 before:bg-current
     before:transition-all before:duration-300
     hover:before:w-full
-    block py-2
   `;
+  
+  const linkClasses2 = `
+  relative
+  text-gray-900
+  before:content-['']
+  before:absolute before:left-0 before:bottom-0
+  before:h-[2px] before:w-0 before:bg-current
+  before:transition-all before:duration-300
+  hover:before:w-full
+  block py-2
+`;
 
   const logoSrc = scrolled ? logoBlack : logoWhite;
   const logoWidth = scrolled ? logoBlack.width : logoWhite.width;
@@ -73,7 +82,7 @@ export default function Header() {
           >
             <FiMenu size={24} />
           </button>
-          <span className="whitespace-nowrap hidden sm:inline">Call us: 06 458 968 365</span>
+          <Link href="tel:+905335561092" className="whitespace-nowrap hidden sm:inline">Call us: +90 533 556 10 92</Link>
           <Link href="/cart">
             <div className="relative">
               <FiShoppingCart size={20} />
@@ -96,12 +105,12 @@ export default function Header() {
           </button>
         </div>
         <nav className="flex flex-col space-y-4 p-4">
-          <Link href="/" className={linkClasses} onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/pages" className={linkClasses} onClick={() => setMenuOpen(false)}>Pages</Link>
-          <Link href="/shop" className={linkClasses} onClick={() => setMenuOpen(false)}>Shop</Link>
-          <Link href="/projects" className={linkClasses} onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link href="/blog" className={linkClasses} onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link href="/contact-us" className={linkClasses} onClick={() => setMenuOpen(false)}>Contact Us</Link>
+          <Link href="/" className={linkClasses2} onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/pages" className={linkClasses2} onClick={() => setMenuOpen(false)}>Pages</Link>
+          <Link href="/shop" className={linkClasses2} onClick={() => setMenuOpen(false)}>Shop</Link>
+          <Link href="/projects" className={linkClasses2} onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link href="/blog" className={linkClasses2} onClick={() => setMenuOpen(false)}>Blog</Link>
+          <Link href="/contact-us" className={linkClasses2} onClick={() => setMenuOpen(false)}>Contact Us</Link>
         </nav>
       </div>
 
