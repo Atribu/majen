@@ -1,0 +1,39 @@
+{
+    "LocaleSwitcher": {
+      "label": "Dili Değiştir",
+      "locale": "{locale, select, en {EN} tr {TR}  other {Bilinmeyen}}"
+    },
+
+    "Header": {
+      "home": "Anasayfa",
+      "pages": "Sayfalar",
+      "shop": "Mağaza",
+      "projects": "Projeler",
+      "blog": "Blog",
+      "contactUs": "İletişim",
+      "callUs": "Bizi ara: +90 533 556 10 92"
+    },
+
+    "MainBanner": {
+    "alt1": "Afiş 1",
+    "title1": "Mekanları Dönüştürmek\nEşsiz Doğal Taş ile.",
+    "description1": "Marbléo Doğal Taş, olağanüstü kalitesi ve benzersiz tasarımlarıyla öne çıkan yenilikçi bir mermer tedarikçisidir. 40’tan fazla üründen oluşan geniş portföyümüzde, 500’ün üzerinde malzeme referansımız bulunuyor.",
+    "buttonText1": "İletişime Geç →",
+    "buttonLink1": "#contact",
+
+    "alt2": "Afiş 2",
+    "title2": "Projenizi Yükseltin\nZamansız Şıklık ile.",
+    "description2": "Klasikten moderne, özenle seçilmiş doğal taş koleksiyonumuz her tasarıma eşsiz güzellik ve dayanıklılık katıyor. Katalogumuzu keşfedin ve vizyonunuza en uygun taşı bulun.",
+    "buttonText2": "Portföyü Görüntüle →",
+    "buttonLink2": "#portfolio"
+  },
+
+  "InfoSection": {
+    "subtitle": "Lüksün Zirvesini Ortaya Çıkarma",
+    "heading": "Mermer tedarikçisi ve doğal taş projeleri",
+    "description": "Marbléo Doğal Taş, olağanüstü kalitesi ve benzersiz tasarımlarıyla tanınan yenilikçi bir mermer tedarikçisidir. 40’tan fazla üründen oluşan portföyümüzde, 500’ü aşkın malzeme referansı ile müşterilerimize tasarım vizyonlarını gerçekleştirme fırsatı sunuyoruz.",
+    "explore": "Ürünleri Keşfet",
+    "contact": "İletişim",
+    "alt": "Malzeme sunumu"
+  }
+}

@@ -1,0 +1,37 @@
+{   "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en {EN} tr {TR} other {Unknown}}"
+  },
+
+  "Header": {
+    "home": "Home",
+    "pages": "Pages",
+    "shop": "Shop",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contactUs": "Contact Us",
+    "callUs": "Call us: +90 533 556 10 92"
+  },
+
+  "MainBanner": {
+    "alt1": "Banner 1",
+    "title1": "Transforming Spaces\nwith Exquisite Natural Stone.",
+    "description1": "Marbléo Natural Stone is an innovative marble supplier known for its exceptional quality and distinctive designs featured in our extensive portfolio of over 40 products. With our diverse range of more than 500 material references.",
+    "buttonText1": "Get in touch →",
+    "buttonLink1": "#contact",
+
+    "alt2": "Banner 2",
+    "title2": "Elevate Your Projects\nwith Timeless Elegance.",
+    "description2": "From classic to contemporary, our hand-picked selection of natural stones adds unparalleled beauty and durability to every design. Explore our complete catalog and find the perfect match for your vision.",
+    "buttonText2": "View portfolio →",
+    "buttonLink2": "#portfolio"
+  },
+  "InfoSection": {
+    "subtitle": "Unveiling the Epitome of Luxury",
+    "heading": "Marble supplier and natural stone projects",
+    "description": "Marbléo Natural Stone is an innovative marble supplier known for its exceptional quality and distinctive designs featured in our extensive portfolio of over 40 products. With our diverse range of more than 500 material references, we provide our clients with a wide array of options to fulfill their design visions.",
+    "explore": "Explore Products",
+    "contact": "Contact Us",
+    "alt": "Material showcase"
+  }
+}

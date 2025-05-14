@@ -3,10 +3,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import img1 from "../../../public/images/figure1.webp"
-import img2 from "../../../public/images/figre2.webp"
-import img3 from "../../../public/images/figure3.webp"
-import img4 from "../../../public/images/figure4.webp"
+import img1 from "@/public/images/figure1.webp"
+import img2 from "@/public/images/figre2.webp"
+import img3 from "@/public/images/figure3.webp"
+import img4 from "@/public/images/figure4.webp"
 
 const collections = [
   {

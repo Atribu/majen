@@ -3,9 +3,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import img from "../../../public/images/doku.webp"
-import img2 from "../../../public/images/doku2.webp"
-import img3 from "../../../public/images/doku3.webp"
+import img from "@/public/images/doku.webp"
+import img2 from "@/public/images/doku2.webp"
+import img3 from "@/public/images/doku3.webp"
 
 const products = [
   {

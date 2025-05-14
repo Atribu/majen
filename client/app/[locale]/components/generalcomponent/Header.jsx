@@ -2,16 +2,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from 'next-intl';
+import { routing } from "@/i18n/routing";
+import LangSwitcher from '@/LangSwitcher';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
-import logoBlack from "../../../public/images/majenlogo.png";
-import logoWhite from "../../../public/images/logobeyaz.png";
+import logoBlack from "@/public/images/majenlogo.png";
+import logoWhite from "@/public/images/logobeyaz.png";
 
 export default function Header() {
+
+  const t = useTranslations('Header');
+  
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/tr" || pathname === "/en";
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -75,12 +81,12 @@ export default function Header() {
 
         {/* Desktop Navbar */}
         <nav className="hidden lg:flex space-x-8 text-[16px] lg:text-[18px]">
-          <Link href="/" className={linkClasses}>Home</Link>
-          <Link href="/pages" className={linkClasses}>Pages</Link>
-          <Link href="/shop" className={linkClasses}>Shop</Link>
-          <Link href="/projects" className={linkClasses}>Projects</Link>
-          <Link href="/blog" className={linkClasses}>Blog</Link>
-          <Link href="/contactus" className={linkClasses}>Contact Us</Link>
+        <Link href="/" className={linkClasses}>{t('home')}</Link>
+      <Link href="/pages" className={linkClasses}>{t('pages')}</Link>
+      <Link href="/shop" className={linkClasses}>{t('shop')}</Link>
+      <Link href="/projects" className={linkClasses}>{t('projects')}</Link>
+      <Link href="/blog" className={linkClasses}>{t('blog')}</Link>
+      <Link href="/contactus" className={linkClasses}>{t('contactUs')}</Link>
         </nav>
 
         {/* Mobile Menu Button & Cart */}
@@ -91,16 +97,17 @@ export default function Header() {
           >
             <FiMenu size={24} />
           </button>
+            <LangSwitcher className="uppercase" />
           <Link
             href="tel:+905335561092"
             className={`whitespace-nowrap hidden sm:inline transition-colors ${headerScrolled ? 'text-gray-900 hover:text-gray-700' : 'text-white hover:text-gray-200'}`}
           >
-            Call us: +90 533 556 10 92
+            {t('callUs')}
           </Link>
           <Link href="/cart">
             <div className="relative">
               <FiShoppingCart size={20} className={headerScrolled ? 'text-gray-900' : 'text-white'} />
-              <span className="absolute -top-2 -right-2 w-5 h-5 text-xs flex items-center justify-center rounded-full bg-red-500 text-white">
+              <span className="absolute -top-2 -right-2 w-4 h-4 text-xs flex items-center justify-center rounded-full bg-red-500 text-white">
                 0
               </span>
             </div>
@@ -119,12 +126,12 @@ export default function Header() {
           </button>
         </div>
         <nav className="flex flex-col space-y-4 p-4">
-          <Link href="/" className={linkSidebar} onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/pages" className={linkSidebar} onClick={() => setMenuOpen(false)}>Pages</Link>
-          <Link href="/shop" className={linkSidebar} onClick={() => setMenuOpen(false)}>Shop</Link>
-          <Link href="/projects" className={linkSidebar} onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link href="/blog" className={linkSidebar} onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link href="/contactus" className={linkSidebar} onClick={() => setMenuOpen(false)}>Contact Us</Link>
+        <Link href="/" className={linkClasses}>{t('home')}</Link>
+      <Link href="/pages" className={linkClasses}>{t('pages')}</Link>
+      <Link href="/shop" className={linkClasses}>{t('shop')}</Link>
+      <Link href="/projects" className={linkClasses}>{t('projects')}</Link>
+      <Link href="/blog" className={linkClasses}>{t('blog')}</Link>
+      <Link href="/contactus" className={linkClasses}>{t('contactUs')}</Link>
         </nav>
       </div>
 

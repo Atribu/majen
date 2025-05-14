@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import img from "../../../public/images/tekli.webp"
+import img from "@/public/images/tekli.webp"
 
 export default function HighlightSection() {
   return (

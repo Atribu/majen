@@ -1,34 +1,33 @@
 // app/components/MainBanner.jsx
 "use client";
-
+import { useTranslations } from 'next-intl';
 import { useState } from "react";
 import Image from "next/image";
-import img1 from "../../../public/images/maden.webp";
-import img2 from "../../../public/images/salon.webp";
+import img1 from "@/public/images/maden.webp";
+import img2 from "@/public/images/salon.webp";
 
 export default function MainBanner() {
-  const [active, setActive] = useState(1);
+  const t = useTranslations('MainBanner');
+  const [active, setActive] = useState(2);
 
   const slides = [
     {
       id: 1,
       img: img1,
-      alt: "Banner 1",
-      title: "Transforming Spaces\nwith Exquisite Natural Stone.",
-      description:
-        "Marbléo Natural Stone is an innovative marble supplier known for its exceptional quality and distinctive designs featured in our extensive portfolio of over 40 products. With our diverse range of more than 500 material references.",
-      buttonText: "Get in touch →",
-      buttonLink: "#contact",
+      alt: t('alt1'),
+      title: t('title1'),
+      description: t('description1'),
+      buttonText: t('buttonText1'),
+      buttonLink: t('buttonLink1'),
     },
     {
       id: 2,
       img: img2,
-      alt: "Banner 2",
-      title: "Elevate Your Projects\nwith Timeless Elegance.",
-      description:
-        "From classic to contemporary, our hand-picked selection of natural stones adds unparalleled beauty and durability to every design. Explore our complete catalog and find the perfect match for your vision.",
-      buttonText: "View portfolio →",
-      buttonLink: "#portfolio",
+      alt: t('alt2'),
+      title: t('title2'),
+      description: t('description2'),
+      buttonText: t('buttonText2'),
+      buttonLink: t('buttonLink2'),
     },
   ];
 
