@@ -33,5 +33,25 @@
     "explore": "Explore Products",
     "contact": "Contact Us",
     "alt": "Material showcase"
+  },
+
+  "CollectionsSection": {
+      "span": "Unveiling the Epitome of Luxury",
+    "header": "Discover Our Collections",
+    "title1": "LIMESTONE",
+    "alt1": "Limestone collection",
+    "href1": "/collections/limestone",
+
+    "title2": "MARBLE",
+    "alt2": "Marble collection",
+    "href2": "/collections/marble",
+
+    "title3": "GLACIER SPLIT FACE CLADDING",
+    "alt3": "Glacier Split Face Cladding",
+    "href3": "/collections/glacier",
+
+    "title4": "DECORATIVE & MOSAIC TILES",
+    "alt4": "Decorative and Mosaic Tiles",
+    "href4": "/collections/mosaic"
   }
 }

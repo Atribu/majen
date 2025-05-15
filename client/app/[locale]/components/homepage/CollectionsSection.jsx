@@ -7,44 +7,47 @@ import img1 from "@/public/images/figure1.webp"
 import img2 from "@/public/images/figre2.webp"
 import img3 from "@/public/images/figure3.webp"
 import img4 from "@/public/images/figure4.webp"
-
-const collections = [
-  {
-    title: "LIMESTONE",
-    src: img1,
-    alt: "Limestone collection",
-    href: "/collections/limestone",
-  },
-  {
-    title: "MARBLE",
-    src: img2,
-    alt: "Marble collection",
-    href: "/collections/marble",
-  },
-  {
-    title: "GLACIER SPLIT FACE CLADDING",
-    src: img3,
-    alt: "Glacier Split Face Cladding",
-    href: "/collections/glacier",
-  },
-  {
-    title: "DECORATIVE & MOSAIC TILES",
-    src: img4,
-    alt: "Decorative and Mosaic Tiles",
-    href: "/collections/mosaic",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function CollectionsSection() {
+  const t = useTranslations('CollectionsSection');
+
+  const collections = [
+    {
+      title: t("title1"),
+      src: img1,
+      alt: t("alt1"),
+      href: "/collections/limestone",
+    },
+    {
+      title: t("title2"),
+      src: img2,
+      alt: t("alt2"),
+      href: "/collections/marble",
+    },
+    {
+      title: t("title3"),
+      src: img3,
+      alt: t("alt3"),
+      href: "/collections/glacier",
+    },
+    {
+      title: t("title4"),
+      src: img4,
+      alt: t("alt4"),
+      href: "/collections/mosaic",
+    },
+  ];
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-32">
       {/* Subtitle */}
       <p className="text-[12px] lg:text-sm uppercase tracking-wider text-gray-500">
-        Unveiling the Epitome of Luxury
+      {t("span")}
       </p>
       {/* Heading */}
       <h2 className="mt-2 text-[28px] sm:text-4xl md:text-5xl font-bold text-gray-900">
-        Discover Our Collections
+      {t("header")}
       </h2>
 
       {/* Grid */}

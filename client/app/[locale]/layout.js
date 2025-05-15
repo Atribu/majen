@@ -24,9 +24,9 @@ export const metadata = {
   description: "Majen Madencilik",
 
   icons: {
-    icon: '/majen.png',      
-    shortcut: '/majen.png',  
-    apple: '/majen.png'     
+    icon: '/majen.svg',      
+    shortcut: '/majen.svg',  
+    apple: '/majen.svg'     
   }
 };
 

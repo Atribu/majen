@@ -35,5 +35,25 @@
     "explore": "Ürünleri Keşfet",
     "contact": "İletişim",
     "alt": "Malzeme sunumu"
+  },
+
+  "CollectionsSection": {
+      "span": "Lüksün Zirvesini Ortaya Çıkarma",
+    "header": "Koleksiyonlarımızı Keşfedin",
+    "title1": "KİREÇTAŞI",
+    "alt1": "Kireçtaşı koleksiyonu",
+    "href1": "/collections/limestone",
+
+    "title2": "MERMER",
+    "alt2": "Mermer koleksiyonu",
+    "href2": "/collections/marble",
+
+    "title3": "BUZUL SPLIT FACE KAPLAMA",
+    "alt3": "Buzul Split Face Kaplama",
+    "href3": "/collections/glacier",
+
+    "title4": "DEKORATİF & MOZAİK KAROLAR",
+    "alt4": "Dekoratif ve Mozaik Karolar",
+    "href4": "/collections/mosaic"
   }
 }
