@@ -14,6 +14,7 @@ export default function MainBanner() {
     {
       id: 1,
       img: img1,
+      video: 'videos/majenfuar.mp4',
       alt: t('alt1'),
       title: t('title1'),
       description: t('description1'),
@@ -23,6 +24,7 @@ export default function MainBanner() {
     {
       id: 2,
       img: img2,
+      video: 'videos/majenfuar.mp4',
       alt: t('alt2'),
       title: t('title2'),
       description: t('description2'),
@@ -32,7 +34,7 @@ export default function MainBanner() {
   ];
 
   return (
-    <section className="relative max-w-screen h-screen overflow-hidden">
+    <section className="relative max-w-screen h-[80vh] md:h-screen overflow-hidden">
       {slides.map((slide) => {
         const isActive = active === slide.id;
         return (
@@ -45,20 +47,30 @@ export default function MainBanner() {
                 ? "translate-y-0 z-20"
                 : slide.id < active
                 ? "-translate-y-full z-10"
-                : "translate-y-full z-10"}`}>
-            {/* Arka plan görseli */}
+                : "translate-y-full z-10"}`}
+          >
+            {/* Mobilde video, md ve üzeri ekranda resim */}
+            <video
+              src={`/${slide.video}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-auto object-cover block md:hidden"
+            />
             <Image
               src={slide.img}
               alt={slide.alt}
               fill
-              className="object-cover"
               priority={slide.id === 1}
+              className="absolute inset-0 object-cover hidden md:block"
             />
+
             {/* Yarı saydam karartma */}
             <div className="absolute inset-0 bg-black/40 z-10" />
 
-            {/* İçerik: metin bloğu */}
-            <div className="absolute inset-0 flex items-center z-20 pointer-events-none">
+            {/* İçerik */}
+            <div className="absolute inset-0 hidden md:flex items-center z-20 pointer-events-none">
               <div
                 className={`
                   ml-[14%] mr-[1%] md:ml-[16%] -mt-[5%] lg:mt-[10%] max-w-lg lg:max-w-[780px]
@@ -67,7 +79,8 @@ export default function MainBanner() {
                   ${isActive
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"}
-                `}>
+                `}
+              >
                 <h1 className="whitespace-pre-wrap text-[32px] md:text-5xl lg:text-[56px] xl:text-[60px] font-bold leading-tight">
                   {slide.title}
                 </h1>
@@ -94,7 +107,9 @@ export default function MainBanner() {
             onClick={() => setActive(id)}
             className={`
               text-[14px] md:text-[18px] lg:text-xl font-medium transition-colors
-              ${active === id ? "text-white border px-[6px] py-[2px] md:px-2 md:py-1 shadow-lg" : "text-gray-300 hover:text-white  px-[6px] py-[2px] md:px-2 md:py-1"}
+              ${active === id
+                ? "text-white border px-[6px] py-[2px] md:px-2 md:py-1 shadow-lg"
+                : "text-gray-300 hover:text-white px-[6px] py-[2px] md:px-2 md:py-1"}
             `}
           >
             {id < 10 ? `0${id}` : id}
