@@ -102,26 +102,6 @@ export default function NewestArrivals() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-
-                {/* Sale Rozeti */}
-                {p.isOnSale && (
-                  <span className="absolute top-2 right-2 bg-green-900 text-white text-xs uppercase px-2 py-1 rounded">
-                    Sale
-                  </span>
-                )}
-
-                {/* Add to Cart Overlay */}
-                <button
-                  className="
-                    absolute inset-x-0 bottom-0
-                    bg-green-900 text-white
-                    text-center py-3
-                    opacity-0 group-hover:opacity-100
-                    transition-opacity
-                  "
-                >
-                  Add to cart
-                </button>
               </div>
 
               {/* Ürün Bilgisi */}
