@@ -2,73 +2,176 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 import {
   FaYoutube,
   FaTwitter,
   FaFacebook,
   FaLinkedin,
-  FaWhatsapp
+  FaWhatsapp,
 } from "react-icons/fa";
 
+import logoBlack from "@/public/images/majenlogo.png";
+
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const locale = useLocale();
+  const year = new Date().getFullYear();
+
+  // Locale prefix (App Router /[locale] yapınız için)
+  const prefix = `/${locale}`;
+  const L = (tr, en) => (locale === "tr" ? tr : en);
+
+  // Menü bağlantıları (gerekirse TR slug'ları projene göre değiştir)
+  const navPrimary = [
+    { label: t("nav.primary.home"), href: `${prefix}` },
+    { label: t("nav.primary.blog"), href: `${prefix}${L("/blog", "/blog")}` },
+    { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/about")}` },
+    { label: t("nav.primary.contact"), href: `${prefix}${L("/iletisim", "/contact")}` },
+  ];
+
+  const navSecondary = [
+    { label: t("nav.secondary.projects"), href: `${prefix}${L("/projeler", "/projects")}` },
+    { label: t("nav.secondary.shop"), href: `${prefix}${L("/magaza", "/shop")}` },
+    { label: t("nav.secondary.pages"), href: `${prefix}${L("/sayfalar", "/pages")}` },
+    { label: t("nav.secondary.privacy"), href: `${prefix}${L("/kvkk", "/privacy")}` }, // gerekirse değiştir
+  ];
+
+  const whatsappText = encodeURIComponent(t("whatsappText"));
+  const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
+
+  const addressLines = t.raw("address.lines"); // array döner
+
   return (
-    <footer className="bg-[#F4E1C5] text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center justify-center items-center lg:items-start lg:justify-start lg:text-start">
-          {/* Logo & Sosyal */}
-          <div>
-            <h2 className="text-2xl font-serif">Majen</h2>
-            <div className="flex space-x-4 mt-4 text-center justify-center items-center lg:items-start lg:justify-start lg:text-start">
-              <Link href="#"><FaYoutube size={20} /></Link>
-              <Link href="#"><FaTwitter size={20} /></Link>
-              <Link href="#"><FaFacebook size={20} /></Link>
-              <Link href="#"><FaLinkedin size={20} /></Link>
-              <a
-    href="https://api.whatsapp.com/send?phone=905335561092&text=Merhaba%20Majen%20ekibi!"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="whitespace-nowrap hidden sm:inline hover:underline"
-  >
-   <FaWhatsapp size={20}/>
-  </a>
+    <footer className="relative text-neutral-800">
+      {/* Arkaplan / Gradient + hafif cam efekti */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7ECDD] via-[#F4E1C5] to-[#EED1A5]" />
+      <div className="backdrop-blur-sm supports-[backdrop-filter]:bg-white/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* Brand + Social */}
+            <div className="text-center lg:text-left">
+              <Link
+                href={prefix}
+                aria-label={t("brand")}
+                className="inline-flex items-center justify-center lg:justify-start"
+              >
+                <Image
+                  src={logoBlack}
+                  alt={`${t("brand")} logo`}
+                  width={logoBlack.width}
+                  height={logoBlack.height}
+                  className="h-10 w-auto sm:h-12"
+                  priority
+                />
+              </Link>
+
+              <p className="mt-4 text-sm/6 text-neutral-700">{t("company")}</p>
+
+              <div className="mt-5 flex items-center justify-center lg:justify-start gap-4">
+                <a
+                  href="#"
+                  aria-label={t("social.youtube")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaYoutube size={18} />
+                </a>
+                <a
+                  href="#"
+                  aria-label={t("social.twitter")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaTwitter size={18} />
+                </a>
+                <a
+                  href="#"
+                  aria-label={t("social.facebook")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaFacebook size={18} />
+                </a>
+                <a
+                  href="#"
+                  aria-label={t("social.linkedin")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaLinkedin size={18} />
+                </a>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("social.whatsapp")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaWhatsapp size={18} />
+                </a>
+              </div>
             </div>
-            <p className="mt-6"> MAJEN MADENCİLİK ENERJİ SAN. VE TİC. A.Ş.</p>
+
+            {/* Address */}
+            <div className="text-center lg:text-left">
+              <h3 className="text-sm font-semibold uppercase tracking-wide">
+                {t("address.title")}
+              </h3>
+              <address className="not-italic mt-3 text-sm text-neutral-700">
+                {addressLines.map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))}
+              </address>
+
+              <div className="mt-3 space-y-1 text-sm">
+                <a href="tel:+905335561092" className="underline underline-offset-2 hover:opacity-80">
+                  +90 533 556 10 92
+                </a>
+              </div>
+            </div>
+
+            {/* Footer Menu 1 */}
+            <div className="text-center lg:text-left">
+              <h3 className="text-sm font-semibold uppercase tracking-wide">
+                {t("nav.title")}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                {navPrimary.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href} className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80">
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Footer Menu 2 */}
+            <div className="text-center lg:text-left">
+              <h3 className="text-sm font-semibold uppercase tracking-wide">
+                {t("nav.more")}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                {navSecondary.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href} className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80">
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Adresler */}
-          <div>
-            <h3 className="text-base font-semibold uppercase">Address</h3>
-            <p className="mt-2">
-        
-Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi No:110 F/5 Muratpaşa/ANTALYA  <br/>
-ANTALYA KURUMLAR V.D. 6101419027
+          {/* Divider */}
+          <div className="mt-12 border-t border-black/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-700">
+            <p>
+              © {year} {t("brand")}. {t("rights")}
             </p>
-
-        
-          </div>
-
-          {/* Footer Menu 1 */}
-          <div>
-            <h3 className="text-base font-semibold uppercase">Footer Menu</h3>
-            <ul className="mt-4 space-y-2">
-              {["Home","Blog","About","Contact us"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:underline">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Footer Menu 2 */}
-          <div>
-            <h3 className="text-base font-semibold uppercase">Footer Menu</h3>
-            <ul className="mt-4 space-y-2">
-              {["Home","Blog","About","Contact us"].map((item) => (
-                <li key={item}>
-                  <Link href="#"  className="hover:underline">{item}</Link>
-                </li>
-              ))}
-            </ul>
+            <p className="inline-flex items-center gap-1">
+              <span>{t("poweredBy")}</span>
+              <a href="#" className="font-medium underline underline-offset-2 hover:opacity-80">
+                {t("provider")}
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -14,6 +14,46 @@
     "callUs": "Bizi ara: +90 533 556 10 92"
   },
 
+  "Footer": {
+    "brand": "Majen",
+    "company": "MAJEN MADENCİLİK ENERJİ SAN. VE TİC. A.Ş.",
+    "address": {
+      "title": "Adres",
+      "lines": [
+        "Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi",
+        "No:110 F/5 Muratpaşa / Antalya",
+        "Antalya Kurumlar V.D. 6101419027"
+      ]
+    },
+    "nav": {
+      "title": "Navigasyon",
+      "more": "Diğer",
+      "primary": {
+        "home": "Anasayfa",
+        "blog": "Blog",
+        "about": "Hakkımızda",
+        "contact": "İletişim"
+      },
+      "secondary": {
+        "projects": "Projeler",
+        "shop": "Mağaza",
+        "pages": "Sayfalar",
+        "privacy": "KVKK / Gizlilik"
+      }
+    },
+    "social": {
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp"
+    },
+    "whatsappText": "Merhaba Majen ekibi!",
+    "poweredBy": "Altyapı:",
+    "provider": "DGTLFACE",
+    "rights": "Tüm hakları saklıdır."
+  },
+
   "MainBanner": {
     "alt1": "Afiş 1",
     "title1": "Mekanları Dönüştürmek\nEşsiz Doğal Taş ile.",
@@ -43,22 +83,53 @@
   },
 
   "CollectionsSection": {
-    "span": "Lüksün Zirvesini Ortaya Çıkarma",
-    "header": "Koleksiyonlarımızı Keşfedin",
-    "title1": "KİREÇTAŞI",
-    "alt1": "Kireçtaşı koleksiyonu",
-    "href1": "/collections/limestone",
+    "span": "Blaundos Traverten Renkleri",
+    "header": "Renk Seçenekleri",
+    "titleAntiko": "Blaundos Antiko",
+    "altAntiko": "Blaundos Antiko traverten koleksiyonu",
+    "titleLight": "Blaundos Light",
+    "altLight": "Blaundos Light traverten koleksiyonu",
+    "titleIvory": "Blaundos Ivory",
+    "altIvory": "Blaundos Ivory traverten koleksiyonu"
+  },
 
-    "title2": "MERMER",
-    "alt2": "Mermer koleksiyonu",
-    "href2": "/collections/marble",
-
-    "title3": "BUZUL SPLIT FACE KAPLAMA",
-    "alt3": "Buzul Split Face Kaplama",
-    "href3": "/collections/glacier",
-
-    "title4": "DEKORATİF & MOZAİK KAROLAR",
-    "alt4": "Dekoratif ve Mozaik Karolar",
-    "href4": "/collections/mosaic"
+  "ProductPage": {
+    "detailsHeadings": {
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+    "block": {
+      "title": "Block",
+      "alt": "Blok ürün görseli",
+      "intro": "Ocaktan seçilmiş homojen dokulu bloklar; yüksek verim ve kalite.",
+      "sizes": ["Serbest ebat bloklar"],
+      "finishes": ["Ham blok"],
+      "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"]
+    },
+    "slabs": {
+      "title": "Slabs",
+      "alt": "Plaka ürün görseli",
+      "intro": "2 cm/3 cm kalınlık, cilalı/honlu/fırçalı seçenekler; bookmatch için ideal.",
+      "sizes": ["2 cm", "3 cm"],
+      "finishes": ["Cilalı", "Honlu", "Fırçalı"],
+      "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"]
+    },
+    "tiles": {
+      "title": "Tiles",
+      "alt": "Karo ürün görseli",
+      "intro": "Standart ebatlarda, iç/dış mekâna uygun, düzgün kenarlı karolar.",
+      "sizes": ["30×60", "60×60", "60×120"],
+      "finishes": ["Cilalı", "Honlu", "Mat"],
+      "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"]
+    },
+    "special": {
+      "title": "Special Designs",
+      "alt": "Özel tasarım ürün görseli",
+      "intro": "Waterjet, mozaik, CNC oyma ve 3D paneller; projeye özel üretim.",
+      "sizes": ["Proje bazlı ebatlar"],
+      "finishes": ["Proje bazlı yüzeyler"],
+      "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"]
+    }
   }
 }
