@@ -1,4 +1,5 @@
-{   "LocaleSwitcher": {
+{
+  "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, en {EN} tr {TR} other {Unknown}}"
   },
@@ -26,17 +27,43 @@
     "buttonText2": "View portfolio →",
     "buttonLink2": "#portfolio"
   },
+
   "InfoSection": {
-    "subtitle": "Unveiling the Epitome of Luxury",
-    "heading": "Marble supplier and natural stone projects",
-    "description": "Marbléo Natural Stone is an innovative marble supplier known for its exceptional quality and distinctive designs featured in our extensive portfolio of over 40 products. With our diverse range of more than 500 material references, we provide our clients with a wide array of options to fulfill their design visions.",
-    "explore": "Explore Products",
+    "subtitle": "PRODUCT GROUPS",
+    "heading": "Top Choices in Natural Stone",
+    "description": "We deliver durable, aesthetic solutions tailored to your projects.",
+    "explore": "All Products",
     "contact": "Contact Us",
-    "alt": "Material showcase"
+    "products": {
+      "product1": {
+        "title": "Block",
+        "description": "Carefully selected quarry blocks with consistent color and texture—ideal yield for fabrication and large-scale projects.",
+        "alt": "Stone block product image",
+        "cta": "Explore"
+      },
+      "product2": {
+        "title": "Slabs",
+        "description": "2 cm and 3 cm thickness options with polished, honed, or brushed finishes; precisely calibrated and reinforced—perfect for book-matching.",
+        "alt": "Stone slab product image",
+        "cta": "Explore"
+      },
+      "product3": {
+        "title": "Tiles",
+        "description": "Standard sizes like 30×60, 60×60, 60×120; rectified edges and tight tolerances for fast, clean installation indoors and outdoors.",
+        "alt": "Stone tile product image",
+        "cta": "Explore"
+      },
+      "product4": {
+        "title": "Special Designs",
+        "description": "Custom waterjet cuts, mosaic blends, CNC carving, and 3D panels—dimensioned to your specs and delivered ready to install.",
+        "alt": "Special stone design product image",
+        "cta": "Explore"
+      }
+    }
   },
 
   "CollectionsSection": {
-      "span": "Unveiling the Epitome of Luxury",
+    "span": "Unveiling the Epitome of Luxury",
     "header": "Discover Our Collections",
     "title1": "LIMESTONE",
     "alt1": "Limestone collection",

@@ -1,20 +1,20 @@
 {
-    "LocaleSwitcher": {
-      "label": "Dili Değiştir",
-      "locale": "{locale, select, en {EN} tr {TR}  other {Bilinmeyen}}"
-    },
+  "LocaleSwitcher": {
+    "label": "Dili Değiştir",
+    "locale": "{locale, select, en {EN} tr {TR} other {Bilinmeyen}}"
+  },
 
-    "Header": {
-      "home": "Anasayfa",
-      "pages": "Sayfalar",
-      "shop": "Mağaza",
-      "projects": "Projeler",
-      "blog": "Blog",
-      "contactUs": "İletişim",
-      "callUs": "Bizi ara: +90 533 556 10 92"
-    },
+  "Header": {
+    "home": "Anasayfa",
+    "pages": "Sayfalar",
+    "shop": "Mağaza",
+    "projects": "Projeler",
+    "blog": "Blog",
+    "contactUs": "İletişim",
+    "callUs": "Bizi ara: +90 533 556 10 92"
+  },
 
-    "MainBanner": {
+  "MainBanner": {
     "alt1": "Afiş 1",
     "title1": "Mekanları Dönüştürmek\nEşsiz Doğal Taş ile.",
     "description1": "Marbléo Doğal Taş, olağanüstü kalitesi ve benzersiz tasarımlarıyla öne çıkan yenilikçi bir mermer tedarikçisidir. 40’tan fazla üründen oluşan geniş portföyümüzde, 500’ün üzerinde malzeme referansımız bulunuyor.",
@@ -29,16 +29,21 @@
   },
 
   "InfoSection": {
-    "subtitle": "Lüksün Zirvesini Ortaya Çıkarma",
-    "heading": "Mermer tedarikçisi ve doğal taş projeleri",
-    "description": "Marbléo Doğal Taş, olağanüstü kalitesi ve benzersiz tasarımlarıyla tanınan yenilikçi bir mermer tedarikçisidir. 40’tan fazla üründen oluşan portföyümüzde, 500’ü aşkın malzeme referansı ile müşterilerimize tasarım vizyonlarını gerçekleştirme fırsatı sunuyoruz.",
-    "explore": "Ürünleri Keşfet",
-    "contact": "İletişim",
-    "alt": "Malzeme sunumu"
+    "subtitle": "ÜRÜN GRUPLARI",
+    "heading": "Doğal Taşlarda En İyi Seçimler",
+    "description": "Projelerinize uygun, dayanıklı ve estetik çözümler sunuyoruz.",
+    "explore": "Tüm Ürünler",
+    "contact": "İletişime Geç",
+    "products": {
+      "product1": { "title": "Block", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Mermer ürün görseli", "cta": "İncele" },
+      "product2": { "title": "Slabs", "description": "2 cm ve 3 cm kalınlık seçenekleriyle cilalı, honlu veya fırçalı yüzeyler; hassas kalibrasyon ve güçlendirme işlemleriyle bookmatch uygulamalarına uygundur.", "alt": "Granit ürün görseli", "cta": "İncele" },
+      "product3": { "title": "Tiles", "description": "30×60, 60×60, 60×120 gibi standart ebatlarda; iç/dış mekâna uygun, düzgün kenarlı ve yüksek ölçü hassasiyetine sahip karolarla hızlı ve temiz uygulama.", "alt": "Traverten ürün görseli", "cta": "İncele" },
+      "product4": { "title": "Special Designs", "description": "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi kişiye özel çözümler; proje detaylarınıza göre ölçülendirilip anahtar teslim hazırlanır.", "alt": "Oniks ürün görseli", "cta": "İncele" }
+    }
   },
 
   "CollectionsSection": {
-      "span": "Lüksün Zirvesini Ortaya Çıkarma",
+    "span": "Lüksün Zirvesini Ortaya Çıkarma",
     "header": "Koleksiyonlarımızı Keşfedin",
     "title1": "KİREÇTAŞI",
     "alt1": "Kireçtaşı koleksiyonu",
