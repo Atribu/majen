@@ -14,7 +14,6 @@ export default function Home() {
       <InfoSection/>
       <CollectionsSection/>
       <ServicesSection/>
-      <NewestArrivals/>
       <HighlightSection/>
       <StatsSection/>
     </div>

@@ -93,6 +93,58 @@
     "altIvory": "Blaundos Ivory traverten koleksiyonu"
   },
 
+  "KeyFeatures": {
+    "eyebrow": "ÖNE ÇIKAN ÖZELLİKLER",
+    "titlePrefix": "Profesyonel",
+    "titleAccent": "Hizmetler",
+    "items": {
+      "quality": {
+        "title": "Üstün Kalite",
+        "description": "Ocaktan seçilmiş bloklar ve sıkı kalite kontrolüyle tutarlı renk/doku ve uzun ömür."
+      },
+      "design": {
+        "title": "Özgün Tasarımlar",
+        "description": "Waterjet, mozaik ve book-match uygulamalarıyla projeye özgü estetik çözümler."
+      },
+      "range": {
+        "title": "Geniş Malzeme Yelpazesi",
+        "description": "500+ malzeme referansı ve güçlü stok ile zamanında tedarik, kesintisiz akış."
+      },
+      "custom": {
+        "title": "Kişiselleştirme Seçenekleri",
+        "description": "CNC işleme, özel ebat ve yüzey bitişleriyle projene tam uyumlu üretim."
+      },
+      "sustain": {
+        "title": "Sürdürülebilir Tedarik",
+        "description": "Sorumlu madencilik ve atık azaltma süreçleriyle çevresel etkiyi en aza indiriyoruz."
+      },
+      "expert": {
+        "title": "Uzman Rehberlik",
+        "description": "Teknik keşif, numune yönetimi ve uygulama önerileriyle uçtan uca proje desteği."
+      }
+    }
+  },
+
+  "HighlightSection": {
+    "items": {
+      "item1": {
+        "title": "Doğal Güzellik Tutkusunu Üstün Kalite Taahhüdüyle Birleştiriyoruz",
+        "description": "Dünyanın dört bir yanındaki iş ortaklarımız sayesinde farklı ölçek ve teknik gereksinimlere sahip projelere hızlıca uyum sağlıyoruz. Zincir otellerden saray ve cami projelerine kadar, her ölçekte zamanında ve spesifikasyona uygun teslimat.",
+        "alt": "Doğal taş yüzeylerle tasarlanmış modern iç mekân"
+      },
+      "item2": {
+        "title": "Ocaktan Projeye: İzlenebilir, Zamanında ve Güvenilir",
+        "description": "Blok seçimi, plaka hazırlığı, kalibrasyon ve güçlendirme, proje bazlı kesim… Sıkı tolerans ve tutarlı yüzey kalitesi ile sahadaki uygulama süresini kısaltıyoruz.",
+        "alt": "Ocak ve plaka işleme sürecini gösteren görsel"
+      },
+      "item3": {
+        "title": "Tasarımınıza Özel Kesimler ve Yüzey Bitişleri",
+        "description": "Waterjet mozaikler, CNC oyma ve 3D paneller—ölçüsel doğrulukla, montaja hazır şekilde teslim. Lüks konaklama ve konut projelerinde kusursuz uyum.",
+        "alt": "Waterjet ve mozaik detaylı doğal taş yüzey"
+      }
+    }
+  },
+
   "ProductPage": {
     "detailsHeadings": {
       "sizes": "Ebatlar",

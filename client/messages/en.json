@@ -113,6 +113,58 @@
     "altIvory": "Blaundos Ivory travertine collection"
   },
 
+  "KeyFeatures": {
+    "eyebrow": "OUR KEY FEATURES",
+    "titlePrefix": "Professional",
+    "titleAccent": "Services",
+    "items": {
+      "quality": {
+        "title": "Unmatched Quality",
+        "description": "Quarry-selected blocks and strict QC ensure consistent color/texture and long-term durability."
+      },
+      "design": {
+        "title": "Unique Designs",
+        "description": "Waterjet, mosaic and book-match applications deliver project-specific, refined aesthetics."
+      },
+      "range": {
+        "title": "Extensive Material Range",
+        "description": "500+ material references and strong stock for on-time supply and seamless workflows."
+      },
+      "custom": {
+        "title": "Customization Options",
+        "description": "CNC machining, bespoke sizes and surface finishes tailored precisely to your project."
+      },
+      "sustain": {
+        "title": "Sustainable Sourcing",
+        "description": "Responsible quarrying and waste reduction practices to minimize environmental impact."
+      },
+      "expert": {
+        "title": "Expert Guidance",
+        "description": "Technical surveys, sample management and application advice for end-to-end project support."
+      }
+    }
+  },
+
+  "HighlightSection": {
+    "items": {
+      "item1": {
+        "title": "Combining a Passion for Natural Beauty with Exceptional Quality",
+        "description": "With a global partner network, we adapt to diverse technical requirements and scales—from hotel chains to palaces and mosques—delivering on time and to spec.",
+        "alt": "Modern interior featuring natural stone surfaces"
+      },
+      "item2": {
+        "title": "From Quarry to Project: Traceable, On-Time, Reliable",
+        "description": "Block selection, slab preparation, calibration & reinforcement, project-based cutting. Tight tolerances and consistent finishes shorten on-site installation.",
+        "alt": "Quarry and slab processing workflow"
+      },
+      "item3": {
+        "title": "Custom Cuts & Finishes Tailored to Your Design",
+        "description": "Waterjet mosaics, CNC carving and 3D panels—delivered dimensionally accurate and ready to install. A perfect match for premium hospitality and residential.",
+        "alt": "Natural stone with waterjet and mosaic details"
+      }
+    }
+  },
+
   "ProductPage": {
     "detailsHeadings": {
       "sizes": "Sizes",
