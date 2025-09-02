@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import blockImg from "@/public/images/traverterBlock.jpeg";
@@ -24,9 +25,6 @@ import var9 from "@/public/images/traverterFayans.jpeg";
 import var10 from "@/public/images/traverterDeskt.webp";
 import var11 from "@/public/images/traverterDeskt.webp";
 import var12 from "@/public/images/traverterDeskt.webp";
-
-
-
 /** ▲▲ */
 
 const IMAGES = {
@@ -38,14 +36,13 @@ const IMAGES = {
 
 const VALID_KEYS = ["block", "slabs", "tiles", "special"];
 
-/** Her ürün için 3 varyasyon görseli (istersen ürün bazında farklılaştırabilirsin) */
+/** Her ürün için 3 varyasyon görseli */
 const VARIANT_IMAGES = {
   block: [var1, var2, var3],
   slabs: [var4, var5, var6],
   tiles: [var7, var8, var9],
   special: [var10, var11, var12],
 };
-
 
 export default function ProductDetail({ kind = "block" }) {
   const t = useTranslations("ProductPage");
@@ -57,9 +54,14 @@ export default function ProductDetail({ kind = "block" }) {
   const finishes = t.raw(`${key}.finishes`) || [];
   const features = t.raw(`${key}.features`) || [];
 
-  // Renk varyasyonları için: id’leri sabitledim; başlıkları i18n’den alıyoruz
+  // Varyant id'leri ve görselleri
   const variantIds = ["variant1", "variant2", "variant3"];
   const variantImgs = VARIANT_IMAGES[key] || VARIANT_IMAGES.block;
+
+  // Varyant linkleri (çeviriden okunur; yoksa '#')
+  const variantHrefs = variantIds.map(
+    (id) => t.raw(`${key}.variants.${id}.href`) || "#"
+  );
 
   return (
     <main className="min-h-screen bg-neutral-50">
@@ -185,12 +187,14 @@ export default function ProductDetail({ kind = "block" }) {
         {/* 3'lü Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {variantIds.map((id, idx) => (
-            <div
+            <Link
               key={id}
+              href={variantHrefs[idx]}
+              prefetch={false}
               className="
                 group rounded-2xl overflow-hidden
                 border border-neutral-200 bg-white shadow-sm
-                hover:shadow-md transition-shadow
+                hover:shadow-md transition-shadow block
               "
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -201,18 +205,14 @@ export default function ProductDetail({ kind = "block" }) {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                {/* hafif üst gölge */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-black/0 to-black/0" />
               </div>
               <div className="p-4">
                 <h3 className="text-base md:text-lg font-medium text-neutral-900">
                   {t(`${key}.variants.${id}.title`, { default: `Variant ${idx + 1}` })}
                 </h3>
-                {/* İstersen kısa bir açıklama anahtarı da ekleyebiliriz:
-                    {t(`${key}.variants.${id}.desc`, { default: "" })}
-                */}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

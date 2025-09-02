@@ -193,9 +193,9 @@
       "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"],
       "variants": {
         "heading": "Renk Çeşitleri",
-        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko blok" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light blok" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory blok" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko blok", "href": "/tr/traverten/blok/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light blok", "href": "/tr/traverten/blok/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory blok", "href": "/tr/traverten/blok/blaundos-ivory" }
       }
     },
     "slabs": {
@@ -207,9 +207,9 @@
       "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
       "variants": {
         "heading": "Renk Çeşitleri",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue plaka" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose plaka" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green plaka" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko plaka", "href": "/tr/traverten/slabs/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light plaka", "href": "/tr/traverten/slabs/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory plaka", "href": "/tr/traverten/slabs/blaundos-ivory" }
       }
       
     },
@@ -222,9 +222,9 @@
       "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"],
       "variants": {
         "heading": "Renk Çeşitleri",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue karo" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose karo" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green karo" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko karo", "href": "/tr/traverten/tiles/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light karo", "href": "/tr/traverten/tiles/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory karo", "href": "/tr/traverten/tiles/blaundos-ivory" }
       }
       
     },
@@ -237,9 +237,9 @@
       "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"],
       "variants": {
         "heading": "Renk Çeşitleri",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue özel tasarım" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose özel tasarım" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green özel tasarım" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko özel tasarım", "href": "/tr/traverten/special-designs/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light özel tasarım", "href": "/tr/traverten/special-designs/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory özel tasarım", "href": "/tr/traverten/special-designs/blaundos-ivory" }
       }
       
     }
