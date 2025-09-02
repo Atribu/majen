@@ -213,9 +213,9 @@
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
       "variants": {
         "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue block" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose block" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green block" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko block", "href": "/en/travertine/blok/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/blok/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/blok/blaundos-ivory" }
       }
     },
     "slabs": {
@@ -227,9 +227,9 @@
       "features": ["Calibration", "Reinforcement", "High surface quality"],
       "variants": {
         "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue slab" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose slab" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green slab" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko slab", "href": "/en/travertine/slabs/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light slab", "href": "/en/travertine/slabs/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
       }
     },
     "tiles": {
@@ -241,9 +241,9 @@
       "features": ["Tight tolerances", "Quick installation", "Low maintenance"],
       "variants": {
         "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue tile" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose tile" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green tile" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko tile" ,"href": "/en/travertine/tiles/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light tile", "href": "/en/travertine/tiles/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory tile", "href": "/en/travertine/tiles/blaundos-ivory" }
       }
     },
     "special": {
@@ -255,9 +255,9 @@
       "features": ["Custom cutting", "Personalization", "Turn-key delivery"],
       "variants": {
         "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue special design" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose special design" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green special design" }
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko special design" ,"href": "/en/travertine/special-designs/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light special design", "href": "/en/travertine/special-designs/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
       }
     }
   }
