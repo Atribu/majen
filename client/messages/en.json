@@ -224,7 +224,13 @@
       "intro": "2 cm/3 cm thickness; polished/honed/brushed finishes; great for book-matching.",
       "sizes": ["2 cm", "3 cm"],
       "finishes": ["Polished", "Honed", "Brushed"],
-      "features": ["Calibration", "Reinforcement", "High surface quality"]
+      "features": ["Calibration", "Reinforcement", "High surface quality"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue slab" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose slab" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green slab" }
+      }
     },
     "tiles": {
       "title": "Tiles",
@@ -232,7 +238,13 @@
       "intro": "Standard sizes for interior/exterior; rectified edges for fast, clean installation.",
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Polished", "Honed", "Matte"],
-      "features": ["Tight tolerances", "Quick installation", "Low maintenance"]
+      "features": ["Tight tolerances", "Quick installation", "Low maintenance"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue tile" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose tile" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green tile" }
+      }
     },
     "special": {
       "title": "Special Designs",
@@ -240,7 +252,13 @@
       "intro": "Custom waterjet, mosaic blends, CNC carving & 3D panels—tailored to your specs.",
       "sizes": ["Project-based sizes"],
       "finishes": ["Project-based finishes"],
-      "features": ["Custom cutting", "Personalization", "Turn-key delivery"]
+      "features": ["Custom cutting", "Personalization", "Turn-key delivery"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue special design" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose special design" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green special design" }
+      }
     }
   }
 }

@@ -206,11 +206,12 @@
       "finishes": ["Cilalı", "Honlu", "Fırçalı"],
       "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue slab" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose slab" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green slab" }
+        "heading": "Renk Çeşitleri",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue plaka" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose plaka" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green plaka" }
       }
+      
     },
     "tiles": {
       "title": "Tiles",
@@ -220,11 +221,12 @@
       "finishes": ["Cilalı", "Honlu", "Mat"],
       "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue tile" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose tile" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green tile" }
+        "heading": "Renk Çeşitleri",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue karo" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose karo" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green karo" }
       }
+      
     },
     "special": {
       "title": "Special Designs",
@@ -234,11 +236,12 @@
       "finishes": ["Proje bazlı yüzeyler"],
       "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue special design" },
-        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose special design" },
-        "variant3": { "title": "Forest Green", "alt": "Forest Green special design" }
+        "heading": "Renk Çeşitleri",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue özel tasarım" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose özel tasarım" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green özel tasarım" }
       }
+      
     }
   }
 }
