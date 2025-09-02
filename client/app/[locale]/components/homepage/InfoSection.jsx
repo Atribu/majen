@@ -16,7 +16,7 @@ export default function InfoSection() {
 
   // Dil bazlı prefix ve base path
   const prefix = `/${locale}`;
-  const baseProducts = locale === "tr" ? "urunler" : "products";
+  const baseProducts = locale === "tr" ? "traverten" : "travertine";
   const contactPath = `${prefix}/${locale === "tr" ? "iletisim" : "contact"}`;
 
   // Dil bazlı ürün slug'ları

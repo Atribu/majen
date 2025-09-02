@@ -145,6 +145,39 @@
     }
   },
 
+  "ProductDetail": {
+    "breadcrumbs": "Gezinme",
+    "home": "Ana Sayfa",
+    "collections": "Koleksiyonlar",
+    "openFullscreen": "Tam ekran aç",
+    "fullscreen": "Tam Ekran",
+    "previousImage": "Önceki görsel",
+    "nextImage": "Sonraki görsel",
+    "selectImage": "{index}. görseli seç",
+    "finish": "Yüzey",
+    "thickness": "Kalınlık",
+    "category": "Kategori",
+    "color": "Renk",
+    "origin": "Menşei",
+    "size": "Boyut",
+    "stock": {
+      "in": "Stokta",
+      "limited": "Sınırlı Stok",
+      "out": "Tükendi"
+    },
+    "requestQuote": "Teklif İste",
+    "downloadFirst": "İndir",
+    "tabs": {
+      "overview": "Genel Bilgi",
+      "specs": "Teknik Özellikler",
+      "applications": "Kullanım Alanları",
+      "downloads": "Belgeler"
+    },
+    "noSpecs": "Teknik özellik bulunmamaktadır.",
+    "noDownloads": "Herhangi bir belge mevcut değil.",
+    "close": "Kapat"
+  },
+
   "ProductPage": {
     "detailsHeadings": {
       "sizes": "Ebatlar",
@@ -152,12 +185,18 @@
       "features": "Öne Çıkanlar"
     },
     "block": {
-      "title": "Block",
+      "title": "Traverter Blok",
       "alt": "Blok ürün görseli",
       "intro": "Ocaktan seçilmiş homojen dokulu bloklar; yüksek verim ve kalite.",
       "sizes": ["Serbest ebat bloklar"],
       "finishes": ["Ham blok"],
-      "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"]
+      "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"],
+      "variants": {
+        "heading": "Renk Çeşitleri",
+        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko blok" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light blok" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory blok" }
+      }
     },
     "slabs": {
       "title": "Slabs",
@@ -165,7 +204,13 @@
       "intro": "2 cm/3 cm kalınlık, cilalı/honlu/fırçalı seçenekler; bookmatch için ideal.",
       "sizes": ["2 cm", "3 cm"],
       "finishes": ["Cilalı", "Honlu", "Fırçalı"],
-      "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"]
+      "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue slab" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose slab" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green slab" }
+      }
     },
     "tiles": {
       "title": "Tiles",
@@ -173,7 +218,13 @@
       "intro": "Standart ebatlarda, iç/dış mekâna uygun, düzgün kenarlı karolar.",
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Cilalı", "Honlu", "Mat"],
-      "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"]
+      "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue tile" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose tile" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green tile" }
+      }
     },
     "special": {
       "title": "Special Designs",
@@ -181,7 +232,13 @@
       "intro": "Waterjet, mozaik, CNC oyma ve 3D paneller; projeye özel üretim.",
       "sizes": ["Proje bazlı ebatlar"],
       "finishes": ["Proje bazlı yüzeyler"],
-      "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"]
+      "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue special design" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose special design" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green special design" }
+      }
     }
   }
 }

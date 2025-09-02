@@ -165,6 +165,39 @@
     }
   },
 
+  "ProductDetail": {
+    "breadcrumbs": "Breadcrumbs",
+    "home": "Home",
+    "collections": "Collections",
+    "openFullscreen": "Open fullscreen",
+    "fullscreen": "Fullscreen",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "selectImage": "Select image {index}",
+    "finish": "Finish",
+    "thickness": "Thickness",
+    "category": "Category",
+    "color": "Color",
+    "origin": "Origin",
+    "size": "Size",
+    "stock": {
+      "in": "In Stock",
+      "limited": "Limited Stock",
+      "out": "Out of Stock"
+    },
+    "requestQuote": "Request a Quote",
+    "downloadFirst": "Download",
+    "tabs": {
+      "overview": "Overview",
+      "specs": "Specifications",
+      "applications": "Applications",
+      "downloads": "Downloads"
+    },
+    "noSpecs": "No specifications available.",
+    "noDownloads": "No downloads available.",
+    "close": "Close"
+  },
+
   "ProductPage": {
     "detailsHeadings": {
       "sizes": "Sizes",
@@ -172,12 +205,18 @@
       "features": "Highlights"
     },
     "block": {
-      "title": "Block",
+      "title": "Travertine Block",
       "alt": "Block product image",
       "intro": "Quarry-selected blocks with uniform texture for high yield and quality.",
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
-      "features": ["High yield", "Color/texture consistency", "Export-grade packing"]
+      "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
+      "variants": {
+        "heading": "Color Variants",
+        "variant1": { "title": "Ocean Blue", "alt": "Ocean Blue block" },
+        "variant2": { "title": "Sunset Rose", "alt": "Sunset Rose block" },
+        "variant3": { "title": "Forest Green", "alt": "Forest Green block" }
+      }
     },
     "slabs": {
       "title": "Slabs",
