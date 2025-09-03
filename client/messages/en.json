@@ -1,6 +1,6 @@
 {
   "LocaleSwitcher": {
-    "label": "Change language",
+    "label": "Change Language",
     "locale": "{locale, select, en {EN} tr {TR} other {Unknown}}"
   },
 
@@ -10,19 +10,19 @@
     "shop": "Shop",
     "projects": "Projects",
     "blog": "Blog",
-    "contactUs": "Contact Us",
+    "contactUs": "Contact",
     "callUs": "Call us: +90 533 556 10 92"
   },
 
   "Footer": {
     "brand": "Majen",
-    "company": "MAJEN MADENCİLİK ENERJİ SAN. VE TİC. A.Ş.",
+    "company": "MAJEN MADENCILIK ENERJI SAN. VE TIC. A.Ş.",
     "address": {
       "title": "Address",
       "lines": [
-        "Fener Mah. Lara Cad., Block F, Muhsin Adıyaman Sitesi",
+        "Fener Mah. Lara Cad. F Blok, Muhsin Adıyaman Sitesi",
         "No:110 F/5 Muratpaşa / Antalya",
-        "Antalya Tax Office: 6101419027"
+        "Antalya Corporate Tax Office 6101419027"
       ]
     },
     "nav": {
@@ -31,14 +31,14 @@
       "primary": {
         "home": "Home",
         "blog": "Blog",
-        "about": "About",
+        "about": "About Us",
         "contact": "Contact"
       },
       "secondary": {
         "projects": "Projects",
         "shop": "Shop",
         "pages": "Pages",
-        "privacy": "Privacy"
+        "privacy": "KVKK / Privacy"
       }
     },
     "social": {
@@ -49,54 +49,54 @@
       "whatsapp": "WhatsApp"
     },
     "whatsappText": "Hello Majen team!",
-    "poweredBy": "Powered by",
+    "poweredBy": "Powered by:",
     "provider": "DGTLFACE",
     "rights": "All rights reserved."
   },
 
   "MainBanner": {
     "alt1": "Banner 1",
-    "title1": "Transforming Spaces\nwith Exquisite Natural Stone.",
-    "description1": "Marbléo Natural Stone is an innovative marble supplier known for its exceptional quality and distinctive designs featured in our extensive portfolio of over 40 products. With our diverse range of more than 500 material references.",
-    "buttonText1": "Get in touch →",
+    "title1": "Transforming Spaces\nwith Exceptional Natural Stone.",
+    "description1": "Marbléo Natural Stone is an innovative marble supplier known for outstanding quality and distinctive designs. Our portfolio exceeds 40 product lines with over 500 material references.",
+    "buttonText1": "Get in Touch →",
     "buttonLink1": "#contact",
 
     "alt2": "Banner 2",
-    "title2": "Elevate Your Projects\nwith Timeless Elegance.",
-    "description2": "From classic to contemporary, our hand-picked selection of natural stones adds unparalleled beauty and durability to every design. Explore our complete catalog and find the perfect match for your vision.",
-    "buttonText2": "View portfolio →",
+    "title2": "Elevate Your Project\nwith Timeless Elegance.",
+    "description2": "From classic to modern, our curated natural stone collection brings unique beauty and durability to every design. Explore our catalog and find the perfect match for your vision.",
+    "buttonText2": "View Portfolio →",
     "buttonLink2": "#portfolio"
   },
 
   "InfoSection": {
     "subtitle": "PRODUCT GROUPS",
-    "heading": "Top Choices in Natural Stone",
-    "description": "We deliver durable, aesthetic solutions tailored to your projects.",
+    "heading": "Top Picks in Natural Stone",
+    "description": "We deliver durable and aesthetic solutions tailored to your projects.",
     "explore": "All Products",
     "contact": "Contact Us",
     "products": {
       "product1": {
         "title": "Block",
-        "description": "Carefully selected quarry blocks with consistent color and texture—ideal yield for fabrication and large-scale projects.",
-        "alt": "Stone block product image",
+        "description": "Large-size blocks selected at the quarry with consistent texture and color; ideal yield for fabrication and high-volume projects.",
+        "alt": "Marble product image",
         "cta": "Explore"
       },
       "product2": {
         "title": "Slabs",
-        "description": "2 cm and 3 cm thickness options with polished, honed, or brushed finishes; precisely calibrated and reinforced—perfect for book-matching.",
-        "alt": "Stone slab product image",
+        "description": "2 cm and 3 cm thickness with polished, honed or brushed finishes; precision calibration and reinforcement; suitable for bookmatch applications.",
+        "alt": "Granite product image",
         "cta": "Explore"
       },
       "product3": {
         "title": "Tiles",
-        "description": "Standard sizes like 30×60, 60×60, 60×120; rectified edges and tight tolerances for fast, clean installation indoors and outdoors.",
-        "alt": "Stone tile product image",
+        "description": "Standard sizes such as 30×60, 60×60, 60×120; precise edges for fast, clean installation in interior and exterior spaces.",
+        "alt": "Travertine product image",
         "cta": "Explore"
       },
       "product4": {
         "title": "Special Designs",
-        "description": "Custom waterjet cuts, mosaic blends, CNC carving, and 3D panels—dimensioned to your specs and delivered ready to install.",
-        "alt": "Special stone design product image",
+        "description": "Custom waterjet cuts, mosaic combinations, CNC carving and 3D panels; tailored to project details and delivered turnkey.",
+        "alt": "Onyx product image",
         "cta": "Explore"
       }
     }
@@ -105,8 +105,8 @@
   "CollectionsSection": {
     "span": "Blaundos Travertine Colors",
     "header": "Color Options",
-    "titleAntiko": "Blaundos Antiko",
-    "altAntiko": "Blaundos Antiko travertine collection",
+    "titleAntiko": "Blaundos Antico",
+    "altAntiko": "Blaundos Antico travertine collection",
     "titleLight": "Blaundos Light",
     "altLight": "Blaundos Light travertine collection",
     "titleIvory": "Blaundos Ivory",
@@ -114,33 +114,33 @@
   },
 
   "KeyFeatures": {
-    "eyebrow": "OUR KEY FEATURES",
+    "eyebrow": "KEY FEATURES",
     "titlePrefix": "Professional",
     "titleAccent": "Services",
     "items": {
       "quality": {
-        "title": "Unmatched Quality",
-        "description": "Quarry-selected blocks and strict QC ensure consistent color/texture and long-term durability."
+        "title": "Superior Quality",
+        "description": "Quarry-selected blocks and rigorous QC for consistent color/texture and long service life."
       },
       "design": {
-        "title": "Unique Designs",
-        "description": "Waterjet, mosaic and book-match applications deliver project-specific, refined aesthetics."
+        "title": "Distinctive Designs",
+        "description": "Project-specific aesthetics with waterjet, mosaic and book-match applications."
       },
       "range": {
-        "title": "Extensive Material Range",
-        "description": "500+ material references and strong stock for on-time supply and seamless workflows."
+        "title": "Wide Material Range",
+        "description": "500+ material references and strong inventory for on-time supply and continuity."
       },
       "custom": {
         "title": "Customization Options",
-        "description": "CNC machining, bespoke sizes and surface finishes tailored precisely to your project."
+        "description": "CNC processing, bespoke sizes and surface finishes tailored to your project."
       },
       "sustain": {
         "title": "Sustainable Sourcing",
-        "description": "Responsible quarrying and waste reduction practices to minimize environmental impact."
+        "description": "Responsible quarrying and waste reduction to minimize environmental impact."
       },
       "expert": {
         "title": "Expert Guidance",
-        "description": "Technical surveys, sample management and application advice for end-to-end project support."
+        "description": "End-to-end support with technical surveys, samples and application advice."
       }
     }
   },
@@ -148,18 +148,18 @@
   "HighlightSection": {
     "items": {
       "item1": {
-        "title": "Combining a Passion for Natural Beauty with Exceptional Quality",
-        "description": "With a global partner network, we adapt to diverse technical requirements and scales—from hotel chains to palaces and mosques—delivering on time and to spec.",
-        "alt": "Modern interior featuring natural stone surfaces"
+        "title": "We Combine Passion for Natural Beauty with a Commitment to Quality",
+        "description": "Thanks to our global partners, we quickly adapt to projects of different scales and technical needs—from hotel chains to palaces and mosques—always on time and to spec.",
+        "alt": "Modern interior designed with natural stone surfaces"
       },
       "item2": {
-        "title": "From Quarry to Project: Traceable, On-Time, Reliable",
-        "description": "Block selection, slab preparation, calibration & reinforcement, project-based cutting. Tight tolerances and consistent finishes shorten on-site installation.",
-        "alt": "Quarry and slab processing workflow"
+        "title": "From Quarry to Project: Traceable, Timely and Reliable",
+        "description": "Block selection, slab preparation, calibration & reinforcement, project cutting… Tight tolerances and consistent surfaces shorten on-site installation times.",
+        "alt": "Visual showing quarry and slab processing"
       },
       "item3": {
-        "title": "Custom Cuts & Finishes Tailored to Your Design",
-        "description": "Waterjet mosaics, CNC carving and 3D panels—delivered dimensionally accurate and ready to install. A perfect match for premium hospitality and residential.",
+        "title": "Custom Cuts and Surface Finishes for Your Design",
+        "description": "Waterjet mosaics, CNC carving and 3D panels—delivered with dimensional accuracy, ready for installation. A flawless fit for luxury hospitality and residential projects.",
         "alt": "Natural stone with waterjet and mosaic details"
       }
     }
@@ -183,18 +183,18 @@
     "stock": {
       "in": "In Stock",
       "limited": "Limited Stock",
-      "out": "Out of Stock"
+      "out": "Sold Out"
     },
     "requestQuote": "Request a Quote",
     "downloadFirst": "Download",
     "tabs": {
       "overview": "Overview",
-      "specs": "Specifications",
+      "specs": "Technical Specs",
       "applications": "Applications",
       "downloads": "Downloads"
     },
-    "noSpecs": "No specifications available.",
-    "noDownloads": "No downloads available.",
+    "noSpecs": "No technical specifications available.",
+    "noDownloads": "No documents available.",
     "close": "Close"
   },
 
@@ -202,60 +202,83 @@
     "detailsHeadings": {
       "sizes": "Sizes",
       "finishes": "Finishes",
-      "features": "Highlights"
+      "features": "Key Highlights"
     },
+    "descriptions": {
+      "heading": "Product Description"
+    },
+
     "block": {
       "title": "Travertine Block",
       "alt": "Block product image",
-      "intro": "Quarry-selected blocks with uniform texture for high yield and quality.",
+      "intro": "Quarry-selected blocks with uniform texture; high yield and quality.",
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
+      "description": [
+        "Our travertine blocks are carefully selected to ensure consistent texture and color. High cutting yield provides cost and time advantages for large-scale projects.",
+        "Export and domestic shipments follow proper packing and marking standards. The entire process is traceable and quality-controlled."
+      ],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko block", "href": "/en/travertine/blok/blaundos-antiko" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/blok/blaundos-light" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/blok/blaundos-ivory" }
+        "heading": "Color Varieties",
+        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
+        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
+        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
       }
     },
+
     "slabs": {
       "title": "Slabs",
       "alt": "Slab product image",
-      "intro": "2 cm/3 cm thickness; polished/honed/brushed finishes; great for book-matching.",
+      "intro": "2 cm / 3 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm"],
       "finishes": ["Polished", "Honed", "Brushed"],
       "features": ["Calibration", "Reinforcement", "High surface quality"],
+      "description": [
+        "Slabs are prepared in 2 cm and 3 cm thickness, then calibrated, reinforced and finished for on-site readiness.",
+        "Outstanding surface quality and dimensional accuracy make them ideal for bookmatch and large-format installations, enabling fast and clean assembly."
+      ],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko slab", "href": "/en/travertine/slabs/blaundos-antiko" },
+        "heading": "Color Varieties",
+        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico slab", "href": "/en/travertine/slabs/blaundos-antiko" },
         "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light slab", "href": "/en/travertine/slabs/blaundos-light" },
         "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
       }
     },
+
     "tiles": {
       "title": "Tiles",
       "alt": "Tile product image",
-      "intro": "Standard sizes for interior/exterior; rectified edges for fast, clean installation.",
+      "intro": "Standard sizes with precise edges for interior/exterior use and quick installation.",
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Polished", "Honed", "Matte"],
-      "features": ["Tight tolerances", "Quick installation", "Low maintenance"],
+      "features": ["Tight tolerances", "Fast installation", "Low maintenance"],
+      "description": [
+        "Tiles are produced in standard sizes for both indoor and outdoor applications. Clean edges and dimensional accuracy provide a practical solution.",
+        "With multiple surface options and durable properties, they adapt to different design concepts while reducing maintenance needs."
+      ],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko tile" ,"href": "/en/travertine/tiles/blaundos-antiko" },
+        "heading": "Color Varieties",
+        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico tile", "href": "/en/travertine/tiles/blaundos-antiko" },
         "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light tile", "href": "/en/travertine/tiles/blaundos-light" },
         "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory tile", "href": "/en/travertine/tiles/blaundos-ivory" }
       }
     },
+
     "special": {
       "title": "Special Designs",
-      "alt": "Special design product image",
-      "intro": "Custom waterjet, mosaic blends, CNC carving & 3D panels—tailored to your specs.",
-      "sizes": ["Project-based sizes"],
+      "alt": "Custom design product image",
+      "intro": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
+      "sizes": ["Project-based dimensions"],
       "finishes": ["Project-based finishes"],
-      "features": ["Custom cutting", "Personalization", "Turn-key delivery"],
+      "features": ["Custom cutting", "Personalization", "Turnkey delivery"],
+      "description": [
+        "Custom productions such as waterjet cuts, mosaic assemblies, CNC carving and 3D panels are prepared to your exact measurements.",
+        "From sourcing to installation, every step is planned according to architectural details and tolerances, delivering a turnkey solution."
+      ],
       "variants": {
-        "heading": "Color Variants",
-        "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko special design" ,"href": "/en/travertine/special-designs/blaundos-antiko" },
+        "heading": "Color Varieties",
+        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico special design", "href": "/en/travertine/special-designs/blaundos-antiko" },
         "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light special design", "href": "/en/travertine/special-designs/blaundos-light" },
         "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
       }
