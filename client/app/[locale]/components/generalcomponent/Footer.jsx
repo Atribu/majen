@@ -19,11 +19,9 @@ export default function Footer() {
   const locale = useLocale();
   const year = new Date().getFullYear();
 
-  // Locale prefix (App Router /[locale] yapınız için)
   const prefix = `/${locale}`;
   const L = (tr, en) => (locale === "tr" ? tr : en);
 
-  // Menü bağlantıları (gerekirse TR slug'ları projene göre değiştir)
   const navPrimary = [
     { label: t("nav.primary.home"), href: `${prefix}` },
     { label: t("nav.primary.blog"), href: `${prefix}${L("/blog", "/blog")}` },
@@ -35,18 +33,58 @@ export default function Footer() {
     { label: t("nav.secondary.projects"), href: `${prefix}${L("/projeler", "/projects")}` },
     { label: t("nav.secondary.shop"), href: `${prefix}${L("/magaza", "/shop")}` },
     { label: t("nav.secondary.pages"), href: `${prefix}${L("/sayfalar", "/pages")}` },
-    { label: t("nav.secondary.privacy"), href: `${prefix}${L("/kvkk", "/privacy")}` }, // gerekirse değiştir
+    { label: t("nav.secondary.privacy"), href: `${prefix}${L("/kvkk", "/privacy")}` },
   ];
 
   const whatsappText = encodeURIComponent(t("whatsappText"));
   const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
 
-  const addressLines = t.raw("address.lines"); // array döner
+  const addressLines = t.raw("address.lines"); // array
 
   return (
     <footer className="relative text-neutral-800">
-      {/* Arkaplan / Gradient + hafif cam efekti */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7ECDD] via-[#F4E1C5] to-[#EED1A5]" />
+      {/* ==== MERMER DOKU (Çizgisel damarlar) ==== */}
+<div className="absolute inset-0 -z-10">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
+    <defs>
+      <filter id="marble-streaks">
+        {/* 1) Gürültü: X frekansı küçük, Y frekansı büyük => çizgiler uzar */}
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.003 0.06"  /* ← X: düşük, Y: yüksek  */
+          numOctaves="3"
+          seed="7"
+          stitchTiles="stitch"
+          result="noise"
+        />
+        {/* 2) Yönlü blur: X’te yüksek, Y’de düşük => çizgisel yayılma */}
+        <feGaussianBlur in="noise" stdDeviation="7 0.4" result="smeared" />
+        {/* 3) Siyah-beyaz + kontrast */}
+        <feColorMatrix in="smeared" type="saturate" values="0" result="mono" />
+        <feComponentTransfer in="mono" result="veins">
+          {/* exponent↓ => daha koyu/kalın damarlar */}
+          <feFuncR type="gamma" amplitude="1" exponent="0.65" offset="0" />
+          <feFuncG type="gamma" amplitude="1" exponent="0.65" offset="0" />
+          <feFuncB type="gamma" amplitude="1" exponent="0.65" offset="0" />
+        </feComponentTransfer>
+        {/* 4) İncelik için hafif erozyon (opsiyonel) */}
+        <feMorphology in="veins" operator="erode" radius="0.01" result="thinVeins" />
+      </filter>
+    </defs>
+
+    {/* Beyaz zemin */}
+    <rect width="100%" height="100%" fill="#fff" />
+
+    {/* İsteğe bağlı: damarları hafif çapraz yapmak istersen, aşağıdaki <g>’ye rotate ekle */}
+    {/* <g transform="rotate(-10 0 0)"> */}
+      {/* Çizgisel damarlar */}
+      <rect width="100%" height="100%" filter="url(#marble-streaks)" opacity="0.99" />
+    {/* </g> */}
+  </svg>
+</div>
+
+
+      {/* İçeriğin okunurluğu için hafif cam efekti */}
       <div className="backdrop-blur-sm supports-[backdrop-filter]:bg-white/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -122,7 +160,10 @@ export default function Footer() {
               </address>
 
               <div className="mt-3 space-y-1 text-sm">
-                <a href="tel:+905335561092" className="underline underline-offset-2 hover:opacity-80">
+                <a
+                  href="tel:+905335561092"
+                  className="underline underline-offset-2 hover:opacity-80"
+                >
                   +90 533 556 10 92
                 </a>
               </div>
@@ -136,7 +177,10 @@ export default function Footer() {
               <ul className="mt-4 space-y-2 text-sm">
                 {navPrimary.map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80">
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80"
+                    >
                       <span>{item.label}</span>
                     </Link>
                   </li>
@@ -152,7 +196,10 @@ export default function Footer() {
               <ul className="mt-4 space-y-2 text-sm">
                 {navSecondary.map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80">
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80"
+                    >
                       <span>{item.label}</span>
                     </Link>
                   </li>
@@ -163,9 +210,7 @@ export default function Footer() {
 
           {/* Divider */}
           <div className="mt-12 border-t border-black/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-700">
-            <p>
-              © {year} {t("brand")}. {t("rights")}
-            </p>
+            <p>© {year} {t("brand")}. {t("rights")}</p>
             <p className="inline-flex items-center gap-1">
               <span>{t("poweredBy")}</span>
               <a href="#" className="font-medium underline underline-offset-2 hover:opacity-80">
