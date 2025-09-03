@@ -184,6 +184,9 @@
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
     },
+    "descriptions": {
+      "heading": "Ürün Açıklaması"
+    },
     "block": {
       "title": "Traverter Blok",
       "alt": "Blok ürün görseli",
@@ -191,6 +194,10 @@
       "sizes": ["Serbest ebat bloklar"],
       "finishes": ["Ham blok"],
       "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"],
+      "description": [
+        "Traverten bloklarımız ocaktan özenle seçilerek homojen doku ve renk tutarlılığı sunar. Yüksek kesim verimi sayesinde büyük ölçekli projelerde maliyet ve süre avantajı sağlar.",
+        "İhracat ve iç pazar sevkiyatları için uygun paketleme ve işaretleme standartları uygulanır. Tüm süreç, kalite kontrolleri ile izlenebilir şekilde yönetilir."
+      ],
       "variants": {
         "heading": "Renk Çeşitleri",
         "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko blok", "href": "/tr/traverten/blok/blaundos-antiko" },
@@ -205,6 +212,10 @@
       "sizes": ["2 cm", "3 cm"],
       "finishes": ["Cilalı", "Honlu", "Fırçalı"],
       "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
+      "description": [
+        "2 cm ve 3 cm kalınlık seçenekleriyle hazırlanan plakalar; kalibrasyon, güçlendirme ve yüzey bitişleri sonrası uygulamaya hazır halde teslim edilir.",
+        "Bookmatch ve büyük ebat uygulamalarda yüzey kalitesi ve ölçü hassasiyeti ile öne çıkar; proje sahasında hızlı ve temiz montaj sağlar."
+      ],
       "variants": {
         "heading": "Renk Çeşitleri",
         "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko plaka", "href": "/tr/traverten/slabs/blaundos-antiko" },
@@ -220,6 +231,10 @@
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Cilalı", "Honlu", "Mat"],
       "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"],
+      "description": [
+        "Standart ebatlarda üretilen karolar; iç ve dış mekân uygulamalarında düzgün kenar yapısı ve ölçüsel doğruluğu ile pratik çözüm sunar.",
+        "Yüzey seçenekleri ve dayanım özellikleri sayesinde farklı tasarım konseptlerine uyum sağlar, bakım ihtiyacını azaltır."
+      ],
       "variants": {
         "heading": "Renk Çeşitleri",
         "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko karo", "href": "/tr/traverten/tiles/blaundos-antiko" },
@@ -235,6 +250,10 @@
       "sizes": ["Proje bazlı ebatlar"],
       "finishes": ["Proje bazlı yüzeyler"],
       "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"],
+      "description": [
+        "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi özel üretimler projeye özgü ölçülerde hazırlanır.",
+        "Tedarikten montaja kadar tüm aşamalar, mimari detaylara ve toleranslara uygun olacak şekilde planlanır ve anahtar teslim çözüm sunulur."
+      ],
       "variants": {
         "heading": "Renk Çeşitleri",
         "variant1": { "title": "Blaundos Antiko", "alt": "Blaundos Antiko özel tasarım", "href": "/tr/traverten/special-designs/blaundos-antiko" },
