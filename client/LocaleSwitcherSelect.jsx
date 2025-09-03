@@ -4,6 +4,8 @@
 import { useTransition, useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import React from "react";
+// ⬇️ bu yardımcıları ekleyin
+import { getLang, baseFor, productKeyFromSlug, productSlugFor } from "@/lib/travertine";
 
 export default function LocaleSwitcherSelect({ children, defaultValue, label }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +14,13 @@ export default function LocaleSwitcherSelect({ children, defaultValue, label }) 
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
 
-  // Scroll durumunu takip et
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > window.innerHeight);
-    // Başlangıç kontrolü
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll konumunu hatırlayıp geri yükle
   useEffect(() => {
     const saved = sessionStorage.getItem("scrollPosition");
     if (saved) {
@@ -30,12 +29,42 @@ export default function LocaleSwitcherSelect({ children, defaultValue, label }) 
     }
   }, [pathname]);
 
+  // 🔧 path'i hedef dile göre doğru base + product slug ile yeniden kur
+  function buildLocalizedPath(path, targetLocale) {
+    // pathname her zaman / ile başlar, query yoktur
+    const seg = path.split("/"); // ["", "en", "travertine", "slabs", "…"]
+    if (seg.length < 2) return `/${targetLocale}`;
+
+    const currentLocale = seg[1] || "en";
+    const currentBase   = seg[2];          // "travertine" | "traverten" | başka bir şey
+    const productSlug   = seg[3];          // örn "slabs" | "plakalar"
+    // const rest       = seg.slice(4);    // variant ve sonrası (varsa)
+
+    // Katalog yolunda mıyız?
+    const isCatalogBase = currentBase === "travertine" || currentBase === "traverten";
+    if (!isCatalogBase) {
+      // katalog dışındaysa sadece locale segmentini değiştir
+      seg[1] = targetLocale;
+      return seg.join("/");
+    }
+
+    // product slug -> key (mevcut DİL’e göre çöz)
+    const productKey = productKeyFromSlug(currentLocale, productSlug); // örn "slabs"
+
+    // hedef dilin base ve product slug'ı
+    const newBase   = baseFor(targetLocale);                 // "traverten" | "travertine"
+    const newProd   = productSlugFor(targetLocale, productKey); // "plakalar" | "slabs"
+
+    // yeni path: /{targetLocale}/{newBase}/{newProd}/(variant ve diğerleri aynı kalır)
+    const rebuilt = ["", targetLocale, newBase, newProd, ...seg.slice(4)];
+    return rebuilt.join("/");
+  }
+
   function handleLangChange(lang) {
     sessionStorage.setItem("scrollPosition", window.scrollY);
     setIsOpen(false);
     startTransition(() => {
-      const currentLocale = pathname.split('/')[1];
-      const newPath = pathname.replace(`/${currentLocale}`, `/${lang}`);
+      const newPath = buildLocalizedPath(pathname, lang);
       router.replace(newPath);
     });
   }
