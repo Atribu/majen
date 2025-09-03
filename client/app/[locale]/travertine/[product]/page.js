@@ -2,22 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
+
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { baseFor, productKeyFromSlug, VARIANT_KEY_BY_SLUG } from "@/lib/travertine";
+import { BASE_BY_LOCALE, PRODUCT_KEYS, PRODUCT_SLUGS, VARIANT_KEY_BY_SLUG } from "@/lib/travertine";
 import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
 
-const VARIANT_SLUGS = ["blaundos-antiko","blaundos-light","blaundos-ivory"];
+const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
+
 
 export default function ProductPage() {
   const { product } = useParams();
   const locale = useLocale();
-  const t = useTranslations("ProductPage");
 
-  const productKey = productKeyFromSlug(locale, product);
-  const base = baseFor(locale);
-  const prefix = `/${locale}`;
+  const t = useTranslations("ProductPage");
+  const { product } = params;
+
+  const productKey =
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
 
   const title       = t(`${productKey}.title`);
   const alt         = t(`${productKey}.alt`);
@@ -28,13 +31,15 @@ export default function ProductPage() {
   const description = t.raw(`${productKey}.description`) || intro; // açıklama yoksa intro’yu kullan
   const variantsHeading = t(`${productKey}.variants.heading`);
 
+  const base = `/${locale}/${BASE_BY_LOCALE[locale]}`;
+
   const variantCards = VARIANT_SLUGS.map((slug) => {
     const vKey = VARIANT_KEY_BY_SLUG[slug];
     return {
       slug,
       title: t(`${productKey}.variants.${vKey}.title`),
       alt:   t(`${productKey}.variants.${vKey}.alt`),
-      href:  `${prefix}/${base}/${product}/${slug}`,
+      href:  `${base}/${product}/${slug}`,
     };
   });
 
