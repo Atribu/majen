@@ -29,7 +29,7 @@ const PROCESSES = ["natural", "filling", "epoxy", "transparent", "antique"]; // 
 const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertine");
 
 export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: rawVariant, cut } = params;
+  const { locale, product: rawProduct, variant: rawVariant, cut } = await params;
 
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
   if (!product || product === "block") notFound();

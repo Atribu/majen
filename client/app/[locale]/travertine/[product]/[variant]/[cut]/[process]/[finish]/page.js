@@ -43,7 +43,7 @@ function sizeLabelFromSlug(slug) {
 }
 
 export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: rawVariant, cut, process, finish } = params;
+  const { locale, product: rawProduct, variant: rawVariant, cut, process, finish } = await params;
 
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
   if (!product || product === "block") notFound();

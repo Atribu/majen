@@ -33,7 +33,7 @@ export default async function Page({ params }) {
   const {
     locale, product: rawProduct, variant: rawVariant,
     cut, process, finish, size
-  } = params;
+  } = await params;
 
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
   if (!product || product === "block") notFound();

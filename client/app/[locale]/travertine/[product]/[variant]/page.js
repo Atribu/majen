@@ -30,7 +30,7 @@ const VARIANT_MAP = {
 };
 
 export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: variantSlug } = params;
+  const { locale, product: rawProduct, variant: variantSlug } = await params;
 
   // product normalizasyonu
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];

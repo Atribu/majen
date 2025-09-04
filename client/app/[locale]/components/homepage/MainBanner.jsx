@@ -6,6 +6,7 @@ import logoWhite from "@/public/images/logobeyaz.png";
 
 export default function MainBanner() {
   const videoSrc = "/videos/MajenVideo.mp4"; // public/videos altında
+  const videomobileSrc = "/videos/mobilevideo.mp4"; 
   const HIDE_DELAY_MS = 5000; // ⏱️ Logo görünme süresi
 
   const [showLogo, setShowLogo] = useState(true);
@@ -30,9 +31,21 @@ export default function MainBanner() {
   };
 
   return (
-    <section className="relative w-screen h-[80vh] md:h-screen overflow-hidden">
+    <section className="relative w-screen h-screen overflow-hidden">
       {/* Arka plan video — merkezden kırp */}
       <video
+        src={videomobileSrc}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        onLoadedData={startHideTimer}
+        onCanPlay={startHideTimer}
+        className="absolute inset-0 w-full h-full object-cover object-center flex md:hidden"
+      />
+
+       <video
         src={videoSrc}
         autoPlay
         muted
@@ -41,7 +54,7 @@ export default function MainBanner() {
         preload="metadata"
         onLoadedData={startHideTimer}
         onCanPlay={startHideTimer}
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center md:flex hidden"
       />
 
       {/* Hafif siyah overlay */}

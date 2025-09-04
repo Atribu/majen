@@ -28,7 +28,7 @@ const FINISHES = ["polished", "honed", "brushed", "matte"]; // yüzey
 const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertine");
 
 export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: rawVariant, cut, process } = params;
+  const { locale, product: rawProduct, variant: rawVariant, cut, process } = await params;
 
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
   if (!product || product === "block") notFound();
