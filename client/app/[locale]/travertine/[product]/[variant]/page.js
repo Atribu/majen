@@ -2,6 +2,7 @@
 // (Aynısı TR için: app/[locale]/traverten/[product]/[variant]/page.js)
 
 import Image from "next/image";
+import Link from "next/link";                     // ✅ eklendi
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
@@ -10,27 +11,16 @@ import slabsImg from "@/public/images/traverterSlabs.jpeg";
 import tilesImg from "@/public/images/traverterFayans.jpeg";
 import specialImg from "@/public/images/traverterDeskt.webp";
 
-const HERO_IMAGES = {
-  block: blockImg,
-  slabs: slabsImg,
-  tiles: tilesImg,
-  special: specialImg,
-};
+// ✅ CUT linkleri ve base için yardımcılar
+import { CUTS, buildVariantChildPath, baseFor } from "@/lib/travertine";
 
-// TR ve EN alias eşlemesi: URL’de hangisi gelirse gelsin normalize edelim
+const HERO_IMAGES = { block: blockImg, slabs: slabsImg, tiles: tilesImg, special: specialImg };
+
 const PRODUCT_ALIASES = {
-  block: "block",
-  blok: "block",
-
-  slabs: "slabs",
-  plakalar: "slabs",
-
-  tiles: "tiles",
-  karolar: "tiles",
-
-  special: "special",
-  "special-designs": "special",
-  "ozel-tasarimlar": "special",
+  block: "block", blok: "block",
+  slabs: "slabs", plakalar: "slabs",
+  tiles: "tiles", karolar: "tiles",
+  special: "special", "special-designs": "special", "ozel-tasarimlar": "special",
 };
 
 const VARIANT_MAP = {
@@ -40,23 +30,29 @@ const VARIANT_MAP = {
 };
 
 export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant } = params;
+  const { locale, product: rawProduct, variant: variantSlug } = params;
 
   // product normalizasyonu
   const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
   if (!product) notFound();
 
-  const variantId = VARIANT_MAP[variant?.toLowerCase()];
+  const variantId = VARIANT_MAP[variantSlug?.toLowerCase()];
   if (!variantId) notFound();
 
   const t = await getTranslations({ locale, namespace: "ProductPage" });
 
   const title = t(`${product}.title`, { default: "Product" });
-  const variantTitle = t(`${product}.variants.${variantId}.title`, { default: variant });
+  const variantTitle = t(`${product}.variants.${variantId}.title`, { default: variantSlug });
   const variantAlt = t(`${product}.variants.${variantId}.alt`, { default: variantTitle });
   const intro = t(`${product}.intro`, { default: "" });
 
   const heroImg = HERO_IMAGES[product];
+
+  // ✅ link üretimi için mevcut slug'ları kullanıyoruz
+  const base = baseFor(locale);
+  const productSlug = rawProduct;
+
+  const showCuts = product !== "block"; // "Block" hariç
 
   return (
     <main className="min-h-screen bg-neutral-50">
@@ -91,6 +87,26 @@ export default async function Page({ params }) {
                 ))}
               </ul>
             </div>
+
+            {/* ✅ CUT (Kesim) linkleri — sadece Block hariç ürünlerde */}
+            {showCuts && (
+              <div className="mt-10">
+                <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-3">
+                  {locale?.startsWith("tr") ? "Kesim şekli seçin" : "Choose cut"}
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {CUTS.map((cut) => (
+                    <Link
+                      key={cut}
+                      href={buildVariantChildPath(locale, productSlug, variantSlug, [cut])}
+                      className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
+                    >
+                      {cut}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

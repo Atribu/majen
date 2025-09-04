@@ -30,3 +30,37 @@ export function productKeyFromSlug(locale, slug) {
   const table = PRODUCT_SLUGS[lang] || {};
   return Object.keys(table).find((k) => table[k] === slug) || "block";
 }
+
+export const CUTS = ["vein-cut", "cross-cut"]; // kesim şekli
+
+export const PROCESSES = [
+  "natural",
+  "filling",
+  "epoxy",
+  "transparent",
+  "antique",
+]; // işleme
+
+// Ürüne göre genişletebilirsin; şimdilik ortak
+export const FINISHES = ["polished", "honed", "brushed", "matte"];
+
+// --- Ölçü slug yardımcıları (ilerisi için hazır) ---
+export function sizeLabelToSlug(label) {
+  return String(label).toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, "").replace(/"/g, "");
+}
+export function sizeSlugToLabel(slug) {
+  if (slug === "custom") return "Custom / Project-based";
+  return String(slug).replace(/x/g, "×").replace(/([0-9])cm$/, "$1 cm");
+}
+
+// --- Derin yol kurucu: variant altına istediğin segmentleri ekler ---
+export function buildVariantChildPath(locale, productSlug, variantSlug, parts = []) {
+  const base = baseFor(locale); // "travertine" | "traverten"
+  const segs = ["", locale, base, productSlug, variantSlug, ...parts.filter(Boolean)];
+  return segs.join("/");
+}
+
+// (opsiyonel) doğrulayıcılar
+export const isCutValid = (cut) => CUTS.includes(String(cut || "").toLowerCase());
+export const isProcessValid = (p) => PROCESSES.includes(String(p || "").toLowerCase());
+export const isFinishValid = (f) => FINISHES.includes(String(f || "").toLowerCase());
