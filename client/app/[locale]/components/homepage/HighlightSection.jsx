@@ -48,7 +48,7 @@ export default function HighlightSection() {
               }`}
             >
               <div
-                className={`bg-white shadow-xl p-8 sm:p-10 max-w-md
+                className={`bg-white shadow-xl p-8 sm:p-8 max-w-md text-center items-center justify-center flex flex-col
                 -mt-12 sm:-mt-16 lg:mt-0
                 ${
                   reverse

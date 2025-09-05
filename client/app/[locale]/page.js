@@ -15,7 +15,7 @@ export default function Home() {
       <CollectionsSection/>
       <ServicesSection/>
       <HighlightSection/>
-      <StatsSection/>
+     
     </div>
   );
 }

@@ -35,7 +35,8 @@ export default function KeyFeatures() {
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 via-neutral-950 to-black" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* text-center */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center items-center justify-center flex flex-col">
         {/* Başlık alanı */}
         <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-neutral-400">
           {t("eyebrow")}

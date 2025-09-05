@@ -29,7 +29,7 @@ const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertin
 
 // — ürün bazlı ölçüler
 function sizeSlugList(productKey, t) {
-  if (productKey === "slabs") return ["2cm", "3cm"]; // kalınlık
+  if (productKey === "slabs") return ["2cm", "3cm", "5cm"]; // kalınlık
   if (productKey === "tiles") {
     const sizes = t.raw("tiles.sizes") || ["30×60", "60×60", "60×120"];
     return sizes.map((s) => s.toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, ""));

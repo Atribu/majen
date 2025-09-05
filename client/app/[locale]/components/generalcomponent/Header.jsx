@@ -9,8 +9,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
-import logoBlack from "@/public/images/majenlogo.png";
-import logoWhite from "@/public/images/logobeyaz.png";
+import logoBlack from "@/public/images/majenlogo.webp";
+import logoWhite from "@/public/images/logobeyaz.webp";
 
 export default function Header() {
   const t = useTranslations("Header");
