@@ -232,7 +232,7 @@
       "alt": "Slab product image",
       "intro": "2 cm / 3 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm"],
-      "finishes": ["Polished", "Honed", "Brushed"],
+      "finishes": ["Polished", "Unpolished"],
       "features": ["Calibration", "Reinforcement", "High surface quality"],
       "description": [
         "Slabs are prepared in 2 cm and 3 cm thickness, then calibrated, reinforced and finished for on-site readiness.",
@@ -251,7 +251,7 @@
       "alt": "Tile product image",
       "intro": "Standard sizes with precise edges for interior/exterior use and quick installation.",
       "sizes": ["30×60", "60×60", "60×120"],
-      "finishes": ["Polished", "Honed", "Matte"],
+      "finishes": ["Polished", "Unpolished"],
       "features": ["Tight tolerances", "Fast installation", "Low maintenance"],
       "description": [
         "Tiles are produced in standard sizes for both indoor and outdoor applications. Clean edges and dimensional accuracy provide a practical solution.",

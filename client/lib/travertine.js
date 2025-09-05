@@ -42,7 +42,7 @@ export const PROCESSES = [
 ]; // işleme
 
 // Ürüne göre genişletebilirsin; şimdilik ortak
-export const FINISHES = ["polished", "honed", "brushed", "matte"];
+export const FINISHES = ["polished", "unpolished"];
 
 // --- Ölçü slug yardımcıları (ilerisi için hazır) ---
 export function sizeLabelToSlug(label) {

@@ -23,7 +23,7 @@ const VARIANT_MAP = {
 
 const CUTS = ["vein-cut", "cross-cut"];
 const PROCESSES = ["natural", "filling", "epoxy", "transparent", "antique"];
-const FINISHES = ["polished", "honed", "brushed", "matte"];
+const FINISHES = ["polished", "unpolished"];
 
 const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertine");
 
