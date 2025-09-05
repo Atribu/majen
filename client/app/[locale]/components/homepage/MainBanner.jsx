@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import logoWhite from "@/public/images/logobeyaz.png";
+import logoWhite from "@/public/images/logobeyaz.webp";
 
 export default function MainBanner() {
   const videoSrc = "/videos/MajenVideo.mp4"; // public/videos altında
