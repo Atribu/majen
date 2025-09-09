@@ -4,9 +4,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import imgA from "@/public/images/tekli.webp";
-import imgB from "@/public/images/figure1.webp";
-import imgC from "@/public/images/figure3.webp";
+import imgA from "@/public/images/homepage/Antiktasarim3.webp";
+import imgC from "@/public/images/homepage/Ivorytasarim1.webp";
+import imgB from "@/public/images/homepage/Lighttasarim1.webp";
 
 export default function HighlightSection() {
   const t = useTranslations("HighlightSection");

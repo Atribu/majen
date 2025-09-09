@@ -6,16 +6,18 @@ import CollectionsSection from "./components/homepage/CollectionsSection";
 import HighlightSection from "./components/homepage/HighlightSection";
 import StatsSection from "./components/homepage/StatsSection";
 import NewestArrivals from "./components/homepage/NewestArrivals";
+import BackgroundSection from "./components/homepage/BackgroundSection";
 
 export default function Home() {
   return (
     <div className="bg-white overflow-hidden">
       <MainBanner/>
       <InfoSection/>
+       <BackgroundSection/>
       <CollectionsSection/>
       <ServicesSection/>
       <HighlightSection/>
-     
+    
     </div>
   );
 }

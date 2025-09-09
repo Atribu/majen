@@ -19,9 +19,9 @@ import slabIvoryVein  from "@/public/images/slabs/Ivoryveincut2.webp";
 import slabIvoryCross from "@/public/images/slabs/Iverycrosscut2.webp";
 
 // --- Block (örnek yolları değiştir)
-import blockIvory from "@/public/images/traverterBlock.jpeg";
-import blockLight from "@/public/images/traverterBlock.jpeg";
-import blockAntik from "@/public/images/traverterBlock.jpeg";
+import blockIvory from "@/public/images/blocks/Ivoryblok.webp";
+import blockLight from "@/public/images/blocks/Lightblok.webp";
+import blockAntik from "@/public/images/blocks/antik.webp";
 
 // --- Tiles (örnek yolları değiştir)
 import tilesIvory from "@/public/images/traverterFayans.jpeg";

@@ -72,7 +72,7 @@
     "subtitle": "PRODUCT GROUPS",
     "heading": "Top Picks in Natural Stone",
     "description": "We deliver durable and aesthetic solutions tailored to your projects.",
-    "explore": "All Products",
+    "explore": "Explore",
     "contact": "Contact Us",
     "products": {
       "product1": {
@@ -283,5 +283,11 @@
         "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
       }
     }
+  },
+
+     "BlaundosIntro": {
+    "title": "In the Footsteps of Blaundos",
+    "paragraph": "We draw inspiration from the time-worn stones of the ancient city of Blaundos. With rich veining and natural tonal shifts, marble (travertine) brings timeless elegance to contemporary design, adding historical depth and lasting beauty to every space."
+    
   }
 }

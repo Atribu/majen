@@ -72,7 +72,7 @@
     "subtitle": "ÜRÜN GRUPLARI",
     "heading": "Doğal Taşlarda En İyi Seçimler",
     "description": "Projelerinize uygun, dayanıklı ve estetik çözümler sunuyoruz.",
-    "explore": "Tüm Ürünler",
+    "explore": "İncele",
     "contact": "İletişime Geç",
     "products": {
       "product1": { "title": "Block", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Mermer ürün görseli", "cta": "İncele" },
@@ -262,5 +262,10 @@
       }
       
     }
+  },
+
+    "BlaundosIntro": {
+    "title":  "Blaundos’un İzinde",
+    "paragraph": "Blaundos antik kentinin zamanla yoğrulmuş taşlarından ilham alıyoruz. Damar dokusu ve doğal renk geçişleriyle mermerin (traverten) zarafetini modern tasarıma taşıyor, her mekânda tarihî bir derinlik ve kalıcı bir estetik sunuyoruz."
   }
 }
