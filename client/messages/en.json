@@ -289,5 +289,37 @@
     "title": "In the Footsteps of Blaundos",
     "paragraph": "We draw inspiration from the time-worn stones of the ancient city of Blaundos. With rich veining and natural tonal shifts, marble (travertine) brings timeless elegance to contemporary design, adding historical depth and lasting beauty to every space."
     
+  },
+
+  "ContactForm": {
+    "title": "Contact Us",
+    "subtitle": "We’ll get back to you shortly.",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Your Message"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "example@email.com",
+      "phone": "+1 555 000 0000",
+      "subject": "A short headline",
+      "message": "Tell us briefly about your project or request..."
+    },
+    "helps": { "phone": "Optional but helpful if we need to call you." },
+    "buttons": { "send": "Send", "sending": "Sending...", "whatsapp": "Message on WhatsApp" },
+    "consent": "By submitting, you confirm you’ve read and agree to our <privacy>Privacy</privacy> and <terms>Terms</terms>.",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email.",
+      "message": "Message should be at least 10 characters.",
+      "consent": "You must accept to continue.",
+      "submit": "Something went wrong. Please try again."
+    },
+    "status": { "success": "Thanks! Your message has been sent. We’ll be in touch soon." },
+    "whatsapp": { "link": "https://wa.me/19020000000" }
   }
+  
 }

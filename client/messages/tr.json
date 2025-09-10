@@ -267,5 +267,37 @@
     "BlaundosIntro": {
     "title":  "Blaundos’un İzinde",
     "paragraph": "Blaundos antik kentinin zamanla yoğrulmuş taşlarından ilham alıyoruz. Damar dokusu ve doğal renk geçişleriyle mermerin (traverten) zarafetini modern tasarıma taşıyor, her mekânda tarihî bir derinlik ve kalıcı bir estetik sunuyoruz."
+  },
+
+  "ContactForm": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Projeniz için en kısa sürede dönüş yapalım.",
+    "fields": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "subject": "Konu",
+      "message": "Mesajınız"
+    },
+    "placeholders": {
+      "name": "Adınız Soyadınız",
+      "email": "ornek@eposta.com",
+      "phone": "+90 5xx xxx xx xx",
+      "subject": "Kısa bir başlık",
+      "message": "Projeniz veya talebinizi kısaca anlatın..."
+    },
+    "helps": { "phone": "Telefon opsiyoneldir; sizi daha hızlı arayabilmemiz için bırakabilirsiniz." },
+    "buttons": { "send": "Gönder", "sending": "Gönderiliyor...", "whatsapp": "WhatsApp ile yaz" },
+    "consent": "Göndererek <privacy>Gizlilik</privacy> ve <terms>Koşullar</terms> metinlerini okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.",
+    "errors": {
+      "required": "Bu alan zorunludur.",
+      "email": "Geçerli bir e-posta girin.",
+      "message": "Mesaj en az 10 karakter olmalı.",
+      "consent": "Devam etmek için onay vermelisiniz.",
+      "submit": "Gönderimde bir sorun oluştu. Lütfen tekrar deneyin."
+    },
+    "status": { "success": "Teşekkürler! Mesajınız bize ulaştı, yakında iletişime geçeceğiz." },
+    "whatsapp": { "link": "https://wa.me/902120000000" }
   }
+  
 }
