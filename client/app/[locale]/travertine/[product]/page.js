@@ -89,14 +89,15 @@ const heroSrc =
       {/* 3) Resim + Yanında Yazılar */}
       <section className="grid gap-6 md:grid-cols-2 items-start">
         {/* Sol: Resim */}
-        <div className=" overflow-hidden shadow-sm ">
-          <div className="relative max-h-[400px]">
-            <HeroImage src={heroSrc} alt={alt} />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 md:p-4 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
-              <span className="block text-white/95 text-xs md:text-sm">{alt}</span>
-            </div>
-          </div>
-        </div>
+        <div className="overflow-hidden">
+  <div className="relative h-[300px] md:h-[440px]">
+    <HeroImage src={heroSrc} alt={alt} />
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 md:p-4 lg:p-5 bg-gradient-to-t from-black/75 via-black/20 to-transparent">
+      <span className="block text-amber-950 text-xs md:text-sm">{alt}</span>
+    </div>
+  </div>
+</div>
+
 
         {/* Sağ: Yazılar */}
         <div className="mt-2 md:mt-0">

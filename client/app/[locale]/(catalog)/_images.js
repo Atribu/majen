@@ -2,8 +2,8 @@
 
 // --- Common (tek görsel sayfalarda da kullanılır)
 import phBlock   from "@/public/images/traverterBlock.jpeg";
-import phTiles   from "@/public/images/traverterFayans.jpeg";
-import phSpecial from "@/public/images/traverterDeskt.webp";
+import phTiles   from "@/public/images/homepage/kesim.webp";
+import phSpecial from "@/public/images/homepage/masa.webp";
 import phSlabs from "@/public/images/homepage/slabler.webp";
 
 // --- Slabs
@@ -24,14 +24,14 @@ import blockLight from "@/public/images/blocks/Lightblok.webp";
 import blockAntik from "@/public/images/blocks/antik.webp";
 
 // --- Tiles (örnek yolları değiştir)
-import tilesIvory from "@/public/images/traverterFayans.jpeg";
-import tilesLight from "@/public/images/traverterFayans.jpeg";
-import tilesAntik from "@/public/images/traverterFayans.jpeg";
+import tilesIvory from "@/public/images/homepage/kesim.webp";
+import tilesLight from "@/public/images/homepage/kesim.webp";
+import tilesAntik from "@/public/images/homepage/kesim.webp";
 
 // --- Special (örnek yolları değiştir)
-import specialIvory from "@/public/images/traverterDeskt.webp";
-import specialLight from "@/public/images/traverterDeskt.webp";
-import specialAntik from "@/public/images/traverterDeskt.webp";
+import specialIvory from "@/public/images/homepage/masa.webp";
+import specialLight from "@/public/images/homepage/masa.webp";
+import specialAntik from "@/public/images/homepage/masa.webp";
 
 /**
  * Ürün başına görsel haritası:

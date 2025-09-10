@@ -25,6 +25,7 @@ const ICONS = {
 
 // Sıra/öğe sayısını buradan yönetebilirsin
 const FEATURE_KEYS = ["quality", "design", "range", "custom", "sustain", "expert"];
+const GAP = 90;
 
 export default function KeyFeatures() {
   const t = useTranslations("KeyFeatures");
@@ -95,15 +96,15 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-                Lorem Lorem
+                 {t("items.design.title")}
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
+                 {t("items.design.description")}
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
@@ -113,15 +114,15 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            Lorem Lorem
+             {t("items.range.title")}
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
+           {t("items.range.description")}
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
@@ -131,15 +132,15 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-              servicesvertical_item8_header
+             {t("items.custom.title")}
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
+              {t("items.custom.description")}
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
@@ -149,15 +150,15 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-                 Lorem Lorem
+                {t("items.sustain.title")}
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
               <div className="lg:w-[500px] opacity-75 justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-tight">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique quidem reprehenderit dicta velit praesentium possimus quod sequi dolorum officiis. Cum ratione, saepe atque nulla modi incidunt ipsum porro deleniti?
+                 {t("items.sustain.description")}
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> servicesvertical_item8_header</div>
               </div>
             </div>
@@ -167,15 +168,15 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-                  Lorem Lorem
+                   {t("items.expert.title")}
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
+             {t("items.expert.description")}
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
@@ -193,7 +194,7 @@ export default function KeyFeatures() {
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
@@ -211,7 +212,7 @@ export default function KeyFeatures() {
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">  servicesvertical_item8_header</div>
               </div>
             </div>
@@ -219,15 +220,17 @@ export default function KeyFeatures() {
         ),
       ];
 
-      const itemHeight = 300;
-      const gap = 20;
-      const totalItemHeight = itemHeight + gap;
+
       const [activeIndex, setActiveIndex] = useState(0);
     
       // Drag kontrolü için state'ler:
       const [dragStartY, setDragStartY] = useState(null);
       const [dragging, setDragging] = useState(false);
       const containerRef = useRef();
+       const itemRefs = useRef([]); // her item için ref
+  const setItemRef = (el, i) => (itemRefs.current[i] = el);
+  const [containerH, setContainerH] = useState(0);
+  const [itemHeights, setItemHeights] = useState([]);
     
       const threshold = 50; // Yeterli kaydırma mesafesi (piksel cinsinden)
     
@@ -273,11 +276,99 @@ export default function KeyFeatures() {
       const handleNext = () => {
         setActiveIndex((prev) => Math.min(prev + 1, items.length - 1));
       };
-    
+
+       useEffect(() => {
+    const measure = () => {
+      setContainerH(containerRef.current?.clientHeight || 0);
+      setItemHeights(itemRefs.current.map((el) => el?.offsetHeight || 0));
+    };
+    measure();
+
+    // ResizeObserver ile canlı takip
+    const ro = new ResizeObserver(measure);
+    if (containerRef.current) ro.observe(containerRef.current);
+    itemRefs.current.forEach((el) => el && ro.observe(el));
+
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+      ro.disconnect();
+    };
+  // items veya dil değişince metin boyu değişebilir
+  }, [/* items, t vb. bu bileşende değişen bağımlılıklar varsa ekle */]);
+
+  // aktif item’i merkeze getiren offset
+  const tops = React.useMemo(() => {
+    const t = [];
+    let acc = 0;
+    for (let i = 0; i < itemHeights.length; i++) {
+      t.push(acc);
+      acc += itemHeights[i] + GAP;
+    }
+    return t;
+  }, [itemHeights]);
+
+  const currentH = itemHeights[activeIndex] || 0;
+  const yTop = tops[activeIndex] || 0;
+  const offsetY = -(yTop) + (containerH - currentH) / 2;
+  
+ //Mobile
+ // --- state üstlerine ekle:
+const [isMobile, setIsMobile] = useState(false);
+const [viewportH, setViewportH] = useState(0);
+const [gap, setGap] = useState(90); // eskiden sabit GAP=90 idi
+
+useEffect(() => {
+  const onResize = () => {
+    const m = window.matchMedia("(max-width: 640px)").matches;
+    setIsMobile(m);
+    setViewportH(window.innerHeight || 0);
+    setGap(m ? 40 : 90); // mobilde aralığı küçült
+  };
+  onResize();
+  window.addEventListener("resize", onResize);
+  return () => window.removeEventListener("resize", onResize);
+}, []);
+
+// ölçümler değişince container yüksekliğini “hedef” olarak belirle:
+const activeH = itemHeights[activeIndex] || 0;
+// Mobilde: ekranın %80'ini geçmesin, min 360px; Desktop: %70, min 450px
+const desiredH = Math.min(
+  Math.max(activeH + 24, isMobile ? 360 : 450),
+  Math.floor((viewportH || 1000) * (isMobile ? 0.8 : 0.7))
+);
+
+// containerH’yi DOM’dan okumak yerine “desiredH”’yi temel al:
+useEffect(() => {
+  setContainerH(desiredH);
+}, [desiredH]);
+
+
+
+// --- touch swipe ekle:
+const touchStartYRef = useRef(null);
+const TOUCH_THRESHOLD = 40;
+
+const handleTouchStart = (e) => {
+  touchStartYRef.current = e.touches?.[0]?.clientY ?? null;
+};
+const handleTouchMove = (e) => {
+  const start = touchStartYRef.current;
+  if (start == null) return;
+  const dy = e.touches?.[0]?.clientY - start;
+  if (dy > TOUCH_THRESHOLD) {
+    setActiveIndex((p) => Math.max(p - 1, 0));
+    touchStartYRef.current = null;
+  } else if (dy < -TOUCH_THRESHOLD) {
+    setActiveIndex((p) => Math.min(p + 1, items.length - 1));
+    touchStartYRef.current = null;
+  }
+};
+const handleTouchEnd = () => (touchStartYRef.current = null);
 
   return (
-    <section className="relative overflow-hidden  text-black py-16 sm:py-20 lg:py-2 lg:h-[550px] w-screen  items-center justify-center"  style={{
-    backgroundImage: "url('/images/homepage/anasayfa2.webp')",
+    <section className="relative overflow-hidden  text-black py-1 sm:py-2  lg:h-[550px] w-screen  items-center justify-center"  style={{
+    backgroundImage: "url('/images/slabs/Ivory.webp')",
     backgroundSize: "cover",       // resmi kırpmadan kaplar
     backgroundPosition: "center",  // ortalar
     backgroundRepeat: "no-repeat", // tekrar etmez
@@ -288,59 +379,53 @@ export default function KeyFeatures() {
         <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
             <h2 className='text-[20px] md:text-[24px] lg:text-[36px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> {t("titlePrefix")} {""} {t("titleAccent")}</h2>
             {/* slider */}
-            <div className="relative  overflow-y-scroll md:overflow-y-hidden h-[300px] w-[350px] md:w-[550px] lg:w-full md:h-[450px] bg-black/10" ref={containerRef}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}>
+            <div
+  ref={containerRef}
+  className="relative overflow-hidden w-[350px] md:w-[550px] lg:w-full select-none"
+  style={{ height: desiredH }}                       // <<< dinamik yükseklik
+  onMouseDown={handleMouseDown}
+  onMouseMove={handleMouseMove}
+  onMouseUp={handleMouseUp}
+  onMouseLeave={handleMouseLeave}
+  onTouchStart={handleTouchStart}                    // <<< touch
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
+>
+
       {/* Carousel container */}
       <div
-        className="absolute left-0 transition-transform duration-700 "
-        style={{
-          transform: `translateY(${
-            -activeIndex * totalItemHeight + (500 - itemHeight) / 2.5
-          }px)`,
-        }}
-      >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className={`
-                md:h-[300px] flex justify-start items-center 
-                transition-opacity transition-transform duration-700 ease-in-out ml-10
-                ${activeIndex === index 
-                  ? "opacity-100 scale-100" 
-                  : "opacity-50 scale-90"
-                }
-              `}
-           
-          >
-            {item}
-          </div>
-        ))}
-      </div>
+  className="absolute left-0 transition-transform duration-700 will-change-transform"
+  style={{ transform: `translateY(${offsetY}px)` }}
+>
+  {items.map((item, index) => (
+    <div
+      key={index}
+      ref={(el) => setItemRef(el, index)}           // ölçüm şart
+      style={{ marginBottom: GAP }}                 // aralık dinamik
+      className={`
+         flex justify-start items-center ml-10
+        transition-[opacity,transform] duration-700 ease-in-out
+        ${activeIndex === index ? "opacity-100 scale-100" : "opacity-50 scale-95"}
+      `}
+    >
+      {item}
+    </div>
+  ))}
+</div>
 
-     
-      
     </div>
      {/* Navigasyon butonları (örnek, isteğe bağlı) */}
      <div className="hidden lg:flex flex-col absolute top-[60%] -left-20 transform -translate-y-1/2">
         <button onClick={handlePrev} className="p-2  text-black "><IoIosArrowUp size={32} color="#000"/></button>
         <button onClick={handleNext} className="p-2 text-black "><IoIosArrowDown size={32} color="#000"/></button>
         </div>
-
         </div>
-
-
-
          <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start -mt-[8%] '>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>
       </div>
-      
-      
-      
+
     </section>
   );
 }

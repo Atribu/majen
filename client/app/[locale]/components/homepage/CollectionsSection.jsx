@@ -9,11 +9,6 @@ import antik from "@/public/images/slabs/antik.webp";
 import ivory from "@/public/images/slabs/Ivory.webp";
 import light from "@/public/images/slabs/light.webp";
 
-// Görseller
-import imgAntiko from "@/public/images/figure1.webp";
-import imgLight from "@/public/images/figre2.webp"; // dosya adını kontrol edin
-import imgIvory from "@/public/images/figure3.webp";
-
 export default function CollectionsSection() {
   const t = useTranslations("CollectionsSection");
   const locale = useLocale();

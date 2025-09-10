@@ -89,7 +89,7 @@ function Block3({ gradient, ...props }) {
                       : "right-[40px] top-[37px]"
                   )}
                   size={gradient && gradient == "true" ? 80 : 44}
-                  color="#fff"
+                  color="#706565"
                 />
       </div>
     </div>

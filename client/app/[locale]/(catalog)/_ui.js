@@ -15,8 +15,15 @@ export function DetailBlock({ heading, items }) {
 
 export function HeroImage({ src, alt }) {
   return (
-    <div className="relative w-auto rounded-md overflow-hidden ">
-      <Image src={src} alt={alt} className="object-contain flex h-auto" width={src.width} height={src.height} />
+    <div className="relative w-full h-full">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-contain"   // <— kırpmaz, komple gösterir
+        sizes="(min-width:1024px) 1024px, 100vw"
+        priority={false}
+      />
     </div>
   );
 }
