@@ -12,7 +12,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import logoBlack from "@/public/images/majenlogo.png";
+import logoBlack from "@/public/images/majenlogo.webp";
 
 export default function Footer() {
   const t = useTranslations("Footer");

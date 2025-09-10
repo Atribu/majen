@@ -1,6 +1,6 @@
 // app/components/KeyFeatures.jsx
 "use client";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { useTranslations } from "next-intl";
 import {
   FaRulerCombined,
@@ -12,6 +12,7 @@ import {
 import { FiSettings } from "react-icons/fi";
 import light from "@/public/images/slabs/light.webp";
 import ServiceBlocks from "./blocksComponents/ServiceBlocks";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const ICONS = {
   quality: FaRulerCombined,
@@ -70,64 +71,282 @@ export default function KeyFeatures() {
         7: "-translate-y-[calc(50%+80px)] z-[20]  -translate-x-[18px]",
       };
 
+            const items = [
+        // Her eleman, verilen JSX içeriğinizden bir kopya olabilir.
+        (
+          <div className="flex flex-col justify-center items-start gap-2 ">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+               servicesvertical_item8_header
+              </span>
+              
+            </div>
+            <div className="flex flex-col justify-center items-start gap-6  max-w-[90vw]">
+              <div className="lg:w-[500px] justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-[140%]">
+              servicesvertical_item8_header
+              </div>
+              <div className="px-8 py-4 rounded-2xl outline outline-2 outline-offset-[-2px] outline-blue-400 inline-flex justify-center items-center ">
+                <p className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</p>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+               servicesvertical_item8_header
+              </span>
+              
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+               servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+           servicesvertical_item8_header
+              </span>
+             
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+               servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+              servicesvertical_item8_header
+              </span>
+             
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+              servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+                servicesvertical_item8_header
+              </span>
+              
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+                servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]"> servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+                 servicesvertical_item8_header
+              </span>
+             
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+                servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-10">
+              servicesvertical_item8_header
+              </span>
+             
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+                servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+        (
+          <div className="flex flex-col justify-center items-start gap-2">
+            <div className="justify-center">
+              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-10">
+               servicesvertical_item8_header
+              </span>
+              
+            </div>
+            <div className="flex flex-col justify-center items-start gap-3">
+              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
+              servicesvertical_item8_header
+              </div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">  servicesvertical_item8_header</div>
+              </div>
+            </div>
+          </div>
+        ),
+      ];
+
+      const itemHeight = 300;
+      const gap = 20;
+      const totalItemHeight = itemHeight + gap;
+      const [activeIndex, setActiveIndex] = useState(0);
+    
+      // Drag kontrolü için state'ler:
+      const [dragStartY, setDragStartY] = useState(null);
+      const [dragging, setDragging] = useState(false);
+      const containerRef = useRef();
+    
+      const threshold = 50; // Yeterli kaydırma mesafesi (piksel cinsinden)
+    
+      const handleMouseDown = (e) => {
+        setDragStartY(e.clientY);
+        setDragging(true);
+      };
+    
+      const handleMouseMove = (e) => {
+        if (!dragging || dragStartY === null) return;
+        // Delta hesapla
+        const deltaY = e.clientY - dragStartY;
+        // Eğer delta eşik değerini aştıysa, slide değiştir.
+        if (deltaY > threshold) {
+          // Aşağı sürüklendiğinde önceki slide
+          setActiveIndex((prev) => Math.max(prev - 1, 0));
+          setDragging(false);
+          setDragStartY(null);
+        } else if (deltaY < -threshold) {
+          // Yukarı sürüklendiğinde sonraki slide
+          setActiveIndex((prev) => Math.min(prev + 1, items.length - 1));
+          setDragging(false);
+          setDragStartY(null);
+        }
+      };
+    
+      const handleMouseUp = () => {
+        setDragging(false);
+        setDragStartY(null);
+      };
+    
+      const handleMouseLeave = () => {
+        // Fare container dışına çıkarsa drag iptal edilir.
+        setDragging(false);
+        setDragStartY(null);
+      };
+    
+      // Alternatif navigasyon butonları
+      const handlePrev = () => {
+        setActiveIndex((prev) => Math.max(prev - 1, 0));
+      };
+    
+      const handleNext = () => {
+        setActiveIndex((prev) => Math.min(prev + 1, items.length - 1));
+      };
+    
+
   return (
-    <section className="relative overflow-hidden  text-black py-16 sm:py-20 lg:py-8 max-h-[700px]"  style={{
+    <section className="relative overflow-hidden  text-black py-16 sm:py-20 lg:py-2 lg:h-[868px] w-screen  items-center justify-center"  style={{
     backgroundImage: "url('/images/homepage/anasayfa2.webp')",
     backgroundSize: "cover",       // resmi kırpmadan kaplar
     backgroundPosition: "center",  // ortalar
     backgroundRepeat: "no-repeat", // tekrar etmez
   }}>
-      {/* Arkaplan efektleri */}
-      {/* <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-amber-600/10 blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-amber/10 blur-3xl" />
-        <div className="absolute inset-0" />
-      </div> */}
+      
 
- <div className='hidden md:flex h-full min-h-[700px] lg:w-[25%] items-center justify-start overflow-hidden'>
+      <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-white'>
+        <div className='flex flex-col gap-[60px] w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start mt-[35px] lg:mt-[28px] relative'>
+            <h2 className='text-[30px] lg:text-[56px] font-bold leading-[110%] -tracking-[1.12px]'>servicesvertical_header1</h2>
+            {/* slider */}
+            <div className="relative  overflow-y-scroll md:overflow-y-hidden h-[300px] w-[350px] md:w-[550px] lg:w-full md:h-[550px]" ref={containerRef}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}>
+      {/* Carousel container */}
+      <div
+        className="absolute left-0 transition-transform duration-700 "
+        style={{
+          transform: `translateY(${
+            -activeIndex * totalItemHeight + (600 - itemHeight) / 2.5
+          }px)`,
+        }}
+      >
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`
+                md:h-[300px] flex justify-start items-center 
+                transition-opacity transition-transform duration-700 ease-in-out
+                ${activeIndex === index 
+                  ? "opacity-100 scale-100" 
+                  : "opacity-50 scale-90"
+                }
+              `}
+           
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+
+     
+      
+    </div>
+     {/* Navigasyon butonları (örnek, isteğe bağlı) */}
+     <div className="hidden lg:flex flex-col absolute top-1/2 -left-20 transform -translate-y-1/2">
+        <button onClick={handlePrev} className="p-2  text-white "><IoIosArrowUp size={32} color="#fff"/></button>
+        <button onClick={handleNext} className="p-2 text-white "><IoIosArrowDown size={32} color="#fff"/></button>
+        </div>
+
+        </div>
+
+
+
+         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start overflow-hidden'>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>
+      </div>
       
-      {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center items-center justify-center flex flex-col">
-       
-        <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-black">
-          {t("eyebrow")}
-        </p>
-        <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-          {t("titlePrefix")}{" "}
-          <span className="relative inline-block">
-            <span className="relative z-10">{t("titleAccent")}</span>
-            <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-white/80 to-white/10" />
-          </span>
-        </h2>
-
-       
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {FEATURE_KEYS.map((key) => {
-            const Icon = ICONS[key];
-            return (
-              <article
-                key={key}
-                className="group h-full rounded-xl  p-6 sm:p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.35)] will-change-transform hover:-translate-y-0.5"
-              >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg ">
-                  <Icon className="h-6 w-6 text-black" />
-                </div>
-
-                <h3 className="text-lg sm:text-xl font-semibold">
-                  {t(`items.${key}.title`)}
-                </h3>
-                <p className="mt-3 text-sm sm:text-base text-black leading-relaxed">
-                  {t(`items.${key}.description`)}
-                </p>
-
-                <div className="mt-6 h-[2px] w-12 bg-white/60 transition-[width] duration-300 group-hover:w-full" />
-              </article>
-            );
-          })}
-        </div>
-      </div> */}
+      
+      
     </section>
   );
 }
+
+
+  //  <div className='hidden md:flex h-full min-h-[600px] lg:w-[28%] items-center justify-center '>
+  //          <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
+  //         blockPositions={blockPositions}/>
+  //       </div>

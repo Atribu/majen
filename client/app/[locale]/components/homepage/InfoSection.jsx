@@ -84,9 +84,9 @@ export default function InfoSection() {
   );
 
   return (
-    <section className="flex w-screen items-center justify-center py-8 md:py-12 lg:py-16 z-[999] mb-20">
-      <div className="w-[100%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center">
-        <div className="">
+    <section className="flex w-screen items-center justify-center py-8 md:py-12 lg:py-20 xl:py-32 z-[999] mb-8">
+      <div className="w-[100%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center gap-7 md:gap-9 lg:gap-12 flex flex-col">
+        <div className="flex flex-col">
           <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase">
             {t("subtitle")}
           </span>

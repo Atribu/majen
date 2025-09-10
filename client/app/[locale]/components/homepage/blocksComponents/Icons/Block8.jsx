@@ -1,7 +1,13 @@
 import clsx from "clsx";
 import React from "react";
 import WebIcon from "./BlockIcons/WebIcon";
-import { FiSettings } from "react-icons/fi";
+import {
+  FaRulerCombined,
+  FaPalette,
+  FaCubes,
+  FaLeaf,
+  FaUserTie,
+} from "react-icons/fa";
 
 function Block8({ gradient, ...props }) {
   return (
@@ -18,76 +24,75 @@ function Block8({ gradient, ...props }) {
             gradient && gradient == "true" ? "ml-[25px] xl:ml-[100px]" : "",
           )}
         >
+          <defs>
+            {/* Sol taraf için pattern */}
+            <pattern id="bgLeft" patternUnits="userSpaceOnUse" width="124" height="595.36">
+              <image
+                 href="/images/slabs/antik.webp"
+                width="124"
+                height="595.36"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </pattern>
+
+            {/* Sağ taraf için pattern */}
+            <pattern id="bgRight" patternUnits="userSpaceOnUse" width="62" height="595.36">
+              <image
+                 href="/images/slabs/antik.webp"
+                width="62"
+                height="595.36"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </pattern>
+
+            {/* Üst path için pattern */}
+            <pattern id="bgTop" patternUnits="objectBoundingBox" width="1" height="1">
+              <image
+                  href="/images/slabs/antik.webp"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </pattern>
+          </defs>
+
+
           <g id={8}>
-             <rect
-    id="left"
-    width={124}
-    height={595.36}
-    transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 595.36 124)"
-    fill="url(#bgPattern)" 
-  />
- <rect
-  id="right-overlay"
-  width={62.0001}
-  height={595.36}
-  transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 595.36 124)"
-  fill="black"
-  opacity="0.4"   // = bg-black/30
-/>
+            <rect
+              id="left"
+              width={124}
+              height={595.36}
+              transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 595.36 124)"
+              fill={gradient && gradient == "true" ? "url(#bgLeft)" : "url(#bgRight)"}
+            />
+            <rect
+              id="right"
+              width={62.0001}
+              height={595.36}
+              transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 595.36 124)"
+              fill="black"
+  opacity="0.4" 
+            />
             <path
               id="top"
               d="M640.36 62.0005L595.36 0.000379136L550.36 62.0005L595.36 124.001L640.36 62.0005Z"
-              fill="url(#bgPattern)" 
+               fill={gradient && gradient == "true" ? "url(#bgTop)" : "url(#bgRight)"}
             />
-           
+            
           </g>
-           <defs>
-  {/* Eski gradient tanımı kalabilir */}
-  <pattern
-  id="paint0_image"
-  patternUnits="objectBoundingBox"
-  width={1}
-  height={1}
->
-  <image
-    href="/images/slabs/Ivory.webp"  
-    x="0"
-    y="0"
-    width="100%"
-    height="100%"
-    preserveAspectRatio="xMidYMid slice"
-  />
-</pattern>
-
-  {/* Yeni pattern tanımı */}
-  <pattern
-    id="bgPattern"
-    patternUnits="objectBoundingBox"
-    width={1}
-    height={1}
-  >
-    <image
-      href="/images/slabs/antik.webp"
-      x="0"
-      y="0"
-      width="100%"
-      height="100%"
-      preserveAspectRatio="xMidYMid slice"
-    />
-  </pattern>
-</defs>
+         
         </svg>
       </div>
-       <FiSettings
-        className={clsx(
-          "absolute transition-all duration-500 ease-in-out",
-          gradient && gradient == "true"
-            ? "right-[-45px] top-[15px]"
-            : "right-[45px] top-[35px]"
-        )}
-        size={gradient && gradient == "true" ? 80 : 44} 
-        color="#fff"
-      />
+      <FaUserTie
+                               className={clsx(
+                                 "absolute transition-all duration-500 ease-in-out rotate-45",
+                                 gradient && gradient == "true"
+                                   ? "right-[-15px] top-[10px]"
+                                   : "right-[35px] top-[40px]"
+                               )}
+                               size={gradient && gradient == "true" ? 80 : 44} 
+                               color="#fff"
+                             />
     </div>
   );
 }

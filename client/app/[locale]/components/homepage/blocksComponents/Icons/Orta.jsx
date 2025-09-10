@@ -92,10 +92,10 @@ function Block8({ gradient, ...props }) {
   src="/images/logobeyaz.webp"
   alt="Logo"
   className={clsx(
-    "absolute transition-all duration-500 ease-in-out rotate-90", // buraya ekledik
+    "absolute transition-all duration-500 ease-in-out rotate-50", // buraya ekledik
     gradient && gradient == "true"
-      ? "right-[-45px] top-[15px] w-32 h-32"
-      : "right-[15px] top-[39px] w-[100px] h-auto"
+      ? "right-[-45px] top-[15px] w-28 h-28"
+      : "right-[20px] top-[45px] w-[80px] h-auto"
   )}
 />
     </div>

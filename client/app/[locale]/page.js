@@ -7,6 +7,7 @@ import HighlightSection from "./components/homepage/HighlightSection";
 import StatsSection from "./components/homepage/StatsSection";
 import NewestArrivals from "./components/homepage/NewestArrivals";
 import BackgroundSection from "./components/homepage/BackgroundSection";
+import BackgroundSection2 from "./components/homepage/BackgroundSection2";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       <CollectionsSection/>
       <ServicesSection/>
       <HighlightSection/>
-    
+      <BackgroundSection2/>
     </div>
   );
 }
