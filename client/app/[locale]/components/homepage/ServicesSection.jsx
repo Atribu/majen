@@ -76,17 +76,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2 ">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[32px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-               servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+              {t("items.quality.title")}
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-6  max-w-[90vw]">
-              <div className="lg:w-[500px] justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-[140%]">
-              servicesvertical_item8_header
+              <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             {t("items.quality.description")}
               </div>
-              <div className="px-8 py-4 rounded-2xl outline outline-2 outline-offset-[-2px] outline-blue-400 inline-flex justify-center items-center ">
-                <p className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</p>
+              <div className="px-8 py-2 rounded-2xl outline outline-2 outline-offset-[-2px] inline-flex justify-center items-center ">
+                <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</p>
               </div>
             </div>
           </div>
@@ -94,17 +94,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-               servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+                Lorem Lorem
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-               servicesvertical_item8_header
+               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -112,17 +112,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-           servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+            Lorem Lorem
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-               servicesvertical_item8_header
+               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -130,17 +130,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
               servicesvertical_item8_header
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-              servicesvertical_item8_header
+              <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -148,17 +148,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-                servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+                 Lorem Lorem
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-                servicesvertical_item8_header
+              <div className="lg:w-[500px] opacity-75 justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-tight">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae similique quidem reprehenderit dicta velit praesentium possimus quod sequi dolorum officiis. Cum ratione, saepe atque nulla modi incidunt ipsum porro deleniti?
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]"> servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -166,17 +166,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-                 servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+                  Lorem Lorem
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-                servicesvertical_item8_header
+               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -184,17 +184,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-10">
-              servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-10">
+               Lorem Lorem
               </span>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-                servicesvertical_item8_header
+              <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -202,17 +202,17 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-10">
-               servicesvertical_item8_header
+              <span className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-10">
+                Lorem Lorem
               </span>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
-              <div className=" opacity-75 justify-center text-Main-White text-[14px] md:text-[16px] lg:text-[18px] font-normal font-inter leading-tight">
-              servicesvertical_item8_header
+               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[16px] font-normal font-inter leading-[140%]">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
-              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px] outline-blue-400 inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-white text-[14px] font-bold font-inter leading-[120%] -tracking-[0.28px]">  servicesvertical_item8_header</div>
+              <div className="px-7 py-3.5 rounded-[10px] outline outline-1 outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">  servicesvertical_item8_header</div>
               </div>
             </div>
           </div>
@@ -284,11 +284,11 @@ export default function KeyFeatures() {
   }}>
       
 
-      <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-white'>
-        <div className='flex flex-col gap-[60px] w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start mt-[35px] lg:mt-[28px] relative'>
-            <h2 className='text-[30px] lg:text-[48px] font-bold leading-[110%] -tracking-[1.12px] mt-28'>servicesvertical_header1</h2>
+      <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-black'>
+        <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
+            <h2 className='text-[20px] md:text-[24px] lg:text-[36px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> {t("titlePrefix")} {""} {t("titleAccent")}</h2>
             {/* slider */}
-            <div className="relative  overflow-y-scroll md:overflow-y-hidden h-[300px] w-[350px] md:w-[550px] lg:w-full md:h-[550px]" ref={containerRef}
+            <div className="relative  overflow-y-scroll md:overflow-y-hidden h-[300px] w-[350px] md:w-[550px] lg:w-full md:h-[450px] bg-black/10" ref={containerRef}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -298,7 +298,7 @@ export default function KeyFeatures() {
         className="absolute left-0 transition-transform duration-700 "
         style={{
           transform: `translateY(${
-            -activeIndex * totalItemHeight + (600 - itemHeight) / 2.5
+            -activeIndex * totalItemHeight + (500 - itemHeight) / 2.5
           }px)`,
         }}
       >
@@ -307,7 +307,7 @@ export default function KeyFeatures() {
             key={index}
             className={`
                 md:h-[300px] flex justify-start items-center 
-                transition-opacity transition-transform duration-700 ease-in-out
+                transition-opacity transition-transform duration-700 ease-in-out ml-10
                 ${activeIndex === index 
                   ? "opacity-100 scale-100" 
                   : "opacity-50 scale-90"
@@ -324,16 +324,16 @@ export default function KeyFeatures() {
       
     </div>
      {/* Navigasyon butonları (örnek, isteğe bağlı) */}
-     <div className="hidden lg:flex flex-col absolute top-[40%] -left-20 transform -translate-y-1/2">
-        <button onClick={handlePrev} className="p-2  text-white "><IoIosArrowUp size={32} color="#fff"/></button>
-        <button onClick={handleNext} className="p-2 text-white "><IoIosArrowDown size={32} color="#fff"/></button>
+     <div className="hidden lg:flex flex-col absolute top-[60%] -left-20 transform -translate-y-1/2">
+        <button onClick={handlePrev} className="p-2  text-black "><IoIosArrowUp size={32} color="#000"/></button>
+        <button onClick={handleNext} className="p-2 text-black "><IoIosArrowDown size={32} color="#000"/></button>
         </div>
 
         </div>
 
 
 
-         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start -mt-40 '>
+         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start -mt-[8%] '>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>
