@@ -17,8 +17,8 @@ import imgA4 from "@/public/images/homepage/Antik/Antiktasarim4.webp";
 
 import imgB1 from "@/public/images/homepage/Light/Lighttasarim1.webp";
 import imgB2 from "@/public/images/homepage/Light/Lighttasarim2.webp";
-import imgB3 from "@/public/images/homepage/Light/Lighttasarim3.webp";
-import imgB4 from "@/public/images/homepage/Light/Lighttasarim4.webp";
+import imgB3 from "@/public/images/homepage/Light/lighttasarim3.webp";
+import imgB4 from "@/public/images/homepage/Light/lighttasarim4.webp";
 // import imgB2 from "@/public/images/homepage/Lighttasarim2.webp";
 
 import imgC1 from "@/public/images/homepage/Ivory/Ivorytasarim1.webp";
