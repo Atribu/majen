@@ -4,7 +4,7 @@
 import phBlock   from "@/public/images/traverterBlock.jpeg";
 import phTiles   from "@/public/images/traverterFayans.jpeg";
 import phSpecial from "@/public/images/traverterDeskt.webp";
-import phSlabs from "@/public/images/traverterSlabs.jpeg";
+import phSlabs from "@/public/images/homepage/slabler.webp";
 
 // --- Slabs
 import slabIvory from "@/public/images/slabs/Ivory.webp";

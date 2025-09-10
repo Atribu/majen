@@ -15,7 +15,7 @@ import Image from "next/image";
 function ServiceBlocks({ blocksOrder, blockPositions, mobile, rotate }) {
   return (
     <div
-      className= {`w-full opacity-100 lg:col-span-1 lg:flex relative col-span-2 flex h-[500px] -rotate-90 overflow-hidden ${rotate ? "lg:rotate-0":"lg:-rotate-90"}`}>
+      className= {`w-full opacity-100 lg:col-span-1 lg:flex relative col-span-2 flex h-[600px] -rotate-90 overflow-hidden ${rotate ? "lg:rotate-0":"lg:-rotate-90"}`}>
       {/* <Image
         src={noiseImage}
         width={noiseImage.width}

@@ -52,17 +52,17 @@ export default function CollectionsSection() {
   ];
 
   return (
-    <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-80 mb-20">
+    <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-44 mb-20">
       <div className="flex flex-col w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[17px] md:gap-[15px] lg:gap-[20px] items-center justify-center text-center">
         <span className="text-[12px] leading-[14px] uppercase tracking-[0.48px] font-medium font-jost">
           {t("span")}
         </span>
-        <h3 className="text-[28px] md:text-[32px] md:leading-[57.6px] lg:text-[48px] capsizedText2 font-marcellus font-normal leading-normal">
+        <h3 className="text-[16px] font-bold md:text-[32px] md:leading-[57.6px] lg:text-[48px] capsizedText2 font-marcellus  leading-normal">
           {t("header")}
         </h3>
       </div>
 
-      <div className="flex flex-col md:flex-row w-[80%] md:h-[49vh] md:min-h-[354px] lg:h-[498px] rounded-xl">
+      <div className="flex flex-col md:flex-row w-[80%] md:h-[49vh] md:min-h-[354px] lg:h-[498px] rounded-xl max-h-[50vh]">
         {collections.map((coll, index) => {
           let widthClass;
           if (hoveredIndex === null) widthClass = "w-full md:w-1/3";
@@ -94,6 +94,28 @@ export default function CollectionsSection() {
                 className="w-full h-[44vh] md:h-[498px] object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-105 relative"
                 priority={index === 0}
               />
+
+               <div
+                className="
+                  absolute top-0 left-0 w-full h-full
+              
+                  text-white z-10 flex lg:hidden items-end
+                "
+              >
+                {/* Soldaki şerit */}
+                <div
+                  className="h-[15%] bg-black/30 bg-opacity-50 flex flex-col lg:justify-center w-full md:w-1/4 md:min-w-[310px] 
+                     font-jost items-center justify-center text-center"
+                >
+                  <Link
+                    href={coll.href}
+                    className="flex h-full  items-center text-[16px] leading-[37.5px] tracking-[-0.66px] capitalize font-marcellus font-normal text-center w-auto  cursor-pointer"
+                  >
+                    {coll.title}
+                  
+                  </Link>
+                </div>
+              </div>
 
               {/* Hover overlay */}
               <div

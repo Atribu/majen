@@ -76,7 +76,7 @@ export default function KeyFeatures() {
         (
           <div className="flex flex-col justify-center items-start gap-2 ">
             <div className="justify-center">
-              <span className="text-Main-White text-[20px] lg:text-[41px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
+              <span className="text-Main-White text-[20px] lg:text-[32px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
                servicesvertical_item8_header
               </span>
               
@@ -276,7 +276,7 @@ export default function KeyFeatures() {
     
 
   return (
-    <section className="relative overflow-hidden  text-black py-16 sm:py-20 lg:py-2 lg:h-[868px] w-screen  items-center justify-center"  style={{
+    <section className="relative overflow-hidden  text-black py-16 sm:py-20 lg:py-2 lg:h-[550px] w-screen  items-center justify-center"  style={{
     backgroundImage: "url('/images/homepage/anasayfa2.webp')",
     backgroundSize: "cover",       // resmi kırpmadan kaplar
     backgroundPosition: "center",  // ortalar
@@ -286,7 +286,7 @@ export default function KeyFeatures() {
 
       <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-white'>
         <div className='flex flex-col gap-[60px] w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start mt-[35px] lg:mt-[28px] relative'>
-            <h2 className='text-[30px] lg:text-[56px] font-bold leading-[110%] -tracking-[1.12px]'>servicesvertical_header1</h2>
+            <h2 className='text-[30px] lg:text-[48px] font-bold leading-[110%] -tracking-[1.12px] mt-28'>servicesvertical_header1</h2>
             {/* slider */}
             <div className="relative  overflow-y-scroll md:overflow-y-hidden h-[300px] w-[350px] md:w-[550px] lg:w-full md:h-[550px]" ref={containerRef}
       onMouseDown={handleMouseDown}
@@ -324,7 +324,7 @@ export default function KeyFeatures() {
       
     </div>
      {/* Navigasyon butonları (örnek, isteğe bağlı) */}
-     <div className="hidden lg:flex flex-col absolute top-1/2 -left-20 transform -translate-y-1/2">
+     <div className="hidden lg:flex flex-col absolute top-[40%] -left-20 transform -translate-y-1/2">
         <button onClick={handlePrev} className="p-2  text-white "><IoIosArrowUp size={32} color="#fff"/></button>
         <button onClick={handleNext} className="p-2 text-white "><IoIosArrowDown size={32} color="#fff"/></button>
         </div>
@@ -333,7 +333,7 @@ export default function KeyFeatures() {
 
 
 
-         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start overflow-hidden'>
+         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start -mt-40 '>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>

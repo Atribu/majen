@@ -6,13 +6,14 @@ import { useTranslations, useLocale } from "next-intl";
 const BackgroundSection = () => {
     const t =useTranslations("BlaundosIntro")
   return (
-    <div className='flex w-screen justify-end items-center relative z-[9]'>
+    <div className='flex w-screen justify-end items-center relative z-[9] lg:-mt-56'>
       <div className='flex w-[100%]'>
         <Image
         src={blandos}
         alt='blandos'
         width={blandos.width}
         height={blandos.height}
+        className='bg-contain '
         />
       </div>
 

@@ -89,7 +89,7 @@ const heroSrc =
       {/* 3) Resim + Yanında Yazılar */}
       <section className="grid gap-6 md:grid-cols-2 items-start">
         {/* Sol: Resim */}
-        <div className="rounded-xl border overflow-hidden bg-neutral-50 shadow-sm">
+        <div className=" overflow-hidden bg-neutral-50 shadow-sm">
           <div className="relative">
             <HeroImage src={heroSrc} alt={alt} />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 md:p-4 bg-gradient-to-t from-black/55 via-black/10 to-transparent">

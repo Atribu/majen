@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 
 import logoBlack from "@/public/images/majenlogo.webp";
+import DgtlfaceSvg from "./DgtlfaceSvg";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -170,7 +171,8 @@ export default function Footer() {
             </div>
 
             {/* Footer Menu 1 */}
-            <div className="text-center lg:text-left">
+            <div className="flex flex-row items-center justify-around">
+              <div className="text-center lg:text-left">
               <h3 className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.title")}
               </h3>
@@ -206,16 +208,18 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+            </div>
           </div>
 
           {/* Divider */}
           <div className="mt-12 border-t border-black/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-700">
             <p>© {year} {t("brand")}. {t("rights")}</p>
             <p className="inline-flex items-center gap-1">
-              <span>{t("poweredBy")}</span>
-              <a href="#" className="font-medium underline underline-offset-2 hover:opacity-80">
-                {t("provider")}
-              </a>
+           
+              <Link href="https://dgtlface.com"   rel="norefferer nofollower"
+                  target="_blank" className="flex w-full text-[12px] font-normal leading-normal font-jost tracking-[0.56px] mb-2 md:py-[1.8%] text-center justify-center items-center gap-[9.13px] text-neutral-700">
+            Powered by <DgtlfaceSvg className="flex" width={104} height={27} />
+      </Link>
             </p>
           </div>
         </div>

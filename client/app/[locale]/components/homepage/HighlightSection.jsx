@@ -20,7 +20,7 @@ export default function HighlightSection() {
 
   return (
     <section className="relative w-full mt-24">
-      <div className="max-w-7xl mx-auto space-y-24 lg:space-y-28">
+      <div className="max-w-7xl mx-auto space-y-24 lg:space-y-28 w-[90%]">
         {items.map(({ key, img, reverse }, idx) => (
           <div
             key={key}
@@ -30,7 +30,7 @@ export default function HighlightSection() {
           >
             {/* Görsel */}
             <div className="w-full lg:w-[96%]">
-              <div className="relative w-full h-80 sm:h-96 lg:h-[600px]">
+              <div className="relative lg:w-full h-60 sm:h-96 lg:h-[600px]">
                 <Image
                   src={img}
                   alt={t(`items.${key}.alt`)}
@@ -56,10 +56,10 @@ export default function HighlightSection() {
                     : "lg:-translate-x-16 xl:-translate-x-24"
                 }`}
               >
-                <h2 className="text-2xl md:text-3xl font-bold leading-tight text-black">
+                <h2 className="text-[16px] md:text-2xl lg:text-3xl font-bold leading-tight text-black">
                   {t(`items.${key}.title`)}
                 </h2>
-                <p className="mt-4 text-gray-600 leading-relaxed">
+                <p className="mt-4 text-[12px] lg:text-[16px] text-gray-600 leading-relaxed">
                   {t(`items.${key}.description`)}
                 </p>
 

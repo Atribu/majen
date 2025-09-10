@@ -23,15 +23,15 @@ function Card({ t, img, href, tKey }) {
           alt={t(`products.${tKey}.alt`)}
           fill
           sizes="100vw"
-          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          className="object-contain object-center transition-transform duration-500 group-hover:scale-105"
           priority={false}
         />
       </Link>
       <div className="w-full p-4 items-center justify-center text-center">
-        <h4 className="text-[18px] md:text-[20px] font-semibold text-[#0C1A13]">
+        <h4 className="text-[16px] md:text-[20px] font-semibold text-[#0C1A13]">
           {t(`products.${tKey}.title`)}
         </h4>
-        <p className="mt-2 text-[13px] md:text-[14px] text-[#2a2a2a]">
+        <p className="mt-2 text-[12px] md:text-[14px] text-[#2a2a2a]">
           {t(`products.${tKey}.description`)}
         </p>
         <div className="mt-4 flex gap-2 items-center justify-center">
@@ -78,22 +78,22 @@ export default function InfoSection() {
       align: "center",
       dragFree: false,
       slidesToScroll: 1,
-      containScroll: "trimSnaps",
+
     },
     [Autoplay({ delay: 3500, stopOnInteraction: true, stopOnMouseEnter: true })]
   );
 
   return (
-    <section className="flex w-screen items-center justify-center py-8 md:py-12 lg:py-20 xl:py-32 z-[999] mb-8">
+    <section className="flex w-screen items-center justify-center py-8 md:py-12 lg:py-20 xl:py-32 z-[999] mb-10">
       <div className="w-[100%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center gap-7 md:gap-9 lg:gap-12 flex flex-col">
         <div className="flex flex-col">
           <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase">
             {t("subtitle")}
           </span>
-          <h3 className="mt-2 text-[26px] md:text-[36px] lg:text-[48px] text-[#0C1A13] leading-[110%]">
+          <h3 className="mt-2 text-[16px] font-bold md:text-[36px] lg:text-[48px] text-[#0C1A13] leading-[110%]">
             {t("heading")}
           </h3>
-          <p className="mt-3 text-black text-[14px] md:text-[16px] lg:text-[18px]">
+          <p className="mt-3 text-black text-[12px] md:text-[16px] lg:text-[18px]">
             {t("description")}
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function InfoSection() {
       {items.map(({ key, img, href }) => (
         <div
           key={key}
-          className="flex-[0_0_100%] shrink-0 pr-4" // ✅ her slide %100 genişlik + kaymayı önle
+          className="flex-[0_0_80%] shrink-0 items-center justify-center" // ✅ her slide %100 genişlik + kaymayı önle
         >
           <Card t={tProxy} img={img} href={href} tKey={key} />
         </div>
