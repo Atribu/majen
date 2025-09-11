@@ -80,11 +80,11 @@ function Block4({ gradient, ...props }) {
                           className={clsx(
                             "absolute transition-all duration-500 ease-in-out rotate-20",
                             gradient && gradient == "true"
-                              ? "right-[-45px] top-[60px]"
+                              ? "right-[-10px] top-[60px]"
                               : "right-[40px] top-[78px]"
                           )}
-                          size={gradient && gradient == "true" ? 72 : 40}
-                          color="#fff"
+                          size={gradient && gradient == "true" ? 68 : 40}
+                          color="#706565"
                         />
       </div>
     </div>

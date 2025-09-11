@@ -8,6 +8,7 @@ import {
   FaLeaf,
   FaUserTie,
 } from "react-icons/fa";
+import { GrUserWorker } from "react-icons/gr";
 
 function Block7({ gradient, ...props }) {
   return (
@@ -81,7 +82,7 @@ function Block7({ gradient, ...props }) {
         </g>
         
       </svg>
-       <FaUserTie
+       <GrUserWorker
                                className={clsx(
                                  "absolute transition-all duration-500 ease-in-out rotate-45",
                                  gradient && gradient == "true"
@@ -89,7 +90,7 @@ function Block7({ gradient, ...props }) {
                                    : "right-[35px] top-[40px]"
                                )}
                                size={gradient && gradient == "true" ? 80 : 44} 
-                               color="#fff"
+                               color="#706565"
                              />
     </div>
   );

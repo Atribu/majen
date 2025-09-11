@@ -90,8 +90,8 @@ function Block8({ gradient, ...props }) {
                                    ? "right-[-15px] top-[10px]"
                                    : "right-[35px] top-[40px]"
                                )}
-                               size={gradient && gradient == "true" ? 80 : 44} 
-                               color="#fff"
+                               size={gradient && gradient == "true" ? 72 : 44} 
+                               color="#706565"
                              />
     </div>
   );

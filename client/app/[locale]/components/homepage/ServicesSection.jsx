@@ -87,7 +87,7 @@ export default function KeyFeatures() {
              {t("items.quality.description")}
               </div>
               <div className="px-8 py-2 rounded-2xl outline outline-2 outline-offset-[-2px] inline-flex justify-center items-center ">
-                <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</p>
+                <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</p>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function KeyFeatures() {
                  {t("items.design.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function KeyFeatures() {
            {t("items.range.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function KeyFeatures() {
               {t("items.custom.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function KeyFeatures() {
                  {t("items.sustain.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> {t("explore")}</div>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function KeyFeatures() {
              {t("items.expert.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
               </div>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function KeyFeatures() {
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function KeyFeatures() {
              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, hic odit voluptas consectetur omnis eos tempora dolores repellendus quasi magnam nesciunt consequatur debitis doloremque quia dolorum dicta saepe aut eius!
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">  servicesvertical_item8_header</div>
+                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">  {t("explore")}</div>
               </div>
             </div>
           </div>
@@ -376,7 +376,7 @@ const handleTouchEnd = () => (touchStartYRef.current = null);
       
 
       <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-black'>
-        <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[8%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
+        <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[4%]  xl:ml-[10%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
             <h2 className='text-[20px] md:text-[24px] lg:text-[36px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> {t("titlePrefix")} {""} {t("titleAccent")}</h2>
             {/* slider */}
             <div
@@ -420,7 +420,7 @@ const handleTouchEnd = () => (touchStartYRef.current = null);
         <button onClick={handleNext} className="p-2 text-black "><IoIosArrowDown size={32} color="#000"/></button>
         </div>
         </div>
-         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start -mt-[8%] '>
+         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start mt-[8%] xl:-mt-[8%] '>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>

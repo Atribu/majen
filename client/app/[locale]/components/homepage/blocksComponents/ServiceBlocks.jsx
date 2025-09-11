@@ -15,7 +15,7 @@ import Image from "next/image";
 function ServiceBlocks({ blocksOrder, blockPositions, mobile, rotate }) {
   return (
     <div
-      className= {`w-full opacity-100 lg:col-span-1 lg:flex relative col-span-2 flex h-[600px] -rotate-90 overflow-hidden ${rotate ? "lg:rotate-0":"lg:-rotate-90"}`}>
+      className= {`w-full opacity-100 lg:col-span-1 lg:flex relative col-span-2 flex h-[600px] -rotate-90  ${rotate ? "lg:rotate-0":"lg:-rotate-90"}`}>
       {/* <Image
         src={noiseImage}
         width={noiseImage.width}
@@ -23,7 +23,7 @@ function ServiceBlocks({ blocksOrder, blockPositions, mobile, rotate }) {
         alt="Noise Image"
         className="absolute inset-0 z-[110] h-full mix-blend-multiply"
       /> */}
-      <div className="relative h-full w-full lg:min-h-[515px] lg:overflow-hidden ">
+      <div className="relative h-full w-full lg:min-h-[515px] ">
         <div className={`ml-[-350px] h-full w-full  ${rotate ? "lg:ml-[-315px] xl:ml-[-175px]  2xl:ml-[-40px] 3xl:ml-[50px] 4xl:ml-[25px]":"lg:ml-[-315px]"}`}>
           <Block3
             gradient={blocksOrder[0] == "1" ? "true" : "false"}

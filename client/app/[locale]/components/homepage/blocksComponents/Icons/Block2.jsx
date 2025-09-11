@@ -101,8 +101,8 @@ function Block2({ gradient, ...props }) {
                              ? "right-[-15px] top-[20px]"
                              : "right-[35px] top-[40px]"
                          )}
-                         size={gradient && gradient == "true" ? 80 : 44} 
-                         color="#fff"
+                         size={gradient && gradient == "true" ? 72 : 40} 
+                         color="#706565"
                        />
       </div>
     </div>

@@ -8,6 +8,7 @@ import {
   FaLeaf,
   FaUserTie,
 } from "react-icons/fa";
+import { GrWorkshop } from "react-icons/gr";
 
 function Block6({ gradient, ...props }) {
   //   console.log(gradient);
@@ -89,15 +90,15 @@ function Block6({ gradient, ...props }) {
         </g>
         
       </svg>
-       <FaUserTie
+       <GrWorkshop
                                className={clsx(
                                  "absolute transition-all duration-500 ease-in-out rotate-45",
                                  gradient && gradient == "true"
-                                   ? "right-[-15px] top-[10px]"
+                                   ? "right-[-2px] top-[20px]"
                                    : "right-[35px] top-[40px]"
                                )}
-                               size={gradient && gradient == "true" ? 80 : 44} 
-                               color="#fff"
+                               size={gradient && gradient == "true" ? 68 : 44} 
+                               color="#706565"
                              />
     </div>
   );
