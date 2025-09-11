@@ -7,12 +7,7 @@ import { usePathname } from "next/navigation";
 import { FiX } from "react-icons/fi";
 import { Home, LayoutGrid, ShoppingBag, FolderKanban, Newspaper, Phone } from "lucide-react";
 
-export default function ModernSidebar({
-  menuOpen,
-  setMenuOpen,
-  t,
-  logoWhite,
-}) {
+export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
   const pathname = usePathname();
   const dialogRef = useRef(null);
   const firstLinkRef = useRef(null);
@@ -32,7 +27,6 @@ export default function ModernSidebar({
     const onKey = (e) => {
       if (e.key === "Escape") setMenuOpen(false);
       if (e.key === "Tab" && dialogRef.current) {
-        // basic focus trap
         const focusables = dialogRef.current.querySelectorAll(
           "a,button,input,select,textarea,[tabindex]:not([tabindex='-1'])"
         );
@@ -81,8 +75,7 @@ export default function ModernSidebar({
       {/* Overlay */}
       <div
         aria-hidden="true"
-        className={`fixed inset-0 z-[59] bg-black/40 backdrop-blur-[1px] transition-opacity
-        ${menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 z-[59] bg-black/40 backdrop-blur-[1px] transition-opacity ${menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={() => setMenuOpen(false)}
       />
 
@@ -95,21 +88,20 @@ export default function ModernSidebar({
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
-        className={`fixed inset-y-0 left-0 z-[60] w-[88%] xs:w-[85%] sm:w-80 md:w-96
-        translate-x-0 transform transition-transform duration-300
-        ${menuOpen ? "translate-x-0" : "-translate-x-full"}
-        outline-none`}
+        className={`fixed inset-y-0 left-0 z-[60] w-[88%] xs:w-[85%] sm:w-80 md:w-96 transform transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"} outline-none`}
       >
         {/* Glass panel with gradient border */}
         <div
-          className="relative h-full bg-white/15 supports-[backdrop-filter]:bg-white/10 backdrop-blur-xl
-          ring-1 ring-white/25 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.45)]
-          before:absolute before:inset-0 before:rounded-none
-          before:pointer-events-none before:[mask-composite:exclude]
-          before:[mask:linear-gradient(#000, #000) content-box, linear-gradient(#000, #000)]
-          before:[-webkit-mask-composite:xor] before:p-[1px]
-          before:bg-[linear-gradient(135deg,rgba(255,255,255,.65),rgba(255,255,255,.1)_40%,rgba(147,197,253,.4))]
-          "
+          className={`
+            relative h-full 
+            bg-white/15 supports-[backdrop-filter]:bg-white/10 backdrop-blur-xl
+            ring-1 ring-white/25 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.45)]
+            before:absolute before:inset-0 before:rounded-none
+            before:pointer-events-none before:[mask-composite:exclude]
+            before:[mask:linear-gradient(#000,#000) content-box, linear-gradient(#000,#000)]
+            before:[-webkit-mask-composite:xor] before:p-[1px]
+            before:bg-[linear-gradient(135deg,rgba(255,255,255,.65),rgba(255,255,255,.1)_40%,rgba(147,197,253,.4))]
+          `}
         >
           {/* Safe area padding */}
           <div className="h-full flex flex-col pt-[max(env(safe-area-inset-top),12px)] pb-[max(env(safe-area-inset-bottom),12px)]">
@@ -155,23 +147,14 @@ export default function ModernSidebar({
                     ref={idx === 0 ? firstLinkRef : null}
                     className={`${linkBase} ${active ? activeStyles : linkIdle}`}
                     style={{
-                      // staggered fade/slide in
-                      animation: menuOpen
-                        ? `sidebarIn 380ms ease-out ${idx * 40}ms both`
-                        : "none",
+                      animation: menuOpen ? `sidebarIn 380ms ease-out ${idx * 40}ms both` : "none",
                     }}
                   >
-                    <span
-                      className={`shrink-0 transition-transform ${
-                        active ? "scale-100" : "group-hover:scale-110"
-                      }`}
-                    >
+                    <span className={`shrink-0 transition-transform ${active ? "scale-100" : "group-hover:scale-110"}`}>
                       {item.icon}
                     </span>
                     <span className="truncate">{item.label}</span>
-                    {active && (
-                      <span className="ml-auto h-2 w-2 rounded-full bg-white/80 shadow-[0_0_12px_2px_rgba(255,255,255,.55)]" />
-                    )}
+                    {active && <span className="ml-auto h-2 w-2 rounded-full bg-white/80 shadow-[0_0_12px_2px_rgba(255,255,255,.55)]" />}
                   </Link>
                 );
               })}
@@ -182,20 +165,8 @@ export default function ModernSidebar({
               <div className="flex items-center justify-between">
                 <span>© {new Date().getFullYear()} Majen</span>
                 <div className="flex items-center gap-3">
-                  <a
-                    href="https://instagram.com"
-                    className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-                    aria-label="Instagram"
-                  >
-                    IG
-                  </a>
-                  <a
-                    href="https://dribbble.com"
-                    className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-                    aria-label="Dribbble"
-                  >
-                    DB
-                  </a>
+                  <a href="https://instagram.com" className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded" aria-label="Instagram">IG</a>
+                  <a href="https://dribbble.com" className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded" aria-label="Dribbble">DB</a>
                 </div>
               </div>
             </div>

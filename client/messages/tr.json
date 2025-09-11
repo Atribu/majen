@@ -6,7 +6,7 @@
 
   "Header": {
     "home": "Anasayfa",
-    "pages": "Sayfalar",
+    "product": "Ürünler",
     "shop": "Mağaza",
     "projects": "Projeler",
     "blog": "Blog",
@@ -180,6 +180,10 @@
   },
 
   "ProductPage": {
+     "breadcrumbs": "Gezinme",
+    "home": "Ana Sayfa",
+     "products":"Ürünler",
+     "details":"Detayları Gör",
     "detailsHeadings": {
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
