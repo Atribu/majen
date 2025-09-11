@@ -53,7 +53,7 @@ export default function CollectionsSection() {
     `${prefix}/${base}/${productSlugFor(locale, productKey)}/${variantSlug}`;
 
   return (
-    <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-44 mb-20">
+    <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-[10%] mb-20">
       {/* Başlık */}
       <div className="flex flex-col w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[17px] md:gap-[15px] lg:gap-[20px] items-center justify-center text-center">
         <span className="text-[12px] leading-[14px] uppercase tracking-[0.48px] font-medium font-jost">

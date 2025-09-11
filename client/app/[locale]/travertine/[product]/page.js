@@ -16,6 +16,7 @@ import {
   IMAGE_BY_PRODUCT_AND_VARIANT,
 } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
+import VariantCircleSection from "../../components/products1/VariantCircleSection";
 
 // örnek varyantlar; sende farklıysa aynı mantıkla çalışır
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
@@ -187,42 +188,14 @@ export default function ProductPage() {
       </section>
 
       {/* ======= VARYANTLAR – dairesel görseller ======= */}
-      <section className="mt-14">
-        <h3 className="text-2xl font-semibold">{variantsHeading}</h3>
-
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {variantCards.map(({ slug, vKey, title, alt, href }) => {
-            const cardSrc =
-              IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ??
-              (typeof imgMap === "object" ? imgMap[vKey] : imgMap) ??
-              heroSrc;
-
-            return (
-              <Link
-                key={slug}
-                href={href}
-                className="group flex flex-col items-center text-center"
-              >
-                <div className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]">
-                  <Image
-                    src={cardSrc}
-                    alt={alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="160px"
-                  />
-                </div>
-                <h4 className="mt-4 text-lg font-semibold text-neutral-900">
-                  {title}
-                </h4>
-                <p className="mt-1 text-sm text-neutral-600 max-w-[36ch]">
-                  {alt}
-                </p>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+      <VariantCircleSection
+  heading={variantsHeading}
+  variantCards={variantCards}
+  imgMap={imgMap}
+  heroSrc={heroSrc}
+  IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+  productKey={productKey}
+/>
     </main>
   );
 }

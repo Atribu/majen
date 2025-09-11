@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import blandos from "@/public/images/homepage/panaromik.webp"
-import blandosMobile from "@/public/images/homepage/tab.webp"
+import blandosMobile from "@/public/images/homepage/tab2.webp"
 import { useTranslations, useLocale } from "next-intl";
 
 const BackgroundSection = () => {
@@ -14,7 +14,7 @@ const BackgroundSection = () => {
         alt='blandos'
         width={blandos.width}
         height={blandos.height}
-        className='bg-contain '
+        className='bg-cover min-h-[400px] w-auto lg:w-full'
         />
       </div>
 
@@ -24,7 +24,7 @@ const BackgroundSection = () => {
         alt='blandosMobile'
         width={blandosMobile.width}
         height={blandosMobile.height}
-        className='bg-contain '
+        className='bg-contain min-h-[200px]'
         />
       </div>
 
