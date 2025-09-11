@@ -1,10 +1,10 @@
 // app/components/CollectionsSection.jsx
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { baseFor, productSlugFor } from "@/lib/travertine"; // ✅ travertine helper
 import antik from "@/public/images/slabs/antik.webp";
 import ivory from "@/public/images/slabs/Ivory.webp";
 import light from "@/public/images/slabs/light.webp";
@@ -13,137 +13,99 @@ export default function CollectionsSection() {
   const t = useTranslations("CollectionsSection");
   const locale = useLocale();
   const prefix = `/${locale}`;
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const base = baseFor(locale); // örn: tr -> traverten, en -> travertine
 
-  // Metinleri doğrudan diziden okuyacağız
+  // UI etiketleri
+  const labels = {
+    block: locale === "tr" ? "Blok" : "Block",
+    slabs: locale === "tr" ? "Plaka" : "Slabs",
+    tiles: locale === "tr" ? "Karo" : "Tiles",
+    special: locale === "tr" ? "Özel Tasarım" : "Special Design",
+  };
+
+  // koleksiyonlar (her renk için slug ekledik)
   const collections = [
     {
       key: "antiko",
       title: t("titleAntiko"),
       alt: t("altAntiko"),
-
+      slug: "blaundos-antiko",
       src: antik,
-      href: "/collections/blaundos-antiko",
     },
     {
       key: "light",
       title: t("titleLight"),
       alt: t("altLight"),
-
+      slug: "blaundos-light",
       src: light,
-      href: "/collections/blaundos-light",
     },
     {
       key: "ivory",
       title: t("titleIvory"),
       alt: t("altIvory"),
-      // desc: t("descIvory"),
-      // area: t("areaIvory"),
-      // view: t("viewIvory"),
-      // buttonText: t("buttonText"),
+      slug: "blaundos-ivory",
       src: ivory,
-      href: "/collections/blaundos-ivory",
     },
   ];
 
+  // tek yerden link üretici
+  const hrefFor = (productKey, variantSlug) =>
+    `${prefix}/${base}/${productSlugFor(locale, productKey)}/${variantSlug}`;
+
   return (
     <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-44 mb-20">
+      {/* Başlık */}
       <div className="flex flex-col w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[17px] md:gap-[15px] lg:gap-[20px] items-center justify-center text-center">
         <span className="text-[12px] leading-[14px] uppercase tracking-[0.48px] font-medium font-jost">
           {t("span")}
         </span>
-        <h3 className="text-[16px] font-bold md:text-[32px] md:leading-[57.6px] lg:text-[48px] capsizedText2 font-marcellus  leading-normal">
+        <h3 className="text-[16px] font-bold md:text-[32px] md:leading-[57.6px] lg:text-[48px] font-marcellus leading-normal">
           {t("header")}
         </h3>
       </div>
 
-      <div className="flex flex-col md:flex-row w-[80%] md:h-[49vh] md:min-h-[354px] lg:h-[498px] rounded-xl max-h-[50vh]">
-        {collections.map((coll, index) => {
-          let widthClass;
-          if (hoveredIndex === null) widthClass = "w-full md:w-1/3";
-          else if (hoveredIndex === index) widthClass = "w-full md:w-1/2";
-          else widthClass = "w-full md:w-1/4";
-
-          return (
-            <div
-              key={coll.key}
-              className={`
-                relative 
-                overflow-hidden 
-                group 
-                transition-all 
-                duration-[1000ms] 
-                ease-in-out
-                ${widthClass}
-              `}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {/* Görsel */}
-              <Image
-                src={coll.src}
-                alt={coll.alt || coll.title || ""}
-                width={1200}
-                height={800}
-                sizes="100vw"
-                className="w-full h-[44vh] md:h-[498px] object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-105 relative"
-                priority={index === 0}
-              />
-
-               <div
-                className="
-                  absolute top-0 left-0 w-full h-full
-              
-                  text-white z-10 flex lg:hidden items-end
-                "
+      {/* Yuvarlak kartlar */}
+      <section className=" w-full max-w-[1200px]">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 justify-items-center">
+          {collections.map((coll) => (
+            <div key={coll.key} className="group flex flex-col items-center text-center">
+              {/* Yuvarlak görsel */}
+              <Link
+                href={hrefFor("block", coll.slug)} // Görsel tıklanınca default block’a gitsin
+                className="relative h-40 w-40 sm:h-44 sm:w-44 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
               >
-                {/* Soldaki şerit */}
-                <div
-                  className="h-[15%] bg-black/30 bg-opacity-50 flex flex-col lg:justify-center w-full md:w-1/4 md:min-w-[310px] 
-                     font-jost items-center justify-center text-center"
-                >
-                  <Link
-                    href={coll.href}
-                    className="flex h-full  items-center text-[16px] leading-[37.5px] tracking-[-0.66px] capitalize font-marcellus font-normal text-center w-auto  cursor-pointer"
-                  >
-                    {coll.title}
-                  
-                  </Link>
-                </div>
-              </div>
+                <Image
+                  src={coll.src}
+                  alt={coll.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-125"
+                  sizes="160px"
+                />
+              </Link>
 
-              {/* Hover overlay */}
-              <div
-                className="
-                  absolute top-0 left-0 w-full h-full opacity-0
-                  group-hover:opacity-100 transition-opacity duration-[1200ms]
-                  text-white z-10 flex items-end
-                "
-              >
-                {/* Soldaki şerit */}
-                <div
-                  className="h-[15%] bg-black bg-opacity-50 flex flex-col lg:justify-center w-full md:w-1/4 md:min-w-[310px] gap-[20px]
-                    md:opacity-0 md:translate-x-[-10px] opacity-100 md:group-hover:opacity-100 md:group-hover:translate-x-0
-                    transition-all duration-[800ms] ease-in-out font-jost items-center justify-center text-center"
-                >
+              {/* Başlık */}
+              <h4 className="mt-4 text-lg font-semibold text-neutral-900">
+                {coll.title}
+              </h4>
+
+              {/* Ürün tipleri (Blocks / Slabs / Tiles / Special Design) */}
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
+                {(["block", "slabs", "tiles", "special"]).map((pkey) => (
                   <Link
-                    href={coll.href}
-                    className="flex h-full items-center gap-4 text-[28px] lg:text-[28px] leading-[37.5px] tracking-[-0.66px] capitalize font-marcellus font-normal text-left w-auto ml-6 lg:ml-8 cursor-pointer"
+                    key={pkey}
+                    href={hrefFor(pkey, coll.slug)}
+                    className="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium
+                               text-neutral-800 ring-1 ring-neutral-200 bg-white/80
+                               hover:bg-neutral-900 hover:text-white transition"
                   >
-                    {coll.title}{" "}
-                    <ArrowRight
-                      className="
-                  h-6 w-6
-                  translate-x-0 group-hover:translate-x-1
-                  transition-transform duration-300"
-                    />
+                    {labels[pkey]}
                   </Link>
-                </div>
+                ))}
               </div>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

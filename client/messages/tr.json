@@ -213,12 +213,12 @@
     "slabs": {
       "title": "Slabs",
       "alt": "Plaka ürün görseli",
-      "intro": "2 cm/3 cm kalınlık, cilalı/honlu/fırçalı seçenekler; bookmatch için ideal.",
+      "intro": "2 cm/ 3 cm / 5 cm kalınlık, cilalı/honlu/fırçalı seçenekler; bookmatch için ideal.",
       "sizes": ["2 cm", "3 cm","5 cm"],
       "finishes": ["Cilalı", "Cilasız"],
       "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
       "description": [
-        "2 cm ve 3 cm kalınlık seçenekleriyle hazırlanan plakalar; kalibrasyon, güçlendirme ve yüzey bitişleri sonrası uygulamaya hazır halde teslim edilir.",
+        "2 cm, 3 cm ve 5cm kalınlık seçenekleriyle hazırlanan plakalar; kalibrasyon, güçlendirme ve yüzey bitişleri sonrası uygulamaya hazır halde teslim edilir.",
         "Bookmatch ve büyük ebat uygulamalarda yüzey kalitesi ve ölçü hassasiyeti ile öne çıkar; proje sahasında hızlı ve temiz montaj sağlar."
       ],
       "variants": {

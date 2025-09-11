@@ -235,7 +235,7 @@
     "slabs": {
       "title": "Slabs",
       "alt": "Slab product image",
-      "intro": "2 cm / 3 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
+      "intro": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm","5cm"],
       "finishes": ["Polished", "Unpolished"],
       "features": ["Calibration", "Reinforcement", "High surface quality"],

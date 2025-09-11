@@ -136,7 +136,7 @@ export default function Header() {
       {/* Sidebar — SOLDAN açılır, glassmorphism, beyaz yazılar */}
       <div
         className={`fixed inset-y-0 left-0 z-[60] transform transition-transform duration-300
-        w-[90%] sm:w-80 md:w-96
+        w-[90%] sm:w-80 md:w-80
         bg-white/20 backdrop-blur-md supports-[backdrop-filter]:bg-white/20
         ring-1 ring-white/40
         text-white
@@ -199,7 +199,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className="absolute flex items-center justify-center gap-4 lg:gap-8 w-full bottom-16">
+        <div className="absolute flex items-center justify-center gap-4  w-full bottom-16">
                         <a
                           href="#"
                           aria-label={t2("social.youtube")}
