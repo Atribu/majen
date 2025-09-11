@@ -5,19 +5,12 @@ import BackgroundSection2 from '../components/homepage/BackgroundSection';
 import ContactFrom from '../components/generalcomponent/ContactFrom'
 import BackgroundSection from '../components/homepage/BackgroundSection2'
 import CollectionsSection from '../components/homepage/CollectionsSection'
+import IntroSection from '../components/products1/IntroSection';
 
 const page = () => {
   return (
     <div>
-        <InfoSection />
-        <div className='flex mb-48 -mt-20'>
-            <BackgroundSection2 />
-        </div>
-        
-        <HighlightSection />
-        <ContactFrom />
-        <CollectionsSection />
-        <BackgroundSection />
+        <IntroSection />
     </div>
   )
 }
