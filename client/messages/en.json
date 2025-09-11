@@ -6,7 +6,7 @@
 
   "Header": {
     "home": "Home",
-    "pages": "Pages",
+    "product": "Products",
     "shop": "Shop",
     "projects": "Projects",
     "blog": "Blog",
@@ -200,6 +200,10 @@
   },
 
   "ProductPage": {
+     "breadcrumbs": "Breadcrumbs",
+    "home": "Home",
+    "products":"Product",
+    "details":"Detail",
     "detailsHeadings": {
       "sizes": "Sizes",
       "finishes": "Finishes",

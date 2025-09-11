@@ -11,15 +11,26 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import logoBlack from "@/public/images/majenlogo.webp";
 import logoWhite from "@/public/images/logobeyaz.webp";
+import {
+  FaYoutube,
+  FaTwitter,
+  FaFacebook,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export default function Header() {
   const t = useTranslations("Header");
+  const t2 = useTranslations("Footer");
   const pathname = usePathname();
   const isHome = pathname === "/tr" || pathname === "/en";
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const firstMenuLinkRef = useRef(null);
+
+  const whatsappText = encodeURIComponent(t2("whatsappText"));
+  const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
 
   // Scroll durumuna göre header stili
   useEffect(() => {
@@ -134,7 +145,7 @@ export default function Header() {
         aria-modal="true"
       >
         {/* Sidebar Üst: Logo + Kapat */}
-        <div className="px-4 pt-4 pb-2 flex items-center justify-between">
+        <div className="px-6 pt-4 pb-2 flex items-center justify-between">
           <Link
             href="/"
             aria-label="Majen Home (sidebar logo)"
@@ -146,7 +157,7 @@ export default function Header() {
               alt="Majen logo"
               width={logoWhite.width}
               height={logoWhite.height}
-              className="h-8 w-auto"
+              className="h-8 w-auto lg:h-12"
               priority={false}
             />
           </Link>
@@ -162,7 +173,7 @@ export default function Header() {
         <hr className="border-white/30" />
 
         {/* Menü Linkleri */}
-        <nav className="flex flex-col gap-3 sm:gap-4 p-4 text-base md:text-lg">
+        <nav className="flex flex-col gap-3 sm:gap-4 lg:gap-7 p-4 text-base md:text-lg lg:ml-8 mt-10">
           <Link
             href="/"
             className={linkClasses}
@@ -172,7 +183,7 @@ export default function Header() {
             {t("home")}
           </Link>
           <Link href="/pages" className={linkClasses} onClick={() => setMenuOpen(false)}>
-            {t("pages")}
+            {t("product")}
           </Link>
           <Link href="/shop" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("shop")}
@@ -187,6 +198,46 @@ export default function Header() {
             {t("contactUs")}
           </Link>
         </nav>
+
+        <div className="absolute flex items-center justify-center gap-4 lg:gap-8 w-full bottom-16">
+                        <a
+                          href="#"
+                          aria-label={t2("social.youtube")}
+                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                        >
+                          <FaYoutube size={18} />
+                        </a>
+                        <a
+                          href="#"
+                          aria-label={t2("social.twitter")}
+                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                        >
+                          <FaTwitter size={18} />
+                        </a>
+                        <a
+                          href="#"
+                          aria-label={t2("social.facebook")}
+                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                        >
+                          <FaFacebook size={18} />
+                        </a>
+                        <a
+                          href="#"
+                          aria-label={t2("social.linkedin")}
+                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                        >
+                          <FaLinkedin size={18} />
+                        </a>
+                        <a
+                          href={whatsappHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={t2("social.whatsapp")}
+                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                        >
+                          <FaWhatsapp size={18} />
+                        </a>
+                      </div>
       </div>
 
       {/* Backdrop */}
