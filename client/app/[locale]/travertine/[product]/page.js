@@ -1,4 +1,4 @@
-// app/[locale]/(catalog)/product/page.jsx (veya senin dosyan)
+// app/[locale]/(catalog)/product/page.jsx
 "use client";
 
 import Image from "next/image";
@@ -17,7 +17,17 @@ import {
 } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
 
+// örnek varyantlar; sende farklıysa aynı mantıkla çalışır
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
+
+function InfoCard({ title, children }) {
+  return (
+    <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
+      <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
+      <div className="text-sm text-neutral-600 leading-[1.7] text-center">{children}</div>
+    </div>
+  );
+}
 
 export default function ProductPage() {
   const { product } = useParams();
@@ -43,12 +53,12 @@ export default function ProductPage() {
   const description = t.raw(`${productKey}.description`) || intro;
   const variantsHeading = t(`${productKey}.variants.heading`);
 
-  // Görsel seçim
+  // görsel seçim
   const imgMap = PRODUCT_IMG[productKey];
   const heroSrc =
     typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
-  // Varyant kartları
+  // varyant kartları
   const variantCards = VARIANT_SLUGS.map((slug) => {
     const vKey = VARIANT_KEY_BY_SLUG[slug]; // "antiko" | "light" | "ivory"
     return {
@@ -60,72 +70,113 @@ export default function ProductPage() {
     };
   });
 
+  // InfoCard içerikleri (mockup'taki 4 kutu)
+  const cards = [
+    {
+      title: t("detailsHeadings.sizes", { default: "Benefits of " }) + title,
+      content:
+        Array.isArray(description) ? description[0] : (description || intro),
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
+      content: Array.isArray(description) ? description[1] ?? intro : intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
+      content: (sizes && sizes.length)
+        ? sizes.join(", ")
+        : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
+    },
+    {
+      title: t("detailsHeadings.features", { default: "Finishes & Features" }),
+      content: [
+        ...(finishes || []),
+        ...(features || []),
+      ].slice(0, 12).join(", "),
+    },
+  ];
+
   return (
-    <main className="px-5 md:px-8 lg:px-12 py-10 max-w-7xl mx-auto mt-16">
-      {/* 1) Başlık çipi (glass + gradient kenar) */}
-      <div className="inline-flex items-center rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/30 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.35)]">
-        <h1 className="px-5 py-2.5 text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-900">
-          {title}
-        </h1>
-      </div>
-
-      {/* 2) Breadcrumb – minik ayraç + erişilebilirlik */}
-      <nav
-        aria-label="Breadcrumb"
-        className="mt-3 mb-7 text-sm text-neutral-500"
-      >
-        <ol className="flex flex-wrap items-center gap-1">
-          <li>
-            <Link href={prefix} className="hover:text-neutral-700">
-              {t("home", { default: "Anasayfa" })}
-            </Link>
-          </li>
-          <li aria-hidden className="px-1 text-neutral-400">›</li>
-          <li>
-            <Link href={baseHref} className="hover:text-neutral-700">
-              {t("products", { default: "Ürünler" })}
-            </Link>
-          </li>
-          <li aria-hidden className="px-1 text-neutral-400">›</li>
-          <li className="text-neutral-700">{title}</li>
-        </ol>
-      </nav>
-
-      {/* 3) Hero + Sağ detaylar */}
-      <section className="grid gap-8 md:grid-cols-2 items-start">
-        {/* Sol: Hero görsel */}
-        <div className="relative overflow-hidden rounded-2xl ring-1 ring-black/5">
-          <div className="relative aspect-[16/10] md:aspect-[16/9]">
-            {/* LCP için priority veriyoruz */}
-            <HeroImage src={heroSrc} alt={alt} priority />
-            {/* Alt bilgi şeridi */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
-              <span className="block text-white/90 text-xs md:text-sm drop-shadow">
-                {alt}
-              </span>
+    <main className="px-5 md:px-8 lg:px-12 py-10 max-w-[1200px] mx-auto mt-16">
+      {/* ======= ÜST BANT (yeşil şerit + sağda görsel) ======= */}
+      <section className="relative">
+        <div className="grid lg:grid-cols-[1fr,520px] gap-0 items-stretch">
+          {/* Sol: yeşil panel */}
+          <div className="relative">
+            <div className="rounded-3xl bg-emerald-900 text-white px-6 md:px-10 py-8 md:py-10 h-full flex flex-col justify-center shadow-[0_20px_60px_-20px_rgba(0,0,0,0.35)]">
+              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+                {title}
+              </h1>
+              <p className="text-white/90 text-sm md:text-base leading-[1.9] max-w-[62ch]">
+                {intro}
+              </p>
+              {/* breadcrumb chip */}
+              <div className="mt-5 inline-flex items-center rounded-lg bg-emerald-800/60 ring-1 ring-white/20 px-3 py-1.5 text-xs">
+                <ol className="flex flex-wrap items-center gap-1">
+                  <li>
+                    <Link href={prefix} className="hover:underline">
+                      {t("home", { default: "Home" })}
+                    </Link>
+                  </li>
+                  <li aria-hidden className="px-1">/</li>
+                  <li>
+                    <Link href={baseHref} className="hover:underline">
+                      {t("products", { default: "Products" })}
+                    </Link>
+                  </li>
+                  <li aria-hidden className="px-1">/</li>
+                  <li className="text-white/95">{title}</li>
+                </ol>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Sağ: Yazılar + özellikler */}
-        <div className="mt-1 md:mt-0">
-          <p className="text-base md:text-lg text-neutral-700 leading-[1.7]">
-            {intro}
-          </p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
-            <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} />
-            <DetailBlock heading={t("detailsHeadings.features")} items={features} />
+          {/* Sağ: büyük görsel (üst banda oturan) */}
+          <div className="relative mt-6 lg:mt-0 lg:-ml-6">
+            <div className="relative h-[240px] sm:h-[320px] md:h-[380px] lg:h-full rounded-3xl overflow-hidden ring-1 ring-black/10">
+              <HeroImage src={heroSrc} alt={alt} priority />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 4) Açıklamalar (daha rahat okuma) */}
-      <section className="mt-12 border-t border-neutral-200 pt-8">
-        <h2 className="text-xl md:text-2xl font-semibold">
-          {t("descriptions.heading", { default: "Ürün Açıklaması" })}
-        </h2>
+      {/* ======= 4 BİLGİ KARTI ======= */}
+      <section className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {cards.map((c, i) => (
+          <InfoCard key={i} title={c.title}>
+            {typeof c.content === "string" ? (
+              <>{c.content}</>
+            ) : Array.isArray(c.content) ? (
+              <>{c.content.join(", ")}</>
+            ) : null}
+          </InfoCard>
+        ))}
+      </section>
+
+      {/* ======= DETAY BLOKLARI (varsa) ======= */}
+      {(sizes?.length || finishes?.length || features?.length) ? (
+        <section className="mt-12">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sizes?.length ? (
+              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
+            ) : null}
+            {finishes?.length ? (
+              <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} />
+            ) : null}
+            {features?.length ? (
+              <DetailBlock heading={t("detailsHeadings.features")} items={features} />
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {/* ======= AÇIKLAMA ======= */}
+      <section className="mt-12">
+        <div className="prose prose-neutral max-w-none">
+          <h2 className="text-2xl font-semibold">
+            {t("descriptions.heading", { default: "Description" })}
+          </h2>
+        </div>
         <div className="mt-4 space-y-4 text-neutral-800 leading-[1.85]">
           {Array.isArray(description) ? (
             description.map((p, i) => <p key={i}>{p}</p>)
@@ -135,13 +186,12 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* 5) Varyantlar (daha modern kartlar) */}
-      <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">{variantsHeading}</h3>
+      {/* ======= VARYANTLAR – dairesel görseller ======= */}
+      <section className="mt-14">
+        <h3 className="text-2xl font-semibold">{variantsHeading}</h3>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {variantCards.map(({ slug, vKey, title, alt, href }) => {
-            // ✅ slug + ürün için görsel; yoksa ürün imgMap’ten vKey’e düş
             const cardSrc =
               IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ??
               (typeof imgMap === "object" ? imgMap[vKey] : imgMap) ??
@@ -151,45 +201,23 @@ export default function ProductPage() {
               <Link
                 key={slug}
                 href={href}
-                className="group relative overflow-hidden rounded-2xl ring-1 ring-neutral-200 bg-white/80 backdrop-blur-[2px] hover:shadow-xl transition-all"
+                className="group flex flex-col items-center text-center"
               >
-                <div className="relative aspect-[4/3] w-full">
+                <div className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]">
                   <Image
                     src={cardSrc}
                     alt={alt}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    priority={false}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="160px"
                   />
-                  {/* üst parlama */}
-                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="text-white font-semibold drop-shadow-sm">
-                      {title}
-                    </h4>
-                    <p className="text-white/90 text-xs mt-0.5 line-clamp-2">
-                      {alt}
-                    </p>
-                  </div>
                 </div>
-                <div className="p-4 flex items-center justify-between text-sm">
-                  <span className="font-medium text-neutral-700 group-hover:text-neutral-900">
-                    {t("details", { default: "Detayları Gör" })}
-                  </span>
-                  <span
-                    aria-hidden
-                    className="translate-x-0 transition-transform group-hover:translate-x-0.5"
-                  >
-                    →
-                  </span>
-                </div>
-
-                {/* gradient kenar hover */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-amber-300/60 transition"
-                />
+                <h4 className="mt-4 text-lg font-semibold text-neutral-900">
+                  {title}
+                </h4>
+                <p className="mt-1 text-sm text-neutral-600 max-w-[36ch]">
+                  {alt}
+                </p>
               </Link>
             );
           })}
