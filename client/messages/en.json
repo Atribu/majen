@@ -325,6 +325,22 @@
     },
     "status": { "success": "Thanks! Your message has been sent. We’ll be in touch soon." },
     "whatsapp": { "link": "https://wa.me/19020000000" }
+  },
+
+   "TravertinePage": {
+    "title": "Travertine",
+    "intro": "At Majen, we source premium travertine from Turkey’s finest quarries for your projects. We provide project-focused production with block, slab, tile, and special design options.",
+    "cards": {
+      "quality": "Why Our Travertine?",
+      "qualityText": "High durability, natural beauty, and sustainably sourced.",
+      "applications": "Applications",
+      "applicationsText": "Flooring, wall cladding, pool decks, and bespoke design projects.",
+      "sizes": "Sizes & Thickness",
+      "sizesText": "From custom blocks to 2cm & 3cm slabs, plus tiles in many formats.",
+      "finishes": "Finishes",
+      "finishesText": "Polished, honed, tumbled, brushed, and more."
+    },
+    "variantsHeading": "Products & Colors"
   }
   
 }

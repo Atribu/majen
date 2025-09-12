@@ -420,7 +420,7 @@ const handleTouchEnd = () => (touchStartYRef.current = null);
         <button onClick={handleNext} className="p-2 text-black "><IoIosArrowDown size={32} color="#000"/></button>
         </div>
         </div>
-         <div className='hidden md:flex h-full lg:w-[40%] items-center justify-start mt-[8%] xl:-mt-[8%] '>
+         <div className='hidden lg:flex h-full lg:w-[40%] items-center justify-start mt-[8%] xl:-mt-[8%] '>
            <ServiceBlocks blocksOrder={blocksOrder} rotate={false}
           blockPositions={blockPositions}/>
         </div>

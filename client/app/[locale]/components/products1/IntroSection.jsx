@@ -26,16 +26,16 @@ const IntroSection = () => {
 
   return (
     <section
-      className="flex flex-row items-center justify-center h-[700px] mt-12 relative"
+      className="flex flex-row items-center justify-center h-[700px] mt-12 relative overflow-hidden"
       aria-labelledby="intro-heading"
     >
       {/* Arka plan div */}
-      <div className="flex w-full bg-black rounded-2xl h-[400px]" />
+      <div className="flex w-screen bg-black rounded-2xl h-[400px]" />
 
       {/* İçerik div */}
-      <div className="absolute rounded-sm bg-black h-[500px] w-1/2 text-white flex flex-col justify-between left-1/2 -translate-x-1/2">
+      <div className="absolute rounded-sm bg-black h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-white flex flex-col justify-between left-1/2 -translate-x-1/2">
         {/* Üst kısım: Başlık + Açıklama */}
-        <header className="px-5 pt-5">
+        <header className="px-5 pt-5  w-[540px]">
           <h1 id="intro-heading" className="text-3xl font-semibold">
             Travertine From Turkey – Majen
           </h1>
