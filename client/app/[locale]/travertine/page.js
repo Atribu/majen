@@ -1,3 +1,4 @@
+
 // app/[locale]/(catalog)/travertine/page.jsx
 "use client";
 
@@ -13,6 +14,8 @@ import slabs from "@/public/images/homepage/slabler.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/homepage/masa.webp";
 import InfoCard from "../components/products1/InfoCard"
+import ContactFrom from '../components/generalcomponent/ContactFrom';
+import BackgroundSection from '../components/homepage/BackgroundSection';
 
 const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
@@ -69,6 +72,7 @@ export default function TravertinePage() {
   productImages={{ block, slabs, tiles, special }}
 />
 
+
     {/* Info Cards */}
       <section className="my-8 md:my-10 lg:my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
         {cards.map((c, i) => (
@@ -81,6 +85,10 @@ export default function TravertinePage() {
           </InfoCard>
         ))}
       </section>
+ <ContactFrom />
+        <div className='mt-12 mb-32'>
+        <BackgroundSection/>
+        </div>
     </main>
   );
 }
