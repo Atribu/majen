@@ -303,6 +303,22 @@
     },
     "status": { "success": "Teşekkürler! Mesajınız bize ulaştı, yakında iletişime geçeceğiz." },
     "whatsapp": { "link": "https://wa.me/902120000000" }
+  },
+
+   "TravertinePage": {
+    "title": "Traverten",
+    "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
+    "cards": {
+      "quality": "Neden Bizim Traverten?",
+      "qualityText": "Yüksek dayanıklılık, doğal güzellik ve sürdürülebilir kaynaklardan temin.",
+      "applications": "Kullanım Alanları",
+      "applicationsText": "Zemin kaplama, duvar kaplama, havuz kenarları ve özel tasarım projeler.",
+      "sizes": "Boyutlar & Kalınlıklar",
+      "sizesText": "Özel bloklardan 2cm & 3cm slab’lara, ayrıca farklı ebatlarda karolar.",
+      "finishes": "Yüzey İşlemleri",
+      "finishesText": "Cilalı, honlu, eskitilmiş, fırçalanmış ve daha fazlası."
+    },
+    "variantsHeading": "Ürünler & Renkler"
   }
   
 }

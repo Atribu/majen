@@ -24,7 +24,7 @@ export default function VariantCircleSection({
   productKey,
 }) {
   return (
-    <section className="mt-14">
+    <section className="mt-14 max-w-[1200px] mx-auto text-center">
       {heading && (
         <h3 className="text-2xl font-semibold">{heading}</h3>
       )}

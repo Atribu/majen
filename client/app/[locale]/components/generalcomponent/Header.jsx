@@ -182,7 +182,7 @@ export default function Header() {
           >
             {t("home")}
           </Link>
-          <Link href="/pages" className={linkClasses} onClick={() => setMenuOpen(false)}>
+          <Link href="/travertine" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("product")}
           </Link>
           <Link href="/shop" className={linkClasses} onClick={() => setMenuOpen(false)}>

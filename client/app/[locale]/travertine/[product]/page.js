@@ -17,8 +17,9 @@ import {
 } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
 import VariantCircleSection from "../../components/products1/VariantCircleSection";
+import ProductIntroSection from "../../components/products1/ProductIntroSection";
 
-// örnek varyantlar; sende farklıysa aynı mantıkla çalışır
+
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
 function InfoCard({ title, children }) {
@@ -35,16 +36,13 @@ export default function ProductPage() {
   const locale = useLocale();
   const t = useTranslations("ProductPage");
 
-  // prefix & base
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
   const baseHref = `${prefix}/${baseSegment}`;
 
-  // productKey
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
 
-  // içerikler
   const title = t(`${productKey}.title`);
   const alt = t(`${productKey}.alt`);
   const intro = t(`${productKey}.intro`);
@@ -54,14 +52,12 @@ export default function ProductPage() {
   const description = t.raw(`${productKey}.description`) || intro;
   const variantsHeading = t(`${productKey}.variants.heading`);
 
-  // görsel seçim
   const imgMap = PRODUCT_IMG[productKey];
   const heroSrc =
     typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
-  // varyant kartları
   const variantCards = VARIANT_SLUGS.map((slug) => {
-    const vKey = VARIANT_KEY_BY_SLUG[slug]; // "antiko" | "light" | "ivory"
+    const vKey = VARIANT_KEY_BY_SLUG[slug];
     return {
       slug,
       vKey,
@@ -71,12 +67,10 @@ export default function ProductPage() {
     };
   });
 
-  // InfoCard içerikleri (mockup'taki 4 kutu)
   const cards = [
     {
       title: t("detailsHeadings.sizes", { default: "Benefits of " }) + title,
-      content:
-        Array.isArray(description) ? description[0] : (description || intro),
+      content: Array.isArray(description) ? description[0] : description || intro,
     },
     {
       title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
@@ -84,118 +78,58 @@ export default function ProductPage() {
     },
     {
       title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
-      content: (sizes && sizes.length)
-        ? sizes.join(", ")
-        : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
+      content: (sizes && sizes.length) ? sizes.join(", ") : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
     },
     {
       title: t("detailsHeadings.features", { default: "Finishes & Features" }),
-      content: [
-        ...(finishes || []),
-        ...(features || []),
-      ].slice(0, 12).join(", "),
+      content: [...(finishes || []), ...(features || [])].slice(0, 12).join(", "),
     },
   ];
 
   return (
-    <main className="px-5 md:px-8 lg:px-12 py-10 max-w-[1200px] mx-auto mt-16">
-      {/* ======= ÜST BANT (yeşil şerit + sağda görsel) ======= */}
-      <section className="relative">
-        <div className="grid lg:grid-cols-[1fr,520px] gap-0 items-stretch">
-          {/* Sol: yeşil panel */}
-          <div className="relative">
-            <div className="rounded-3xl bg-emerald-900 text-white px-6 md:px-10 py-8 md:py-10 h-full flex flex-col justify-center shadow-[0_20px_60px_-20px_rgba(0,0,0,0.35)]">
-              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-                {title}
-              </h1>
-              <p className="text-white/90 text-sm md:text-base leading-[1.9] max-w-[62ch]">
-                {intro}
-              </p>
-              {/* breadcrumb chip */}
-              <div className="mt-5 inline-flex items-center rounded-lg bg-emerald-800/60 ring-1 ring-white/20 px-3 py-1.5 text-xs">
-                <ol className="flex flex-wrap items-center gap-1">
-                  <li>
-                    <Link href={prefix} className="hover:underline">
-                      {t("home", { default: "Home" })}
-                    </Link>
-                  </li>
-                  <li aria-hidden className="px-1">/</li>
-                  <li>
-                    <Link href={baseHref} className="hover:underline">
-                      {t("products", { default: "Products" })}
-                    </Link>
-                  </li>
-                  <li aria-hidden className="px-1">/</li>
-                  <li className="text-white/95">{title}</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-
-          {/* Sağ: büyük görsel (üst banda oturan) */}
-          <div className="relative mt-6 lg:mt-0 lg:-ml-6">
-            <div className="relative h-[240px] sm:h-[320px] md:h-[380px] lg:h-full rounded-3xl overflow-hidden ring-1 ring-black/10">
-              <HeroImage src={heroSrc} alt={alt} priority />
-            </div>
-          </div>
-        </div>
-      </section>
+    <main className="px-5 md:px-8 lg:px-0 py-10 mt-16">
+      {/* ======= ÜST INTRO (IntroSection yapısı + heroSrc) ======= */}
+     <ProductIntroSection
+  title={title}
+  intro={intro}
+  heroSrc={heroSrc}
+  alt={alt}
+  prefix={prefix}
+  baseHref={baseHref}
+  // crumbHome ve crumbProducts istersen override edebilirsin:
+  // crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+  // crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+/>
 
       {/* ======= 4 BİLGİ KARTI ======= */}
-      <section className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
         {cards.map((c, i) => (
           <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string" ? (
-              <>{c.content}</>
-            ) : Array.isArray(c.content) ? (
-              <>{c.content.join(", ")}</>
-            ) : null}
+            {typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null}
           </InfoCard>
         ))}
       </section>
 
-      {/* ======= DETAY BLOKLARI (varsa) ======= */}
+      {/* ======= DETAY BLOKLARI ======= */}
       {(sizes?.length || finishes?.length || features?.length) ? (
-        <section className="mt-12">
+        <section className="mt-12 max-w-[1200px] mx-auto">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sizes?.length ? (
-              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
-            ) : null}
-            {finishes?.length ? (
-              <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} />
-            ) : null}
-            {features?.length ? (
-              <DetailBlock heading={t("detailsHeadings.features")} items={features} />
-            ) : null}
+            {sizes?.length ? <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} /> : null}
+            {finishes?.length ? <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} /> : null}
+            {features?.length ? <DetailBlock heading={t("detailsHeadings.features")} items={features} /> : null}
           </div>
         </section>
       ) : null}
 
-      {/* ======= AÇIKLAMA ======= */}
-      <section className="mt-12">
-        <div className="prose prose-neutral max-w-none">
-          <h2 className="text-2xl font-semibold">
-            {t("descriptions.heading", { default: "Description" })}
-          </h2>
-        </div>
-        <div className="mt-4 space-y-4 text-neutral-800 leading-[1.85]">
-          {Array.isArray(description) ? (
-            description.map((p, i) => <p key={i}>{p}</p>)
-          ) : (
-            <p>{description}</p>
-          )}
-        </div>
-      </section>
-
       {/* ======= VARYANTLAR – dairesel görseller ======= */}
       <VariantCircleSection
-  heading={variantsHeading}
-  variantCards={variantCards}
-  imgMap={imgMap}
-  heroSrc={heroSrc}
-  IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
-  productKey={productKey}
-/>
+        heading={variantsHeading}
+        variantCards={variantCards}
+        imgMap={imgMap}
+        heroSrc={heroSrc}
+        IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+        productKey={productKey}
+      />
     </main>
   );
 }
