@@ -1,126 +1,176 @@
 // app/[locale]/travertine/[product]/[variant]/page.js
-// (TR için aynı: app/[locale]/traverten/[product]/[variant]/page.js)
+// (TR için: app/[locale]/traverten/[product]/[variant]/page.js)
 
+"use client";
+
+import { useParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-// ✅ Yardımcılar ve görsel haritaları
-import { CUTS, buildVariantChildPath, baseFor, VARIANT_KEY_BY_SLUG } from "@/lib/travertine";
-import { PRODUCT_IMG, IMAGE_BY_PRODUCT_AND_VARIANT } from "@/app/[locale]/(catalog)/_images";
+import {
+  CUTS,
+  baseFor,
+  PRODUCT_KEYS,
+  PRODUCT_SLUGS,
+  VARIANT_KEY_BY_SLUG,
+  buildVariantChildPath,
+} from "@/lib/travertine";
 
-// Ürün aliasları (url normalizasyonu)
-const PRODUCT_ALIASES = {
-  block: "block", blok: "block",
-  slabs: "slabs", plakalar: "slabs",
-  tiles: "tiles", karolar: "tiles",
-  special: "special", "special-designs": "special", "ozel-tasarimlar": "special",
-};
+import {
+  PRODUCT_IMG,
+  IMAGE_BY_PRODUCT_AND_VARIANT,
+} from "@/app/[locale]/(catalog)/_images";
 
-// Çeviri anahtarları için (variant1/2/3)
-const VARIANT_MAP = {
-  "blaundos-antiko": "variant1",
-  "blaundos-light": "variant2",
-  "blaundos-ivory": "variant3",
-};
+import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
+import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 
-export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: variantSlug } = await params;
+function InfoCard({ title, children }) {
+  return (
+    <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
+      <h4 className="font-semibold text-neutral-800 mb-2 text-center">
+        {title}
+      </h4>
+      <div className="text-sm text-neutral-600 leading-[1.7] text-center">
+        {children}
+      </div>
+    </div>
+  );
+}
 
-  // product normalizasyonu
-  const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
-  if (!product) notFound();
+export default function VariantPage() {
+  const { product: rawProduct, variant: vSlug } = useParams();
+  const locale = useLocale();
+  const t = useTranslations("ProductPage");
 
-  // çeviri için id
-  const variantId = VARIANT_MAP[variantSlug?.toLowerCase()];
-  if (!variantId) notFound();
+  const prefix = `/${locale}`;
+  const baseSegment = baseFor(locale);
+  const baseHref = `${prefix}/${baseSegment}`;
 
-  const t = await getTranslations({ locale, namespace: "ProductPage" });
+  // ürün anahtarı
+  const productKey =
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === rawProduct) ||
+    "block";
 
-  const title        = t(`${product}.title`, { default: "Product" });
-  const variantTitle = t(`${product}.variants.${variantId}.title`, { default: variantSlug });
-  const variantAlt   = t(`${product}.variants.${variantId}.alt`, { default: variantTitle });
-  const intro        = t(`${product}.intro`, { default: "" });
+  // varyant key
+  const vKey = VARIANT_KEY_BY_SLUG[vSlug];
+  if (!vKey) return null;
 
-  // 🔽 --- BANNER (soldaki büyük görsel) için KESİN seçim mantığı
-  const vSlug = variantSlug?.toLowerCase();
-  const vKey  = VARIANT_KEY_BY_SLUG?.[vSlug]; // "antiko" | "light" | "ivory" vb.
-  const imgMap = PRODUCT_IMG?.[product];
+  // içerikler
+  const title = t(`${productKey}.title`);
+  const intro = t(`${productKey}.intro`);
+  const alt = t(`${productKey}.alt`);
+  const vTitle = t(`${productKey}.variants.${vKey}.title`);
+  const vAlt = t(`${productKey}.variants.${vKey}.alt`);
+  const sizes = t.raw(`${productKey}.sizes`) || [];
+  const finishes = t.raw(`${productKey}.finishes`) || [];
+  const features = t.raw(`${productKey}.features`) || [];
+  const description = t.raw(`${productKey}.description`) || intro;
 
-  const heroImg =
-    // 1) Ürün + slug'a özel tanım varsa onu kullan
-    IMAGE_BY_PRODUCT_AND_VARIANT?.[product]?.[vSlug] ??
-    // 2) Ürün alt haritasında vKey varsa onu kullan
-    (typeof imgMap === "object" ? imgMap?.[vKey] : undefined) ??
-    // 3) Ürünün cover'ı ya da ilk görseli
-    (typeof imgMap === "object" ? (imgMap?.cover ?? Object.values(imgMap || {})[0]) : imgMap);
+  // görseller
+  const imgMap = PRODUCT_IMG[productKey];
+  const heroSrc =
+    IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[vSlug] ??
+    (typeof imgMap === "object"
+      ? imgMap?.[vKey] ?? imgMap?.cover ?? Object.values(imgMap)[0]
+      : imgMap);
 
-  if (!heroImg) notFound(); // hiçbir şey bulunamazsa
-
-  // linkler
-  const base = baseFor(locale);
-  const productSlug = rawProduct;
-
-  const showCuts = product !== "block"; // Block hariç
+  // bilgi kartları
+  const cards = [
+    {
+      title: t("detailsHeadings.sizes", { default: "Benefits of " }) + vTitle,
+      content: Array.isArray(description) ? description[0] : description || intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
+      content: Array.isArray(description) ? description[1] ?? intro : intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
+      content:
+        sizes && sizes.length
+          ? sizes.join(", ")
+          : t("detailsHeadings.harvestText", {
+              default: "See size options on the right.",
+            }),
+    },
+    {
+      title: t("detailsHeadings.features", { default: "Finishes & Features" }),
+      content: [...(finishes || []), ...(features || [])]
+        .slice(0, 12)
+        .join(", "),
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-neutral-50">
-      {/* HERO metin alanı (istersen buraya da arka plan görseli ekleyebiliriz) */}
-      <section className="relative flex items-center justify-center h-[18vh] sm:h-[22vh] lg:h-[26vh] bg-gradient-to-br from-[#0C1A13] via-[#11271d] to-[#1d3a2c] px-4">
-        <h1 className="text-white text-2xl md:text-4xl font-semibold text-center drop-shadow max-w-2xl tracking-tight">
-          {variantTitle} – {title}
-        </h1>
+    <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
+      {/* === ÜST INTRO === */}
+      <ProductIntroSection
+        title={`${vTitle} – ${title}`}
+        intro={intro}
+        heroSrc={heroSrc}
+        alt={vAlt}
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+      />
+
+      {/* === 4 INFO CARD === */}
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+        {cards.map((c, i) => (
+          <InfoCard key={i} title={c.title}>
+            {typeof c.content === "string"
+              ? c.content
+              : Array.isArray(c.content)
+              ? c.content.join(", ")
+              : null}
+          </InfoCard>
+        ))}
       </section>
 
-      {/* İçerik */}
-      <section className="max-w-6xl mx-auto px-6 py-10 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* 🔥 Seçilen varyantın görseli burada banner olarak geliyor */}
-          <div className="relative w-full h-64 sm:h-80 md:h-[520px] overflow-hidden rounded-2xl border border-neutral-200 shadow-sm">
-            <Image src={heroImg} alt={variantAlt} fill className="object-cover object-center" />
-          </div>
-
-          <div className="flex flex-col">
-            <p className="text-[17px] md:text-[19px] leading-relaxed text-neutral-800">
-              {intro}
-            </p>
-
-            <div className="mt-6 h-px w-full bg-neutral-200" />
-
-            <div className="mt-8">
-              <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-3">
-                {t("detailsHeadings.features", { default: "Highlights" })}
-              </h2>
-              <ul className="list-disc ml-5 space-y-2 text-neutral-800">
-                {(t.raw(`${product}.features`) || []).map((f, i) => (
-                  <li key={i}>{f}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* CUT linkleri — sadece Block hariç */}
-            {showCuts && (
-              <div className="mt-10">
-                <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-3">
-                  {locale?.startsWith("tr") ? "Kesim şekli seçin" : "Choose cut"}
-                </h2>
-                <div className="flex flex-wrap gap-3">
-                  {CUTS.map((cut) => (
-                    <Link
-                      key={cut}
-                      href={buildVariantChildPath(locale, productSlug, vSlug, [cut])}
-                      className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
-                    >
-                      {cut}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+      {/* === DETAY BLOKLARI === */}
+      {(sizes?.length || finishes?.length || features?.length) && (
+        <section className="mt-12 max-w-[1200px] mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sizes?.length && (
+              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
+            )}
+            {finishes?.length && (
+              <DetailBlock
+                heading={t("detailsHeadings.finishes")}
+                items={finishes}
+              />
+            )}
+            {features?.length && (
+              <DetailBlock
+                heading={t("detailsHeadings.features")}
+                items={features}
+              />
             )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* === CUT SEÇİMİ === */}
+      {productKey !== "block" && (
+        <section className="mt-14 max-w-[1200px] mx-auto">
+          <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-4">
+            {locale.startsWith("tr") ? "Kesim şekli seçin" : "Choose cut"}
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {CUTS.map((cut) => (
+              <Link
+                key={cut}
+                href={buildVariantChildPath(locale, rawProduct, vSlug, [cut])}
+                className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
+              >
+                {cut}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -1,85 +1,172 @@
+// app/[locale]/travertine/[product]/[variant]/[cut]/[process]/page.js
+// (TR için: app/[locale]/traverten/[product]/[variant]/[cut]/[process]/page.js)
+
+"use client";
+
+import { useParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import blockImg from "@/public/images/traverterBlock.jpeg";
-import slabsImg from "@/public/images/traverterSlabs.jpeg";
-import tilesImg from "@/public/images/traverterFayans.jpeg";
-import specialImg from "@/public/images/traverterDeskt.webp";
+import {
+  PRODUCT_KEYS,
+  PRODUCT_SLUGS,
+  VARIANT_KEY_BY_SLUG,
+  baseFor,
+} from "@/lib/travertine";
 
-const HERO_IMAGES = { block: blockImg, slabs: slabsImg, tiles: tilesImg, special: specialImg };
-const PRODUCT_ALIASES = {
-  block: "block", blok: "block",
-  slabs: "slabs", plakalar: "slabs",
-  tiles: "tiles", karolar: "tiles",
-  special: "special", "special-designs": "special", "ozel-tasarimlar": "special",
-};
-const VARIANT_MAP = {
-  "blaundos-antiko": "variant1",
-  "blaundos-light": "variant2",
-  "blaundos-ivory": "variant3",
-};
+import {
+  PRODUCT_IMG,
+  IMAGE_BY_PRODUCT_AND_VARIANT,
+} from "@/app/[locale]/(catalog)/_images";
+
+import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
+import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 
 const CUTS = ["vein-cut", "cross-cut"];
 const PROCESSES = ["natural", "filling", "epoxy", "transparent", "antique"];
-const FINISHES = ["polished", "unpolished"]; // yüzey
+const FINISHES = ["polished", "unpolished"];
 
-const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertine");
+function InfoCard({ title, children }) {
+  return (
+    <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
+      <h4 className="font-semibold text-neutral-800 mb-2 text-center">
+        {title}
+      </h4>
+      <div className="text-sm text-neutral-600 leading-[1.7] text-center">
+        {children}
+      </div>
+    </div>
+  );
+}
 
-export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: rawVariant, cut, process } = await params;
+export default function ProcessPage() {
+  const { product: rawProduct, variant: vSlug, cut, process } = useParams();
+  const locale = useLocale();
+  const t = useTranslations("ProductPage");
 
-  const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
-  if (!product || product === "block") notFound();
+  const prefix = `/${locale}`;
+  const baseSegment = baseFor(locale);
+  const baseHref = `${prefix}/${baseSegment}`;
 
-  const variantId = VARIANT_MAP[rawVariant?.toLowerCase()];
-  if (!variantId) notFound();
+  const productKey =
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === rawProduct) ||
+    "slabs";
 
-  if (!CUTS.includes((cut || "").toLowerCase())) notFound();
-  if (!PROCESSES.includes((process || "").toLowerCase())) notFound();
+  const vKey = VARIANT_KEY_BY_SLUG[vSlug];
+  if (!vKey) return null;
 
-  const t = await getTranslations({ locale, namespace: "ProductPage" });
-  const title = t(`${product}.title`, { default: "Product" });
-  const vTitle = t(`${product}.variants.${variantId}.title`, { default: rawVariant });
-  const vAlt = t(`${product}.variants.${variantId}.alt`, { default: vTitle });
-  const intro = t(`${product}.intro`, { default: "" });
+  // içerikler
+  const title = t(`${productKey}.title`);
+  const alt = t(`${productKey}.alt`);
+  const intro = t(`${productKey}.intro`);
+  const vTitle = t(`${productKey}.variants.${vKey}.title`);
+  const vAlt = t(`${productKey}.variants.${vKey}.alt`);
+  const sizes = t.raw(`${productKey}.sizes`) || [];
+  const finishes = t.raw(`${productKey}.finishes`) || [];
+  const features = t.raw(`${productKey}.features`) || [];
+  const description = t.raw(`${productKey}.description`) || intro;
 
-  const heroImg = HERO_IMAGES[product];
-  const base = baseFor(locale);
+  // görseller
+  const imgMap = PRODUCT_IMG[productKey];
+  const heroSrc =
+    IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[vSlug] ??
+    (typeof imgMap === "object"
+      ? imgMap?.[vKey] ?? imgMap?.cover ?? Object.values(imgMap)[0]
+      : imgMap);
+
+  // bilgi kartları
+  const cards = [
+    {
+      title: `${vTitle} – ${title}`,
+      content: Array.isArray(description) ? description[0] : description || intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
+      content: Array.isArray(description) ? description[1] ?? intro : intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
+      content:
+        sizes && sizes.length
+          ? sizes.join(", ")
+          : t("detailsHeadings.harvestText", {
+              default: "See size options on the right.",
+            }),
+    },
+    {
+      title: t("detailsHeadings.features", { default: "Finishes & Features" }),
+      content: [...(finishes || []), ...(features || [])]
+        .slice(0, 12)
+        .join(", "),
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-neutral-50">
-      <section className="relative flex items-center justify-center h-[18vh] sm:h-[22vh] lg:h-[26vh] bg-gradient-to-br from-[#0C1A13] via-[#11271d] to-[#1d3a2c] px-4">
-        <h1 className="text-white text-2xl md:text-4xl font-semibold text-center drop-shadow max-w-2xl tracking-tight">
-          {vTitle} – {title} · {cut} · {process}
-        </h1>
+    <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
+      {/* === INTRO === */}
+      <ProductIntroSection
+        title={`${vTitle} – ${title} · ${cut} · ${process}`}
+        intro={intro}
+        heroSrc={heroSrc}
+        alt={vAlt}
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+      />
+
+      {/* === INFO CARDS === */}
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+        {cards.map((c, i) => (
+          <InfoCard key={i} title={c.title}>
+            {typeof c.content === "string"
+              ? c.content
+              : Array.isArray(c.content)
+              ? c.content.join(", ")
+              : null}
+          </InfoCard>
+        ))}
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-10 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <div className="relative w-full h-64 sm:h-80 md:h-[520px] overflow-hidden rounded-2xl border border-neutral-200 shadow-sm">
-            <Image src={heroImg} alt={vAlt} fill className="object-cover object-center" />
+      {/* === DETAY BLOKLARI === */}
+      {(sizes?.length || finishes?.length || features?.length) && (
+        <section className="mt-12 max-w-[1200px] mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sizes?.length && (
+              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
+            )}
+            {finishes?.length && (
+              <DetailBlock
+                heading={t("detailsHeadings.finishes")}
+                items={finishes}
+              />
+            )}
+            {features?.length && (
+              <DetailBlock
+                heading={t("detailsHeadings.features")}
+                items={features}
+              />
+            )}
           </div>
+        </section>
+      )}
 
-          <div className="flex flex-col">
-            <p className="text-[17px] md:text-[19px] leading-relaxed text-neutral-800">{intro}</p>
-
-            <div className="mt-8">
-              <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-3">Choose finish</h2>
-              <div className="flex flex-wrap gap-3">
-                {FINISHES.map((f) => (
-                  <Link
-                    key={f}
-                    href={`/${locale}/${base}/${rawProduct}/${rawVariant}/${cut}/${process}/${f}`}
-                    className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
-                  >
-                    {f}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+      {/* === FINISH SEÇİMİ === */}
+      <section className="mt-14 max-w-[1200px] mx-auto">
+        <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-4">
+          {locale.startsWith("tr") ? "Yüzey seçin" : "Choose finish"}
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {FINISHES.map((f) => (
+            <Link
+              key={f}
+              href={`${prefix}/${baseSegment}/${rawProduct}/${vSlug}/${cut}/${process}/${f}`}
+              className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
+            >
+              {f}
+            </Link>
+          ))}
         </div>
       </section>
     </main>

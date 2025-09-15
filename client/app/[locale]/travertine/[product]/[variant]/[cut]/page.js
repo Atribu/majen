@@ -1,7 +1,17 @@
+// app/[locale]/(catalog)/[product]/[variant]/[cut]/page.jsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { useParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+
+import {
+  BASE_BY_LOCALE,
+  PRODUCT_KEYS,
+  PRODUCT_SLUGS,
+  VARIANT_KEY_BY_SLUG, // örn: { "blaundos-antiko": "antiko", ... }
+} from "@/lib/travertine";
 
 import {
   PRODUCT_IMG,
@@ -9,113 +19,166 @@ import {
   IMAGE_BY_PRODUCT_VARIANT_AND_CUT,
 } from "@/app/[locale]/(catalog)/_images";
 
-const PRODUCT_ALIASES = {
-  block: "block", blok: "block",
-  slabs: "slabs", plakalar: "slabs",
-  tiles: "tiles", karolar: "tiles",
-  special: "special", "special-designs": "special", "ozel-tasarimlar": "special",
-};
+import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
+import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 
-const VARIANT_MAP = {
-  "blaundos-antiko": "variant1",
-  "blaundos-light": "variant2",
-  "blaundos-ivory": "variant3",
-};
-
+// Kesim ve süreç listeleri (gerekiyorsa i18n’e taşıyabilirsin)
 const CUTS = ["vein-cut", "cross-cut"];
 const PROCESSES = ["natural", "filling", "epoxy", "transparent", "antique"];
 
-const baseFor = (locale) => (locale?.startsWith("tr") ? "traverten" : "travertine");
+export default function CutPage() {
+  const { product, variant, cut } = useParams();
+  const locale = useLocale();
+  const t = useTranslations("ProductPage");
 
-export default async function Page({ params }) {
-  const { locale, product: rawProduct, variant: rawVariant, cut } = await params;
+  // === base & prefix
+  const prefix = `/${locale}`;
+  const baseSegment = BASE_BY_LOCALE[locale];
+  const baseHref = `${prefix}/${baseSegment}`;
 
-  const product = PRODUCT_ALIASES[rawProduct?.toLowerCase()];
-  if (!product || product === "block") notFound();
+  // === productKey çöz
+  const productKey =
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "slabs"; // cut sayfası block olmaz
 
-  const vSlug = rawVariant?.toLowerCase();
-  const variantId = VARIANT_MAP[vSlug];
-  if (!variantId) notFound();
+  // === varyant key çöz
+  const vKey = VARIANT_KEY_BY_SLUG[variant]; // "antiko" | "light" | "ivory" ...
+  // güvenlik (geçersiz slug durumunda basit fallback)
+  const safeVKey = vKey || Object.values(VARIANT_KEY_BY_SLUG)[0];
 
-  const cutKey = (cut || "").toLowerCase();
-  if (!CUTS.includes(cutKey)) notFound();
+  // === metinler
+  const titleProduct = t(`${productKey}.title`, { default: "Product" });
+  const titleVariant = t(`${productKey}.variants.${safeVKey}.title`, { default: variant });
+  const altVariant = t(`${productKey}.variants.${safeVKey}.alt`, { default: titleVariant });
+  const intro = t(`${productKey}.intro`, { default: "" });
 
-  const t = await getTranslations({ locale, namespace: "ProductPage" });
+  // cut label (TR/EN çok basit örnek; i18n'e taşıyabilirsin)
+  const cutLabel =
+    cut === "vein-cut"
+      ? (locale.startsWith("tr") ? "Damar Kesim" : "Vein Cut")
+      : cut === "cross-cut"
+      ? (locale.startsWith("tr") ? "Cross Kesim" : "Cross Cut")
+      : cut;
 
-  const title  = t(`${product}.title`, { default: "Product" });
-  const vTitle = t(`${product}.variants.${variantId}.title`, { default: rawVariant });
-  const vAlt   = t(`${product}.variants.${variantId}.alt`, { default: vTitle });
-  const intro  = t(`${product}.intro`, { default: "" });
+  // === görsel seçimi (cut öncelikli)
+  const imgMap = PRODUCT_IMG[productKey];
+  const heroSrcCut =
+    IMAGE_BY_PRODUCT_VARIANT_AND_CUT?.[productKey]?.[variant]?.[cut] ??
+    IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[variant] ??
+    (typeof imgMap === "object" ? imgMap[safeVKey] ?? imgMap.cover ?? Object.values(imgMap)[0] : imgMap);
 
-  // --- 🔽 Kesim öncelikli görsel seçimi (banner)
-  const imgMap = PRODUCT_IMG?.[product];
+  // === detay içerikleri
+  const sizes = t.raw(`${productKey}.sizes`) || [];
+  const finishes = t.raw(`${productKey}.finishes`) || [];
+  const features = t.raw(`${productKey}.features`) || [];
+  const description = t.raw(`${productKey}.description`) || intro;
 
-  const heroImg =
-    // 1) Ürün+Varyant+Kesim -> kesin eşleme
-    IMAGE_BY_PRODUCT_VARIANT_AND_CUT?.[product]?.[vSlug]?.[cutKey] ??
-    // 2) Ürün+Varyant -> kesim verilmemiş durumda
-    IMAGE_BY_PRODUCT_AND_VARIANT?.[product]?.[vSlug] ??
-    // 3) Ürün içi varyant anahtarları (ivory/light/antiko) → yoksa cover/ilk
-    (typeof imgMap === "object"
-      ? (imgMap?.[variantIdToKey(variantId)] ?? imgMap?.cover ?? Object.values(imgMap || {})[0])
-      : imgMap);
+  // === üst başlıkta göstereceğimiz metin
+  const composedTitle = `${titleVariant} – ${titleProduct} · ${cutLabel}`;
 
-  if (!heroImg) notFound();
-
-  const base = baseFor(locale);
-  const productSlug = rawProduct;
-  const variantSlug = rawVariant;
+  // === info card’lar (ürün sayfasıyla uyumlu)
+  const cards = [
+    {
+      title: t("detailsHeadings.sizes", { default: "Benefits of " }) + titleProduct,
+      content: Array.isArray(description) ? description[0] : description || intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
+      content: Array.isArray(description) ? description[1] ?? intro : intro,
+    },
+    {
+      title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
+      content: (sizes && sizes.length)
+        ? sizes.join(", ")
+        : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
+    },
+    {
+      title: t("detailsHeadings.features", { default: "Finishes & Features" }),
+      content: [...(finishes || []), ...(features || [])].slice(0, 12).join(", "),
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-neutral-50">
-      {/* HERO başlık */}
-      <section className="relative flex items-center justify-center h-[18vh] sm:h-[22vh] lg:h-[26vh] bg-gradient-to-br from-[#0C1A13] via-[#11271d] to-[#1d3a2c] px-4">
-        <h1 className="text-white text-2xl md:text-4xl font-semibold text-center drop-shadow max-w-2xl tracking-tight">
-          {vTitle} – {title} · {cutKey}
-        </h1>
-      </section>
+    <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
+      {/* ======= ÜST INTRO (IntroSection yapısı + heroSrc = cut görseli) ======= */}
+      <ProductIntroSection
+        title={composedTitle}
+        intro={intro}
+        heroSrc={heroSrcCut}
+        alt={altVariant}
+        prefix={prefix}
+        baseHref={`${baseHref}/${product}`} // breadcrumb “Travertine > {product}”
+        crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+      />
 
-      {/* İçerik */}
-      <section className="max-w-6xl mx-auto px-6 py-10 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* 🔥 Banner görseli: seçilen kesime göre */}
-          <div className="relative w-full h-64 sm:h-80 md:h-[520px] overflow-hidden rounded-2xl border border-neutral-200 shadow-sm">
-            <Image src={heroImg} alt={vAlt} fill className="object-cover object-center" />
-          </div>
-
-          <div className="flex flex-col">
-            <p className="text-[17px] md:text-[19px] leading-relaxed text-neutral-800">{intro}</p>
-
-            <div className="mt-8">
-              <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-3">
-                Choose process
-              </h2>
-              <div className="flex flex-wrap gap-3">
-                {PROCESSES.map((p) => (
-                  <Link
-                    key={p}
-                    href={`/${locale}/${base}/${productSlug}/${variantSlug}/${cutKey}/${p}`}
-                    className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
-                  >
-                    {p}
-                  </Link>
-                ))}
-              </div>
+      {/* ======= 4 BİLGİ KARTI ======= */}
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+        {cards.map((c, i) => (
+          <div key={i} className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
+            <h4 className="font-semibold text-neutral-800 mb-2 text-center">{c.title}</h4>
+            <div className="text-sm text-neutral-600 leading-[1.7] text-center">
+              {typeof c.content === "string"
+                ? c.content
+                : Array.isArray(c.content)
+                ? c.content.join(", ")
+                : null}
             </div>
           </div>
+        ))}
+      </section>
+
+      {/* ======= DETAY BLOKLARI ======= */}
+      {(sizes?.length || finishes?.length || features?.length) ? (
+        <section className="mt-12 max-w-[1200px] mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sizes?.length ? <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} /> : null}
+            {finishes?.length ? <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} /> : null}
+            {features?.length ? <DetailBlock heading={t("detailsHeadings.features")} items={features} /> : null}
+          </div>
+        </section>
+      ) : null}
+
+      {/* ======= CUT SEÇİCİ (vein / cross) ======= */}
+      <section className="mt-12 max-w-[1200px] mx-auto">
+        <h3 className="text-lg md:text-xl font-semibold mb-3">
+          {locale.startsWith("tr") ? "Kesim Seç" : "Choose cut"}
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          {CUTS.map((c) => (
+            <Link
+              key={c}
+              href={`${prefix}/${baseSegment}/${product}/${variant}/${c}`}
+              className={`px-4 py-2 rounded-full border transition ${
+                c === cut
+                  ? "border-black bg-black text-white"
+                  : "border-neutral-300 hover:border-black hover:bg-black hover:text-white"
+              }`}
+            >
+              {c === "vein-cut"
+                ? (locale.startsWith("tr") ? "Damar Kesim" : "Vein Cut")
+                : (locale.startsWith("tr") ? "Cross Kesim" : "Cross Cut")}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ======= PROCESS SEÇİCİ ======= */}
+      <section className="mt-8 max-w-[1200px] mx-auto">
+        <h3 className="text-lg md:text-xl font-semibold mb-3">
+          {locale.startsWith("tr") ? "Yüzey İşlemi Seç" : "Choose process"}
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          {PROCESSES.map((p) => (
+            <Link
+              key={p}
+              href={`${prefix}/${baseSegment}/${product}/${variant}/${cut}/${p}`}
+              className="px-4 py-2 rounded-full border border-neutral-300 hover:border-black hover:bg-black hover:text-white transition"
+            >
+              {p}
+            </Link>
+          ))}
         </div>
       </section>
     </main>
   );
-}
-
-// "variant1|2|3" -> "antiko|light|ivory" dönüşümü (çıkarım)
-// Eğer farklı isimlendiriyorsan burayı güncelle.
-function variantIdToKey(id) {
-  switch (id) {
-    case "variant1": return "antiko";
-    case "variant2": return "light";
-    case "variant3": return "ivory";
-    default: return undefined;
-  }
 }
