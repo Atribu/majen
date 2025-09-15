@@ -79,20 +79,46 @@ export default function ProductIntroSection({
       </div>
 
       {/* === Desktop === */}
-      <div className="hidden lg:flex flex-row items-center justify-center h-[500px] relative">
+      <div className="hidden lg:flex flex-row items-center justify-start h-[500px] relative">
         {/* Arka plan */}
-        <div className="flex w-screen bg-black rounded-2xl h-[400px]" />
+       <div
+          className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px]"
+          style={{
+            backgroundImage: "url('/images/homepage/antikarkaplan2.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
 
         {/* İçerik kutusu */}
-        <div className="absolute rounded-sm bg-black h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-white flex flex-col justify-between left-1/2 -translate-x-1/2">
-          {/* Üst: Başlık + Açıklama */}
-          <header className="px-5 pt-5 w-[540px]">
-            <h1 className="text-3xl font-semibold">{title}</h1>
-            <p className="mt-3">{intro}</p>
-          </header>
+        <div
+  className="absolute rounded-sm h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-black flex flex-col justify-between left-1/2 -translate-x-1/2 "
+>
+  {/* Blur katmanı */}
+  <div
+    className="absolute inset-0  shadow-2xl"
+    style={{
+      backgroundImage: "url('/images/homepage/antikarkaplan4.webp')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  />
+ <div className="absolute inset-y-0 left-0 w-[1000px] bg-gradient-to-r from-white/100 to-transparent pointer-events-none" />
+ <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
+  {/* İçerik (blur’dan etkilenmez) */}
+  <header className="relative px-5 pt-5 w-[80%] z-10">
+    <h1 className="text-3xl font-semibold">{title}</h1>
+    <p className="mt-3">{intro}</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
+     <h1 className="text-3xl font-semibold">{title}</h1>
+    <p className="mt-3">{intro}</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
+  </header>
 
           {/* Alt: Breadcrumbs */}
-          <nav className="bg-black px-4 py-3 rounded-sm" aria-label="breadcrumb">
+          <nav className="bg-transparent px-4 py-3 rounded-sm" aria-label="breadcrumb">
             <ol className="flex flex-wrap items-center gap-x-2 text-sm">
               <li>
                 <Link href={prefix} className="hover:underline">{crumbHome}</Link>
@@ -109,12 +135,12 @@ export default function ProductIntroSection({
           </nav>
 
           {/* Sağdaki görsel */}
-          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[400px]">
+          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[500px] z-[999]">
             <Image
               src={heroSrc}
               alt={alt}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>

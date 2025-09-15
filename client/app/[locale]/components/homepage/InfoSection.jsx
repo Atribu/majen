@@ -8,7 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 import antik from "@/public/images/slabs/antik.webp"
 
 import block from "@/public/images/homepage/Ivoryblok.webp";
-import slabs from "@/public/images/homepage/slabler.webp";
+import slabs from "@/public/images/homepage/slabs.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/homepage/masa.webp";
 

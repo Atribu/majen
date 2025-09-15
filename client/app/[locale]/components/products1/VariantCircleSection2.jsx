@@ -21,8 +21,8 @@ export default function VariantCircleSection2({
   // Varsayılan ürün başlıkları
   const defaultProductLabels =
     locale === "tr"
-      ? { block: "Blok", slabs: "Slab", tiles: "Karo", special: "Özel Tasarım" }
-      : { block: "Block", slabs: "Slab", tiles: "Tile", special: "Special Design" };
+      ? { block: "Traverten Bloklar", slabs: "Traverten Plakalar", tiles: "Traverten Karolar", special: "Traverten Özel Tasarımlar" }
+      : { block: "Travertine Blocks", slabs: "Travertine Slabs", tiles: "Travertine Tiles", special: "Travertine Special Designs" };
 
   const productLabels = { ...defaultProductLabels, ...(labels.product || {}) };
 
@@ -75,17 +75,26 @@ export default function VariantCircleSection2({
               </h4>
 
               {/* Variant chipleri */}
-              <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
-                {variantSlugs.map((slug) => (
-                  <Link
-                    key={`${pkey}-${slug}`}
-                    href={hrefFor(pkey, slug)}
-                    className={chipClassName}
-                  >
-                    {variantLabel(slug)}
-                  </Link>
-                ))}
-              </div>
+              <div className="mt-4 text-center text-sm md:text-base text-neutral-700">
+  <p>
+    Renk seçeneklerimiz mevcuttur:{" "}
+    {variantSlugs.map((slug, i) => (
+      <span key={`${pkey}-${slug}`}>
+        <Link
+          href={hrefFor(pkey, slug)}
+          className="text-blue-600 hover:underline"
+        >
+          {variantLabel(slug)}
+        </Link>
+        {i < variantSlugs.length - 1 ? ", " : ""}
+      </span>
+    ))}{" "}
+    ve her biri benzersiz mermer yapısıyla projelerinize farklı bir estetik
+    katar.
+  </p>
+</div>
+
+              <Link  href={productHref} className="px-6 py-2 bg-black text-center text-white text-[14px] lg:text-[16px] mt-4 rounded-xl">Go to page</Link>
             </div>
           );
         })}

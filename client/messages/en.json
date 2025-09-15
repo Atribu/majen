@@ -76,25 +76,25 @@
     "contact": "Contact Us",
     "products": {
       "product1": {
-        "title": "Block",
+        "title": "Travertine Block",
         "description": "Large-size blocks selected at the quarry with consistent texture and color; ideal yield for fabrication and high-volume projects.",
         "alt": "Marble product image",
         "cta": "Explore"
       },
       "product2": {
-        "title": "Slabs",
+        "title": "Travertine Slabs",
         "description": "2 cm and 3 cm thickness with polished, honed or brushed finishes; precision calibration and reinforcement; suitable for bookmatch applications.",
         "alt": "Granite product image",
         "cta": "Explore"
       },
       "product3": {
-        "title": "Tiles",
+        "title": "Travertine Tiles",
         "description": "Standard sizes such as 30×60, 60×60, 60×120; precise edges for fast, clean installation in interior and exterior spaces.",
         "alt": "Travertine product image",
         "cta": "Explore"
       },
       "product4": {
-        "title": "Special Designs",
+        "title": "Travertine Special Designs",
         "description": "Custom waterjet cuts, mosaic combinations, CNC carving and 3D panels; tailored to project details and delivered turnkey.",
         "alt": "Onyx product image",
         "cta": "Explore"
@@ -214,7 +214,7 @@
     },
 
     "block": {
-      "title": "Travertine Block",
+      "title": "Travertine Block - Wholesale Traverten From Turkey",
       "alt": "Block product image",
       "intro": "Quarry-selected blocks with uniform texture; high yield and quality.",
       "sizes": ["Free-size blocks"],
@@ -226,14 +226,14 @@
       ],
       "variants": {
         "heading": "Color Varieties",
-        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
+        "variant1": { "title": "Travertine Blocks Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
+        "variant2": { "title": "Travertine Blocks Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
+        "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
       }
     },
 
     "slabs": {
-      "title": "Slabs",
+      "title": "Travertine Slabs - Wholesale Traverten From Turkey",
       "alt": "Slab product image",
       "intro": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm","5cm"],
@@ -245,14 +245,14 @@
       ],
       "variants": {
         "heading": "Color Varieties",
-        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico slab", "href": "/en/travertine/slabs/blaundos-antiko" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light slab", "href": "/en/travertine/slabs/blaundos-light" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
+        "variant1": { "title": "Travertine Slabs Blaundos Antico", "alt": "Blaundos Antico slab", "href": "/en/travertine/slabs/blaundos-antiko" },
+        "variant2": { "title": "Travertine Slabs Blaundos Light", "alt": "Blaundos Light slab", "href": "/en/travertine/slabs/blaundos-light" },
+        "variant3": { "title": "Travertine Slabs Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
       }
     },
 
     "tiles": {
-      "title": "Tiles",
+      "title": "Travertine Tiles - Wholesale Traverten From Turkey",
       "alt": "Tile product image",
       "intro": "Standard sizes with precise edges for interior/exterior use and quick installation.",
       "sizes": ["30×60", "60×60", "60×120"],
@@ -264,14 +264,14 @@
       ],
       "variants": {
         "heading": "Color Varieties",
-        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico tile", "href": "/en/travertine/tiles/blaundos-antiko" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light tile", "href": "/en/travertine/tiles/blaundos-light" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory tile", "href": "/en/travertine/tiles/blaundos-ivory" }
+        "variant1": { "title": "Travertine Tiles Blaundos Antico", "alt": "Blaundos Antico tile", "href": "/en/travertine/tiles/blaundos-antiko" },
+        "variant2": { "title": "Travertine Tiles Blaundos Light", "alt": "Blaundos Light tile", "href": "/en/travertine/tiles/blaundos-light" },
+        "variant3": { "title": "Travertine Tiles Blaundos Ivory", "alt": "Blaundos Ivory tile", "href": "/en/travertine/tiles/blaundos-ivory" }
       }
     },
 
     "special": {
-      "title": "Special Designs",
+      "title": "Travertine Special Designs - Wholesale Traverten From Turkey",
       "alt": "Custom design product image",
       "intro": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
       "sizes": ["Project-based dimensions"],
@@ -283,9 +283,9 @@
       ],
       "variants": {
         "heading": "Color Varieties",
-        "variant1": { "title": "Blaundos Antico", "alt": "Blaundos Antico special design", "href": "/en/travertine/special-designs/blaundos-antiko" },
-        "variant2": { "title": "Blaundos Light", "alt": "Blaundos Light special design", "href": "/en/travertine/special-designs/blaundos-light" },
-        "variant3": { "title": "Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
+        "variant1": { "title": "Travertine Special Design Blaundos Antico", "alt": "Blaundos Antico special design", "href": "/en/travertine/special-designs/blaundos-antiko" },
+        "variant2": { "title": "Travertine Special Design Blaundos Light", "alt": "Blaundos Light special design", "href": "/en/travertine/special-designs/blaundos-light" },
+        "variant3": { "title": "Travertine Special Design Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
       }
     }
   },

@@ -1,0 +1,91 @@
+ // app/components/seo/TextSection.jsx
+"use client";
+import React, { useState, useMemo } from "react";
+import Script from "next/script";
+
+/**
+ * SEO odaklı metin bloğu
+ * Props:
+ * - title: string               // H2 başlık
+ * - paragraphs: string[]        // Paragraflar
+ * - schema?: { type?: "Article"|"WebPage", url?: string, lang?: string }
+ * - className?: string
+ * - clampMobile?: number        // mobilde kaç paragrafı açık tutalım (0 = hepsi)
+ * - as?: keyof JSX.IntrinsicElements ("section","div"...)
+ */
+export default function TextSection({
+  title,
+  paragraphs = [],
+  schema,
+  className = "",
+  clampMobile = 2,
+  as: As = "section",
+}) {
+  const [expanded, setExpanded] = useState(false);
+
+  const visibleParagraphs = useMemo(() => {
+    if (expanded || clampMobile === 0) return paragraphs;
+    return paragraphs.slice(0, clampMobile);
+  }, [expanded, paragraphs, clampMobile]);
+
+  const hasMore = clampMobile > 0 && paragraphs.length > clampMobile;
+
+  // Basit Article/WebPage JSON-LD
+  const jsonLd =
+    schema && (schema.type === "Article" || schema.type === "WebPage")
+      ? {
+          "@context": "https://schema.org",
+          "@type": schema.type || "Article",
+          headline: title,
+          inLanguage: schema.lang || "tr",
+          url: schema.url,
+          articleBody: paragraphs.join("\n\n"),
+        }
+      : null;
+
+  return (
+    <As
+      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 mb-10 ${className}`}
+      aria-label={title}
+    >
+      {jsonLd ? (
+        <Script
+          id={`seo-text-${title?.slice(0,30).replace(/\s+/g,"-").toLowerCase()}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      ) : null}
+
+      {title ? (
+        <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-neutral-900">
+          {title}
+        </h3>
+      ) : null}
+
+      <div className="mt-4 md:mt-5 text-neutral-800 leading-[1.85] text-[15px] md:text-[16px] space-y-4">
+        {visibleParagraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+
+        {/* Mobilde 'devamını göster' */}
+        {hasMore && (
+          <div className="md:hidden pt-2">
+            <button
+              type="button"
+              onClick={() => setExpanded((s) => !s)}
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-800 hover:bg-neutral-900 hover:text-white transition"
+              aria-expanded={expanded}
+              aria-controls="seo-more-content"
+            >
+              {expanded ? "Daha az göster" : "Devamını oku"}
+              <span aria-hidden>{expanded ? "↑" : "↓"}</span>
+            </button>
+          </div>
+        )}
+
+        {/* Erişilebilirlik için gizli alan kimliği (buton aria-controls) */}
+        <div id="seo-more-content" className="sr-only" />
+      </div>
+    </As>
+  );
+}

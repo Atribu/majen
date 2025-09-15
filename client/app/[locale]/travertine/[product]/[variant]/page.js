@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { IMAGE_BY_PRODUCT_VARIANT_AND_CUT } from "@/app/[locale]/(catalog)/_images";
 
 import {
   CUTS,
@@ -24,6 +25,8 @@ import {
 
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
+import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
+
 
 function InfoCard({ title, children }) {
   return (
@@ -102,6 +105,23 @@ export default function VariantPage() {
     },
   ];
 
+  // cutCards verisi
+const cutCards = CUTS.map((cut) => {
+  const img =
+    IMAGE_BY_PRODUCT_VARIANT_AND_CUT?.[productKey]?.[vSlug]?.[cut] ??
+    IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[vSlug] ??
+    heroSrc;
+
+  return {
+    slug: cut, // VariantCircleSection link için slug
+    vKey: cut, // key gibi kullanıyoruz
+    title: cut.replace("-", " "), // Görünecek isim
+    alt: `${vTitle} – ${title} (${cut})`,
+    href: buildVariantChildPath(locale, rawProduct, vSlug, [cut]),
+  };
+});
+
+
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
       {/* === ÜST INTRO === */}
@@ -171,6 +191,18 @@ export default function VariantPage() {
           </div>
         </section>
       )}
+
+      {/* === CUT SEÇİMLERİ (dairesel görseller) === */}
+{productKey !== "block" && (
+  <VariantCircleSection
+    heading={locale.startsWith("tr") ? "Kesim şekli" : "Cut options"}
+    variantCards={cutCards}
+    imgMap={imgMap}
+    heroSrc={heroSrc}
+    IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+    productKey={productKey}
+  />
+)}
     </main>
   );
 }
