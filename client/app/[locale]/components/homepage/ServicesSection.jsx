@@ -56,7 +56,7 @@ export default function KeyFeatures() {
             newOrder.unshift(newOrder.pop());
             return newOrder;
           });
-        }, 1500);
+        }, 3000);
         return () => clearInterval(interval);
       }, []);
 
@@ -235,6 +235,7 @@ export default function KeyFeatures() {
       const threshold = 50; // Yeterli kaydırma mesafesi (piksel cinsinden)
     
       const handleMouseDown = (e) => {
+        pause();  
         setDragStartY(e.clientY);
         setDragging(true);
       };
@@ -246,12 +247,17 @@ export default function KeyFeatures() {
         // Eğer delta eşik değerini aştıysa, slide değiştir.
         if (deltaY > threshold) {
           // Aşağı sürüklendiğinde önceki slide
-          setActiveIndex((prev) => Math.max(prev - 1, 0));
+         setActiveIndex((prev) =>
+  prev === 0 ? items.length - 1 : prev - 1
+);
           setDragging(false);
           setDragStartY(null);
+          
         } else if (deltaY < -threshold) {
           // Yukarı sürüklendiğinde sonraki slide
-          setActiveIndex((prev) => Math.min(prev + 1, items.length - 1));
+          setActiveIndex((prev) =>
+  prev === items.length - 1 ? 0 : prev + 1
+);
           setDragging(false);
           setDragStartY(null);
         }
@@ -260,12 +266,14 @@ export default function KeyFeatures() {
       const handleMouseUp = () => {
         setDragging(false);
         setDragStartY(null);
+        resume(1200);  
       };
     
       const handleMouseLeave = () => {
         // Fare container dışına çıkarsa drag iptal edilir.
         setDragging(false);
         setDragStartY(null);
+         resume(800);  
       };
     
       // Alternatif navigasyon butonları
@@ -350,6 +358,7 @@ const touchStartYRef = useRef(null);
 const TOUCH_THRESHOLD = 40;
 
 const handleTouchStart = (e) => {
+   pause();  
   touchStartYRef.current = e.touches?.[0]?.clientY ?? null;
 };
 const handleTouchMove = (e) => {
@@ -364,7 +373,51 @@ const handleTouchMove = (e) => {
     touchStartYRef.current = null;
   }
 };
-const handleTouchEnd = () => (touchStartYRef.current = null);
+const handleTouchEnd = () => {
+  touchStartYRef.current = null;
+  resume(1200);            // <<< ekle
+};
+
+// === AUTOPLAY: state & refs
+const AUTOPLAY_MS = 2870;
+const [isPaused, setIsPaused] = useState(false);
+const autoplayRef = useRef(null);
+const resumeTimeoutRef = useRef(null);
+
+const clearTimers = () => {
+  if (autoplayRef.current) clearInterval(autoplayRef.current);
+  if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+};
+
+const pause = () => {
+  setIsPaused(true);
+  clearTimers();
+};
+
+const resume = (delay = 0) => {
+  clearTimers();
+  resumeTimeoutRef.current = setTimeout(() => setIsPaused(false), delay);
+};
+
+// === AUTOPLAY: interval
+useEffect(() => {
+  clearTimers();
+  if (!isPaused && items.length > 0) {
+    autoplayRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % items.length);
+    }, AUTOPLAY_MS);
+  }
+  return clearTimers;
+}, [isPaused, items.length]);
+
+// === AUTOPLAY: tab görünürlüğü
+useEffect(() => {
+  const onVis = () => (document.hidden ? pause() : resume(500));
+  document.addEventListener("visibilitychange", onVis);
+  return () => document.removeEventListener("visibilitychange", onVis);
+}, []);
+
+
 
   return (
     <section className="relative overflow-hidden  text-black py-1 sm:py-2  lg:h-[550px] w-screen  items-center justify-center"  style={{

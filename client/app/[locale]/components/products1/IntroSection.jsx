@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
+import mermer from "@/public/images/homepage/mermer.jpg"
 
 const IntroSection = () => {
   // JSON-LD Schema for breadcrumbs
@@ -30,10 +31,20 @@ const IntroSection = () => {
       aria-labelledby="intro-heading"
     >
       {/* Arka plan div */}
-      <div className="flex w-screen bg-black rounded-2xl h-[400px]" />
+      <div className="flex w-screen  rounded-2xl h-[400px]" style={{
+    backgroundImage: "url('/images/homepage/mermer.jpg')",
+    backgroundSize: "cover",       
+    backgroundPosition: "center",  
+    backgroundRepeat: "no-repeat", 
+  }} />
 
       {/* İçerik div */}
-      <div className="absolute rounded-sm bg-black h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-white flex flex-col justify-between left-1/2 -translate-x-1/2">
+      <div className="absolute rounded-sm  h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-black flex flex-col justify-between left-1/2 -translate-x-1/2" style={{
+    backgroundImage: "url('/images/homepage/mermer.jpg')",
+    backgroundSize: "cover",       
+    backgroundPosition: "center",  
+    backgroundRepeat: "no-repeat", 
+  }}>
         {/* Üst kısım: Başlık + Açıklama */}
         <header className="px-5 pt-5  w-[540px]">
           <h1 id="intro-heading" className="text-3xl font-semibold">
@@ -47,7 +58,12 @@ const IntroSection = () => {
         </header>
 
         {/* Alt kısım: Breadcrumbs */}
-        <nav className="bg-black px-4 py-3 rounded-sm" aria-label="breadcrumb">
+        <nav className="px-4 py-3 rounded-sm" aria-label="breadcrumb" style={{
+    backgroundImage: "url('/images/homepage/mermer.jpg')",
+    backgroundSize: "cover",       
+    backgroundPosition: "center",  
+    backgroundRepeat: "no-repeat", 
+  }}>
           <ol className="flex flex-wrap items-center gap-x-2 text-sm">
             <li>
               <Link href="/" className="hover:underline">

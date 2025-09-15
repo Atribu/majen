@@ -58,8 +58,22 @@ export default function TravertinePage() {
   ];
 
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-1">
+    <main className="px-5 md:px-8 lg:px-0 py-1 overflow-hidden">
      <IntroSection/>
+
+ {/* Info Cards */}
+      <section className="mb-8 md:mb-10 lg:mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+        {cards.map((c, i) => (
+          <InfoCard key={i} title={c.title}>
+            {typeof c.content === "string"
+              ? c.content
+              : Array.isArray(c.content)
+              ? c.content.join(", ")
+              : null}
+          </InfoCard>
+        ))}
+      </section>
+
 
       {/* 4 ürün + altlarında tüm renkler (chip) */}
      <VariantCircleSection2
@@ -73,18 +87,7 @@ export default function TravertinePage() {
 />
 
 
-    {/* Info Cards */}
-      <section className="my-8 md:my-10 lg:my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
-        {cards.map((c, i) => (
-          <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string"
-              ? c.content
-              : Array.isArray(c.content)
-              ? c.content.join(", ")
-              : null}
-          </InfoCard>
-        ))}
-      </section>
+   
  <ContactFrom />
         <div className='mt-12 mb-32'>
         <BackgroundSection/>
