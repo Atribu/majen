@@ -4,7 +4,7 @@ import mainImg from "@/public/images/homepage/antikarkaplan2.webp"
 import GalleryScrollSection from './components/GalleryScrollSection'
 import {useTranslations} from 'next-intl';
 
-const page = () => {
+const Page = () => {
   const t = useTranslations('Gallery');
 
   return (
@@ -17,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

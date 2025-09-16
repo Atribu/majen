@@ -206,6 +206,7 @@
     "products":"Product",
     "details":"Detail",
     "detailsHeadings": {
+      "":"",
       "sizes": "Sizes",
       "finishes": "Finishes",
       "features": "Key Highlights"
@@ -235,7 +236,7 @@
         "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
       },
       "TextSection":{
-      "header1":"Travertine Blocks for Export",
+      "header1":"Travertine Blocks for Export bbbbb",
       "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
        "header2":"Travertine Slabs Supplier",
       "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
@@ -276,7 +277,7 @@
         "variant3": { "title": "Travertine Slabs Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
       },
       "TextSection":{
-      "header1":"Travertine Blocks for Export",
+      "header1":"Travertine Blocks for Export sssss",
       "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
        "header2":"Travertine Slabs Supplier",
       "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",

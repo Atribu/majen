@@ -4,8 +4,6 @@
 
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
-
-import { FiMenu, FiX } from "react-icons/fi";
 import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
 import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
 import IntroSection from "../components/products1/IntroSection";

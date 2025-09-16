@@ -21,7 +21,6 @@ import TextSection from "../../components/products1/TextSection";
 import ContactFrom from "../../components/generalcomponent/ContactFrom";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 
-// Kullanacağımız varyant slugs (örnek Blaundos serisi)
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
 function InfoCard({ title, children }) {
@@ -39,37 +38,35 @@ export default function ProductPage() {
   const { product } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
-   const tblock = useTranslations("ProductPage.block");
 
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
   const baseHref = `${prefix}/${baseSegment}`;
 
-  // ürün key’ini bul (örn: "slabs", "tiles"…)
+  // Ürün key’ini bul
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
 
-  // i18n’den metinleri çek
-  const title = t(`${productKey}.title`);
-  const alt = t(`${productKey}.alt`);
-  const intro = t(`${productKey}.intro`);
-  const title2 = t(`${productKey}.title2`);
-  const alt2 = t(`${productKey}.alt2`);
-  const intro2 = t(`${productKey}.intro2`);
-  const sizes = t.raw(`${productKey}.sizes`) || [];
-  const finishes = t.raw(`${productKey}.finishes`) || [];
-  const features = t.raw(`${productKey}.features`) || [];
-  const description = t.raw(`${productKey}.description`) || intro;
+  // Metinler
+  const title   = t(`${productKey}.title`);
+  const alt     = t(`${productKey}.alt`);
+  const intro   = t(`${productKey}.intro`);
+  const title2  = t(`${productKey}.title2`, { default: "" });
+  const alt2    = t(`${productKey}.alt2`, { default: "" });
+  const intro2  = t(`${productKey}.intro2`, { default: "" });
+
+  const sizes      = t.raw(`${productKey}.sizes`) || [];
+  const finishes   = t.raw(`${productKey}.finishes`) || [];
+  const features   = t.raw(`${productKey}.features`) || [];
+  const description= t.raw(`${productKey}.description`) || intro;
   const variantsHeading = t(`${productKey}.variants.heading`);
 
-  // görseller
+  // Görsel
   const imgMap = PRODUCT_IMG[productKey];
   const heroSrc =
-    typeof imgMap === "object"
-      ? imgMap.cover ?? Object.values(imgMap)[0]
-      : imgMap;
+    typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
-  // varyant kartları
+  // Varyant kartları
   const variantCards = VARIANT_SLUGS.map((slug) => {
     const vKey = VARIANT_KEY_BY_SLUG[slug];
     return {
@@ -81,39 +78,30 @@ export default function ProductPage() {
     };
   });
 
-  // bilgi kartları
+  // Info kartları
   const cards = [
     {
       title: t("detailsHeadings.sizes", { default: "Benefits of " }) + title,
       content: Array.isArray(description) ? description[0] : description || intro,
     },
     {
-      title: t("detailsHeadings.sizes", {
-        default: "Where It’s Produced / Used",
-      }),
+      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
       content: Array.isArray(description) ? description[1] ?? intro : intro,
     },
     {
       title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
-      content:
-        sizes && sizes.length
-          ? sizes.join(", ")
-          : t("detailsHeadings.harvestText", {
-              default: "See size options on the right.",
-            }),
+      content: sizes?.length
+        ? sizes.join(", ")
+        : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
     },
     {
       title: t("detailsHeadings.features", { default: "Finishes & Features" }),
-      content: [...(finishes || []), ...(features || [])]
-        .slice(0, 12)
-        .join(", "),
+      content: [...(finishes || []), ...(features || [])].slice(0, 12).join(", "),
     },
   ];
 
-  const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
-  const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
-
-      const schema = {
+  // SEO schema
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Travertine from Turkey",
@@ -121,14 +109,50 @@ export default function ProductPage() {
     publisher: { "@type": "Organization", name: "Majen" },
   };
 
+  // === TextSection verilerini i18n'den dinamik çek ===
+  // ProductPage.{productKey}.TextSection altında bekliyoruz
+  const textSectionRaw = t.raw(`${productKey}.TextSection`) || {};
+
+  // header1/text1/subheader1/subtext1 ... yapısından bölümler üret
+  // Kaç adet varsa (1..N) otomatik yakalar
+  const sections = [];
+  let i = 1;
+  while (
+    textSectionRaw[`header${i}`] ||
+    textSectionRaw[`text${i}`] ||
+    textSectionRaw[`subheader${i}`] ||
+    textSectionRaw[`subtext${i}`]
+  ) {
+    const header     = textSectionRaw[`header${i}`];
+    const text       = textSectionRaw[`text${i}`];
+    const subheader  = textSectionRaw[`subheader${i}`];
+    const subtext    = textSectionRaw[`subtext${i}`];
+
+    // Başlık: headerN varsa onu kullan, yoksa subheaderN’ı title gibi kullanabiliriz (opsiyonel)
+    const titleForSection =
+      header || subheader || `${title} — Section ${i}`;
+
+    // Paragraflar: text/subtext olanları sırayla ekle
+    const paragraphsForSection = [text, subtext].filter(Boolean);
+
+    // Sadece title veya en az bir paragraf varsa render’a ekle
+    if (titleForSection || paragraphsForSection.length) {
+      sections.push({
+        id: i,
+        title: titleForSection,
+        paragraphs: paragraphsForSection,
+      });
+    }
+    i++;
+  }
 
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
-      {/* ======= ÜST INTRO (IntroSection tasarımı) ======= */}
+      {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}
         intro={intro}
-         title2={title2}
+        title2={title2}
         intro2={intro2}
         heroSrc={heroSrc}
         alt={alt}
@@ -138,20 +162,16 @@ export default function ProductPage() {
         crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
       />
 
-      {/* ======= 4 BİLGİ KARTI ======= */}
+      {/* 4 BİLGİ KARTI */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
         {cards.map((c, i) => (
           <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string"
-              ? c.content
-              : Array.isArray(c.content)
-              ? c.content.join(", ")
-              : null}
+            {typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null}
           </InfoCard>
         ))}
       </section>
 
-      {/* ======= VARYANTLAR (daire görseller) ======= */}
+      {/* VARYANTLAR */}
       <VariantCircleSection
         heading={variantsHeading}
         variantCards={variantCards}
@@ -161,40 +181,21 @@ export default function ProductPage() {
         productKey={productKey}
       />
 
-        <TextSection title="Wholesale Travertine Blocks Blaundos Antiko From Turkey"  paragraphs={[
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
-            ]}
-            schema={schema}
-            className="max-w-5xl mx-auto mt-12"
-            clampMobile={3}
-            as="section"/>
+      {/* === TextSection'lar — i18n’den dinamik === */}
+      {sections.map(({ id, title: secTitle, paragraphs }) => (
+        <TextSection
+          key={id}
+          title={secTitle}
+          paragraphs={paragraphs}
+          schema={schema}
+          className="max-w-5xl mx-auto mt-12"
+          clampMobile={3}
+          as="section"
+        />
+      ))}
 
-             <TextSection title="Wholesale Travertine Blocks Blaundos Light From Turkey"  paragraphs={[
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
-            ]}
-            schema={schema}
-            className="max-w-5xl mx-auto mt-12"
-            clampMobile={3}
-            as="section"/>
-
-             <TextSection title="Wholesale Travertine Blocks Blaundos Ivory From Turkey"  paragraphs={[
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
-            ]}
-            schema={schema}
-            className="max-w-5xl mx-auto mt-12"
-            clampMobile={3}
-            as="section"/>
-
-             <TextSection title="Wholesale Travertine Blocks From Turkey"  paragraphs={[
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
-            ]}
-            schema={schema}
-            className="max-w-5xl mx-auto mt-12"
-            clampMobile={3}
-            as="section"/>
-
-   <SocialMediaSection/>     
-   <ContactFrom/>
+      <SocialMediaSection />
+      <ContactFrom />
     </main>
   );
 }
