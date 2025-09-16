@@ -17,15 +17,19 @@ const SocialMediaSection = () => {
       <div className="flex flex-col md:flex-row items-center justify-center  gap-8 md:gap-12  w-full">
         <div className='flex gap-8 md:gap-12 items-center justify-center'>
            <a
-                              href="#"
+                              href="https://en.wikipedia.org/wiki/Travertine"
                               aria-label="wikipedia"
+                               target="_blank"
+                              rel="noopener noreferrer"
                               className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
                               <FaWikipediaW size={35} />
                             </a>
                             <a
-                              href="#"
+                              href="https://www.youtube.com/"
                               aria-label="twitter"
+                                target="_blank"
+                              rel="noopener noreferrer"
                               className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
                               <FaYoutube size={35} />
@@ -44,12 +48,11 @@ const SocialMediaSection = () => {
     
                              <div className='flex items-center justify-center  gap-8 md:gap-12'>
                                <a
-                              href={whatsappHref}
+                              href="https://www.instagram.com/p/DOn657JjD08/"
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label="whatsapp"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                            >
+                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5">
                               <FaInstagram size={35} />
                             </a>
 

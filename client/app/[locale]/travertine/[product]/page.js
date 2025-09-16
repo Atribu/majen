@@ -9,15 +9,7 @@ import {
   PRODUCT_SLUGS,
   VARIANT_KEY_BY_SLUG,
 } from "@/lib/travertine";
-import {
-  FaYoutube,
-  FaTwitter,
-  FaFacebook,
-  FaLinkedin,
-  FaWhatsapp,
-  FaWikipediaW,
-  FaInstagram
-} from "react-icons/fa";
+
 import {
   PRODUCT_IMG,
   IMAGE_BY_PRODUCT_AND_VARIANT,
@@ -47,6 +39,7 @@ export default function ProductPage() {
   const { product } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
+   const tblock = useTranslations("ProductPage.block");
 
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
@@ -60,6 +53,9 @@ export default function ProductPage() {
   const title = t(`${productKey}.title`);
   const alt = t(`${productKey}.alt`);
   const intro = t(`${productKey}.intro`);
+  const title2 = t(`${productKey}.title2`);
+  const alt2 = t(`${productKey}.alt2`);
+  const intro2 = t(`${productKey}.intro2`);
   const sizes = t.raw(`${productKey}.sizes`) || [];
   const finishes = t.raw(`${productKey}.finishes`) || [];
   const features = t.raw(`${productKey}.features`) || [];
@@ -132,6 +128,8 @@ export default function ProductPage() {
       <ProductIntroSection
         title={title}
         intro={intro}
+         title2={title2}
+        intro2={intro2}
         heroSrc={heroSrc}
         alt={alt}
         prefix={prefix}
@@ -152,29 +150,6 @@ export default function ProductPage() {
           </InfoCard>
         ))}
       </section>
-
-      {/* ======= DETAY BLOKLARI ======= */}
-      {/* {(sizes?.length || finishes?.length || features?.length) ? (
-        <section className="mt-12 max-w-[1200px] mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sizes?.length ? (
-              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
-            ) : null}
-            {finishes?.length ? (
-              <DetailBlock
-                heading={t("detailsHeadings.finishes")}
-                items={finishes}
-              />
-            ) : null}
-            {features?.length ? (
-              <DetailBlock
-                heading={t("detailsHeadings.features")}
-                items={features}
-              />
-            ) : null}
-          </div>
-        </section>
-      ) : null} */}
 
       {/* ======= VARYANTLAR (daire görseller) ======= */}
       <VariantCircleSection

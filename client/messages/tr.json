@@ -193,10 +193,14 @@
     "descriptions": {
       "heading": "Ürün Açıklaması"
     },
+    
     "block": {
       "title": "Traverten Blok - Wholesale Traverten From Turkey",
       "alt": "Blok ürün görseli",
       "intro": "Ocaktan seçilmiş homojen dokulu bloklar; yüksek verim ve kalite.",
+       "title2": "Travertine Block - Wholesale Traverten From Turkey",
+      "alt2": "Block product image",
+      "intro2": "Quarry-selected blocks with uniform texture; high yield and quality.",
       "sizes": ["Serbest ebat bloklar"],
       "finishes": ["Ham blok"],
       "features": ["Yüksek verim", "Renk/doku tutarlılığı", "Sevkiyata uygun paketleme"],
@@ -209,12 +213,36 @@
         "variant1": { "title": "Traverten Bloklar Blaundos Antiko", "alt": "Youtube", "href": "/tr/traverten/blok/blaundos-antiko" },
         "variant2": { "title": "Traverten Bloklar Blaundos Light", "alt": "Youtube", "href": "/tr/traverten/blok/blaundos-light" },
         "variant3": { "title": "Traverten Bloklar Blaundos Ivory", "alt": "Youtube", "href": "/tr/traverten/blok/blaundos-ivory" }
-      }
+      },
+      "TextSection":{
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+    }
     },
+
+
     "slabs": {
       "title": "Wholesale Traverten Plakalar From Turkey",
       "alt": "Plaka ürün görseli",
       "intro": "2 cm/ 3 cm / 5 cm kalınlık, cilalı/honlu/fırçalı seçenekler; bookmatch için ideal.",
+       "title2": "Travertine Slabs - Wholesale Traverten From Turkey",
+      "alt2": "Slab product image",
+      "intro2": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm","5 cm"],
       "finishes": ["Cilalı", "Cilasız"],
       "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
@@ -227,13 +255,37 @@
         "variant1": { "title": "Traverten Plakalar Blaundos Antiko", "alt": "Youtube", "href": "/tr/traverten/slabs/blaundos-antiko" },
         "variant2": { "title": "Traverten Plakalar Blaundos Light", "alt": "Youtube", "href": "/tr/traverten/slabs/blaundos-light" },
         "variant3": { "title": "Traverten Plakalar Blaundos Ivory", "alt": "Youtube", "href": "/tr/traverten/slabs/blaundos-ivory" }
-      }
+      },
+      "TextSection":{
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+    }
       
     },
+
+
     "tiles": {
       "title": "Traverten Karolar - Wholesale Traverten From Turkey",
       "alt": "Karo ürün görseli",
       "intro": "Standart ebatlarda, iç/dış mekâna uygun, düzgün kenarlı karolar.",
+      "title2": "Travertine Tiles - Wholesale Traverten From Turkey",
+      "alt2": "Tile product image",
+      "intro2": "Standard sizes with precise edges for interior/exterior use and quick installation.",
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Cilalı", "Cilasız"],
       "features": ["Hassas tolerans", "Hızlı uygulama", "Düşük bakım"],
@@ -246,13 +298,35 @@
         "variant1": { "title": "Traverten Karolar Blaundos Antiko", "alt": "Youtube", "href": "/tr/traverten/tiles/blaundos-antiko" },
         "variant2": { "title": "Traverten Karolar Blaundos Light", "alt": "Youtube", "href": "/tr/traverten/tiles/blaundos-light" },
         "variant3": { "title": "Traverten Karolar Blaundos Ivory", "alt": "Youtube", "href": "/tr/traverten/tiles/blaundos-ivory" }
-      }
-      
+      },
+      "TextSection":{
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+    }
     },
+
     "special": {
       "title": "Traverten Özel Dizaynlar - Wholesale Traverten From Turkey",
       "alt": "Özel tasarım ürün görseli",
       "intro": "Waterjet, mozaik, CNC oyma ve 3D paneller; projeye özel üretim.",
+       "title2": "Travertine Special Designs - Wholesale Traverten From Turkey",
+      "alt2": "Custom design product image",
+      "intro2": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
       "sizes": ["Proje bazlı ebatlar"],
       "finishes": ["Proje bazlı yüzeyler"],
       "features": ["Özel kesim", "Kişiselleştirme", "Anahtar teslim"],
@@ -265,7 +339,27 @@
         "variant1": { "title": "Traverten Özel Dizayn Blaundos Antiko", "alt": "Youtube", "href": "/tr/traverten/special-designs/blaundos-antiko" },
         "variant2": { "title": "Traverten Özel Dizayn Blaundos Light", "alt": "Youtube", "href": "/tr/traverten/special-designs/blaundos-light" },
         "variant3": { "title": "Traverten Özel Dizayn Blaundos Ivory", "alt": "Youtube", "href": "/tr/traverten/special-designs/blaundos-ivory" }
-      }
+      },
+
+      "TextSection":{
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+    }
       
     }
   },
@@ -309,6 +403,8 @@
    "TravertinePage": {
     "title": "Traverten – Türkiye’den Toptan Traverten | Majen",
     "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
+    "title2":"Why Choose Travertine From Turkey?",
+    "intro2":"Turkey",
     "cards": {
       "quality": "Neden Bizim Travertenlerimiz?",
       "qualityText": "Yüksek dayanıklılık, doğal güzellik ve sürdürülebilir kaynaklardan temin.",
@@ -319,7 +415,42 @@
       "finishes": "Traverten Yüzey İşlemleri",
       "finishesText": "Cilalı, honlu, eskitilmiş, fırçalanmış ve daha fazlası."
     },
-    "variantsHeading": "Ürünler & Renkler"
+    "variantsHeading": "Ürünler & Renkler",
+     "variantsubtitle1":"Travertine Blocks",
+     "variantsubtitle2":"Travertine Slabs",
+      "variantsubtitle3":"Travertine Tiles",
+       "variantsubtitle4":"Custom Travertine Designs",
+       "goToPage": "Go to page",
+    "productCopy": {
+      "block": "Available color options: <links/>. Each reflects the quarry’s character and adds a strong, authentic presence to your project.",
+      "slabs": "This slab series offers: <links/>. With consistent surfaces and curated veining, it delivers a flawless look in large areas.",
+      "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
+      "special": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
+    },
+    "variantSentence": {
+      "start": "Majen olarak sizlere",
+      "end": "gibi traverten çeşitleri sunuyoruz."
+    },
+
+        "TextSection":{
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+    }
   },
 
     "Gallery": {

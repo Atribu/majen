@@ -20,7 +20,9 @@ import { usePathname } from "next/navigation";
  */
 export default function ProductIntroSection({
   title,
+  title2,
   intro,
+  intro2,
   heroSrc,
   alt,
   prefix,
@@ -64,6 +66,11 @@ export default function ProductIntroSection({
             {title}
           </h1>
           <p className="mt-3 text-sm sm:text-base leading-relaxed">{intro}</p>
+
+            <h2 id="intro-heading" className="text-2xl sm:text-3xl font-semibold">
+            {title2}
+          </h2>
+          <p className="mt-3 text-sm sm:text-base leading-relaxed">{intro2}</p>
 
           {/* Breadcrumbs */}
           <nav
@@ -119,7 +126,7 @@ export default function ProductIntroSection({
     <h1 className="text-3xl font-semibold">{title}</h1>
     <p className="mt-3">{intro}</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
-     <h1 className="text-3xl font-semibold">{title}</h1>
+     <h2 className="text-2xl font-semibold">{title}</h2>
     <p className="mt-3">{intro}</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
   </header>

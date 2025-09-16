@@ -15,6 +15,8 @@ import Script from "next/script";
  */
 export default function TextSection({
   title,
+  title2,
+  text2,
   paragraphs = [],
   schema,
   className = "",
@@ -57,15 +59,26 @@ export default function TextSection({
       ) : null}
 
       {title ? (
-        <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-neutral-900">
+        <h4 className="text-xl md:text-2xl font-semibold tracking-tight text-neutral-900">
           {title}
-        </h3>
+        </h4>
       ) : null}
 
-      <div className="mt-4 md:mt-5 text-neutral-800 leading-[1.85] text-[15px] md:text-[16px] space-y-4">
+      <div className="mt-1 text-neutral-800 leading-[1.85] text-[15px] md:text-[16px] space-y-4">
         {visibleParagraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
+
+        {title2 ? (
+        <h5 className="text-xl font-medium tracking-tight text-neutral-900">
+          {title2}
+        </h5>
+      ) : null}
+
+    {text2 ? (
+         <p className="-mt-3">{text2}</p>
+      ) : null}
+    
 
         {/* Mobilde 'devamını göster' */}
         {hasMore && (

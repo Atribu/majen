@@ -121,7 +121,7 @@ export default function Header() {
 
         {/* SAĞ: Aksiyonlar */}
         <div className="flex items-center gap-2 sm:gap-3 order-3">
-          <LangSwitcher className="uppercase" />
+      <LangSwitcher isHome={isHome} scrolled={scrolled} />
           <Link
             href="tel:+905335561092"
             className={`hidden md:inline whitespace-nowrap transition-colors mr-2 sm:mr-4 lg:mr-20 ${

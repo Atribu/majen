@@ -4,17 +4,7 @@
 
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
-import {
-  FaYoutube,
-  FaTwitter,
-  FaFacebook,
-  FaLinkedin,
-  FaWhatsapp,
-  FaWikipediaW,
-  FaInstagram
-} from "react-icons/fa";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import { FiMenu, FiX } from "react-icons/fi";
 import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
 import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
@@ -29,6 +19,7 @@ import ContactFrom from '../components/generalcomponent/ContactFrom';
 import BackgroundSection from '../components/homepage/BackgroundSection';
 import TextSection from "../components/products1/TextSection";
 import SocialMediaSection from "../components/products1/SocialMediaSection";
+import InlineLinks from "../components/generalcomponent/InlineLinks";
 
 const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
@@ -39,11 +30,18 @@ const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
 export default function TravertinePage() {
     const locale = useLocale();
   const t = useTranslations("TravertinePage");
-
+  const t2 = useTranslations("TravertinePage.TextSection");
+  const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];     // "traverten" | "travertine"
   const baseHref = `${prefix}/${baseSegment}`;    // "/tr/traverten"
 
+   const linkPatterns = [
+    { pattern: /(travertine\s*)?blocks?/i,           href: hrefForProduct("block")   },
+    { pattern: /slabs?/i,                            href: hrefForProduct("slabs")   },
+    { pattern: /tiles?/i,                            href: hrefForProduct("tiles")   },
+    { pattern: /(travertine\s*)?custom\s*designs?/i, href: hrefForProduct("special") },
+  ];
   // Intro
   
   const heroFallback =
@@ -59,6 +57,7 @@ export default function TravertinePage() {
     {
       title: t("cards.applications", { default: "Applications" }),
       content: t("cards.applicationsText", { default: "Flooring, wall cladding, pool decks, and bespoke design." }),
+         linkify: true,
     },
     {
       title: t("cards.sizes", { default: "Sizes & Thickness" }),
@@ -86,11 +85,16 @@ export default function TravertinePage() {
       <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
         {cards.map((c, i) => (
           <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string"
-              ? c.content
-              : Array.isArray(c.content)
-              ? c.content.join(", ")
-              : null}
+            {/* Sadece 2. kart (applications) linkli olsun */}
+            {c.linkify ? (
+              <InlineLinks text={c.content} patterns={linkPatterns} />
+            ) : (
+              (typeof c.content === "string"
+                ? c.content
+                : Array.isArray(c.content)
+                ? c.content.join(", ")
+                : null)
+            )}
           </InfoCard>
         ))}
       </section>
@@ -98,41 +102,41 @@ export default function TravertinePage() {
 
       {/* 4 ürün + altlarında tüm renkler (chip) */}
      <VariantCircleSection2
-  heading= "Traverten Kesim & Renk Kombinasyonları" 
+  heading= {t("variantsHeading")}
   productOrder={["block", "slabs", "tiles", "special"]}
-  variantSlugs={["blaundos-antiko", "blaundos-light", "blaundos-ivory"]}
+  variantSlugs={["antiko", "light", "ivory"]}
   baseHref={baseHref}
   productSegments={PRODUCT_SLUGS[locale]}
   locale={locale}
   productImages={{ block, slabs, tiles, special }}
 />
 
-     <TextSection title="Wholesale Travertine Blocks From Turkey"  paragraphs={[
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+     <TextSection title={t2("header1")} title2={t2("subheader1")} text2={t2("subtext1")} paragraphs={[
+     t2("text1")
       ]}
       schema={schema}
       className="max-w-5xl mx-auto mt-12"
       clampMobile={3}
       as="section"/>
 
-      <TextSection title="Wholesale Travertine Slabs From Turkey"  paragraphs={[
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+      <TextSection title={t2("header2")} title2={t2("subheader2")} text2={t2("subtext2")} paragraphs={[
+     t2("text2")
       ]}
       schema={schema}
       className="max-w-5xl mx-auto mt-12"
       clampMobile={3}
       as="section"/>
 
-      <TextSection title="Wholesale Travertine Tiles From Turkey"  paragraphs={[
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+     <TextSection title={t2("header3")} title2={t2("subheader3")} text2={t2("subtext3")} paragraphs={[
+     t2("text3")
       ]}
       schema={schema}
       className="max-w-5xl mx-auto mt-12"
       clampMobile={3}
       as="section"/>
 
-      <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+      <TextSection title={t2("header4")} title2={t2("subheader4")} text2={t2("subtext4")} paragraphs={[
+     t2("text4")
       ]}
       schema={schema}
       className="max-w-5xl mx-auto mt-12"
