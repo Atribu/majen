@@ -197,6 +197,9 @@ export default function Header() {
           <Link href="/contactus" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("contactUs")}
           </Link>
+            <Link href="/gallery" className={linkClasses} onClick={() => setMenuOpen(false)}>
+            {t("gallery")}
+          </Link>
         </nav>
 
         <div className="absolute flex items-center justify-center gap-4  w-full bottom-16">

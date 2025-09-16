@@ -1,11 +1,8 @@
 // app/[locale]/travertine/[product]/[variant]/[cut]/[process]/[finish]/page.js
-// TR rotası için aynısı: app/[locale]/traverten/[product]/[variant]/[cut]/[process]/[finish]/page.js
-
 "use client";
 
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
 
 import {
@@ -22,17 +19,19 @@ import {
 
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
+import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
+import TextSection from "@/app/[locale]/components/products1/TextSection";
+import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
 // — ürün bazlı ölçüler
 function sizeSlugList(productKey, t) {
-  if (productKey === "slabs") return ["2cm", "3cm", "5cm"]; // slab kalınlıkları
+  if (productKey === "slabs") return ["2cm", "3cm", "5cm"];
   if (productKey === "tiles") {
     const sizes = t.raw("tiles.sizes") || ["30×60", "60×60", "60×120"];
     return sizes.map((s) =>
       s.toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, "")
     );
   }
-  // special için proje bazlı tek sayfa
   return ["custom"];
 }
 function sizeLabelFromSlug(slug) {
@@ -52,6 +51,14 @@ function InfoCard({ title, children }) {
 }
 
 export default function FinishPage() {
+      const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Travertine from Turkey",
+    author: { "@type": "Organization", name: "Majen" },
+    publisher: { "@type": "Organization", name: "Majen" },
+  };
+
   const { product: rawProduct, variant: vSlug, cut, process, finish } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
@@ -60,15 +67,12 @@ export default function FinishPage() {
   const baseSegment = baseFor(locale);
   const baseHref = `${prefix}/${baseSegment}`;
 
-  // productKey (block/slabs/tiles/special)
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === rawProduct) || "slabs";
 
-  // variant key (antiko/light/ivory)
   const vKey = VARIANT_KEY_BY_SLUG[vSlug];
   if (!vKey) return null;
 
-  // metinler
   const title   = t(`${productKey}.title`, { default: "Product" });
   const intro   = t(`${productKey}.intro`, { default: "" });
   const vTitle  = t(`${productKey}.variants.${vKey}.title`, { default: vSlug });
@@ -78,7 +82,6 @@ export default function FinishPage() {
   const features = t.raw(`${productKey}.features`) || [];
   const description = t.raw(`${productKey}.description`) || intro;
 
-  // görsel seçimi (ürün+varyant öncelikli)
   const imgMap = PRODUCT_IMG[productKey];
   const heroSrc =
     IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[vSlug] ??
@@ -86,7 +89,6 @@ export default function FinishPage() {
       ? imgMap?.[vKey] ?? imgMap?.cover ?? Object.values(imgMap)[0]
       : imgMap);
 
-  // InfoCard içerikleri
   const cards = [
     {
       title: `${vTitle} – ${title} · ${cut} · ${process} · ${finish}`,
@@ -109,12 +111,23 @@ export default function FinishPage() {
     },
   ];
 
-  // bu sayfada “Choose size” adımı
+  // === SIZE (yuvarlak kartlar) ===
   const sizeSlugs = sizeSlugList(productKey, t);
+
+  const sizeCards = sizeSlugs.map((s) => ({
+    slug: s,
+    vKey: s, // component için bir key
+    title: sizeLabelFromSlug(s),
+    alt: "", // alt'ı boş bırakıyoruz (YouTube linki mekanizmasını tetiklememesi için)
+    href: `${prefix}/${baseSegment}/${rawProduct}/${vSlug}/${cut}/${process}/${finish}/${s}`,
+  }));
+
+  // Tüm size’lar için aynı görseli kullanmak istersen:
+  const sizeImgMap = Object.fromEntries(sizeSlugs.map((s) => [s, heroSrc]));
 
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
-      {/* === INTRO (hero + breadcrumbs) === */}
+      {/* === INTRO === */}
       <ProductIntroSection
         title={`${vTitle} – ${title} · ${cut} · ${process} · ${finish}`}
         intro={intro}
@@ -124,6 +137,7 @@ export default function FinishPage() {
         baseHref={baseHref}
         crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+        depth={5}
       />
 
       {/* === INFO CARDS === */}
@@ -139,25 +153,47 @@ export default function FinishPage() {
         ))}
       </section>
 
-      {/* === DETAY BLOKLARI (varsa) === */}
-      {(sizes?.length || finishes?.length || features?.length) ? (
-        <section className="mt-12 max-w-[1200px] mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sizes?.length ? (
-              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
-            ) : null}
-            {finishes?.length ? (
-              <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} />
-            ) : null}
-            {features?.length ? (
-              <DetailBlock heading={t("detailsHeadings.features")} items={features} />
-            ) : null}
-          </div>
-        </section>
-      ) : null}
 
-      {/* === SIZE SEÇİMİ === */}
-      <section className="mt-14 max-w-[1200px] mx-auto">
+
+      {/* === SIZE (yuvarlak görselli seçim) === */}
+      <VariantCircleSection
+        heading={locale.startsWith("tr") ? "Ebat Seçin" : "Choose Size"}
+        variantCards={sizeCards}
+        imgMap={sizeImgMap}              // tüm size’lar aynı görsel → heroSrc
+        heroSrc={heroSrc}
+        IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
+        productKey="sizes"
+      />
+
+      <TextSection title="Wholesale Travertine Blocks From Turkey"  paragraphs={[
+                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+                  ]}
+                  schema={schema}
+                  className="max-w-5xl mx-auto mt-12"
+                  clampMobile={3}
+                  as="section"/>
+
+        <TextSection title="Wholesale Travertine Blocks From Turkey"  paragraphs={[
+                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+                  ]}
+                  schema={schema}
+                  className="max-w-5xl mx-auto mt-12"
+                  clampMobile={3}
+                  as="section"/>
+
+          <TextSection title="Wholesale Travertine Blocks From Turkey"  paragraphs={[
+                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+                  ]}
+                  schema={schema}
+                  className="max-w-5xl mx-auto mt-12"
+                  clampMobile={3}
+                  as="section"/>         
+
+
+      <ContactFrom/>   
+
+      {/* İstersen altına eski chip’leri yedek olarak bırakabilirsin:
+      <section className="mt-8 max-w-[1200px] mx-auto">
         <h2 className="text-lg md:text-xl font-semibold text-neutral-900 mb-4">
           {locale.startsWith("tr") ? "Ebat seçin" : "Choose size"}
         </h2>
@@ -172,15 +208,8 @@ export default function FinishPage() {
             </Link>
           ))}
         </div>
-
-        {productKey === "special" && (
-          <p className="mt-4 text-sm text-neutral-600">
-            {locale.startsWith("tr")
-              ? "Özel tasarımlar proje bazlıdır; ebat/yüzey tamamen özelleştirilebilir."
-              : "Special designs are project-based; size/finish can be fully customized."}
-          </p>
-        )}
       </section>
+      */}
     </main>
   );
 }

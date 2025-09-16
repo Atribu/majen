@@ -28,6 +28,7 @@ import InfoCard from "../components/products1/InfoCard"
 import ContactFrom from '../components/generalcomponent/ContactFrom';
 import BackgroundSection from '../components/homepage/BackgroundSection';
 import TextSection from "../components/products1/TextSection";
+import SocialMediaSection from "../components/products1/SocialMediaSection";
 
 const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
@@ -44,9 +45,7 @@ export default function TravertinePage() {
   const baseHref = `${prefix}/${baseSegment}`;    // "/tr/traverten"
 
   // Intro
-  const title = "Travertine From Turkey – Majen" ;
-  const intro = 
-      "Majen olarak, Türkiye’nin seçkin ocaklarından traverten tedarik ediyoruz. Blok, slab ve karo seçenekleriyle proje odaklı üretim sağlıyoruz.";
+  
   const heroFallback =
     typeof PRODUCT_IMG?.block === "object"
       ? PRODUCT_IMG.block.cover ?? Object.values(PRODUCT_IMG.block)[0]
@@ -141,46 +140,7 @@ export default function TravertinePage() {
       as="section"/>
 
 
-<div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-20">
-  <h5 className="text-[18px] lg:text-[20px] text-semibold text-black">More Information</h5>
-  <div className=" flex items-center justify-center gap-12  w-full">
-                        <a
-                          href="#"
-                          aria-label="wikipedia"
-                          className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                        >
-                          <FaWikipediaW size={35} />
-                        </a>
-                        <a
-                          href="#"
-                          aria-label="twitter"
-                          className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                        >
-                          <FaYoutube size={35} />
-                        </a>
-                      
-                        <a
-                          href={whatsappHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="whatsapp"
-                          className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                        >
-                          <FaWhatsapp size={35} />
-                        </a>
-
-                          <a
-                          href={whatsappHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="whatsapp"
-                          className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                        >
-                          <FaInstagram size={35} />
-                        </a>
-                      </div>
-
-</div>
+<SocialMediaSection/>
     
         <ContactFrom />
         <div className='mt-12 mb-32'>

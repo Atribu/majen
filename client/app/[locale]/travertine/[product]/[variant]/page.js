@@ -26,6 +26,8 @@ import {
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
+import TextSection from "@/app/[locale]/components/products1/TextSection";
+import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
 
 function InfoCard({ title, children }) {
@@ -42,6 +44,14 @@ function InfoCard({ title, children }) {
 }
 
 export default function VariantPage() {
+        const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Travertine from Turkey",
+    author: { "@type": "Organization", name: "Majen" },
+    publisher: { "@type": "Organization", name: "Majen" },
+  };
+
   const { product: rawProduct, variant: vSlug } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
@@ -134,6 +144,7 @@ const cutCards = CUTS.map((cut) => {
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
         crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+        depth={2}
       />
 
       {/* === 4 INFO CARD === */}
@@ -149,28 +160,6 @@ const cutCards = CUTS.map((cut) => {
         ))}
       </section>
 
-      {/* === DETAY BLOKLARI === */}
-      {(sizes?.length || finishes?.length || features?.length) && (
-        <section className="mt-12 max-w-[1200px] mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sizes?.length && (
-              <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} />
-            )}
-            {finishes?.length && (
-              <DetailBlock
-                heading={t("detailsHeadings.finishes")}
-                items={finishes}
-              />
-            )}
-            {features?.length && (
-              <DetailBlock
-                heading={t("detailsHeadings.features")}
-                items={features}
-              />
-            )}
-          </div>
-        </section>
-      )}
 
       {/* === CUT SEÇİMİ === */}
       {productKey !== "block" && (
@@ -203,6 +192,32 @@ const cutCards = CUTS.map((cut) => {
     productKey={productKey}
   />
 )}
+
+ <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+      ]}
+      schema={schema}
+      className="max-w-5xl mx-auto mt-12"
+      clampMobile={3}
+      as="section"/>
+
+       <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+            ]}
+            schema={schema}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"/>
+
+             <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+                  ]}
+                  schema={schema}
+                  className="max-w-5xl mx-auto mt-12"
+                  clampMobile={3}
+                  as="section"/>
+
+    <ContactFrom/>
     </main>
   );
 }

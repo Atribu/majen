@@ -27,6 +27,7 @@ import VariantCircleSection from "../../components/products1/VariantCircleSectio
 import ProductIntroSection from "../../components/products1/ProductIntroSection";
 import TextSection from "../../components/products1/TextSection";
 import ContactFrom from "../../components/generalcomponent/ContactFrom";
+import SocialMediaSection from "../../components/products1/SocialMediaSection";
 
 // Kullanacağımız varyant slugs (örnek Blaundos serisi)
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
@@ -217,43 +218,8 @@ export default function ProductPage() {
             clampMobile={3}
             as="section"/>
 
-            <div className=" flex items-center justify-center gap-12  w-full">
-                                    <a
-                                      href="#"
-                                      aria-label="wikipedia"
-                                      className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                                    >
-                                      <FaWikipediaW size={35} />
-                                    </a>
-                                    <a
-                                      href="#"
-                                      aria-label="twitter"
-                                      className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                                    >
-                                      <FaYoutube size={35} />
-                                    </a>
-                                  
-                                    <a
-                                      href={whatsappHref}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      aria-label="whatsapp"
-                                      className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                                    >
-                                      <FaWhatsapp size={35} />
-                                    </a>
-            
-                                      <a
-                                      href={whatsappHref}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      aria-label="whatsapp"
-                                      className="p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                                    >
-                                      <FaInstagram size={35} />
-                                    </a>
-                                  </div>
-                                  <ContactFrom/>
+   <SocialMediaSection/>     
+   <ContactFrom/>
     </main>
   );
 }

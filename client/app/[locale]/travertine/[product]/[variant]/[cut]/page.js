@@ -21,12 +21,23 @@ import {
 
 import { DetailBlock, HeroImage } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
+import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
+import TextSection from "@/app/[locale]/components/products1/TextSection";
+import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
 // Kesim ve süreç listeleri (gerekiyorsa i18n’e taşıyabilirsin)
 const CUTS = ["vein-cut", "cross-cut"];
 const PROCESSES = ["natural", "filling", "epoxy", "transparent", "antique"];
 
 export default function CutPage() {
+      const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Travertine from Turkey",
+    author: { "@type": "Organization", name: "Majen" },
+    publisher: { "@type": "Organization", name: "Majen" },
+  };
+
   const { product, variant, cut } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
@@ -97,6 +108,32 @@ export default function CutPage() {
     },
   ];
 
+// === (heroSrcCut’tan SONRA) process etiketleri ve kartlar
+const processLabels = (key) => {
+  const tr = { natural: "Doğal", filling: "Dolgu", epoxy: "Epoksi", transparent: "Şeffaf", antique: "Antik" };
+  const en = { natural: "Natural", filling: "Filling", epoxy: "Epoxy", transparent: "Transparent", antique: "Antique" };
+  return locale.startsWith("tr") ? (tr[key] ?? key) : (en[key] ?? key);
+};
+
+// (İsteğe bağlı) process bazlı görseller — yoksa heroSrcCut fallback olur
+const processImgMap = {
+  natural: heroSrcCut,
+  filling: heroSrcCut,
+  epoxy: heroSrcCut,
+  transparent: heroSrcCut,
+  antique: heroSrcCut,
+};
+
+// VariantCircleSection’e uygun “kart” objeleri
+const processCards = PROCESSES.map((p) => ({
+  slug: p,
+  vKey: p, // img seçimi için processImgMap[vKey]
+  title: processLabels(p),
+  alt: "", // YouTube vs. yoksa boş
+  href: `${prefix}/${baseSegment}/${product}/${variant}/${cut}/${p}`,
+}));
+
+
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
       {/* ======= ÜST INTRO (IntroSection yapısı + heroSrc = cut görseli) ======= */}
@@ -109,6 +146,7 @@ export default function CutPage() {
         baseHref={`${baseHref}/${product}`} // breadcrumb “Travertine > {product}”
         crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+         depth={3}
       />
 
       {/* ======= 4 BİLGİ KARTI ======= */}
@@ -179,6 +217,42 @@ export default function CutPage() {
           ))}
         </div>
       </section>
+
+      <VariantCircleSection
+  heading={locale.startsWith("tr") ? "Yüzey İşlemi Seç" : "Choose Process"}
+  variantCards={processCards}
+  imgMap={processImgMap}
+  heroSrc={heroSrcCut}
+  IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
+  productKey="process"
+/>
+
+ <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+      ]}
+      schema={schema}
+      className="max-w-5xl mx-auto mt-12"
+      clampMobile={3}
+      as="section"/>
+
+       <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+            ]}
+            schema={schema}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"/>
+
+             <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+                  ]}
+                  schema={schema}
+                  className="max-w-5xl mx-auto mt-12"
+                  clampMobile={3}
+                  as="section"/>
+
+      <ContactFrom/>
+
     </main>
   );
 }

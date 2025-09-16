@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 /**
  * IntroSection tasarımının aynısı, dinamik içerikle:
@@ -26,6 +27,7 @@ export default function ProductIntroSection({
   baseHref,
   crumbHome = "Ana Sayfa",
   crumbProducts = "Travertine",
+  depth = 1, 
 }) {
   // JSON-LD Schema
   const breadcrumbSchema = {
@@ -37,6 +39,11 @@ export default function ProductIntroSection({
       { "@type": "ListItem", position: 3, name: title },
     ],
   };
+
+  const pathname = usePathname() || ""; // boş string fallback
+  const segments = pathname.split("/").filter(Boolean); 
+  const lastSegment = pathname.split("/").filter(Boolean).pop(); 
+  const selectedSegments = segments.slice(-depth);
 
   return (
     <section className="relative mt-2 overflow-hidden" aria-labelledby="intro-heading">
@@ -72,7 +79,7 @@ export default function ProductIntroSection({
                 <Link href={baseHref} className="hover:underline">{crumbProducts}</Link>
               </li>
               <li className="text-white/60">/</li>
-              <li className="text-white/90">{title}</li>
+              <li className="text-white/90"> {lastSegment}</li>
             </ol>
           </nav>
         </div>
@@ -118,19 +125,17 @@ export default function ProductIntroSection({
   </header>
 
           {/* Alt: Breadcrumbs */}
-          <nav className="bg-transparent px-4 py-3 rounded-sm" aria-label="breadcrumb">
-            <ol className="flex flex-wrap items-center gap-x-2 text-sm">
-              <li>
-                <Link href={prefix} className="hover:underline">{crumbHome}</Link>
-              </li>
-              <li>
-                <span className="mx-2 text-white/50">/</span>
-                <Link href={baseHref} className="hover:underline">{crumbProducts}</Link>
-              </li>
-              <li>
-                <span className="mx-2 text-white/50">/</span>
-                <span className="text-white/90">{title}</span>
-              </li>
+           <nav className="mb-3 inline-flex items-center z-[99] px-3  text-xs sm:text-sm">
+            <ol className="flex items-center gap-x-2">
+              <li><Link href={prefix}>{crumbHome}</Link></li>
+              <li>/</li>
+              <li><Link href={baseHref}>{crumbProducts}</Link></li>
+              {selectedSegments.map((seg, i) => (
+                <React.Fragment key={i}>
+                  <li>/</li>
+                  <li className="capitalize">{seg}</li>
+                </React.Fragment>
+              ))}
             </ol>
           </nav>
 

@@ -10,7 +10,6 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
-import light from "@/public/images/slabs/light.webp";
 import ServiceBlocks from "./blocksComponents/ServiceBlocks";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
@@ -421,7 +420,7 @@ useEffect(() => {
 
   return (
     <section className="relative overflow-hidden  text-black py-1 sm:py-2  lg:h-[550px] w-screen  items-center justify-center"  style={{
-    backgroundImage: "url('/images/slabs/Ivory.webp')",
+    backgroundImage: "url('/images/homepage/anasayfa3.webp')",
     backgroundSize: "cover",       // resmi kırpmadan kaplar
     backgroundPosition: "center",  // ortalar
     backgroundRepeat: "no-repeat", // tekrar etmez

@@ -11,7 +11,8 @@
     "projects": "Projeler",
     "blog": "Blog",
     "contactUs": "İletişim",
-    "callUs": "Bizi ara: +90 533 556 10 92"
+    "callUs": "Bizi ara: +90 533 556 10 92",
+    "gallery":"Galeri"
   },
 
   "Footer": {
@@ -306,10 +307,10 @@
   },
 
    "TravertinePage": {
-    "title": "Traverten",
-    "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
+    "title": "Traverten – Türkiye’den Toptan Traverten | Majen",
+    "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
     "cards": {
-      "quality": "Neden Bizim Traverten?",
+      "quality": "Neden Bizim Travertenlerimiz?",
       "qualityText": "Yüksek dayanıklılık, doğal güzellik ve sürdürülebilir kaynaklardan temin.",
       "applications": "Traverten Kullanım Alanları",
       "applicationsText": "Zemin kaplama, duvar kaplama, havuz kenarları ve özel tasarım projeler.",
@@ -319,6 +320,15 @@
       "finishesText": "Cilalı, honlu, eskitilmiş, fırçalanmış ve daha fazlası."
     },
     "variantsHeading": "Ürünler & Renkler"
+  },
+
+    "Gallery": {
+    "subtitle": "Travertenlerimizi Keşfedin",
+    "title": "Traverten Galerisi",
+    "blocks": "Blok",
+    "slabs": "Plakalar",
+    "tiles": "Karolar",
+    "special": "Özel Tasarım"
   }
   
 }

@@ -11,7 +11,8 @@
     "projects": "Projects",
     "blog": "Blog",
     "contactUs": "Contact",
-    "callUs": "Call us: +90 533 556 10 92"
+    "callUs": "Call us: +90 533 556 10 92",
+    "gallery":"Gallery"
   },
 
   "Footer": {
@@ -328,8 +329,8 @@
   },
 
    "TravertinePage": {
-    "title": "Travertine",
-    "intro": "At Majen, we source premium travertine from Turkey’s finest quarries for your projects. We provide project-focused production with block, slab, tile, and special design options.",
+    "title": "  Travertine - Wholesale Travertine From Turkey – Majen",
+    "intro": "At Majen, we source premium travertine from Turkey’s finest quarries for your projects. We provide project-focused production with block, slab, tile, and special design options. At Majen, we source premium travertine from Turkey’s finest quarries for your projects. We provide project-focused production with block, slab, tile, and special design options.",
     "cards": {
       "quality": "Why Our Travertine?",
       "qualityText": "High durability, natural beauty, and sustainably sourced.",
@@ -341,6 +342,16 @@
       "finishesText": "Polished, honed, tumbled, brushed, and more."
     },
     "variantsHeading": "Products & Colors"
-  }
+  },
+
+  "Gallery": {
+  "subtitle": "Discover Our Travertines",
+  "title": "Travertine Gallery",
+  "blocks": "Blocks",
+  "slabs": "Slabs",
+  "tiles": "Tiles",
+  "special": "Special Design"
+}
+
   
 }

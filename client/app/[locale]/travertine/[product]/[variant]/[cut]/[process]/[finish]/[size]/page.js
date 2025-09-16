@@ -17,6 +17,8 @@ import {
 
 import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection"; // ⇐ Banner
+import TextSection from "@/app/[locale]/components/products1/TextSection";
+import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
@@ -26,6 +28,14 @@ const sizeLabelFromSlug = (slug) =>
     : slug.replace(/x/g, "×").replace(/([0-9])cm$/, "$1 cm");
 
 export default function SizePage() {
+       const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Travertine from Turkey",
+    author: { "@type": "Organization", name: "Majen" },
+    publisher: { "@type": "Organization", name: "Majen" },
+  };
+
   const { product: rawProduct, variant: vSlug, cut, process, finish, size } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
@@ -106,6 +116,7 @@ export default function SizePage() {
         alt={vAlt}
         prefix={prefix}
         baseHref={baseHref}
+         depth={6}
         // istersen breadcrumb etiketlerini override edebilirsin:
         // crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
         // crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
@@ -194,6 +205,32 @@ export default function SizePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+            ]}
+            schema={schema}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"/>
+
+      <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+            ]}
+            schema={schema}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"/>
+
+     <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
+            ]}
+            schema={schema}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"/>
+
+            <ContactFrom/>
     </main>
   );
 }
