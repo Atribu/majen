@@ -90,7 +90,7 @@ export default function InfoSection() {
           <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase leading-0">
             {t("subtitle")}
           </span>
-          <h2 className="mt-2 text-[24px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
+          <h2 className="mt-2 lg:mt-5 text-[24px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
             Wholesale Travertine Blocks, Slabs & Tiles
           </h2>
           <p className="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]">
