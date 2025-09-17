@@ -28,9 +28,9 @@ function Card({ t, img, href, tKey }) {
         />
       </Link>
       <div className="w-full p-4 items-center justify-center text-center">
-        <h4 className="text-[16px] md:text-[20px] font-semibold text-[#0C1A13]">
+        <h5 className="text-[16px] md:text-[20px] font-semibold text-[#0C1A13]">
           {t(`products.${tKey}.title`)}
-        </h4>
+        </h5>
         <p className="mt-2 text-[12px] md:text-[14px] text-[#2a2a2a]">
           {t(`products.${tKey}.description`)}
         </p>
@@ -84,17 +84,17 @@ export default function InfoSection() {
   );
 
   return (
-    <section className="flex w-screen items-center justify-center py-8 md:py-12 lg:py-20 xl:py-32 z-[999] mb-10">
+    <section className="flex w-screen items-center justify-center py-8 md:pt-12 lg:pt-20 xl:pt-24 z-[999] ">
       <div className="w-[100%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center gap-7 md:gap-9 lg:gap-12 flex flex-col">
         <div className="flex flex-col">
           <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase">
             {t("subtitle")}
           </span>
-          <h3 className="mt-2 text-[16px] font-bold md:text-[36px] lg:text-[48px] text-[#0C1A13] leading-[110%]">
-            {t("heading")}
-          </h3>
-          <p className="mt-3 text-black text-[12px] md:text-[16px] lg:text-[18px]">
-            {t("description")}
+          <h2 className="mt-2 text-[28px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
+            Wholesale Travertine Blocks, Slabs & Tiles
+          </h2>
+          <p className="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]">
+            Our product portfolio covers the full spectrum of wholesale travertine blocks, slabs, and tiles. Blocks average 280×220×200 cm, weighing 30–35 tons, reinforced for international shipping. Slabs are available in 2 cm, 3 cm, and 5 cm thicknesses with finishes such as polished, honed, brushed, or tumbled. Travertine tiles come in popular formats like 30×60 and 60×60 cm, ideal for bathrooms, kitchens, pools, and outdoor spaces. Majen offers Blaundos Antiko, Blaundos Light, and Blaundos Ivory colors, ensuring diverse options for every project that requires wholesale travertine from Turkey.
           </p>
         </div>
 

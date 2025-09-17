@@ -53,15 +53,20 @@ export default function CollectionsSection() {
     `${prefix}/${base}/${productSlugFor(locale, productKey)}/${variantSlug}`;
 
   return (
-    <div className="flex flex-col w-screen gap-[20px] lg:gap-[40px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-[10%] mb-20">
+    <div className="flex flex-col max-w-[1400px]  gap-[20px] lg:gap-[10px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-[10%] mb-20">
       {/* Başlık */}
-      <div className="flex flex-col w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[17px] md:gap-[15px] lg:gap-[20px] items-center justify-center text-center">
+      <div className="flex flex-col w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[17px] md:gap-[6px] lg:gap-[2px] items-center justify-center text-center">
         <span className="text-[12px] leading-[14px] uppercase tracking-[0.48px] font-medium font-jost">
           {t("span")}
         </span>
-        <h3 className="text-[16px] font-bold md:text-[32px] md:leading-[57.6px] lg:text-[48px] font-marcellus leading-normal">
-          {t("header")}
+        <h3 className="text-[24px] md:text-[26px] font-bold lg:text-[30px] md:leading-[57.6px]  font-marcellus leading-normal">
+         Travertine Colors & Finishes
         </h3>
+        <p>Majen offers three exclusive color selections of wholesale travertine from Turkey:
+Blaundos Antiko: Grey-beige antique tones for luxury façades.
+Blaundos Light: Light beige for modern interiors and exteriors.
+Blaundos Ivory: Ivory-cream for hotels, villas, and public spaces.
+Available finishes include polished, honed, brushed, and tumbled. Custom surface treatments are available upon request, giving architects and wholesalers flexibility for diverse project requirements.</p>
       </div>
 
       {/* Yuvarlak kartlar */}
@@ -84,9 +89,9 @@ export default function CollectionsSection() {
               </Link>
 
               {/* Başlık */}
-              <h4 className="mt-4 text-lg font-semibold text-neutral-900">
+              <h5 className="mt-4 text-[20px] font-semibold text-neutral-900">
                 {coll.title}
-              </h4>
+              </h5>
 
               {/* Ürün tipleri (Blocks / Slabs / Tiles / Special Design) */}
               <div className="mt-2 flex flex-wrap items-center justify-center gap-2">

@@ -7,7 +7,7 @@
   "Header": {
     "home": "Home",
     "product": "Products",
-    "shop": "Shop",
+    "shop": "How We Export",
     "projects": "Projects",
     "blog": "Blog",
     "contactUs": "Contact",
@@ -77,7 +77,7 @@
     "contact": "Contact Us",
     "products": {
       "product1": {
-        "title": "Travertine Block",
+        "title": "Travertine Blocks",
         "description": "Large-size blocks selected at the quarry with consistent texture and color; ideal yield for fabrication and high-volume projects.",
         "alt": "Marble product image",
         "cta": "Explore"
@@ -216,12 +216,12 @@
     },
 
     "block": {
-      "title": "Travertine Block - Wholesale Traverten From Turkey",
+      "title": "Wholesale Travertine Blocks from Turkey – Direct Quarry Supplier",
       "alt": "Block product image",
-      "intro": "Quarry-selected blocks with uniform texture; high yield and quality.",
-      "title2": "Travertine Block - Wholesale Traverten From Turkey",
+      "intro": "Majen supplies wholesale travertine blocks from Turkey directly from our Uşak – Ulubey quarry. With Blaundos Antiko, Light, and Ivory varieties, our blocks are recognized worldwide for consistent texture, durability, and large export-ready dimensions. For wholesalers and importers seeking wholesale travertine blocks from Turkey, Majen ensures competitive pricing, stable supply, and trusted logistics support.",
+      "title2": "Why Choose Wholesale Travertine Blocks from Turkey?",
       "alt2": "Block product image",
-      "intro2": "Quarry-selected blocks with uniform texture; high yield and quality.",
+      "intro2": "Turkey is the global leader in travertine exports, and Majen delivers premium wholesale travertine blocks from Turkey to international markets including the USA, Europe, and the Middle East. Our quarry-direct sourcing guarantees A-grade quality and strict quality control. By choosing wholesale travertine blocks from Turkey, buyers gain access to sustainable production, competitive FOB/CIF pricing, and reliable delivery schedules.",
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
@@ -230,7 +230,7 @@
         "Export and domestic shipments follow proper packing and marking standards. The entire process is traceable and quality-controlled."
       ],
       "variants": {
-        "heading": "Color Varieties",
+        "heading": "Travertine Block Varieties",
         "variant1": { "title": "Travertine Blocks Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
         "variant2": { "title": "Travertine Blocks Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
         "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
@@ -257,10 +257,10 @@
     },
 
     "slabs": {
-      "title": "Travertine Slabs - Wholesale Traverten From Turkey",
+      "title": "Travertine Slabs - Wholesale Travertine Slabs From Turkey",
       "alt": "Slab product image",
       "intro": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
-        "title2": "Travertine Slabs - Wholesale Traverten From Turkey",
+        "title2": "Travertine Slabs - Wholesale Travertine From Turkey",
       "alt2": "Slab product image",
       "intro2": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
       "sizes": ["2 cm", "3 cm","5cm"],
@@ -298,10 +298,10 @@
     },
 
     "tiles": {
-      "title": "Travertine Tiles - Wholesale Traverten From Turkey",
+      "title": "Travertine Tiles - Wholesale Travertine Tiles From Turkey",
       "alt": "Tile product image",
       "intro": "Standard sizes with precise edges for interior/exterior use and quick installation.",
-        "title2": "Travertine Tiles - Wholesale Traverten From Turkey",
+        "title2": "Travertine Tiles - Wholesale Travertine From Turkey",
       "alt2": "Tile product image",
       "intro2": "Standard sizes with precise edges for interior/exterior use and quick installation.",
       "sizes": ["30×60", "60×60", "60×120"],
@@ -339,10 +339,10 @@
     },
 
     "special": {
-      "title": "Travertine Special Designs - Wholesale Traverten From Turkey",
+      "title": "Travertine Special Designs - Wholesale Travertine From Turkey",
       "alt": "Custom design product image",
       "intro": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
-      "title2": "Travertine Special Designs - Wholesale Traverten From Turkey",
+      "title2": "Travertine Special Designs - Wholesale Travertine From Turkey",
       "alt2": "Custom design product image",
       "intro2": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
       "sizes": ["Project-based dimensions"],
@@ -477,7 +477,29 @@
   "slabs": "Slabs",
   "tiles": "Tiles",
   "special": "Special Design"
-}
+},
+
+
+ "Seo": {
+    "product": {
+      "block": {
+        "title": "Wholesale Travertine Blocks from Turkey | Majen Quarry Supplier",
+        "description": "Premium wholesale travertine blocks from Turkey – direct from Uşak Ulubey quarry. Export-ready with FOB/CIF options. Blaundos Antiko, Light and Ivory travertine blocks."
+      },
+      "slabs": {
+        "title": "Travertine Slabs Supplier from Turkey | Majen",
+        "description": "Premium 2cm, 3cm, 5cm travertine slabs: polished, honed, brushed. Ideal for bookmatch and large areas. Export-ready from Turkey."
+      },
+      "tiles": {
+        "title": "Wholesale Travertine Tiles from Turkey | Majen",
+        "description": "Durable travertine tiles for interior/exterior: 30×60, 60×60, 40×80 and more. Consistent quality, wholesale pricing."
+      },
+      "special": {
+        "title": "Custom Travertine Designs | Majen",
+        "description": "Bespoke travertine: steps, mosaics, borders, custom architectural cuts. Project-based production, global shipping."
+      }
+    }
+  }
 
   
 }

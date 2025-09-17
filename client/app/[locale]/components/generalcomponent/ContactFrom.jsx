@@ -83,7 +83,7 @@ export default function ContactFrom() {
 
   return (
     <section className="relative mt-12 mb-12">
-      <div className="max-w-3xl mx-auto p-6 md:p-8  bg-white/80 backdrop-blur-sm shadow-sm">
+      <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm">
         <header className="mb-6">
           <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
             {t("title")}
@@ -91,7 +91,7 @@ export default function ContactFrom() {
           <p className="mt-2 text-neutral-600">{t("subtitle")}</p>
         </header>
 
-        <form onSubmit={onSubmit} noValidate>
+        <form onSubmit={onSubmit} noValidate className=" ">
           {/* Honeypot: gizli alan */}
           <input
             type="text"
@@ -104,7 +104,8 @@ export default function ContactFrom() {
             onChange={(e) => setValues((s) => ({ ...s, botField: e.target.value }))}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <div className="flex flex-col lg:flex-row w-full">
+           <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
             <div>
               <label className={labelClass} htmlFor="name">{t("fields.name")}</label>
               <input
@@ -171,6 +172,7 @@ export default function ContactFrom() {
             />
             {errors.message && <p className={errorClass}>{errors.message}</p>}
           </div>
+         </div>
 
           <div className="mt-4 flex items-start gap-3">
             <input
@@ -193,7 +195,7 @@ export default function ContactFrom() {
             <button
               type="submit"
               disabled={status.loading}
-              className="inline-flex items-center justify-center rounded-md bg-black text-white px-5 py-2.5 text-sm font-semibold hover:bg-white hover:text-black border border-black transition"
+              className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black border border-black transition"
             >
               {status.loading ? t("buttons.sending") : t("buttons.send")}
             </button>
@@ -202,7 +204,7 @@ export default function ContactFrom() {
               href={t("whatsapp.link")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold hover:bg-black hover:text-white transition"
+              className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-semibold hover:bg-black hover:text-white transition"
             >
               {t("buttons.whatsapp")}
             </a>

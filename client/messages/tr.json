@@ -7,7 +7,7 @@
   "Header": {
     "home": "Anasayfa",
     "product": "Ürünler",
-    "shop": "Mağaza",
+    "shop": "How We Export",
     "projects": "Projeler",
     "blog": "Blog",
     "contactUs": "İletişim",
@@ -460,6 +460,28 @@
     "slabs": "Plakalar",
     "tiles": "Karolar",
     "special": "Özel Tasarım"
+  },
+
+
+  "Seo": {
+    "product": {
+      "block": {
+        "title": "Türkiye’den Toptan Traverten Blok | Majen Ocak Tedarikçisi",
+        "description": "Uşak Ulubey ocağımızdan doğrudan toptan traverten bloklar. FOB/CIF seçenekleri, Blaundos Antiko, Light ve Ivory renkleri."
+      },
+      "slabs": {
+        "title": "Türkiye’den Traverten Plaka Tedarikçisi | Majen",
+        "description": "2 cm, 3 cm, 5 cm traverten plakalar: cilalı, honlu, fırçalı. Bookmatch ve geniş alanlar için ideal."
+      },
+      "tiles": {
+        "title": "Türkiye’den Toptan Traverten Karo | Majen",
+        "description": "İç/dış mekân için dayanıklı traverten karolar: 30×60, 60×60, 40×80 ve daha fazlası. Tutarlı kalite, toptan fiyat."
+      },
+      "special": {
+        "title": "Özel Traverten Tasarımları | Majen",
+        "description": "Basamaklar, mozaikler, bordürler ve özel mimari kesimler. Proje bazlı üretim, global sevkiyat."
+      }
+    }
   }
   
 }
