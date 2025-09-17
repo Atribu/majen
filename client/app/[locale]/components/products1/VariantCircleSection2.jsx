@@ -90,7 +90,7 @@ const hrefFor = (productKey, variantSlug) => {
               </h4>
 
               {/* Ortak sabit metin */}
-              <p className="mt-3 text-center text-sm md:text-base text-neutral-700">
+              <p className="lg:mt-3 text-center text-sm md:text-base text-neutral-700 w-[90%]">
                 {t("variantSentence.start")}{" "}
                 {variantSlugs.map((slug, i) => (
                   <span key={`${pkey}-${slug}`}>
@@ -108,7 +108,7 @@ const hrefFor = (productKey, variantSlug) => {
 
               <Link
                 href={productHref}
-                className="px-6 py-2 bg-black text-center text-white text-[14px] lg:text-[16px] mt-4 rounded-xl"
+                className="px-6 py-2 bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
               >
                 {t("goToPage", { default: "Go to page" })}
               </Link>

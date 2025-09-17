@@ -76,11 +76,11 @@ export default function TravertinePageClient() {
   };
 
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-10 overflow-hidden">
+    <main className=" py-10 overflow-hidden">
      <IntroSection/>
 
       {/* Info Cards */}
-      <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+      <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
         {cards.map((c, i) => (
           <InfoCard key={i} title={c.title}>
             {/* Sadece 2. kart (applications) linkli olsun */}

@@ -44,14 +44,13 @@ export default function HighlightSection() {
 
   return (
     <section className="relative w-full mt-24 z-[990]">
-      <div className="max-w-7xl mx-auto space-y-24 lg:space-y-28 w-[90%]">
+      <div className="max-w-7xl mx-auto space-y-24 lg:space-y-28 w-[95%] lg:w-[90%]">
         {items.map(({ key, imgs, reverse }, idx) => (
           <div
             key={key}
             className={`flex flex-col-reverse ${
               reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-            } items-center`}
-          >
+            } items-center`}>
             {/* Görsel (her blok için bağımsız carousel) */}
             <div className="w-full lg:w-[96%]">
               <Carousel
@@ -61,26 +60,22 @@ export default function HighlightSection() {
                 priorityFirst={idx === 0}
               />
             </div>
-
             {/* Kart */}
             <div
               className={`w-full lg:w-1/2 flex ${
                 reverse ? "lg:justify-start" : "lg:justify-end"
-              }`}
-            >
+              }`}>
               <div
-                className={`bg-white shadow-xl p-8 sm:p-8 max-w-md text-center items-center justify-center flex flex-col
+                className={`bg-white shadow-xl p-4 lg:p-8 max-w-md text-center items-center justify-center flex flex-col
                 -mt-12 sm:-mt-16 lg:mt-0
-                ${
-                  reverse
+                ${reverse
                     ? "lg:translate-x-16 xl:translate-x-24"
                     : "lg:-translate-x-16 xl:-translate-x-24"
-                }`}
-              >
-                <h2 className="text-[16px] md:text-2xl lg:text-3xl font-bold leading-tight text-black">
+                }`} >
+                <h4 className="text-[20px] md:text-[22px] lg:text-[26px] font-bold leading-[100%] md:leading-tight text-black">
                   {t(`items.${key}.title`)}
-                </h2>
-                <p className="mt-4 text-[12px] lg:text-[16px] text-gray-600 leading-relaxed">
+                </h4>
+                <p className="mt-4 text-[12px] lg:text-[16px] text-gray-600 leading-tight lg:leading-relaxed">
                   {t(`items.${key}.description`)}
                 </p>
               </div>
@@ -140,15 +135,13 @@ function Carousel({ images, altBase, priorityFirst = false }) {
       <button
         onClick={scrollPrev}
         aria-label="Previous"
-        className="absolute left-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow "
-      >
+        className="absolute left-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow ">
         ‹
       </button>
       <button
         onClick={scrollNext}
         aria-label="Next"
-        className="absolute right-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow  "
-      >
+        className="absolute right-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow  " >
         ›
       </button>
 

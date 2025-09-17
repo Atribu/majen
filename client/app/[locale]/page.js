@@ -20,12 +20,12 @@ export default function Home() {
       <HomeMainSection/>
       <InfoSection/>
       <LogisticSection/>
-       <BackgroundSection/>
+      <BackgroundSection/>
       <CollectionsSection/>
       <ContactFrom />
       <ServicesSection/>
-       <QuestionsSection color="#000000"/>
       <HighlightSection/>
+      <QuestionsSection color="#000000"/>
       <BackgroundSection2/>
     </div>
   );

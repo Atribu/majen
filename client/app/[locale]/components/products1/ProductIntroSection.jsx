@@ -61,16 +61,16 @@ export default function ProductIntroSection({
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 px-5 text-center text-white max-w-[90%]">
-          <h1 id="intro-heading" className="text-2xl sm:text-3xl font-semibold">
+        <div className="relative z-10 text-center text-white max-w-[95%]">
+          <h1 id="intro-heading" className="text-2xl font-semibold">
             {title}
           </h1>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed">{intro}</p>
+          <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
 
-            <h2 id="intro-heading" className="text-2xl sm:text-3xl font-semibold">
+            <h2 id="intro-heading" className="text-[22px] font-semibold">
             {title2}
           </h2>
-          <p className="mt-3 text-sm sm:text-base leading-relaxed">{intro2}</p>
+          <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro2}</p>
 
           {/* Breadcrumbs */}
           <nav

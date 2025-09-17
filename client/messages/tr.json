@@ -69,6 +69,15 @@
     "buttonLink2": "#portfolio"
   },
 
+  "HomeMainSection": {
+    "header": "Türkiye’den Traverten Tedarikçisi – Majen Ocak İhracatçısı",
+    "text": "Majen, Türkiye’den doğrudan Uşak–Ulubey ocağımızdan premium blok, plaka, karo ve özel tasarımlar sunan lider bir traverten tedarikçisidir. On yıllara dayanan uzmanlığımızla ABD, Avrupa ve Orta Doğu’ya toptan traverten ihracatı yapıyoruz. Ocakdan-doğrudan tedarik modelimiz, tutarlı A sınıfı kaliteyi, rekabetçi FOB/CIF fiyatlamayı ve sürdürülebilir üretim yöntemlerini garanti eder. Majen’i tercih eden ithalatçı ve toptancılar; şeffaflığa, güçlü lojistik desteğe ve zamanında teslimata odaklanan güvenilir bir iş ortağı kazanır."
+  },
+  "LogisticSection": {
+    "header": "İhracat & Lojistik",
+    "text": "Majen, Türkiye’den toptan traverten ihracatında uzmandır. FOB (Free On Board) ile konteynerleri Türk limanlarında yükler, CIF (Cost, Insurance & Freight) ile ise varış limanınıza kadar taşımayı üstleniriz. İhracat ekibimiz ticari faturalar, çeki listeleri, menşe şahadetnameleri ve muayene raporları dâhil tüm evrakları hazırlar. Her blok, plaka ve karo; ahşap karkaslarla güçlendirilmiş, naylon ambalaj ve metal çemberleme ile paketlenir ve deniz taşımacılığı için özenle konteynerlere yüklenir. Kanıtlanmış lojistik ağımız, dünya genelinde güvenli ve zamanında teslimatı sağlar."
+  },
+
   "InfoSection": {
     "subtitle": "ÜRÜN GRUPLARI",
     "heading": "Doğal Taşlarda En İyi Seçimler",
@@ -482,6 +491,17 @@
         "description": "Basamaklar, mozaikler, bordürler ve özel mimari kesimler. Proje bazlı üretim, global sevkiyat."
       }
     }
+  },
+
+   "QuestionsSection": {
+    "aboutpage_s4_faq_header1": "SSS – Toptan Traverten",
+    "aboutpage_s4_faq_span1": "Türkiye'den",
+    "aboutpage_s4_faq1_header": "Traverten bloklarda hangi ebatlar mevcut?",
+    "aboutpage_s4_faq1_text": "Standart blok ölçüsü 280×220×200 cm'dir; ortalama ağırlık 30–35 tondur.",
+    "aboutpage_s4_faq2_header": "Traverteni dünya geneline ihraç ediyor musunuz?",
+    "aboutpage_s4_faq2_text": "Evet. Majen, Türkiye'den ABD, Avrupa ve Orta Doğu'ya FOB ve CIF teslim şartlarıyla toptan traverten ihraç eder.",
+    "aboutpage_s4_faq3_header": "Sevkiyatların güvenliğini nasıl sağlıyorsunuz?",
+    "aboutpage_s4_faq3_text": "Tüm ürünler ahşap karkas, naylon ambalaj ve metal çember ile güçlendirilir; ardından deniz taşımacılığı için konteynırlara özenle yüklenir."
   }
   
 }

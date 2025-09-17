@@ -47,7 +47,7 @@ export default function TextSection({
 
   return (
     <As
-      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 mb-10 ${className}`}
+      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 lg:mb-10 ${className}`}
       aria-label={title}
     >
       {jsonLd ? (
@@ -64,7 +64,7 @@ export default function TextSection({
         </h4>
       ) : null}
 
-      <div className="mt-1 text-neutral-800 leading-[1.85] text-[15px] md:text-[16px] space-y-4">
+      <div className="mt-1 text-neutral-800 lg:leading-[1.85] text-[14px] md:text-[16px] space-y-4 leading-tight ">
         {visibleParagraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
@@ -76,7 +76,7 @@ export default function TextSection({
       ) : null}
 
     {text2 ? (
-         <p className="-mt-3">{text2}</p>
+         <p className="-mt-3 leading-tight lg:leading-normal">{text2}</p>
       ) : null}
     
 

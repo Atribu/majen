@@ -69,6 +69,16 @@
     "buttonLink2": "#portfolio"
   },
 
+    "HomeMainSection":{
+    "header":"Travertine Supplier from Turkey – Majen Quarry Exporter",
+    "text":"Majen is a leading travertine supplier from Turkey, offering premium blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we export wholesale travertine to the USA, Europe, and the Middle East. Our quarry-direct sourcing ensures consistent A-grade quality, competitive FOB/CIF pricing, and sustainable production methods. By choosing Majen, importers and wholesalers gain a reliable partner committed to delivering wholesale travertine from Turkey with transparency, strong logistics support, and on-time delivery."
+  },
+
+    "LogisticSection":{
+    "header":"Export & Logistics",
+    "text":"Majen specializes in the export of wholesale travertine from Turkey. We provide FOB (Free On Board) shipping, where we load containers at Turkish ports, and CIF (Cost, Insurance & Freight), where we handle transportation to your destination port. Our export team prepares full documentation including commercial invoices, packing lists, certificates of origin, and inspection reports. Each block, slab, and tile is packaged with reinforced wooden frames, nylon wrapping, and metal strapping to minimize risk during sea freight. Our proven logistics network ensures safe and timely delivery of wholesale travertine worldwide"
+  },
+
   "InfoSection": {
     "subtitle": "PRODUCT GROUPS",
     "heading": "Top Picks in Natural Stone",
@@ -499,6 +509,17 @@
         "description": "Bespoke travertine: steps, mosaics, borders, custom architectural cuts. Project-based production, global shipping."
       }
     }
+  },
+
+  "QuestionsSection": {
+    "aboutpage_s4_faq_header1": "FAQ – Wholesale Travertine",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is 280×220×200 cm with an average weight of 30–35 tons.",
+    "aboutpage_s4_faq2_header": "Do you export travertine worldwide?",
+    "aboutpage_s4_faq2_text": "Yes. Majen exports wholesale travertine from Turkey to the USA, Europe, and the Middle East using FOB and CIF terms.",
+    "aboutpage_s4_faq3_header": "How do you ensure safe shipments?",
+    "aboutpage_s4_faq3_text": "All products are reinforced with wooden frames, nylon wrapping, and metal strapping, then carefully loaded into containers for safe sea freight."
   }
 
   

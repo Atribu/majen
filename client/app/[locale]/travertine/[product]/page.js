@@ -147,7 +147,7 @@ export default function ProductPage() {
   }
 
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
+    <main className=" py-7 mt-16">
       {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}

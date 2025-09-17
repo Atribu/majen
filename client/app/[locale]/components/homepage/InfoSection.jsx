@@ -84,13 +84,13 @@ export default function InfoSection() {
   );
 
   return (
-    <section className="flex w-screen items-center justify-center py-8 md:pt-12 lg:pt-20 xl:pt-24 z-[999] ">
-      <div className="w-[100%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center gap-7 md:gap-9 lg:gap-12 flex flex-col">
+    <section className="flex w-screen items-center justify-center py-12 md:pt-12 lg:pt-20 xl:pt-24 z-[999] ">
+      <div className="w-[95%] md:w-[80%] lg:w-[75%] lg:min-w-[1000px] items-center justify-center text-center gap-7 md:gap-9 lg:gap-12 flex flex-col">
         <div className="flex flex-col">
-          <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase">
+          <span className="text-[#6b7177] font-medium text-[12px] md:text-[14px] lg:text-[16px] uppercase leading-0">
             {t("subtitle")}
           </span>
-          <h2 className="mt-2 text-[28px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
+          <h2 className="mt-2 text-[24px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
             Wholesale Travertine Blocks, Slabs & Tiles
           </h2>
           <p className="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]">

@@ -84,11 +84,11 @@ export default function ContactFrom() {
   return (
     <section className="relative mt-12 mb-12">
       <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm">
-        <header className="mb-6">
-          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
+        <header className="mb-2 lg:mb-6">
+          <h1 className="text-[20px] md:text-[24px] font-semibold tracking-tight">
             {t("title")}
           </h1>
-          <p className="mt-2 text-neutral-600">{t("subtitle")}</p>
+          <p className="mt-2 text-neutral-600 text-[14px] lg:text-[16px]">{t("subtitle")}</p>
         </header>
 
         <form onSubmit={onSubmit} noValidate className=" ">
@@ -104,8 +104,9 @@ export default function ContactFrom() {
             onChange={(e) => setValues((s) => ({ ...s, botField: e.target.value }))}
           />
 
-         <div className="flex flex-col lg:flex-row w-full">
-           <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+  {/* Sol kolon: kısa alanlar */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className={labelClass} htmlFor="name">{t("fields.name")}</label>
               <input
@@ -160,18 +161,18 @@ export default function ContactFrom() {
             </div>
           </div>
 
-          <div className="mt-4">
-            <label className={labelClass} htmlFor="message">{t("fields.message")}</label>
-            <textarea
-              id="message"
-              rows={6}
-              className={fieldClass}
-              value={values.message}
-              onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
-              placeholder={t("placeholders.message")}
-            />
-            {errors.message && <p className={errorClass}>{errors.message}</p>}
-          </div>
+          <div className="mt-4 lg:mt-0 lg:pl-6">
+    <label className={labelClass} htmlFor="message">{t("fields.message")}</label>
+    <textarea
+      id="message"
+      rows={5}
+      className={fieldClass + " lg:min-h-[220px]"}
+      value={values.message}
+      onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
+      placeholder={t("placeholders.message")}
+    />
+    {errors.message && <p className={errorClass}>{errors.message}</p>}
+  </div>
          </div>
 
           <div className="mt-4 flex items-start gap-3">
