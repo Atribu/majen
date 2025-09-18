@@ -85,8 +85,8 @@
 
   "InfoSection": {
     "subtitle": "ÜRÜN GRUPLARI",
-    "heading": "Doğal Taşlarda En İyi Seçimler",
-    "description": "Projelerinize uygun, dayanıklı ve estetik çözümler sunuyoruz.",
+    "heading": "Toptan Traverten Bloklar, Plakalar ve Fayanslar",
+"description": "Ürün portföyümüz, toptan traverten bloklar, plakalar ve fayansların tamamını kapsar. Bloklar ortalama 280×220×200 cm ölçülerinde olup 30–35 ton ağırlığındadır ve uluslararası sevkiyat için güçlendirilmiştir. Plakalar 2 cm, 3 cm ve 5 cm kalınlıklarda; cilalı, honlanmış, fırçalanmış veya eskitilmiş yüzey seçenekleriyle sunulur. Traverten fayanslar ise 30×60 ve 60×60 cm gibi popüler ölçülerde üretilir, banyolar, mutfaklar, havuzlar ve dış mekanlar için idealdir. Majen, Blaundos Antiko, Blaundos Light ve Blaundos Ivory renk seçenekleriyle Türkiye’den toptan traverten ihtiyaçlarınıza geniş yelpazede çözümler sunar.",
     "explore": "İncele",
     "contact": "İletişime Geç",
     "products": {
@@ -99,7 +99,8 @@
 
   "CollectionsSection": {
     "span": "Blaundos Traverten Renkleri",
-    "header": "Renk Seçenekleri",
+    "header": "Traverten Renkleri ve Yüzey İşlemleri",
+"text": "Blaundos Antiko: Lüks cepheler için gri-bej antik tonlar. Blaundos Light: Modern iç ve dış mekânlar için açık bej. Blaundos Ivory: Oteller, villalar ve kamusal alanlar için fildişi-krem. Mevcut yüzey işlemleri arasında cilalı, honlanmış, fırçalanmış ve eskitilmiş seçenekler bulunur. Talep üzerine özel yüzey işlemleri uygulanabilir, böylece mimarlara ve toptancılara farklı proje ihtiyaçları için esneklik sağlanır.",
     "titleAntiko": "Blaundos Antiko",
     "altAntiko": "Blaundos Antiko traverten koleksiyonu",
     "titleLight": "Blaundos Light",
@@ -114,30 +115,26 @@
     "titleAccent": "Hizmetler",
     "explore": "İncele",
     "items": {
-      "quality": {
-        "title": "Üstün Kalite",
-        "description": "Ocaktan seçilmiş bloklar ve sıkı kalite kontrolüyle tutarlı renk/doku ve uzun ömür."
-      },
-      "design": {
-        "title": "Özgün Tasarımlar",
-        "description": "Waterjet, mozaik ve book-match uygulamalarıyla projeye özgü estetik çözümler."
-      },
-      "range": {
-        "title": "Geniş Malzeme Yelpazesi",
-        "description": "500+ malzeme referansı ve güçlü stok ile zamanında tedarik, kesintisiz akış."
-      },
-      "custom": {
-        "title": "Kişiselleştirme Seçenekleri",
-        "description": "CNC işleme, özel ebat ve yüzey bitişleriyle projene tam uyumlu üretim."
-      },
-      "sustain": {
-        "title": "Sürdürülebilir Tedarik",
-        "description": "Sorumlu madencilik ve atık azaltma süreçleriyle çevresel etkiyi en aza indiriyoruz."
-      },
-      "expert": {
-        "title": "Uzman Rehberlik",
-        "description": "Teknik keşif, numune yönetimi ve uygulama önerileriyle uçtan uca proje desteği."
-      }
+      "export1": {
+  "title": "FOB (Free on Board) – Traverten İhracatı",
+  "description": "FOB ile Majen, konteynerleri Türkiye limanlarında yükler ve alıcılar nakliyeyi buradan yönetir. Bu yöntem, traverten blok ve plakaların toplu siparişlerinde yaygın olarak kullanılır."
+},
+"export2": {
+  "title": "CIF (Cost, Insurance & Freight) – Sorunsuz Nakliye",
+  "description": "CIF ile Majen, nakliye, sigorta ve navlunu alıcının varış limanına kadar üstlenir. İthalatçılar, Türkiye’den toptan traverten tedarik ederken kolaylık sağladığı için bu yöntemi tercih eder."
+},
+"export3": {
+  "title": "EXW (Ex Works) – Esnek Fabrika Teslimi",
+  "description": "Alıcılar kendi lojistiklerini doğrudan ocağımızdan veya depomuzdan düzenleyebilir. Bu seçenek, oturmuş nakliye ortaklarına sahip ithalatçılar için uygundur."
+},
+"export4": {
+  "title": "İhracat Belgeleri",
+  "description": "Majen, gümrükleme ve sorunsuz lojistik için gerekli tüm ihracat belgelerini sağlar: Ticari fatura & paketleme listesi, Menşe belgesi, Kalite sertifikaları & denetim raporları, Gümrükleme belgeleri."
+},
+"export5": {
+  "title": "Paketleme & Konteyner Yükleme",
+  "description": "Traverten bloklar, plakalar ve karolar ahşap destekler, naylon ambalaj ve metal kayışlarla güçlendirilir. Güvenli konteyner yükleme, deniz taşımacılığında kırılmaları en aza indirir."
+}
     }
   },
 
@@ -516,6 +513,26 @@
     "aboutpage_s4_faq2_text": "Evet. Majen, Türkiye'den ABD, Avrupa ve Orta Doğu'ya FOB ve CIF teslim şartlarıyla toptan traverten ihraç eder.",
     "aboutpage_s4_faq3_header": "Sevkiyatların güvenliğini nasıl sağlıyorsunuz?",
     "aboutpage_s4_faq3_text": "Tüm ürünler ahşap karkas, naylon ambalaj ve metal çember ile güçlendirilir; ardından deniz taşımacılığı için konteynırlara özenle yüklenir."
+  },
+
+  "HowWeExportPage": {
+  "title": "Traverten İhracat Yöntemlerimiz",
+  "intro": "Majen, Uşak–Ulubey’den çıkarılan traverten bloklarını, plakalarını ve fayanslarını dünya çapında alıcılara doğrudan teslim eder. İhracat sürecimiz şeffaf, güvenilir ve ithalatçıların ihtiyaçlarına göre uyarlanmıştır.",
+
+  "title2": "Nakliye Yöntemleri",
+  "intro2": "FOB (Free On Board): Konteynerleri Türkiye limanlarında yükleriz, alıcılar nakliyeyi yönetir. CIF (Cost, Insurance, Freight): Nakliye, sigorta ve navlunu alıcının limanına kadar biz üstleniriz.",
+
+  "title3": "Dokümantasyon ve Güvenlik",
+  "intro3": "Fatura, paketleme listesi, menşe şahadetnamesi ve kontrol raporları sağlıyoruz. Tüm bloklar ve plakalar ahşap destekler ve metal şeritlerle güçlendirilir, böylece deniz taşımacılığında kırılma riski en aza indirilir.",
+  "cards":{
+    "title1":"",
+    "text1":"",
+      "title2":"",
+    "text2":"",
+      "title3":"",
+    "text3":""
   }
+}
+
   
 }

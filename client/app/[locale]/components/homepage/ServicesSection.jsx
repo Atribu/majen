@@ -77,13 +77,13 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2 ">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            FOB (Free on Board) – Travertine Exports
+            {t("items.export1.title")}
               </h5>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-6  max-w-[90vw]">
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-          With FOB, Majen loads the containers at Turkish ports, and buyers manage the shipping from there. This method is widely used for bulk orders of travertine blocks and slabs.
+          {t("items.export1.description")}
               </div>
               <div className="px-8 py-2 rounded-2xl outline outline-2 outline-offset-[-2px] inline-flex justify-center items-center ">
                 <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</p>
@@ -95,13 +95,13 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-               CIF (Cost, Insurance & Freight) – Hassle-Free Shipping
+               {t("items.export2.title")}
               </h5>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-               With CIF, Majen handles shipping, insurance, and freight to the buyer’s destination port. Importers prefer this for convenience when sourcing wholesale travertine from Turkey.
+               {t("items.export2.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
@@ -113,13 +113,13 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            EXW (Ex Works) – Flexible Factory Pickup
+            {t("items.export3.title")}
               </h5>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-           Buyers can arrange their own logistics directly from our quarry or warehouse. This option is suitable for importers with established freight partners.
+           {t("items.export3.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
@@ -131,21 +131,13 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            Export Documentation
+            {t("items.export4.title")}
               </h5>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-              Majen provides all necessary export documents for customs clearance and smooth logistics:
-
-Commercial invoice & packing list
-
-Certificate of origin
-
-Quality certificates & inspection reports
-
-Customs clearance documents
+             {t("items.export4.description")}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
@@ -157,15 +149,15 @@ Customs clearance documents
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-               Packaging & Container Loading
+                {t("items.export5.title")}
               </h5>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
               <div className="lg:w-[500px] opacity-75 justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-tight">
-                Travertine blocks, slabs, and tiles are reinforced with wooden supports, nylon wrapping, and metal strapping. Safe container loading minimizes breakage during sea freight.
+                {t("items.export5.description")}
               </div>
-              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
+              <div className="px-8 py-2 rounded-[10px] outline  outlpine-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> {t("explore")}</div>
               </div>
             </div>

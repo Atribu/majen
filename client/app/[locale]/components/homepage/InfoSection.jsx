@@ -91,14 +91,13 @@ export default function InfoSection() {
             {t("subtitle")}
           </span>
           <h2 className="mt-2 lg:mt-5 text-[24px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
-            Wholesale Travertine Blocks, Slabs & Tiles
+            {t("heading")}
           </h2>
           <p className="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]">
-            Our product portfolio covers the full spectrum of wholesale travertine blocks, slabs, and tiles. Blocks average 280×220×200 cm, weighing 30–35 tons, reinforced for international shipping. Slabs are available in 2 cm, 3 cm, and 5 cm thicknesses with finishes such as polished, honed, brushed, or tumbled. Travertine tiles come in popular formats like 30×60 and 60×60 cm, ideal for bathrooms, kitchens, pools, and outdoor spaces. Majen offers Blaundos Antiko, Blaundos Light, and Blaundos Ivory colors, ensuring diverse options for every project that requires wholesale travertine from Turkey.
+            {t("description")}
           </p>
         </div>
 
-        {/* Mobil: Embla Carousel */}
         {/* Mobil: Embla Carousel */}
 <div className="mt-8 block md:hidden">
   <div ref={emblaRef} className="overflow-hidden w-full">
@@ -106,7 +105,7 @@ export default function InfoSection() {
       {items.map(({ key, img, href }) => (
         <div
           key={key}
-          className="flex-[0_0_80%] shrink-0 items-center justify-center" // ✅ her slide %100 genişlik + kaymayı önle
+          className="flex-[0_0_80%] shrink-0 items-center justify-center" 
         >
           <Card t={tProxy} img={img} href={href} tKey={key} />
         </div>

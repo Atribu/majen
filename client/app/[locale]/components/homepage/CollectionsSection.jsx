@@ -60,13 +60,9 @@ export default function CollectionsSection() {
           {t("span")}
         </span>
         <h3 className="text-[24px] md:text-[26px] font-bold lg:text-[30px] md:leading-[57.6px]  font-marcellus leading-normal">
-         Travertine Colors & Finishes
+       {t("header")}
         </h3>
-        <p className="text-[12px] md:text-[14px]">Majen offers three exclusive color selections of wholesale travertine from Turkey:
-Blaundos Antiko: Grey-beige antique tones for luxury façades.
-Blaundos Light: Light beige for modern interiors and exteriors.
-Blaundos Ivory: Ivory-cream for hotels, villas, and public spaces.
-Available finishes include polished, honed, brushed, and tumbled. Custom surface treatments are available upon request, giving architects and wholesalers flexibility for diverse project requirements.</p>
+        <p className="text-[12px] md:text-[14px]">{t("text")}</p>
       </div>
 
       {/* Yuvarlak kartlar */}

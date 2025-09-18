@@ -87,8 +87,8 @@
 
   "InfoSection": {
     "subtitle": "PRODUCT GROUPS",
-    "heading": "Top Picks in Natural Stone",
-    "description": "We deliver durable and aesthetic solutions tailored to your projects.",
+    "heading": " Wholesale Travertine Blocks, Slabs & Tiles",
+    "description": " Our product portfolio covers the full spectrum of wholesale travertine blocks, slabs, and tiles. Blocks average 280×220×200 cm, weighing 30–35 tons, reinforced for international shipping. Slabs are available in 2 cm, 3 cm, and 5 cm thicknesses with finishes such as polished, honed, brushed, or tumbled. Travertine tiles come in popular formats like 30×60 and 60×60 cm, ideal for bathrooms, kitchens, pools, and outdoor spaces. Majen offers Blaundos Antiko, Blaundos Light, and Blaundos Ivory colors, ensuring diverse options for every project that requires wholesale travertine from Turkey.",
     "explore": "Explore",
     "contact": "Contact Us",
     "products": {
@@ -121,7 +121,8 @@
 
   "CollectionsSection": {
     "span": "Blaundos Travertine Colors",
-    "header": "Color Options",
+    "header": " Travertine Colors & Finishes",
+    "text":"Blaundos Antiko: Grey-beige antique tones for luxury façades. Blaundos Light: Light beige for modern interiors and exteriors. Blaundos Ivory: Ivory-cream for hotels, villas, and public spaces. Available finishes include polished, honed, brushed, and tumbled. Custom surface treatments are available upon request, giving architects and wholesalers flexibility for diverse project requirements.",
     "titleAntiko": "Blaundos Antico",
     "altAntiko": "Blaundos Antico travertine collection",
     "titleLight": "Blaundos Light",
@@ -136,29 +137,25 @@
     "titleAccent": "Services",
       "explore": "Explore",
     "items": {
-      "quality": {
-        "title": "Superior Quality",
-        "description": "Quarry-selected blocks and rigorous QC for consistent color/texture and long service life."
+      "export1": {
+        "title": "FOB (Free on Board) – Travertine Exports",
+        "description": "With FOB, Majen loads the containers at Turkish ports, and buyers manage the shipping from there. This method is widely used for bulk orders of travertine blocks and slabs."
       },
-      "design": {
-        "title": "Distinctive Designs",
-        "description": "Project-specific aesthetics with waterjet, mosaic and book-match applications."
+      "export2": {
+        "title": " CIF (Cost, Insurance & Freight) – Hassle-Free Shipping",
+        "description": "With CIF, Majen handles shipping, insurance, and freight to the buyer’s destination port. Importers prefer this for convenience when sourcing wholesale travertine from Turkey."
       },
-      "range": {
-        "title": "Wide Material Range",
-        "description": "500+ material references and strong inventory for on-time supply and continuity."
+      "export3": {
+        "title": "EXW (Ex Works) – Flexible Factory Pickup",
+        "description": "Buyers can arrange their own logistics directly from our quarry or warehouse. This option is suitable for importers with established freight partners."
       },
-      "custom": {
-        "title": "Customization Options",
-        "description": "CNC processing, bespoke sizes and surface finishes tailored to your project."
+      "export4": {
+        "title": "Export Documentation",
+        "description": "Majen provides all necessary export documents for customs clearance and smooth logistics: Commercial invoice & packing list Certificate of origin Quality certificates & inspection reports Customs clearance documents"
       },
-      "sustain": {
-        "title": "Sustainable Sourcing",
-        "description": "Responsible quarrying and waste reduction to minimize environmental impact."
-      },
-      "expert": {
-        "title": "Expert Guidance",
-        "description": "End-to-end support with technical surveys, samples and application advice."
+      "export5": {
+        "title": "Packaging & Container Loading",
+        "description": "Travertine blocks, slabs, and tiles are reinforced with wooden supports, nylon wrapping, and metal strapping. Safe container loading minimizes breakage during sea freight."
       }
     }
   },
@@ -529,7 +526,27 @@
     "aboutpage_s4_faq2_text": "Yes. Majen exports wholesale travertine from Turkey to the USA, Europe, and the Middle East using FOB and CIF terms.",
     "aboutpage_s4_faq3_header": "How do you ensure safe shipments?",
     "aboutpage_s4_faq3_text": "All products are reinforced with wooden frames, nylon wrapping, and metal strapping, then carefully loaded into containers for safe sea freight."
+  },
+
+  "HowWeExportPage": {
+  "title": "How We Export Travertine Worldwide",
+  "intro": "Majen delivers wholesale travertine blocks, slabs, and tiles directly from Uşak–Ulubey to buyers worldwide. Our export process is transparent, reliable, and tailored to importer needs.",
+
+  "title2": "Shipping Methods",
+  "intro2": "FOB (Free On Board): We load containers at Turkish ports, buyers manage shipping. CIF (Cost, Insurance, Freight): We handle shipping, insurance, and freight to buyer’s port.",
+
+  "title3": "Documentation & Safety",
+  "intro3": "We provide invoices, packing lists, certificates of origin, and inspection reports. All blocks and slabs are reinforced with wooden frames and strapping for safe sea freight.",
+  "cards":{
+    "title1":"",
+    "text1":"",
+      "title2":"",
+    "text2":"",
+      "title3":"",
+    "text3":""
   }
+}
+
 
   
 }

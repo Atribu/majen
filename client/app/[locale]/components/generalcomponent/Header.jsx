@@ -185,7 +185,7 @@ export default function Header() {
           <Link href="/travertine" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("product")}
           </Link>
-          <Link href="/shop" className={linkClasses} onClick={() => setMenuOpen(false)}>
+          <Link href="/howweexport" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("shop")}
           </Link>
           <Link href="/projects" className={linkClasses} onClick={() => setMenuOpen(false)}>
