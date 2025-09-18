@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import mermer from "@/public/images/homepage/mermer.jpg";
+import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 const IntroSection = () => {
@@ -34,16 +35,16 @@ const IntroSection = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 px-2 lg:px-5 text-center text-white max-w-[95%] ">
-          <h1 id="intro-heading" className="text-2xl font-semibold leading-[110%] md:leading-[130%]">
+          <h1 id="intro-heading" className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold leading-[110%] md:leading-[130%]">
             {t("title")}
           </h1>
-          <p className="mt-1 lg:mt-3 text-[12px] leading-tight line">
+          <p className="mt-1 lg:mt-3 text-[12px] md:text-[14px] leading-tight line">
           {t("intro")}
           </p>
-           <h2 id="intro-heading" className="text-2xl sm:text-3xl font-semibold leading-[110%] md:leading-[130%] mt-3">
+           <h2 id="intro-heading" className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold leading-[110%] md:leading-[130%] mt-3">
             {t("title2")}
           </h2>
-          <p className="mt-1 lg:mt-3 text-[12px] leading-tight">
+          <p className="mt-1 lg:mt-3 text-[12px] md:text-[14px] leading-tight">
         {t("intro2")}
           </p>
 
@@ -54,11 +55,11 @@ const IntroSection = () => {
           >
             <ol className="flex items-center gap-x-2">
               <li>
-                <Link href="/" className="hover:underline">Ana Sayfa</Link>
+                <Link href="/" className="hover:underline">{t("home")}</Link>
               </li>
               <li className="text-white/60">/</li>
               <li>
-                <Link href="/travertine" className="hover:underline">Travertine</Link>
+                <Link href="/travertine" className="hover:underline">{t("travertine")}</Link>
               </li>
             </ol>
           </nav>
@@ -98,21 +99,21 @@ const IntroSection = () => {
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}
   <header className="relative px-5 pt-5 w-[80%] z-10">
-    <h1 className="text-3xl font-semibold"> {t("title")}</h1>
-    <p>{t("intro")}</p>
-     <h2 className="text-2xl font-semibold mt-3">{t("title2")}</h2>
-    <p>{t("intro2")}</p>
+    <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold"> {t("title")}</h1>
+    <p className="text-[12px] md:text-[14px] lg:text-[18px]">{t("intro")}</p>
+     <h2 className="text-[24px] md:text-[32px] lg:text-[36px] text-2xl font-semibold mt-3">{t("title2")}</h2>
+    <p className="text-[12px] md:text-[14px] lg:text-[18px]">{t("intro2")}</p>
   </header>
 
           {/* Alt: Breadcrumbs */}
           <nav className="bg-transparent px-4 py-3 rounded-sm text-black z-[999]" aria-label="breadcrumb">
             <ol className="flex flex-wrap items-center gap-x-1 text-sm">
               <li>
-                <Link href="/" className="hover:underline">Home</Link>
+                <Link href="/" className="hover:underline">{t("home")}</Link>
               </li>
               <li>
                 <span className="mx-1 text-black/50">/</span>
-                <Link href="travertine" className="hover:underline">Travertine</Link>
+                <Link href="/travertine" className="hover:underline">{t("travertine")}</Link>
               </li>
 
             </ol>

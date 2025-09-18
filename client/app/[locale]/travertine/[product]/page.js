@@ -181,7 +181,6 @@ export default function ProductPage() {
         productKey={productKey}
       />
 
-      {/* === TextSection'lar — i18n’den dinamik === */}
       {sections.map(({ id, title: secTitle, paragraphs }) => (
         <TextSection
           key={id}

@@ -31,7 +31,7 @@ export default function Footer() {
   ];
 
   const navSecondary = [
-    { label: t("nav.secondary.projects"), href: `${prefix}${L("/projeler", "/projects")}` },
+    { label: t("nav.secondary.product"), href: `${prefix}${L("/projeler", "/travertine")}` },
     { label: t("nav.secondary.shop"), href: `${prefix}${L("/magaza", "/shop")}` },
     { label: t("nav.secondary.pages"), href: `${prefix}${L("/sayfalar", "/pages")}` },
     { label: t("nav.secondary.privacy"), href: `${prefix}${L("/kvkk", "/privacy")}` },

@@ -36,8 +36,8 @@
         "contact": "İletişim"
       },
       "secondary": {
-        "projects": "Projeler",
-        "shop": "Mağaza",
+        "product": "Ürünler",
+    "shop": "Nasıl İhracat Yapıyoruz",
         "pages": "Sayfalar",
         "privacy": "KVKK / Gizlilik"
       }
@@ -53,6 +53,11 @@
     "poweredBy": "Altyapı:",
     "provider": "DGTLFACE",
     "rights": "Tüm hakları saklıdır."
+  },
+
+  "HomePage":{
+    "title":"Majen | Wholesale Travertine from Turkey — Blocks, Slabs, Tiles",
+    "description":"Direct quarry supplier in Uşak–Ulubey. Wholesale travertine blocks, slabs, tiles and custom designs."
   },
 
   "MainBanner": {
@@ -410,10 +415,13 @@
   },
 
    "TravertinePage": {
+    "buttonText":"Sayfaya git",
     "title": "Traverten – Türkiye’den Toptan Traverten | Majen",
     "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
     "title2":"Why Choose Travertine From Turkey?",
-    "intro2":"Turkey",
+    "intro2":"Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
+    "home":"Anasayfa",
+    "travertine":"Traverten",
     "cards": {
       "quality": "Neden Bizim Travertenlerimiz?",
       "qualityText": "Yüksek dayanıklılık, doğal güzellik ve sürdürülebilir kaynaklardan temin.",
@@ -442,23 +450,29 @@
     },
 
         "TextSection":{
-      "header1":"Travertine Blocks for Export",
-      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
-       "header2":"Travertine Slabs Supplier",
-      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
-       "header3":"Wholesale Travertine Tiles",
-      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
-       "header4":"Custom Travertine Designs",
-      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+     "header1": "İhracat İçin Traverten Bloklar",
+  "text1": "Uşak – Ulubey ocağımızdan çıkarılan bloklar, fabrikalar ve toptancılar için idealdir. Blaundos Antiko, Blaundos Light ve Blaundos Ivory renk seçenekleriyle bloklarımız tutarlı doku ve büyük ebatlar sunar; işlenmeye ve dünya geneline sevkiyata uygundur.",
 
-       "subheader1":"Standard Block Dimensions",
-      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-       "subheader2":"Applications of Slabs",
-      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
-       "subheader3":"Tile Finishes",
-      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-       "subheader4":"Value-Added Production",
-      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+  "header2": "Traverten Plaka Tedarikçisi",
+  "text2": "2 cm, 3 cm ve 5 cm kalınlıkta, cilalı, honlanmış, eskitilmiş veya fırçalanmış yüzey seçenekleriyle premium traverten plakalar. Hem iç hem de dış mekanlarda, konut ve ticari projelerde kullanıma uygundur.",
+
+  "header3": "Toptan Traverten Fayanslar",
+  "text3": "30×60, 60×60 ve 40×80 cm ölçülerinde dayanıklı fayanslar. Banyolar, mutfaklar, teraslar ve havuz kenarları için ideal olup yüksek kaymazlık seçenekleri mevcuttur.",
+
+  "header4": "Özel Traverten Tasarımlar",
+  "text4": "Merdiven, mozaik, bordür ve benzersiz mimari kesimler dahil olmak üzere özel çözümler. Villalar, oteller ve prestijli projeler için titizlikle üretilir.",
+
+  "subheader1": "Standart Blok Ölçüleri",
+  "subtext1": "Ortalama blok ölçüsü 280×220×200 cm olup doğal yüzeylidir. İhracata hazırdır, toplu siparişlere uygundur ve konteyner yüklemesi için güçlendirilmiş paketleme yapılır.",
+
+  "subheader2": "Plaka Kullanım Alanları",
+  "subtext2": "Tezgahlar, duvar kaplamaları, zemin döşemeleri ve dış cephelerde dayanıklılık ve doğal estetik gereken yerlerde tercih edilir.",
+
+  "subheader3": "Fayans Yüzey İşlemleri",
+  "subtext3": "Cilalı, honlanmış, eskitilmiş ve fırçalanmış yüzeyler; farklı tasarım gereksinimleri ve performans ihtiyaçlarını karşılamak üzere sunulur.",
+
+  "subheader4": "Katma Değerli Üretim",
+  "subtext4": "Özel tasarımlar, travertenin doğal dayanıklılığını ve dokusunu korurken estetiği yükseltir ve projelere özgün çözümler sunar."
     }
   },
 

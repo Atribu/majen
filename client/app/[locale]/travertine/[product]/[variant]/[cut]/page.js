@@ -165,16 +165,7 @@ const processCards = PROCESSES.map((p) => ({
         ))}
       </section>
 
-      {/* ======= DETAY BLOKLARI ======= */}
-      {(sizes?.length || finishes?.length || features?.length) ? (
-        <section className="mt-12 max-w-[1200px] mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sizes?.length ? <DetailBlock heading={t("detailsHeadings.sizes")} items={sizes} /> : null}
-            {finishes?.length ? <DetailBlock heading={t("detailsHeadings.finishes")} items={finishes} /> : null}
-            {features?.length ? <DetailBlock heading={t("detailsHeadings.features")} items={features} /> : null}
-          </div>
-        </section>
-      ) : null}
+
 
       {/* ======= CUT SEÇİCİ (vein / cross) ======= */}
       <section className="mt-12 max-w-[1200px] mx-auto">

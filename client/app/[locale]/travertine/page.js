@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 // OG görseli: public altındaki bir görseli kullan
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-const OG_IMAGE = `${SITE_URL}/images/og-travertine.jpg`; // elindeki uygun bir görseli koy
+const OG_IMAGE = `${SITE_URL}/images/og-travertine.jpg`;
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   // intro çok uzunsa kırpıyoruz
   const description = (t("intro", { default: "" }) || "").slice(0, 160);
 
-  const canonical = `${SITE_URL}/${locale}/travertine`; // TR için /tr/traverten ise dil bazlı ayarlayabilirsin
+  const canonical = `${SITE_URL}/${locale}/travertine`; 
   const canonicalLocalized =
     locale === "tr"
       ? `${SITE_URL}/tr/traverten`

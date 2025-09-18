@@ -62,15 +62,15 @@ export default function ProductIntroSection({
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 text-center text-white max-w-[95%]">
-          <h1 id="intro-heading" className="text-2xl font-semibold">
+          <h1 id="intro-heading" className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold">
             {title}
           </h1>
           <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
 
-            <h2 id="intro-heading" className="text-[22px] font-semibold">
+            <h2 id="intro-heading" className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold">
             {title2}
           </h2>
-          <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro2}</p>
+          <p className="mt-3 text-[12px] md:text-[14px] leading-tight lg:leading-relaxed">{intro2}</p>
 
           {/* Breadcrumbs */}
           <nav
@@ -123,12 +123,12 @@ export default function ProductIntroSection({
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}
   <header className="relative px-5 pt-5 w-[80%] z-10">
-    <h1 className="text-3xl font-semibold">{title}</h1>
-    <p className="mt-3">{intro}</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
-     <h2 className="text-2xl font-semibold">{title}</h2>
-    <p className="mt-3">{intro}</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fugiat nulla sed nesciunt deleniti doloremque porro illum qui maxime dolorem facilis exercitationem modi suscipit distinctio odit blanditiis dolore vitae saepe?</p>
+    <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold">{title}</h1>
+    <p className="text-[12px] lg:text-[14px] mt-3">{intro}</p>
+    
+     <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold">{title}</h2>
+    <p className="text-[12px] lg:text-[14px] mt-3">{intro}</p>
+  
   </header>
 
           {/* Alt: Breadcrumbs */}
@@ -147,7 +147,7 @@ export default function ProductIntroSection({
           </nav>
 
           {/* Sağdaki görsel */}
-          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[500px] z-[999]">
+          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[720px] h-[500px] z-[999]">
             <Image
               src={heroSrc}
               alt={alt}

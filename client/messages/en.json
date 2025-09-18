@@ -36,8 +36,8 @@
         "contact": "Contact"
       },
       "secondary": {
-        "projects": "Projects",
-        "shop": "Shop",
+        "product": "Products",
+    "shop": "How We Export",
         "pages": "Pages",
         "privacy": "KVKK / Privacy"
       }
@@ -54,6 +54,12 @@
     "provider": "DGTLFACE",
     "rights": "All rights reserved."
   },
+
+    "HomePage":{
+    "title":"Majen | Wholesale Travertine from Turkey — Blocks, Slabs, Tiles",
+    "description":"Direct quarry supplier in Uşak–Ulubey. Wholesale travertine blocks, slabs, tiles and custom designs."
+  },
+
 
   "MainBanner": {
     "alt1": "Banner 1",
@@ -226,12 +232,12 @@
     },
 
     "block": {
-      "title": "Wholesale Travertine Blocks from Turkey – Direct Quarry Supplier",
+      "title": "Wholesale Travertine Blocks from Turkey | Majen Quarry Supplier",
       "alt": "Block product image",
       "intro": "Majen supplies wholesale travertine blocks from Turkey directly from our Uşak – Ulubey quarry. With Blaundos Antiko, Light, and Ivory varieties, our blocks are recognized worldwide for consistent texture, durability, and large export-ready dimensions. For wholesalers and importers seeking wholesale travertine blocks from Turkey, Majen ensures competitive pricing, stable supply, and trusted logistics support.",
       "title2": "Why Choose Wholesale Travertine Blocks from Turkey?",
       "alt2": "Block product image",
-      "intro2": "Turkey is the global leader in travertine exports, and Majen delivers premium wholesale travertine blocks from Turkey to international markets including the USA, Europe, and the Middle East. Our quarry-direct sourcing guarantees A-grade quality and strict quality control. By choosing wholesale travertine blocks from Turkey, buyers gain access to sustainable production, competitive FOB/CIF pricing, and reliable delivery schedules.",
+      "intro2": "Turkey is the global leader in travertine exports, and Majen delivers premium wholesale travertine blocks from Turkey to international",
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
@@ -428,10 +434,13 @@
   },
 
    "TravertinePage": {
+    "buttonText":"Sayfaya git",
     "title": "Wholesale Travertine From Turkey – Direct Quarry Supplier in Uşak",
     "intro": "Majen supplies premium travertine blocks, slabs, tiles, and custom designs directly from our quarry in Uşak – Ulubey, Turkey. As a trusted wholesale travertine supplier, we provide Blaundos Antiko, Blaundos Light, and Blaundos Ivory to international markets including the USA, Europe, and the Middle East. With consistent quality, competitive prices, and reliable logistics, Majen is your partner for wholesale travertine from Turkey.",
     "title2":"Why Choose Travertine From Turkey?",
     "intro2":"Turkey is the world’s leading exporter of travertine, known for its natural beauty, durability, and cost-effectiveness. At Majen, our Uşak – Ulubey quarry guarantees stable production, strict quality control, and sustainable practices. We combine local expertise with global standards, ensuring that architects, builders, and wholesalers receive top-grade travertine for projects worldwide. Choosing Turkish travertine means reliability, diversity, and unmatched value. That’s why Majen is your trusted source for wholesale travertine from Turkey.",
+    "home":"Home",
+     "travertine":"Travertine",
     "cards": {
       "quality": "Why Our Travertine?",
       "qualityText": "High durability, natural beauty, and sustainably quarried travertine direct from Uşak – Ulubey. Majen is a trusted supplier of wholesale travertine from Turkey.",

@@ -31,27 +31,41 @@ export default function LocaleSwitcherSelect({
   }, [pathname]);
 
   // Path'i hedef dile göre yeniden kur
-  function buildLocalizedPath(path, targetLocale) {
-    const seg = path.split("/"); // ["", "en", "travertine", "slabs", ...]
-    if (seg.length < 2) return `/${targetLocale}`;
+// app/components/LocaleSwitcherSelect.jsx (ilgili kısım)
+function buildLocalizedPath(path, targetLocale) {
+  const seg = path.split("/"); // ["", "tr", "traverten"] veya daha derin
+  if (seg.length < 2) return `/${targetLocale}`;
 
-    const currentLocale = seg[1] || "en";
-    const currentBase = seg[2];
-    const productSlug = seg[3];
+  const currentLocale = seg[1] || "en";
+  const currentBase   = seg[2];             // "travertine" | "traverten" | başka
+  const productSlug   = seg[3];             // olabilir de olmayabilir!
 
-    const isCatalogBase = currentBase === "travertine" || currentBase === "traverten";
-    if (!isCatalogBase) {
-      seg[1] = targetLocale; // katalog dışı: locale'ı değiştir
-      return seg.join("/");
-    }
+  const isCatalogBase =
+    currentBase === "travertine" || currentBase === "traverten";
 
-    const productKey = productKeyFromSlug(currentLocale, productSlug); // örn "slabs"
-    const newBase = baseFor(targetLocale);                             // "traverten" | "travertine"
-    const newProd = productSlugFor(targetLocale, productKey);          // "plakalar" | "slabs"
-
-    const rebuilt = ["", targetLocale, newBase, newProd, ...seg.slice(4)];
-    return rebuilt.join("/");
+  // Katalog değilse: sadece locale değiştir
+  if (!isCatalogBase) {
+    seg[1] = targetLocale;
+    return seg.join("/");
   }
+
+  // Katalog kökünde isek (/tr/traverten) → sadece base'i çevir
+  const newBase = baseFor(targetLocale); // "travertine" | "traverten"
+  if (!productSlug) {
+    return `/${targetLocale}/${newBase}`;
+  }
+
+  // Ürün segmenti varsa: ürünü hedef dil slugu ile değiştir, kalan segmentleri koru
+  const productKey = productKeyFromSlug(currentLocale, productSlug);
+  // productKey çözülemezse sadece base'e dön (beklenmeyen slug güvenliği)
+  if (!productKey) {
+    return `/${targetLocale}/${newBase}`;
+  }
+
+  const newProd = productSlugFor(targetLocale, productKey);
+  const rebuilt = ["", targetLocale, newBase, newProd, ...seg.slice(4)];
+  return rebuilt.join("/");
+}
 
   function handleLangChange(lang) {
     sessionStorage.setItem("scrollPosition", window.scrollY);

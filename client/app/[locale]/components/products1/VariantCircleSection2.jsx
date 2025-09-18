@@ -110,7 +110,7 @@ const hrefFor = (productKey, variantSlug) => {
                 href={productHref}
                 className="px-6 py-2 bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
               >
-                {t("goToPage", { default: "Go to page" })}
+                {t("buttonText", { default: "Go to page" })}
               </Link>
             </div>
           );
