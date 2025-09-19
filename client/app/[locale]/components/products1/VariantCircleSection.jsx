@@ -29,7 +29,7 @@ export default function VariantCircleSection({
     <section className="flex mt-14 w-screen text-center items-center justify-center">
       <div className="flex flex-col max-w-[1200px]">
         {heading && <h3 className="text-[20px] lg:text-[22px] font-semibold">{heading}</h3>}
-      <p className="text-[12px] lg:text-[14px] mt-2">Majen offers three main types of Wholesale Travertine Blocks from Turkey: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is carefully extracted from our Uşak–Ulubey quarry and selected for consistent texture, durability, and natural beauty. These block varieties provide reliable quality for global buyers and are export-ready with reinforced packaging for secure international shipments.</p>
+      <p className="text-[12px] lg:text-[14px] mt-2">{text}</p>
 
      <div
   className={`
@@ -58,7 +58,7 @@ export default function VariantCircleSection({
                 <div className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]">
                   <Image
                     src={cardSrc}
-                    alt={title}
+                    alt={"Wholesale " + title}
                     fill
                     className="object-cover transition-transform duration-500 scale-80 group-hover:scale-95"
                     sizes="160px"

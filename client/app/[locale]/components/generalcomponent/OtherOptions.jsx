@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 export default function OtherOptions({
   heading,
   productOrder = ["block", "slabs", "tiles", "special"],
+  excludeProduct = null,            // ⬅️ YENİ
   variantSlugs = [],
   baseHref,
   productSegments,
@@ -45,11 +46,7 @@ export default function OtherOptions({
   };
 
   const humanize = (slug) =>
-    slug
-      .split("-")
-      .map((s) => (s ? s[0].toUpperCase() + s.slice(1) : s))
-      .join(" ");
-
+    slug.split("-").map((s) => (s ? s[0].toUpperCase() + s.slice(1) : s)).join(" ");
   const variantLabel = (slug) => labels.variants?.[slug] ?? humanize(slug);
 
   const hrefFor = (productKey, variantSlug) => {
@@ -67,44 +64,47 @@ export default function OtherOptions({
   };
   const endCommon = t("variantSentence.end");
 
+  // 🔎 Mevcut sayfadaki ürünü hariç tut
+  const visibleOrder = excludeProduct
+    ? productOrder.filter((k) => k !== excludeProduct)
+    : productOrder;
+
   return (
     <section className={className}>
       <div className="flex flex-col max-w-[1200px] items-center justify-center text-center">
         {heading ? (
-          <h4 className="text-[18px] lg:text-[20px] font-semibold mb-2">Other Products</h4>
+          <h4 className="text-[18px] lg:text-[20px] font-semibold mb-2">
+            {heading}
+          </h4>
         ) : null}
 
-
         <div className={gridClassName}>
-          {productOrder.map((pkey) => {
+          {visibleOrder.map((pkey) => {
             const productHref = productHrefFor
               ? productHrefFor(pkey)
               : `${baseHref}/${productSegments?.[pkey] ?? pkey}`;
 
-            const startText = startByProduct[pkey] || ""; // güvenli fallback
+            const startText = startByProduct[pkey] || "";
 
             return (
               <div key={pkey} className="group flex flex-col items-center text-center">
-                {/* Ürün görseli */}
                 <Link
                   href={productHref}
                   className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] block"
                 >
                   <Image
                     src={productImages[pkey]}
-                   alt={t(`altTexts.${pkey}`)}
+                    alt={t(`altTexts.${pkey}`, { default: productLabels[pkey] })}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="120px"
                   />
                 </Link>
 
-                {/* Başlık */}
                 <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900">
                   {productLabels[pkey]}
                 </h4>
 
-                {/* Ürün-bazlı açılış + aynı linkler */}
                 <p className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
                   {startText}{" "}
                   {variantSlugs.map((slug, i) => (

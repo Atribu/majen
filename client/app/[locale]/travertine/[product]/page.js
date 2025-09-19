@@ -2,7 +2,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations, useMessages } from "next-intl";
 import {
   BASE_BY_LOCALE,
   PRODUCT_KEYS,
@@ -56,17 +56,23 @@ export default function ProductPage() {
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
 
-      const t2 = useTranslations(`ProductPage.${productKey}.QuestionsItems`);
+        const t2 = useTranslations(`ProductPage.${productKey}.QuestionsItems`);
+  const messages = useMessages();
+
+const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
+
+  // otomatik saydır → sadece gerçekten var olan header/text çiftlerini al
+  const items = [];
+  let j = 1;
+  while (qItems[`aboutpage_s4_faq${j}_header`] && qItems[`aboutpage_s4_faq${j}_text`]) {
+    items.push({
+      q: qItems[`aboutpage_s4_faq${j}_header`],
+      a: qItems[`aboutpage_s4_faq${j}_text`],
+    });
+    j++;
+  }
 
 
-       const items = [
-      { q: t2("aboutpage_s4_faq1_header"), a: t2("aboutpage_s4_faq1_text") },
-      { q: t2("aboutpage_s4_faq2_header"), a: t2("aboutpage_s4_faq2_text") },
-      { q: t2("aboutpage_s4_faq3_header"), a: t2("aboutpage_s4_faq3_text") },
-      { q: t2("aboutpage_s4_faq4_header"), a: t2("aboutpage_s4_faq4_text") },
-      { q: t2("aboutpage_s4_faq5_header"), a: t2("aboutpage_s4_faq5_text") }
-      
-    ];
 
   // Metinler
   const title   = t(`${productKey}.title`);
@@ -183,7 +189,7 @@ const productAltMap = {
   const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
 
   return (
-    <main className=" py-7 mt-16">
+    <main className=" py-7 mt-16 overflow-x-hidden">
       {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}
@@ -246,14 +252,15 @@ const productAltMap = {
       <ContactFrom />
       <QuestionsSection items={items} span="Travertine Blocks "/>
       <OtherOptions
-        heading= {t3("variantsHeading")}
-        productOrder={[ "slabs", "tiles", "special"]}
-        variantSlugs={["antiko", "light", "ivory"]}
-        baseHref={baseHref}
-        productSegments={PRODUCT_SLUGS[locale]}
-        locale={locale}
-        productImages={{ slabs, tiles, special }}
-        num={3}
+       heading="Other Options"
+  excludeProduct={productKey}                         
+  productOrder={["block", "slabs", "tiles", "special"]}
+  variantSlugs={["antiko", "light", "ivory"]}
+  baseHref={`${prefix}/${baseSegment}`}
+  productSegments={PRODUCT_SLUGS[locale]}
+  locale={locale}
+  productImages={{ block, slabs, tiles, special }}
+  productHrefFor={(pkey) => `${prefix}/${baseSegment}/${PRODUCT_SLUGS[locale][pkey]}`}
       />
     </main>
   );

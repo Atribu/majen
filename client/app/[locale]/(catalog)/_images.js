@@ -4,12 +4,12 @@
 import phBlock   from "@/public/images/traverterBlock.jpeg";
 import phTiles   from "@/public/images/homepage/kesim.webp";
 import phSpecial from "@/public/images/homepage/masa.webp";
-import phSlabs from "@/public/images/homepage/slabs.webp";
+import phSlabs from "@/public/images/slabs/Allslabs.webp";
 
 // --- Slabs
-import slabIvory from "@/public/images/slabs/Ivory.webp";
-import slabLight from "@/public/images/slabs/light.webp";
-import slabAntik from "@/public/images/slabs/antik.webp";
+import slabIvory from "@/public/images/slabs/newIvory.webp";
+import slabLight from "@/public/images/slabs/newLight.webp";
+import slabAntik from "@/public/images/slabs/newAntiko.webp";
 
 import slabAntikVein  from "@/public/images/slabs/antikveincut.webp";
 import slabAntikCross from "@/public/images/slabs/antikcorscut.webp";
@@ -24,9 +24,9 @@ import blockLight from "@/public/images/homepage/lightblok3.webp";
 import blockAntik from "@/public/images/homepage/Blokantiko.webp";
 
 // --- Tiles (örnek yolları değiştir)
-import tilesIvory from "@/public/images/homepage/kesim.webp";
+import tilesIvory from "@/public/images/tiles/Ivorykesim.webp";
 import tilesLight from "@/public/images/homepage/kesim.webp";
-import tilesAntik from "@/public/images/homepage/kesim.webp";
+import tilesAntik from "@/public/images/tiles/antikokesim.webp";
 
 // --- Special (örnek yolları değiştir)
 import specialIvory from "@/public/images/homepage/masa.webp";

@@ -92,7 +92,19 @@ if (productKey === "block") {
 
 if (productKey === "slab") {
   description = locale === "en"
-    ? "Wholesale Travertine Blocks from Turkey | Antiko, Light, Ivory – Majen"
+    ? "Majen supplies Wholesale Travertine Slabs From Turkey in 2cm, 3cm and 5cm thickness. Export-ready slabs with polished, honed, brushed or tumbled finishes. Colors: Blaundos Antiko, Light, Ivory."
+    : "Türkiye’den Toptan Traverten Blokları | Antiko, Light, Ivory – Majen";
+}
+
+if (productKey === "tile") {
+  description = locale === "en"
+    ? "Majen supplies Wholesale Travertine Tiles From Turkey in 30×60, 60×60, and 40×80 cm sizes. Polished, honed, brushed & tumbled finishes. Export-ready with FOB/CIF shipping."
+    : "Türkiye’den Toptan Traverten Blokları | Antiko, Light, Ivory – Majen";
+}
+
+if (productKey === "special") {
+  description = locale === "en"
+    ? "Majen supplies Wholesale Travertine Special Designs From Turkey including steps, mosaics, borders, and custom architectural pieces. Export-ready, reinforced packaging, FOB/CIF shipping."
     : "Türkiye’den Toptan Traverten Blokları | Antiko, Light, Ivory – Majen";
 }
 

@@ -368,7 +368,7 @@ useEffect(() => {
 
   return (
 <section
-  className="relative overflow-hidden text-black py-1 sm:py-2 lg:h-[550px] w-screen flex items-center justify-center"
+  className="relative overflow-hidden text-black py-1 sm:py-2 h-[450px] lg:h-[550px] w-screen flex items-center justify-center"
 >
   <Image
     src="/images/homepage/anasayfa3.webp"

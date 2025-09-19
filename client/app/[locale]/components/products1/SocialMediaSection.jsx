@@ -12,7 +12,7 @@ const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   
 const SocialMediaSection = () => {
   return (
-    <div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-20">
+    <div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-10 mt-20">
       <span className="text-[18px] lg:text-[20px] text-semibold text-black">More Information</span>
       <div className="flex flex-col md:flex-row items-center justify-center  gap-8 md:gap-12  w-full">
         <div className='flex gap-8 md:gap-12 items-center justify-center'>
