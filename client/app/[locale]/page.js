@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: "HomePage" });
 
   const title = t("title", {
-    default: "Majen | Wholesale Travertine from Turkey — Blocks, Slabs, Tiles",
+    default: "Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen",
   });
   const description = (t("description", {
     default:

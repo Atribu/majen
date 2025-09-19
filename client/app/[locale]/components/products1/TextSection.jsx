@@ -47,7 +47,7 @@ export default function TextSection({
 
   return (
     <As
-      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 lg:mb-10 ${className}`}
+      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 lg:mb-10 text-center lg:text-start ${className}`}
       aria-label={title}
     >
       {jsonLd ? (
@@ -59,24 +59,24 @@ export default function TextSection({
       ) : null}
 
       {title ? (
-        <h4 className="text-[20px] md:text-[22px] lg:text-[26px] font-semibold tracking-tight text-neutral-900">
+        <h3 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900">
           {title}
-        </h4>
+        </h3>
       ) : null}
 
-      <div className="mt-1 text-neutral-800 lg:leading-[1.85] text-[12px] md:text-[14px] lg:text-[16px] space-y-4 leading-tight ">
+      <div className="mt-1 text-neutral-800 lg:leading-[1.85] text-[12px] md:text-[14px] space-y-2 leading-tight ">
         {visibleParagraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
 
         {title2 ? (
-        <h5 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium tracking-tight text-black">
+        <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black">
           {title2}
-        </h5>
+        </h4>
       ) : null}
 
     {text2 ? (
-         <p className="-mt-3 leading-tight lg:leading-normal text-[12px] md:text-[14px] lg:text-[16px]">{text2}</p>
+         <p className="-mt-3 leading-tight lg:leading-normal text-[12px] md:text-[14px] ">{text2}</p>
       ) : null}
     
 

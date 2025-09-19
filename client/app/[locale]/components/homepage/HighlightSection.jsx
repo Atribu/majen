@@ -54,11 +54,10 @@ export default function HighlightSection() {
             {/* Görsel (her blok için bağımsız carousel) */}
             <div className="w-full lg:w-[96%]">
               <Carousel
-                images={imgs}
-                altBase={t(`items.${key}.alt`)}
-                // priority: sadece ilk bloğun ilk slaytı
-                priorityFirst={idx === 0}
-              />
+  images={imgs}
+  altBase={t.raw(`items.${key}.alts`)} // dizi olarak alıyoruz
+  priorityFirst={idx === 0}
+/>
             </div>
             {/* Kart */}
             <div
@@ -112,14 +111,14 @@ function Carousel({ images, altBase, priorityFirst = false }) {
       {/* Viewport */}
       <div ref={emblaRef} className="overflow-hidden">
         {/* Container */}
+        <div ref={emblaRef} className="overflow-hidden">
         <div className="flex touch-pan-y">
           {images.map((img, i) => (
             <div key={i} className="min-w-0 flex-[0_0_100%]">
-              {/* Slide içi: Görsel oranları korunur */}
               <div className="relative w-full h-60 sm:h-96 lg:h-[600px]">
                 <Image
                   src={img}
-                  alt={`${altBase} #${i + 1}`}
+                  alt={altBase[i] || "Travertine project image"}
                   fill
                   priority={priorityFirst && i === 0}
                   className="object-cover"
@@ -129,6 +128,7 @@ function Carousel({ images, altBase, priorityFirst = false }) {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Kontroller (tasarımı bozmadan köşelere) */}

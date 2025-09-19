@@ -83,11 +83,11 @@ export default function ContactFrom() {
 
   return (
     <section className="relative mt-12 mb-12">
-      <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm">
+      <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
         <header className="mb-2 lg:mb-6">
-          <h1 className="text-[20px] md:text-[24px] font-semibold tracking-tight">
+          <span className="text-[20px] md:text-[24px] font-semibold tracking-tight">
             {t("title")}
-          </h1>
+          </span>
           <p className="mt-2 text-neutral-600 text-[14px] lg:text-[16px]">{t("subtitle")}</p>
         </header>
 
@@ -192,7 +192,7 @@ export default function ContactFrom() {
           </div>
           {errors.consent && <p className={errorClass}>{errors.consent}</p>}
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-6 flex items-center justify-center lg:items-start lg:justify-start gap-3">
             <button
               type="submit"
               disabled={status.loading}

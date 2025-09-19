@@ -5,8 +5,8 @@ import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
 
 export default function MainBanner() {
-  const videoSrc = "/videos/MajenVideo.mp4"; // public/videos altında
-  const videomobileSrc = "/videos/mobilevideo.mp4"; 
+  const videoSrc = "/videos/newmajendesktop.mp4"; // public/videos altında
+  const videomobileSrc = "/videos/newmajenmobile.mp4"; 
   const HIDE_DELAY_MS = 5000; // ⏱️ Logo görünme süresi
 
   const [showLogo, setShowLogo] = useState(true);

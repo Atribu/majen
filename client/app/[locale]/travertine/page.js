@@ -10,11 +10,11 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: "TravertinePage" });
 
   // Başlık / Açıklama
-  const title = t("title", {
-    default: "Wholesale Travertine From Turkey – Majen",
+  const title = t("metaTitle", {
+    default: "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
   });
   // intro çok uzunsa kırpıyoruz
-  const description = (t("intro", { default: "" }) || "").slice(0, 160);
+  const description = (t("metaDescription", { default: "Majen supplies wholesale travertine blocks, slabs & tiles from Uşak–Ulubey. Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping." })).slice(0, 160);
 
   const canonical = `${SITE_URL}/${locale}/travertine`; 
   const canonicalLocalized =

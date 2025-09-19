@@ -3,15 +3,10 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import PlusSvg from "./PlusSvg";
 
-const QuestionsSection = ({ color = "#0B0B0B" }) => {
+const QuestionsSection = ({ color = "#0B0B0B", span, items  }) => {
   const t = useTranslations("QuestionsSection");
 
-  const items = [
-    { q: t("aboutpage_s4_faq1_header"), a: t("aboutpage_s4_faq1_text") },
-    { q: t("aboutpage_s4_faq2_header"), a: t("aboutpage_s4_faq2_text") },
-    { q: t("aboutpage_s4_faq3_header"), a: t("aboutpage_s4_faq3_text") },
-  ];
-
+ 
   const [open, setOpen] = useState(null);
   const toggle = (i) => setOpen(open === i ? null : i);
 
@@ -21,10 +16,10 @@ const QuestionsSection = ({ color = "#0B0B0B" }) => {
         <h4
           className="text-[20px] md:text-[22px] lg:text-[26px] font-bold leading-[120%] -tracking-[0.64px] mb-[16px]"
           style={{ color }}>
-          {t("aboutpage_s4_faq_header1")}{" "}
-          <span className="bg-gradient-to-r from-[#312d2d] to-[#5b5656] bg-clip-text text-transparent">
+          {t("aboutpage_s4_faq_header1")}{"-"} {span}
+          {/* <span className="bg-gradient-to-r from-[#312d2d] to-[#5b5656] bg-clip-text text-transparent">
             {t("aboutpage_s4_faq_span1")}
-          </span>
+          </span> */}
         </h4>
 
         {items.map((it, i) => (

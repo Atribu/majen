@@ -57,7 +57,7 @@ export default function VariantCircleSection({
                     src={cardSrc}
                     alt={title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 scale-80 group-hover:scale-95"
                     sizes="160px"
                   />
                 </div>

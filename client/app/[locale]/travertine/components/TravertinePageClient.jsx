@@ -18,6 +18,7 @@ import BackgroundSection from '../../components/homepage/BackgroundSection';
 import TextSection from "../../components/products1/TextSection";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
+import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 
 const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
@@ -29,6 +30,18 @@ export default function TravertinePageClient() {
     const locale = useLocale();
   const t = useTranslations("TravertinePage");
   const t2 = useTranslations("TravertinePage.TextSection");
+  const t3=useTranslations("TravertinePage.QuestionsItems");
+
+     const items = [
+      { q: t3("aboutpage_s4_faq1_header"), a: t3("aboutpage_s4_faq1_text") },
+      { q: t3("aboutpage_s4_faq2_header"), a: t3("aboutpage_s4_faq2_text") },
+      { q: t3("aboutpage_s4_faq3_header"), a: t3("aboutpage_s4_faq3_text") },
+      { q: t3("aboutpage_s4_faq4_header"), a: t3("aboutpage_s4_faq4_text") },
+      { q: t3("aboutpage_s4_faq3_header"), a: t3("aboutpage_s4_faq3_text") },
+      { q: t3("aboutpage_s4_faq4_header"), a: t3("aboutpage_s4_faq4_text") },
+      
+    ];
+
   const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];     // "traverten" | "travertine"
@@ -79,7 +92,7 @@ export default function TravertinePageClient() {
     <main className=" py-10 overflow-hidden">
      <IntroSection/>
       {/* Info Cards */}
-      <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+      <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%] ">
         {cards.map((c, i) => (
           <InfoCard key={i} title={c.title}>
             {/* Sadece 2. kart (applications) linkli olsun */}
@@ -140,12 +153,10 @@ export default function TravertinePageClient() {
       clampMobile={3}
       as="section"/>
 
-
+<ContactFrom />
       <SocialMediaSection/>
-        <ContactFrom />
-        <div className='mt-12 mb-32'>
-        <BackgroundSection/>
-        </div>
+      <QuestionsSection span="Export & Specs" items={items}/>
+        
     </main>
   );
 }

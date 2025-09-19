@@ -68,7 +68,7 @@ export default function Page() {
         crumbSectionHref="/en/howweexport"
         showBreadcrumb={true}
       />
-      {/* <CardsSection/> */}
+      <CardsSection/>
       <QuestionsSection/>
       <ContactFrom/>
     </div>

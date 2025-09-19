@@ -48,6 +48,11 @@ export const config = {
       en: '/travertine/[product]/[variant]/[cut]/[process]/[finish]/[size]',
       tr: '/traverten/[product]/[variant]/[cut]/[process]/[finish]/[size]',
     },
+    // i18n/routing.js
+
+  '/blog': { en: '/blog', tr: '/blog' },
+  '/blog/[slug]': { en: '/blog/[slug]', tr: '/blog/[slug]' },
+
   },
 };
 

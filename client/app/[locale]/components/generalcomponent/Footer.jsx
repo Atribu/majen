@@ -151,9 +151,9 @@ export default function Footer() {
 
             {/* Address */}
             <div className="text-center lg:text-left">
-              <h3 className="text-sm font-semibold uppercase tracking-wide">
+              <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("address.title")}
-              </h3>
+              </span>
               <address className="not-italic mt-3 text-sm text-neutral-700">
                 {addressLines.map((line, i) => (
                   <div key={i}>{line}</div>
@@ -173,9 +173,9 @@ export default function Footer() {
             {/* Footer Menu 1 */}
             <div className="flex flex-row items-center lg:items-start justify-around">
               <div className="text-center lg:text-left">
-              <h3 className="text-sm font-semibold uppercase tracking-wide">
+              <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.title")}
-              </h3>
+              </span>
               <ul className="mt-4 space-y-2 text-sm">
                 {navPrimary.map((item) => (
                   <li key={item.label}>
@@ -192,9 +192,9 @@ export default function Footer() {
 
             {/* Footer Menu 2 */}
             <div className="text-center lg:text-left flex lg:hidden flex-col">
-              <h3 className="text-sm font-semibold uppercase tracking-wide">
+              <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.more")}
-              </h3>
+              </span>
               <ul className="mt-4 space-y-2 text-sm">
                 {navSecondary.map((item) => (
                   <li key={item.label}>
@@ -211,9 +211,9 @@ export default function Footer() {
             </div>
             {/* Footer Menu 2 */}
             <div className="text-center lg:text-left hidden lg:flex flex-col">
-              <h3 className="text-sm font-semibold uppercase tracking-wide">
+              <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.more")}
-              </h3>
+              </span>
               <ul className="mt-4 space-y-2 text-sm">
                 {navSecondary.map((item) => (
                   <li key={item.label}>

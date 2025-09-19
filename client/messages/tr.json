@@ -56,8 +56,8 @@
   },
 
   "HomePage":{
-    "title":"Majen | Wholesale Travertine from Turkey — Blocks, Slabs, Tiles",
-    "description":"Direct quarry supplier in Uşak–Ulubey. Wholesale travertine blocks, slabs, tiles and custom designs."
+    "title":"Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen",
+    "description":"Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping with full documentation."
   },
 
   "MainBanner": {
@@ -75,7 +75,8 @@
   },
 
   "HomeMainSection": {
-    "header": "Türkiye’den Traverten Tedarikçisi – Majen Ocak İhracatçısı",
+    "header": "Türkiye’den Traverten Tedarikçisi",
+    "span":" Majen Ocak İhracatçısı",
     "text": "Majen, Türkiye’den doğrudan Uşak–Ulubey ocağımızdan premium blok, plaka, karo ve özel tasarımlar sunan lider bir traverten tedarikçisidir. On yıllara dayanan uzmanlığımızla ABD, Avrupa ve Orta Doğu’ya toptan traverten ihracatı yapıyoruz. Ocakdan-doğrudan tedarik modelimiz, tutarlı A sınıfı kaliteyi, rekabetçi FOB/CIF fiyatlamayı ve sürdürülebilir üretim yöntemlerini garanti eder. Majen’i tercih eden ithalatçı ve toptancılar; şeffaflığa, güçlü lojistik desteğe ve zamanında teslimata odaklanan güvenilir bir iş ortağı kazanır."
   },
   "LogisticSection": {
@@ -90,10 +91,10 @@
     "explore": "İncele",
     "contact": "İletişime Geç",
     "products": {
-      "product1": { "title": "Traverten BlokLar", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Mermer ürün görseli", "cta": "İncele" },
-      "product2": { "title": "Traverten Plakalar", "description": "2 cm ve 3 cm kalınlık seçenekleriyle cilalı, honlu veya fırçalı yüzeyler; hassas kalibrasyon ve güçlendirme işlemleriyle bookmatch uygulamalarına uygundur.", "alt": "Granit ürün görseli", "cta": "İncele" },
-      "product3": { "title": "Traverten Karolar", "description": "30×60, 60×60, 60×120 gibi standart ebatlarda; iç/dış mekâna uygun, düzgün kenarlı ve yüksek ölçü hassasiyetine sahip karolarla hızlı ve temiz uygulama.", "alt": "Traverten ürün görseli", "cta": "İncele" },
-      "product4": { "title": "Traverten Özel Dizayn", "description": "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi kişiye özel çözümler; proje detaylarınıza göre ölçülendirilip anahtar teslim hazırlanır.", "alt": "Oniks ürün görseli", "cta": "İncele" }
+      "product1": { "title": "Traverten BlokLar", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Wholesale Travertine Blocks", "cta": "İncele" },
+      "product2": { "title": "Traverten Plakalar", "description": "2 cm ve 3 cm kalınlık seçenekleriyle cilalı, honlu veya fırçalı yüzeyler; hassas kalibrasyon ve güçlendirme işlemleriyle bookmatch uygulamalarına uygundur.", "alt": "Wholesale Travertine Slabs", "cta": "İncele" },
+      "product3": { "title": "Traverten Karolar", "description": "30×60, 60×60, 60×120 gibi standart ebatlarda; iç/dış mekâna uygun, düzgün kenarlı ve yüksek ölçü hassasiyetine sahip karolarla hızlı ve temiz uygulama.", "alt": "Wholesale Travertine Tiles", "cta": "İncele" },
+      "product4": { "title": "Traverten Özel Dizayn", "description": "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi kişiye özel çözümler; proje detaylarınıza göre ölçülendirilip anahtar teslim hazırlanır.", "alt": "Wholesale Travertine Special Design", "cta": "İncele" }
     }
   },
 
@@ -141,19 +142,34 @@
   "HighlightSection": {
     "items": {
       "item1": {
-        "title": "Blaundos Antiko Traverten – Sıcak Tonlar, Doğal Damarlar",
-        "description": "Uşak–Ulubey ocağından seçilmiş Antiko traverten; blok, plaka (2–3–5 cm) ve karo üretimi için idealdir. Otel lobileri, villalar ve dış cepheler için sıcak bej-kahverengi tonları ve belirgin damar yapısı sunar.",
-        "alt": "Doğal taş yüzeylerle tasarlanmış modern iç mekân"
+        "title": "Blaundos Antico Travertine – Warm Tones, Natural Veining",
+        "description": "Quarry-selected Antico travertine from Uşak–Ulubey, ideal for blocks, slabs (2–3–5 cm), and tiles. Perfect for hotel lobbies, villas, and façades with warm beige-brown hues and expressive veins.",
+        "alts": [
+        "Wholesale Blaundos Antiko Travertine facade design",
+        "Wholesale Blaundos Antiko Travertine interior cladding",
+        "Wholesale Blaundos Antiko Travertine flooring",
+        "Wholesale Blaundos Antiko Travertine luxury project"
+      ]
       },
       "item2": {
-        "title": "Blaundos Light Traverten – Aydınlık ve Minimal Dokular",
-        "description": "Light traverten, açık bej rengi ve daha sakin damar yapısıyla modern iç/dış mekânlar için şık bir zemin oluşturur. Büyük alanlarda homojen görünüm isteyen projeler için uygundur.",
-        "alt": "Ocak ve plaka işleme sürecini gösteren görsel"
+        "title": "Blaundos Light Travertine – Bright, Minimal Textures",
+        "description": "Light travertine offers light beige color and subtle veining—a clean, modern look for interiors and exteriors. Great for large areas requiring consistent tone.",
+         "alts": [
+        "Wholesale Blaundos Light Travertine wall cladding",
+        "Wholesale Blaundos Light Travertine interior design",
+        "Wholesale Blaundos Light Travertine flooring",
+        "Wholesale Blaundos Light Travertine hotel project"
+      ]
       },
       "item3": {
-        "title": "Blaundos Ivory Traverten – Zarif Krem Tonları",
-        "description": "Ivory traverten, krem rengi paleti ve dengeli damar akışıyla mutfak tezgâhları, duvar kaplamaları ve ıslak hacimler için premium bir seçenektir. Bookmatch uygulamalarına uygundur.",
-        "alt": "Waterjet ve mozaik detaylı doğal taş yüzey"
+        "title": "Blaundos Ivory Travertine – Elegant Cream Palette",
+        "description": "Ivory travertine features a creamy palette and balanced veining—ideal for countertops, wall cladding, wet areas, and bookmatched designs.",
+        "alts": [
+        "Wholesale Blaundos Ivory Travertine villa facade",
+        "Wholesale Blaundos Ivory Travertine poolside flooring",
+        "Wholesale Blaundos Ivory Travertine staircase",
+        "Wholesale Blaundos Ivory Travertine luxury interior"
+      ]
       }
     }
   },
@@ -413,7 +429,10 @@
 
    "TravertinePage": {
     "buttonText":"Sayfaya git",
-    "title": "Traverten – Türkiye’den Toptan Traverten | Majen",
+    "metaTitle":"Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
+    "metaDescription":"Majen supplies wholesale travertine blocks, slabs & tiles from Uşak–Ulubey. Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping.",
+    "title": "Traverten – Türkiye’den Toptan Traverten",
+     "span":"Direct Quarry Supplier in Uşak",
     "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
     "title2":"Why Choose Travertine From Turkey?",
     "intro2":"Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve özel tasarım seçenekleriyle proje odaklı üretim sağlıyoruz.",
@@ -441,36 +460,61 @@
       "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
       "special": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
     },
-    "variantSentence": {
-      "start": "Majen olarak sizlere",
-      "end": "gibi traverten çeşitleri sunuyoruz."
+     "variantSentence": {
+      "block": {
+        "start": "As Majen, we offer Travertine Blocks in varieties such as"
+      },
+      "slabs": {
+        "start": "As Majen, we supply Travertine Slabs in premium varieties including"
+      },
+      "tiles": {
+        "start": "As Majen, we provide Travertine Tiles in elegant varieties such as"
+      },
+      "special": {
+        "start": "As Majen, we craft Custom Travertine Designs using"
+      },
+      "end": "to suit diverse projects and performance needs."
+    },
+
+    "altTexts": {
+      "block": "Travertine Blocks for Export",
+      "slabs": "Travertine Slabs Supplier",
+      "tiles": "Wholesale Travertine Tiles",
+      "special": "Custom Travertine Designs"
     },
 
         "TextSection":{
-     "header1": "İhracat İçin Traverten Bloklar",
-  "text1": "Uşak – Ulubey ocağımızdan çıkarılan bloklar, fabrikalar ve toptancılar için idealdir. Blaundos Antiko, Blaundos Light ve Blaundos Ivory renk seçenekleriyle bloklarımız tutarlı doku ve büyük ebatlar sunar; işlenmeye ve dünya geneline sevkiyata uygundur.",
+      "header1":"Travertine Blocks for Export",
+      "text1":"Blocks extracted from our Uşak–Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Light, and Ivory, our travertine blocks deliver consistent texture and large sizes for further processing and global shipment. Reinforced packaging ensures safe loading for international container transport.",
+       "header2":"Travertine Slabs Supplier",
+      "text2":"Premium travertine slabs are available in 2, 3, and 5 cm thickness with finishes including polished, honed, brushed, or tumbled. These slabs are designed for both interior and exterior applications, combining strength with natural elegance for architects and builders.",
+       "header3":"Wholesale Travertine Tiles",
+      "text3":"Travertine tiles are produced in sizes such as 30×60, 60×60, and 40×80 cm, offering flexibility for different designs. They are ideal for bathrooms, kitchens, patios, and pool areas, combining durability with natural slip-resistant surfaces.",
+       "header4":"Custom Travertine Designs",
+      "text4":"Custom travertine designs include steps, mosaics, borders, and unique architectural cuts tailored for villas, hotels, and signature projects. These bespoke pieces highlight both creativity and the durability of natural stone.",
 
-  "header2": "Traverten Plaka Tedarikçisi",
-  "text2": "2 cm, 3 cm ve 5 cm kalınlıkta, cilalı, honlanmış, eskitilmiş veya fırçalanmış yüzey seçenekleriyle premium traverten plakalar. Hem iç hem de dış mekanlarda, konut ve ticari projelerde kullanıma uygundur.",
+       "subheader1":"Standard Block Dimensions",
+      "subtext1":"Average travertine block size is 280×220×200 cm with natural surfaces. Bulk orders are export-ready and suitable for international buyers requiring stability, volume, and reliable supply.",
+       "subheader2":"Applications of Slabs",
+      "subtext2":"Countertops, wall cladding, flooring, and façades are among the most popular uses of travertine slabs. Their durability and aesthetic value make them essential for residential, commercial, and hospitality projects worldwide.",
+       "subheader3":"Tile Finishes",
+      "subtext3":"Available in polished, honed, brushed, and tumbled options, travertine tiles can be adapted to both modern and traditional design concepts. These finishes provide variety and performance for diverse architectural needs.",
+       "subheader4":"Value-Added Production",
+      "subtext4":"Custom productions enhance the natural beauty of travertine while delivering exclusive architectural solutions. They elevate living and working spaces with distinctive designs that preserve long-term strength and elegance."
+    },
 
-  "header3": "Toptan Traverten Fayanslar",
-  "text3": "30×60, 60×60 ve 40×80 cm ölçülerinde dayanıklı fayanslar. Banyolar, mutfaklar, teraslar ve havuz kenarları için ideal olup yüksek kaymazlık seçenekleri mevcuttur.",
-
-  "header4": "Özel Traverten Tasarımlar",
-  "text4": "Merdiven, mozaik, bordür ve benzersiz mimari kesimler dahil olmak üzere özel çözümler. Villalar, oteller ve prestijli projeler için titizlikle üretilir.",
-
-  "subheader1": "Standart Blok Ölçüleri",
-  "subtext1": "Ortalama blok ölçüsü 280×220×200 cm olup doğal yüzeylidir. İhracata hazırdır, toplu siparişlere uygundur ve konteyner yüklemesi için güçlendirilmiş paketleme yapılır.",
-
-  "subheader2": "Plaka Kullanım Alanları",
-  "subtext2": "Tezgahlar, duvar kaplamaları, zemin döşemeleri ve dış cephelerde dayanıklılık ve doğal estetik gereken yerlerde tercih edilir.",
-
-  "subheader3": "Fayans Yüzey İşlemleri",
-  "subtext3": "Cilalı, honlanmış, eskitilmiş ve fırçalanmış yüzeyler; farklı tasarım gereksinimleri ve performans ihtiyaçlarını karşılamak üzere sunulur.",
-
-  "subheader4": "Katma Değerli Üretim",
-  "subtext4": "Özel tasarımlar, travertenin doğal dayanıklılığını ve dokusunu korurken estetiği yükseltir ve projelere özgün çözümler sunar."
-    }
+     "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is 280×220×200 cm with an average weight of 30–35 tons.",
+    "aboutpage_s4_faq2_header": "Do you export travertine worldwide?",
+    "aboutpage_s4_faq2_text": "Yes. Majen exports wholesale travertine from Turkey to the USA, Europe, and the Middle East using FOB and CIF terms.",
+    "aboutpage_s4_faq3_header": "How do you ensure safe shipments?",
+    "aboutpage_s4_faq3_text": "All products are reinforced with wooden frames, nylon wrapping, and metal strapping, then carefully loaded into containers for safe sea freight.",
+    "aboutpage_s4_faq4_header": "Who is a leading Travertine Supplier from Turkey?",
+    "aboutpage_s4_faq4_text": "Majen is a quarry-direct Travertine Supplier from Turkey, offering blocks, slabs, and tiles with FOB/CIF worldwide export."
+  }
   },
 
     "Gallery": {
@@ -512,7 +556,9 @@
     "aboutpage_s4_faq2_header": "Traverteni dünya geneline ihraç ediyor musunuz?",
     "aboutpage_s4_faq2_text": "Evet. Majen, Türkiye'den ABD, Avrupa ve Orta Doğu'ya FOB ve CIF teslim şartlarıyla toptan traverten ihraç eder.",
     "aboutpage_s4_faq3_header": "Sevkiyatların güvenliğini nasıl sağlıyorsunuz?",
-    "aboutpage_s4_faq3_text": "Tüm ürünler ahşap karkas, naylon ambalaj ve metal çember ile güçlendirilir; ardından deniz taşımacılığı için konteynırlara özenle yüklenir."
+    "aboutpage_s4_faq3_text": "Tüm ürünler ahşap karkas, naylon ambalaj ve metal çember ile güçlendirilir; ardından deniz taşımacılığı için konteynırlara özenle yüklenir.",
+        "aboutpage_s4_faq4_header": "Who is a leading Travertine Supplier from Turkey?",
+    "aboutpage_s4_faq4_text": "Majen is a quarry-direct Travertine Supplier from Turkey, offering blocks, slabs, and tiles with FOB/CIF worldwide export."
   },
 
   "HowWeExportPage": {
@@ -532,7 +578,143 @@
       "title3":"",
     "text3":""
   }
-}
+},
+
+"BlogIndex": {
+    "title": "Traverten Blog",
+    "intro": "Traverten tedariki, seçim kriterleri ve tasarıma dair rehberler.",
+    "readMore": "Devamını oku",
+    "categories": {
+      "travertine": "Traverten",
+      "slabs": "Traverten Plakalar",
+      "tiles": "Traverten Karolar",
+      "steps": "Traverten Basamak",
+      "mosaic": "Traverten Mozaik"
+    },
+    "posts": [
+      {
+        "slug": "light-traverten-ile-modern-ic-mekan",
+        "title": "Light Traverten ile Modern İç Mekan Tasarımı",
+        "excerpt": "Aydınlık ve modern iç mekanlar için light traverten kullanımı.",
+        "date": "2025-01-18",
+        "category": "travertine",
+        "cover": "/images/blog/light-travertine-modern.webp"
+      },
+      {
+        "slug": "mimarlar-neden-silver-traverten-tercih-eder",
+        "title": "Mimarlar Neden Silver Traverten Tercih Eder?",
+        "excerpt": "Performans, estetik ve bulunabilirlik açısından gümüş traverten.",
+        "date": "2025-01-10",
+        "category": "travertine",
+        "cover": "/images/blog/silver-travertine.webp"
+      },
+      {
+        "slug": "traverten-mi-mermer-mi",
+        "title": "Traverten mi Mermer mi? Hangisi Daha İyi?",
+        "excerpt": "Zemin, cephe ve dış mekan için pratik karşılaştırma.",
+        "date": "2025-01-05",
+        "category": "travertine",
+        "cover": "/images/blog/travertine-vs-marble.webp"
+      },
+      {
+        "slug": "turkiyedeki-en-iyi-traverten-tedarikcileri",
+        "title": "Türkiye’deki En İyi Traverten Tedarikçileri",
+        "excerpt": "Neye bakmalı: ocak konumu, süreklilik, lojistik, ihracat şartları.",
+        "date": "2024-12-22",
+        "category": "travertine",
+        "cover": "/images/blog/best-suppliers.webp"
+      },
+      {
+        "slug": "neden-turk-traverteni",
+        "title": "Neden Türk Traverteni?",
+        "excerpt": "Dayanım, bulunabilirlik, maliyet avantajı ve zengin renk seçenekleri.",
+        "date": "2024-12-10",
+        "category": "travertine",
+        "cover": "/images/blog/why-turkish.webp"
+      },
+      {
+        "slug": "dis-mekan-icin-en-iyi-traverten",
+        "title": "Dış Mekanlar İçin En İyi Traverten",
+        "excerpt": "Kaydırmazlık, hava şartlarına dayanım ve doğru yüzey seçimi.",
+        "date": "2024-11-30",
+        "category": "travertine",
+        "cover": "/images/blog/outdoor.webp"
+      }
+    ]
+  },
+
+  "BlogPost": {
+    "readAlso": "Bunları da okuyun",
+    "back": "Blog’a dön",
+
+    "light-traverten-ile-modern-ic-mekan": {
+      "title": "Light Traverten ile Modern İç Mekan Tasarımı",
+      "date": "2025-01-18",
+      "cover": "/images/blog/light-travertine-modern.webp",
+      "sections": [
+        { "h2": "Neden Light Traverten?", "p": "Light traverten sıcak ve nötr bir zemin sunar..." },
+        { "h2": "Önerilen Yüzeyler", "p": "İç mekânlarda honlanmış ve fırçalanmış yüzeyler..." },
+        { "h2": "Nerelerde Kullanılır?", "p": "Salon, mutfak, banyo..." }
+      ],
+      "faq": [
+        { "q": "Light traverten banyoda kullanılabilir mi?", "a": "Evet, doğru sızdırmazlık ile..." }
+      ]
+    },
+
+    "mimarlar-neden-silver-traverten-tercih-eder": {
+      "title": "Mimarlar Neden Silver Traverten Tercih Eder?",
+      "date": "2025-01-10",
+      "cover": "/images/blog/silver-travertine.webp",
+      "sections": [
+        { "h2": "Estetik Esneklik", "p": "Gümüş tonlar modern paletlerle uyumlu..." },
+        { "h2": "Performans", "p": "Uygun yüzey ile dayanıklı ve işlevsel..." }
+      ],
+      "faq": []
+    },
+
+    "traverten-mi-mermer-mi": {
+      "title": "Traverten mi Mermer mi? Hangisi Daha İyi?",
+      "date": "2025-01-05",
+      "cover": "/images/blog/travertine-vs-marble.webp",
+      "sections": [
+        { "h2": "Yapı ve Doku", "p": "Traverten gözenekli bir kireçtaşıdır..." },
+        { "h2": "Maliyet ve Bulunabilirlik", "p": "Traverten genellikle daha erişilebilir..." }
+      ],
+      "faq": [
+        { "q": "Traverten kolay lekelenir mi?", "a": "Uygun koruyucular ve bakım ile..." }
+      ]
+    },
+
+    "turkiyedeki-en-iyi-traverten-tedarikcileri": {
+      "title": "Türkiye’deki En İyi Traverten Tedarikçileri",
+      "date": "2024-12-22",
+      "cover": "/images/blog/best-suppliers.webp",
+      "sections": [
+        { "h2": "Neye Bakmalı?", "p": "Ocak kontrolü, süreklilik, ihracat şartları (FOB/CIF)..." }
+      ],
+      "faq": []
+    },
+
+    "neden-turk-traverteni": {
+      "title": "Neden Türk Traverteni?",
+      "date": "2024-12-10",
+      "cover": "/images/blog/why-turkish.webp",
+      "sections": [
+        { "h2": "Avantajlar", "p": "Geniş rezervler, renk çeşitliliği, lojistik..." }
+      ],
+      "faq": []
+    },
+
+    "dis-mekan-icin-en-iyi-traverten": {
+      "title": "Dış Mekanlar İçin En İyi Traverten",
+      "date": "2024-11-30",
+      "cover": "/images/blog/outdoor.webp",
+      "sections": [
+        { "h2": "Yüzeyler", "p": "Tumbled/fırçalı yüzeyler daha iyi tutunma sağlar..." }
+      ],
+      "faq": []
+    }
+  }
 
   
 }

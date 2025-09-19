@@ -12,6 +12,7 @@ import {
 import { FiSettings } from "react-icons/fi";
 import ServiceBlocks from "./blocksComponents/ServiceBlocks";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import Image from "next/image";
 
 const ICONS = {
   quality: FaRulerCombined,
@@ -366,13 +367,17 @@ useEffect(() => {
 
 
   return (
-    <section className="relative overflow-hidden  text-black py-1 sm:py-2  lg:h-[550px] w-screen  items-center justify-center"  style={{
-    backgroundImage: "url('/images/homepage/anasayfa3.webp')",
-    backgroundSize: "cover",       // resmi kırpmadan kaplar
-    backgroundPosition: "center",  // ortalar
-    backgroundRepeat: "no-repeat", // tekrar etmez
-  }}>
-      
+<section
+  className="relative overflow-hidden text-black py-1 sm:py-2 lg:h-[550px] w-screen flex items-center justify-center"
+>
+  <Image
+    src="/images/homepage/anasayfa3.webp"
+    alt="Travertine Supplier from Turkey"
+    fill
+    priority
+    className="object-cover object-center" // arka plana atmak için
+  />
+
 
       <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-black'>
         <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[4%]  xl:ml-[10%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>

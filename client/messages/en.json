@@ -76,13 +76,14 @@
   },
 
     "HomeMainSection":{
-    "header":"Travertine Supplier from Turkey – Majen Quarry Exporter",
+    "header":"Travertine Supplier from Turkey",
+    "span":" Majen Quarry Exporter",
     "text":"Majen is a leading travertine supplier from Turkey, offering premium blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we export wholesale travertine to the USA, Europe, and the Middle East. Our quarry-direct sourcing ensures consistent A-grade quality, competitive FOB/CIF pricing, and sustainable production methods. By choosing Majen, importers and wholesalers gain a reliable partner committed to delivering wholesale travertine from Turkey with transparency, strong logistics support, and on-time delivery."
   },
 
     "LogisticSection":{
     "header":"Export & Logistics",
-    "text":"Majen specializes in the export of wholesale travertine from Turkey. We provide FOB (Free On Board) shipping, where we load containers at Turkish ports, and CIF (Cost, Insurance & Freight), where we handle transportation to your destination port. Our export team prepares full documentation including commercial invoices, packing lists, certificates of origin, and inspection reports. Each block, slab, and tile is packaged with reinforced wooden frames, nylon wrapping, and metal strapping to minimize risk during sea freight. Our proven logistics network ensures safe and timely delivery of wholesale travertine worldwide"
+    "text":"Majen specializes in the export of wholesale travertine from Turkey. We provide FOB (Free On Board) shipping, where we load containers at Turkish ports, and CIF (Cost, Insurance & Freight), where we handle transportation to your destination port. Our export team prepares full documentation including commercial invoices, packing lists, certificates of origin, and inspection reports. Each block, slab, and tile is packaged with reinforced wooden frames, nylon wrapping, and metal strapping to minimize risk during sea freight. Our proven logistics network ensures safe and timely delivery of wholesale travertine worldwide Majen is recognized as a trusted Travertine Supplier from Turkey."
   },
 
   "InfoSection": {
@@ -95,25 +96,25 @@
       "product1": {
         "title": "Travertine Blocks",
         "description": "Large-size blocks selected at the quarry with consistent texture and color; ideal yield for fabrication and high-volume projects.",
-        "alt": "Marble product image",
+        "alt": "Wholesale Travertine Blocks",
         "cta": "Explore"
       },
       "product2": {
         "title": "Travertine Slabs",
         "description": "2, 3, 5 cm thicknesses with polished, honed or brushed finishes; calibrated, reinforced, and ideal for bookmatch use.",
-        "alt": "Granite product image",
+        "alt": "Wholesale Travertine Slabs",
         "cta": "Explore"
       },
       "product3": {
         "title": "Travertine Tiles",
         "description": "Standard sizes such as 30×60, 60×60, 60×120; precise edges for fast, clean installation in interior and exterior spaces.",
-        "alt": "Travertine product image",
+        "alt": "Wholesale Travertine Tiles",
         "cta": "Explore"
       },
       "product4": {
         "title": "Travertine Special Designs",
         "description": "Custom waterjet cuts, mosaic combinations, CNC carving and 3D panels; tailored to project details and delivered turnkey.",
-        "alt": "Onyx product image",
+        "alt": "Wholesale Travertine Special Designs",
         "cta": "Explore"
       }
     }
@@ -122,13 +123,13 @@
   "CollectionsSection": {
     "span": "Blaundos Travertine Colors",
     "header": " Travertine Colors & Finishes",
-    "text":"Blaundos Antiko: Grey-beige antique tones for luxury façades. Blaundos Light: Light beige for modern interiors and exteriors. Blaundos Ivory: Ivory-cream for hotels, villas, and public spaces. Available finishes include polished, honed, brushed, and tumbled. Custom surface treatments are available upon request, giving architects and wholesalers flexibility for diverse project requirements.",
+    "text":"Blaundos Antiko: Grey-beige antique tones for luxury façades. Blaundos Light: Light beige for modern interiors and exteriors. Blaundos Ivory: Ivory-cream for hotels, villas, and public spaces. Available finishes include polished, honed, brushed, and tumbled. Custom surface treatments are available upon request, giving architects and wholesalers flexibility for diverse project requirements. Natural stones supplied by Majen – your reliable Travertine Supplier from Turkey.",
     "titleAntiko": "Blaundos Antico",
-    "altAntiko": "Blaundos Antico travertine collection",
+    "altAntiko": "Wholesale Travertine Blaundos Antico ",
     "titleLight": "Blaundos Light",
-    "altLight": "Blaundos Light travertine collection",
+    "altLight": "Wholesale Travertine Blaundos Light ",
     "titleIvory": "Blaundos Ivory",
-    "altIvory": "Blaundos Ivory travertine collection"
+    "altIvory": "Wholesale Travertine Blaundos Ivory "
   },
 
   "KeyFeatures": {
@@ -165,17 +166,32 @@
       "item1": {
         "title": "Blaundos Antico Travertine – Warm Tones, Natural Veining",
         "description": "Quarry-selected Antico travertine from Uşak–Ulubey, ideal for blocks, slabs (2–3–5 cm), and tiles. Perfect for hotel lobbies, villas, and façades with warm beige-brown hues and expressive veins.",
-        "alt": "Modern interior designed with natural stone surfaces"
+        "alts": [
+        "Blaundos Antiko Travertine facade design",
+        "Blaundos Antiko Travertine interior cladding",
+        "Blaundos Antiko Travertine flooring",
+        "Blaundos Antiko Travertine luxury project"
+      ]
       },
       "item2": {
         "title": "Blaundos Light Travertine – Bright, Minimal Textures",
         "description": "Light travertine offers light beige color and subtle veining—a clean, modern look for interiors and exteriors. Great for large areas requiring consistent tone.",
-        "alt": "Visual showing quarry and slab processing"
+         "alts": [
+        "Blaundos Light Travertine wall cladding",
+        "Blaundos Light Travertine interior design",
+        "Blaundos Light Travertine flooring",
+        "Blaundos Light Travertine hotel project"
+      ]
       },
       "item3": {
         "title": "Blaundos Ivory Travertine – Elegant Cream Palette",
         "description": "Ivory travertine features a creamy palette and balanced veining—ideal for countertops, wall cladding, wet areas, and bookmatched designs.",
-        "alt": "Natural stone with waterjet and mosaic details"
+        "alts": [
+        "Blaundos Ivory Travertine villa facade",
+        "Blaundos Ivory Travertine poolside flooring",
+        "Blaundos Ivory Travertine staircase",
+        "Blaundos Ivory Travertine luxury interior"
+      ]
       }
     }
   },
@@ -432,10 +448,13 @@
 
    "TravertinePage": {
     "buttonText":"Sayfaya git",
-    "title": "Wholesale Travertine From Turkey – Direct Quarry Supplier in Uşak",
-    "intro": "Majen supplies premium travertine blocks, slabs, tiles, and custom designs directly from our quarry in Uşak – Ulubey, Turkey. As a trusted wholesale travertine supplier, we provide Blaundos Antiko, Blaundos Light, and Blaundos Ivory to international markets including the USA, Europe, and the Middle East. With consistent quality, competitive prices, and reliable logistics, Majen is your partner for wholesale travertine from Turkey.",
-    "title2":"Why Choose Travertine From Turkey?",
-    "intro2":"Turkey is the world’s leading exporter of travertine, known for its natural beauty, durability, and cost-effectiveness. At Majen, our Uşak – Ulubey quarry guarantees stable production, strict quality control, and sustainable practices. We combine local expertise with global standards, ensuring that architects, builders, and wholesalers receive top-grade travertine for projects worldwide. Choosing Turkish travertine means reliability, diversity, and unmatched value. That’s why Majen is your trusted source for wholesale travertine from Turkey.",
+    "metaTitle":"Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
+    "metaDescription":"Majen supplies wholesale travertine blocks, slabs & tiles from Uşak–Ulubey. Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping.",
+    "title": "Wholesale Travertine From Turkey ",
+    "span":"Direct Quarry Supplier in Uşak",
+    "intro": "Majen is a leading supplier of Wholesale Travertine From Turkey, offering blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we provide Blaundos Antiko, Light, and Ivory travertine varieties trusted by architects and importers worldwide. Our quarry-direct supply ensures consistent A-grade quality, sustainable production, and competitive FOB/CIF shipping terms. By choosing Majen, you gain a reliable partner for all your travertine projects.",
+    "title2":"Why Choose Wholesale Travertine From Turkey?",
+    "intro2":"Turkey is the world’s largest exporter of travertine, and Majen delivers premium selections to international buyers. Our Wholesale Travertine From Turkey combines natural beauty, durability, and cost-effectiveness. Sourced from Uşak–Ulubey, our travertine meets international standards with certified quality control. Importers and wholesalers benefit from stable supply, transparent logistics, and flexible shipping options. Majen is the trusted quarry-direct source for clients seeking long-term partnerships in the natural stone industry.",
     "home":"Home",
      "travertine":"Travertine",
     "cards": {
@@ -460,30 +479,65 @@
       "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
       "special": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
     },
-     "variantSentence": {
-      "start": "As Majen, we offer travertine varieties such as",
-      "end": ""
+    "variantSentence": {
+      "block": {
+        "start": "As Majen, we offer Travertine Blocks in varieties such as"
+      },
+      "slabs": {
+        "start": "As Majen, we supply Travertine Slabs in premium varieties including"
+      },
+      "tiles": {
+        "start": "As Majen, we provide Travertine Tiles in elegant varieties such as"
+      },
+      "special": {
+        "start": "As Majen, we craft Custom Travertine Designs using"
+      },
+      "end": "to suit diverse projects and performance needs."
+    },
+
+    "altTexts": {
+      "block": "Travertine Blocks for Export",
+      "slabs": "Travertine Slabs Supplier",
+      "tiles": "Wholesale Travertine Tiles",
+      "special": "Custom Travertine Designs"
     },
 
      "TextSection":{
       "header1":"Travertine Blocks for Export",
-      "text1":"Blocks extracted from our Uşak – Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks deliver consistent texture and large sizes for further processing and global shipment.",
+      "text1":"Blocks extracted from our Uşak–Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Light, and Ivory, our travertine blocks deliver consistent texture and large sizes for further processing and global shipment. Reinforced packaging ensures safe loading for international container transport.",
        "header2":"Travertine Slabs Supplier",
-      "text2":"Premium travertine slabs in 2 cm, 3 cm, and 5 cm thickness with polished, honed, brushed, or tumbled finishes. Designed for both interior and exterior applications in residential and commercial projects.",
+      "text2":"Premium travertine slabs are available in 2, 3, and 5 cm thickness with finishes including polished, honed, brushed, or tumbled. These slabs are designed for both interior and exterior applications, combining strength with natural elegance for architects and builders.",
        "header3":"Wholesale Travertine Tiles",
-      "text3":"Durable tiles available in 30×60, 60×60, and 40×80 cm. Ideal for bathrooms, kitchens, patios, and pool areas, with high slip-resistance options.",
+      "text3":"Travertine tiles are produced in sizes such as 30×60, 60×60, and 40×80 cm, offering flexibility for different designs. They are ideal for bathrooms, kitchens, patios, and pool areas, combining durability with natural slip-resistant surfaces.",
        "header4":"Custom Travertine Designs",
-      "text4":"Bespoke solutions including steps, mosaics, borders, and unique architectural cuts crafted for villas, hotels, and signature projects.",
+      "text4":"Custom travertine designs include steps, mosaics, borders, and unique architectural cuts tailored for villas, hotels, and signature projects. These bespoke pieces highlight both creativity and the durability of natural stone.",
 
        "subheader1":"Standard Block Dimensions",
-      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
+      "subtext1":"Average travertine block size is 280×220×200 cm with natural surfaces. Bulk orders are export-ready and suitable for international buyers requiring stability, volume, and reliable supply.",
        "subheader2":"Applications of Slabs",
-      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
+      "subtext2":"Countertops, wall cladding, flooring, and façades are among the most popular uses of travertine slabs. Their durability and aesthetic value make them essential for residential, commercial, and hospitality projects worldwide.",
        "subheader3":"Tile Finishes",
-      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
+      "subtext3":"Available in polished, honed, brushed, and tumbled options, travertine tiles can be adapted to both modern and traditional design concepts. These finishes provide variety and performance for diverse architectural needs.",
        "subheader4":"Value-Added Production",
-      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    }
+      "subtext4":"Custom productions enhance the natural beauty of travertine while delivering exclusive architectural solutions. They elevate living and working spaces with distinctive designs that preserve long-term strength and elegance."
+    },
+
+      "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is ~280×220×200 cm; average 30–35 tons depending on density. Export-ready and reinforced for container loading.",
+    "aboutpage_s4_faq2_header": "Which slab thicknesses and finishes do you offer?",
+    "aboutpage_s4_faq2_text": "Slabs in 2/3/5 cm; finishes: polished, honed, brushed, tumbled. Cut-to-size is available for project-specific requirements.",
+    "aboutpage_s4_faq3_header": "Do you export worldwide and which terms are available?",
+    "aboutpage_s4_faq3_text": "Yes. We ship worldwide with FOB and CIF terms and full documentation (invoice, packing list, certificate of origin, inspection reports).",
+    "aboutpage_s4_faq4_header": "How do you pack blocks, slabs and tiles for sea freight?",
+    "aboutpage_s4_faq4_text": "Reinforced wooden frames, nylon wrapping and metal strapping minimize movement and breakage during transport.",
+    "aboutpage_s4_faq5_header": "What color options are available?",
+    "aboutpage_s4_faq5_text": "Blaundos Antiko (grey-beige), Blaundos Light (light beige), Blaundos Ivory (ivory-cream); suited for interiors, façades and public spaces.",
+    "aboutpage_s4_faq6_header": "How can importers get pricing and availability?",
+    "aboutpage_s4_faq6_text": "Share target products and destination port; our team returns with lead time and quotes for Wholesale Travertine From Turkey."
+  }
   },
 
   "Gallery": {
@@ -518,14 +572,16 @@
   },
 
   "QuestionsSection": {
-    "aboutpage_s4_faq_header1": "FAQ – Wholesale Travertine",
+    "aboutpage_s4_faq_header1": "FAQ",
     "aboutpage_s4_faq_span1": "From Turkey",
     "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
     "aboutpage_s4_faq1_text": "Standard block size is 280×220×200 cm with an average weight of 30–35 tons.",
     "aboutpage_s4_faq2_header": "Do you export travertine worldwide?",
     "aboutpage_s4_faq2_text": "Yes. Majen exports wholesale travertine from Turkey to the USA, Europe, and the Middle East using FOB and CIF terms.",
     "aboutpage_s4_faq3_header": "How do you ensure safe shipments?",
-    "aboutpage_s4_faq3_text": "All products are reinforced with wooden frames, nylon wrapping, and metal strapping, then carefully loaded into containers for safe sea freight."
+    "aboutpage_s4_faq3_text": "All products are reinforced with wooden frames, nylon wrapping, and metal strapping, then carefully loaded into containers for safe sea freight.",
+    "aboutpage_s4_faq4_header": "Who is a leading Travertine Supplier from Turkey?",
+    "aboutpage_s4_faq4_text": "Majen is a quarry-direct Travertine Supplier from Turkey, offering blocks, slabs, and tiles with FOB/CIF worldwide export."
   },
 
   "HowWeExportPage": {
@@ -538,14 +594,150 @@
   "title3": "Documentation & Safety",
   "intro3": "We provide invoices, packing lists, certificates of origin, and inspection reports. All blocks and slabs are reinforced with wooden frames and strapping for safe sea freight.",
   "cards":{
-    "title1":"",
-    "text1":"",
-      "title2":"",
-    "text2":"",
-      "title3":"",
-    "text3":""
+    "title1":"FOB (Free on Board)",
+    "text1":"Majen loads travertine containers at Turkish ports. Buyers arrange international freight. Most common for bulk travertine block orders.",
+      "title2":"CIF (Cost, Insurance, Freight)",
+    "text2":"Majen manages shipping, insurance, and freight to buyer’s destination port. Importers prefer this hassle-free option for slabs and tiles.",
+      "title3":"EXW (Ex Works)",
+    "text3":"Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners."
   }
-}
+},
+
+ "BlogIndex": {
+    "title": "Travertine Blog",
+    "intro": "Guides and insights on travertine sourcing, selection and design.",
+    "readMore": "Read more",
+    "categories": {
+      "travertine": "Travertine",
+      "slabs": "Travertine Slabs",
+      "tiles": "Travertine Tiles",
+      "steps": "Travertine Steps",
+      "mosaic": "Travertine Mosaic"
+    },
+    "posts": [
+      {
+        "slug": "light-travertine-modern-interiors",
+        "title": "Modern Interior Design with Light Travertine",
+        "excerpt": "How to create clean, contemporary spaces using light travertine surfaces.",
+        "date": "2025-01-18",
+        "category": "travertine",
+        "cover": "/images/blog/light-travertine-modern.webp"
+      },
+      {
+        "slug": "why-architects-prefer-silver-travertine",
+        "title": "Why Architects Prefer Silver Travertine?",
+        "excerpt": "Performance, aesthetics and availability: a closer look at silver travertine.",
+        "date": "2025-01-10",
+        "category": "travertine",
+        "cover": "/images/blog/silver-travertine.webp"
+      },
+      {
+        "slug": "travertine-vs-marble-which-is-better",
+        "title": "Travertine vs Marble: Which is Better?",
+        "excerpt": "A practical comparison for flooring, facades and outdoor areas.",
+        "date": "2025-01-05",
+        "category": "travertine",
+        "cover": "/images/blog/travertine-vs-marble.webp"
+      },
+      {
+        "slug": "best-travertine-suppliers-turkey",
+        "title": "Best Travertine Suppliers in Turkey",
+        "excerpt": "What to check: quarry location, consistency, logistics, export terms.",
+        "date": "2024-12-22",
+        "category": "travertine",
+        "cover": "/images/blog/best-suppliers.webp"
+      },
+      {
+        "slug": "why-choose-turkish-travertine",
+        "title": "Why Choose Turkish Travertine?",
+        "excerpt": "Durability, availability, cost-effectiveness and rich color options.",
+        "date": "2024-12-10",
+        "category": "travertine",
+        "cover": "/images/blog/why-turkish.webp"
+      },
+      {
+        "slug": "best-travertine-for-outdoor-projects",
+        "title": "Best Travertine for Outdoor Projects",
+        "excerpt": "Slip-resistance, weathering and finish selection for landscapes.",
+        "date": "2024-11-30",
+        "category": "travertine",
+        "cover": "/images/blog/outdoor.webp"
+      }
+    ]
+  },
+
+  "BlogPost": {
+    "readAlso": "You may also like",
+    "back": "Back to Blog",
+
+    "light-travertine-modern-interiors": {
+      "title": "Modern Interior Design with Light Travertine",
+      "date": "2025-01-18",
+      "cover": "/images/blog/light-travertine-modern.webp",
+      "sections": [
+        { "h2": "Why Light Travertine?", "p": "Light travertine provides warm neutrality..." },
+        { "h2": "Recommended Finishes", "p": "Honed and brushed are ideal for interiors..." },
+        { "h2": "Where to Use", "p": "Living rooms, kitchens, bathrooms..." }
+      ],
+      "faq": [
+        { "q": "Is light travertine suitable for bathrooms?", "a": "Yes, with proper sealing..." }
+      ]
+    },
+
+    "why-architects-prefer-silver-travertine": {
+      "title": "Why Architects Prefer Silver Travertine?",
+      "date": "2025-01-10",
+      "cover": "/images/blog/silver-travertine.webp",
+      "sections": [
+        { "h2": "Aesthetic Versatility", "p": "Silver tones pair with modern palettes..." },
+        { "h2": "Performance", "p": "Durable with suitable finish..." }
+      ],
+      "faq": []
+    },
+
+    "travertine-vs-marble-which-is-better": {
+      "title": "Travertine vs Marble: Which is Better?",
+      "date": "2025-01-05",
+      "cover": "/images/blog/travertine-vs-marble.webp",
+      "sections": [
+        { "h2": "Structure & Texture", "p": "Travertine is a porous limestone..." },
+        { "h2": "Cost & Availability", "p": "Travertine tends to be more cost-effective..." }
+      ],
+      "faq": [
+        { "q": "Does travertine stain easily?", "a": "Use sealers and proper maintenance..." }
+      ]
+    },
+
+    "best-travertine-suppliers-turkey": {
+      "title": "Best Travertine Suppliers in Turkey",
+      "date": "2024-12-22",
+      "cover": "/images/blog/best-suppliers.webp",
+      "sections": [
+        { "h2": "What to Check", "p": "Quarry control, consistency, export terms (FOB/CIF)..." }
+      ],
+      "faq": []
+    },
+
+    "why-choose-turkish-travertine": {
+      "title": "Why Choose Turkish Travertine?",
+      "date": "2024-12-10",
+      "cover": "/images/blog/why-turkish.webp",
+      "sections": [
+        { "h2": "Advantages", "p": "Large reserves, color variety, logistics..." }
+      ],
+      "faq": []
+    },
+
+    "best-travertine-for-outdoor-projects": {
+      "title": "Best Travertine for Outdoor Projects",
+      "date": "2024-11-30",
+      "cover": "/images/blog/outdoor.webp",
+      "sections": [
+        { "h2": "Finishes", "p": "Tumbled/brushed for better traction..." }
+      ],
+      "faq": []
+    }
+  }
 
 
   
