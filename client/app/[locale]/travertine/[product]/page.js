@@ -9,6 +9,10 @@ import {
   PRODUCT_SLUGS,
   VARIANT_KEY_BY_SLUG,
 } from "@/lib/travertine";
+import block from "@/public/images/deneme/ivoryblok.webp";
+import slabs from "@/public/images/deneme/slabson.webp";
+import tiles from "@/public/images/homepage/kesim.webp";
+import special from "@/public/images/deneme/masa2.webp";
 
 import {
   PRODUCT_IMG,
@@ -22,6 +26,8 @@ import ContactFrom from "../../components/generalcomponent/ContactFrom";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
+import VariantCircleSection2 from "../../components/products1/VariantCircleSection2";
+import OtherOptions from "../../components/generalcomponent/OtherOptions";
 
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
@@ -40,7 +46,7 @@ export default function ProductPage() {
   const { product } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
-
+  const t3 = useTranslations("TravertinePage");
 
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
@@ -70,11 +76,13 @@ export default function ProductPage() {
   const alt2    = t(`${productKey}.alt2`, { default: "" });
   const intro2  = t(`${productKey}.intro2`, { default: "" });
 
-  const sizes      = t.raw(`${productKey}.sizes`) || [];
-  const finishes   = t.raw(`${productKey}.finishes`) || [];
-  const features   = t.raw(`${productKey}.features`) || [];
+  const cardTitle1      = t.raw(`${productKey}.detailsHeadings.title1`) || [];
+  const cardTitle2   = t.raw(`${productKey}.detailsHeadings.title2`) || [];
+  const cardTitle3   = t.raw(`${productKey}.detailsHeadings.title3`) || [];
+  const cardTitle4   = t.raw(`${productKey}.detailsHeadings.title4`) || [];
   const description= t.raw(`${productKey}.description`) || intro;
   const variantsHeading = t(`${productKey}.variants.heading`);
+  const variantsText = t(`${productKey}.variants.text`);
 
   // Görsel
   const imgMap = PRODUCT_IMG[productKey];
@@ -103,19 +111,19 @@ const productAltMap = {
   // Info kartları
   const cards = [
     {
-      title: t("detailsHeadings.title1", { default: "Benefits of " }) ,
+       title: cardTitle1,
       content: Array.isArray(description) ? description[0] : description || intro,
     },
     {
-      title: t("detailsHeadings.title2", { default: "Where It’s Produced / Used" }),
+       title: cardTitle2,
       content: Array.isArray(description) ? description[1] ?? intro : intro,
     },
     {
-      title: t("detailsHeadings.title3", { default: "Sizes / Thickness" }),
+      title: cardTitle3,
       content: Array.isArray(description) ? description[2] ?? intro : intro,
     },
      {
-      title: t("detailsHeadings.title4", { default: "Sizes / Thickness" }),
+       title: cardTitle4,
       content: Array.isArray(description) ? description[3] ?? intro : intro,
     }
   ];
@@ -166,11 +174,13 @@ const productAltMap = {
 
   const linkPatterns = [
   { pattern: /Blaundos Antiko/i, href: `${baseHref}/${product}/blaundos-antiko` },
-  { pattern: /Blaundos Light/i,  href: `${baseHref}/${product}/blaundos-light` },
-  { pattern: /Blaundos Ivory/i,  href: `${baseHref}/${product}/blaundos-ivory` },
+  { pattern: / Light/i,  href: `${baseHref}/${product}/blaundos-light` },
+  { pattern: / Ivory/i,  href: `${baseHref}/${product}/blaundos-ivory` },
 ];
 
  const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
+
+  const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
 
   return (
     <main className=" py-7 mt-16">
@@ -210,6 +220,7 @@ const productAltMap = {
       {/* VARYANTLAR */}
       <VariantCircleSection
         heading={variantsHeading}
+        text={variantsText}
         variantCards={variantCards}
         imgMap={imgMap}
         heroSrc={heroSrc}
@@ -234,6 +245,16 @@ const productAltMap = {
       <SocialMediaSection />
       <ContactFrom />
       <QuestionsSection items={items} span="Travertine Blocks "/>
+      <OtherOptions
+        heading= {t3("variantsHeading")}
+        productOrder={[ "slabs", "tiles", "special"]}
+        variantSlugs={["antiko", "light", "ivory"]}
+        baseHref={baseHref}
+        productSegments={PRODUCT_SLUGS[locale]}
+        locale={locale}
+        productImages={{ slabs, tiles, special }}
+        num={3}
+      />
     </main>
   );
 }

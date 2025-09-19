@@ -1,7 +1,7 @@
 // app/[locale]/layout.js (sizin dosyanız)
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server'   
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -60,11 +60,16 @@ export async function generateMetadata({ params }) {
     },
     robots: { index: true, follow: true },
     icons: {
-      icon: '/majen.svg',
-      shortcut: '/majen.svg',
-      apple: '/majen.svg',
+      icon: '/majen.ico',
+      shortcut: '/majen.ico',
+      apple: '/majen.ico',
     },
   };
+}
+
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({ children, params }) {
@@ -73,6 +78,8 @@ export default async function RootLayout({ children, params }) {
   if (!routing.locales.includes(locale)) {
     notFound();
   }
+
+  setRequestLocale(locale)
 
   const messages = await getMessages();
 

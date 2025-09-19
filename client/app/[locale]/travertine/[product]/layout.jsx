@@ -77,11 +77,25 @@ export async function generateMetadata({ params }) {
       : FALLBACK[locale]?.[productKey]?.title ||
         "Travertine | Majen";
 
-  const description =
-    tSeo.has(`${productKey}.description`)
-      ? tSeo(`${productKey}.description`)
-      : FALLBACK[locale]?.[productKey]?.description ||
-        "Wholesale travertine from Turkey by Majen.";
+  let description =
+  tSeo.has(`${productKey}.description`)
+    ? tSeo(`${productKey}.description`)
+    : FALLBACK[locale]?.[productKey]?.description ||
+      "Wholesale travertine from Turkey by Majen.";
+
+// Eğer ürün block ise → özel format ekle
+if (productKey === "block") {
+  description = locale === "en"
+    ? "Wholesale Travertine Blocks from Turkey | Antiko, Light, Ivory – Majen"
+    : "Türkiye’den Toptan Traverten Blokları | Antiko, Light, Ivory – Majen";
+}
+
+if (productKey === "slab") {
+  description = locale === "en"
+    ? "Wholesale Travertine Blocks from Turkey | Antiko, Light, Ivory – Majen"
+    : "Türkiye’den Toptan Traverten Blokları | Antiko, Light, Ivory – Majen";
+}
+
 
   // OG görsel (ürünün kapak görseli)
   const imgMap = PRODUCT_IMG[productKey];

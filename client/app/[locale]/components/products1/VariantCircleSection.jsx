@@ -18,6 +18,7 @@ import { FaYoutube } from "react-icons/fa";
  */
 export default function VariantCircleSection({
   heading,
+  text,
   variantCards,
   imgMap,
   heroSrc,

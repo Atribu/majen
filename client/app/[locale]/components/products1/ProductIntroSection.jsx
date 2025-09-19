@@ -126,8 +126,8 @@ export default function ProductIntroSection({
     <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5">{title} <span>- Direct Quarry Supplier</span></h1>
     <p className="text-[12px] lg:text-[14px] mb-10 lg:leading-[140%]">{intro}</p>
     
-     <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title}</h2>
-    <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%]">{intro}</p>
+     <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title2}</h2>
+    <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%]">{intro2}</p>
   
   </header>
 
@@ -140,7 +140,7 @@ export default function ProductIntroSection({
               {selectedSegments.map((seg, i) => (
                 <React.Fragment key={i}>
                   <li>/</li>
-                  <li className="capitalize">{seg}s</li>
+                  <li className="capitalize">{seg}</li>
                 </React.Fragment>
               ))}
             </ol>

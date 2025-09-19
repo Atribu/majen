@@ -3,8 +3,8 @@ export const BASE_BY_LOCALE = { en: "travertine", tr: "traverten" };
 export const PRODUCT_KEYS = ["block", "slabs", "tiles", "special"];
 
 export const PRODUCT_SLUGS = {
-  en: { block: "block", slabs: "slabs", tiles: "tiles", special: "special-designs" },
-  tr: { block: "blok",  slabs: "plakalar", tiles: "karolar", special: "ozel-tasarimlar" },
+  en: { block: "blocks", slabs: "slabs", tiles: "tiles", special: "special-designs" },
+  tr: { block: "bloklar",  slabs: "plakalar", tiles: "karolar", special: "ozel-tasarimlar" },
 };
 
 export const VARIANT_KEY_BY_SLUG = {

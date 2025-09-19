@@ -5,19 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export default function VariantCircleSection2({
+export default function OtherOptions({
   heading,
   productOrder = ["block", "slabs", "tiles", "special"],
   variantSlugs = [],
   baseHref,
-  num,
   productSegments,
   locale = "tr",
   labels = {},
   productImages = {},
   productHrefFor,
-  className = "flex flex-col w-screen mb-10 items-center justify-center text-center",
-  gridClassName = "mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center",
+  className = "flex flex-col w-screen mb-10 items-center justify-center text-center mt-16",
+  gridClassName = "mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center",
 }) {
   const t = useTranslations("TravertinePage");
 
@@ -72,12 +71,9 @@ export default function VariantCircleSection2({
     <section className={className}>
       <div className="flex flex-col max-w-[1200px] items-center justify-center text-center">
         {heading ? (
-          <h3 className="text-[20px] lg:text-[22px] font-semibold mb-2">{heading}</h3>
+          <h4 className="text-[18px] lg:text-[20px] font-semibold mb-2">Other Products</h4>
         ) : null}
 
-        <p className="text-[12px] lg:text-[14px] w-[90%] flex mb-3">
-          Majen offers a full range of Wholesale Travertine From Turkey, organized into four main product categories: blocks, slabs, tiles, and custom designs. Each category serves different architectural and commercial needs, from quarry-direct blocks for factories to finished slabs and tiles for construction and interior design. With Blaundos Antiko, Light, and Ivory varieties, our travertine product categories provide diverse solutions for global importers and wholesalers.
-        </p>
 
         <div className={gridClassName}>
           {productOrder.map((pkey) => {

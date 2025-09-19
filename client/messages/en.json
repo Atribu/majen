@@ -258,14 +258,24 @@
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
+      "detailsHeadings": {
+      "title1":"Why Our Travertine Blocks?",
+      "title2": "Applications of Travertine Blocks",
+      "title3": "Block Sizes & Weight",
+      "title4": "Block Surface & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
       "description": [
         "High durability, natural beauty, and quarry-direct sourcing from Uşak–Ulubey make Majen blocks a trusted choice. Our travertine blocks provide consistent texture, A-grade quality, and secure packaging for reliable international supply.",
-        "Travertine blocks are primarily used for factory processing into slabs and tiles, bulk export distribution, and large-scale architectural projects. Offered in Blaundos Antiko, Blaundos Light, and Blaundos Ivory, our blocks meet the diverse needs of global importers and construction firms.",
+        "Travertine blocks are primarily used for factory processing into slabs and tiles, bulk export distribution, and large-scale architectural projects. Offered in Blaundos Antiko, Light, and Ivory, our blocks meet the diverse needs of global importers and construction firms.",
          "Standard block size is approx. 280×220×200 cm, with natural quarry faces and an average weight of 30–35 tons. Bulk orders are export-ready and reinforced for container loading, ensuring safe handling during international shipments.",
          "Blocks are supplied with natural/raw surfaces (wire-cut) straight from the quarry. For export, reinforced wooden frames, nylon wrapping, and metal strapping are applied, minimizing risk and ensuring that travertine blocks arrive safely worldwide."
       ],
       "variants": {
         "heading": "Travertine Block Varieties",
+        "text":"Majen offers three main types of Wholesale Travertine Blocks from Turkey: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is carefully extracted from our Uşak–Ulubey quarry and selected for consistent texture, durability, and natural beauty. These block varieties provide reliable quality for global buyers and are export-ready with reinforced packaging for secure international shipments.",
         "variant1": { "title": "Travertine Blocks Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
         "variant2": { "title": "Travertine Blocks Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
         "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
@@ -307,21 +317,34 @@
     },
 
     "slabs": {
-      "title": "Travertine Slabs - Wholesale Travertine Slabs From Turkey",
+      "title": "Wholesale Travertine Slabs From Turkey",
+      "span":"Direct Quarry Supplier",
       "alt": "Slab product image",
-      "intro": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
-        "title2": "Travertine Slabs - Wholesale Travertine From Turkey",
+      "intro": "Majen is a leading exporter of Wholesale Travertine Slabs From Turkey, supplying 2cm, 3cm, and 5cm slabs directly from our Uşak–Ulubey quarry. Available in Blaundos Antiko, Light, and Ivory, our travertine slabs are crafted for consistency, durability, and natural elegance. Each slab is carefully cut and inspected to meet A-grade standards, reinforced for international shipment, and trusted by architects and wholesalers worldwide.",
+      "title2": "Why Choose Wholesale Travertine Slabs From Turkey?",
       "alt2": "Slab product image",
-      "intro2": "2 cm / 3 cm / 5 cm thickness, polished/honed/brushed options; ideal for bookmatch.",
+      "intro2": "Turkey is the world’s largest supplier of travertine, and Majen delivers premium selections. Our Wholesale Travertine Slabs From Turkey offer polished, honed, brushed, and tumbled finishes to suit diverse projects. Quarry-direct sourcing ensures consistent supply and competitive pricing. Importers and designers rely on Majen slabs for residential, commercial, and hospitality projects requiring both strength and timeless beauty.",
       "sizes": ["2 cm", "3 cm","5cm"],
       "finishes": ["Polished", "Unpolished"],
       "features": ["Calibration", "Reinforcement", "High surface quality"],
+      "detailsHeadings": {
+      "title1":"Why Our Travertine Slabs?",
+      "title2": "Applications of Travertine Slabs",
+      "title3": "Slab Sizes & Thickness",
+      "title4": "Slab Finishes & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
       "description": [
-        "Slabs are prepared in 2 cm and 3 cm thickness, then calibrated, reinforced and finished for on-site readiness.",
-        "Outstanding surface quality and dimensional accuracy make them ideal for bookmatch and large-format installations, enabling fast and clean assembly."
+        "High durability, quarry-direct sourcing from Uşak–Ulubey, and precise cutting deliver consistent A-grade travertine slabs. Reliable lead times and reinforced packing make Majen a trusted partner for global projects.",
+        "Travertine slabs are used for countertops, wall cladding, interior floors and exterior façades in residential, hospitality and commercial developments. Blaundos Antiko, Light and Ivory offer distinct tones for different design intents.",
+        "Standard production in 2 cm, 3 cm and 5 cm thickness. Common sizes include large formats suitable for efficient fabrication, reducing waste and ensuring predictable results at scale.",
+        "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
       ],
       "variants": {
-        "heading": "Color Varieties",
+        "heading": "Travertine Slab Varieties",
+        "text":"Majen offers three main types of Wholesale Travertine Slabs From Turkey: Blaundos Antiko, Blaundos Light and Blaundos Ivory. Each selection is cut from our Uşak–Ulubey quarry for consistent texture, durability and natural elegance, and is export-ready with reinforced packaging for secure international shipments.",
         "variant1": { "title": "Travertine Slabs Blaundos Antico", "alt": "Blaundos Antico slab", "href": "/en/travertine/slabs/blaundos-antiko" },
         "variant2": { "title": "Travertine Slabs Blaundos Light", "alt": "Blaundos Light slab", "href": "/en/travertine/slabs/blaundos-light" },
         "variant3": { "title": "Travertine Slabs Blaundos Ivory", "alt": "Blaundos Ivory slab", "href": "/en/travertine/slabs/blaundos-ivory" }
@@ -344,11 +367,27 @@
       "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
        "subheader4":"Value-Added Production",
       "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    }
+    },
+
+    "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is approx. 280×220×200 cm, weighing 30–35 tons. These travertine blocks are export-ready and reinforced for container loading.",
+    "aboutpage_s4_faq2_header": "Which travertine block colors do you supply?",
+    "aboutpage_s4_faq2_text": "We supply Blaundos Antiko, Blaundos Light, and Blaundos Ivory travertine blocks, each offering unique tones and consistent A-grade quality for export.",
+    "aboutpage_s4_faq3_header": "How are travertine blocks packaged for shipping?",
+    "aboutpage_s4_faq3_text": "Travertine blocks are reinforced with wooden frames, nylon wrapping, and metal strapping to minimize movement and damage during sea freight.",
+    "aboutpage_s4_faq4_header": "Do you export travertine blocks worldwide?",
+    "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
+    "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
+    "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
+  }
     },
 
     "tiles": {
       "title": "Travertine Tiles - Wholesale Travertine Tiles From Turkey",
+      "span":"Direct Quarry Supplier",
       "alt": "Tile product image",
       "intro": "Standard sizes with precise edges for interior/exterior use and quick installation.",
         "title2": "Travertine Tiles - Wholesale Travertine From Turkey",
@@ -357,6 +396,15 @@
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Polished", "Unpolished"],
       "features": ["Tight tolerances", "Fast installation", "Low maintenance"],
+      "detailsHeadings": {
+      "title1":"Why Our Travertine Blocks?",
+      "title2": "Applications of Travertine Blocks",
+      "title3": "Block Sizes & Weight",
+      "title4": "Block Surface & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
       "description": [
         "Tiles are produced in standard sizes for both indoor and outdoor applications. Clean edges and dimensional accuracy provide a practical solution.",
         "With multiple surface options and durable properties, they adapt to different design concepts while reducing maintenance needs."
@@ -385,11 +433,27 @@
       "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
        "subheader4":"Value-Added Production",
       "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    }
+    },
+
+    "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is approx. 280×220×200 cm, weighing 30–35 tons. These travertine blocks are export-ready and reinforced for container loading.",
+    "aboutpage_s4_faq2_header": "Which travertine block colors do you supply?",
+    "aboutpage_s4_faq2_text": "We supply Blaundos Antiko, Blaundos Light, and Blaundos Ivory travertine blocks, each offering unique tones and consistent A-grade quality for export.",
+    "aboutpage_s4_faq3_header": "How are travertine blocks packaged for shipping?",
+    "aboutpage_s4_faq3_text": "Travertine blocks are reinforced with wooden frames, nylon wrapping, and metal strapping to minimize movement and damage during sea freight.",
+    "aboutpage_s4_faq4_header": "Do you export travertine blocks worldwide?",
+    "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
+    "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
+    "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
+  }
     },
 
     "special": {
       "title": "Travertine Special Designs - Wholesale Travertine From Turkey",
+      "span":"Direct Quarry Supplier",
       "alt": "Custom design product image",
       "intro": "Waterjet, mosaic, CNC carving and 3D panels; made to order for your project.",
       "title2": "Travertine Special Designs - Wholesale Travertine From Turkey",
@@ -398,6 +462,15 @@
       "sizes": ["Project-based dimensions"],
       "finishes": ["Project-based finishes"],
       "features": ["Custom cutting", "Personalization", "Turnkey delivery"],
+      "detailsHeadings": {
+      "title1":"Why Our Travertine Blocks?",
+      "title2": "Applications of Travertine Blocks",
+      "title3": "Block Sizes & Weight",
+      "title4": "Block Surface & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
       "description": [
         "Custom productions such as waterjet cuts, mosaic assemblies, CNC carving and 3D panels are prepared to your exact measurements.",
         "From sourcing to installation, every step is planned according to architectural details and tolerances, delivering a turnkey solution."
@@ -426,7 +499,22 @@
       "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
        "subheader4":"Value-Added Production",
       "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    }
+    },
+
+    "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is approx. 280×220×200 cm, weighing 30–35 tons. These travertine blocks are export-ready and reinforced for container loading.",
+    "aboutpage_s4_faq2_header": "Which travertine block colors do you supply?",
+    "aboutpage_s4_faq2_text": "We supply Blaundos Antiko, Blaundos Light, and Blaundos Ivory travertine blocks, each offering unique tones and consistent A-grade quality for export.",
+    "aboutpage_s4_faq3_header": "How are travertine blocks packaged for shipping?",
+    "aboutpage_s4_faq3_text": "Travertine blocks are reinforced with wooden frames, nylon wrapping, and metal strapping to minimize movement and damage during sea freight.",
+    "aboutpage_s4_faq4_header": "Do you export travertine blocks worldwide?",
+    "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
+    "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
+    "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
+  }
     }
   },
 
