@@ -213,6 +213,10 @@
      "products":"Ürünler",
      "details":"Detayları Gör",
     "detailsHeadings": {
+       "title1":"",
+      "title2": "Sizes",
+      "title3": "Finishes",
+      "title4": "Key Highlights",
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
@@ -223,6 +227,7 @@
     
     "block": {
       "title": "Traverten Blok - Wholesale Traverten From Turkey",
+      "span":"Direct Quarry Supplier",
       "alt": "Blok ürün görseli",
       "intro": "Ocaktan seçilmiş homojen dokulu bloklar; yüksek verim ve kalite.",
        "title2": "Travertine Block - Wholesale Traverten From Turkey",
@@ -259,7 +264,23 @@
       "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
        "subheader4":"Value-Added Production",
       "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    }
+    },
+        "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "From Turkey",
+    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
+    "aboutpage_s4_faq1_text": "Standard block size is ~280×220×200 cm; average 30–35 tons depending on density. Export-ready and reinforced for container loading.",
+    "aboutpage_s4_faq2_header": "Which slab thicknesses and finishes do you offer?",
+    "aboutpage_s4_faq2_text": "Slabs in 2/3/5 cm; finishes: polished, honed, brushed, tumbled. Cut-to-size is available for project-specific requirements.",
+    "aboutpage_s4_faq3_header": "Do you export worldwide and which terms are available?",
+    "aboutpage_s4_faq3_text": "Yes. We ship worldwide with FOB and CIF terms and full documentation (invoice, packing list, certificate of origin, inspection reports).",
+    "aboutpage_s4_faq4_header": "How do you pack blocks, slabs and tiles for sea freight?",
+    "aboutpage_s4_faq4_text": "Reinforced wooden frames, nylon wrapping and metal strapping minimize movement and breakage during transport.",
+    "aboutpage_s4_faq5_header": "What color options are available?",
+    "aboutpage_s4_faq5_text": "Blaundos Antiko (grey-beige), Blaundos Light (light beige), Blaundos Ivory (ivory-cream); suited for interiors, façades and public spaces.",
+    "aboutpage_s4_faq6_header": "How can importers get pricing and availability?",
+    "aboutpage_s4_faq6_text": "Share target products and destination port; our team returns with lead time and quotes for Wholesale Travertine From Turkey."
+  }
     },
 
 

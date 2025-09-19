@@ -28,7 +28,7 @@ export default function ProductIntroSection({
   prefix,
   baseHref,
   crumbHome = "Ana Sayfa",
-  crumbProducts = "Travertine",
+  crumbProducts = "Travertines",
   depth = 1, 
 }) {
   // JSON-LD Schema
@@ -54,7 +54,7 @@ export default function ProductIntroSection({
         {/* Background */}
         <Image
           src={heroSrc}
-          alt={alt}
+          alt="gverheth"
           fill
           priority
           className="object-cover"
@@ -62,8 +62,8 @@ export default function ProductIntroSection({
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 text-center text-white max-w-[95%]">
-          <h1 id="intro-heading" className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold">
-            {title}
+          <h1 id="intro-heading" className="text-[24px] md:text-[24px] lg:text-[26px] font-semibold">
+            {title} <span>Direct Quarry Supplier</span>
           </h1>
           <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
 
@@ -83,7 +83,7 @@ export default function ProductIntroSection({
               </li>
               <li className="text-white/60">/</li>
               <li>
-                <Link href={baseHref} className="hover:underline">{crumbProducts}</Link>
+                <Link href={baseHref} className="hover:underline">{crumbProducts}s</Link>
               </li>
               <li className="text-white/60">/</li>
               <li className="text-white/90"> {lastSegment}</li>
@@ -123,11 +123,11 @@ export default function ProductIntroSection({
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}
   <header className="relative px-5 pt-5 w-[80%] z-10">
-    <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold">{title}</h1>
-    <p className="text-[12px] lg:text-[14px] mt-3">{intro}</p>
+    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5">{title} <span>- Direct Quarry Supplier</span></h1>
+    <p className="text-[12px] lg:text-[14px] mb-10 lg:leading-[140%]">{intro}</p>
     
-     <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold">{title}</h2>
-    <p className="text-[12px] lg:text-[14px] mt-3">{intro}</p>
+     <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title}</h2>
+    <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%]">{intro}</p>
   
   </header>
 
@@ -136,11 +136,11 @@ export default function ProductIntroSection({
             <ol className="flex items-center gap-x-2">
               <li><Link href={prefix}>{crumbHome}</Link></li>
               <li>/</li>
-              <li><Link href={baseHref}>{crumbProducts}</Link></li>
+              <li><Link href={baseHref}>{crumbProducts}s</Link></li>
               {selectedSegments.map((seg, i) => (
                 <React.Fragment key={i}>
                   <li>/</li>
-                  <li className="capitalize">{seg}</li>
+                  <li className="capitalize">{seg}s</li>
                 </React.Fragment>
               ))}
             </ol>

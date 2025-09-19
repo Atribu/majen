@@ -20,6 +20,8 @@ import ProductIntroSection from "../../components/products1/ProductIntroSection"
 import TextSection from "../../components/products1/TextSection";
 import ContactFrom from "../../components/generalcomponent/ContactFrom";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
+import InlineLinks from "../../components/generalcomponent/InlineLinks";
+import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
@@ -39,6 +41,7 @@ export default function ProductPage() {
   const locale = useLocale();
   const t = useTranslations("ProductPage");
 
+
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
   const baseHref = `${prefix}/${baseSegment}`;
@@ -46,6 +49,18 @@ export default function ProductPage() {
   // Ürün key’ini bul
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
+
+      const t2 = useTranslations(`ProductPage.${productKey}.QuestionsItems`);
+
+
+       const items = [
+      { q: t2("aboutpage_s4_faq1_header"), a: t2("aboutpage_s4_faq1_text") },
+      { q: t2("aboutpage_s4_faq2_header"), a: t2("aboutpage_s4_faq2_text") },
+      { q: t2("aboutpage_s4_faq3_header"), a: t2("aboutpage_s4_faq3_text") },
+      { q: t2("aboutpage_s4_faq4_header"), a: t2("aboutpage_s4_faq4_text") },
+      { q: t2("aboutpage_s4_faq5_header"), a: t2("aboutpage_s4_faq5_text") }
+      
+    ];
 
   // Metinler
   const title   = t(`${productKey}.title`);
@@ -66,6 +81,13 @@ export default function ProductPage() {
   const heroSrc =
     typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
+const productAltMap = {
+  block: "Blocks",
+  slabs: "Slabs",
+  tiles: "Tiles",
+  special: "Custom Designs",
+};
+
   // Varyant kartları
   const variantCards = VARIANT_SLUGS.map((slug) => {
     const vKey = VARIANT_KEY_BY_SLUG[slug];
@@ -73,7 +95,7 @@ export default function ProductPage() {
       slug,
       vKey,
       title: t(`${productKey}.variants.${vKey}.title`),
-      alt: t(`${productKey}.variants.${vKey}.alt`),
+      alt: `Wholesale Travertine ${productAltMap[productKey] || productKey} from Turkey`,
       href: `${baseHref}/${product}/${slug}`,
     };
   });
@@ -81,23 +103,21 @@ export default function ProductPage() {
   // Info kartları
   const cards = [
     {
-      title: t("detailsHeadings.sizes", { default: "Benefits of " }) + title,
+      title: t("detailsHeadings.title1", { default: "Benefits of " }) ,
       content: Array.isArray(description) ? description[0] : description || intro,
     },
     {
-      title: t("detailsHeadings.sizes", { default: "Where It’s Produced / Used" }),
+      title: t("detailsHeadings.title2", { default: "Where It’s Produced / Used" }),
       content: Array.isArray(description) ? description[1] ?? intro : intro,
     },
     {
-      title: t("detailsHeadings.sizes", { default: "Sizes / Thickness" }),
-      content: sizes?.length
-        ? sizes.join(", ")
-        : t("detailsHeadings.harvestText", { default: "See size options on the right." }),
+      title: t("detailsHeadings.title3", { default: "Sizes / Thickness" }),
+      content: Array.isArray(description) ? description[2] ?? intro : intro,
     },
-    {
-      title: t("detailsHeadings.features", { default: "Finishes & Features" }),
-      content: [...(finishes || []), ...(features || [])].slice(0, 12).join(", "),
-    },
+     {
+      title: t("detailsHeadings.title4", { default: "Sizes / Thickness" }),
+      content: Array.isArray(description) ? description[3] ?? intro : intro,
+    }
   ];
 
   // SEO schema
@@ -125,15 +145,13 @@ export default function ProductPage() {
   ) {
     const header     = textSectionRaw[`header${i}`];
     const text       = textSectionRaw[`text${i}`];
-    const subheader  = textSectionRaw[`subheader${i}`];
-    const subtext    = textSectionRaw[`subtext${i}`];
 
     // Başlık: headerN varsa onu kullan, yoksa subheaderN’ı title gibi kullanabiliriz (opsiyonel)
     const titleForSection =
-      header || subheader || `${title} — Section ${i}`;
+      header  || `${title} — Section ${i}`;
 
     // Paragraflar: text/subtext olanları sırayla ekle
-    const paragraphsForSection = [text, subtext].filter(Boolean);
+    const paragraphsForSection = [text].filter(Boolean);
 
     // Sadece title veya en az bir paragraf varsa render’a ekle
     if (titleForSection || paragraphsForSection.length) {
@@ -146,6 +164,14 @@ export default function ProductPage() {
     i++;
   }
 
+  const linkPatterns = [
+  { pattern: /Blaundos Antiko/i, href: `${baseHref}/${product}/blaundos-antiko` },
+  { pattern: /Blaundos Light/i,  href: `${baseHref}/${product}/blaundos-light` },
+  { pattern: /Blaundos Ivory/i,  href: `${baseHref}/${product}/blaundos-ivory` },
+];
+
+ const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
+
   return (
     <main className=" py-7 mt-16">
       {/* ÜST INTRO */}
@@ -155,7 +181,7 @@ export default function ProductPage() {
         title2={title2}
         intro2={intro2}
         heroSrc={heroSrc}
-        alt={alt}
+        alt={heroAlt}
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
@@ -163,13 +189,23 @@ export default function ProductPage() {
       />
 
       {/* 4 BİLGİ KARTI */}
-      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
-        {cards.map((c, i) => (
-          <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null}
-          </InfoCard>
-        ))}
-      </section>
+     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
+  {cards.map((c, i) => (
+    <InfoCard key={i} title={c.title}>
+      {i === 1 ? ( // 2. kart (index 1)
+        <InlineLinks text={c.content} patterns={linkPatterns} />
+      ) : (
+        typeof c.content === "string"
+          ? c.content
+          : Array.isArray(c.content)
+            ? c.content.join(", ")
+            : null
+      )}
+    </InfoCard>
+    
+  ))}
+</section>
+
 
       {/* VARYANTLAR */}
       <VariantCircleSection
@@ -190,11 +226,14 @@ export default function ProductPage() {
           className="max-w-5xl mx-auto mt-12"
           clampMobile={3}
           as="section"
+          title2=""
+          text2=""
         />
       ))}
 
       <SocialMediaSection />
       <ContactFrom />
+      <QuestionsSection items={items} span="Travertine Blocks "/>
     </main>
   );
 }
