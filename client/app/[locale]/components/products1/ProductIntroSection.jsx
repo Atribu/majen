@@ -54,7 +54,7 @@ export default function ProductIntroSection({
         {/* Background */}
         <Image
           src={heroSrc}
-          alt="gverheth"
+          alt="Travertine"
           fill
           priority
           className="object-cover"

@@ -73,7 +73,7 @@ export default function OtherOptions({
     <section className={className}>
       <div className="flex flex-col max-w-[1200px] items-center justify-center text-center">
         {heading ? (
-          <h4 className="text-[18px] lg:text-[20px] font-semibold mb-2">
+          <h4 className="text-[18px] lg:text-[20px] font-semibold mb-0 md:mb-2">
             {heading}
           </h4>
         ) : null}

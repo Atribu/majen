@@ -1,4 +1,3 @@
-
 // app/[locale]/page.jsx
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
@@ -11,15 +10,17 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: "HomePage" });
 
   const title = t("title", {
-    default: "Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen",
-  });
-  const description = (t("description", {
     default:
-      "Direct quarry supplier in Uşak–Ulubey. Wholesale travertine blocks, slabs, tiles and custom designs.",
-  }) || "").slice(0, 160);
+      "Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen",
+  });
+  const description = (
+    t("description", {
+      default:
+        "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light & Ivory. FOB/CIF worldwide shipping, reinforced packaging, A-grade quality.",
+    }) || ""
+  ).slice(0, 160);
 
-  const canonical =
-    locale === "tr" ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
+  const canonical = locale === "tr" ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
 
   return {
     title,
@@ -49,13 +50,66 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function HomePage() {
-  const HomeClient = require("./components/homepage/HomeClient").default; // varsa client parçası
+export default async function HomePage({ params }) {
+  const { locale } = params;
+
+  // Locale'e göre base segment (tr: traverten, en: travertine)
+  const baseSeg = locale === "tr" ? "traverten" : "travertine";
+  const homeName = locale === "tr" ? "Ana Sayfa" : "Home";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: homeName,
+        item: `${SITE_URL}/${locale}`,
+      },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "tr" ? "Traverten Bloklar" : "Travertine Blocks",
+        url: `${SITE_URL}/${locale}/${baseSeg}/block`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: locale === "tr" ? "Traverten Plakalar" : "Travertine Slabs",
+        url: `${SITE_URL}/${locale}/${baseSeg}/slabs`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: locale === "tr" ? "Traverten Karolar" : "Travertine Tiles",
+        url: `${SITE_URL}/${locale}/${baseSeg}/tiles`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: locale === "tr" ? "Özel Tasarımlar" : "Special Designs",
+        url: `${SITE_URL}/${locale}/${baseSeg}/special`,
+      },
+    ],
+  };
+
+  const HomeClient = require("./components/homepage/HomeClient").default;
+
   return (
     <>
       <HomeClient />
+
+      {/* WebSite + Organization (sen zaten eklemişsin, koruyorum) */}
       <Script
-        id="ld-home"
+        id="ld-home-website-org"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -81,9 +135,24 @@ export default function HomePage() {
           }),
         }}
       />
+
+      {/* BreadcrumbList (Home) */}
+      <Script
+        id="ld-breadcrumb-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      {/* ItemList (4 ana kategori) */}
+      <Script
+        id="ld-itemlist-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListSchema),
+        }}
+      />
     </>
   );
 }
-
-
-

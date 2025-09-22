@@ -19,8 +19,8 @@ export const config = {
 
     // Base & product & variant
     '/travertine': {
-      en: '/travertine',
-      tr: '/traverten',
+      en: '/travertines',
+      tr: '/travertenler',
     },
     '/travertine/[product]': {
       en: '/travertine/[product]',

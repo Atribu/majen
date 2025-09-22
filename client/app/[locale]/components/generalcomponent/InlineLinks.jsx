@@ -6,12 +6,24 @@ import React from "react";
 /**
  * text: string
  * patterns: Array<{ pattern: RegExp, href: string, className?: string, ariaLabel?: string }>
+ * textClassName: normal metin için className
+ * linkClassName: linkler için ek className (renk/underline vs)
  */
-export default function InlineLinks({ text, patterns = [], linkClassName = "text-blue-600 hover:underline" }) {
-  if (!text || !patterns.length) return <>{text}</>;
+export default function InlineLinks({
+  text,
+  patterns = [],
+  textClassName = "text-[14px] leading-[110%] text-gray-700",
+  linkClassName = "text-blue-600 hover:underline",
+}) {
+  if (!text || !patterns.length) {
+    return <span className={textClassName}>{text}</span>;
+  }
 
-  // Tüm pattern'ları tek bir büyük RegExp'te birleştir (global + case-insensitive)
-  const big = new RegExp(patterns.map(p => `(${p.pattern.source})`).join("|"), "gi");
+  // Tüm pattern'ları tek bir RegExp'te birleştir
+  const big = new RegExp(
+    patterns.map((p) => `(${p.pattern.source})`).join("|"),
+    "gi"
+  );
 
   const nodes = [];
   let lastIndex = 0;
@@ -21,23 +33,47 @@ export default function InlineLinks({ text, patterns = [], linkClassName = "text
     const start = match.index;
     const end = big.lastIndex;
 
-    // eşleşmeden önceki düz metin
-    if (start > lastIndex) nodes.push(text.slice(lastIndex, start));
+    // Eşleşmeden önceki düz metin
+    if (start > lastIndex) {
+      nodes.push(
+        <span key={`text-${start}`} className={textClassName}>
+          {text.slice(lastIndex, start)}
+        </span>
+      );
+    }
 
-    // hangi pattern eşleşti?
+    // Hangi pattern eşleşti?
     const matchedText = match[0];
-    const p = patterns.find(pat => new RegExp(`^${pat.pattern.source}$`, "i").test(matchedText)) || patterns[0];
+    const matchedPat =
+      patterns.find((pat) =>
+        new RegExp(`^${pat.pattern.source}$`, "i").test(matchedText)
+      ) || patterns[0];
+
+    // Link: metin stilini (font/leading) koru + link stilini ekle
+    const linkCls = `${textClassName} ${matchedPat.className || linkClassName}`;
 
     nodes.push(
-      <Link key={`${start}-${end}`} href={p.href} className={p.className || linkClassName} aria-label={p.ariaLabel || matchedText}>
+      <Link
+        key={`link-${start}-${end}`}
+        href={matchedPat.href}
+        aria-label={matchedPat.ariaLabel || matchedText}
+        className={linkCls}
+      >
         {matchedText}
       </Link>
     );
+
     lastIndex = end;
   }
 
-  // son kuyruk
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  // Son kalan düz metin
+  if (lastIndex < text.length) {
+    nodes.push(
+      <span key={`text-last`} className={textClassName}>
+        {text.slice(lastIndex)}
+      </span>
+    );
+  }
 
   return <>{nodes}</>;
 }

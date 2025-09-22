@@ -96,20 +96,22 @@ export default function VariantCircleSection2({
                 >
                   <Image
                     src={productImages[pkey]}
-                   alt={t(`altTexts.${pkey}`)}
+                    alt={t(`altTexts.${pkey}`)}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="120px"
+                    priority
                   />
                 </Link>
 
                 {/* Başlık */}
+                <Link href={productHref}>
                 <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900">
                   {productLabels[pkey]}
-                </h4>
+                </h4></Link>
 
                 {/* Ürün-bazlı açılış + aynı linkler */}
-                <p className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
+                <p className="lg:mt-2 mt-1 text-center text-[12px] md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
                   {startText}{" "}
                   {variantSlugs.map((slug, i) => (
                     <span key={`${pkey}-${slug}`}>

@@ -95,7 +95,7 @@ export default function IntroSection({
             </p>
           )}
           {_title2 && (
-            <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold mt-3">
+            <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold mt-3 leading-[120%] lg:leading-[140%]">
               {_title2}
             </h2>
           )}

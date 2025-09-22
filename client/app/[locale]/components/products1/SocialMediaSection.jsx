@@ -12,7 +12,7 @@ const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   
 const SocialMediaSection = () => {
   return (
-    <div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-10 mt-20">
+    <div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-10 lg:mt-20">
       <span className="text-[18px] lg:text-[20px] text-semibold text-black">More Information</span>
       <div className="flex flex-col md:flex-row items-center justify-center  gap-8 md:gap-12  w-full">
         <div className='flex gap-8 md:gap-12 items-center justify-center'>
@@ -21,18 +21,21 @@ const SocialMediaSection = () => {
                               aria-label="wikipedia"
                                target="_blank"
                               rel="noopener noreferrer"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                              className="p-4 md:p-5 lg:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
-                              <FaWikipediaW size={35} />
+                               <FaWikipediaW size={30} className='flex md:hidden'/>
+                              <FaWikipediaW size={35} className='hidden md:flex'/>
                             </a>
                             <a
                               href="https://www.youtube.com/"
                               aria-label="twitter"
                                 target="_blank"
                               rel="noopener noreferrer"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                              className="p-4 md:p-5 lg:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
-                              <FaYoutube size={35} />
+                               <FaYoutube size={30} className='flex md:hidden'/>
+                              <FaYoutube size={35} className='hidden md:flex'/>
+                             
                             </a>
                           
                             <a
@@ -40,9 +43,11 @@ const SocialMediaSection = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label="whatsapp"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                              className="p-4 md:p-5 lg:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
-                              <FaWhatsapp size={35} />
+                               <FaWhatsapp size={30} className='flex md:hidden'/>
+                              <FaWhatsapp size={35} className='hidden md:flex'/>
+                              
                             </a>
         </div>
     
@@ -52,8 +57,10 @@ const SocialMediaSection = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label="whatsapp"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5">
-                              <FaInstagram size={35} />
+                              className="p-4 md:p-5 lg:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5">
+                              
+                               <FaInstagram size={30} className='flex md:hidden'/>
+                              <FaInstagram size={35} className='hidden md:flex'/>
                             </a>
 
                               <a
@@ -61,9 +68,11 @@ const SocialMediaSection = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label="whatsapp"
-                              className="p-5 md:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                              className="p-4 md:p-5 lg:p-6 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                             >
-                              <MdOutlineEmail size={35} />
+                               <MdOutlineEmail size={30} className='flex md:hidden'/>
+                              <MdOutlineEmail size={35} className='hidden md:flex'/>
+                             
                             </a>
                              </div>
                           </div>

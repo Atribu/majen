@@ -37,8 +37,7 @@ export default function TravertinePageClient() {
       { q: t3("aboutpage_s4_faq2_header"), a: t3("aboutpage_s4_faq2_text") },
       { q: t3("aboutpage_s4_faq3_header"), a: t3("aboutpage_s4_faq3_text") },
       { q: t3("aboutpage_s4_faq4_header"), a: t3("aboutpage_s4_faq4_text") },
-      { q: t3("aboutpage_s4_faq3_header"), a: t3("aboutpage_s4_faq3_text") },
-      { q: t3("aboutpage_s4_faq4_header"), a: t3("aboutpage_s4_faq4_text") },
+      { q: t3("aboutpage_s4_faq5_header"), a: t3("aboutpage_s4_faq5_text") }
       
     ];
 

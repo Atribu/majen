@@ -88,7 +88,7 @@ export default function ContactFrom() {
           <span className="text-[20px] md:text-[24px] font-semibold tracking-tight">
             {t("title")}
           </span>
-          <p className="mt-2 text-neutral-600 text-[14px] lg:text-[16px]">{t("subtitle")}</p>
+          <p className="mt-2 text-neutral-600 text-[12px] md:text-[14px] lg:text-[16px]">{t("subtitle")}</p>
         </header>
 
         <form onSubmit={onSubmit} noValidate className=" ">
@@ -104,7 +104,7 @@ export default function ContactFrom() {
             onChange={(e) => setValues((s) => ({ ...s, botField: e.target.value }))}
           />
 
-     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+     <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-6 w-full">
   {/* Sol kolon: kısa alanlar */}
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -183,7 +183,7 @@ export default function ContactFrom() {
               onChange={(e) => setValues((s) => ({ ...s, consent: e.target.checked }))}
               className="mt-1 h-4 w-4 rounded border-neutral-300 text-black focus:ring-black"
             />
-            <label htmlFor="consent" className="text-sm text-neutral-700">
+            <label htmlFor="consent" className="text-[12px] lg:text-sm text-neutral-700">
               {t.rich("consent", {
                 privacy: (chunks) => <Link href={base.privacy} className="underline">{chunks}</Link>,
                 terms:   (chunks) => <Link href={base.terms} className="underline">{chunks}</Link>,
@@ -196,7 +196,7 @@ export default function ContactFrom() {
             <button
               type="submit"
               disabled={status.loading}
-              className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black border border-black transition"
+              className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-[13px] lg:text-sm font-semibold hover:bg-white hover:text-black border border-black transition"
             >
               {status.loading ? t("buttons.sending") : t("buttons.send")}
             </button>
@@ -205,7 +205,7 @@ export default function ContactFrom() {
               href={t("whatsapp.link")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-semibold hover:bg-black hover:text-white transition"
+              className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-[13px] lg:text-sm font-semibold hover:bg-black hover:text-white transition"
             >
               {t("buttons.whatsapp")}
             </a>
@@ -213,12 +213,12 @@ export default function ContactFrom() {
 
           {/* Durum mesajları */}
           {status.ok && (
-            <p className="mt-4 text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">
+            <p className="mt-4 text-[12px] lg:text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">
               {t("status.success")}
             </p>
           )}
           {status.error && (
-            <p className="mt-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2">
+            <p className="mt-4 text-[12px] lg:text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2">
               {status.error}
             </p>
           )}

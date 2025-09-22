@@ -27,9 +27,9 @@ export default function VariantCircleSection({
 }) {
   return (
     <section className="flex mt-14 w-screen text-center items-center justify-center">
-      <div className="flex flex-col max-w-[1200px]">
+      <div className="flex flex-col max-w-[1200px] items-center justify-center text-center">
         {heading && <h3 className="text-[20px] lg:text-[22px] font-semibold">{heading}</h3>}
-      <p className="text-[12px] lg:text-[14px] mt-2">{text}</p>
+      <p className="text-[12px] lg:text-[14px] mt-2 w-[90%]">{text}</p>
 
      <div
   className={`
@@ -75,7 +75,7 @@ export default function VariantCircleSection({
                   href="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex gap-1 mt-1 text-sm underline-offset-2 hover:underline text-red-600"
+                  className="flex gap-1 mt-1 text-[12px] md:text-sm underline-offset-2 hover:underline text-red-600"
                   onClick={(e) => {
                     // Üstteki Link'e bulaşmasın (ekstra güvence)
                     e.stopPropagation();

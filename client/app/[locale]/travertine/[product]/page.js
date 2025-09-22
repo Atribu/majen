@@ -31,7 +31,8 @@ import OtherOptions from "../../components/generalcomponent/OtherOptions";
 
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
-function InfoCard({ title, children }) {
+function InfoCard({ title, children, contentClassName =
+  "text-sm text-neutral-600 leading-tight text-center"}) {
   return (
     <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
       <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
@@ -52,7 +53,6 @@ export default function ProductPage() {
   const baseSegment = BASE_BY_LOCALE[locale];
   const baseHref = `${prefix}/${baseSegment}`;
 
-  // Ürün key’ini bul
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
 
@@ -61,7 +61,7 @@ export default function ProductPage() {
 
 const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
 
-  // otomatik saydır → sadece gerçekten var olan header/text çiftlerini al
+
   const items = [];
   let j = 1;
   while (qItems[`aboutpage_s4_faq${j}_header`] && qItems[`aboutpage_s4_faq${j}_text`]) {
@@ -187,6 +187,8 @@ const productAltMap = {
  const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
 
   const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
+  
+  const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
   return (
     <main className=" py-7 mt-16 overflow-x-hidden">
@@ -205,21 +207,31 @@ const productAltMap = {
       />
 
       {/* 4 BİLGİ KARTI */}
-     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto">
-  {cards.map((c, i) => (
-    <InfoCard key={i} title={c.title}>
-      {i === 1 ? ( // 2. kart (index 1)
-        <InlineLinks text={c.content} patterns={linkPatterns} />
-      ) : (
-        typeof c.content === "string"
-          ? c.content
-          : Array.isArray(c.content)
-            ? c.content.join(", ")
-            : null
-      )}
-    </InfoCard>
-    
-  ))}
+     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+  {cards.map((c, i) => {
+    const plain =
+      typeof c.content === "string"
+        ? c.content
+        : Array.isArray(c.content)
+        ? c.content.join(", ")
+        : null;
+
+    return (
+      <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+        {i === 1 ? (
+          <InlineLinks
+            text={plain || ""}
+            patterns={linkPatterns}
+            textClassName={cardTextClass}   // link olmayan parçalar da aynı stil
+            // linkClassName istersen özel ver:
+            // linkClassName="text-blue-600 hover:underline font-medium"
+          />
+        ) : (
+          <span className={cardTextClass}>{plain}</span>
+        )}
+      </InfoCard>
+    );
+  })}
 </section>
 
 
@@ -250,7 +262,7 @@ const productAltMap = {
 
       <SocialMediaSection />
       <ContactFrom />
-      <QuestionsSection items={items} span="Travertine Blocks "/>
+      <QuestionsSection items={items} span={`Travertine ${productAltMap[productKey]}`}/>
       <OtherOptions
        heading="Other Options"
   excludeProduct={productKey}                         

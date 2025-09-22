@@ -26,13 +26,13 @@ export async function generateMetadata({ params }) {
 
   const title =
     locale === "en"
-      ? "Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen"
-      : "Türkiye Traverten Üreticisi | Toptan Blok, Plaka & Karo – Majen";
+      ? "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen Quarry"
+      : "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen Quarry";
 
   const description =
     locale === "en"
-      ? "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping with full documentation."
-      : "Majen, Uşak–Ulubey’den toptan traverten: blok, plaka & karo (Blaundos Antiko, Light, Ivory). FOB/CIF dünya geneli sevkiyat, tam dokümantasyon.";
+      ? "Majen supplies Wholesale Travertine From Turkey directly from our Uşak–Ulubey quarry. Export-ready travertine blocks, slabs, tiles, and custom designs in Blaundos Antiko, Light & Ivory with FOB/CIF worldwide shipping."
+      : "Majen supplies Wholesale Travertine From Turkey directly from our Uşak–Ulubey quarry. Export-ready travertine blocks, slabs, tiles, and custom designs in Blaundos Antiko, Light & Ivory with FOB/CIF worldwide shipping.";
 
   const url = `${SITE_URL}/${locale}`;
 
