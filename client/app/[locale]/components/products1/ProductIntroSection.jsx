@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
+import ShareButton from "../ShareButton";
 
 /**
  * IntroSection tasarımının aynısı, dinamik içerikle:
@@ -71,6 +72,9 @@ export default function ProductIntroSection({
             {title2}
           </h2>
           <p className="mt-3 text-[12px] md:text-[14px] leading-tight lg:leading-relaxed">{intro2}</p>
+          <div className=" mt-3">
+                      <ShareButton label="Share" />
+                    </div>
 
           {/* Breadcrumbs */}
           <nav
@@ -130,6 +134,9 @@ export default function ProductIntroSection({
     <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%]">{intro2}</p>
   
   </header>
+  <div className="ml-4">
+              <ShareButton label="Share" />
+            </div>
 
           {/* Alt: Breadcrumbs */}
            <nav className="mb-3 inline-flex items-center z-[99] px-3  text-xs sm:text-sm">

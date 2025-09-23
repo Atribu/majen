@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { useTranslations, useLocale } from "next-intl";
+import ShareButton from "../ShareButton";
 
 export default function IntroSection({
   // Metinler (opsiyonel: verilmezse i18n'den çekilir)
@@ -106,6 +107,10 @@ export default function IntroSection({
             </p>
           )}
 
+          <div className="mt-3">
+             <ShareButton label="Share" />
+          </div>
+
           {showBreadcrumb && (
             <nav
               className="mt-5 inline-flex items-center rounded-lg bg-white/20 backdrop-blur px-3 py-1.5 text-xs sm:text-sm"
@@ -175,6 +180,10 @@ export default function IntroSection({
               </p>
             )}
           </header>
+
+          <div className="ml-4">
+            <ShareButton label="Share" />
+          </div>
 
           {showBreadcrumb && (
             <nav
