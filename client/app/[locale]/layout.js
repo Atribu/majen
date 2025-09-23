@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Script from "next/script";
+import { Suspense } from "react";
 
 import Header from "./components/generalcomponent/Header";
 import Footer from "./components/generalcomponent/Footer";
@@ -121,8 +122,10 @@ export default async function RootLayout({ children, params }) {
               `}
             </Script>
 
-            {/* SPA gezinmelerinde ek pageview */}
-            <GaPageView />
+        
+    <Suspense fallback={null}>
+      <GaPageView />
+    </Suspense>
           </>
         )}
 

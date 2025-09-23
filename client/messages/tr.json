@@ -982,8 +982,8 @@
     },
     "posts": [
       {
-        "slug": "light-traverten-ile-modern-ic-mekan",
-        "title": "Light Traverten ile Modern İç Mekan Tasarımı",
+        "slug": "travertines",
+        "title": "Travertenler",
         "excerpt": "Aydınlık ve modern iç mekanlar için light traverten kullanımı.",
         "date": "2025-01-18",
         "category": "travertine",
@@ -1035,6 +1035,16 @@
   "BlogPost": {
     "readAlso": "Bunları da okuyun",
     "back": "Blog’a dön",
+    "Questions":{
+    "q1":"What makes Turkish Travertine unique?",
+    "answer1":"Turkey offers high-density material and a wide palette of colors such as Ivory, Silver and Noce. Competitive quarry output supports large-scale projects.",
+    "q2":"Where is travertine mostly used?",
+    "answer2":"Common uses include flooring, wall cladding, facades, pool surrounds, bathrooms and gardens.",
+    "q3":"What are the differences between filled & unfilled?",
+    "answer3":"Filled travertine has pores filled with resin/cement for a smooth finish. Unfilled keeps natural cavities for a rustic texture.",
+    "q4":"How do I maintain travertine?",
+    "answer4":"Seal periodically, use pH-neutral cleaners, and avoid acidic products. Outdoor pavers may require re-sealing based on climate."
+  },
 
     "light-traverten-ile-modern-ic-mekan": {
       "title": "Light Traverten ile Modern İç Mekan Tasarımı",
