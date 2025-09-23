@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import { getTranslations } from "next-intl/server";
+import TravertineBlog from "./components/TravertineBlog";
 
 export const metadata = {
   title: "Travertine – Premium Turkish Travertine Supplier | Majen",
@@ -43,6 +44,9 @@ export default async function Page({ params }) {
         { q: t("q4"), a: t("answer4") }
       ];
 
+
+      
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* Breadcrumb */}
@@ -54,8 +58,8 @@ export default async function Page({ params }) {
         </nav>
       </div>
 
-      {/* HERO */}
-      <section className="bg-gradient-to-b from-teal-50/80 to-transparent py-10">
+      <TravertineBlog/>
+      {/* <section className="bg-gradient-to-b from-teal-50/80 to-transparent py-10">
         <div className="mx-auto grid w-[92%] max-w-[1160px] items-center gap-7 md:grid-cols-2">
           <div>
             <span className="inline-block rounded-full border border-slate-200 px-2.5 py-1 text-xs text-slate-500">Natural Stone • Quarry Direct</span>
@@ -81,7 +85,7 @@ export default async function Page({ params }) {
         </div>
       </section>
 
-      {/* INTRO */}
+     
       <section id="about" className="py-14">
         <div className="mx-auto grid w-[92%] max-w-[1160px] items-start gap-7 md:grid-cols-[1.1fr_.9fr]">
           <div>
@@ -107,7 +111,7 @@ export default async function Page({ params }) {
         </div>
       </section>
 
-      {/* PRODUCT TYPES */}
+      
       <section id="types" className="py-14">
         <div className="mx-auto w-[92%] max-w-[1160px]">
           <header className="mb-3">
@@ -136,7 +140,7 @@ export default async function Page({ params }) {
         </div>
       </section>
 
-      {/* COLORS & FINISHES */}
+     
       <section id="colors-finishes" className="py-14">
         <div className="mx-auto flex flex-col w-[92%] max-w-[1160px] gap-7 ">
           <div>
@@ -170,7 +174,7 @@ export default async function Page({ params }) {
         </div>
       </section>
 
-      {/* APPLICATIONS */}
+      
       <section id="applications" className="py-14">
         <div className="mx-auto w-[92%] max-w-[1160px]">
           <h2 className="text-2xl font-semibold">Applications</h2>
@@ -190,7 +194,7 @@ export default async function Page({ params }) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       {/* SUPPLY & EXPORT */}
