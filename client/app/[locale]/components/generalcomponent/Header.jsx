@@ -188,9 +188,7 @@ export default function Header() {
           <Link href="/howweexport" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("shop")}
           </Link>
-          <Link href="/projects" className={linkClasses} onClick={() => setMenuOpen(false)}>
-            {t("projects")}
-          </Link>
+        
           <Link href="/blog" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("blog")}
           </Link>

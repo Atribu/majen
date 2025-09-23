@@ -22,6 +22,7 @@ export const config = {
       en: '/travertines',
       tr: '/travertenler',
     },
+    
     '/travertine/[product]': {
       en: '/travertine/[product]',
       tr: '/traverten/[product]',
@@ -47,6 +48,11 @@ export const config = {
     '/travertine/[product]/[variant]/[cut]/[process]/[finish]/[size]': {
       en: '/travertine/[product]/[variant]/[cut]/[process]/[finish]/[size]',
       tr: '/traverten/[product]/[variant]/[cut]/[process]/[finish]/[size]',
+    },
+
+      '/howweexport': {
+      en: '/how-we-export',
+      tr: '/nasıl-ihracat-yapıyoruz',
     },
     // i18n/routing.js
 

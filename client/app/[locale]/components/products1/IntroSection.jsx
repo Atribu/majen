@@ -13,6 +13,7 @@ export default function IntroSection({
   intro,
   title2,
   intro2,
+  span,
 
   // Görseller (opsiyonel)
   heroSrc = "/images/homepage/kesim.webp",

@@ -693,6 +693,59 @@
     "text2":"",
       "title3":"",
     "text3":""
+  },
+
+
+  "Questions":{
+    "q1":"Which shipping terms do you offer?",
+    "answer1":"FOB and CIF are standard, EXW available on request.",
+    "q2":"What documents will I receive?",
+    "answer2":"Invoice, packing list, certificate of origin, inspection reports.",
+    "q3":"How do you guarantee product safety during shipping?",
+    "answer3":"Reinforced packaging, foam separation, strapping, photographed container loading.",
+    "q4":"Can I combine different products in one container?",
+    "answer4":"Yes — blocks, slabs, and tiles can be mixed subject to container volume/weight."
+  },
+
+  "TextSection1":{
+    "title":"Export Documentation",
+    "text":"We provide all necessary documentation to ensure smooth customs clearance:",
+ 
+      "list1":"Commercial invoice & packing list",
+      "list2":"Certificate of origin",
+      "list3":"HS code details & product specifications",
+      "list4":"Inspection/quality reports (on request)"
+    
+  },
+
+    "TextSection2":{
+    "title":"Packaging & Loading",
+    "text":"Our export packaging minimizes risk during sea freight:",
+      "list1":"Blocks → reinforced wooden frames, nylon wrapping, metal strapping",
+      "list2":"Slabs → A-frames/crates, edge protectors, foam separation",
+      "list3":"Tiles & custom pieces → labeled wooden crates, foam separators, corner protection",
+      "list4":"We photograph every container load and share seal numbers for transparency."
+    
+  },
+  "TextSection3":{
+    "title":"Lead Times & Ports",
+    "text":"Lead time: 10–20 business days (depending on size and finish)",
+      "list1":"Ports of export: İzmir Alsancak, Aliağa Nemrut, Gemlik",
+      "list2":"Minimum order quantities:",
+      "list3":"TBlocks: 1 piece",
+      "list4":"Slabs: by bundle",
+      "list5":"Tiles: by m² or crate"
+    
+  },
+
+    "TextSection4":{
+    "title":"Why Importers Trust Majen",
+    "text":"Direct quarry supply — no intermediaries",
+      "list1":"Decades of export experience",
+      "list2":"Certified quality control",
+      "list3":"Secure packaging & reliable shipping partners",
+      "list4":"Transparent communication & fast response times"
+    
   }
 },
 

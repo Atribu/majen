@@ -1,18 +1,8 @@
- // app/components/seo/TextSection.jsx
+// app/components/seo/TextSection.jsx
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Script from "next/script";
 
-/**
- * SEO odaklı metin bloğu
- * Props:
- * - title: string               // H2 başlık
- * - paragraphs: string[]        // Paragraflar
- * - schema?: { type?: "Article"|"WebPage", url?: string, lang?: string }
- * - className?: string
- * - clampMobile?: number        // mobilde kaç paragrafı açık tutalım (0 = hepsi)
- * - as?: keyof JSX.IntrinsicElements ("section","div"...)
- */
 export default function TextSection({
   title,
   title2,
@@ -20,19 +10,30 @@ export default function TextSection({
   paragraphs = [],
   schema,
   className = "",
-  clampMobile = 2,
+  clampMobile = 2,      // mobilde gösterilecek paragraf sayısı (0 = tamamı)
   as: As = "section",
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Yalnızca istemcide ölç: md breakpoint ~768px (Tailwind varsayılanı)
+  useEffect(() => {
+    const check = () => setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const visibleParagraphs = useMemo(() => {
-    if (expanded || clampMobile === 0) return paragraphs;
-    return paragraphs.slice(0, clampMobile);
-  }, [expanded, paragraphs, clampMobile]);
+    // Sadece mobilde ve expanded=false iken clamp uygula
+    if (isMobile && !expanded && clampMobile > 0) {
+      return paragraphs.slice(0, clampMobile);
+    }
+    return paragraphs;
+  }, [isMobile, expanded, paragraphs, clampMobile]);
 
-  const hasMore = clampMobile > 0 && paragraphs.length > clampMobile;
+  const hasMore = isMobile && clampMobile > 0 && paragraphs.length > clampMobile;
 
-  // Basit Article/WebPage JSON-LD
   const jsonLd =
     schema && (schema.type === "Article" || schema.type === "WebPage")
       ? {
@@ -52,7 +53,7 @@ export default function TextSection({
     >
       {jsonLd ? (
         <Script
-          id={`seo-text-${title?.slice(0,30).replace(/\s+/g,"-").toLowerCase()}`}
+          id={`seo-text-${title?.slice(0, 30).replace(/\s+/g, "-").toLowerCase()}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
@@ -70,19 +71,20 @@ export default function TextSection({
         ))}
 
         {title2 ? (
-        <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black">
-          {title2}
-        </h4>
-      ) : null}
+          <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black">
+            {title2}
+          </h4>
+        ) : null}
 
-    {text2 ? (
-         <p className="-mt-3 leading-tight lg:leading-normal text-[12px] md:text-[14px] ">{text2}</p>
-      ) : null}
-    
+        {text2 ? (
+          <p className="-mt-3 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
+            {text2}
+          </p>
+        ) : null}
 
-        {/* Mobilde 'devamını göster' */}
+        {/* 'Devamını oku' sadece mobilde ve kesilecek içerik varsa */}
         {hasMore && (
-          <div className="md:hidden pt-2">
+          <div className="pt-2">
             <button
               type="button"
               onClick={() => setExpanded((s) => !s)}
@@ -96,7 +98,6 @@ export default function TextSection({
           </div>
         )}
 
-        {/* Erişilebilirlik için gizli alan kimliği (buton aria-controls) */}
         <div id="seo-more-content" className="sr-only" />
       </div>
     </As>
