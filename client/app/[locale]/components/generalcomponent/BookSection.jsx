@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
-import Link from 'next/link';
+import Link from "next/link"
 import Script from 'next/script';
 
 const BookSection = () => {

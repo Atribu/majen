@@ -4,7 +4,7 @@ import { defineRouting } from 'next-intl/routing';
 export const config = {
   locales: ['tr', 'en'],
   defaultLocale: 'tr',
-  localeDetection: true,
+  // localeDetection: true,
   localePrefix: 'always',
   pathnames: {
     '/': {
@@ -24,30 +24,30 @@ export const config = {
     },
     
     '/travertine/[product]': {
-      en: '/travertine/[product]',
-      tr: '/traverten/[product]',
+      en: '/travertines/[product]',
+      tr: '/travertenler/[product]',
     },
     '/travertine/[product]/[variant]': {
-      en: '/travertine/[product]/[variant]',
-      tr: '/traverten/[product]/[variant]',
+      en: '/travertines/[product]/[variant]',
+      tr: '/travertenler/[product]/[variant]',
     },
 
     // --- NEW: deep routes (cut → process → finish → size)
     '/travertine/[product]/[variant]/[cut]': {
-      en: '/travertine/[product]/[variant]/[cut]',
-      tr: '/traverten/[product]/[variant]/[cut]',
+      en: '/travertines/[product]/[variant]/[cut]',
+      tr: '/travertenler/[product]/[variant]/[cut]',
     },
     '/travertine/[product]/[variant]/[cut]/[process]': {
-      en: '/travertine/[product]/[variant]/[cut]/[process]',
-      tr: '/traverten/[product]/[variant]/[cut]/[process]',
+      en: '/travertines/[product]/[variant]/[cut]/[process]',
+      tr: '/travertenler/[product]/[variant]/[cut]/[process]',
     },
     '/travertine/[product]/[variant]/[cut]/[process]/[finish]': {
-      en: '/travertine/[product]/[variant]/[cut]/[process]/[finish]',
-      tr: '/traverten/[product]/[variant]/[cut]/[process]/[finish]',
+      en: '/travertines/[product]/[variant]/[cut]/[process]/[finish]',
+      tr: '/travertenler/[product]/[variant]/[cut]/[process]/[finish]',
     },
     '/travertine/[product]/[variant]/[cut]/[process]/[finish]/[size]': {
-      en: '/travertine/[product]/[variant]/[cut]/[process]/[finish]/[size]',
-      tr: '/traverten/[product]/[variant]/[cut]/[process]/[finish]/[size]',
+      en: '/travertines/[product]/[variant]/[cut]/[process]/[finish]/[size]',
+      tr: '/travertenler/[product]/[variant]/[cut]/[process]/[finish]/[size]',
     },
 
       '/howweexport': {

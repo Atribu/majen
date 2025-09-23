@@ -78,12 +78,12 @@
     "HomeMainSection":{
     "header":"Travertine Supplier from Turkey",
     "span":" Majen Quarry Exporter",
-    "text":"Majen is a leading travertine supplier from Turkey, offering premium blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we export wholesale travertine to the USA, Europe, and the Middle East. Our quarry-direct sourcing ensures consistent A-grade quality, competitive FOB/CIF pricing, and sustainable production methods. By choosing Majen, importers and wholesalers gain a reliable partner committed to delivering wholesale travertine from Turkey with transparency, strong logistics support, and on-time delivery."
+    "text":"Majen is a leading travertine supplier from Turkey, offering premium blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we export wholesale travertine to the USA, Europe, and the Middle East. Our quarry-direct sourcing ensures consistent A-grade quality, competitive <fob>FOB</fob>/<cif>CIF</cif> pricing, and sustainable production methods. By choosing Majen, importers and wholesalers gain a reliable partner committed to delivering wholesale travertine from Turkey with transparency, strong logistics support, and on-time delivery."
   },
 
     "LogisticSection":{
     "header":"Export & Logistics",
-    "text":"Majen specializes in the export of wholesale travertine from Turkey. We provide FOB (Free On Board) shipping, where we load containers at Turkish ports, and CIF (Cost, Insurance & Freight), where we handle transportation to your destination port. Our export team prepares full documentation including commercial invoices, packing lists, certificates of origin, and inspection reports. Each block, slab, and tile is packaged with reinforced wooden frames, nylon wrapping, and metal strapping to minimize risk during sea freight. Our proven logistics network ensures safe and timely delivery of wholesale travertine worldwide Majen is recognized as a trusted Travertine Supplier from Turkey."
+    "text":"Majen specializes in the export of wholesale travertine from Turkey. We provide <fob>FOB</fob> (Free On Board) shipping, where we load containers at Turkish ports, and <cif>CIF</cif> (Cost, Insurance & Freight), where we handle transportation to your destination port. Our export team prepares full documentation including commercial invoices, packing lists, certificates of origin, and inspection reports. Each block, slab, and tile is packaged with reinforced wooden frames, nylon wrapping, and metal strapping to minimize risk during sea freight. Our proven logistics network ensures safe and timely delivery of wholesale travertine worldwide Majen is recognized as a trusted Travertine Supplier from Turkey."
   },
 
   "InfoSection": {
@@ -137,17 +137,18 @@
     "titlePrefix": "Professional",
     "titleAccent": "Services",
       "explore": "Explore",
+      "title":"Travertine Export Methods from Turkey – <fob>FOB</fob>, <cif>CIF</cif> & <exw>EXW</exw>",
     "items": {
       "export1": {
-        "title": "FOB (Free on Board) – Travertine Exports",
-        "description": "With FOB, Majen loads the containers at Turkish ports, and buyers manage the shipping from there. This method is widely used for bulk orders of travertine blocks and slabs."
+        "title": "<fob>FOB</fob> (Free on Board) – Travertine Exports",
+        "description": "With <fob>FOB</fob>, Majen loads the containers at Turkish ports, and buyers manage the shipping from there. This method is widely used for bulk orders of travertine blocks and slabs."
       },
       "export2": {
-        "title": " CIF (Cost, Insurance & Freight) – Hassle-Free Shipping",
-        "description": "With CIF, Majen handles shipping, insurance, and freight to the buyer’s destination port. Importers prefer this for convenience when sourcing wholesale travertine from Turkey."
+        "title": " <cif>CIF</cif> (Cost, Insurance & Freight) – Hassle-Free Shipping",
+        "description": "With <cif>CIF</cif>, Majen handles shipping, insurance, and freight to the buyer’s destination port. Importers prefer this for convenience when sourcing wholesale travertine from Turkey."
       },
       "export3": {
-        "title": "EXW (Ex Works) – Flexible Factory Pickup",
+        "title": "<exw>EXW</exw> (Ex Works) – Flexible Factory Pickup",
         "description": "Buyers can arrange their own logistics directly from our quarry or warehouse. This option is suitable for importers with established freight partners."
       },
       "export4": {
@@ -694,10 +695,10 @@
 
   "HowWeExportPage": {
   "title": "How We Export Travertine Worldwide",
-  "intro": "Majen supplies blocks, slabs, tiles, and custom travertine products directly from our quarry in Uşak–Ulubey, Turkey. As a trusted exporter, we manage every step of the process — from pro-forma invoice to container loading. With FOB and CIF shipping options, reinforced packaging, and complete documentation, importers worldwide rely on Majen for consistent, on-time deliveries.",
+  "intro": "Majen specializes in travertine export from Turkey, supplying blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With FOB, CIF, and EXW shipping terms, we manage the entire export process — from pro-forma invoice to container loading. Importers rely on Majen’s reinforced packaging, certified quality, and transparent logistics for dependable travertine export from Turkey worldwide.",
 
   "title2": "Shipping Methods",
-  "intro2": "FOB (Free On Board): We load containers at Turkish ports, buyers manage shipping. CIF (Cost, Insurance, Freight): We handle shipping, insurance, and freight to buyer’s port.",
+  "intro2": "Majen offers flexible export methods to match buyer needs. Whether you prefer FOB, CIF, or EXW, Majen provides clear instructions and full documentation for every shipment, ensuring a smooth travertine export process.",
 
   "title3": "Documentation & Safety",
   "intro3": "We provide invoices, packing lists, certificates of origin, and inspection reports. All blocks and slabs are reinforced with wooden frames and strapping for safe sea freight.",
@@ -718,7 +719,83 @@
     "q3":"How do you guarantee product safety during shipping?",
     "answer3":"Reinforced packaging, foam separation, strapping, photographed container loading.",
     "q4":"Can I combine different products in one container?",
-    "answer4":"Yes — blocks, slabs, and tiles can be mixed subject to container volume/weight."
+    "answer4":"Yes — blocks, slabs, and tiles can be mixed subject to container volume/weight.",
+    "q5":"How do you guarantee safe shipments?",
+    "answer5":"All shipments include reinforced packaging, foam separation, and photographed loading with container seals."
+  },
+
+  "TextSection1":{
+    "title":"Export Documentation",
+    "text":"We provide all necessary documentation to ensure smooth customs clearance:",
+ 
+      "list1":"Commercial invoice & packing list",
+      "list2":"Certificate of origin",
+      "list3":"HS code details & product specifications",
+      "list4":"Inspection/quality reports (on request)",
+      "list5":"These documents guarantee compliance with customs procedures, simplifying travertine export from Turkey for importers."
+    
+  },
+
+    "TextSection2":{
+    "title":"Packaging & Loading",
+    "text":"Our export packaging minimizes risk during sea freight:",
+      "list1":"Blocks → reinforced wooden frames, nylon wrapping, metal strapping",
+      "list2":"Slabs → A-frames/crates, edge protectors, foam separation",
+      "list3":"Tiles & custom pieces → labeled wooden crates, foam separators, corner protection",
+      "list4":"We photograph every container load and share seal numbers for transparency.",
+      "list5":"Reinforced wooden crates, nylon wrapping, and strapping protect travertine slabs, tiles, and blocks, reducing breakage risk in international exports."
+    
+  },
+  "TextSection3":{
+    "title":"Lead Times & Ports",
+    "text":"Lead time: 10–20 business days (depending on size and finish)",
+      "list1":"Ports of export: İzmir Alsancak, Aliağa Nemrut, Gemlik",
+      "list2":"Minimum order quantities:",
+      "list3":"TBlocks: 1 piece",
+      "list4":"Slabs: by bundle",
+      "list5":"Tiles: by m² or crate",
+      "list6":"Average production and loading lead time is 10–20 business days, with exports shipped via İzmir Alsancak, Aliağa Nemrut, and Gemlik ports."
+    
+  },
+
+    "TextSection4":{
+    "title":"Why Importers Trust Majen",
+    "text":"Direct quarry supply — no intermediaries",
+      "list1":"Decades of export experience",
+      "list2":"Certified quality control",
+      "list3":"Secure packaging & reliable shipping partners",
+      "list4":"Transparent communication & fast response times"
+    
+  }
+},
+
+"Fob": {
+  "title": "FOB Travertine Export From Turkey",
+  "intro": "Majen supplies FOB Travertine Export From Turkey, covering blocks, slabs, tiles and custom designs. We load containers at Turkish ports, handle export clearance and provide full documentation; importers arrange ocean freight and insurance. FOB is the most popular option for bulk block & slab orders thanks to cost control and flexibility.",
+
+  "title2": "Shipping Methods",
+  "intro2": "FOB (Free On Board): We load containers at Turkish ports, buyers manage shipping. CIF (Cost, Insurance, Freight): We handle shipping, insurance, and freight to buyer’s port.",
+
+  "title3": "Documentation & Safety",
+  "intro3": "We provide invoices, packing lists, certificates of origin, and inspection reports. All blocks and slabs are reinforced with wooden frames and strapping for safe sea freight.",
+  "cards":{
+    "title1":"FOB (Free on Board)",
+    "text1":"Majen loads travertine containers at Turkish ports. Buyers arrange international freight. Most common for bulk travertine block orders.",
+      "title2":"CIF (Cost, Insurance, Freight)",
+    "text2":"Majen manages shipping, insurance, and freight to buyer’s destination port. Importers prefer this hassle-free option for slabs and tiles.",
+      "title3":"EXW (Ex Works)",
+    "text3":"Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners."
+  },
+
+  "Questions":{
+    "q1":"Why should I choose FOB for travertine exports?",
+    "answer1":"FOB gives importers cost control, flexibility in shipping arrangements, and transparency on responsibilities.",
+    "q2":"Which Turkish ports are used for FOB?",
+    "answer2":"Izmir Alsancak, Aliağa Nemrut, and Gemlik ports are the main hubs for travertine exports.",
+    "q3":"What documents are included in FOB shipments?",
+    "answer3":"Commercial invoice, packing list, certificate of origin, and export clearance papers.",
+    "q4":"Can I export slabs and tiles under FOB, or only blocks?",
+    "answer4":"All product types — blocks, slabs, tiles, and custom designs — can be exported FOB."
   },
 
   "TextSection1":{
@@ -763,9 +840,9 @@
   }
 },
 
-"Fob": {
-  "title": "How We Export Travertine Worldwide",
-  "intro": "Majen supplies blocks, slabs, tiles, and custom travertine products directly from our quarry in Uşak–Ulubey, Turkey. As a trusted exporter, we manage every step of the process — from pro-forma invoice to container loading. With FOB and CIF shipping options, reinforced packaging, and complete documentation, importers worldwide rely on Majen for consistent, on-time deliveries.",
+"Cif": {
+  "title": "FOB Travertine Export From Turkey",
+  "intro": "Majen supplies FOB Travertine Export From Turkey, covering blocks, slabs, tiles and custom designs. We load containers at Turkish ports, handle export clearance and provide full documentation; importers arrange ocean freight and insurance. FOB is the most popular option for bulk block & slab orders thanks to cost control and flexibility.",
 
   "title2": "Shipping Methods",
   "intro2": "FOB (Free On Board): We load containers at Turkish ports, buyers manage shipping. CIF (Cost, Insurance, Freight): We handle shipping, insurance, and freight to buyer’s port.",
@@ -782,14 +859,85 @@
   },
 
   "Questions":{
-    "q1":"Which shipping terms do you offer?",
-    "answer1":"FOB and CIF are standard, EXW available on request.",
-    "q2":"What documents will I receive?",
-    "answer2":"Invoice, packing list, certificate of origin, inspection reports.",
-    "q3":"How do you guarantee product safety during shipping?",
-    "answer3":"Reinforced packaging, foam separation, strapping, photographed container loading.",
-    "q4":"Can I combine different products in one container?",
-    "answer4":"Yes — blocks, slabs, and tiles can be mixed subject to container volume/weight."
+    "q1":"What does CIF include for travertine exports?",
+    "answer1":"Ocean freight, cargo insurance, export documentation and origin handling up to the destination port.",
+    "q2":"Who handles local charges and customs at destination?",
+    "answer2":"The importer manages destination port fees, import duties/taxes and local delivery.",
+    "q3":"Is CIF suitable for mixed containers?",
+    "answer3":"Yes. We frequently ship slabs, tiles and custom parts together if weight/volume allows.",
+    "q4":"Which documents are provided under CIF?",
+    "answer4":"Commercial invoice, packing list, certificate of origin, export clearance and insurance policy; optional SGS inspection."
+  },
+
+  "TextSection1":{
+    "title":"Export Documentation",
+    "text":"We provide all necessary documentation to ensure smooth customs clearance:",
+ 
+      "list1":"Commercial invoice & packing list",
+      "list2":"Certificate of origin",
+      "list3":"HS code details & product specifications",
+      "list4":"Inspection/quality reports (on request)"
+    
+  },
+
+    "TextSection2":{
+    "title":"Packaging & Loading",
+    "text":"Our export packaging minimizes risk during sea freight:",
+      "list1":"Blocks → reinforced wooden frames, nylon wrapping, metal strapping",
+      "list2":"Slabs → A-frames/crates, edge protectors, foam separation",
+      "list3":"Tiles & custom pieces → labeled wooden crates, foam separators, corner protection",
+      "list4":"We photograph every container load and share seal numbers for transparency."
+    
+  },
+  "TextSection3":{
+    "title":"Lead Times & Ports",
+    "text":"Lead time: 10–20 business days (depending on size and finish)",
+      "list1":"Ports of export: İzmir Alsancak, Aliağa Nemrut, Gemlik",
+      "list2":"Minimum order quantities:",
+      "list3":"TBlocks: 1 piece",
+      "list4":"Slabs: by bundle",
+      "list5":"Tiles: by m² or crate"
+    
+  },
+
+    "TextSection4":{
+    "title":"Why Importers Trust Majen",
+    "text":"Direct quarry supply — no intermediaries",
+      "list1":"Decades of export experience",
+      "list2":"Certified quality control",
+      "list3":"Secure packaging & reliable shipping partners",
+      "list4":"Transparent communication & fast response times"
+    
+  }
+},
+
+"Exw": {
+  "title": "FOB Travertine Export From Turkey",
+  "intro": "Majen supplies FOB Travertine Export From Turkey, covering blocks, slabs, tiles and custom designs. We load containers at Turkish ports, handle export clearance and provide full documentation; importers arrange ocean freight and insurance. FOB is the most popular option for bulk block & slab orders thanks to cost control and flexibility.",
+
+  "title2": "Shipping Methods",
+  "intro2": "FOB (Free On Board): We load containers at Turkish ports, buyers manage shipping. CIF (Cost, Insurance, Freight): We handle shipping, insurance, and freight to buyer’s port.",
+
+  "title3": "Documentation & Safety",
+  "intro3": "We provide invoices, packing lists, certificates of origin, and inspection reports. All blocks and slabs are reinforced with wooden frames and strapping for safe sea freight.",
+  "cards":{
+    "title1":"FOB (Free on Board)",
+    "text1":"Majen loads travertine containers at Turkish ports. Buyers arrange international freight. Most common for bulk travertine block orders.",
+      "title2":"CIF (Cost, Insurance, Freight)",
+    "text2":"Majen manages shipping, insurance, and freight to buyer’s destination port. Importers prefer this hassle-free option for slabs and tiles.",
+      "title3":"EXW (Ex Works)",
+    "text3":"Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners."
+  },
+
+  "Questions":{
+    "q1":"Who arranges loading and export clearance under EXW?",
+    "answer1":"The buyer/forwarder. Majen stages goods and provides documents; your broker handles export declaration and permits.",
+    "q2":"Can I combine EXW pickups with other suppliers?",
+    "answer2":"Yes. EXW lets you consolidate cargo and use your preferred carriers to optimize cost.",
+    "q3":"What packaging is provided at origin?",
+    "answer3":"Blocks in reinforced frames; slabs on A-frames; tiles/custom in labeled wooden crates with foam and strapping.",
+    "q4":"Which documents do I receive from Majen?",
+    "answer4":"Commercial invoice, packing list, product specs/HS code on paperwork, optional QC/inspection report, and load photos."
   },
 
   "TextSection1":{
@@ -900,6 +1048,17 @@
   "BlogPost": {
     "readAlso": "You may also like",
     "back": "Back to Blog",
+
+    "Questions":{
+    "q1":"What makes Turkish Travertine unique?",
+    "answer1":"Turkey offers high-density material and a wide palette of colors such as Ivory, Silver and Noce. Competitive quarry output supports large-scale projects.",
+    "q2":"Where is travertine mostly used?",
+    "answer2":"Common uses include flooring, wall cladding, facades, pool surrounds, bathrooms and gardens.",
+    "q3":"What are the differences between filled & unfilled?",
+    "answer3":"Filled travertine has pores filled with resin/cement for a smooth finish. Unfilled keeps natural cavities for a rustic texture.",
+    "q4":"How do I maintain travertine?",
+    "answer4":"Seal periodically, use pH-neutral cleaners, and avoid acidic products. Outdoor pavers may require re-sealing based on climate."
+  },
 
     "light-travertine-modern-interiors": {
       "title": "Modern Interior Design with Light Travertine",

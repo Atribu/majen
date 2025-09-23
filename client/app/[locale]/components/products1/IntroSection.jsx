@@ -17,7 +17,7 @@ export default function IntroSection({
 
   // Görseller (opsiyonel)
   heroSrc = "/images/homepage/kesim.webp",
-  bgMobile = "/images/homepage/mermer.jpg",
+  bgMobile = "/images/homepage/kesim.webp",
   bgDesktop = "/images/homepage/antikarkaplan2.webp",
   bgPanel = "/images/homepage/antikarkaplan4.webp",
   imageAlt = "Hero image",

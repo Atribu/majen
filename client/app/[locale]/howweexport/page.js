@@ -22,11 +22,11 @@ export async function generateMetadata({ params }) {
 
   const title = locale === "tr"
     ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
-    : "How We Export Travertine Worldwide | Majen Quarry Supplier";
+    : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
 
   const description = locale === "tr"
     ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
-    : "Learn how Majen exports travertine worldwide. FOB and CIF shipping, export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey quarry in Turkey.";
+    : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
 
   const canonical = locale === "tr"
     ? `${SITE_URL}/tr/howweexport`
@@ -75,6 +75,7 @@ export default async function Page({ params }) {
     { q: tQ("q2"), a: tQ("answer2") },
     { q: tQ("q3"), a: tQ("answer3") },
     { q: tQ("q4"), a: tQ("answer4") },
+    { q: tQ("q5"), a: tQ("answer5") },
   ];
 
   const schemaArticle = {
@@ -139,6 +140,8 @@ export default async function Page({ params }) {
      <IntroSection
         title={t("title")}
         intro={t("intro")}
+        title2={t("title2")}
+        intro2={t("intro2")}
         heroSrc="/images/export/howweexport.jpg"
         bgMobile="/images/export/howweexport.jpg"
         bgDesktop="/images/homepage/antikarkaplan2.webp"
@@ -160,39 +163,39 @@ export default async function Page({ params }) {
     {
       img: img1,
       alt: "Container loading at port (alt: FOB shipping for travertine from Turkey)",
-      title: "FOB Shipping",
-      href: "/en/howweexport#shipping",
+      title: "FOB (Free on Board)",
+      href: "/en/howweexport/fob",
       cta: "View details",
-      // linkify için veri
-      text: "We usually ship travertine as FOB from Turkish ports.",
+      text: "Majen loads travertine containers at Turkish ports. Buyers arrange international freight. Most common for bulk travertine block orders.",
       linkifyPatterns: [
-        { pattern: /(FOB|Free on Board)/i, href: "/en/howweexport#shipping" }
+        { pattern: "(FOB|Free on Board)", flags: "i", href: "/en/howweexport/fob" }
       ],
     },
     {
       img: img2,
       alt: "Ship at sea (alt: CIF shipment with insurance & freight included)",
-      title: "CIF",
-      href: "/en/howweexport#docs",
+      title: "CIF (Cost, Insurance, Freight)",
+      href: "/en/howweexport/cif",
       cta: "See documents",
-      text: "With CIF, we handle insurance and freight to your destination port.",
+      text: "Majen manages shipping, insurance, and freight to buyer’s destination port. Importers prefer this hassle-free option for slabs and tiles.",
       linkifyPatterns: [
-        { pattern: /(CIF|Cost, Insurance, Freight)/i, href: "/en/howweexport#docs" }
+        { pattern: "(CIF|Cost, Insurance, Freight)", flags: "i", href: "/en/howweexport/cif" }
       ],
     },
     {
       img: img3,
       alt: "Export docs (alt: Export documents: invoice, packing list, certificate of origin)",
-      title: "EXW",
-      href: "/en/howweexport#packaging",
+      title: "EXW (Ex Works)",
+      href: "/en/howweexport/exw",
       cta: "How it works",
-      text: "EXW pickup is available from our quarry/warehouse.",
+      text: "Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners.",
       linkifyPatterns: [
-        { pattern: /(EXW|Ex Works)/i, href: "/en/howweexport#packaging" }
+        { pattern: "(EXW|Ex Works)", flags: "i", href: "/en/howweexport/exw" }
       ],
     },
   ]}
 /> */}
+
 
       <CardsSection />
 
@@ -204,21 +207,21 @@ export default async function Page({ params }) {
           img: img1,
           alt: "Container loading at port (alt: FOB shipping for travertine from Turkey)",
           title: "FOB Shipping",
-          href: "/en/howweexport#shipping",
+          href: "/en/howweexport/fob",
           cta: "View details"
         },
         {
           img: img2,
           alt: "Ship at sea (alt: CIF shipment with insurance & freight included)",
           title: "CIF",
-          href: "/en/howweexport#docs",
+          href: "/en/howweexport/cif",
           cta: "See documents"
         },
         {
           img: img3,
           alt: "Export docs (alt: Export documents: invoice, packing list, certificate of origin)",
           title: "EXW",
-          href: "/en/howweexport#packaging",
+          href: "/en/howweexport/exw",
           cta: "How it works"
         }
       ]}
@@ -227,7 +230,7 @@ export default async function Page({ params }) {
       {/* <div className="max-w-[1100px] w-[95%] md:w-[80%] grid grid-cols-1 sm:grid-cols-2 items-center justify-center"> */}
         <TextSection
         title={tS("title")}
-        paragraphs={[tS("text"), tS("list1"), tS("list2"), tS("list3"), tS("list4")]}
+        paragraphs={[tS("text"), tS("list1"), tS("list2"), tS("list3"), tS("list4"),tS("list5")]}
         schema={schemaArticle}
         className="flex flex-col w-1/2 "
         clampMobile={5}
@@ -235,7 +238,7 @@ export default async function Page({ params }) {
 
       <TextSection
         title={tS2("title")}
-        paragraphs={[tS2("text"), tS2("list1"), tS2("list2"), tS2("list3"), tS2("list4")]}
+        paragraphs={[tS2("text"), tS2("list1"), tS2("list2"), tS2("list3"), tS2("list4"),tS2("list5")]}
         schema={schemaArticle}
          className="w-1/2"
         clampMobile={5}
@@ -243,7 +246,7 @@ export default async function Page({ params }) {
 
          <TextSection
         title={tS3("title")}
-        paragraphs={[tS3("text"), tS3("list1"), tS3("list2"), tS3("list3"), tS3("list4"),tS3("list5")]}
+        paragraphs={[tS3("text"), tS3("list1"), tS3("list2"), tS3("list3"), tS3("list4"),tS3("list5"),tS3("list6")]}
         schema={schemaArticle}
         className="max-w-5xl mx-auto mt-12"
         clampMobile={5}

@@ -13,6 +13,7 @@ import { FiSettings } from "react-icons/fi";
 import ServiceBlocks from "./blocksComponents/ServiceBlocks";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation"; // locale prefix'i korur
 
 const ICONS = {
   quality: FaRulerCombined,
@@ -78,13 +79,28 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2 ">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            {t("items.export1.title")}
+
+            {t.rich("items.export1.title", {
+                                fob: (chunks) => (
+                                  <Link href="/how-we-export/fob" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </h5>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-6  max-w-[90vw]">
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-          {t("items.export1.description")}
+           {t.rich("items.export1.description", {
+                                fob: (chunks) => (
+                                  <Link href="/how-we-export/fob" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </div>
               <div className="px-8 py-2 rounded-2xl outline outline-2 outline-offset-[-2px] inline-flex justify-center items-center ">
                 <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</p>
@@ -96,13 +112,27 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-               {t("items.export2.title")}
+               {t.rich("items.export2.title", {
+                                cif: (chunks) => (
+                                  <Link href="/how-we-export/cif" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </h5>
               
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-               {t("items.export2.description")}
+               {t.rich("items.export2.description", {
+                                cif: (chunks) => (
+                                  <Link href="/how-we-export/cif" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
@@ -114,13 +144,27 @@ export default function KeyFeatures() {
           <div className="flex flex-col justify-center items-start gap-2">
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
-            {t("items.export3.title")}
+            {t.rich("items.export3.title", {
+                                exw: (chunks) => (
+                                  <Link href="/how-we-export/exw" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </h5>
              
             </div>
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
-           {t("items.export3.description")}
+            {t.rich("items.export3.description", {
+                                exw: (chunks) => (
+                                  <Link href="/how-we-export/exw" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
@@ -381,7 +425,26 @@ useEffect(() => {
 
       <div className='flex w-full md:w-[80%] lg:w-[95%] h-full gap-[64px] items-center justify-center text-black'>
         <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[4%]  xl:ml-[10%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
-            <h3 className='text-[20px] md:text-[24px] lg:text-[26px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> Travertine Export Methods from Turkey – FOB, CIF & EXW</h3>
+            <h3 className='text-[20px] md:text-[24px] lg:text-[26px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> 
+               {t.rich("title", {
+                                fob: (chunks) => (
+                                  <Link href="/how-we-export/fob" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                                cif: (chunks) => (
+                                  <Link href="/how-we-export/cif" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                                exw: (chunks) => (
+                                  <Link href="/how-we-export/exw" className="underline underline-offset-4">
+                                    {chunks}
+                                  </Link>
+                                ),
+                               
+                              })}
+            </h3>
             {/* slider */}
             <div
   ref={containerRef}

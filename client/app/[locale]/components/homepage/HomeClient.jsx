@@ -32,7 +32,10 @@ const HomeClient = () => {
       <ContactFrom />
       <ServicesSection/>
       <HighlightSection/>
-      <QuestionsSection color="#000000" span=" Wholesale Travertine From Turkey" items={items}/>
+      <QuestionsSection color="#000000" span=" Wholesale Travertine From Turkey" items={items} linkMap={{
+    FOB: "/ihracat/fob",
+    CIF: "/ihracat/cif"
+  }}/>
       <BackgroundSection2/>
     </div>
   );

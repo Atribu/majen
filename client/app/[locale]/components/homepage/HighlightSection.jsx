@@ -90,35 +90,34 @@ export default function HighlightSection() {
    Re-usable Embla Carousel (yalın, tasarımı bozmaz)
    ——————————————————————————————————————————— */
 function Carousel({ images, altBase, priorityFirst = false }) {
-  // Autoplay istersen:
-  // const [emblaRef, emblaApi] = useEmblaCarousel(
-  //   { loop: true, containScroll: "trimSnaps", skipSnaps: false },
-  //   [Autoplay({ delay: 4000, stopOnInteraction: false })]
-  // );
-
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     containScroll: "trimSnaps",
-    skipSnaps: false,
+    align: "start",
     dragFree: false,
   });
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
 
+  // alt metni güvenli al
+  const getAlt = (i) =>
+    Array.isArray(altBase) && typeof altBase[i] === "string"
+      ? altBase[i]
+      : `Travertine image ${i + 1}`;
+
   return (
     <div className="relative">
-      {/* Viewport */}
+      {/* Viewport — ref SADECE burada */}
       <div ref={emblaRef} className="overflow-hidden">
-        {/* Container */}
-        <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex touch-pan-y">
+        {/* Container — viewport'un DOĞRUDAN çocuğu ve flex */}
+        <div className="flex touch-pan-x select-none cursor-grab active:cursor-grabbing">
           {images.map((img, i) => (
             <div key={i} className="min-w-0 flex-[0_0_100%]">
               <div className="relative w-full h-60 sm:h-96 lg:h-[600px]">
                 <Image
                   src={img}
-                  alt={altBase[i] || "Travertine project image"}
+                  alt={getAlt(i)}
                   fill
                   priority={priorityFirst && i === 0}
                   className="object-cover"
@@ -129,30 +128,28 @@ function Carousel({ images, altBase, priorityFirst = false }) {
           ))}
         </div>
       </div>
-      </div>
 
-      {/* Kontroller (tasarımı bozmadan köşelere) */}
+      {/* Kontroller */}
       <button
         onClick={scrollPrev}
         aria-label="Previous"
-        className="absolute left-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow ">
+        className="absolute left-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow"
+      >
         ‹
       </button>
       <button
         onClick={scrollNext}
         aria-label="Next"
-        className="absolute right-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow  " >
+        className="absolute right-2 top-[90%] -translate-y-1/2 z-[10] rounded-full bg-white/70 hover:bg-white px-2 lg:px-3 py-1 lg:py-2 shadow"
+      >
         ›
       </button>
 
-      {/* Basit dots (isteğe bağlı) */}
+      {/* Dots */}
       {images.length > 1 && (
         <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-[990]">
           {images.map((_, i) => (
-            <span
-              key={i}
-              className="size-2 rounded-full bg-white/70 shadow"
-            />
+            <span key={i} className="size-2 rounded-full bg-white/70 shadow" />
           ))}
         </div>
       )}

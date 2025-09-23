@@ -17,9 +17,7 @@ const QuestionsSection = ({ color = "#0B0B0B", span, items  }) => {
           className="text-[20px] md:text-[22px] lg:text-[26px] font-bold leading-[120%] -tracking-[0.64px] mb-[16px] capitalize"
           style={{ color }}>
           {t("aboutpage_s4_faq_header1")}{"-"} {span}
-          {/* <span className="bg-gradient-to-r from-[#312d2d] to-[#5b5656] bg-clip-text text-transparent">
-            {t("aboutpage_s4_faq_span1")}
-          </span> */}
+      
         </h4>
 
         {items.map((it, i) => (

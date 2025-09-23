@@ -174,7 +174,7 @@ export default function IntroSection({
               </h1>
 
               {intro && (
-                <p className="mt-3 text-[13px] sm:text-[15px] leading-[150%] text-neutral-700">
+                <p className="mt-3 text-[13px] sm:text-[15px] leading-[135%] text-neutral-700">
                   {intro}
                 </p>
               )}
@@ -186,7 +186,7 @@ export default function IntroSection({
               )}
 
               {intro2 && (
-                <p className="mt-2 text-[13px] sm:text-[15px] leading-[150%] text-neutral-700">
+                <p className="mt-2 text-[13px] sm:text-[15px] leading-[135%] text-neutral-700">
                   {intro2}
                 </p>
               )}
