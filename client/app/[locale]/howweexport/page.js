@@ -12,6 +12,7 @@ import img2 from "@/public/images/export/cif.jpg"
 import img3 from "@/public/images/export/exw.jpg"
 import ThreeUpShowcase from "./ThreeUpShowcase";
 import ExportMethodsShowcase from "./ExportMethodsShowcase";
+import Link from "next/link";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/export/export-hero.webp`;
@@ -263,11 +264,11 @@ export default async function Page({ params }) {
       <ContactFrom />
 
       <nav aria-label="Related links" className="text-sm text-neutral-600 my-8 text-center flex gap-3 items-center justify-center">
-  <a href="/en/travertine/blocks">Travertine Blocks</a> •
-  <a href="/en/travertine/slabs">Travertine Slabs</a> •
-  <a href="/en/travertine/tiles">Travertine Tiles</a> •
-  <a href="/en/travertine/special-designs">Custom Designs</a> •
-  <a href="/en/how-we-export">How We Export</a>
+  <Link href="/en/travertine/blocks">Travertine Blocks</Link> •
+  <Link href="/en/travertine/slabs">Travertine Slabs</Link> •
+  <Link href="/en/travertine/tiles">Travertine Tiles</Link> •
+  <Link href="/en/travertine/special-designs">Custom Designs</Link> •
+  <Link href="/en/how-we-export">How We Export</Link>
 </nav>
 
 

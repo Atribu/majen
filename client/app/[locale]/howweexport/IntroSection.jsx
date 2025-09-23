@@ -199,12 +199,12 @@ export default function IntroSection({
                 >
                   Contact Sales
                 </Link>
-                <a
+                <Link
                   href="#export-details"
                   className="inline-flex items-center rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm font-semibold text-neutral-800 hover:bg-neutral-50 transition"
                 >
                   Learn more →
-                </a>
+                </Link>
               </div>
 
               {/* Breadcrumb */}

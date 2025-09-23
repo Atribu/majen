@@ -54,6 +54,21 @@ export const config = {
       en: '/how-we-export',
       tr: '/nasıl-ihracat-yapıyoruz',
     },
+
+      '/howweexport/fob': {
+      en: '/how-we-export/fob',
+      tr: '/nasıl-ihracat-yapıyoruz/fob',
+    },
+
+     '/howweexport/cif': {
+      en: '/how-we-export/cif',
+      tr: '/nasıl-ihracat-yapıyoruz/cif',
+    },
+
+     '/howweexport/exw': {
+      en: '/how-we-export/exw',
+      tr: '/nasıl-ihracat-yapıyoruz/exw',
+    },
     // i18n/routing.js
 
   '/blog': { en: '/blog', tr: '/blog' },
