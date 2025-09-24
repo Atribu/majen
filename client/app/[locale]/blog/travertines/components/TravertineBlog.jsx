@@ -10,7 +10,7 @@ export default function TravertineBlog() {
     () => [
       {
         title: "Travertine Tiles",
-        slug: "/blog/travertine-tiles",
+        slug: "/blog/travertines/travertine-tiles",
         img: "/images/homepage/kesim.webp",
         alt: "Travertine tiles close-up",
         excerpt:
@@ -18,7 +18,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Slabs",
-        slug: "/blog/travertine-slabs",
+        slug: "/blog/travertines/travertine-slabs",
         img: "/images/homepage/slabler2.webp",
         alt: "Large travertine slabs",
         excerpt:
@@ -26,7 +26,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Blocks",
-        slug: "/blog/travertine-blocks",
+        slug: "/blog/travertines/travertine-blocks",
         img: "/images/homepage/Ivoryblok.webp",
         alt: "Travertine quarry blocks",
         excerpt:
@@ -34,7 +34,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Pavers",
-        slug: "/blog/travertine-pavers",
+        slug: "/blog/travertines/travertine-pavers",
         img: "/images/tiles/Ivorykesim.webp",
         alt: "Travertine pavers by a pool",
         excerpt:
@@ -42,7 +42,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Mosaics",
-        slug: "/blog/travertine-mosaics",
+        slug: "/blog/travertines/travertine-mosaics",
         img: "/images/homepage/antikarkaplan4.webp",
         alt: "Travertine mosaic wall",
         excerpt:
@@ -56,7 +56,7 @@ export default function TravertineBlog() {
     () => [
       {
         title: "Polished Travertine",
-        slug: "/blog/polished-travertine",
+        slug: "/blog/travertines/polished-travertine",
         img: "/images/blog/polished.jpg",
         alt: "Polished travertine surface",
         excerpt:
@@ -64,7 +64,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Honed Travertine",
-        slug: "/blog/honed-travertine",
+        slug: "/blog/travertines/honed-travertine",
         img: "/images/blog/honed.jpg",
         alt: "Honed travertine surface",
         excerpt:
@@ -72,7 +72,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Tumbled Travertine",
-        slug: "/blog/tumbled-travertine",
+        slug: "/blog/travertines/tumbled-travertine",
         img: "/images/blog/Tumbled.webp",
         alt: "Tumbled travertine edges",
         excerpt:
@@ -80,7 +80,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Brushed Travertine",
-        slug: "/blog/brushed-travertine",
+        slug: "/blog/travertines/brushed-travertine",
         img: "/images/blog/Brushed.jpg",
         alt: "Brushed travertine texture",
         excerpt:
@@ -88,7 +88,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Filled Travertine",
-        slug: "/blog/filled-travertine",
+        slug: "/blog/travertines/filled-travertine",
         img: "/images/blog/filled.jpg",
         alt: "Filled travertine pores",
         excerpt:
@@ -96,7 +96,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Unfilled Travertine",
-        slug: "/blog/unfilled-travertine",
+        slug: "/blog/travertines/unfilled-travertine",
         img: "/images/blog/unfilled.jpg",
         alt: "Unfilled travertine pores",
         excerpt:
@@ -110,7 +110,7 @@ export default function TravertineBlog() {
     () => [
       {
         title: "Ivory Travertine",
-        slug: "/blog/ivory-travertine",
+        slug: "/blog/travertines/ivory-travertine",
         img: "/images/homepage/Ivory/ivory.webp",
         alt: "Ivory travertine tile",
         excerpt:
@@ -118,7 +118,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Light Travertine",
-        slug: "/blog/light-travertine",
+        slug: "/blog/travertines/light-travertine",
         img: "/images/homepage/Light/light.webp",
         alt: "Light beige travertine",
         excerpt:
@@ -126,7 +126,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Antico Travertine",
-        slug: "/blog/antico-travertine",
+        slug: "/blog/travertines/antico-travertine",
         img: "/images/homepage/antik/antik.webp",
         alt: "Antico travertine close-up",
         excerpt:
@@ -140,7 +140,7 @@ export default function TravertineBlog() {
     () => [
       {
         title: "Travertine Flooring",
-        slug: "/blog/travertine-flooring",
+        slug: "/blog/travertines/travertine-flooring",
           img: "/images/homepage/Light/lighttasarim3.webp",
         alt: "Travertine floor detail",
         excerpt:
@@ -148,7 +148,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Cladding",
-        slug: "/blog/travertine-cladding",
+        slug: "/blog/travertines/travertine-cladding",
         img: "/images/homepage/Light/lighttasarim4.webp",
         alt: "Travertine wall cladding",
         excerpt:
@@ -156,7 +156,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Facade",
-        slug: "/blog/travertine-facade",
+        slug: "/blog/travertines/travertine-facade",
         img: "/images/homepage/Antik/Antiktasarim4.webp",
         alt: "Building facade with travertine",
         excerpt:
@@ -164,7 +164,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Bathroom",
-        slug: "/blog/travertine-bathroom",
+        slug: "/blog/travertines/travertine-bathroom",
           img: "/images/homepage/Ivory/Ivorytasarim1.webp",
         alt: "Bathroom with travertine",
         excerpt:
@@ -172,7 +172,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Kitchen",
-        slug: "/blog/travertine-kitchen",
+        slug: "/blog/travertines/travertine-kitchen",
        img: "/images/homepage/Antik/Antiktasarim2.webp",
         alt: "Kitchen with travertine surfaces",
         excerpt:
@@ -180,7 +180,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Pool",
-        slug: "/blog/travertine-pool",
+        slug: "/blog/travertines/travertine-pool",
         img: "/images/homepage/Ivory/Ivorytasarim2.webp",
         alt: "Pool deck with travertine",
         excerpt:
@@ -194,7 +194,7 @@ export default function TravertineBlog() {
     () => [
       {
         title: "Travertine Turkey",
-        slug: "/blog/travertine-turkey",
+        slug: "/blog/travertines/travertine-turkey",
          img: "/images/homepage/antikoarkplan.webp",
         alt: "Travertine quarry in Turkey",
         excerpt:
@@ -202,7 +202,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Turkish Travertine",
-        slug: "/blog/turkish-travertine",
+        slug: "/blog/travertines/turkish-travertine",
         img: "/images/homepage/antikoarkplan.webp",
         alt: "Turkish travertine close-up",
         excerpt:
@@ -210,7 +210,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Quarry",
-        slug: "/blog/travertine-quarry",
+        slug: "/blog/travertines/travertine-quarry",
         img: "/images/homepage/tab2.webp",
         alt: "Travertine quarry blocks",
         excerpt:
@@ -218,7 +218,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Supplier",
-        slug: "/blog/travertine-supplier",
+        slug: "/blog/travertines/travertine-supplier",
         img: "/images/homepage/antikoarkplan.webp",
         alt: "Warehouse of travertine tiles",
         excerpt:
@@ -226,7 +226,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Exporter",
-        slug: "/blog/travertine-exporter",
+        slug: "/blog/travertines/travertine-exporter",
         img: "/images/homepage/antikoarkplan.webp",
         alt: "Container shipping travertine",
         excerpt:
@@ -234,7 +234,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Manufacturer",
-        slug: "/blog/travertine-manufacturer",
+        slug: "/blog/travertines/travertine-manufacturer",
          img: "/images/homepage/antikoarkplan.webp",
         alt: "Factory processing travertine slabs",
         excerpt:
@@ -242,7 +242,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Distributor",
-        slug: "/blog/travertine-distributor",
+        slug: "/blog/travertines/travertine-distributor",
          img: "/images/homepage/antikoarkplan.webp",
         alt: "Distribution center with stone pallets",
         excerpt:
@@ -289,7 +289,7 @@ export default function TravertineBlog() {
 
   // RENDER ----------------------------------------------------------
   return (
-    <main className="pt-20">
+    <main className="pt-1 md:pt-5 lg:pt-14">
       {/* HERO */}
       <header className="relative isolate">
         <div className="mx-auto max-w-6xl px-4 pt-12 pb-10">
@@ -299,7 +299,7 @@ export default function TravertineBlog() {
           </p>
         </div>
         {/* Decorative banner image */}
-        <div className="relative h-56 md:h-72">
+        <div className="relative h-56 md:h-72 ">
           <Image
             src="/images/homepage/antikarkaplan4.webp"
             alt="Travertine hero image"

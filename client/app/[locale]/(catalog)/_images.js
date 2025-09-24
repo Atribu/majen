@@ -139,3 +139,383 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_CUT = {
     },
   },
 };
+
+
+// /app/_data/_images.js
+export const IMAGES_BLOG = {
+  "travertine-tiles": {
+    hero: { src: tilesIvory, alt: "Travertine tile close-up hero" },
+    colors: {
+      ivory:  { src: tilesIvory,  alt: "Ivory travertine tiles close-up" },
+      light:  { src: tilesLight,  alt: "Light travertine tiles in warm beige" },
+      antico: { src: tilesAntik, alt: "Antico travertine tiles rustic texture" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp",  alt: "Polished travertine tile reflecting light" },
+      honed:    { src: "/images/newblog/Polishedtravertine.webp",    alt: "Honed travertine tile matte look" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine tile rounded edges" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine tile gentle texture" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine tile floor in a sunlit kitchen" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Ivory travertine bathroom with walk-in shower" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Outdoor terrace with tumbled travertine tiles" }
+    ]
+  },
+
+  "travertine-slabs": {
+    hero: { src: slabAntik, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "travertine-blocks": { 
+    hero: { src: blockAntik, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+  "travertine-pavers": {
+    hero: { src: "/images/newblog/travertinepavers.webp", alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+  "travertine-mosaics": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+    "polished-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+   "honed-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "tumbled-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+  "brushed-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "unfilled-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+    "ivory-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "light-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "antico-travertine": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+    "travertine-flooring": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+      "travertine-cladding": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "travertine-facade": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "travertine-bathroom": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+  "travertine-kitchen": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+
+   "travertine-pool": {
+    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    colors: {
+      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
+      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
+      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+    },
+    finishes: {
+      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+    },
+    gallery: [
+      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+    ]
+  },
+};

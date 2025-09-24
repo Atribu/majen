@@ -72,7 +72,7 @@ export default function VariantCircleSection({
               {/* Alt: YouTube linki → alt artık URL (JSON'dan) */}
               {alt && (
                 <a
-                  href="/"
+                  href="https://www.youtube.com/@MajenMadencilik"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex gap-1 mt-1 text-[12px] md:text-sm underline-offset-2 hover:underline text-red-600"

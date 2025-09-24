@@ -1,395 +1,335 @@
-// "use client";
+// app/en/travertine/page.jsx
+import Image from "next/image";
+import Link from "next/link";
+import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
+import { getTranslations } from "next-intl/server";
 
-// import Image from "next/image";
-// import Link from "next/link";
-// import { useMemo } from "react";
+export const metadata = {
+  title: "Travertine – Premium Turkish Travertine Supplier | Majen",
+  description:
+    "Premium quality Turkish Travertine direct from quarry. Tiles, slabs, blocks, pavers, mosaics. Multiple colors & finishes. Global export, fast lead times.",
+  alternates: { canonical: "https://majen.com.tr/en/travertine" },
+  openGraph: {
+    type: "website",
+    url: "https://majen.com.tr/en/travertine",
+    title: "Travertine – Premium Turkish Travertine Supplier | Majen",
+    description:
+      "Turkish Travertine in tiles, slabs, blocks, pavers & mosaics. Colors: Ivory, Silver, Noce, Walnut and more. Finishes: Polished, Honed, Tumbled. Global shipping.",
+    images: [{ url: "/assets/images/travertine/hero.jpg" }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      maxSnippet: -1,
+      maxImagePreview: "large",
+      maxVideoPreview: -1,
+    },
+  },
+};
 
-// export default function TravertineBlogPage() {
-//   // DATA ------------------------------------------------------------
-//   const productTypes = useMemo(
-//     () => [
-//       {
-//         title: "Travertine Tiles",
-//         slug: "/blog/travertine-tiles",
-//         img: "/images/travertine/tiles.jpg",
-//         alt: "Travertine tiles close-up",
-//         excerpt:
-//           "Travertine tiles are widely used in flooring and wall coverings, combining natural aesthetics with durability. Available in multiple finishes, they suit modern and traditional designs in residential and commercial spaces.",
-//       },
-//       {
-//         title: "Travertine Slabs",
-//         slug: "/blog/travertine-slabs",
-//         img: "/images/travertine/slabs.jpg",
-//         alt: "Large travertine slabs",
-//         excerpt:
-//           "Travertine slabs are ideal for large-scale projects requiring seamless surfaces like countertops and facades. Their wide dimensions highlight natural patterns, delivering a luxurious look for interiors and architecture.",
-//       },
-//       {
-//         title: "Travertine Blocks",
-//         slug: "/blog/travertine-blocks",
-//         img: "/images/travertine/blocks.jpg",
-//         alt: "Travertine quarry blocks",
-//         excerpt:
-//           "Travertine blocks are the raw form extracted from quarries, then cut and processed into tiles or slabs. Valued by manufacturers and exporters, they are the base material for large projects and custom stonework.",
-//       },
-//       {
-//         title: "Travertine Pavers",
-//         slug: "/blog/travertine-pavers",
-//         img: "/images/travertine/pavers.jpg",
-//         alt: "Travertine pavers by a pool",
-//         excerpt:
-//           "Travertine pavers are durable outdoor solutions for paths, driveways, patios, and pool decks. Their slip-resistant surface and weather endurance make them a preferred choice for landscaping and exterior projects.",
-//       },
-//       {
-//         title: "Travertine Mosaics",
-//         slug: "/blog/travertine-mosaics",
-//         img: "/images/travertine/mosaics.jpg",
-//         alt: "Travertine mosaic wall",
-//         excerpt:
-//           "Travertine mosaics combine small stone pieces into decorative patterns. Popular in bathrooms, kitchens, and feature walls, they add texture and style while maintaining the durability of natural stone.",
-//       },
-//     ],
-//     []
-//   );
+export default async function Page({ params }) {
+  const { locale } = await params;
+        const isTR = locale === "tr";
 
-//   const finishes = useMemo(
-//     () => [
-//       {
-//         title: "Polished Travertine",
-//         slug: "/blog/polished-travertine",
-//         img: "/images/travertine/finish-polished.jpg",
-//         alt: "Polished travertine surface",
-//         excerpt:
-//           "Polished travertine offers a glossy, reflective surface ideal for luxury interiors. It enhances the stone’s natural patterns while creating a modern, elegant atmosphere in residential and commercial spaces.",
-//       },
-//       {
-//         title: "Honed Travertine",
-//         slug: "/blog/honed-travertine",
-//         img: "/images/travertine/finish-honed.jpg",
-//         alt: "Honed travertine surface",
-//         excerpt:
-//           "Honed travertine has a smooth, matte surface that provides a softer, more natural look. Perfect for indoor floors, walls, and countertops where a subtle and contemporary appearance is preferred.",
-//       },
-//       {
-//         title: "Tumbled Travertine",
-//         slug: "/blog/tumbled-travertine",
-//         img: "/images/travertine/finish-tumbled.jpg",
-//         alt: "Tumbled travertine edges",
-//         excerpt:
-//           "Tumbled travertine features a weathered, rustic texture that adds character to spaces. Common in outdoor areas, patios, and pool surrounds, it creates a classic Mediterranean or antique style.",
-//       },
-//       {
-//         title: "Brushed Travertine",
-//         slug: "/blog/brushed-travertine",
-//         img: "/images/travertine/finish-brushed.jpg",
-//         alt: "Brushed travertine texture",
-//         excerpt:
-//           "Brushed travertine has a gently textured surface achieved through special treatment. Suitable for both interior and exterior designs, it offers added grip and visual warmth.",
-//       },
-//       {
-//         title: "Filled Travertine",
-//         slug: "/blog/filled-travertine",
-//         img: "/images/travertine/finish-filled.jpg",
-//         alt: "Filled travertine pores",
-//         excerpt:
-//           "Filled travertine has natural pores sealed with resin or cement, creating a smoother surface. Often paired with polished finishes for modern interiors where a clean and refined look is desired.",
-//       },
-//       {
-//         title: "Unfilled Travertine",
-//         slug: "/blog/unfilled-travertine",
-//         img: "/images/travertine/finish-unfilled.jpg",
-//         alt: "Unfilled travertine pores",
-//         excerpt:
-//           "Unfilled travertine retains its natural pores and raw texture. Preferred for traditional or outdoor settings where authenticity and a rugged, natural aesthetic are desired.",
-//       },
-//     ],
-//     []
-//   );
+         const t  = await getTranslations({ locale, namespace: "BlogPost.Questions" });
 
-//   const colors = useMemo(
-//     () => [
-//       {
-//         title: "Ivory Travertine",
-//         slug: "/blog/ivory-travertine",
-//         img: "/images/travertine/color-ivory.jpg",
-//         alt: "Ivory travertine tile",
-//         excerpt:
-//           "Ivory travertine is bright and elegant, a favorite for luxury interiors. Its light shade creates a spacious, airy feeling, ideal for bathrooms, kitchens, and pool surroundings across contemporary projects.",
-//       },
-//       {
-//         title: "Light Travertine",
-//         slug: "/blog/light-travertine",
-//         img: "/images/travertine/color-light.jpg",
-//         alt: "Light beige travertine",
-//         excerpt:
-//           "Light travertine offers warm beige tones that blend seamlessly with modern and classic schemes. Versatile for flooring, wall cladding, and outdoor landscaping across residential and commercial spaces.",
-//       },
-//       {
-//         title: "Antico Travertine",
-//         slug: "/blog/antico-travertine",
-//         img: "/images/travertine/color-antico.jpg",
-//         alt: "Antico travertine close-up",
-//         excerpt:
-//           "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
-//       },
-//     ],
-//     []
-//   );
+           const items = [
+        { q: t("q1"), a: t("answer1") },
+        { q: t("q2"), a: t("answer2") },
+        { q: t("q3"), a: t("answer3") },
+        { q: t("q4"), a: t("answer4") }
+      ];
 
-//   const applications = useMemo(
-//     () => [
-//       {
-//         title: "Travertine Flooring",
-//         slug: "/blog/travertine-flooring",
-//         img: "/images/homepage/Light/lighttasarim3.webp",
-//         alt: "Travertine floor detail",
-//         excerpt:
-//           "Travertine flooring is prized for durability and natural beauty. With varied finishes and colors, it enhances modern and classic interiors and withstands daily use in homes and commercial spaces.",
-//       },
-//       {
-//         title: "Travertine Cladding",
-//         slug: "/blog/travertine-cladding",
-//         img: "/images/homepage/Light/lighttasarim3.webp",
-//         alt: "Travertine wall cladding",
-//         excerpt:
-//           "Travertine cladding adds elegance to walls and facades, delivering natural insulation and timeless style. A popular choice for residential projects and commercial architecture alike.",
-//       },
-//       {
-//         title: "Travertine Facade",
-//         slug: "/blog/travertine-facade",
-//         img: "/images/travertine/app-facade.jpg",
-//         alt: "Building facade with travertine",
-//         excerpt:
-//           "Travertine facades create strong, stylish exteriors. Weather resistance and natural variation make them ideal for modern buildings and restoration work seeking authentic stone character.",
-//       },
-//       {
-//         title: "Travertine Bathroom",
-//         slug: "/blog/travertine-bathroom",
-//         img: "/images/homepage/Ivory/Ivorytasarim1.webp",
-//         alt: "Bathroom with travertine",
-//         excerpt:
-//           "Travertine bathrooms evoke luxury and calm. Used in tiles, mosaics, and vanity tops, the stone brings spa-like warmth and texture to contemporary and classic spaces.",
-//       },
-//       {
-//         title: "Travertine Kitchen",
-//         slug: "/blog/travertine-kitchen",
-//         img: "/images/homepage/Antik/Antiktasarim2.webp",
-//         alt: "Kitchen with travertine surfaces",
-//         excerpt:
-//           "In kitchens, travertine works for countertops, backsplashes, and floors. Its natural tones pair beautifully with wood, metal, and minimalist cabinetry for enduring design.",
-//       },
-//       {
-//         title: "Travertine Pool",
-//         slug: "/blog/travertine-pool",
-//         img: "/images/travertine/app-pool.jpg",
-//         alt: "Pool deck with travertine",
-//         excerpt:
-//           "Travertine pool surrounds are slip-resistant, heat-friendly, and refined. They provide a safe, elegant solution for outdoor leisure areas and resort-style landscapes.",
-//       },
-//     ],
-//     []
-//   );
 
-//   const business = useMemo(
-//     () => [
-//       {
-//         title: "Travertine Turkey",
-//         slug: "/blog/travertine-turkey",
-//         img: "/images/travertine/tr-turkey.jpg",
-//         alt: "Travertine quarry in Turkey",
-//         excerpt:
-//           "Travertine Turkey is synonymous with quality and scale. Vast reserves and skilled craftsmanship position the country as a top global source for natural stone products.",
-//       },
-//       {
-//         title: "Turkish Travertine",
-//         slug: "/blog/turkish-travertine",
-//         img: "/images/travertine/tr-turkish.jpg",
-//         alt: "Turkish travertine close-up",
-//         excerpt:
-//           "Turkish travertine is globally recognized for color diversity and durability. Exported to major markets, it’s a leading material for construction and design projects worldwide.",
-//       },
-//       {
-//         title: "Travertine Quarry",
-//         slug: "/blog/travertine-quarry",
-//         img: "/images/travertine/tr-quarry.jpg",
-//         alt: "Travertine quarry blocks",
-//         excerpt:
-//           "Travertine quarries in Turkey produce high-quality blocks at scale. These raw materials are processed into tiles, slabs, and custom products for global distribution.",
-//       },
-//       {
-//         title: "Travertine Supplier",
-//         slug: "/blog/travertine-supplier",
-//         img: "/images/travertine/tr-supplier.jpg",
-//         alt: "Warehouse of travertine tiles",
-//         excerpt:
-//           "A travertine supplier delivers ready-to-use tiles and slabs to buyers worldwide. Reliable partners ensure consistent quality assurance and on-time delivery.",
-//       },
-//       {
-//         title: "Travertine Exporter",
-//         slug: "/blog/travertine-exporter",
-//         img: "/images/travertine/tr-exporter.jpg",
-//         alt: "Container shipping travertine",
-//         excerpt:
-//           "Travertine exporters connect Turkish stone with international markets, managing logistics, documentation, and quality control throughout the supply chain.",
-//       },
-//       {
-//         title: "Travertine Manufacturer",
-//         slug: "/blog/travertine-manufacturer",
-//         img: "/images/travertine/tr-manufacturer.jpg",
-//         alt: "Factory processing travertine slabs",
-//         excerpt:
-//           "Travertine manufacturers process raw blocks into finished products with advanced machinery. Precision cutting, polishing, and customization meet project demands.",
-//       },
-//       {
-//         title: "Travertine Distributor",
-//         slug: "/blog/travertine-distributor",
-//         img: "/images/travertine/tr-distributor.jpg",
-//         alt: "Distribution center with stone pallets",
-//         excerpt:
-//           "Travertine distributors supply natural stone to contractors, retailers, and wholesalers, ensuring availability and after-sales support across regions.",
-//       },
-//     ],
-//     []
-//   );
-
-//   // HELPERS ---------------------------------------------------------
-//   const Section = ({ id, title, intro, children }) => (
-//     <section id={id} className="mx-auto max-w-6xl px-4 py-10">
-//       <div className="flex items-end justify-between gap-4">
-//         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{title}</h2>
-//         <Link href={`#${id}`} className="text-sm underline underline-offset-4">
-//           #
-//         </Link>
-//       </div>
-//       {intro && (
-//         <p className="mt-4 text-base leading-relaxed text-neutral-700">
-//           {intro}
-//         </p>
-//       )}
-//       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//         {children}
-//       </div>
-//     </section>
-//   );
-
-//   const Card = ({ title, slug, img, alt, excerpt }) => (
-//     <article className="group rounded-2xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-//       <Link href={slug} className="block">
-//         <div className="relative h-48 w-full">
-//           <Image src={img} alt={alt} fill className="object-cover" />
-//         </div>
-//         <div className="p-5">
-//           <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">{title}</h3>
-//           <p className="mt-2 text-sm leading-relaxed text-neutral-700">{excerpt}</p>
-//           <span className="mt-4 inline-block text-sm font-medium">Read more →</span>
-//         </div>
-//       </Link>
-//     </article>
-//   );
-
-//   // RENDER ----------------------------------------------------------
-//   return (
-//     <main className="pt-20">
-//       {/* HERO */}
-//       <header className="relative isolate">
-//         <div className="mx-auto max-w-6xl px-4 pt-12 pb-10">
-//           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Travertine</h1>
-//           <p className="mt-4 max-w-3xl text-base md:text-lg leading-relaxed text-neutral-700">
-//             Travertine is one of the most sought-after natural stones in architecture and design, valued for its durability, unique patterns, and timeless beauty. This blog explores product types, finishes, colors, applications, and the Turkish supply chain — guiding you from specification to sourcing.
-//           </p>
-//         </div>
-//         {/* Decorative banner image */}
-//         <div className="relative h-56 md:h-72">
-//           <Image
-//             src="/images/travertine/hero.jpg"
-//             alt="Travertine hero image"
-//             fill
-//             className="object-cover opacity-95"
-//             priority
-//           />
-//         </div>
-//       </header>
-
-//       {/* NAVIGATION TABS */}
-//       <nav className="sticky top-0 z-20 bg-white/90 backdrop-blur border-b">
-//         <div className="mx-auto max-w-6xl px-4 py-3 flex flex-wrap gap-3 text-sm">
-//           <a href="#types" className="px-3 py-1 rounded-full border hover:bg-neutral-50">Product Types</a>
-//           <a href="#finishes" className="px-3 py-1 rounded-full border hover:bg-neutral-50">Finishes</a>
-//           <a href="#colors" className="px-3 py-1 rounded-full border hover:bg-neutral-50">Colors</a>
-//           <a href="#applications" className="px-3 py-1 rounded-full border hover:bg-neutral-50">Applications</a>
-//           <a href="#business" className="px-3 py-1 rounded-full border hover:bg-neutral-50">Supply &amp; Business</a>
-//         </div>
-//       </nav>
-
-//       {/* PRODUCT TYPES */}
-//       <Section
-//         id="types"
-//         title="Travertine Product Types"
-//         intro="Travertine can be processed into different products to meet design and construction needs. From tiles and slabs to blocks, pavers, and mosaics, each serves a specific purpose—delivering versatile, elegant, and durable solutions across project scales."
-//       >
-//         {productTypes.map((item) => (
-//           <Card key={item.slug} {...item} />
-//         ))}
-//       </Section>
-
-//       {/* FINISHES */}
-//       <Section
-//         id="finishes"
-//         title="Travertine Finishes"
-//         intro="Surface finish defines the appearance and performance of travertine. Polished, honed, tumbled, brushed, filled, and unfilled create distinct looks tailored to interior elegance or outdoor practicality—expanding both aesthetic and functional possibilities."
-//       >
-//         {finishes.map((item) => (
-//           <Card key={item.slug} {...item} />
-//         ))}
-//       </Section>
-
-//       {/* COLORS */}
-//       <Section
-//         id="colors"
-//         title="Travertine Colors & Variations"
-//         intro="Natural shades such as Ivory, Light, and Antico complement a wide range of styles. From bright contemporary schemes to antique rustic charm, these tones elevate modern and classic projects indoors and out."
-//       >
-//         {colors.map((item) => (
-//           <Card key={item.slug} {...item} />
-//         ))}
-//       </Section>
-
-//       {/* APPLICATIONS */}
-//       <Section
-//         id="applications"
-//         title="Travertine Applications"
-//         intro="Thanks to its strength and beauty, travertine performs across flooring, cladding, facades, bathrooms, kitchens, and pools. Its durability ensures long service life, while design flexibility suits homes and commercial projects worldwide."
-//       >
-//         {applications.map((item) => (
-//           <Card key={item.slug} {...item} />
-//         ))}
-//       </Section>
-
-//       {/* SUPPLY & BUSINESS */}
-//       <Section
-//         id="business"
-//         title="Travertine Supply & Business"
-//         intro="Turkey leads global travertine production with rich quarries, advanced processing, and robust export networks. Learn how suppliers, exporters, manufacturers, and distributors move stone from quarry to project with assured quality."
-//       >
-//         {business.map((item) => (
-//           <Card key={item.slug} {...item} />
-//         ))}
-//       </Section>
-
-//       {/* FOOTER CTA */}
       
-//     </main>
-//   );
-// }
 
-import React from 'react'
-
-const page = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <main className="min-h-screen bg-white text-slate-900">
+      {/* Breadcrumb */}
+      <div className="mx-auto w-[92%] max-w-[1160px] py-3 text-sm text-slate-500">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2">
+          <Link href="/en" className="hover:underline">Home</Link>
+          <span aria-hidden>›</span>
+          <span>Travertine</span>
+        </nav>
+      </div>
 
-export default page
+            <section className="bg-gradient-to-b from-teal-50/80 to-transparent py-10">
+        <div className="mx-auto grid w-[92%] max-w-[1160px] items-center gap-7 md:grid-cols-2">
+          <div>
+            <span className="inline-block rounded-full border border-slate-200 px-2.5 py-1 text-xs text-slate-500">Natural Stone • Quarry Direct</span>
+            <h1 className="mt-3 text-3xl leading-tight md:text-5xl font-semibold">
+              Travertine – Premium Quality Turkish Travertine Supplier
+            </h1>
+            <p className="mt-3 text-slate-600">
+              Architectural-grade travertine from Turkey in tiles, slabs, blocks, pavers and mosaics. Multiple colors and finishes. Reliable export partner with fast lead times.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3" role="group" aria-label="Primary actions">
+              <Link href="#get-quote" className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
+              <Link href="/en/contact" className="rounded-full border border-teal-700 px-5 py-3 font-semibold text-teal-700 hover:bg-teal-50">Contact</Link>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-4">
+              <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 min-w-[160px]"><strong>Direct Quarry</strong><br/><span className="text-slate-500">Stable supply</span></div>
+              <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 min-w-[160px]"><strong>Global Shipping</strong><br/><span className="text-slate-500">40+ countries</span></div>
+              <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 min-w-[160px]"><strong>Color Variety</strong><br/><span className="text-slate-500">Ivory • Silver • Noce</span></div>
+            </div>
+          </div>
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+            <Image src="/images/homepage/antikarkaplan4.webp" alt="Premium Turkish Travertine tiles and slabs" fill priority className="object-cover"/>
+          </div>
+        </div>
+      </section>
+
+     
+      <section id="about" className="py-14">
+        <div className="mx-auto grid w-[92%] max-w-[1160px] items-start gap-7 md:grid-cols-[1.1fr_.9fr]">
+          <div>
+            <h2 id="what-is-travertine" className="text-2xl font-semibold">What is Travertine?</h2>
+            <p className="mt-2 text-slate-700">
+              Travertine is a sedimentary natural stone formed by mineral springs. It is prized for its <strong>durability, thermal comfort and timeless elegance</strong>. Thanks to its porous structure, it can be finished from rustic to contemporary looks.
+            </p>
+            <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+              <li>Formats: <Link href="/travertines/tiles">tiles</Link>, <Link href="/travertines/slabs">slabs</Link>, blocks, pavers, special design</li>
+              <li>Finishes: polished, honed, tumbled, brushed, filled / unfilled</li>
+              <li>Colors: ivory, silver, walnut/noce, yellow, red, classic</li>
+            </ul>
+          </div>
+          <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 className="text-lg font-semibold">Why Choose <em>Turkish</em> Travertine?</h3>
+            <p className="mt-2 text-slate-600">Turkey is a world leader in travertine extraction and export, offering consistent quality and competitive pricing for large and boutique projects.</p>
+            <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+              <li>High density, rich color selections</li>
+              <li>Cost-effective sourcing and logistics</li>
+              <li>Strict quality control & packaging</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      
+      <section id="types" className="py-14">
+        <div className="mx-auto w-[92%] max-w-[1160px]">
+          <header className="mb-3">
+            <h2 className="text-2xl font-semibold">Types of Travertine We Offer</h2>
+            <p className="text-slate-600">Explore formats tailored for interior and exterior applications.</p>
+          </header>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {[
+              { href: "/en/travertine/tiles", title: "Travertine Tiles", img: "/images/homepage/kesim.webp", desc: "Ideal for flooring and bathrooms. Standard sizes 30×60, 60×60, 60×90." },
+              { href: "/en/travertine/slabs", title: "Travertine Slabs", img: "/images/homepage/slabler2.webp", desc: "For countertops and large surfaces. Thickness 2–3 cm; custom cuts available." },
+              { href: "/en/travertine/blocks", title: "Travertine Blocks", img: "/images/homepage/Ivoryblok.webp", desc: "Quarry-direct blocks for bespoke production and projects." },
+              { href: "/en/travertine/pavers", title: "Travertine Pavers", img: "/images/tiles/Ivorykesim.webp", desc: "Slip-resistant outdoor solution for pools, patios and gardens." },
+              { href: "/en/travertine/mosaics", title: "Travertine Mosaics", img: "/images/homepage/antikarkaplan4.webp", desc: "Decorative patterns for walls, showers and feature areas." },
+            ].map((p) => (
+              <article key={p.title} className="flex flex-col gap-3">
+                <Link href={p.href}>
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-slate-200">
+                    <Image src={p.img} alt={p.title} fill className="object-cover" />
+                  </div>
+                </Link>
+                <h3 className="text-lg font-semibold"><Link href={p.href} className="hover:underline">{p.title}</Link></h3>
+                <p className="text-sm text-slate-600">{p.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+     
+      <section id="colors-finishes" className="py-14">
+        <div className="mx-auto flex flex-col w-[92%] max-w-[1160px] gap-7 ">
+          <div>
+            <h2 className="text-2xl font-semibold">Travertine Colors</h2>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { src: "/images/homepage/Ivory/ivory.webp", alt: "Ivory Travertine", cap: "Ivory Travertine" },
+                { src: "/images/homepage/Light/light.webp", alt: "Light Travertine", cap: "Light Travertine" },
+                { src: "/images/homepage/antik/antik.webp", alt: "Antiko Travertine", cap: "Antiko" },
+              
+              ].map((c) => (
+                <figure key={c.alt} className="rounded-xl border border-slate-200 bg-slate-50 p-2">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+                    <Image src={c.src} alt={c.alt} fill className="object-cover" />
+                  </div>
+                  <figcaption className="mt-2 text-center text-sm text-slate-600">{c.cap}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold">Finishes</h2>
+            <ul className="mt-3 space-y-2 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <li><strong>Polished</strong> – glossy and reflective for premium interiors</li>
+              <li><strong>Honed</strong> – smooth matte finish, versatile use</li>
+              <li><strong>Tumbled</strong> – aged look with soft edges</li>
+              <li><strong>Brushed</strong> – textured feel for grip and character</li>
+              <li><strong>Filled / Unfilled</strong> – choose surface porosity as needed</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="applications" className="py-14">
+        <div className="mx-auto w-[92%] max-w-[1160px]">
+          <h2 className="text-2xl font-semibold">Applications</h2>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {[
+              { t: "Flooring", d: "Residential and commercial high-traffic zones." },
+              { t: "Wall Cladding", d: "Interior & exterior vertical surfaces." },
+              { t: "Facades", d: "Durable, elegant building envelopes." },
+              { t: "Pools & Gardens", d: "Non-slip outdoor pavers and copings." },
+              { t: "Bathrooms", d: "Moisture-friendly aesthetics for wet areas." },
+              { t: "Kitchens", d: "Countertops and splashbacks with character." },
+            ].map((f) => (
+              <div key={f.t} className="rounded-2xl border border-slate-200 bg-white p-5">
+                <h3 className="text-lg font-semibold">{f.t}</h3>
+                <p className="text-slate-600">{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+
+
+      {/* SUPPLY & EXPORT */}
+      <section id="supply" className="py-14">
+        <div className="mx-auto grid w-[92%] max-w-[1160px] items-center gap-7 md:grid-cols-2">
+          <div>
+            <h2 className="text-2xl font-semibold">Supply & Export from Turkey</h2>
+            <p className="mt-2 text-slate-700">
+              We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms (FOB, CIF, EXW) depending on destination.
+            </p>
+            <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
+              <li>Bulk & wholesale pricing</li>
+              <li>Custom sizes and surface selections</li>
+              <li>Crate and palletized packaging for safety</li>
+            </ul>
+          </div>
+          <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 className="text-lg font-semibold">Request Samples</h3>
+            <p className="mt-2 text-slate-600">Sample boards available for colors and finishes. Lead time typically 3–7 days.</p>
+            <Link href="#get-quote" className="mt-3 inline-block rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Request Now</Link>
+          </aside>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <QuestionsSection span="Blog Travertine" items={items} />
+
+      {/* CTA */}
+      <section id="get-quote" className="py-14">
+        <div className="mx-auto w-[92%] max-w-[1400px]">
+          <div className="grid items-center gap-3 rounded-2xl border border-slate-200 bg-indigo-50/40 p-6 md:grid-cols-[1fr_auto_auto]">
+           <div className="flex flex-col">
+             <h3 className="text-xl font-semibold">Get the Best Turkish Travertine for Your Project</h3>
+            <p className="text-slate-600">Send us your required colors, sizes, finishes and destination. We’ll reply with pricing and lead times.</p>
+           </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link href="/en/contact" className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
+              <Link href="https://wa.me/" target="_blank" className="rounded-full border border-teal-700 px-5 py-3 font-semibold text-teal-700 hover:bg-teal-50">WhatsApp</Link>
+              <Link href="mailto:info@majen.com.tr" className="rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-white">sales@majen.com.tr</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal nav */}
+      <footer className="py-10">
+        <div className="mx-auto w-[92%] max-w-[1160px]">
+          <nav className="flex flex-wrap gap-3">
+            {[
+              ["/en/travertine/tiles", "Travertine Tiles"],
+              ["/en/travertine/slabs", "Travertine Slabs"],
+              ["/en/travertine/blocks", "Travertine Blocks"],
+              ["/en/travertine/pavers", "Travertine Pavers"],
+              ["/en/travertine/mosaics", "Travertine Mosaics"],
+              ["/en/travertine/ivory", "Ivory Travertine"],
+              ["/en/travertine/silver", "Silver Travertine"],
+              ["/en/travertine/noce", "Noce Travertine"],
+              ["/en/travertine/polished", "Polished Travertine"],
+              ["/en/travertine/honed", "Honed Travertine"],
+              ["/en/travertine/tumbled", "Tumbled Travertine"],
+            ].map(([href, label]) => (
+              <Link key={href} href={href} className="text-teal-700 hover:underline">{label}</Link>
+            ))}
+          </nav>
+        </div>
+      </footer>
+
+      {/* JSON-LD (Breadcrumb + FAQ) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Travertine – Premium Turkish Travertine Supplier",
+            url: "https://majen.com.tr/en/travertine",
+            description:
+              "Premium quality Turkish Travertine direct from quarry. Tiles, slabs, blocks, pavers, mosaics. Multiple colors and finishes. Global export.",
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://majen.com.tr/en" },
+                { "@type": "ListItem", position: 2, name: "Travertine", item: "https://majen.com.tr/en/travertine" },
+              ],
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What makes Turkish Travertine unique?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "Turkey offers high-density travertine with rich color variety such as Ivory, Silver and Noce. Competitive pricing and strong supply chain make it ideal for global projects.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Where is travertine mostly used?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "Travertine is widely used for flooring, wall cladding, facades, pool surrounds, bathrooms and gardens.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What are the differences between filled and unfilled travertine?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "Filled travertine has pores filled with resin or cement for a smoother surface, while unfilled keeps its natural cavities for a rustic, textured appearance.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do I maintain travertine?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "Seal the surface periodically, clean with pH-neutral products, and avoid harsh acids. Outdoor pavers may require re-sealing depending on climate and usage.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+    </main>
+  );
+}

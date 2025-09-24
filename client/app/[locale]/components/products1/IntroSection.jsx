@@ -111,26 +111,7 @@ export default function IntroSection({
              <ShareButton label="Share" />
           </div>
 
-          {showBreadcrumb && (
-            <nav
-              className="mt-5 inline-flex items-center rounded-lg bg-white/20 backdrop-blur px-3 py-1.5 text-xs sm:text-sm"
-              aria-label="breadcrumb"
-            >
-              <ol className="flex items-center gap-x-2">
-                <li>
-                  <Link href={_crumbHomeHref} className="hover:underline">
-                    {_crumbHomeLabel}
-                  </Link>
-                </li>
-                <li className="text-white/60">/</li>
-                <li>
-                  <Link href={_crumbSectionHref} className="hover:underline">
-                    {_crumbSectionLabel}
-                  </Link>
-                </li>
-              </ol>
-            </nav>
-          )}
+          
         </div>
       </div>
 
@@ -179,13 +160,19 @@ export default function IntroSection({
                 {_intro2}
               </p>
             )}
-          </header>
 
-          <div className="ml-4">
+             <div className="ml-2 mt-4">
             <ShareButton label="Share" />
           </div>
 
-          {showBreadcrumb && (
+          </header>
+
+         
+
+        
+     
+
+          {/* {showBreadcrumb && (
             <nav
               className="bg-transparent px-4 py-3 rounded-sm text-black z-[999]"
               aria-label="breadcrumb"
@@ -204,7 +191,7 @@ export default function IntroSection({
                 </li>
               </ol>
             </nav>
-          )}
+          )} */}
 
           {/* Sağ görsel */}
           <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[500px] ">

@@ -1,7 +1,7 @@
 // app/components/products1/VariantCircleSection2.jsx
 "use client";
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation"; // <-- DEĞİŞTİ
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -9,36 +9,24 @@ export default function VariantCircleSection2({
   heading,
   productOrder = ["block", "slabs", "tiles", "special"],
   variantSlugs = [],
-  baseHref,
-  num,
+  // baseHref,  // <-- ARTIK GEREK YOK
   productSegments,
   locale = "tr",
   labels = {},
   productImages = {},
-  productHrefFor,
   className = "flex flex-col w-screen mb-10 items-center justify-center text-center",
   gridClassName = "mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center",
 }) {
   const t = useTranslations("TravertinePage");
 
-  // Başlık etiketleri
-  const defaultProductLabels =
-    locale === "tr"
-      ? {
-          block: t("variantsubtitle1"),
-          slabs: t("variantsubtitle2"),
-          tiles: t("variantsubtitle3"),
-          special: t("variantsubtitle4"),
-        }
-      : {
-          block: t("variantsubtitle1"),
-          slabs: t("variantsubtitle2"),
-          tiles: t("variantsubtitle3"),
-          special: t("variantsubtitle4"),
-        };
+  const defaultProductLabels = {
+    block: t("variantsubtitle1"),
+    slabs: t("variantsubtitle2"),
+    tiles: t("variantsubtitle3"),
+    special: t("variantsubtitle4"),
+  };
   const productLabels = { ...defaultProductLabels, ...(labels.product || {}) };
 
-  // Variant slug eşlemesi
   const VARIANT_SLUG_MAP = {
     antiko: "blaundos-antiko",
     light: "blaundos-light",
@@ -46,20 +34,25 @@ export default function VariantCircleSection2({
   };
 
   const humanize = (slug) =>
-    slug
-      .split("-")
-      .map((s) => (s ? s[0].toUpperCase() + s.slice(1) : s))
-      .join(" ");
+    slug.split("-").map((s) => (s ? s[0].toUpperCase() + s.slice(1) : s)).join(" ");
 
   const variantLabel = (slug) => labels.variants?.[slug] ?? humanize(slug);
 
-  const hrefFor = (productKey, variantSlug) => {
+  // i18n Link için route object üreten yardımcılar:
+  const productRoute = (productKey) => ({
+    pathname: "/travertine/[product]",
+    params: { product: productSegments?.[productKey] ?? productKey }
+  });
+
+  const variantRoute = (productKey, variantSlug) => {
     const seg = productSegments?.[productKey] ?? productKey;
     const finalSlug = VARIANT_SLUG_MAP[variantSlug] || variantSlug;
-    return `${baseHref}/${seg}/${finalSlug}`;
+    return {
+      pathname: "/travertine/[product]/[variant]",
+      params: { product: seg, variant: finalSlug }
+    };
   };
 
-  // Ürün-bazlı açılış cümlesi (yalnızca "start" farklı)
   const startByProduct = {
     block: t("variantSentence.block.start"),
     slabs: t("variantSentence.slabs.start"),
@@ -76,22 +69,17 @@ export default function VariantCircleSection2({
         ) : null}
 
         <p className="text-[12px] lg:text-[14px] w-[90%] flex mb-3">
-          Majen offers a full range of Wholesale Travertine From Turkey, organized into four main product categories: blocks, slabs, tiles, and custom designs. Each category serves different architectural and commercial needs, from quarry-direct blocks for factories to finished slabs and tiles for construction and interior design. With Blaundos Antiko, Light, and Ivory varieties, our travertine product categories provide diverse solutions for global importers and wholesalers.
+          Majen offers a full range of Wholesale Travertine From Turkey...
         </p>
 
         <div className={gridClassName}>
           {productOrder.map((pkey) => {
-            const productHref = productHrefFor
-              ? productHrefFor(pkey)
-              : `${baseHref}/${productSegments?.[pkey] ?? pkey}`;
-
-            const startText = startByProduct[pkey] || ""; // güvenli fallback
-
+            const startText = startByProduct[pkey] || "";
             return (
               <div key={pkey} className="group flex flex-col items-center text-center">
                 {/* Ürün görseli */}
                 <Link
-                  href={productHref}
+                  href={productRoute(pkey)}
                   className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] block"
                 >
                   <Image
@@ -105,17 +93,18 @@ export default function VariantCircleSection2({
                 </Link>
 
                 {/* Başlık */}
-                <Link href={productHref}>
-                <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900">
-                  {productLabels[pkey]}
-                </h4></Link>
+                <Link href={productRoute(pkey)}>
+                  <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900">
+                    {productLabels[pkey]}
+                  </h4>
+                </Link>
 
-                {/* Ürün-bazlı açılış + aynı linkler */}
+                {/* Variant linkleri */}
                 <p className="lg:mt-2 mt-1 text-center text-[12px] md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
                   {startText}{" "}
                   {variantSlugs.map((slug, i) => (
                     <span key={`${pkey}-${slug}`}>
-                      <Link href={hrefFor(pkey, slug)} className="text-blue-600 hover:underline">
+                      <Link href={variantRoute(pkey, slug)} className="text-blue-600 hover:underline">
                         {variantLabel(slug)}
                       </Link>
                       {i < variantSlugs.length - 1 ? ", " : ""}
@@ -125,7 +114,7 @@ export default function VariantCircleSection2({
                 </p>
 
                 <Link
-                  href={productHref}
+                  href={productRoute(pkey)}
                   className="px-5 py-[6px] bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
                 >
                   {t("buttonText", { default: "Go to page" })}

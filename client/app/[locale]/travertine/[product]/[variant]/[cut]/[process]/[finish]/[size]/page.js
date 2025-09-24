@@ -123,7 +123,7 @@ export default function SizePage() {
       />
 
       {/* ======= Detaylı Breadcrumb Bar (tam yol) ======= */}
-      <div className="px-6 mt-10 lg:mt-16">
+      {/* <div className="px-6 mt-10 lg:mt-16">
         <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto -mt-6 md:-mt-8">
           <div className="rounded-xl border border-neutral-200 bg-white/80 backdrop-blur shadow-sm ring-1 ring-black/5 px-3 py-2 md:px-4 md:py-2">
             <ol className="flex flex-wrap items-center gap-1 text-xs md:text-sm text-neutral-700">
@@ -162,7 +162,7 @@ export default function SizePage() {
             </ol>
           </div>
         </nav>
-      </div>
+      </div> */}
 
       {/* ======= İçerik ======= */}
       <section className="max-w-6xl mx-auto px-6 pt-6 md:pt-8 pb-10 md:pb-16">

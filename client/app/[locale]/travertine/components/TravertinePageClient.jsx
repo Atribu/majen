@@ -1,7 +1,7 @@
 
 // app/[locale]/(catalog)/travertine/page.jsx
 "use client";
-
+import { useParams, usePathname } from "next/navigation";
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
@@ -19,6 +19,7 @@ import TextSection from "../../components/products1/TextSection";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
+import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
 
 const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
@@ -87,9 +88,26 @@ export default function TravertinePageClient() {
     publisher: { "@type": "Organization", name: "Majen" },
   };
 
+     const   depth = 1
+      const pathname = usePathname() || ""; // boş string fallback
+      const segments = pathname.split("/").filter(Boolean); 
+      const lastSegment = pathname.split("/").filter(Boolean).pop(); 
+      const selectedSegments = segments.slice(-depth);
+
   return (
     <main className=" py-10 overflow-hidden">
      <IntroSection/>
+
+      <BreadcrumbsExact
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+        selectedSegments={selectedSegments}
+        className="mt-4 mb-10"
+      />
+      
+
       {/* Info Cards */}
       <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%] ">
         {cards.map((c, i) => (
@@ -114,7 +132,7 @@ export default function TravertinePageClient() {
   heading= {t("variantsHeading")}
   productOrder={["block", "slabs", "tiles", "special"]}
   variantSlugs={["antiko", "light", "ivory"]}
-  baseHref={baseHref}
+
   productSegments={PRODUCT_SLUGS[locale]}
   locale={locale}
   productImages={{ block, slabs, tiles, special }}

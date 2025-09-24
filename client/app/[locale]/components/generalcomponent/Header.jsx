@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import LangSwitcher from "@/LangSwitcher";
-import Link from "next/link";
+import {Link} from '@/i18n/navigation';
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";

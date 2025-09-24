@@ -85,7 +85,8 @@ export default async function RootLayout({ children, params }) {
 
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  // const messages = await getMessages();
+    const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>
@@ -128,7 +129,6 @@ export default async function RootLayout({ children, params }) {
     </Suspense>
           </>
         )}
-
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <BookSection />

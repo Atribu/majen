@@ -1,8 +1,9 @@
 // app/[locale]/(catalog)/product/page.jsx
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
+import React from 'react'
 import {
   BASE_BY_LOCALE,
   PRODUCT_KEYS,
@@ -28,6 +29,7 @@ import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import VariantCircleSection2 from "../../components/products1/VariantCircleSection2";
 import OtherOptions from "../../components/generalcomponent/OtherOptions";
+import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
 
 const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
 
@@ -190,6 +192,13 @@ const productAltMap = {
   
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
+
+   const   depth = 1
+    const pathname = usePathname() || ""; // boş string fallback
+    const segments = pathname.split("/").filter(Boolean); 
+    const lastSegment = pathname.split("/").filter(Boolean).pop(); 
+    const selectedSegments = segments.slice(-depth);
+
   return (
     <main className=" py-7 mt-16 overflow-x-hidden">
       {/* ÜST INTRO */}
@@ -205,6 +214,17 @@ const productAltMap = {
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
         crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
       />
+
+    
+ <BreadcrumbsExact
+  prefix={prefix}
+  baseHref={baseHref}
+  crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+  crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+  selectedSegments={selectedSegments}
+  className="mt-6"
+/>
+
 
       {/* 4 BİLGİ KARTI */}
      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
