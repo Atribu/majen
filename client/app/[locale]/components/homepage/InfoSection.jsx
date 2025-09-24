@@ -51,7 +51,7 @@ export default function InfoSection() {
   const locale = useLocale();
   const lang = getLang(locale);
   const prefix = `/${locale}`;
-  const base = baseFor(locale); // "tr" → "traverten"
+ const base = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
   const contactPath = `${prefix}/${lang === "tr" ? "iletisim" : "contact"}`;
 
   const items = [

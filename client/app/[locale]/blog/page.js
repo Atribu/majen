@@ -59,7 +59,7 @@ export default async function Page({ params }) {
               {/* Cover */}
               <div className="relative w-full aspect-[16/10] bg-neutral-100">
                 <Image
-                  src={p.cover || "/images/blog/placeholder.webp"}
+                  src={"/images/homepage/antikoarkplan.webp"}
                   alt={p.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"

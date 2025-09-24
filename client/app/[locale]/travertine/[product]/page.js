@@ -53,7 +53,7 @@ export default function ProductPage() {
 
   const prefix = `/${locale}`;
   const baseSegment = BASE_BY_LOCALE[locale];
-  const baseHref = `${prefix}/${baseSegment}`;
+  const baseHref = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
 
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
