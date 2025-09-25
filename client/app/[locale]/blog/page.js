@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import ContactFrom from "../components/generalcomponent/ContactFrom";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
@@ -31,21 +32,19 @@ export default async function Page({ params }) {
   const posts = t.raw("posts") || [];
 
   return (
-    <main className="px-5 py-10 lg:py-24">
+    <main className="px-5 py-10 mt-10 lg:py-24">
       {/* Header */}
       <header className="mx-auto max-w-5xl">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{t("title")}</h1>
-        <p className="mt-2 text-neutral-700 max-w-3xl">{t("intro")}</p>
+        <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold tracking-tight">{t("title")}</h1>
+        <p className="mt-2 text-neutral-700 max-w-3xl text-[12px] md:text-[14px] lg:text-[16px]">{t("intro")}</p>
       </header>
 
       {/* Grid */}
       <section
         className="
-          mx-auto mt-8 md:mt-10 max-w-7xl
+          mx-auto mt-5 md:mt-10 max-w-7xl
           grid gap-6 sm:gap-7
-          [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]
-        "
-      >
+          [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
         {posts.map((p) => (
           <article
             key={p.slug}
@@ -70,27 +69,27 @@ export default async function Page({ params }) {
 
               {/* Body */}
               <div className="p-4 md:p-5">
-                <div className="flex items-center gap-2 text-xs text-neutral-500">
+                <div className="flex items-center gap-2 text-neutral-500 text-[12px] md:text-[14px] lg:text-[16px]">
                   {p.date ? <time dateTime={p.date}>{p.date}</time> : null}
                   {p.category ? (
                     <>
                       <span>•</span>
-                      <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5">
+                      <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 ">
                         {t(`categories.${p.category}`, { default: p.category })}
                       </span>
                     </>
                   ) : null}
                 </div>
 
-                <h2 className="mt-2 text-lg md:text-xl font-semibold leading-snug line-clamp-2">
+                <h2 className="mt-2  text-[16px] md:text-[18px] lg:text-[20px] font-semibold leading-snug line-clamp-2">
                   {p.title}
                 </h2>
 
-                <p className="mt-2 text-sm md:text-[15px] text-neutral-700 line-clamp-3">
+                <p className="mt-1 lg:mt-2 text-sm text-neutral-700 line-clamp-3 text-[12px] md:text-[14px] lg:text-[16px]">
                   {p.excerpt}
                 </p>
 
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-blue-600">
+                <span className="mt-2 lg:mt-3 inline-flex items-center gap-2 text-[12px] md:text-[14px] lg:text-[16px] font-medium text-teal-700">
                   {t("readMore")}
                   <svg
                     className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
@@ -104,6 +103,8 @@ export default async function Page({ params }) {
           </article>
         ))}
       </section>
+
+      <ContactFrom/>
     </main>
   );
 }

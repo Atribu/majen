@@ -241,25 +241,29 @@ export default async function Page({ params }) {
 
       {/* Internal nav */}
       <footer className="py-10">
-        <div className="mx-auto w-[92%] max-w-[1160px]">
-          <nav className="flex flex-wrap gap-3">
-            {[
-              ["/en/travertine/tiles", "Travertine Tiles"],
-              ["/en/travertine/slabs", "Travertine Slabs"],
-              ["/en/travertine/blocks", "Travertine Blocks"],
-              ["/en/travertine/pavers", "Travertine Pavers"],
-              ["/en/travertine/mosaics", "Travertine Mosaics"],
-              ["/en/travertine/ivory", "Ivory Travertine"],
-              ["/en/travertine/silver", "Silver Travertine"],
-              ["/en/travertine/noce", "Noce Travertine"],
-              ["/en/travertine/polished", "Polished Travertine"],
-              ["/en/travertine/honed", "Honed Travertine"],
-              ["/en/travertine/tumbled", "Tumbled Travertine"],
-            ].map(([href, label]) => (
-              <Link key={href} href={href} className="text-teal-700 hover:underline">{label}</Link>
-            ))}
-          </nav>
-        </div>
+        <div className="mx-auto w-[92%] max-w-[1300px]">
+    <ul className="flex flex-wrap gap-5 list-disc list-inside text-teal-600">
+      {[
+        ["/en/travertine/tiles", "Travertine Tiles"],
+        ["/en/travertine/slabs", "Travertine Slabs"],
+        ["/en/travertine/blocks", "Travertine Blocks"],
+        ["/en/travertine/pavers", "Travertine Pavers"],
+        ["/en/travertine/mosaics", "Travertine Mosaics"],
+        ["/en/travertine/ivory", "Ivory Travertine"],
+        ["/en/travertine/silver", "Silver Travertine"],
+        ["/en/travertine/noce", "Noce Travertine"],
+        // ["/en/travertine/polished", "Polished Travertine"],
+        // ["/en/travertine/honed", "Honed Travertine"],
+        // ["/en/travertine/tumbled", "Tumbled Travertine"],
+      ].map(([href, label]) => (
+        <li key={href}>
+          <Link href={href} className="text-teal-700 hover:underline pr-0">
+            {label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
       </footer>
 
       {/* JSON-LD (Breadcrumb + FAQ) */}

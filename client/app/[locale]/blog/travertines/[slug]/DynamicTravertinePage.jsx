@@ -90,13 +90,13 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   );
 
   const Section = ({ id, title, children }) => (
-    <section id={id} className="scroll-mt-28 py-10">
+    <section id={id} className="scroll-mt-28 py-10 flex flex-col items-center justify-center text-center">
       {title && (
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
           {title}
         </h2>
       )}
-      <div className="mt-4 space-y-6 text-neutral-700 leading-relaxed">
+      <div className="mt-1 md:mt-2 lg:mt-4 space-y-6 text-neutral-700 leading-relaxed">
         {children}
       </div>
     </section>
@@ -118,7 +118,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
         <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">
           {title}
         </h3>
-        {blurb && <p className="mt-2 text-sm text-neutral-700">{blurb}</p>}
+        {blurb && <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] text-neutral-700 leading-[120%] lg:leading-relaxed">{blurb}</p>}
         <span className="mt-3 inline-block text-sm">Read more →</span>
       </div>
     </Link>
@@ -275,12 +275,12 @@ const handleTocClick = (e, id) => {
           )}
         </div>
         <Container>
-          <div className="py-8 flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <div className="py-4 lg:py-8 flex flex-col items-center justify-center text-center">
+            <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-bold tracking-tight">
               {safePage.h1}
             </h1>
             {safePage.intro && (
-              <p className="mt-4 max-w-[1300px] text-base md:text-lg leading-relaxed text-neutral-700">
+              <p className="mt-0 md:mt-2 lg:mt-4 max-w-[1300px] text-base md:text-lg leading-relaxed text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
                 {safePage.intro}
               </p>
             )}
@@ -295,12 +295,12 @@ const handleTocClick = (e, id) => {
   style={{ top: 80 }} // header’in hemen altına yapışsın
 >
   {/* Başlık + ilerleme çubuğu */}
-  <div className="px-4 pt-3 pb-2 flex items-center justify-between">
-    <h2 className="text-sm font-semibold text-neutral-800">On this page</h2>
+  <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-2 flex items-center justify-between">
+    <h2 className="text-[14px] md:text-[14px] lg:text-[16px] font-semibold text-neutral-800">On this page</h2>
     {tocItems.length > 1 && (
-      <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden">
+      <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden text-[12px] md:text-[14px] lg:text-[16px]">
         <div
-          className="h-full bg-neutral-800/70 transition-all"
+          className="h-full bg-neutral-800/70 transition-all "
           style={{
             width: `${(Math.max(0, tocItems.findIndex(i => i.id === active)) + 1) / tocItems.length * 100}%`,
           }}
@@ -309,8 +309,7 @@ const handleTocClick = (e, id) => {
     )}
   </div>
 
-  {/* Pills: mobilde yatay kaydırılabilir, lg’de dikey */}
-  <nav className="px-2 pb-3 ">
+  <nav className="px-1 lg:px-2 pb-3 ">
   <ol className="flex flex-wrap gap-2 px-2 py-1">
     {tocItems.map((x) => {
       const isActive = active === x.id;
@@ -320,13 +319,13 @@ const handleTocClick = (e, id) => {
             href={`#${x.id}`}
             onClick={(e) => handleTocClick(e, x.id)}
             className={[
-              "inline-flex items-center gap-2 text-xs md:text-sm px-3 py-1.5 rounded-full border transition",
+              "inline-flex items-center gap-2 text-xs md:text-sm px-1 lg:px-3 py-1 lg:py-1.5 rounded-full border transition",
               isActive
                 ? "bg-neutral-900 text-white border-neutral-900"
                 : "bg-white/80 hover:bg-neutral-100 border-neutral-200 text-neutral-700",
             ].join(" ")}
           >
-            <span className={`h-1.5 w-1.5 rounded-full ${isActive ? "bg-white" : "bg-neutral-400"}`} />
+            {/* <span className={`h-1.5 w-1.5 rounded-full ${isActive ? "bg-white" : "bg-neutral-400"}`} /> */}
             {x.label}
           </a>
         </li>
@@ -339,7 +338,7 @@ const handleTocClick = (e, id) => {
           <div className="lg:col-span-9 ">
             {s.colors && (
               <Section id="colors" title={s.colors.h2}>
-                <p>{s.colors.intro}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.colors.intro}</p>
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {colorCards.map((c) => (
                     <Card key={c.href} {...c} />
@@ -350,7 +349,7 @@ const handleTocClick = (e, id) => {
 
             {s.finishes && (
               <Section id="finishes" title={s.finishes.h2}>
-                <p>{s.finishes.intro}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.finishes.intro}</p>
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
                   {finishCards.map((f) => (
                     <Card key={f.href} {...f} />
@@ -361,12 +360,12 @@ const handleTocClick = (e, id) => {
 
             {s.applications && (
               <Section id="applications" title={s.applications.h2} className="flex flex-col items-center justify-center text-center">
-                <p>{s.applications.intro}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.applications.intro}</p>
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm ">
                   {appCards.map((c) => (
                     <div key={c.href} className="rounded-2xl border p-5">
                       <h3 className="text-base font-semibold">{c.title}</h3>
-                      <p className="mt-2">{c.desc}</p>
+                      <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px]">{c.desc}</p>
                       <Link href={c.href} className="mt-3 inline-block underline">
                         Learn more
                       </Link>
@@ -378,7 +377,7 @@ const handleTocClick = (e, id) => {
 
             {s.specs && (
               <Section id="specs" title={s.specs.h2}>
-                <p>{s.specs.intro}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.specs.intro}</p>
                 <div className="overflow-auto mt-4">
                   <table className="min-w-[640px] w-full text-sm border rounded-2xl overflow-hidden">
                     <thead>
@@ -404,7 +403,7 @@ const handleTocClick = (e, id) => {
 
             {s.install && (
               <Section id="install" title={s.install.h2}>
-                <p>{s.install.intro}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.install.intro}</p>
               </Section>
             )}
 
@@ -472,7 +471,7 @@ const handleTocClick = (e, id) => {
                 <h2 className="text-xl md:text-2xl font-semibold">
                   {t("common.cta.title")}
                 </h2>
-                <p className="mt-2 text-sm text-neutral-700">
+                <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] text-neutral-700">
                   {t("common.cta.desc")}
                 </p>
               </div>

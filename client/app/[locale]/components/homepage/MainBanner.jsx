@@ -5,8 +5,8 @@ import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
 
 export default function MainBanner() {
-  const videoSrc = "/videos/newmajendesktop.mp4"; // public/videos altında
-  const videomobileSrc = "/videos/newmajenmobile.mp4"; 
+  const videoSrc = "/videos/desktop.mp4"; 
+  const videomobileSrc = "/videos/mobile.mp4"; 
   const HIDE_DELAY_MS = 5000; // ⏱️ Logo görünme süresi
 
   const [showLogo, setShowLogo] = useState(true);
@@ -16,7 +16,7 @@ export default function MainBanner() {
 
   // Yedek zamanlayıcı (bazı cihazlarda canplay gecikebilir)
   useEffect(() => {
-    backupTimerRef.current = setTimeout(() => setShowLogo(false), HIDE_DELAY_MS + 2000);
+    backupTimerRef.current = setTimeout(() => setShowLogo(false), HIDE_DELAY_MS + 1000);
     return () => {
       clearTimeout(backupTimerRef.current);
       clearTimeout(timerRef.current);

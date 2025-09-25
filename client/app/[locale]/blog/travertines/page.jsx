@@ -6,17 +6,24 @@ import { getTranslations } from "next-intl/server";
 import TravertineBlog from "./components/TravertineBlog";
 
 export const metadata = {
-  title: "Travertine – Premium Turkish Travertine Supplier | Majen",
+  title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
   description:
-    "Premium quality Turkish Travertine direct from quarry. Tiles, slabs, blocks, pavers, mosaics. Multiple colors & finishes. Global export, fast lead times.",
-  alternates: { canonical: "https://majen.com.tr/en/travertine" },
+    "Discover Turkish travertines: blocks, slabs, tiles & special designs. Learn types, colors, finishes, applications and export methods. Supplier guide for global buyers.",
+  alternates: { canonical: "https://www.majen.com.tr/en/blog/travertines" },
   openGraph: {
     type: "website",
-    url: "https://majen.com.tr/en/travertine",
-    title: "Travertine – Premium Turkish Travertine Supplier | Majen",
+    url: "https://www.majen.com.tr/en/blog/travertines",
+    title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
     description:
-      "Turkish Travertine in tiles, slabs, blocks, pavers & mosaics. Colors: Ivory, Silver, Noce, Walnut and more. Finishes: Polished, Honed, Tumbled. Global shipping.",
+      "Turkish travertine types, colors, finishes, applications and export (FOB/CIF/EXW).",
     images: [{ url: "/assets/images/travertine/hero.jpg" }],
+  },
+   twitter: {
+    card: "summary_large_image",
+    title: "Travertine from Turkey | Complete Guide",
+    description: "Types, finishes, applications and export methods.",
+    images: ["https://www.majen.com.tr/media/travertine-hero.webp"],
+    creator: "@majenstone" // varsa Twitter handle burada ekleyebilirsin
   },
   robots: {
     index: true,
@@ -41,8 +48,61 @@ export default async function Page({ params }) {
         { q: t("q1"), a: t("answer1") },
         { q: t("q2"), a: t("answer2") },
         { q: t("q3"), a: t("answer3") },
-        { q: t("q4"), a: t("answer4") }
+        { q: t("q4"), a: t("answer4") },
+          { q: t("q5"), a: t("answer5") },
+            { q: t("q6"), a: t("answer6") }
       ];
+
+
+        const baseUrl = "https://www.majen.com.tr";
+  const path = `/${locale}/blog/travertines`; // bu sayfanın kanonik yolu
+  const canonicalUrl = `${baseUrl}${path}`;
+
+  // FAQ'ı items'tan üret (verdiğin 4 soru yapısına da uyumlu)
+  const faqEntities = items.slice(0, 4).map((it) => ({
+    "@type": "Question",
+    name: it.q,
+    acceptedAnswer: { "@type": "Answer", text: it.a },
+  }));
+
+  const graph = [
+    {
+      "@type": "BlogPosting",
+      "@id": `${canonicalUrl}#post`,
+      headline:
+        "Travertine from Turkey | Complete Guide to Turkish Travertines",
+      description:
+        "Guide to Turkish travertine: types, colors, finishes, applications and export (FOB/CIF/EXW).",
+      inLanguage: locale,
+      mainEntityOfPage: canonicalUrl,
+      author: { "@type": "Organization", name: "Majen" },
+      publisher: {
+        "@type": "Organization",
+        name: "Majen",
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/media/logo.png`,
+        },
+      },
+      image: `${baseUrl}/media/travertine-hero.webp`,
+      datePublished: "2025-01-15",
+      dateModified: "2025-09-25",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      mainEntity: faqEntities,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumbs`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/${locale}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${baseUrl}/${locale}/blog` },
+        { "@type": "ListItem", position: 3, name: "Travertine", item: canonicalUrl },
+      ],
+    },
+  ];
 
 
       
@@ -66,7 +126,7 @@ export default async function Page({ params }) {
           <div>
             <h2 className="text-2xl font-semibold">Supply & Export from Turkey</h2>
             <p className="mt-2 text-slate-700">
-              We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms (FOB, CIF, EXW) depending on destination.
+              We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms <Link href="/howweexport" className="hover:text-teal-700">(FOB, CIF, EXW)</Link> depending on destination.
             </p>
             <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
               <li>Bulk & wholesale pricing</li>
@@ -95,9 +155,9 @@ export default async function Page({ params }) {
            </div>
 
             <div className="flex flex-wrap gap-3">
-              <Link href="/en/contact" className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
+              <Link href="/en/contactus" className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
               <Link href="https://wa.me/" target="_blank" className="rounded-full border border-teal-700 px-5 py-3 font-semibold text-teal-700 hover:bg-teal-50">WhatsApp</Link>
-              <Link href="mailto:info@majen.com.tr" className="rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-white">sales@majen.com.tr</Link>
+              <Link href="mailto:info@majen.com.tr" className="rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-white">info@majen.com.tr</Link>
             </div>
           </div>
         </div>
@@ -127,70 +187,12 @@ export default async function Page({ params }) {
       </footer>
 
       {/* JSON-LD (Breadcrumb + FAQ) */}
-      <script
+     <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Travertine – Premium Turkish Travertine Supplier",
-            url: "https://majen.com.tr/en/travertine",
-            description:
-              "Premium quality Turkish Travertine direct from quarry. Tiles, slabs, blocks, pavers, mosaics. Multiple colors and finishes. Global export.",
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://majen.com.tr/en" },
-                { "@type": "ListItem", position: 2, name: "Travertine", item: "https://majen.com.tr/en/travertine" },
-              ],
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What makes Turkish Travertine unique?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text:
-                    "Turkey offers high-density travertine with rich color variety such as Ivory, Silver and Noce. Competitive pricing and strong supply chain make it ideal for global projects.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Where is travertine mostly used?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text:
-                    "Travertine is widely used for flooring, wall cladding, facades, pool surrounds, bathrooms and gardens.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What are the differences between filled and unfilled travertine?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text:
-                    "Filled travertine has pores filled with resin or cement for a smoother surface, while unfilled keeps its natural cavities for a rustic, textured appearance.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How do I maintain travertine?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text:
-                    "Seal the surface periodically, clean with pH-neutral products, and avoid harsh acids. Outdoor pavers may require re-sealing depending on climate and usage.",
-                },
-              },
-            ],
+            "@graph": graph,
           }),
         }}
       />
