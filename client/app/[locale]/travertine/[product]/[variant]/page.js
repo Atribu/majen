@@ -56,9 +56,9 @@ export default function VariantPage() {
   const locale = useLocale();
   const t = useTranslations("ProductPage");
 
-  const prefix = `/${locale}`;
-  const baseSegment = baseFor(locale);
-  const baseHref = `${prefix}/${baseSegment}`;
+    const prefix = `/${locale}`;
+    const baseSegment = BASE_BY_LOCALE[locale];
+ const baseHref = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
 
   // ürün anahtarı
   const productKey =

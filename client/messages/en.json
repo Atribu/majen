@@ -1591,752 +1591,1083 @@
   }
 },
 
-       "travertine-slabs": {
-        "metaTitle": "Travertine Slabs | Turkish Ivory, Light & Antico – Finishes, Uses, FAQ",
-        "metaDesc": "Explore Turkish Travertine Slabs in Ivory, Light & Antico. Compare polished, honed, brushed & tumbled finishes for countertops, cladding & facades. Specs, gallery & FAQs.",
-        "h1": "Travertine Slabs",
-        "intro": "Travertine slabs are large-format natural stone panels widely used in architecture and interior design. Their expansive dimensions highlight natural veining and allow for seamless applications in kitchens, bathrooms, facades, and commercial spaces. Turkish travertine slabs are internationally recognized for their durability, beauty, and versatility, making them the preferred choice for designers and builders worldwide.",
-        "sections": {
-          "colors": {
-            "h2": "Travertine Slab Colors",
-            "intro": "Travertine slabs come in timeless colors such as Ivory, Light, and Antico, each offering distinct aesthetics. Ivory provides brightness and sophistication for elegant interiors. Light brings warm beige tones that blend seamlessly into modern and classic environments. Antico delivers earthy, rustic character that evokes Mediterranean and traditional architecture. These natural variations ensure every slab is unique, allowing architects and homeowners to create surfaces that balance functionality with authentic beauty.",
-            "items": [
-              {
-                "slug": "ivory",
-                "h3": "Ivory Travertine Slabs",
-                "blurb": "Ivory slabs create bright, sophisticated spaces and are a top choice for kitchens and bathrooms.",
-                "h4": "Benefits of Ivory Travertine Slabs",
-                "benefits": [
-                  "Elegant, light-reflecting surfaces enhance room brightness",
-                  "Durable and suitable for both residential and commercial projects",
-                  "Neutral tone pairs well with wood, glass, and modern finishes"
-                ],
-                "h5": "Where to Use Ivory Travertine Slabs",
-                "uses": [
-                  "Kitchen countertops and islands",
-                  "Bathroom vanity tops and shower walls",
-                  "Interior wall cladding in luxury spaces"
-                ]
-              },
-              {
-                "slug": "light",
-                "h3": "Light Travertine Slabs",
-                "blurb": "Light travertine slabs feature warm beige tones, making them versatile for both interior flooring and exterior cladding projects."
-              },
-              {
-                "slug": "antico",
-                "h3": "Antico Travertine Slabs",
-                "blurb": "Antico slabs display rustic, earthy colors with an antique effect, often chosen for Mediterranean-inspired architecture and outdoor designs."
-              }
-            ]
-          },
-          "finishes": {
-            "h2": "Travertine Slab Finishes",
-            "intro": "The finish of a travertine slab defines its texture, reflectivity, and overall character. Polished slabs are glossy and emphasize veining, perfect for luxury interiors. Honed slabs offer a matte finish with contemporary appeal. Brushed slabs introduce a gentle texture and slip resistance, while tumbled slabs create an antique look ideal for rustic projects. Selecting the right finish allows designers to match performance with aesthetics in kitchens, facades, and commercial buildings.",
-            "items": [
-              {
-                "slug": "polished",
-                "h3": "Polished Travertine Slabs",
-                "blurb": "Polished slabs showcase reflective surfaces and bold veining, used in kitchens, bathrooms, and hotel lobbies."
-              },
-              {
-                "slug": "honed",
-                "h3": "Honed Travertine Slabs",
-                "blurb": "Honed slabs provide a matte, non-reflective finish that fits modern interiors and reduces glare under strong lighting."
-              },
-              {
-                "slug": "brushed",
-                "h3": "Brushed Travertine Slabs",
-                "blurb": "Brushed slabs add subtle texture for grip and depth, ideal for transitional areas and outdoor terraces."
-              },
-              {
-                "slug": "tumbled",
-                "h3": "Tumbled Travertine Slabs",
-                "blurb": "Tumbled slabs deliver rustic charm and antique style, widely used in courtyards, gardens, and traditional projects."
-              }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Travertine slabs are used wherever seamless, large surfaces are needed. In kitchens, they become countertops, islands, and backsplashes. In bathrooms, they serve as vanity tops, shower surrounds, and flooring. On building facades, slabs provide strength, weather resistance, and elegance. Commercial interiors such as hotel lobbies and office spaces also benefit from their luxurious appearance. This versatility makes travertine slabs an essential material for both functional and decorative purposes.",
-            "cards": [
-              { "slug": "kitchen", "title": "Kitchen Slabs", "desc": "Countertops and backsplashes combining durability with natural beauty." },
-              { "slug": "bathroom", "title": "Bathroom Slabs", "desc": "Vanities and shower walls creating spa-like environments." },
-              { "slug": "facade", "title": "Facade Slabs", "desc": "Exterior facades offering strength, insulation, and aesthetic value." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Travertine slabs are processed in large dimensions to meet international design and construction requirements. Standard slabs range from 2400–3000 mm in length and 1200–2000 mm in width. Thickness typically falls between 20–30 mm, with custom cuts available from 15–40 mm. Water absorption is around 0.4–0.8%, making sealing essential. These specifications make travertine slabs suitable for demanding applications, from residential kitchens to high-traffic commercial facades.",
-            "table": [
-              { "prop": "Standard sizes", "value": "2400–3000 × 1200–2000 mm", "notes": "Custom dimensions available" },
-              { "prop": "Thickness", "value": "20–30 mm (custom 15–40 mm)", "notes": "Project dependent" },
-              { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation and maintain regularly" },
-              { "prop": "Finish options", "value": "Polished / Honed / Brushed / Tumbled", "notes": "Select finish by functional and design needs" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Installing travertine slabs requires professional handling due to their size and weight. Proper support and adhesive must be used to ensure stability. In kitchens and bathrooms, sealing is critical to protect against staining and moisture. Outdoor facades should include appropriate anchoring systems. Routine care involves cleaning with neutral products and resealing every 12–24 months. Avoid acids and harsh chemicals that may damage the stone surface."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Large slabs create seamless, luxurious surfaces",
-              "Highlight natural veining and patterns for striking designs",
-              "Durable, long-lasting, and add property value"
-            ],
-            "cons": [
-              "Heavier and more difficult to handle than tiles",
-              "Higher cost compared to smaller tile formats",
-              "Requires sealing and professional installation"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "Discover how travertine slabs are used in kitchens, bathrooms, facades, and commercial projects. These images showcase the versatility and timeless appeal of slabs in real-world applications."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to common questions about travertine slabs, their uses, maintenance, and performance in different environments.",
-            "items": [
-              {
-                "q": "What are travertine slabs used for?",
-                "a": "Travertine slabs are used for countertops, backsplashes, bathroom vanities, shower walls, facades, and luxury commercial interiors. Their large size reduces joints and highlights natural veining."
-              },
-              {
-                "q": "Are travertine slabs suitable for outdoor use?",
-                "a": "Yes. Travertine slabs, especially in brushed and tumbled finishes, are suitable for outdoor applications such as facades, terraces, and courtyards. Proper anchoring and sealing ensure durability against weather."
-              },
-              {
-                "q": "How thick are travertine slabs?",
-                "a": "Standard thickness ranges from 20–30 mm, but custom sizes from 15–40 mm can be produced to meet specific project requirements. Thickness impacts handling, cost, and installation methods."
-              },
-              {
-                "q": "Do travertine slabs need sealing?",
-                "a": "Yes. Sealing is essential to protect slabs from staining, especially in kitchens and bathrooms. Sealing should be done at installation and reapplied every 12–24 months depending on use and exposure."
-              }
-            ]
-          }
-        }
-      },
+"travertine-slabs": {
+  "metaTitle": "Travertine Slabs | Turkish Ivory, Light & Antico – Finishes, Uses, FAQ",
+  "metaDesc": "Explore Turkish Travertine Slabs in Ivory, Light & Antico. Compare polished, honed, brushed & tumbled finishes for countertops, cladding & facades. Specs, gallery & FAQs.",
+  "h1": "Travertine Slabs",
+  "intro": "Travertine slabs are large-format natural stone panels widely used in architecture and interior design. Their expansive dimensions highlight natural veining and allow for seamless applications in kitchens, bathrooms, facades, and commercial spaces. Turkish travertine slabs are internationally recognized for their durability, beauty, and versatility, making them the preferred choice for designers and builders worldwide.",
 
-      "travertine-blocks": {
-        "metaTitle": "Travertine Blocks | Turkish Quarry Stone for Slabs, Tiles & Export",
-        "metaDesc": "Explore Turkish Travertine Blocks in Ivory, Light & Antico. Learn how raw quarry blocks are cut into slabs and tiles. Specs, export info, pros & cons, and FAQs.",
-        "h1": "Travertine Blocks",
-        "intro": "Travertine blocks are the raw form of natural stone extracted directly from quarries. These massive pieces represent the first stage of travertine production, later cut into slabs, tiles, or customized shapes for construction and design. Turkey, with its abundant travertine reserves, is one of the largest exporters of blocks worldwide, supplying material to factories, distributors, and projects across the globe.",
-        "sections": {
-          "colors": {
-            "h2": "Travertine Block Colors",
-            "intro": "Travertine blocks are available in Ivory, Light, and Antico variations, reflecting the same natural tones seen in slabs and tiles. At the block stage, color selection is critical, as it determines the final appearance of slabs, tiles, and other processed products. Buyers often request specific shades for consistent large-scale projects. Ivory offers clean, bright tones, Light adds warm beige versatility, and Antico provides rustic character. Quarries sort and grade blocks to ensure customers receive the most suitable material for their needs.",
-            "items": [
-              {
-                "slug": "ivory",
-                "h3": "Ivory Travertine Blocks",
-                "blurb": "Ivory blocks deliver bright tones and are often selected for high-end interiors where light reflection and elegance are priorities.",
-                "h4": "Benefits of Ivory Travertine Blocks",
-                "benefits": [
-                  "Provide a consistent, elegant tone across slabs and tiles",
-                  "Ideal for projects requiring a modern, bright aesthetic",
-                  "High demand in international markets"
-                ],
-                "h5": "Where to Use Ivory Travertine Blocks",
-                "uses": [
-                  "Cut into slabs for countertops and cladding",
-                  "Processed into tiles for luxury flooring",
-                  "Exported globally for premium architectural projects"
-                ]
-              },
-              {
-                "slug": "light",
-                "h3": "Light Travertine Blocks",
-                "blurb": "Light travertine blocks are versatile, yielding beige slabs and tiles that suit both residential and commercial projects."
-              },
-              {
-                "slug": "antico",
-                "h3": "Antico Travertine Blocks",
-                "blurb": "Antico blocks provide rustic tones with antique character, often processed for Mediterranean-inspired projects and outdoor designs."
-              }
-            ]
-          },
-          "finishes": {
-            "h2": "Travertine Block Processing & Finishes",
-            "intro": "While blocks are raw materials, their processing defines the finishes available in the final products. Once blocks are cut into slabs or tiles, they can be polished for a glossy look, honed for matte elegance, brushed for texture, or tumbled for rustic appeal. The finish chosen depends on the project’s aesthetic and functional requirements. Proper processing ensures durability, consistency, and the unique natural beauty of travertine.",
-            "items": [
-              { "slug": "polished", "h3": "Polished from Blocks", "blurb": "Blocks cut into slabs can be polished to reveal veining and provide a reflective finish for luxury projects." },
-              { "slug": "honed", "h3": "Honed from Blocks", "blurb": "Block-cut slabs can be honed to achieve a smooth, matte surface suitable for modern interiors." },
-              { "slug": "brushed", "h3": "Brushed from Blocks", "blurb": "Brushed finishes add subtle texture to block-derived slabs, enhancing grip and warmth." },
-              { "slug": "tumbled", "h3": "Tumbled from Blocks", "blurb": "Tumbled processing of smaller block cuts creates antique-style tiles with rustic charm." }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Travertine blocks themselves are rarely installed directly in construction but instead serve as the foundation for slabs, tiles, and custom products. Their applications span residential, commercial, and urban projects worldwide. Exported to factories, they are cut into large slabs for countertops and cladding, smaller tiles for flooring, and even mosaics or pavers. Blocks also allow for custom shaping into architectural elements such as columns, fountains, and sculptures.",
-            "cards": [
-              { "slug": "slabs", "title": "Cut into Slabs", "desc": "Travertine blocks are sawn into large slabs used for countertops, wall panels, and facades." },
-              { "slug": "tiles", "title": "Processed into Tiles", "desc": "Blocks are cut into tiles for flooring, walls, and decorative applications." },
-              { "slug": "custom", "title": "Custom Stonework", "desc": "Blocks can be shaped into columns, fountains, and bespoke architectural elements." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Travertine blocks are measured and graded at the quarry before export. Sizes vary, but typical dimensions range from 2.5 to 3 meters in length, 1.5 to 2 meters in height, and 1 to 1.5 meters in width. Weights can exceed several tons per block, requiring cranes for handling. Quality grading considers color consistency, structural integrity, and veining. Buyers receive technical reports with approximate density, absorption, and compressive strength values to ensure suitability for their intended processing.",
-            "table": [
-              { "prop": "Standard block size", "value": "250–300 × 150–200 × 100–150 cm", "notes": "Dimensions vary by quarry" },
-              { "prop": "Weight", "value": "3–10 tons per block", "notes": "Requires crane handling" },
-              { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Must be sealed after processing" },
-              { "prop": "Applications", "value": "Slabs / Tiles / Custom Work", "notes": "Processed in factories" }
-            ]
-          },
-          "install": {
-            "h2": "Handling & Processing",
-            "intro": "Travertine blocks require professional handling due to their size and weight. They are transported from quarries to factories where they are sawn into slabs or cut into tiles. Proper storage prevents cracks and maintains quality. Processing includes cutting, finishing, and sealing to meet project requirements. Safety measures are essential during transport and fabrication due to the heavy loads involved."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Provide raw material flexibility for slabs, tiles, and custom products",
-              "High export value and international demand",
-              "Unique natural patterns enhance finished products"
-            ],
-            "cons": [
-              "Heavy and difficult to handle without machinery",
-              "Require processing before use in construction",
-              "Natural variation may affect block grading consistency"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "See how travertine blocks are extracted, transported, and processed into finished products. From quarry views to factory cutting lines, these images show the journey from raw stone to architectural material."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Common questions about travertine blocks, their quarrying, processing, and export uses.",
-            "items": [
-              {
-                "q": "What are travertine blocks?",
-                "a": "Travertine blocks are large raw stone pieces extracted from quarries. They are the starting point of production, later cut into slabs, tiles, and other custom shapes."
-              },
-              {
-                "q": "How are travertine blocks used?",
-                "a": "Blocks are rarely installed directly. Instead, they are processed into slabs for countertops and facades, tiles for flooring and walls, and custom pieces for architectural design."
-              },
-              {
-                "q": "What sizes do travertine blocks come in?",
-                "a": "Standard blocks measure around 2.5–3 meters long, 1.5–2 meters high, and 1–1.5 meters wide. They can weigh several tons, requiring specialized handling equipment."
-              },
-              {
-                "q": "Are travertine blocks exported?",
-                "a": "Yes. Turkey is one of the largest exporters of travertine blocks, supplying factories and distributors worldwide. Exported blocks are processed into finished products in international markets."
-              }
-            ]
-          }
+
+  "socialImage": "https://www.majen.com.tr/media/travertine-slabs-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Looking for travertine slabs from Turkey?",
+    "rest": " This guide covers colors, finishes, slab sizes, weight per m² and bookmatching options so architects, distributors and fabricators can plan wholesale travertine slabs with confidence. As a quarry-backed Turkish travertine supplier, we also explain export terms (FOB/CIF/EXW) and packaging standards for predictable deliveries."
+  },
+
+  "sections": {
+    "colors": {
+      "h2": "Travertine Slab Colors",
+      "intro": "Travertine slabs come in timeless colors such as Ivory, Light, and Antico, each offering distinct aesthetics. Ivory provides brightness and sophistication for elegant interiors. Light brings warm beige tones that blend seamlessly into modern and classic environments. Antico delivers earthy, rustic character that evokes Mediterranean and traditional architecture. These natural variations ensure every slab is unique, allowing architects and homeowners to create surfaces that balance functionality with authentic beauty.",
+      "items": [
+        {
+          "slug": "ivory",
+          "h3": "Ivory Travertine Slabs",
+          "blurb": "Ivory slabs create bright, sophisticated spaces and are a top choice for kitchens and bathrooms.",
+          "h4": "Benefits of Ivory Travertine Slabs",
+          "benefits": [
+            "Elegant, light-reflecting surfaces enhance room brightness",
+            "Durable and suitable for both residential and commercial projects",
+            "Neutral tone pairs well with wood, glass, and modern finishes"
+          ],
+          "h5": "Where to Use Ivory Travertine Slabs",
+          "uses": [
+            "Kitchen countertops and islands",
+            "Bathroom vanity tops and shower walls",
+            "Interior wall cladding in luxury spaces"
+          ]
+        },
+        {
+          "slug": "light",
+          "h3": "Light Travertine Slabs",
+          "blurb": "Light travertine slabs feature warm beige tones, making them versatile for both interior flooring and exterior cladding projects."
+        },
+        {
+          "slug": "antico",
+          "h3": "Antico Travertine Slabs",
+          "blurb": "Antico slabs display rustic, earthy colors with an antique effect, often chosen for Mediterranean-inspired architecture and outdoor designs."
         }
-      },
+      ],
+
+
+      "extras": [
+        {
+          "h3": "Ivory Travertine Slabs",
+          "p": "Bright creamy background with subtle veins. Popular for large interior walls, countertops and feature panels. Provides a modern, clean feel with natural depth."
+        },
+        {
+          "h3": "Light Travertine Slabs",
+          "p": "Warm beige tones with soft patterns. Ideal for continuous flooring and facade cladding where uniformity and warmth are desired."
+        },
+        {
+          "h3": "Antico Travertine Slabs",
+          "p": "Rustic appeal with earthy variations. Suits outdoor kitchens, courtyards and spaces that benefit from heritage aesthetics and strong character."
+        }
+      ]
+    },
+
+    "finishes": {
+      "h2": "Travertine Slab Finishes",
+      "intro": "The finish of a travertine slab defines its texture, reflectivity, and overall character. Polished slabs are glossy and emphasize veining, perfect for luxury interiors. Honed slabs offer a matte finish with contemporary appeal. Brushed slabs introduce a gentle texture and slip resistance, while tumbled slabs create an antique look ideal for rustic projects. Selecting the right finish allows designers to match performance with aesthetics in kitchens, facades, and commercial buildings.",
+      "items": [
+        { "slug": "polished", "h3": "Polished Travertine Slabs", "blurb": "Polished slabs showcase reflective surfaces and bold veining, used in kitchens, bathrooms, and hotel lobbies." },
+        { "slug": "honed", "h3": "Honed Travertine Slabs", "blurb": "Honed slabs provide a matte, non-reflective finish that fits modern interiors and reduces glare under strong lighting." },
+        { "slug": "brushed", "h3": "Brushed Travertine Slabs", "blurb": "Brushed slabs add subtle texture for grip and depth, ideal for transitional areas and outdoor terraces." },
+        { "slug": "tumbled", "h3": "Tumbled Travertine Slabs", "blurb": "Tumbled slabs deliver rustic charm and antique style, widely used in courtyards, gardens, and traditional projects." }
+      ],
+
+   
+      "extras": [
+        { "h3": "Polished Slabs", "p": "High-gloss surface that accentuates veining. Recommended for luxury interiors and feature walls. Seal carefully to protect against staining." },
+        { "h3": "Honed Slabs", "p": "Smooth matte finish for contemporary floors and wall panels. Comfortable slip resistance makes it versatile in residential and commercial interiors." },
+        { "h3": "Brushed & Tumbled Slabs", "p": "Textured surfaces with more grip. Favored for outdoor facades, terraces and rustic designs. Combine with thicker cuts for durability." }
+      ]
+    },
+
+    "applications": {
+      "h2": "Applications",
+      "intro": "Travertine slabs are used wherever seamless, large surfaces are needed. In kitchens, they become countertops, islands, and backsplashes. In bathrooms, they serve as vanity tops, shower surrounds, and flooring. On building facades, slabs provide strength, weather resistance, and elegance. Commercial interiors such as hotel lobbies and office spaces also benefit from their luxurious appearance. This versatility makes travertine slabs an essential material for both functional and decorative purposes.",
+      "cards": [
+        { "slug": "kitchen", "title": "Kitchen Slabs", "desc": "Countertops and backsplashes combining durability with natural beauty." },
+        { "slug": "bathroom", "title": "Bathroom Slabs", "desc": "Vanities and shower walls creating spa-like environments." },
+        { "slug": "facade", "title": "Facade Slabs", "desc": "Exterior facades offering strength, insulation, and aesthetic value." }
+      ],
+
+   
+      "details": [
+        {
+          "slug": "kitchen",
+          "h3": "Travertine Kitchen",
+          "p": "Slabs for countertops, islands and backsplashes. Use honed for daily durability, polished for statement islands. Seal regularly to prevent staining from oils and wine."
+        },
+        {
+          "slug": "bathroom",
+          "h3": "Travertine Bathroom",
+          "p": "Large wall panels create seamless spa-like surfaces. Honed slabs reduce glare, polished accents add luxury. Ensure waterproofing and correct anchoring."
+        },
+        {
+          "slug": "facade",
+          "h3": "Travertine Facade",
+          "p": "Slabs applied as ventilated facade panels or anchored cladding. Thickness often 20–30 mm depending on wind load and building codes. Consider bookmatching for visual impact."
+        }
+      ]
+    },
+
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Travertine slabs are processed in large dimensions to meet international design and construction requirements. Standard slabs range from 2400–3000 mm in length and 1200–2000 mm in width. Thickness typically falls between 20–30 mm, with custom cuts available from 15–40 mm. Water absorption is around 0.4–0.8%, making sealing essential. These specifications make travertine slabs suitable for demanding applications, from residential kitchens to high-traffic commercial facades.",
+      "table": [
+        { "prop": "Standard sizes", "value": "2400–3000 × 1200–2000 mm", "notes": "Custom dimensions available" },
+        { "prop": "Thickness", "value": "20–30 mm (custom 15–40 mm)", "notes": "Project dependent" },
+        { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation and maintain regularly" },
+        { "prop": "Finish options", "value": "Polished / Honed / Brushed / Tumbled", "notes": "Select finish by functional and design needs" }
+      ],
+
+    
+      "extraRows": [
+        { "prop": "Max slab size", "value": "~2800 × 1600 mm", "notes": "Varies by block and cut" },
+        { "prop": "Approx. weight per m²", "value": "~54 kg (20 mm) · ~81 kg (30 mm)", "notes": "Check substrate/anchors" }
+      ]
+    },
+
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Installing travertine slabs requires professional handling due to their size and weight. Proper support and adhesive must be used to ensure stability. In kitchens and bathrooms, sealing is critical to protect against staining and moisture. Outdoor facades should include appropriate anchoring systems. Routine care involves cleaning with neutral products and resealing every 12–24 months. Avoid acids and harsh chemicals that may damage the stone surface.",
+
+  
+      "careNotes": [
+        "Use mechanical anchors or ventilated facade systems for exteriors.",
+        "Back-butter slabs with adhesive indoors for full bond.",
+        "Seal periodically with high-quality impregnating sealer.",
+        "For bookmatched slabs, dry-lay before installation to align veins."
+      ]
+    },
+
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Large slabs create seamless, luxurious surfaces",
+        "Highlight natural veining and patterns for striking designs",
+        "Durable, long-lasting, and add property value"
+      ],
+      "cons": [
+        "Heavier and more difficult to handle than tiles",
+        "Higher cost compared to smaller tile formats",
+        "Requires sealing and professional installation"
+      ]
+    },
+
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "Discover how travertine slabs are used in kitchens, bathrooms, facades, and commercial projects. These images showcase the versatility and timeless appeal of slabs in real-world applications.",
+
+
+      "alts": [
+        "Polished travertine slab wall panel in hotel lobby",
+        "Honed travertine kitchen island slab",
+        "Travertine facade panels with bookmatching veins"
+      ]
+    },
+
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Answers to common questions about travertine slabs, their uses, maintenance, and performance in different environments.",
+      "items": [
+        {
+          "q": "What are travertine slabs used for?",
+          "a": "Travertine slabs are used for countertops, backsplashes, bathroom vanities, shower walls, facades, and luxury commercial interiors. Their large size reduces joints and highlights natural veining."
+        },
+        {
+          "q": "Are travertine slabs suitable for outdoor use?",
+          "a": "Yes. Travertine slabs, especially in brushed and tumbled finishes, are suitable for outdoor applications such as facades, terraces, and courtyards. Proper anchoring and sealing ensure durability against weather."
+        },
+        {
+          "q": "How thick are travertine slabs?",
+          "a": "Standard thickness ranges from 20–30 mm, but custom sizes from 15–40 mm can be produced to meet specific project requirements. Thickness impacts handling, cost, and installation methods."
+        },
+        {
+          "q": "Do travertine slabs need sealing?",
+          "a": "Yes. Sealing is essential to protect slabs from staining, especially in kitchens and bathrooms. Sealing should be done at installation and reapplied every 12–24 months depending on use and exposure."
+        }
+      ],
+
+      
+      "extra": [
+        { "q": "What is the maximum slab size?", "a": "Typical maximum ~2800 × 1600 mm depending on quarry and block. Custom cuts may vary." },
+        { "q": "How heavy are travertine slabs?", "a": "Approx. 54 kg per m² at 20 mm thickness; ~81 kg at 30 mm. Factor handling and anchoring accordingly." },
+        { "q": "What is bookmatching?", "a": "Bookmatching places two slabs side by side like an open book, creating symmetrical veining. It enhances luxury walls and lobbies." },
+        { "q": "How is pricing calculated?", "a": "Color grade, slab size, thickness, finish and volume all affect price. Share a BOQ and port to receive a FOB or CIF quotation." }
+      ]
+    }
+  },
+
+
+  "microProof": [
+    "Lead time: typically 10–20 business days depending on finish and volume.",
+    "Ports: İzmir Alsancak, Aliağa Nemrut, Gemlik.",
+    "Photo-documented loading and seal numbers provided."
+  ],
+  "ld": {
+    "keywords": [
+      "travertine slabs",
+      "Turkish travertine",
+      "travertine facade",
+      "travertine kitchen",
+      "bookmatched travertine"
+    ]
+  }
+},
+
+"travertine-blocks": {
+  "metaTitle": "Travertine Blocks | Turkish Quarry Stone for Slabs, Tiles & Export",
+  "metaDesc": "Explore Turkish Travertine Blocks in Ivory, Light & Antico. Learn how raw quarry blocks are cut into slabs and tiles. Specs, export info, pros & cons, and FAQs.",
+  "h1": "Travertine Blocks",
+  "intro": "Travertine blocks are the raw form of natural stone extracted directly from quarries. These massive pieces represent the first stage of travertine production, later cut into slabs, tiles, or customized shapes for construction and design. Turkey, with its abundant travertine reserves, is one of the largest exporters of blocks worldwide, supplying material to factories, distributors, and projects across the globe.",
+
+  "socialImage": "https://www.majen.com.tr/media/travertine-blocks-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Sourcing travertine blocks from Turkey?",
+    "rest": " This buyer’s guide explains typical block sizes, grades, weight per cubic meter, vein orientation (cross-cut vs vein-cut), loading methods and export terms (FOB/CIF/EXW). As a quarry-backed Turkish travertine supplier, we help factories, fabricators and large projects plan predictable shipments with photo-documented loading and seal numbers."
+  },
+
+  "sections": {
+    "colors": {
+      "h2": "Travertine Block Colors",
+      "intro": "Travertine blocks are available in Ivory, Light, and Antico variations, reflecting the same natural tones seen in slabs and tiles. At the block stage, color selection is critical, as it determines the final appearance of slabs, tiles, and other processed products. Buyers often request specific shades for consistent large-scale projects. Ivory offers clean, bright tones, Light adds warm beige versatility, and Antico provides rustic character. Quarries sort and grade blocks to ensure customers receive the most suitable material for their needs.",
+      "items": [
+        {
+          "slug": "ivory",
+          "h3": "Ivory Travertine Blocks",
+          "blurb": "Ivory blocks deliver bright tones and are often selected for high-end interiors where light reflection and elegance are priorities.",
+          "h4": "Benefits of Ivory Travertine Blocks",
+          "benefits": [
+            "Provide a consistent, elegant tone across slabs and tiles",
+            "Ideal for projects requiring a modern, bright aesthetic",
+            "High demand in international markets"
+          ],
+          "h5": "Where to Use Ivory Travertine Blocks",
+          "uses": [
+            "Cut into slabs for countertops and cladding",
+            "Processed into tiles for luxury flooring",
+            "Exported globally for premium architectural projects"
+          ]
+        },
+        { "slug": "light", "h3": "Light Travertine Blocks", "blurb": "Light travertine blocks are versatile, yielding beige slabs and tiles that suit both residential and commercial projects." },
+        { "slug": "antico", "h3": "Antico Travertine Blocks", "blurb": "Antico blocks provide rustic tones with antique character, often processed for Mediterranean-inspired projects and outdoor designs." }
+      ],
+
+
+      "extras": [
+        { "h3": "Ivory Travertine Blocks", "p": "Bright creamy background with subtle pores. Ideal for producing slabs and tiles aimed at modern interiors where consistent shade is important." },
+        { "h3": "Light Travertine Blocks", "p": "Warm beige tones with balanced veining. A versatile choice for high-volume tile and slab production due to stable color demand." },
+        { "h3": "Antico Travertine Blocks", "p": "Rustic, character-rich look with pronounced cavities. Great for tumbled/antiqued finishes and exterior design concepts." }
+      ]
+    },
+
+    "finishes": {
+      "h2": "Travertine Block Processing & Finishes",
+      "intro": "While blocks are raw materials, their processing defines the finishes available in the final products. Once blocks are cut into slabs or tiles, they can be polished for a glossy look, honed for matte elegance, brushed for texture, or tumbled for rustic appeal. The finish chosen depends on the project’s aesthetic and functional requirements. Proper processing ensures durability, consistency, and the unique natural beauty of travertine.",
+      "items": [
+        { "slug": "polished", "h3": "Polished from Blocks", "blurb": "Blocks cut into slabs can be polished to reveal veining and provide a reflective finish for luxury projects." },
+        { "slug": "honed", "h3": "Honed from Blocks", "blurb": "Block-cut slabs can be honed to achieve a smooth, matte surface suitable for modern interiors." },
+        { "slug": "brushed", "h3": "Brushed from Blocks", "blurb": "Brushed finishes add subtle texture to block-derived slabs, enhancing grip and warmth." },
+        { "slug": "tumbled", "h3": "Tumbled from Blocks", "blurb": "Tumbled processing of smaller block cuts creates antique-style tiles with rustic charm." }
+      ],
+
+ 
+      "extras": [
+        { "h3": "Cross-Cut vs Vein-Cut", "p": "Cross-cut slices perpendicular to the bedding, creating cloud-like movement and more uniform looks—popular for floors. Vein-cut runs parallel to the bedding, showing linear veins suited to feature walls and bookmatched panels." },
+        { "h3": "Selection & Grading", "p": "Grades are based on color uniformity, pore density, structural soundness and size. Tighter selection supports premium polished/honed finishes; open selections are ideal for tumbled/brushed looks." }
+      ]
+    },
+
+    "applications": {
+      "h2": "Applications",
+      "intro": "Travertine blocks themselves are rarely installed directly in construction but instead serve as the foundation for slabs, tiles, and custom products. Their applications span residential, commercial, and urban projects worldwide. Exported to factories, they are cut into large slabs for countertops and cladding, smaller tiles for flooring, and even mosaics or pavers. Blocks also allow for custom shaping into architectural elements such as columns, fountains, and sculptures.",
+      "cards": [
+        { "slug": "slabs", "title": "Cut into Slabs", "desc": "Travertine blocks are sawn into large slabs used for countertops, wall panels, and facades." },
+        { "slug": "tiles", "title": "Processed into Tiles", "desc": "Blocks are cut into tiles for flooring, walls, and decorative applications." },
+        { "slug": "custom", "title": "Custom Stonework", "desc": "Blocks can be shaped into columns, fountains, and bespoke architectural elements." }
+      ],
+
+
+      "details": [
+        { "slug": "factories", "h3": "For Slab Factories", "p": "Select blocks with dimensions that match your gang-saw, with stable color and minimal defects to maximize yield. Vein-cut or cross-cut selection should follow project requirements." },
+        { "slug": "tile-producers", "h3": "For Tile Producers", "p": "Prioritize color demand (Ivory/Light) and pore structure that works with filled or unfilled products. Target block sizes that minimize off-cut waste for 600×600 and 600×1200 formats." },
+        { "slug": "projects", "h3": "For Large Projects", "p": "Use coordinated lots with consistent shade. Plan block-to-block continuity for facade or lobby runs, and reserve extra material for future maintenance." }
+      ]
+    },
+
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Travertine blocks are measured and graded at the quarry before export. Sizes vary, but typical dimensions range from 2.5 to 3 meters in length, 1.5 to 2 meters in height, and 1 to 1.5 meters in width. Weights can exceed several tons per block, requiring cranes for handling. Quality grading considers color consistency, structural integrity, and veining. Buyers receive technical reports with approximate density, absorption, and compressive strength values to ensure suitability for their intended processing.",
+      "table": [
+        { "prop": "Standard block size", "value": "250–300 × 150–200 × 100–150 cm", "notes": "Dimensions vary by quarry" },
+        { "prop": "Weight", "value": "3–10 tons per block", "notes": "Requires crane handling" },
+        { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Must be sealed after processing" },
+        { "prop": "Applications", "value": "Slabs / Tiles / Custom Work", "notes": "Processed in factories" }
+      ],
+
+
+      "extraRows": [
+        { "prop": "Block dimensions (L × W × H)", "value": "~2.4–3.0 m × 1.2–1.8 m × 1.2–1.8 m", "notes": "Varies by quarry and selection" },
+        { "prop": "Density", "value": "~2.5 t/m³", "notes": "Used to estimate block weight" },
+        { "prop": "Typical block volume", "value": "~3.5–7.5 m³", "notes": "L×W×H (m) = m³" },
+        { "prop": "Approx. block weight", "value": "Volume × 2.5 t/m³", "notes": "Example: 2.8×1.6×1.3 m ≈ 5.82 m³ → ≈14.6 t" },
+        { "prop": "Vein orientation", "value": "Cross-cut / Vein-cut", "notes": "Impacts final appearance" }
+      ]
+    },
+
+    "install": {
+      "h2": "Handling & Processing",
+      "intro": "Travertine blocks require professional handling due to their size and weight. They are transported from quarries to factories where they are sawn into slabs or cut into tiles. Proper storage prevents cracks and maintains quality. Processing includes cutting, finishing, and sealing to meet project requirements. Safety measures are essential during transport and fabrication due to the heavy loads involved.",
+
+
+      "careNotes": [
+        "Container types: 20' open-top or flat-rack for blocks; weight planning required.",
+        "Typical load limit: up to ~26–28 t per container (check carrier/route).",
+        "Ports: İzmir Alsancak, Aliağa Nemrut, Gemlik.",
+        "Documentation: Invoice, Packing List, Certificate of Origin; photo-documented loading & seal numbers provided."
+      ]
+    },
+
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Provide raw material flexibility for slabs, tiles, and custom products",
+        "High export value and international demand",
+        "Unique natural patterns enhance finished products"
+      ],
+      "cons": [
+        "Heavy and difficult to handle without machinery",
+        "Require processing before use in construction",
+        "Natural variation may affect block grading consistency"
+      ]
+    },
+
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "See how travertine blocks are extracted, transported, and processed into finished products. From quarry views to factory cutting lines, these images show the journey from raw stone to architectural material.",
+
+
+      "alts": [
+        "Ivory travertine blocks prepared for export loading",
+        "Cross-cut travertine block showing vein orientation",
+        "Travertine block dimensions measured before shipment"
+      ]
+    },
+
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Common questions about travertine blocks, their quarrying, processing, and export uses.",
+      "items": [
+        { "q": "What are travertine blocks?", "a": "Travertine blocks are large raw stone pieces extracted from quarries. They are the starting point of production, later cut into slabs, tiles, and other custom shapes." },
+        { "q": "How are travertine blocks used?", "a": "Blocks are rarely installed directly. Instead, they are processed into slabs for countertops and facades, tiles for flooring and walls, and custom pieces for architectural design." },
+        { "q": "What sizes do travertine blocks come in?", "a": "Standard blocks measure around 2.5–3 meters long, 1.5–2 meters high, and 1–1.5 meters wide. They can weigh several tons, requiring specialized handling equipment." },
+        { "q": "Are travertine blocks exported?", "a": "Yes. Turkey is one of the largest exporters of travertine blocks, supplying factories and distributors worldwide. Exported blocks are processed into finished products in international markets." }
+      ],
+
+
+      "extra": [
+        { "q": "What is a typical travertine block size?", "a": "Common ranges are ~2.4–3.0 m in length, 1.2–1.8 m in width/height, depending on quarry and selection." },
+        { "q": "How heavy is one block?", "a": "Multiply volume (m³) by density (~2.5 t/m³). Example: 5.8 m³ ≈ 14.5 t." },
+        { "q": "How many blocks fit into a container?", "a": "Usually 1–2 blocks depending on dimensions and route weight limits. We plan loads to stay within legal limits." },
+        { "q": "What affects block pricing?", "a": "Color grade, size, structural soundness, vein orientation and order volume. Share a BOQ and destination port for an accurate FOB/CIF quote." },
+        { "q": "Can I request specific orientation (cross-cut/vein-cut)?", "a": "Yes. We allocate blocks by orientation to match the project’s final look and fabrication requirements." }
+      ]
+    }
+  },
+
+
+  "microProof": [
+    "Lead time: typically 10–20 business days depending on selection and load plan.",
+    "Photo-documented container loading & seal numbers.",
+    "FOB İzmir (Alsancak/Aliağa), CIF on request to your destination port."
+  ],
+  "ld": {
+    "keywords": [
+      "travertine blocks",
+      "Turkish travertine",
+      "cross-cut",
+      "vein-cut",
+      "block weight"
+    ]
+  }
+},
 
        "travertine-pavers": {
-        "metaTitle": "Travertine Pavers | Outdoor Tiles for Patios, Pathways & Pools",
-        "metaDesc": "Explore Turkish Travertine Pavers in Ivory, Light & Antico. Durable and slip-resistant finishes for patios, driveways, and pool decks. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Travertine Pavers",
-        "intro": "Travertine pavers are durable, slip-resistant natural stone tiles designed specifically for outdoor applications. They combine timeless aesthetics with practical performance, making them a top choice for patios, pool decks, driveways, and garden pathways. Turkish travertine pavers are highly valued for their weather resistance and versatility, helping homeowners and architects create elegant outdoor spaces that last for decades.",
-        "sections": {
-          "colors": {
-            "h2": "Travertine Paver Colors",
-            "intro": "Color selection is essential when designing outdoor spaces with travertine pavers. Ivory pavers brighten terraces and pool areas, Light tones bring warmth to patios and pathways, while Antico shades provide rustic charm for traditional landscapes. Each natural variation offers distinct veining and tones, ensuring that no two pavers are exactly alike. This authenticity makes travertine pavers unique and adaptable to modern, classic, and Mediterranean-style projects.",
-            "items": [
-              {
-                "slug": "ivory",
-                "h3": "Ivory Travertine Pavers",
-                "blurb": "Ivory pavers create bright, clean outdoor areas, reflecting sunlight and adding a luxury touch to terraces and pool decks.",
-                "h4": "Benefits of Ivory Travertine Pavers",
-                "benefits": [
-                  "Brightens outdoor living spaces with reflective tones",
-                  "Keeps surfaces cooler underfoot in sunny climates",
-                  "Popular for high-end residential and resort projects"
-                ],
-                "h5": "Where to Use Ivory Travertine Pavers",
-                "uses": [
-                  "Pool decks and lounge areas",
-                  "Luxury patios and terraces",
-                  "Garden pathways and courtyards"
-                ]
-              },
-              {
-                "slug": "light",
-                "h3": "Light Travertine Pavers",
-                "blurb": "Light travertine pavers feature beige tones that blend seamlessly with natural surroundings, ideal for patios and pathways."
-              },
-              {
-                "slug": "antico",
-                "h3": "Antico Travertine Pavers",
-                "blurb": "Antico pavers provide rustic charm and an antique look, perfect for Mediterranean-style gardens and traditional outdoor designs."
-              }
-            ]
-          },
-          "finishes": {
-            "h2": "Travertine Paver Finishes",
-            "intro": "Travertine pavers are available in several finishes, each suited to outdoor environments. Tumbled finishes add rustic character and provide extra slip resistance, polished is rarely used outdoors but creates striking accents, honed delivers smooth but less slippery surfaces, and brushed adds subtle grip with a natural look. Choosing the right finish ensures safety and aesthetic harmony in exterior designs.",
-            "items": [
-              { "slug": "tumbled", "h3": "Tumbled Travertine Pavers", "blurb": "Tumbled pavers offer slip resistance and rustic charm, making them the most popular choice for outdoor landscaping." },
-              { "slug": "brushed", "h3": "Brushed Travertine Pavers", "blurb": "Brushed finishes provide subtle texture and grip, blending safety with elegance in outdoor areas." },
-              { "slug": "honed", "h3": "Honed Travertine Pavers", "blurb": "Honed pavers are smooth and modern, suitable for terraces and pathways where a refined look is desired." }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Travertine pavers are built for exterior performance, adapting to patios, pools, driveways, and pathways. Their natural porosity makes them cooler underfoot in hot climates, while their slip resistance enhances safety around water features. They withstand temperature changes and weather conditions, making them a sustainable, long-term solution for landscaping. Architects and homeowners value travertine pavers for their blend of beauty and practicality in outdoor living spaces.",
-            "cards": [
-              { "slug": "patios", "title": "Patios & Terraces", "desc": "Create elegant outdoor living areas with natural travertine pavers." },
-              { "slug": "pools", "title": "Pool Decks", "desc": "Slip-resistant and cool underfoot, perfect for swimming pool surrounds." },
-              { "slug": "driveways", "title": "Driveways & Pathways", "desc": "Durable pavers withstand heavy loads and create timeless paths." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Travertine pavers are manufactured with outdoor use in mind, offering strength, slip resistance, and weather endurance. Standard thickness is 30–50 mm to handle outdoor loads. Sizes include squares, rectangles, and modular patterns. Absorption rates average 0.5–1.0%, requiring sealing for stain protection. Their specifications make them ideal for landscaping and exterior design projects where durability and safety are key.",
-            "table": [
-              { "prop": "Thickness", "value": "30–50 mm", "notes": "Outdoor grade, handles heavy loads" },
-              { "prop": "Absorption", "value": "0.5–1.0%", "notes": "Seal to prevent stains" },
-              { "prop": "Finish options", "value": "Tumbled / Brushed / Honed", "notes": "Slip resistance varies by finish" },
-              { "prop": "Standard sizes", "value": "Modular patterns, 300×300 mm, 600×600 mm", "notes": "Custom sizes available" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Travertine pavers should be installed on compacted sand or gravel with proper drainage. Jointing sand or mortar can be used depending on application. Around pools, sealing is recommended to protect against chlorine or saltwater exposure. Routine maintenance includes sweeping debris, rinsing with water, and resealing every 1–2 years. Avoid acidic cleaners which may damage the stone surface."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Slip-resistant and safe for outdoor use",
-              "Cooler underfoot compared to concrete or ceramic",
-              "Durable and weather-resistant with long lifespan"
-            ],
-            "cons": [
-              "Requires sealing to protect against stains",
-              "Heavier than some man-made pavers",
-              "Natural variation may affect uniformity in large areas"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "Browse examples of travertine pavers in outdoor projects, from pool decks and patios to pathways and driveways. These visuals showcase how pavers combine elegance with practicality in real-world settings."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to common questions about travertine pavers, including durability, safety, and maintenance.",
-            "items": [
-              {
-                "q": "Are travertine pavers good for pool decks?",
-                "a": "Yes. Travertine pavers are slip-resistant and stay cooler underfoot than many other materials, making them one of the best choices for pool surrounds."
-              },
-              {
-                "q": "Do travertine pavers need sealing?",
-                "a": "Yes. Sealing is highly recommended to prevent stains from food, drinks, or pool chemicals. Resealing every 1–2 years maintains performance and appearance."
-              },
-              {
-                "q": "Can travertine pavers be used in driveways?",
-                "a": "Yes. With thicknesses of 30–50 mm, travertine pavers are strong enough for driveways and withstand vehicle loads when installed properly."
-              },
-              {
-                "q": "How do you maintain travertine pavers?",
-                "a": "Regular sweeping, occasional rinsing, and resealing as needed keep travertine pavers looking their best. Avoid acidic cleaners which may etch the stone."
-              }
-            ]
-          }
-        }
-      },
+  "metaTitle": "Travertine Pavers | Outdoor Tiles for Patios, Pathways & Pools",
+  "metaDesc": "Explore Turkish Travertine Pavers in Ivory, Light & Antico. Durable and slip-resistant finishes for patios, driveways, and pool decks. Specs, pros & cons, gallery & FAQs.",
+  "h1": "Travertine Pavers",
+  "intro": "Travertine pavers are durable, slip-resistant natural stone tiles designed specifically for outdoor applications. They combine timeless aesthetics with practical performance, making them a top choice for patios, pool decks, driveways, and garden pathways. Turkish travertine pavers are highly valued for their weather resistance and versatility, helping homeowners and architects create elegant outdoor spaces that last for decades.",
 
-        "travertine-mosaics": {
-        "metaTitle": "Travertine Mosaics | Decorative Natural Stone for Walls, Floors & Features",
-        "metaDesc": "Explore Turkish Travertine Mosaics in Ivory, Light & Antico. Perfect for kitchens, bathrooms, and feature walls. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Travertine Mosaics",
-        "intro": "Travertine mosaics are small, decorative stone pieces arranged into patterns, sheets, or designs for both interior and exterior use. They bring texture, character, and artistic expression to projects, combining the natural beauty of travertine with flexible applications. From kitchen backsplashes and bathroom walls to feature panels and flooring accents, Turkish travertine mosaics are a versatile choice for homeowners, architects, and designers worldwide.",
-        "sections": {
-          "colors": {
-            "h2": "Travertine Mosaic Colors",
-            "intro": "Travertine mosaics are crafted in Ivory, Light, and Antico shades, each offering unique design potential. Ivory mosaics brighten spaces with elegance, Light mosaics bring warm beige tones that complement modern interiors, and Antico mosaics provide rustic character for traditional or Mediterranean projects. Combining colors in mosaic patterns creates dynamic visual effects, allowing for both subtle accents and bold statements.",
-            "items": [
-              {
-                "slug": "ivory",
-                "h3": "Ivory Travertine Mosaics",
-                "blurb": "Ivory mosaics provide brightness and sophistication, often chosen for bathrooms and kitchens.",
-                "h4": "Benefits of Ivory Travertine Mosaics",
-                "benefits": [
-                  "Brightens interiors with light-reflective qualities",
-                  "Versatile for modern and luxury designs",
-                  "Pairs well with glass, metal, and wood accents"
-                ],
-                "h5": "Where to Use Ivory Travertine Mosaics",
-                "uses": [
-                  "Bathroom walls and shower niches",
-                  "Kitchen backsplashes",
-                  "Feature panels in living rooms"
-                ]
-              },
-              {
-                "slug": "light",
-                "h3": "Light Travertine Mosaics",
-                "blurb": "Light mosaics add warmth and subtle elegance, making them ideal for large decorative walls and stylish flooring inserts."
-              },
-              {
-                "slug": "antico",
-                "h3": "Antico Travertine Mosaics",
-                "blurb": "Antico mosaics deliver rustic charm and antique appeal, perfect for traditional and Mediterranean-style designs."
-              }
-            ]
-          },
-          "finishes": {
-            "h2": "Travertine Mosaic Finishes",
-            "intro": "Travertine mosaics are produced in multiple finishes to match design needs. Polished mosaics highlight natural veining and create glossy effects, honed mosaics provide a soft matte look, tumbled mosaics offer rustic texture with antique charm, and brushed mosaics add gentle grip and depth. These finishes allow mosaics to serve as both functional surfaces and artistic highlights.",
-            "items": [
-              { "slug": "polished", "h3": "Polished Travertine Mosaics", "blurb": "Glossy mosaics emphasize veining, ideal for luxury bathrooms and kitchens." },
-              { "slug": "honed", "h3": "Honed Travertine Mosaics", "blurb": "Smooth, matte mosaics give a modern touch to walls and floors." },
-              { "slug": "tumbled", "h3": "Tumbled Travertine Mosaics", "blurb": "Antique, textured mosaics deliver rustic appeal for Mediterranean designs." },
-              { "slug": "brushed", "h3": "Brushed Travertine Mosaics", "blurb": "Textured mosaics provide grip and warmth, perfect for feature walls and outdoor use." }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Travertine mosaics are used as decorative highlights in both residential and commercial projects. They are ideal for kitchen backsplashes, bathroom walls, shower floors, and feature walls in living rooms or lobbies. Their small size and sheet-mounted format make installation flexible, allowing curved surfaces, borders, or complex patterns. Outdoors, they add character to patios, garden walls, and pool surrounds.",
-            "cards": [
-              { "slug": "bathroom", "title": "Bathroom Mosaics", "desc": "Used in shower walls, niches, and flooring accents for spa-like designs." },
-              { "slug": "kitchen", "title": "Kitchen Mosaics", "desc": "Perfect for backsplashes and counters, adding texture and style." },
-              { "slug": "features", "title": "Feature Walls", "desc": "Create striking feature panels in living rooms, lobbies, and exteriors." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Travertine mosaics are typically supplied on mesh sheets for easier installation. Common sheet sizes are 300×300 mm, with individual mosaic pieces ranging from 20×20 mm to 50×50 mm. Thickness usually varies between 8–12 mm. Absorption rates average 0.4–0.8%, requiring sealing after installation. Available in polished, honed, brushed, or tumbled finishes, mosaics are adaptable to a wide range of decorative applications.",
-            "table": [
-              { "prop": "Sheet size", "value": "300×300 mm", "notes": "Standard, other formats available" },
-              { "prop": "Piece size", "value": "20–50 mm", "notes": "Square, hexagon, or custom shapes" },
-              { "prop": "Thickness", "value": "8–12 mm", "notes": "Depending on format and finish" },
-              { "prop": "Finish options", "value": "Polished / Honed / Tumbled / Brushed", "notes": "Choose based on design and slip needs" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Travertine mosaics are supplied on mesh sheets, making them easy to install on walls, floors, and curved surfaces. They should be installed with thin-set mortar, grouted carefully to fill joints, and sealed after curing. Maintenance involves cleaning with pH-neutral solutions and resealing every 1–2 years. Avoid acidic cleaners which may etch the surface."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Highly decorative, adding texture and character to spaces",
-              "Flexible formats allow complex designs and curved surfaces",
-              "Durable natural stone with timeless appeal"
-            ],
-            "cons": [
-              "Requires sealing to prevent staining",
-              "Smaller pieces mean more grout lines to maintain",
-              "May be more expensive per m² compared to larger tiles"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "View examples of travertine mosaics in kitchens, bathrooms, and feature walls. These projects highlight how mosaics transform ordinary surfaces into artistic statements."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to common questions about travertine mosaics, their uses, and maintenance.",
-            "items": [
-              {
-                "q": "What are travertine mosaics used for?",
-                "a": "Travertine mosaics are decorative tiles used in kitchens, bathrooms, feature walls, and outdoor accents. They add texture, style, and natural stone beauty to any project."
-              },
-              {
-                "q": "Do travertine mosaics need sealing?",
-                "a": "Yes. Travertine mosaics are porous and require sealing to prevent stains and moisture damage. Sealing should be applied after installation and reapplied regularly."
-              },
-              {
-                "q": "Can travertine mosaics be used on floors?",
-                "a": "Yes. Travertine mosaics are often used on shower floors and decorative flooring accents. Slip-resistant finishes like tumbled are recommended for wet areas."
-              },
-              {
-                "q": "How are travertine mosaics installed?",
-                "a": "They are supplied on mesh sheets, making installation straightforward. Install with thin-set mortar, grout carefully, and seal to protect the surface."
-              }
-            ]
-          }
-        }
-      },
 
-      "polished-travertine": {
-        "metaTitle": "Polished Travertine | Glossy Natural Stone Finish for Luxury Interiors",
-        "metaDesc": "Explore Polished Travertine: reflective surfaces that highlight veining. Perfect for luxury floors, walls, bathrooms & commercial spaces. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Polished Travertine",
-        "intro": "Polished travertine is a high-gloss finish that transforms natural stone into a luxurious surface. By mechanically polishing the stone, the surface becomes reflective, enhancing veining patterns and colors. This finish is especially popular in luxury interiors, including hotels, high-end residences, and commercial spaces, where elegance and sophistication are priorities.",
-        "sections": {
-          "features": {
-            "h2": "Features of Polished Travertine",
-            "intro": "Polished travertine offers a mirror-like surface that emphasizes natural veining and tonal variation. The high gloss reflects light, creating brighter interiors and a sense of spaciousness. While visually striking, this finish requires more care in wet areas, as it can become slippery. Architects and designers choose polished travertine for its unmatched ability to elevate spaces with elegance and refinement.",
-            "items": [
-              {
-                "slug": "aesthetics",
-                "h3": "Visual Impact",
-                "blurb": "Polished surfaces highlight veining and color contrast, giving a dramatic and upscale appearance."
-              },
-              {
-                "slug": "maintenance",
-                "h3": "Maintenance Needs",
-                "blurb": "Requires sealing and routine care to maintain shine and protect against staining."
-              },
-              {
-                "slug": "durability",
-                "h3": "Durability",
-                "blurb": "Strong and long-lasting, but best suited for indoor use where slip resistance is not critical."
-              }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Polished travertine is widely used indoors, particularly in spaces designed for luxury. Its reflective surface makes it ideal for floors in hotel lobbies, commercial buildings, and high-end residences. Walls, countertops, and bathroom vanities also benefit from its elegant appearance. In wet or outdoor areas, polished travertine should be used with caution due to reduced slip resistance.",
-            "cards": [
-              { "slug": "floors", "title": "Floors & Lobbies", "desc": "Adds grandeur and brightness to interior spaces like hotel lobbies and corridors." },
-              { "slug": "walls", "title": "Walls & Cladding", "desc": "Used in interior walls and feature panels to highlight natural veining." },
-              { "slug": "bathrooms", "title": "Bathrooms & Vanities", "desc": "Perfect for luxury vanity tops and decorative bathroom walls." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Polished travertine is available in slabs and tiles of varying sizes. Standard thicknesses are 10–12 mm for tiles and 20–30 mm for slabs. Water absorption averages 0.4–0.8%, making sealing essential. Polishing reduces surface porosity, but sealing ensures long-term performance. Polished finishes are typically applied to Ivory, Light, and Antico travertine.",
-            "table": [
-              { "prop": "Finish type", "value": "Polished (high-gloss)", "notes": "Reflective, highlights veining" },
-              { "prop": "Typical thickness", "value": "Tiles: 10–12 mm, Slabs: 20–30 mm", "notes": "Custom available" },
-              { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation" },
-              { "prop": "Best colors", "value": "Ivory, Light, Antico", "notes": "Highlights natural variation" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Polished travertine should be installed with professional adhesives and sealed after installation to protect against stains. Care involves regular cleaning with pH-neutral products and resealing every 12–24 months. Avoid abrasive cleaners which can dull the polish. In bathrooms, use rugs or mats to improve safety where water may cause slipperiness."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Elegant, glossy finish enhances interiors",
-              "Highlights natural veining and colors",
-              "Adds luxury value to residential and commercial spaces"
-            ],
-            "cons": [
-              "Slippery when wet, not ideal for outdoor or wet floors",
-              "Requires sealing and periodic maintenance",
-              "More sensitive to scratches compared to honed finishes"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "View examples of polished travertine in luxury interiors. From hotel lobbies to residential bathrooms, these projects show how polished finishes elevate natural stone to the highest levels of elegance."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to common questions about polished travertine, its use, care, and applications.",
-            "items": [
-              {
-                "q": "Where is polished travertine best used?",
-                "a": "Polished travertine is best used in luxury interiors such as hotel lobbies, living rooms, and vanity tops. It creates a glossy, upscale appearance but is less suitable for wet or outdoor flooring."
-              },
-              {
-                "q": "Does polished travertine require sealing?",
-                "a": "Yes. Sealing is essential to protect polished travertine from stains and moisture. It should be sealed at installation and resealed every 12–24 months for best performance."
-              },
-              {
-                "q": "Is polished travertine slippery?",
-                "a": "Yes, polished travertine can be slippery when wet. For bathrooms or entryways, consider rugs, mats, or alternative finishes like honed or brushed."
-              },
-              {
-                "q": "How do you clean polished travertine?",
-                "a": "Use pH-neutral cleaners and avoid acids or abrasives. Wipe spills immediately and reseal regularly to maintain shine and durability."
-              }
-            ]
-          }
+  "socialImage": "https://www.majen.com.tr/media/travertine-pavers-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Looking for travertine pavers from Turkey?",
+    "rest": " This guide explains thickness, slip resistance, freeze-thaw performance and export methods so you can specify wholesale travertine pavers with confidence. As a quarry-backed Turkish travertine supplier, we provide photo-documented container loading and reliable FOB/CIF/EXW shipping options."
+  },
+
+  "sections": {
+    "colors": {
+      "h2": "Travertine Paver Colors",
+      "intro": "Color selection is essential when designing outdoor spaces with travertine pavers. Ivory pavers brighten terraces and pool areas, Light tones bring warmth to patios and pathways, while Antico shades provide rustic charm for traditional landscapes. Each natural variation offers distinct veining and tones, ensuring that no two pavers are exactly alike. This authenticity makes travertine pavers unique and adaptable to modern, classic, and Mediterranean-style projects.",
+      "items": [
+        {
+          "slug": "ivory",
+          "h3": "Ivory Travertine Pavers",
+          "blurb": "Ivory pavers create bright, clean outdoor areas, reflecting sunlight and adding a luxury touch to terraces and pool decks.",
+          "h4": "Benefits of Ivory Travertine Pavers",
+          "benefits": [
+            "Brightens outdoor living spaces with reflective tones",
+            "Keeps surfaces cooler underfoot in sunny climates",
+            "Popular for high-end residential and resort projects"
+          ],
+          "h5": "Where to Use Ivory Travertine Pavers",
+          "uses": [
+            "Pool decks and lounge areas",
+            "Luxury patios and terraces",
+            "Garden pathways and courtyards"
+          ]
+        },
+        { "slug": "light", "h3": "Light Travertine Pavers", "blurb": "Light travertine pavers feature beige tones that blend seamlessly with natural surroundings, ideal for patios and pathways." },
+        { "slug": "antico", "h3": "Antico Travertine Pavers", "blurb": "Antico pavers provide rustic charm and an antique look, perfect for Mediterranean-style gardens and traditional outdoor designs." }
+      ]
+    },
+
+    "finishes": {
+      "h2": "Travertine Paver Finishes",
+      "intro": "Travertine pavers are available in several finishes, each suited to outdoor environments. Tumbled finishes add rustic character and provide extra slip resistance, polished is rarely used outdoors but creates striking accents, honed delivers smooth but less slippery surfaces, and brushed adds subtle grip with a natural look. Choosing the right finish ensures safety and aesthetic harmony in exterior designs.",
+      "items": [
+        { "slug": "tumbled", "h3": "Tumbled Travertine Pavers", "blurb": "Tumbled pavers offer slip resistance and rustic charm, making them the most popular choice for outdoor landscaping." },
+        { "slug": "brushed", "h3": "Brushed Travertine Pavers", "blurb": "Brushed finishes provide subtle texture and grip, blending safety with elegance in outdoor areas." },
+        { "slug": "honed", "h3": "Honed Travertine Pavers", "blurb": "Honed pavers are smooth and modern, suitable for terraces and pathways where a refined look is desired." }
+      ]
+    },
+
+    "applications": {
+      "h2": "Applications",
+      "intro": "Travertine pavers are built for exterior performance, adapting to patios, pools, driveways, and pathways. Their natural porosity makes them cooler underfoot in hot climates, while their slip resistance enhances safety around water features. They withstand temperature changes and weather conditions, making them a sustainable, long-term solution for landscaping. Architects and homeowners value travertine pavers for their blend of beauty and practicality in outdoor living spaces.",
+      "cards": [
+        { "slug": "patios", "title": "Patios & Terraces", "desc": "Create elegant outdoor living areas with natural travertine pavers." },
+        { "slug": "pools", "title": "Pool Decks", "desc": "Slip-resistant and cool underfoot, perfect for swimming pool surrounds." },
+        { "slug": "driveways", "title": "Driveways & Pathways", "desc": "Durable pavers withstand heavy loads and create timeless paths." }
+      ],
+
+ 
+      "details": [
+        { "slug": "pool", "h3": "Pool Deck Pavers", "p": "Tumbled travertine pavers stay cool underfoot and provide natural slip resistance. Use 30–40 mm thickness and seal periodically to protect against chlorine and salt water." },
+        { "slug": "patio", "h3": "Patio Pavers", "p": "Outdoor living areas benefit from brushed or tumbled textures that add grip. Large formats minimize joints, and lighter colors reduce heat absorption in sunny climates." },
+        { "slug": "driveway", "h3": "Driveway Pavers", "p": "For vehicular loads, use 40 mm+ thickness with compacted base. Travertine pavers withstand freeze-thaw cycles when properly installed with drainage." }
+      ]
+    },
+
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Travertine pavers are manufactured with outdoor use in mind, offering strength, slip resistance, and weather endurance. Standard thickness is 30–50 mm to handle outdoor loads. Sizes include squares, rectangles, and modular patterns. Absorption rates average 0.5–1.0%, requiring sealing for stain protection. Their specifications make them ideal for landscaping and exterior design projects where durability and safety are key.",
+      "table": [
+        { "prop": "Thickness", "value": "30–50 mm", "notes": "Outdoor grade, handles heavy loads" },
+        { "prop": "Absorption", "value": "0.5–1.0%", "notes": "Seal to prevent stains" },
+        { "prop": "Finish options", "value": "Tumbled / Brushed / Honed", "notes": "Slip resistance varies by finish" },
+        { "prop": "Standard sizes", "value": "Modular patterns, 300×300 mm, 600×600 mm", "notes": "Custom sizes available" }
+      ],
+
+
+      "extraRows": [
+        { "prop": "Slip resistance", "value": "R11–R13", "notes": "Tumbled/brushed finishes recommended" },
+        { "prop": "Freeze-thaw durability", "value": "High", "notes": "Proper base and drainage required" },
+        { "prop": "Standard sizes (add.)", "value": "200×400 · 400×400 · 600×400 mm", "notes": "More outdoor formats" },
+        { "prop": "Approx. weight per m²", "value": "~81 kg (30 mm) · ~108 kg (40 mm)", "notes": "Plan handling accordingly" }
+      ]
+    },
+
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Travertine pavers should be installed on compacted sand or gravel with proper drainage. Jointing sand or mortar can be used depending on application. Around pools, sealing is recommended to protect against chlorine or saltwater exposure. Routine maintenance includes sweeping debris, rinsing with water, and resealing every 1–2 years. Avoid acidic cleaners which may damage the stone surface.",
+
+   
+      "careNotes": [
+        "Install on compacted sub-base with sand/cement setting bed.",
+        "Allow proper drainage to avoid freeze-thaw damage.",
+        "Seal after installation and every 12–24 months depending on exposure.",
+        "Use pH-neutral cleaners; avoid harsh acids."
+      ]
+    },
+
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Slip-resistant and safe for outdoor use",
+        "Cooler underfoot compared to concrete or ceramic",
+        "Durable and weather-resistant with long lifespan"
+      ],
+      "cons": [
+        "Requires sealing to protect against stains",
+        "Heavier than some man-made pavers",
+        "Natural variation may affect uniformity in large areas"
+      ]
+    },
+
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "Browse examples of travertine pavers in outdoor projects, from pool decks and patios to pathways and driveways. These visuals showcase how pavers combine elegance with practicality in real-world settings.",
+
+  
+      "alts": [
+        "Ivory travertine pool deck pavers",
+        "Brushed travertine patio paving",
+        "Tumbled travertine driveway pavers"
+      ]
+    },
+
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Answers to common questions about travertine pavers, including durability, safety, and maintenance.",
+      "items": [
+        { "q": "Are travertine pavers good for pool decks?", "a": "Yes. Travertine pavers are slip-resistant and stay cooler underfoot than many other materials, making them one of the best choices for pool surrounds." },
+        { "q": "Do travertine pavers need sealing?", "a": "Yes. Sealing is highly recommended to prevent stains from food, drinks, or pool chemicals. Resealing every 1–2 years maintains performance and appearance." },
+        { "q": "Can travertine pavers be used in driveways?", "a": "Yes. With thicknesses of 30–50 mm, travertine pavers are strong enough for driveways and withstand vehicle loads when installed properly." },
+        { "q": "How do you maintain travertine pavers?", "a": "Regular sweeping, occasional rinsing, and resealing as needed keep travertine pavers looking their best. Avoid acidic cleaners which may etch the stone." }
+      ],
+
+   
+      "extra": [
+        { "q": "How thick should travertine pavers be for a driveway?", "a": "At least 40 mm thickness is recommended for driveways to withstand vehicle loads." },
+        { "q": "Are travertine pavers slip resistant?", "a": "Yes—tumbled and brushed finishes provide R11–R13 slip ratings, suitable for wet areas like pools." },
+        { "q": "Do travertine pavers handle freeze-thaw conditions?", "a": "Yes, when installed with proper drainage and sealing, travertine pavers perform well in cold climates." },
+        { "q": "How often should pavers be sealed?", "a": "Typically every 12–24 months; more often for pools and driveways exposed to heavy use." }
+      ]
+    }
+  },
+
+
+  "microProof": [
+    "Lead time: typically 10–20 business days depending on thickness and finish.",
+    "Slip-tested pavers (R11–R13) with photo-documented loading.",
+    "FOB İzmir (Alsancak/Aliağa), CIF available to your port."
+  ],
+  "ld": {
+    "keywords": [
+      "travertine pavers",
+      "pool deck pavers",
+      "driveway pavers",
+      "Turkish travertine"
+    ]
+  }
+},
+
+       "travertine-mosaics": {
+  "metaTitle": "Travertine Mosaics | Decorative Natural Stone for Walls, Floors & Features",
+  "metaDesc": "Explore Turkish Travertine Mosaics in Ivory, Light & Antico. Perfect for kitchens, bathrooms, and feature walls. Specs, pros & cons, gallery & FAQs.",
+  "h1": "Travertine Mosaics",
+  "intro": "Travertine mosaics are small, decorative stone pieces arranged into patterns, sheets, or designs for both interior and exterior use. They bring texture, character, and artistic expression to projects, combining the natural beauty of travertine with flexible applications. From kitchen backsplashes and bathroom walls to feature panels and flooring accents, Turkish travertine mosaics are a versatile choice for homeowners, architects, and designers worldwide.",
+
+
+  "socialImage": "https://www.majen.com.tr/media/travertine-mosaics-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Planning travertine mosaics from Turkey?",
+    "rest": " This guide covers sheet size, thickness, mesh backing, joint width, finishes and wet-area suitability so architects, distributors and installers can specify wholesale travertine mosaics with confidence. As a quarry-backed Turkish travertine supplier, we also support FOB/CIF/EXW shipping with photo-documented loading."
+  },
+
+  "sections": {
+    "colors": {
+      "h2": "Travertine Mosaic Colors",
+      "intro": "Travertine mosaics are crafted in Ivory, Light, and Antico shades, each offering unique design potential. Ivory mosaics brighten spaces with elegance, Light mosaics bring warm beige tones that complement modern interiors, and Antico mosaics provide rustic character for traditional or Mediterranean projects. Combining colors in mosaic patterns creates dynamic visual effects, allowing for both subtle accents and bold statements.",
+      "items": [
+        {
+          "slug": "ivory",
+          "h3": "Ivory Travertine Mosaics",
+          "blurb": "Ivory mosaics provide brightness and sophistication, often chosen for bathrooms and kitchens.",
+          "h4": "Benefits of Ivory Travertine Mosaics",
+          "benefits": [
+            "Brightens interiors with light-reflective qualities",
+            "Versatile for modern and luxury designs",
+            "Pairs well with glass, metal, and wood accents"
+          ],
+          "h5": "Where to Use Ivory Travertine Mosaics",
+          "uses": [
+            "Bathroom walls and shower niches",
+            "Kitchen backsplashes",
+            "Feature panels in living rooms"
+          ]
+        },
+        { "slug": "light", "h3": "Light Travertine Mosaics", "blurb": "Light mosaics add warmth and subtle elegance, making them ideal for large decorative walls and stylish flooring inserts." },
+        { "slug": "antico", "h3": "Antico Travertine Mosaics", "blurb": "Antico mosaics deliver rustic charm and antique appeal, perfect for traditional and Mediterranean-style designs." }
+      ]
+    },
+
+    "finishes": {
+      "h2": "Travertine Mosaic Finishes",
+      "intro": "Travertine mosaics are produced in multiple finishes to match design needs. Polished mosaics highlight natural veining and create glossy effects, honed mosaics provide a soft matte look, tumbled mosaics offer rustic texture with antique charm, and brushed mosaics add gentle grip and depth. These finishes allow mosaics to serve as both functional surfaces and artistic highlights.",
+      "items": [
+        { "slug": "polished", "h3": "Polished Travertine Mosaics", "blurb": "Glossy mosaics emphasize veining, ideal for luxury bathrooms and kitchens." },
+        { "slug": "honed", "h3": "Honed Travertine Mosaics", "blurb": "Smooth, matte mosaics give a modern touch to walls and floors." },
+        { "slug": "tumbled", "h3": "Tumbled Travertine Mosaics", "blurb": "Antique, textured mosaics deliver rustic appeal for Mediterranean designs." },
+        { "slug": "brushed", "h3": "Brushed Travertine Mosaics", "blurb": "Textured mosaics provide grip and warmth, perfect for feature walls and outdoor use." }
+      ]
+    },
+
+    "applications": {
+      "h2": "Applications",
+      "intro": "Travertine mosaics are used as decorative highlights in both residential and commercial projects. They are ideal for kitchen backsplashes, bathroom walls, shower floors, and feature walls in living rooms or lobbies. Their small size and sheet-mounted format make installation flexible, allowing curved surfaces, borders, or complex patterns. Outdoors, they add character to patios, garden walls, and pool surrounds.",
+      "cards": [
+        { "slug": "bathroom", "title": "Bathroom Mosaics", "desc": "Used in shower walls, niches, and flooring accents for spa-like designs." },
+        { "slug": "kitchen", "title": "Kitchen Mosaics", "desc": "Perfect for backsplashes and counters, adding texture and style." },
+        { "slug": "features", "title": "Feature Walls", "desc": "Create striking feature panels in living rooms, lobbies, and exteriors." }
+      ],
+
+    
+      "details": [
+        { "slug": "bathroom-walls-showers", "h3": "Bathroom Walls & Showers", "p": "Honed or tumbled mosaics provide comfortable grip and visual texture for showers and spa walls. Seal before and after grouting to reduce staining and soap residue." },
+        { "slug": "kitchen-backsplash", "h3": "Kitchen Backsplash", "p": "Ivory and Light mosaics pair well with modern cabinetry. Use white thinset to avoid shadowing through light stones and finish with stain-resistant grout." },
+        { "slug": "pools-spas", "h3": "Pools & Spas", "p": "Tumbled mosaics add traction and organic movement to waterlines and steps. Plan for periodic resealing in chlorinated or salt-water pools." },
+        { "slug": "decorative-panels-niches", "h3": "Decorative Panels & Niches", "p": "Bookmatched accents aren’t typical with mosaics; instead, use patterns like herringbone, basketweave or hexagon to create depth and rhythm." }
+      ]
+    },
+
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Travertine mosaics are typically supplied on mesh sheets for easier installation. Common sheet sizes are 300×300 mm, with individual mosaic pieces ranging from 20×20 mm to 50×50 mm. Thickness usually varies between 8–12 mm. Absorption rates average 0.4–0.8%, requiring sealing after installation. Available in polished, honed, brushed, or tumbled finishes, mosaics are adaptable to a wide range of decorative applications.",
+      "table": [
+        { "prop": "Sheet size", "value": "300×300 mm", "notes": "Standard, other formats available" },
+        { "prop": "Piece size", "value": "20–50 mm", "notes": "Square, hexagon, or custom shapes" },
+        { "prop": "Thickness", "value": "8–12 mm", "notes": "Depending on format and finish" },
+        { "prop": "Finish options", "value": "Polished / Honed / Tumbled / Brushed", "notes": "Choose based on design and slip needs" }
+      ],
+
+   
+      "extraRows": [
+        { "prop": "Sheet size (std.)", "value": "305 × 305 mm (≈0.093 m²)", "notes": "≈10.8 sheets per m²" },
+        { "prop": "Chip sizes", "value": "23×23 · 48×48 · 100×100 mm", "notes": "Custom combinations available" },
+        { "prop": "Backing", "value": "Mesh-mounted (fiberglass)", "notes": "Paper-faced optional on request" },
+        { "prop": "Joint width", "value": "~2–3 mm", "notes": "Unsanded grout for ≤3 mm; sanded for wider" },
+        { "prop": "Water absorption", "value": "~0.4–0.8%", "notes": "Seal before/after grouting" },
+        { "prop": "Approx. weight", "value": "~27 kg/m² (10 mm)", "notes": "≈2.5–3.0 kg per sheet" }
+      ]
+    },
+
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Travertine mosaics are supplied on mesh sheets, making them easy to install on walls, floors, and curved surfaces. They should be installed with thin-set mortar, grouted carefully to fill joints, and sealed after curing. Maintenance involves cleaning with pH-neutral solutions and resealing every 1–2 years. Avoid acidic cleaners which may etch the surface.",
+
+   
+      "careNotes": [
+        "Use white cement-based thinset for light stones to avoid show-through.",
+        "Dry-lay and align patterns; trim mesh near edges for clean terminations.",
+        "Pre-seal mosaics before grouting to reduce haze; re-seal after cure.",
+        "Use pH-neutral cleaners; avoid acidic products on natural stone."
+      ]
+    },
+
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Highly decorative, adding texture and character to spaces",
+        "Flexible formats allow complex designs and curved surfaces",
+        "Durable natural stone with timeless appeal"
+      ],
+      "cons": [
+        "Requires sealing to prevent staining",
+        "Smaller pieces mean more grout lines to maintain",
+        "May be more expensive per m² compared to larger tiles"
+      ]
+    },
+
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "View examples of travertine mosaics in kitchens, bathrooms, and feature walls. These projects highlight how mosaics transform ordinary surfaces into artistic statements.",
+
+
+      "alts": [
+        "Ivory travertine mosaic kitchen backsplash",
+        "Honed travertine mosaic shower niche",
+        "Tumbled travertine pool mosaic waterline"
+      ]
+    },
+
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Answers to common questions about travertine mosaics, their uses, and maintenance.",
+      "items": [
+        {
+          "q": "What are travertine mosaics used for?",
+          "a": "Travertine mosaics are decorative tiles used in kitchens, bathrooms, feature walls, and outdoor accents. They add texture, style, and natural stone beauty to any project."
+        },
+        {
+          "q": "Do travertine mosaics need sealing?",
+          "a": "Yes. Travertine mosaics are porous and require sealing to prevent stains and moisture damage. Sealing should be applied after installation and reapplied regularly."
+        },
+        {
+          "q": "Can travertine mosaics be used on floors?",
+          "a": "Yes. Travertine mosaics are often used on shower floors and decorative flooring accents. Slip-resistant finishes like tumbled are recommended for wet areas."
+        },
+        {
+          "q": "How are travertine mosaics installed?",
+          "a": "They are supplied on mesh sheets, making installation straightforward. Install with thin-set mortar, grout carefully, and seal to protect the surface."
         }
-      },
+      ],
+
+ 
+      "extra": [
+        { "q": "Are travertine mosaics mesh-mounted?", "a": "Yes—most sheets are mesh-mounted for fast installation and easier handling. Paper-faced options are available on request." },
+        { "q": "What is the typical sheet size and coverage?", "a": "Standard sheets are 305×305 mm (~0.093 m²), so you need ~10.8 sheets per m² plus waste." },
+        { "q": "Can mosaics be used in showers and pools?", "a": "Yes—choose honed or tumbled finishes, seal properly and ensure suitable waterproofing and drainage." },
+        { "q": "What grout should I use?", "a": "~2–3 mm joints typically use unsanded grout; wider joints can use sanded. Follow sealer manufacturer guidance." }
+      ]
+    },
+
+
+    "patterns": {
+      "h2": "Patterns & Sheet Types",
+      "common": [
+        { "name": "Hexagon", "desc": "Geometric, contemporary look for kitchens and showers." },
+        { "name": "Herringbone", "desc": "Dynamic direction and movement on feature walls." },
+        { "name": "Basketweave", "desc": "Classic texture with small square/rectangle chips." },
+        { "name": "Brick/Subway", "desc": "Timeless staggered layout, easy to align." },
+        { "name": "Penny Round*", "desc": "Less common in travertine but possible for soft curves." }
+      ],
+      "note": "*Availability may vary by lot; custom cutting on request."
+    }
+  },
+
+
+  "microProof": [
+    "Sample sheets available for fast shade approval.",
+    "Photo-documented loading & seal numbers for each shipment.",
+    "FOB İzmir (Alsancak/Aliağa); CIF available to your destination port."
+  ],
+  "ld": {
+    "keywords": [
+      "travertine mosaics",
+      "mosaic backsplash",
+      "shower mosaics",
+      "Turkish travertine"
+    ]
+  }
+}
+,
+     "polished-travertine": {
+  "metaTitle": "Polished Travertine | Glossy Natural Stone Finish for Luxury Interiors",
+  "metaDesc": "Explore Polished Travertine: reflective surfaces that highlight veining. Perfect for luxury floors, walls, bathrooms & commercial spaces. Specs, pros & cons, gallery & FAQs.",
+  "h1": "Polished Travertine",
+  "intro": "Polished travertine is a high-gloss finish that transforms natural stone into a luxurious surface. By mechanically polishing the stone, the surface becomes reflective, enhancing veining patterns and colors. This finish is especially popular in luxury interiors, including hotels, high-end residences, and commercial spaces, where elegance and sophistication are priorities.",
+  "socialImage": "https://www.majen.com.tr/media/polished-travertine-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Considering polished travertine for your project?",
+    "rest": " This guide explains where polished travertine excels—floors, walls, bathrooms and countertops—while noting slip resistance and maintenance. As a quarry-backed Turkish travertine supplier, we also provide FOB/CIF/EXW export options with photo-documented loading."
+  },
+  "sections": {
+    "features": {
+      "h2": "Features of Polished Travertine",
+      "intro": "Polished travertine offers a mirror-like surface that emphasizes natural veining and tonal variation. The high gloss reflects light, creating brighter interiors and a sense of spaciousness. While visually striking, this finish requires more care in wet areas, as it can become slippery. Architects and designers choose polished travertine for its unmatched ability to elevate spaces with elegance and refinement.",
+      "items": [
+        { "slug": "aesthetics", "h3": "Visual Impact", "blurb": "Polished surfaces highlight veining and color contrast, giving a dramatic and upscale appearance." },
+        { "slug": "maintenance", "h3": "Maintenance Needs", "blurb": "Requires sealing and routine care to maintain shine and protect against staining." },
+        { "slug": "durability", "h3": "Durability", "blurb": "Strong and long-lasting, but best suited for indoor use where slip resistance is not critical." }
+      ]
+    },
+    "applications": {
+      "h2": "Applications",
+      "intro": "Polished travertine is widely used indoors, particularly in spaces designed for luxury. Its reflective surface makes it ideal for floors in hotel lobbies, commercial buildings, and high-end residences. Walls, countertops, and bathroom vanities also benefit from its elegant appearance. In wet or outdoor areas, polished travertine should be used with caution due to reduced slip resistance.",
+      "cards": [
+        { "slug": "floors", "title": "Floors & Lobbies", "desc": "Adds grandeur and brightness to interior spaces like hotel lobbies and corridors." },
+        { "slug": "walls", "title": "Walls & Cladding", "desc": "Used in interior walls and feature panels to highlight natural veining." },
+        { "slug": "bathrooms", "title": "Bathrooms & Vanities", "desc": "Perfect for luxury vanity tops and decorative bathroom walls." }
+      ],
+      "details": [
+        { "slug": "floors", "h3": "Polished Travertine Floors", "p": "High-gloss finish enhances natural veining, ideal for hotel lobbies and residential living rooms. Use rugs in high-traffic zones and seal periodically to maintain shine." },
+        { "slug": "walls", "h3": "Polished Travertine Walls", "p": "Perfect for feature walls, fireplaces and commercial interiors where reflectivity adds depth. Combine with directional lighting to highlight natural movement." },
+        { "slug": "bathrooms", "h3": "Polished Travertine Bathrooms", "p": "Luxurious look for vanity tops and accent walls. Avoid polished travertine on wet floors as it can be slippery; opt for honed or brushed there instead." },
+        { "slug": "countertops", "h3": "Polished Travertine Countertops", "p": "Durable and elegant for kitchens and bars. Seal regularly to resist staining from wine, oils and acids. Use cutting boards to protect the surface." }
+      ]
+    },
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Polished travertine is available in slabs and tiles of varying sizes. Standard thicknesses are 10–12 mm for tiles and 20–30 mm for slabs. Water absorption averages 0.4–0.8%, making sealing essential. Polishing reduces surface porosity, but sealing ensures long-term performance. Polished finishes are typically applied to Ivory, Light, and Antico travertine.",
+      "table": [
+        { "prop": "Finish type", "value": "Polished (high-gloss)", "notes": "Reflective, highlights veining" },
+        { "prop": "Typical thickness", "value": "Tiles: 10–12 mm, Slabs: 20–30 mm", "notes": "Custom available" },
+        { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation" },
+        { "prop": "Best colors", "value": "Ivory, Light, Antico", "notes": "Highlights natural variation" }
+      ],
+      "extraRows": [
+        { "prop": "Tile thickness", "value": "10–12 mm", "notes": "Indoor floors and walls" },
+        { "prop": "Slab thickness", "value": "20–30 mm", "notes": "Countertops and wall cladding" },
+        { "prop": "Gloss level", "value": "High reflectivity (90%+)", "notes": "Mechanical polishing" },
+        { "prop": "Slip resistance", "value": "R9 (low)", "notes": "Not recommended for wet floors" },
+        { "prop": "Best applications", "value": "Walls, countertops, decorative floors", "notes": "Use rugs/mats on polished floors" }
+      ]
+    },
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Polished travertine should be installed with professional adhesives and sealed after installation to protect against stains. Care involves regular cleaning with pH-neutral products and resealing every 12–24 months. Avoid abrasive cleaners which can dull the polish. In bathrooms, use rugs or mats to improve safety where water may cause slipperiness.",
+      "careNotes": [
+        "Seal after installation; reseal every 12–24 months depending on use.",
+        "Use pH-neutral cleaners; avoid acids and abrasives.",
+        "Buff with stone polish when needed to refresh gloss.",
+        "Use rugs/mats on polished floors in wet or entry areas."
+      ]
+    },
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Elegant, glossy finish enhances interiors",
+        "Highlights natural veining and colors",
+        "Adds luxury value to residential and commercial spaces"
+      ],
+      "cons": [
+        "Slippery when wet, not ideal for outdoor or wet floors",
+        "Requires sealing and periodic maintenance",
+        "More sensitive to scratches compared to honed finishes"
+      ]
+    },
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "View examples of polished travertine in luxury interiors. From hotel lobbies to residential bathrooms, these projects show how polished finishes elevate natural stone to the highest levels of elegance.",
+      "alts": [
+        "Polished travertine bathroom vanity top",
+        "Glossy polished travertine living room floor",
+        "Polished travertine feature wall with lighting"
+      ]
+    },
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Answers to common questions about polished travertine, its use, care, and applications.",
+      "items": [
+        {
+          "q": "Where is polished travertine best used?",
+          "a": "Polished travertine is best used in luxury interiors such as hotel lobbies, living rooms, and vanity tops. It creates a glossy, upscale appearance but is less suitable for wet or outdoor flooring."
+        },
+        {
+          "q": "Does polished travertine require sealing?",
+          "a": "Yes. Sealing is essential to protect polished travertine from stains and moisture. It should be sealed at installation and resealed every 12–24 months for best performance."
+        },
+        {
+          "q": "Is polished travertine slippery?",
+          "a": "Yes, polished travertine can be slippery when wet. For bathrooms or entryways, consider rugs, mats, or alternative finishes like honed or brushed."
+        },
+        {
+          "q": "How do you clean polished travertine?",
+          "a": "Use pH-neutral cleaners and avoid acids or abrasives. Wipe spills immediately and reseal regularly to maintain shine and durability."
+        }
+      ],
+      "extra": [
+        { "q": "How slippery is polished travertine?", "a": "Polished travertine has low slip resistance (R9), making it less suitable for wet floors. Consider honed or brushed finishes for safety." },
+        { "q": "Where should I avoid polished travertine?", "a": "Avoid polished travertine in outdoor walkways, pool decks and shower floors. It’s best for walls, countertops and decorative areas." },
+        { "q": "How do I maintain polished travertine’s shine?", "a": "Seal regularly with impregnating sealer, use pH-neutral cleaners, and buff with stone polish to restore gloss." },
+        { "q": "How often should polished travertine be resealed?", "a": "Every 12–24 months depending on use; kitchens and bathrooms may require more frequent resealing." }
+      ]
+    }
+  },
+  "microProof": [
+    "Polished finish sealed and tested for gloss and consistency.",
+    "Photo-documented slab/tile selection and loading.",
+    "FOB İzmir (Alsancak/Aliağa), CIF available worldwide."
+  ],
+  "ld": {
+    "keywords": [
+      "polished travertine",
+      "travertine floors",
+      "travertine countertops",
+      "Turkish travertine"
+    ]
+  }
+},
 
       "honed-travertine": {
-        "metaTitle": "Honed Travertine | Smooth Matte Finish for Modern Interiors",
-        "metaDesc": "Discover Honed Travertine: a soft, matte finish ideal for floors, walls, and countertops. Non-reflective, slip-friendly, and perfect for contemporary designs. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Honed Travertine",
-        "intro": "Honed travertine is a popular finish that delivers a smooth, matte surface without the reflective shine of polished stone. This finish provides a modern, understated elegance that works beautifully in both residential and commercial projects. Honed travertine is ideal for floors, walls, and countertops where a contemporary look and slip comfort are priorities.",
-        "sections": {
-          "features": {
-            "h2": "Features of Honed Travertine",
-            "intro": "Honed travertine is achieved by grinding the surface of the stone until smooth but not glossy. This results in a subtle, satin-like appearance that enhances natural tones while reducing glare. It is less slippery than polished travertine, making it a safer choice for flooring in high-traffic or wet areas. Designers choose honed travertine for its ability to balance natural stone aesthetics with functional practicality.",
-            "items": [
-              {
-                "slug": "appearance",
-                "h3": "Appearance",
-                "blurb": "Smooth, matte surface with a natural, elegant finish that reduces glare and suits modern interiors."
-              },
-              {
-                "slug": "safety",
-                "h3": "Safety",
-                "blurb": "Less slippery than polished stone, honed travertine is suitable for bathrooms, kitchens, and high-traffic areas."
-              },
-              {
-                "slug": "versatility",
-                "h3": "Versatility",
-                "blurb": "Available in tiles and slabs for use in floors, walls, countertops, and even exterior cladding."
-              }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Honed travertine is widely used in both residential and commercial spaces. Indoors, it enhances flooring, wall cladding, and countertops with its refined, non-reflective look. In bathrooms, it provides a slip-friendly option for floors and shower walls. Kitchens benefit from honed countertops that balance practicality with style. Outdoors, honed travertine can be used in covered terraces and facades, though sealing is required for weather resistance.",
-            "cards": [
-              { "slug": "floors", "title": "Floors & Interiors", "desc": "Ideal for large-format flooring in living rooms, hallways, and office spaces." },
-              { "slug": "bathrooms", "title": "Bathrooms & Wet Areas", "desc": "Safer than polished, honed travertine works well for shower walls and floors." },
-              { "slug": "countertops", "title": "Countertops", "desc": "A practical choice for kitchen and bathroom counters where a modern look is desired." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Honed travertine is supplied in standard tiles and slabs, typically 10–12 mm thick for tiles and 20–30 mm for slabs. Its water absorption rate averages 0.4–0.8%, requiring sealing for moisture protection. The matte surface reduces light reflection, making it comfortable in brightly lit spaces. Available in Ivory, Light, and Antico shades, honed travertine adapts easily to different design styles.",
-            "table": [
-              { "prop": "Finish type", "value": "Honed (smooth, matte)", "notes": "Non-reflective, slip-friendly" },
-              { "prop": "Typical thickness", "value": "Tiles: 10–12 mm, Slabs: 20–30 mm", "notes": "Custom available" },
-              { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation" },
-              { "prop": "Best colors", "value": "Ivory, Light, Antico", "notes": "Adaptable to modern and classic designs" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Honed travertine should be installed on stable substrates using cement-based adhesives. Sealing is critical to protect against stains and moisture, especially in bathrooms and kitchens. Routine care involves cleaning with neutral products and resealing every 1–2 years. Avoid acidic cleaners which can etch the surface. With proper maintenance, honed travertine retains its elegant matte finish for decades."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Elegant matte finish suits modern interiors",
-              "Less slippery than polished stone, safer for wet areas",
-              "Versatile across floors, walls, and countertops"
-            ],
-            "cons": [
-              "Requires sealing to prevent stains",
-              "Matte surface may show scratches more visibly",
-              "Less reflective, so not ideal where high gloss is desired"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "Explore how honed travertine enhances modern interiors. From sleek living room floors to spa-like bathrooms, these examples show its subtle elegance in real-world projects."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to common questions about honed travertine, its use, and maintenance.",
-            "items": [
-              {
-                "q": "Where is honed travertine best used?",
-                "a": "Honed travertine is best used indoors in areas like living rooms, bathrooms, kitchens, and countertops. Its matte surface reduces glare and provides slip comfort in wet spaces."
-              },
-              {
-                "q": "Does honed travertine need sealing?",
-                "a": "Yes. Sealing is recommended to protect against stains and moisture. It should be applied after installation and renewed every 12–24 months."
-              },
-              {
-                "q": "Is honed travertine suitable for bathrooms?",
-                "a": "Yes. Honed travertine is widely used in bathrooms, especially for floors and shower walls. Its slip-friendly surface makes it safer than polished finishes."
-              },
-              {
-                "q": "How do you clean honed travertine?",
-                "a": "Use pH-neutral cleaners and avoid acids or abrasives. Wipe spills quickly and reseal regularly to keep the stone protected and looking elegant."
-              }
-            ]
-          }
+  "metaTitle": "Honed Travertine | Smooth Matte Finish for Modern Interiors",
+  "metaDesc": "Discover Honed Travertine: a soft, matte finish ideal for floors, walls, and countertops. Non-reflective, slip-friendly, and perfect for contemporary designs. Specs, pros & cons, gallery & FAQs.",
+  "h1": "Honed Travertine",
+  "intro": "Honed travertine is a popular finish that delivers a smooth, matte surface without the reflective shine of polished stone. This finish provides a modern, understated elegance that works beautifully in both residential and commercial projects. Honed travertine is ideal for floors, walls, and countertops where a contemporary look and slip comfort are priorities.",
+  "socialImage": "https://www.majen.com.tr/media/honed-travertine-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Looking at honed travertine for your project?",
+    "rest": " This guide covers slip resistance, thickness, absorption and best uses for floors, bathrooms and countertops. As a quarry-backed Turkish travertine supplier, we also support FOB/CIF/EXW export with photo-documented loading."
+  },
+  "sections": {
+    "features": {
+      "h2": "Features of Honed Travertine",
+      "intro": "Honed travertine is achieved by grinding the surface of the stone until smooth but not glossy. This results in a subtle, satin-like appearance that enhances natural tones while reducing glare. It is less slippery than polished travertine, making it a safer choice for flooring in high-traffic or wet areas. Designers choose honed travertine for its ability to balance natural stone aesthetics with functional practicality.",
+      "items": [
+        { "slug": "appearance", "h3": "Appearance", "blurb": "Smooth, matte surface with a natural, elegant finish that reduces glare and suits modern interiors." },
+        { "slug": "safety", "h3": "Safety", "blurb": "Less slippery than polished stone, honed travertine is suitable for bathrooms, kitchens, and high-traffic areas." },
+        { "slug": "versatility", "h3": "Versatility", "blurb": "Available in tiles and slabs for use in floors, walls, countertops, and even exterior cladding." }
+      ]
+    },
+    "applications": {
+      "h2": "Applications",
+      "intro": "Honed travertine is widely used in both residential and commercial spaces. Indoors, it enhances flooring, wall cladding, and countertops with its refined, non-reflective look. In bathrooms, it provides a slip-friendly option for floors and shower walls. Kitchens benefit from honed countertops that balance practicality with style. Outdoors, honed travertine can be used in covered terraces and facades, though sealing is required for weather resistance.",
+      "cards": [
+        { "slug": "floors", "title": "Floors & Interiors", "desc": "Ideal for large-format flooring in living rooms, hallways, and office spaces." },
+        { "slug": "bathrooms", "title": "Bathrooms & Wet Areas", "desc": "Safer than polished, honed travertine works well for shower walls and floors." },
+        { "slug": "countertops", "title": "Countertops", "desc": "A practical choice for kitchen and bathroom counters where a modern look is desired." }
+      ],
+      "details": [
+        { "slug": "floors", "h3": "Honed Travertine Floors", "p": "Smooth matte surface offers comfortable slip resistance (R10–R11), making it ideal for indoor floors and commercial lobbies. Use 10–12 mm tiles for interiors, thicker cuts for heavy traffic." },
+        { "slug": "bathrooms", "h3": "Honed Travertine Bathrooms", "p": "Popular for bathroom floors and shower walls. Honed finish reduces glare and provides safer footing than polished. Seal periodically to resist moisture and staining." },
+        { "slug": "countertops", "h3": "Honed Travertine Countertops", "p": "Provides a contemporary, soft-touch alternative to polished. More forgiving with scratches and etching. Seal regularly to protect against oils and wine stains." }
+      ]
+    },
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Honed travertine is supplied in standard tiles and slabs, typically 10–12 mm thick for tiles and 20–30 mm for slabs. Its water absorption rate averages 0.4–0.8%, requiring sealing for moisture protection. The matte surface reduces light reflection, making it comfortable in brightly lit spaces. Available in Ivory, Light, and Antico shades, honed travertine adapts easily to different design styles.",
+      "table": [
+        { "prop": "Finish type", "value": "Honed (smooth, matte)", "notes": "Non-reflective, slip-friendly" },
+        { "prop": "Typical thickness", "value": "Tiles: 10–12 mm, Slabs: 20–30 mm", "notes": "Custom available" },
+        { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after installation" },
+        { "prop": "Best colors", "value": "Ivory, Light, Antico", "notes": "Adaptable to modern and classic designs" }
+      ],
+      "extraRows": [
+        { "prop": "Tile thickness", "value": "10–12 mm", "notes": "Standard interior use" },
+        { "prop": "Slab thickness", "value": "20–30 mm", "notes": "Countertops & cladding" },
+        { "prop": "Finish", "value": "Matte, smooth, low sheen", "notes": "More slip-resistant than polished" },
+        { "prop": "Slip resistance", "value": "R10–R11", "notes": "Suitable for wet areas" },
+        { "prop": "Water absorption", "value": "~0.4–0.8%", "notes": "Seal before and after install" },
+        { "prop": "Colors available", "value": "Ivory · Light · Antico", "notes": "Consistent supply from quarries" }
+      ]
+    },
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Honed travertine should be installed on stable substrates using cement-based adhesives. Sealing is critical to protect against stains and moisture, especially in bathrooms and kitchens. Routine care involves cleaning with neutral products and resealing every 1–2 years. Avoid acidic cleaners which can etch the surface. With proper maintenance, honed travertine retains its elegant matte finish for decades.",
+      "careNotes": [
+        "Seal before and after installation; renew every 12–24 months.",
+        "Use pH-neutral cleaners; avoid acids and abrasives.",
+        "Dry areas quickly in bathrooms to reduce soap/mineral residue.",
+        "For heavy-traffic floors, consider entry mats and felt pads."
+      ]
+    },
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Elegant matte finish suits modern interiors",
+        "Less slippery than polished stone, safer for wet areas",
+        "Versatile across floors, walls, and countertops"
+      ],
+      "cons": [
+        "Requires sealing to prevent stains",
+        "Matte surface may show scratches more visibly",
+        "Less reflective, so not ideal where high gloss is desired"
+      ]
+    },
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "Explore how honed travertine enhances modern interiors. From sleek living room floors to spa-like bathrooms, these examples show its subtle elegance in real-world projects.",
+      "alts": [
+        "Honed travertine bathroom floor and shower wall",
+        "Matte honed travertine kitchen countertop",
+        "Ivory honed travertine tiles in commercial lobby"
+      ]
+    },
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "Answers to common questions about honed travertine, its use, and maintenance.",
+      "items": [
+        {
+          "q": "Where is honed travertine best used?",
+          "a": "Honed travertine is best used indoors in areas like living rooms, bathrooms, kitchens, and countertops. Its matte surface reduces glare and provides slip comfort in wet spaces."
+        },
+        {
+          "q": "Does honed travertine need sealing?",
+          "a": "Yes. Sealing is recommended to protect against stains and moisture. It should be applied after installation and renewed every 12–24 months."
+        },
+        {
+          "q": "Is honed travertine suitable for bathrooms?",
+          "a": "Yes. Honed travertine is widely used in bathrooms, especially for floors and shower walls. Its slip-friendly surface makes it safer than polished finishes."
+        },
+        {
+          "q": "How do you clean honed travertine?",
+          "a": "Use pH-neutral cleaners and avoid acids or abrasives. Wipe spills quickly and reseal regularly to keep the stone protected and looking elegant."
         }
-      },
+      ],
+      "extra": [
+        { "q": "Does honed travertine darken when sealed?", "a": "Yes—sealers can slightly deepen color and enhance veining. Always test a small area first." },
+        { "q": "Honed vs Brushed: what’s the difference?", "a": "Honed is smooth and matte; brushed adds light texture. Brushed offers more grip, while honed suits sleek interiors." },
+        { "q": "Is honed travertine prone to scratches?", "a": "Scratches are less visible than on polished finishes. Light refinishing or re-honing can restore appearance." },
+        { "q": "How often should honed travertine be resealed?", "a": "Every 12–24 months depending on traffic and exposure. Wet areas may require more frequent resealing." }
+      ]
+    }
+  },
+  "microProof": [
+    "Honed finish tested for slip resistance (R10–R11).",
+    "Photo-documented selection and container loading.",
+    "FOB İzmir (Alsancak/Aliağa), CIF available worldwide."
+  ],
+  "ld": {
+    "keywords": [
+      "honed travertine",
+      "travertine floors",
+      "travertine bathrooms",
+      "Turkish travertine"
+    ]
+  }
+},
 
-      "tumbled-travertine": {
-        "metaTitle": "Tumbled Travertine | Rustic Antique Finish for Floors & Outdoor Designs",
-        "metaDesc": "Discover Tumbled Travertine: aged, rustic finish perfect for patios, pools, bathrooms & Mediterranean-style interiors. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Tumbled Travertine",
-        "intro": "Tumbled travertine is a natural stone finish that provides a rustic, antique appearance. Through a mechanical tumbling process, the stone develops softened edges, textured surfaces, and an aged look. This finish is highly valued for its authenticity and charm, often chosen for Mediterranean-inspired interiors and outdoor applications such as patios, pool decks, and courtyards. Tumbled travertine creates warm, inviting spaces with timeless character.",
-        "sections": {
-          "features": {
-            "h2": "Features of Tumbled Travertine",
-            "intro": "The tumbling process involves placing travertine pieces in a drum with abrasives to wear down edges and create a weathered effect. This produces irregular, textured surfaces that are slip-resistant and aesthetically rustic. Tumbled travertine blends perfectly with traditional, antique, or Mediterranean-style projects. Its natural pores and aged look provide an authentic old-world feel while offering practical performance in wet and outdoor environments.",
-            "items": [
-              {
-                "slug": "appearance",
-                "h3": "Appearance",
-                "blurb": "Aged, rustic look with softened edges and textured surface that mimics antique stone."
-              },
-              {
-                "slug": "safety",
-                "h3": "Slip Resistance",
-                "blurb": "Textured surface enhances grip, making tumbled travertine safe for wet or outdoor spaces."
-              },
-              {
-                "slug": "style",
-                "h3": "Design Style",
-                "blurb": "Complements Mediterranean, rustic, and antique-inspired designs with timeless charm."
-              }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Tumbled travertine is used in both indoor and outdoor projects where a rustic, antique look is desired. Outdoors, it is popular for pool decks, patios, pathways, and garden courtyards thanks to its slip resistance. Indoors, it enhances bathrooms, kitchens, and entryways with old-world style. Designers also use tumbled travertine for feature walls, fireplaces, and accent borders, creating unique visual impact with authentic stone character.",
-            "cards": [
-              { "slug": "outdoors", "title": "Outdoor Spaces", "desc": "Patios, courtyards, and pool decks with rustic charm and slip resistance." },
-              { "slug": "bathrooms", "title": "Bathrooms", "desc": "Floors, walls, and showers enriched with antique appeal and safety underfoot." },
-              { "slug": "interiors", "title": "Interiors & Accents", "desc": "Fireplaces, entryways, and feature walls enhanced with aged stone aesthetics." }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Tumbled travertine is available in tiles, pavers, and mosaics. Standard tile thickness ranges from 10–12 mm for indoor use, while outdoor pavers are produced in 30–50 mm thickness for durability. Water absorption averages 0.5–1.0%, requiring sealing to prevent staining. Sizes include modular patterns, 300×300 mm, 400×400 mm, and 600×600 mm, as well as custom cuts for unique designs.",
-            "table": [
-              { "prop": "Finish type", "value": "Tumbled (antique, textured)", "notes": "Softened edges, rustic look" },
-              { "prop": "Thickness", "value": "Tiles: 10–12 mm, Pavers: 30–50 mm", "notes": "Indoor vs outdoor grades" },
-              { "prop": "Absorption", "value": "0.5–1.0%", "notes": "Seal after install" },
-              { "prop": "Common sizes", "value": "300×300, 400×400, 600×600 mm + modular", "notes": "Custom sizes available" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Tumbled travertine should be installed with cement-based adhesives indoors and on compacted sand or mortar outdoors. Sealing is essential to protect from stains and moisture. For wet areas like bathrooms and pools, reseal every 12–18 months. Cleaning requires pH-neutral products, avoiding acids that may damage the stone. Proper care preserves both the beauty and performance of tumbled travertine for years."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Rustic, antique look with authentic charm",
-              "Slip-resistant texture ideal for wet and outdoor areas",
-              "Durable and long-lasting with proper care"
-            ],
-            "cons": [
-              "Requires sealing and periodic resealing",
-              "Irregular surfaces may be harder to clean",
-              "Not suited for ultra-modern glossy designs"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "See examples of tumbled travertine in Mediterranean villas, rustic patios, pool decks, and antique-inspired bathrooms. These real projects highlight the versatility and timeless appeal of tumbled finishes."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "Answers to the most common questions about tumbled travertine, its finish, and practical uses.",
-            "items": [
-              {
-                "q": "What is tumbled travertine?",
-                "a": "Tumbled travertine is stone that has been mechanically aged to create softened edges and a textured, rustic surface. This process produces an antique effect that adds character to projects."
-              },
-              {
-                "q": "Where is tumbled travertine best used?",
-                "a": "It is best used in outdoor patios, pool decks, garden paths, and courtyards, as well as indoor bathrooms and accent walls where slip resistance and rustic charm are desired."
-              },
-              {
-                "q": "Does tumbled travertine need sealing?",
-                "a": "Yes. Tumbled travertine should be sealed after installation to protect against stains, especially in outdoor or wet areas. Resealing every 12–18 months ensures long-term durability."
-              },
-              {
-                "q": "Is tumbled travertine slippery?",
-                "a": "No. The textured surface of tumbled travertine enhances grip, making it safer than polished finishes in wet conditions. This makes it ideal for pools and bathrooms."
-              }
-            ]
-          }
-        }
-      },
+"tumbled-travertine": {
+  "socialImage": "https://www.majen.com.tr/media/tumbled-travertine-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Choosing tumbled travertine?",
+    "rest": " This guide shows where rustic, textured travertine excels—patios, pool decks, garden paths and wall accents. Learn thickness, slip rating, freeze-thaw durability and sealing. As a quarry-backed Turkish travertine supplier, we provide FOB/CIF/EXW export with photo-documented loading."
+  },
+  "sections": {
+    "applications": {
+      "details": [
+        { "slug": "patios", "h3": "Outdoor Patios", "p": "Tumbled finish provides grip and a weathered look. Recommended 30 mm thickness for durability. Choose lighter colors to reduce heat absorption." },
+        { "slug": "pools", "h3": "Pool Decks", "p": "Non-slip R11–R13 rating makes tumbled travertine ideal for wet zones. It stays cooler underfoot compared to concrete or porcelain. Seal periodically for protection against pool chemicals." },
+        { "slug": "paths", "h3": "Garden Paths", "p": "Rustic edges and textured surfaces blend naturally with landscapes. Lay on compacted base with sand joints for drainage and flexibility." },
+        { "slug": "walls", "h3": "Wall Accents", "p": "Tumbled travertine adds character to garden walls and indoor feature walls. Combine with honed or polished elements for contrast." }
+      ]
+    },
+    "specs": {
+      "extraRows": [
+        { "prop": "Tile/Paver thickness", "value": "30–40 mm", "notes": "30 mm for patios/pools, 40 mm for driveways" },
+        { "prop": "Surface texture", "value": "Antiqued, rounded edges", "notes": "Provides rustic aesthetic" },
+        { "prop": "Slip resistance", "value": "R11–R13", "notes": "Excellent for wet outdoor use" },
+        { "prop": "Freeze-thaw durability", "value": "High", "notes": "Requires proper sub-base & drainage" },
+        { "prop": "Water absorption", "value": "~0.4–0.8%", "notes": "Seal after installation" },
+        { "prop": "Colors available", "value": "Ivory · Light · Antico", "notes": "Consistent quarry supply" }
+      ]
+    },
+    "install": {
+      "careNotes": [
+        "Seal after installation and renew every 12–24 months (pools/high-traffic may need more).",
+        "Install on compacted sub-base; ensure drainage to protect freeze-thaw performance.",
+        "Use pH-neutral cleaners; avoid acidic products.",
+        "Dry-lay and plan joint pattern; sand or mortar joints by use-case."
+      ]
+    },
+    "gallery": {
+      "alts": [
+        "Tumbled travertine pool deck with lounge chairs",
+        "Rustic tumbled travertine garden path",
+        "Ivory tumbled travertine patio flooring"
+      ]
+    },
+    "faq": {
+      "extra": [
+        { "q": "What is tumbled travertine used for?", "a": "Mainly outdoor patios, pool decks, paths and rustic walls. It combines slip resistance with classic aged character." },
+        { "q": "Is tumbled travertine slippery when wet?", "a": "No—tumbled finish provides excellent grip (R11–R13), making it safe for wet outdoor areas." },
+        { "q": "Does tumbled travertine need sealing?", "a": "Yes—seal after installation and every 12–24 months depending on exposure. Pools and high-traffic zones may need more frequent care." },
+        { "q": "How does tumbled compare to brushed travertine?", "a": "Tumbled has more rounded edges and rustic texture, while brushed has light surface texture but cleaner edges. Both offer slip resistance." }
+      ]
+    }
+  },
+  "microProof": [
+    "Tumbled finish tested for slip resistance (R11–R13).",
+    "Freeze-thaw performance validated for cold climates.",
+    "Photo-documented block/paver loading & seal numbers."
+  ],
+  "ld": {
+    "keywords": [
+      "tumbled travertine",
+      "travertine pool deck",
+      "travertine patio",
+      "Turkish travertine"
+    ]
+  }
+},
 
       "brushed-travertine": {
         "metaTitle": "Brushed Travertine | Textured Natural Stone Finish for Indoors & Outdoors",

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { IMAGES_BLOG } from "@/app/[locale]/(catalog)/_images";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
+import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
 /**
  * Dynamic SEO Landing Template for Travertine pages (Tiles/Slabs/Blocks/Pavers/Mosaics)
@@ -214,6 +215,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   // --------- Images helpers ----------
   const imgKey = (group, key) => img?.[group]?.[key]?.src || null;
   const imgAlt = (group, key, fallback) => img?.[group]?.[key]?.alt || fallback || "";
+  
 
   // --------- Derived cards / extras ----------
   const colorCards = (s.colors?.items || []).map((it) => ({
@@ -412,7 +414,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
           {/* YENİ: ekstra H3 bloklar (varsa) */}
           {Array.isArray(s.colors.extras) && s.colors.extras.length > 0 && (
-            <div className="mt-4 space-y-4 text-left">
+            <div className="mt-4 space-y-4 flex flex-col items-center justify-center text-center">
               {s.colors.extras.map((x) => (
                 <div key={x.h3}>
                   <h3 className="text-lg font-semibold">{x.h3}</h3>
@@ -484,7 +486,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
           {/* YENİ: flooring/bathroom/kitchen detayları (varsa) */}
           {Array.isArray(s.applications.details) && s.applications.details.length > 0 && (
-            <div className="mt-4 space-y-4 text-left">
+            <div className="mt-4 space-y-4 items-center justify-center text-center">
               {s.applications.details.map((x) => (
                 <div key={x.slug}>
                   <h3 className="text-base md:text-lg font-semibold">{x.h3}</h3>
@@ -550,13 +552,15 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
           {/* YENİ: bakım notları (varsa) */}
           {Array.isArray(s.install.careNotes) && s.install.careNotes.length > 0 && (
-            <ul className="care-notes mt-4 list-disc pl-5 space-y-1 text-left">
+            <div className="flex flex-col items-center justify-center text-center">
+              <ul className="care-notes mt-4 list-disc pl-5 space-y-1 text-left">
               {s.install.careNotes.map((x, i) => (
                 <li key={i} className="text-[12px] md:text-[14px] lg:text-[16px]">
                   {x}
                 </li>
               ))}
             </ul>
+            </div>
           )}
         </Section>
       )}
@@ -599,7 +603,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                   alt={g.alt || safePage.h1}
                   fill
                   className="object-cover"
-                  loading="lazy"
+                  
                 />
               </div>
             ))}
@@ -615,6 +619,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
         />
       )}
     </div>
+    <ContactFrom/>
   </div>
 </Container>
 
