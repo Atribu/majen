@@ -1344,147 +1344,253 @@
     },
 
     "pages": {
-       "travertine-tiles": {
-        "metaTitle": "Travertine Tiles | Turkish Ivory, Light & Antico – Finishes, Uses, FAQ",
-        "metaDesc": "Explore Turkish Travertine Tiles in Ivory, Light & Antico. Compare polished, honed & tumbled finishes for flooring, bathrooms, kitchens & outdoor spaces. Specs, pros & cons, gallery & FAQs.",
-        "h1": "Travertine Tiles",
-        "intro": "Travertine tiles are one of the most popular natural stone products, chosen for their elegance, durability, and timeless appeal. Used across floors, walls, bathrooms, kitchens, and outdoor spaces, Turkish travertine tiles combine centuries of architectural heritage with modern design versatility. Their wide range of colors, finishes, and sizes allow designers, contractors, and homeowners to adapt them to almost any style, from contemporary minimalism to classic Mediterranean charm.",
-        "sections": {
-          "colors": {
-            "h2": "Travertine Tile Colors",
-            "intro": "Color is one of the most important factors when selecting travertine tiles, as it defines the overall atmosphere of a space. Ivory, Light, and Antico travertine tiles are the most sought-after variations, each offering unique tones and patterns. Ivory creates bright, clean environments perfect for luxury interiors. Light offers warm beige tones that blend seamlessly in both modern and traditional designs. Antico, with its rustic hues, is ideal for Mediterranean or antique-inspired spaces. These natural variations ensure no two tiles are identical, adding authenticity and depth to every project.",
-            "items": [
-              {
-                "slug": "ivory",
-                "h3": "Ivory Travertine Tiles",
-                "blurb": "Ivory travertine tiles offer brightness and sophistication, making them a top choice for residential and commercial interiors.",
-                "h4": "Benefits of Ivory Travertine Tiles",
-                "benefits": [
-                  "Highly durable and resistant to wear in daily use",
-                  "Enhances natural light by reflecting brightness",
-                  "Neutral color complements wood, glass, metal and minimalist décor"
-                ],
-                "h5": "Where to Use Ivory Travertine Tiles",
-                "uses": [
-                  "Bathroom floors, walls, and vanity surrounds",
-                  "Kitchen backsplashes and countertops",
-                  "Pool decks, spa areas, and wellness centers"
-                ]
-              },
-              {
-                "slug": "light",
-                "h3": "Light Travertine Tiles",
-                "blurb": "Light travertine tiles provide soft beige tones that bring warmth and harmony. Perfect for large flooring areas and open-plan designs, they balance elegance with comfort and are widely used in both residential and commercial spaces."
-              },
-              {
-                "slug": "antico",
-                "h3": "Antico Travertine Tiles",
-                "blurb": "Antico travertine tiles are valued for their rustic, earthy appearance and antique charm. With natural veining and weathered texture, they evoke Mediterranean heritage and are ideal for courtyards, outdoor kitchens, and projects seeking traditional character."
-              }
-            ]
-          },
-          "finishes": {
-            "h2": "Travertine Tile Finishes",
-            "intro": "Surface finish transforms how travertine tiles look and perform. Polished tiles emphasize veining and reflect light, creating a luxurious effect in interiors. Honed tiles have a smooth, matte surface that reduces glare and enhances modern designs. Tumbled tiles provide an antique, weathered look, perfect for rustic outdoor spaces. Brushed tiles add gentle texture and slip resistance, making them versatile for both indoor and outdoor use. Selecting the right finish balances style, safety, and practicality, ensuring tiles match the functional and aesthetic goals of any project.",
-            "items": [
-              {
-                "slug": "polished",
-                "h3": "Polished Travertine Tiles",
-                "blurb": "Polished travertine tiles have a glossy surface that highlights natural veining. They are best suited for living rooms, luxury bathrooms, and commercial lobbies where a high-end finish is desired."
-              },
-              {
-                "slug": "honed",
-                "h3": "Honed Travertine Tiles",
-                "blurb": "Honed travertine tiles provide a soft, matte finish with a modern touch. Their subtle elegance reduces light reflection and makes them comfortable for large interior floors and walls."
-              },
-              {
-                "slug": "tumbled",
-                "h3": "Tumbled Travertine Tiles",
-                "blurb": "Tumbled travertine tiles feature rounded edges and a textured surface, giving an aged, antique effect. They are perfect for patios, walkways, and pool surrounds where a rustic Mediterranean style is desired."
-              },
-              {
-                "slug": "brushed",
-                "h3": "Brushed Travertine Tiles",
-                "blurb": "Brushed travertine tiles are treated to create a slightly textured surface. This finish enhances grip and adds visual depth, making them suitable for transitional spaces such as entryways, hallways, and outdoor terraces."
-              }
-            ]
-          },
-          "applications": {
-            "h2": "Applications",
-            "intro": "Travertine tiles are prized for their adaptability in both residential and commercial projects. Indoors, they are commonly used for flooring in living rooms and hallways, wall coverings in bathrooms and kitchens, and decorative backsplashes. Outdoors, they withstand weather exposure and serve as durable solutions for patios, pool decks, and landscaped pathways. Their natural texture reduces glare and blends seamlessly with other design materials, such as wood, glass, and metal. This versatility makes travertine tiles a go-to option for architects and homeowners alike.",
-            "cards": [
-              {
-                "slug": "flooring",
-                "title": "Travertine Flooring",
-                "desc": "Travertine tile flooring combines durability with elegance. Its natural beauty elevates interiors while resisting daily wear, making it ideal for both homes and commercial projects."
-              },
-              {
-                "slug": "bathroom",
-                "title": "Travertine Bathroom",
-                "desc": "Bathroom applications include walls, floors, and vanity tops. Travertine tiles create spa-like spaces with warmth and luxury while providing moisture resistance."
-              },
-              {
-                "slug": "kitchen",
-                "title": "Travertine Kitchen",
-                "desc": "Travertine tiles enhance kitchens through countertops, backsplashes, and flooring. Their earthy tones complement cabinetry and appliances while ensuring practicality."
-              }
-            ]
-          },
-          "specs": {
-            "h2": "Specifications",
-            "intro": "Travertine tiles are manufactured in standard sizes and thicknesses that meet international guidelines for construction and interior design. Indoor tiles typically range from 10–12 mm thick, while outdoor pavers reach 30 mm or more for added strength. Water absorption is usually 0.4–0.8%, highlighting the importance of sealing. Common sizes include 300×300 mm, 400×400 mm, and 600×600 mm, though cut-to-size formats are widely available for custom projects. These properties ensure that travertine tiles perform reliably in both high-traffic interiors and exposed outdoor environments.",
-            "table": [
-              { "prop": "Thickness", "value": "10–12 mm (indoor), 30 mm (outdoor)", "notes": "Custom options available" },
-              { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after install, reapply every 12–24 months" },
-              { "prop": "Finish options", "value": "Polished / Honed / Tumbled / Brushed", "notes": "Select finish by location and safety needs" },
-              { "prop": "Standard sizes", "value": "300×300, 400×400, 600×600 mm + cut-to-size", "notes": "Custom dimensions available" }
-            ]
-          },
-          "install": {
-            "h2": "Installation & Care",
-            "intro": "Proper installation is key to the performance and longevity of travertine tiles. Installers should apply cement-based adhesive to stable substrates and back-butter large tiles to ensure bonding. Joints should allow for movement, and grouting should be chosen based on flexibility. After curing, sealing is essential to protect tiles from stains and moisture. Routine cleaning with pH-neutral solutions maintains their natural look, while resealing every 1–2 years ensures durability. Avoid acidic cleaners, as they can damage the stone surface."
-          },
-          "proscons": {
-            "h2": "Pros & Cons",
-            "pros": [
-              "Classic natural stone look that adds long-term property value",
-              "Wide variety of colors, finishes, and sizes for flexible design",
-              "Durable and repairable, with long service life when properly maintained"
-            ],
-            "cons": [
-              "Requires sealing and regular maintenance for stain resistance",
-              "Polished finish can become slippery when wet if not treated",
-              "Natural variation requires batch selection for uniform appearance"
-            ]
-          },
-          "gallery": {
-            "h2": "Gallery",
-            "intro": "Explore real-world projects that showcase travertine tiles in action. From luxurious bathrooms and spacious kitchens to outdoor terraces and pool decks, these examples highlight the versatility of travertine across different finishes, colors, and applications."
-          },
-          "faq": {
-            "h2": "Frequently Asked Questions",
-            "intro": "These frequently asked questions address the most common topics about travertine tiles, including installation, sealing, and suitability for different environments.",
-            "items": [
-              {
-                "q": "Are travertine tiles good for flooring?",
-                "a": "Yes. Travertine tiles are widely used for flooring because they combine strength, beauty, and durability. They handle daily foot traffic well and maintain a timeless aesthetic. When sealed and cared for properly, they can last for decades in both residential and commercial environments."
-              },
-              {
-                "q": "Which finishes are best for bathrooms?",
-                "a": "Honed and tumbled finishes are the most recommended for bathrooms, as they offer slip comfort and a natural feel. Polished finishes may look luxurious but can be slippery when wet, so they are best reserved for vanity tops or decorative walls."
-              },
-              {
-                "q": "Do travertine tiles need sealing?",
-                "a": "Yes. Like most natural stones, travertine tiles are porous and require sealing to prevent stains and moisture absorption. It is essential to seal upon installation and reapply every 12–24 months, depending on traffic and exposure. This simple maintenance step significantly extends their lifespan."
-              },
-              {
-                "q": "Can travertine tiles be used outdoors?",
-                "a": "Absolutely. Travertine tiles, especially in tumbled and brushed finishes, are excellent for outdoor use. They are commonly installed in patios, garden paths, and pool decks due to their slip resistance and weather durability. Proper installation and sealing will maximize performance outdoors."
-              }
-            ]
-          }
+"travertine-tiles": {
+  "metaTitle": "Travertine Tiles from Turkey | Sizes, Finishes & Guide",
+  "metaDesc": "Explore Turkish travertine tiles: sizes, finishes, colors, applications, specs and care. Quarry-backed supplier with FOB/CIF export support.",
+  "h1": "Travertine Tiles",
+  "intro": "Travertine tiles are one of the most popular natural stone products, chosen for their elegance, durability, and timeless appeal. Used across floors, walls, bathrooms, kitchens, and outdoor spaces, Turkish travertine tiles combine centuries of architectural heritage with modern design versatility. Their wide range of colors, finishes, and sizes allow designers, contractors, and homeowners to adapt them to almost any style, from contemporary minimalism to classic Mediterranean charm.",
+
+  
+  "socialImage": "https://www.majen.com.tr/media/travertine-tiles-hero.webp",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-09-25",
+  "lead": {
+    "strong": "Buying travertine tiles from Turkey?",
+    "rest": " This guide covers colors, finishes, standard sizes, specs and best-use cases so architects, distributors and contractors can specify wholesale travertine tiles with confidence. As a quarry-backed Turkish travertine supplier, we also explain export terms (FOB/CIF/EXW) and packaging so your shipments are predictable and safe."
+  },
+
+  "sections": {
+    "colors": {
+      "h2": "Travertine Tile Colors",
+      "intro": "Color is one of the most important factors when selecting travertine tiles, as it defines the overall atmosphere of a space. Ivory, Light, and Antico travertine tiles are the most sought-after variations, each offering unique tones and patterns. Ivory creates bright, clean environments perfect for luxury interiors. Light offers warm beige tones that blend seamlessly in both modern and traditional designs. Antico, with its rustic hues, is ideal for Mediterranean or antique-inspired spaces. These natural variations ensure no two tiles are identical, adding authenticity and depth to every project.",
+      "items": [
+        {
+          "slug": "ivory",
+          "h3": "Ivory Travertine Tiles",
+          "blurb": "Ivory travertine tiles offer brightness and sophistication, making them a top choice for residential and commercial interiors.",
+          "h4": "Benefits of Ivory Travertine Tiles",
+          "benefits": [
+            "Highly durable and resistant to wear in daily use",
+            "Enhances natural light by reflecting brightness",
+            "Neutral color complements wood, glass, metal and minimalist décor"
+          ],
+          "h5": "Where to Use Ivory Travertine Tiles",
+          "uses": [
+            "Bathroom floors, walls, and vanity surrounds",
+            "Kitchen backsplashes and countertops",
+            "Pool decks, spa areas, and wellness centers"
+          ]
+        },
+        {
+          "slug": "light",
+          "h3": "Light Travertine Tiles",
+          "blurb": "Light travertine tiles provide soft beige tones that bring warmth and harmony. Perfect for large flooring areas and open-plan designs, they balance elegance with comfort and are widely used in both residential and commercial spaces."
+        },
+        {
+          "slug": "antico",
+          "h3": "Antico Travertine Tiles",
+          "blurb": "Antico travertine tiles are valued for their rustic, earthy appearance and antique charm. With natural veining and weathered texture, they evoke Mediterranean heritage and are ideal for courtyards, outdoor kitchens, and projects seeking traditional character."
         }
-      },
+      ],
+
+     
+      "extras": [
+        {
+          "h3": "Ivory Travertine Tiles",
+          "p": "Ivory delivers bright, creamy tones that open up interiors. It’s a favorite for bathrooms, kitchens and light-filled living areas where a clean, modern palette is desired. Batch selection ensures consistent shade across large areas."
+        },
+        {
+          "h3": "Light Travertine Tiles",
+          "p": "Light travertine offers warm beige hues with gentle veining. Designers choose it for large floors and open-plan spaces thanks to its calm, uniform look and easy coordination with wood and metal accents."
+        },
+        {
+          "h3": "Antico Travertine Tiles",
+          "p": "Antico brings rustic depth and Mediterranean character. Its earthy variations suit courtyards, outdoor kitchens and feature walls where you want authentic texture and heritage appeal."
+        }
+      ]
+    },
+
+    "finishes": {
+      "h2": "Travertine Tile Finishes",
+      "intro": "Surface finish transforms how travertine tiles look and perform. Polished tiles emphasize veining and reflect light, creating a luxurious effect in interiors. Honed tiles have a smooth, matte surface that reduces glare and enhances modern designs. Tumbled tiles provide an antique, weathered look, perfect for rustic outdoor spaces. Brushed tiles add gentle texture and slip resistance, making them versatile for both indoor and outdoor use. Selecting the right finish balances style, safety, and practicality, ensuring tiles match the functional and aesthetic goals of any project.",
+      "items": [
+        {
+          "slug": "polished",
+          "h3": "Polished Travertine Tiles",
+          "blurb": "Polished travertine tiles have a glossy surface that highlights natural veining. They are best suited for living rooms, luxury bathrooms, and commercial lobbies where a high-end finish is desired."
+        },
+        {
+          "slug": "honed",
+          "h3": "Honed Travertine Tiles",
+          "blurb": "Honed travertine tiles provide a soft, matte finish with a modern touch. Their subtle elegance reduces light reflection and makes them comfortable for large interior floors and walls."
+        },
+        {
+          "slug": "tumbled",
+          "h3": "Tumbled Travertine Tiles",
+          "blurb": "Tumbled travertine tiles feature rounded edges and a textured surface, giving an aged, antique effect. They are perfect for patios, walkways, and pool surrounds where a rustic Mediterranean style is desired."
+        },
+        {
+          "slug": "brushed",
+          "h3": "Brushed Travertine Tiles",
+          "blurb": "Brushed travertine tiles are treated to create a slightly textured surface. This finish enhances grip and adds visual depth, making them suitable for transitional spaces such as entryways, hallways, and outdoor terraces."
+        }
+      ],
+
+      
+      "extras": [
+        { "h3": "Polished", "p": "Glossy surface that highlights veining—ideal for luxury interiors and feature walls. Use anti-slip treatments where water is present." },
+        { "h3": "Honed", "p": "Matte, smooth finish with contemporary feel. Recommended for large interior floors and bathrooms thanks to comfortable slip characteristics." },
+        { "h3": "Tumbled", "p": "Rounded edges and textured surface for a time-worn look. Perfect for patios, paths and pool decks where grip matters." },
+        { "h3": "Brushed", "p": "Light texture that adds depth and improves underfoot grip. Works well in transitional spaces such as entries, verandas and terraces." }
+      ]
+    },
+
+    "applications": {
+      "h2": "Applications",
+      "intro": "Travertine tiles are prized for their adaptability in both residential and commercial projects. Indoors, they are commonly used for flooring in living rooms and hallways, wall coverings in bathrooms and kitchens, and decorative backsplashes. Outdoors, they withstand weather exposure and serve as durable solutions for patios, pool decks, and landscaped pathways. Their natural texture reduces glare and blends seamlessly with other design materials, such as wood, glass, and metal. This versatility makes travertine tiles a go-to option for architects and homeowners alike.",
+      "cards": [
+        {
+          "slug": "flooring",
+          "title": "Travertine Flooring",
+          "desc": "Travertine tile flooring combines durability with elegance. Its natural beauty elevates interiors while resisting daily wear, making it ideal for both homes and commercial projects."
+        },
+        {
+          "slug": "bathroom",
+          "title": "Travertine Bathroom",
+          "desc": "Bathroom applications include walls, floors, and vanity tops. Travertine tiles create spa-like spaces with warmth and luxury while providing moisture resistance."
+        },
+        {
+          "slug": "kitchen",
+          "title": "Travertine Kitchen",
+          "desc": "Travertine tiles enhance kitchens through countertops, backsplashes, and flooring. Their earthy tones complement cabinetry and appliances while ensuring practicality."
+        }
+      ],
+
+     
+      "details": [
+        {
+          "slug": "flooring",
+          "h3": "Travertine Flooring",
+          "p": "Select thickness (10–12 mm) for interiors and seal after installation. Large formats (e.g., 60×60 or 60×120) speed up installation and minimize grout lines. For commercial lobbies, consider honed/brushed finishes for comfort and safety."
+        },
+        {
+          "slug": "bathroom",
+          "h3": "Travertine Bathroom",
+          "p": "Use honed or tumbled tiles on floors for slip comfort, polished on feature walls or vanity surrounds. Plan a sealing schedule and ventilate spaces to manage humidity."
+        },
+        {
+          "slug": "kitchen",
+          "h3": "Travertine Kitchen",
+          "p": "Backsplashes and floors benefit from honed or brushed finishes; polished is best kept to accent walls. Specify stain-resistant grout and reseal periodically to maintain appearance."
+        }
+      ]
+    },
+
+    "specs": {
+      "h2": "Specifications",
+      "intro": "Travertine tiles are manufactured in standard sizes and thicknesses that meet international guidelines for construction and interior design. Indoor tiles typically range from 10–12 mm thick, while outdoor pavers reach 30 mm or more for added strength. Water absorption is usually 0.4–0.8%, highlighting the importance of sealing. Common sizes include 300×300 mm, 400×400 mm, and 600×600 mm, though cut-to-size formats are widely available for custom projects. These properties ensure that travertine tiles perform reliably in both high-traffic interiors and exposed outdoor environments.",
+      "table": [
+        { "prop": "Thickness", "value": "10–12 mm (indoor), 30 mm (outdoor)", "notes": "Custom options available" },
+        { "prop": "Absorption", "value": "0.4–0.8%", "notes": "Seal after install, reapply every 12–24 months" },
+        { "prop": "Finish options", "value": "Polished / Honed / Tumbled / Brushed", "notes": "Select finish by location and safety needs" },
+        { "prop": "Standard sizes", "value": "300×300, 400×400, 600×600 mm + cut-to-size", "notes": "Custom dimensions available" }
+      ],
+
+     
+      "extraRows": [
+        { "prop": "Popular large formats", "value": "300×600 · 600×600 · 600×1200 mm", "notes": "Fewer joints, faster installation" },
+        { "prop": "Approx. weight per m²", "value": "~27 kg (10 mm) · ~32 kg (12 mm) · ~81 kg (30 mm)", "notes": "For handling & substrate checks" }
+      ]
+    },
+
+    "install": {
+      "h2": "Installation & Care",
+      "intro": "Proper installation is key to the performance and longevity of travertine tiles. Installers should apply cement-based adhesive to stable substrates and back-butter large tiles to ensure bonding. Joints should allow for movement, and grouting should be chosen based on flexibility. After curing, sealing is essential to protect tiles from stains and moisture. Routine cleaning with pH-neutral solutions maintains their natural look, while resealing every 1–2 years ensures durability. Avoid acidic cleaners, as they can damage the stone surface.",
+
+     
+      "careNotes": [
+        "Use cement-based adhesive; back-butter large formats for full contact.",
+        "Allow movement joints; choose flexible grout for high-traffic zones.",
+        "Seal after curing; maintain with pH-neutral cleaners; avoid acids.",
+        "For pool decks, prefer tumbled/brushed; plan periodic re-sealing based on climate."
+      ]
+    },
+
+    "proscons": {
+      "h2": "Pros & Cons",
+      "pros": [
+        "Classic natural stone look that adds long-term property value",
+        "Wide variety of colors, finishes, and sizes for flexible design",
+        "Durable and repairable, with long service life when properly maintained"
+      ],
+      "cons": [
+        "Requires sealing and regular maintenance for stain resistance",
+        "Polished finish can become slippery when wet if not treated",
+        "Natural variation requires batch selection for uniform appearance"
+      ]
+    },
+
+    "gallery": {
+      "h2": "Gallery",
+      "intro": "Explore real-world projects that showcase travertine tiles in action. From luxurious bathrooms and spacious kitchens to outdoor terraces and pool decks, these examples highlight the versatility of travertine across different finishes, colors, and applications.",
+
+     
+      "alts": [
+        "Ivory travertine tile flooring in modern kitchen",
+        "Light travertine bathroom wall tiles with walk-in shower",
+        "Tumbled travertine outdoor terrace tiles"
+      ]
+    },
+
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "intro": "These frequently asked questions address the most common topics about travertine tiles, including installation, sealing, and suitability for different environments.",
+      "items": [
+        {
+          "q": "Are travertine tiles good for flooring?",
+          "a": "Yes. Travertine tiles are widely used for flooring because they combine strength, beauty, and durability. They handle daily foot traffic well and maintain a timeless aesthetic. When sealed and cared for properly, they can last for decades in both residential and commercial environments."
+        },
+        {
+          "q": "Which finishes are best for bathrooms?",
+          "a": "Honed and tumbled finishes are the most recommended for bathrooms, as they offer slip comfort and a natural feel. Polished finishes may look luxurious but can be slippery when wet, so they are best reserved for vanity tops or decorative walls."
+        },
+        {
+          "q": "Do travertine tiles need sealing?",
+          "a": "Yes. Like most natural stones, travertine tiles are porous and require sealing to prevent stains and moisture absorption. It is essential to seal upon installation and reapply every 12–24 months, depending on traffic and exposure. This simple maintenance step significantly extends their lifespan."
+        },
+        {
+          "q": "Can travertine tiles be used outdoors?",
+          "a": "Absolutely. Travertine tiles, especially in tumbled and brushed finishes, are excellent for outdoor use. They are commonly installed in patios, garden paths, and pool decks due to their slip resistance and weather durability. Proper installation and sealing will maximize performance outdoors."
+        }
+      ],
+
+     
+      "extra": [
+        { "q": "What tile thickness do I need?", "a": "Indoors, 10–12 mm works for most floors and walls. Outdoors or high-load areas may require 30 mm pavers. We’ll advise based on drawings." },
+        { "q": "Are travertine tiles suitable for pool areas?", "a": "Yes—tumbled or brushed finishes improve grip for wet zones. Combine with proper drainage and periodic sealing." },
+        { "q": "How is pricing determined?", "a": "Color grade, finish, size, thickness and order volume affect price. Share a BOQ and destination port for an accurate FOB/CIF quote." },
+        { "q": "How often should I reseal?", "a": "Typically every 12–24 months depending on exposure and traffic. Kitchens and outdoors may need more frequent care." }
+      ]
+    }
+  },
+
+ 
+  "microProof": [
+    "Lead time: typically 10–20 business days by finish and load plan.",
+    "Photo-documented container loading & seal numbers.",
+    "FOB İzmir (Alsancak/Aliağa), CIF on request to your destination port."
+  ],
+  "ld": {
+    "keywords": [
+      "travertine tiles",
+      "Turkish travertine",
+      "travertine flooring",
+      "travertine finishes",
+      "wholesale travertine"
+    ]
+  }
+},
+
        "travertine-slabs": {
         "metaTitle": "Travertine Slabs | Turkish Ivory, Light & Antico – Finishes, Uses, FAQ",
         "metaDesc": "Explore Turkish Travertine Slabs in Ivory, Light & Antico. Compare polished, honed, brushed & tumbled finishes for countertops, cladding & facades. Specs, gallery & FAQs.",
