@@ -33,6 +33,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   const s = safePage.sections || {};
   const img = IMAGES_BLOG?.[currentSlug] || {};
 
+  
+  
+
   // --------- Routing / canonicals / breadcrumbs ----------
   const bc = [
     { name: t("common.breadcrumbs.home"), href: `/${locale}` },
@@ -44,6 +47,21 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   );
 
   const canonical = `https://www.majen.com.tr/${locale}/blog/travertines/${currentSlug}`;
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: safePage.metaTitle || safePage.h1,
+    description: safePage.metaDesc,
+    mainEntityOfPage: canonical,
+    author: { "@type": "Organization", name: "Majen Natural Stone" },
+    publisher: {
+      "@type": "Organization",
+      name: "Majen",
+      logo: { "@type": "ImageObject", url: "https://majen.com.tr/logo.png" },
+    },
+    inLanguage: locale,
+  };
 
   // --------- JSON-LD pieces (we'll unify later into @graph) ----------
   const breadcrumbLd =
@@ -156,7 +174,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
           {title}
         </h3>
         {blurb && (
-          <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] text-neutral-700 leading-[120%] lg:leading-relaxed">
+          <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] text-neutral-700 leading-[120%] lg:leading-[130%]">
             {blurb}
           </p>
         )}
@@ -312,20 +330,8 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
       {/* Hero + H1 + Lead + Intro */}
 {/* Hero + H1 + Lead + Intro */}
-<header className="relative">
-  <div className="relative h-60 md:h-80">
-    {img?.hero?.src ? (
-      <Image
-        src={img.hero.src}
-        alt={img.hero.alt || safePage.h1}
-        fill
-        className="object-cover"
-        priority
-      />
-    ) : (
-      <div className="h-full w-full bg-neutral-200" />
-    )}
-  </div>
+<header className="relative ">
+ 
   <Container>
     <div className="py-4 lg:py-8 flex flex-col items-center justify-center text-center">
       <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-bold tracking-tight">
@@ -334,7 +340,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
       {/* YENİ: Lead (yalnızca varsa) */}
       {safePage.lead && (
-        <p className="mt-2 max-w-[1100px] text-base md:text-lg text-neutral-800">
+        <p className="mt-2 max-w-[1100px] text-[12px] md:text-[14px] lg:text-[16px] text-neutral-800">
           <strong>{safePage.lead.strong}</strong>
           {safePage.lead.rest}
         </p>
@@ -348,17 +354,30 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       )}
     </div>
   </Container>
+   <div className="relative h-60 md:h-80">
+    {img?.hero?.src ? (
+      <Image
+        src={img.hero.src}
+        alt={img.hero.alt || safePage.h1}
+        fill
+        className="object-cover"
+        priority
+      />
+    ) : (
+      <div className="h-full w-full bg-neutral-200" />
+    )}
+  </div>
 </header>
 
 <Container>
-  <div className="flex flex-col">
+  <div className="flex flex-col mt-3 lg:mt-4">
     {/* Sticky TOC (varsa) */}
     {tocItems?.length > 0 && (
       <aside
         className="sticky h-max rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)] z-[99]"
         style={{ top: 80 }}
       >
-        <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-2 flex items-center justify-between">
+        <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-1 md:pb-2 flex items-center justify-between">
           <h2 className="text-[14px] md:text-[14px] lg:text-[16px] font-semibold text-neutral-800">
             On this page
           </h2>
@@ -378,7 +397,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
           )}
         </div>
 
-        <nav className="px-1 lg:px-2 pb-3">
+        <nav className="px-1 lg:px-2 pb-1 md:pb-3">
           <ol className="flex flex-wrap gap-2 px-2 py-1">
             {tocItems.map((x) => {
               const isActive = active === x.id;
@@ -520,7 +539,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
           {s.specs.intro && (
             <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.specs.intro}</p>
           )}
-          <div className="overflow-auto mt-4">
+          <div className="overflow-auto mt-4 hidden md:flex">
             <table className="min-w-[640px] w-full text-sm border rounded-2xl overflow-hidden">
               <thead>
                 <tr className="bg-neutral-50 text-left">
@@ -590,33 +609,37 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       )}
 
       {/* 7) GALLERY (varsa ve resimler korunur) */}
-      {s.gallery && (
-        <Section id="gallery" title={s.gallery.h2}>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(img?.gallery || []).map((g) => (
-              <div
-                key={g.src}
-                className="relative h-56 w-full rounded-2xl overflow-hidden"
-              >
-                <Image
-                  src={g.src}
-                  alt={g.alt || safePage.h1}
-                  fill
-                  className="object-cover"
-                  
-                />
-              </div>
-            ))}
-          </div>
-        </Section>
-      )}
+       {s.gallery && (
+              <Section id="gallery" title={s.gallery.h2}>
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {(img?.gallery || []).map((g) => (
+                    <div
+                      key={g.src}
+                      className="relative h-56 w-full rounded-2xl overflow-hidden"
+                    >
+                      <Image
+                        src={g.src}
+                        alt={g.alt || safePage.h1}
+                        width={400}
+                        height={350}
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            )}
+
+
 
       {/* 8) FAQ (varsa; ekstra + mevcut birleştirilmiş) */}
       {s.faq && (
-        <QuestionsSection
+       <Section id="faq">
+         <QuestionsSection
           span="Blog"
           items={[...(s.faq.extra || []), ...(s.faq.items || [])]}
         />
+       </Section>
       )}
     </div>
     <ContactFrom/>

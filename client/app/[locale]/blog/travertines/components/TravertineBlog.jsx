@@ -363,9 +363,9 @@ const handleClick = (e, id) => {
 
   // RENDER ----------------------------------------------------------
   return (
-    <main className="pt-3 md:pt-5 lg:pt-10">
+    <main className="pt-3 md:pt-5 lg:pt-10 flex flex-col items-center justify-center w-screen">
       {/* HERO */}
-      <header className="relative isolate">
+      <header className="relative isolate flex flex-col w-full">
         <div className="mx-auto max-w-6xl px-4 pt-4 pb-10 items-center justify-center text-center flex flex-col">
           <h1 className="font-bold tracking-tight text-[28px] md:text-[36px] lg:text-[40px]">Travertine</h1>
           <p className="mt-1 md:mt-2 lg:mt-4 max-w-3xl text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed text-neutral-700">
@@ -386,7 +386,7 @@ const handleClick = (e, id) => {
 
       {/* NAVIGATION TABS */}
        <nav
-      className="sticky z-20 rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)]"
+      className="sticky z-20 mt-5 w-[95%] lg:w-[80%] rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)]"
       style={{ top: TOP_OFFSET }}
       aria-label="On this page"
     >
