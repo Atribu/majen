@@ -269,7 +269,7 @@ export default function VariantPage() {
         ))}
       </section>
 
-      <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
+      {/* <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
         <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
           <h2 className="text-[24px] md:text-[26px]">Applications of Blaundos Antico Travertine Slabs</h2>
           <p className="mt-2 text-[12px] lg:tetx-[14px9">Blaundos Antico is specified for floors, wall cladding, countertops, fireplace surrounds, stair treads, and exterior façades. Its antique texture lends character to boutique hotels and residences, while honed or polished finishes suit refined interiors. Outdoors, brushed or tumbled slabs complement landscaping, garden paths, and pool decks. The stone’s tonal stability supports continuity between inside and outside, helping designers create cohesive transitions. With accurate sizing and reliable supply, it scales from small renovations to flagship builds.</p>
@@ -320,7 +320,7 @@ export default function VariantPage() {
           <InfoCard title="Sustainability & Traceability" children="We prioritize responsible quarrying, water recycling, and waste reduction. Material traceability and documentation support green building goals and client ESG policies. These practices contribute to durable, long-life installations with lower lifecycle impact."/>
            <InfoCard title="Compliance & Documentation" children="We provide packing data, certificates of origin, and HS codes; optional lab tests and slip ratings can be arranged. This documentation simplifies import processes and supports submittals for architects and contractors, helping approvals proceed without delays."/>
         </div>
-      </div>
+      </div> */}
 
 
 
