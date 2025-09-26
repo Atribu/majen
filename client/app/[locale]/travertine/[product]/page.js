@@ -112,7 +112,7 @@ const productAltMap = {
       vKey,
       title: t(`${productKey}.variants.${vKey}.title`),
       alt: `Wholesale Travertine ${productAltMap[productKey] || productKey} from Turkey`,
-      href: `${baseHref}/${product}/${slug}`,
+     href: `${product}/${slug}`,
     };
   });
 

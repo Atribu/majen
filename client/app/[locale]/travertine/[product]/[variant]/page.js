@@ -11,7 +11,7 @@ import { IMAGE_BY_PRODUCT_VARIANT_AND_CUT } from "@/app/[locale]/(catalog)/_imag
 
 import {
   CUTS,
-  baseFor,
+  BASE_BY_LOCALE,
   PRODUCT_KEYS,
   PRODUCT_SLUGS,
   VARIANT_KEY_BY_SLUG,
