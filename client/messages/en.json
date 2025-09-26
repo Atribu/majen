@@ -383,7 +383,130 @@
     "aboutpage_s4_faq4_text": "Slabs are securely packed in reinforced wooden crates, strapped and wrapped to ensure safe sea freight.",
     "aboutpage_s4_faq5_header": "Why choose Majen for travertine slabs?",
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier from Uşak–Ulubey, trusted for consistent supply, A-grade quality, and reliable export logistics."
-  }
+  },
+   "antiko": {
+        "title": "Wholesale Travertine Slabs Blaundos Antico",
+        "intro": "Blaundos Antico travertine is a warm, beige-toned stone with antique character and subtle movement that suits both classic and contemporary designs. Sourced directly from our Uşak–Ulubey region, Majen supplies wholesale slabs with consistent grading, reliable lead times, and reinforced packaging for export. Architects, importers, and contractors choose this variety for durable floors, façades, countertops, and bespoke interior features, achieving timeless elegance with dependable performance across residential and commercial projects.",
+        "alt": "Wholesale Blaundos Antiko travertine slabs from Turkey",
+        "title2":"Why Choose Blaundos Antico Travertine Slabs?",
+        "intro2":"Blaundos Antico stands out for its earthy palette, nuanced veining, and antique texture that adds depth without overpowering a space. Its density and calibrated finishes support heavy-traffic areas while remaining easy to maintain. With quarry-direct sourcing, Majen controls selection and grading, ensuring predictable results at scale. Competitive pricing, flexible MOQs, and project-matched lots help streamline specifications. For large orders, we provide sample boards and detailed QC reports, enabling confident decisions for global builds.",
+        "description": [
+          "Why choose Blaundos Antiko slabs: antique-inspired look, expressive veining, bookmatch options and strong continuity on large surfaces. Excellent balance of authenticity and durability for premium interiors.",
+          "Sourced and processed in Uşak–Ulubey. Used in island countertops, bathroom vanities, reception desks, wall cladding, elevator surrounds and luxury retail fixtures. Shade-verified lots for consistent project outcomes."
+        ],
+
+        "sizes": ["2 cm (20 mm)", "3 cm (30 mm)", "5 cm (50 mm)"],
+        "finishes": ["Polished", "Honed", "Brushed", "Tumbled"],
+
+        "cards":[
+          "Design Versatility",
+          ""
+        ],
+
+        "features": [
+          "Bookmatch-ready vein-cut options",
+          "A/B selections for consistent tone",
+          "High yield for cut-to-size packages",
+          "QC photos before loading",
+          "Reinforced A-frames & crate packing",
+          "Container seal numbers shared",
+          "FOB İzmir (Alsancak/Aliağa) · CIF worldwide",
+          "Custom edge prep & mesh-back options"
+        ],
+
+        "TextSection": {
+          "header1": "Related Travertine Slab Varieties",
+          "text1": "Explore complementary selections that pair well with Blaundos Antico. Each variety offers distinct tone and movement for different design intents, enabling cohesive palettes across floors, walls, and façades. Discover Blaundos Light Slabs for brighter schemes and Blaundos Ivory Slabs for creamy warmth. Coordinate with Travertine Tiles or Travertine Blocks to extend the language of natural stone through interiors, exteriors, and custom elements while keeping sourcing streamlined under one partner.",
+
+          "header2": "Applications & Detailing",
+          "text2": "Ideal for kitchen islands, vanities and lobby walls. Pair with vein-cut bookmatch for dramatic continuity; specify 20–30 mm for interiors, 30+ mm for high-stress zones.",
+
+          "header3": "Export & Packing",
+          "text3": "Reinforced A-frames, corner and moisture protection, photo-documented loading and shared seal numbers. FOB İzmir or CIF to major ports."
+        },
+
+        "faq": {
+          "items": [
+            {
+              "q": "What makes Blaundos Antico different?",
+              "a": "Its antique texture, warm beige tones, and subtle veining create sophisticated, timeless surfaces suited to both classic and modern designs."
+            },
+            {
+              "q": "Can it be used outdoors?",
+              "a": "Yes. Brushed or tumbled finishes with proper sealing are recommended for paths, pool decks, and façades."
+            },
+            {
+              "q": "What finishes are available?",
+              "a": "Polished, honed, brushed, and tumbled. We guide finish choice by location, traffic, and maintenance needs."
+            },
+            {
+              "q": "What are standard slab thicknesses?",
+              "a": "Typically 2 cm and 3 cm; custom sizes and book-matched sets are available on request."
+            }
+          ]
+        },
+
+        "microProof": [
+          "Shade-verified A/B selections available",
+          "Photo-documented loading & seal numbers",
+          "FOB İzmir, CIF worldwide shipping"
+        ]
+      },
+
+      "light": {
+        "title": "Blaundos Light Travertine Slabs",
+        "intro": "Warm beige canvas with gentle movement for bright, welcoming interiors. Popular for kitchens, vanities and hotel lobbies.",
+        "alt": "Wholesale Blaundos Light travertine slabs from Turkey",
+        "description": [
+          "Balanced warmth and brightness—pairs well with wood and neutral palettes.",
+          "Favored for counters, wall cladding and reception desks; consistent lots for large areas."
+        ],
+        "sizes": ["2 cm", "3 cm"],
+        "finishes": ["Polished", "Honed", "Brushed"],
+        "features": [
+          "Uniform tone for continuous panels",
+          "Cut-to-size friendly",
+          "QC photos & reinforced packing"
+        ],
+        "TextSection": {
+          "header1": "Tone & Match",
+          "text1": "Light beige base reduces visual noise and keeps spaces bright.",
+          "header2": "Use Cases",
+          "text2": "Kitchen islands, backsplashes, vanity tops, feature walls.",
+          "header3": "Logistics",
+          "text3": "FOB/CIF, photo-documented loading, moisture-protected crates."
+        },
+        "faq": { "items": [] },
+        "microProof": ["Consistent shade lots", "FOB İzmir · CIF worldwide"]
+      },
+
+      "ivory": {
+        "title": "Blaundos Ivory Travertine Slabs",
+        "intro": "Creamier, brighter base with subtle veining—clean, elegant slabs for luxury interiors and minimalist spaces.",
+        "alt": "Wholesale Blaundos Ivory travertine slabs from Turkey",
+        "description": [
+          "Preferred where a light, refined aesthetic is required.",
+          "High suitability for vanities, wall panels and bright retail concepts."
+        ],
+        "sizes": ["2 cm", "3 cm"],
+        "finishes": ["Polished", "Honed"],
+        "features": [
+          "Bright neutral base",
+          "High selection consistency",
+          "Export-ready packing and QC"
+        ],
+        "TextSection": {
+          "header1": "Aesthetic",
+          "text1": "Creamier undertone that reads cleaner in minimalist designs.",
+          "header2": "Projects",
+          "text2": "Boutique hospitality, luxury retail, private residences.",
+          "header3": "Export",
+          "text3": "A-frames, slat protection, seal numbers; FOB/CIF."
+        },
+        "faq": { "items": [] },
+        "microProof": ["Bright, consistent tone", "Polished/honed in stock"]
+      }
+
     },
 
     "tiles": {
@@ -520,7 +643,7 @@
     }
   },
 
-     "BlaundosIntro": {
+    "BlaundosIntro": {
     "title": "In the Footsteps of Blaundos",
     "paragraph": "We draw inspiration from the time-worn stones of the ancient city of Blaundos. With rich veining and natural tonal shifts, marble (travertine) brings timeless elegance to contemporary design, adding historical depth and lasting beauty to every space."
     

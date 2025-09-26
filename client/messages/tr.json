@@ -363,7 +363,124 @@
     "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
     "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
-  }
+  },
+
+  "antiko": {
+        "title": "Blaundos Antiko Travertine Slabs",
+        "intro": "Blaundos Antiko slabs deliver warm, rustic character with earthy-beige tones and rich movement. Ideal for kitchen islands, vanities, feature walls and hotel lobbies. Quarry-backed consistency and A-grade selections ensure visual continuity across panels.",
+        "alt": "Wholesale Blaundos Antiko travertine slabs from Turkey",
+
+        "description": [
+          "Why choose Blaundos Antiko slabs: antique-inspired look, expressive veining, bookmatch options and strong continuity on large surfaces. Excellent balance of authenticity and durability for premium interiors.",
+          "Sourced and processed in Uşak–Ulubey. Used in island countertops, bathroom vanities, reception desks, wall cladding, elevator surrounds and luxury retail fixtures. Shade-verified lots for consistent project outcomes."
+        ],
+
+        "sizes": ["2 cm (20 mm)", "3 cm (30 mm)", "5 cm (50 mm)"],
+        "finishes": ["Polished", "Honed", "Brushed", "Tumbled"],
+
+        "features": [
+          "Bookmatch-ready vein-cut options",
+          "A/B selections for consistent tone",
+          "High yield for cut-to-size packages",
+          "QC photos before loading",
+          "Reinforced A-frames & crate packing",
+          "Container seal numbers shared",
+          "FOB İzmir (Alsancak/Aliağa) · CIF worldwide",
+          "Custom edge prep & mesh-back options"
+        ],
+
+        "TextSection": {
+          "header1": "Color & Selection",
+          "text1": "Earthy-beige base with deeper rustic passes; consistent A/B selections reduce lot variance while retaining natural character.",
+
+          "header2": "Applications & Detailing",
+          "text2": "Ideal for kitchen islands, vanities and lobby walls. Pair with vein-cut bookmatch for dramatic continuity; specify 20–30 mm for interiors, 30+ mm for high-stress zones.",
+
+          "header3": "Export & Packing",
+          "text3": "Reinforced A-frames, corner and moisture protection, photo-documented loading and shared seal numbers. FOB İzmir or CIF to major ports."
+        },
+
+        "faq": {
+          "items": [
+            {
+              "q": "What thicknesses are available for Blaundos Antiko slabs?",
+              "a": "Standard 2 cm and 3 cm, with 5 cm on request for special applications."
+            },
+            {
+              "q": "Can I get bookmatched sets?",
+              "a": "Yes. Vein-cut Antiko slabs can be selected and arranged for bookmatching on feature walls and large panels."
+            },
+            {
+              "q": "Which finishes suit Antiko slabs?",
+              "a": "Polished and honed for interiors; brushed and tumbled where texture and slip comfort are desired."
+            },
+            {
+              "q": "How are slabs packed for export?",
+              "a": "On reinforced A-frames or in wooden crates with straps and moisture barriers; full photo documentation and seal numbers are shared."
+            }
+          ]
+        },
+
+        "microProof": [
+          "Shade-verified A/B selections available",
+          "Photo-documented loading & seal numbers",
+          "FOB İzmir, CIF worldwide shipping"
+        ]
+      },
+
+      "light": {
+        "title": "Blaundos Light Travertine Slabs",
+        "intro": "Warm beige canvas with gentle movement for bright, welcoming interiors. Popular for kitchens, vanities and hotel lobbies.",
+        "alt": "Wholesale Blaundos Light travertine slabs from Turkey",
+        "description": [
+          "Balanced warmth and brightness—pairs well with wood and neutral palettes.",
+          "Favored for counters, wall cladding and reception desks; consistent lots for large areas."
+        ],
+        "sizes": ["2 cm", "3 cm"],
+        "finishes": ["Polished", "Honed", "Brushed"],
+        "features": [
+          "Uniform tone for continuous panels",
+          "Cut-to-size friendly",
+          "QC photos & reinforced packing"
+        ],
+        "TextSection": {
+          "header1": "Tone & Match",
+          "text1": "Light beige base reduces visual noise and keeps spaces bright.",
+          "header2": "Use Cases",
+          "text2": "Kitchen islands, backsplashes, vanity tops, feature walls.",
+          "header3": "Logistics",
+          "text3": "FOB/CIF, photo-documented loading, moisture-protected crates."
+        },
+        "faq": { "items": [] },
+        "microProof": ["Consistent shade lots", "FOB İzmir · CIF worldwide"]
+      },
+
+      "ivory": {
+        "title": "Blaundos Ivory Travertine Slabs",
+        "intro": "Creamier, brighter base with subtle veining—clean, elegant slabs for luxury interiors and minimalist spaces.",
+        "alt": "Wholesale Blaundos Ivory travertine slabs from Turkey",
+        "description": [
+          "Preferred where a light, refined aesthetic is required.",
+          "High suitability for vanities, wall panels and bright retail concepts."
+        ],
+        "sizes": ["2 cm", "3 cm"],
+        "finishes": ["Polished", "Honed"],
+        "features": [
+          "Bright neutral base",
+          "High selection consistency",
+          "Export-ready packing and QC"
+        ],
+        "TextSection": {
+          "header1": "Aesthetic",
+          "text1": "Creamier undertone that reads cleaner in minimalist designs.",
+          "header2": "Projects",
+          "text2": "Boutique hospitality, luxury retail, private residences.",
+          "header3": "Export",
+          "text3": "A-frames, slat protection, seal numbers; FOB/CIF."
+        },
+        "faq": { "items": [] },
+        "microProof": ["Bright, consistent tone", "Polished/honed in stock"]
+      }
       
     },
 
