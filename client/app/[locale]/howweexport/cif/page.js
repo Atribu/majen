@@ -211,7 +211,7 @@ export default async function Page({ params }) {
       <section className="bg-neutral-50 py-12">
         <div className="max-w-[1200px] mx-auto px-5">
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
-            CIF Export in Action (Example Case)
+            CIF Export in Action 
           </h2>
           <p className="mt-3 text-neutral-700 leading-relaxed">
             A European distributor orders mixed containers of travertine tiles

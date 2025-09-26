@@ -152,7 +152,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
         )}
       </div>
       <div className="p-5">
-        <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">
+        <h3 className="text-[16px] font-semibold group-hover:underline underline-offset-4">
           {title}
         </h3>
         {blurb && (

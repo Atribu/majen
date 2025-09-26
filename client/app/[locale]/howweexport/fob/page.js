@@ -220,7 +220,7 @@ export default async function Page({ params }) {
       <section className="bg-neutral-50 py-12">
         <div className="max-w-[1200px] mx-auto px-5">
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
-            FOB Export in Action (Example Case)
+            FOB Export in Action 
           </h2>
           <p className="mt-3 text-neutral-700 leading-relaxed">
             A US importer orders 5 containers of travertine blocks. Majen

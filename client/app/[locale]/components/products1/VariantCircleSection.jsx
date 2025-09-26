@@ -62,6 +62,7 @@ export default function VariantCircleSection({
                     fill
                     className="object-cover transition-transform duration-500 scale-80 group-hover:scale-95"
                     sizes="160px"
+                    loading="lazy"
                   />
                 </div>
                 <h4 className="mt-4 text-[16px] lg:text-[20px] font-semibold text-neutral-900 capitalize">

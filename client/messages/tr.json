@@ -983,52 +983,236 @@
     "posts": [
       {
         "slug": "travertines",
-        "title": "Travertenler",
-        "excerpt": "Aydınlık ve modern iç mekanlar için light traverten kullanımı.",
+        "title": "Travertines",
+        "excerpt": "How to create clean, contemporary spaces using light travertine surfaces.",
         "date": "2025-01-18",
         "category": "travertine",
         "cover": "/images/blog/light-travertine-modern.webp"
       },
-      {
-        "slug": "mimarlar-neden-silver-traverten-tercih-eder",
-        "title": "Mimarlar Neden Silver Traverten Tercih Eder?",
-        "excerpt": "Performans, estetik ve bulunabilirlik açısından gümüş traverten.",
-        "date": "2025-01-10",
-        "category": "travertine",
-        "cover": "/images/blog/silver-travertine.webp"
-      },
-      {
-        "slug": "traverten-mi-mermer-mi",
-        "title": "Traverten mi Mermer mi? Hangisi Daha İyi?",
-        "excerpt": "Zemin, cephe ve dış mekan için pratik karşılaştırma.",
-        "date": "2025-01-05",
-        "category": "travertine",
-        "cover": "/images/blog/travertine-vs-marble.webp"
-      },
-      {
-        "slug": "turkiyedeki-en-iyi-traverten-tedarikcileri",
-        "title": "Türkiye’deki En İyi Traverten Tedarikçileri",
-        "excerpt": "Neye bakmalı: ocak konumu, süreklilik, lojistik, ihracat şartları.",
-        "date": "2024-12-22",
-        "category": "travertine",
-        "cover": "/images/blog/best-suppliers.webp"
-      },
-      {
-        "slug": "neden-turk-traverteni",
-        "title": "Neden Türk Traverteni?",
-        "excerpt": "Dayanım, bulunabilirlik, maliyet avantajı ve zengin renk seçenekleri.",
-        "date": "2024-12-10",
-        "category": "travertine",
-        "cover": "/images/blog/why-turkish.webp"
-      },
-      {
-        "slug": "dis-mekan-icin-en-iyi-traverten",
-        "title": "Dış Mekanlar İçin En İyi Traverten",
-        "excerpt": "Kaydırmazlık, hava şartlarına dayanım ve doğru yüzey seçimi.",
-        "date": "2024-11-30",
-        "category": "travertine",
-        "cover": "/images/blog/outdoor.webp"
-      }
+     {
+    "slug": "travertines/travertine-tiles",
+    "title": "Travertine Tiles",
+    "excerpt": "Travertine tiles are widely used in flooring and wall coverings, combining natural aesthetics with durability. Available in multiple finishes, they suit modern and traditional designs in residential and commercial spaces.",
+    "date": "2025-01-20",
+    "category": "travertine",
+    "cover": "/images/homepage/kesim.webp"
+  },
+  {
+    "slug": "travertines/travertine-slabs",
+    "title": "Travertine Slabs",
+    "excerpt": "Travertine slabs are ideal for large-scale projects requiring seamless surfaces like countertops and facades. Their wide dimensions highlight natural patterns, delivering a luxurious look for interiors and architecture.",
+    "date": "2025-01-20",
+    "category": "travertine",
+    "cover": "/images/homepage/slabler2.webp"
+  },
+  {
+    "slug": "travertines/travertine-blocks",
+    "title": "Travertine Blocks",
+    "excerpt": "Travertine blocks are the raw form extracted from quarries, then cut and processed into tiles or slabs. Valued by manufacturers and exporters, they are the base material for large projects and custom stonework.",
+    "date": "2025-01-20",
+    "category": "travertine",
+    "cover": "/images/homepage/Ivoryblok.webp"
+  },
+  {
+    "slug": "travertines/travertine-pavers",
+    "title": "Travertine Pavers",
+    "excerpt": "Travertine pavers are durable outdoor solutions for paths, driveways, patios, and pool decks. Their slip-resistant surface and weather endurance make them a preferred choice for landscaping and exterior projects.",
+    "date": "2025-01-20",
+    "category": "travertine",
+    "cover": "/images/tiles/Ivorykesim.webp"
+  },
+  {
+    "slug": "travertines/travertine-mosaics",
+    "title": "Travertine Mosaics",
+    "excerpt": "Travertine mosaics combine small stone pieces into decorative patterns. Popular in bathrooms, kitchens, and feature walls, they add texture and style while maintaining the durability of natural stone.",
+    "date": "2025-01-20",
+    "category": "travertine",
+    "cover": "/images/homepage/antikarkaplan4.webp"
+  },
+
+
+  {
+    "slug": "travertines/polished-travertine",
+    "title": "Polished Travertine",
+    "excerpt": "Polished travertine offers a glossy, reflective surface ideal for luxury interiors. It enhances the stone’s natural patterns while creating a modern, elegant atmosphere in residential and commercial spaces.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/polished.jpg"
+  },
+  {
+    "slug": "travertines/honed-travertine",
+    "title": "Honed Travertine",
+    "excerpt": "Honed travertine has a smooth, matte surface that provides a softer, more natural look. Perfect for indoor floors, walls, and countertops where a subtle and contemporary appearance is preferred.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/honed.jpg"
+  },
+  {
+    "slug": "travertines/tumbled-travertine",
+    "title": "Tumbled Travertine",
+    "excerpt": "Tumbled travertine features a weathered, rustic texture that adds character to spaces. Common in outdoor areas, patios, and pool surrounds, it creates a classic Mediterranean or antique style.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/Tumbled.webp"
+  },
+  {
+    "slug": "travertines/brushed-travertine",
+    "title": "Brushed Travertine",
+    "excerpt": "Brushed travertine has a gently textured surface achieved through special treatment. Suitable for both interior and exterior designs, it offers added grip and visual warmth.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/Brushed.jpg"
+  },
+  {
+    "slug": "travertines/filled-travertine",
+    "title": "Filled Travertine",
+    "excerpt": "Filled travertine has natural pores sealed with resin or cement, creating a smoother surface. Often paired with polished finishes for modern interiors where a clean and refined look is desired.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/filled.jpg"
+  },
+  {
+    "slug": "travertines/unfilled-travertine",
+    "title": "Unfilled Travertine",
+    "excerpt": "Unfilled travertine retains its natural pores and raw texture. Preferred for traditional or outdoor settings where authenticity and a rugged, natural aesthetic are desired.",
+    "date": "2025-01-19",
+    "category": "travertine",
+    "cover": "/images/blog/unfilled.jpg"
+  },
+
+
+  {
+    "slug": "travertines/ivory-travertine",
+    "title": "Ivory Travertine",
+    "excerpt": "Ivory travertine is bright and elegant, a favorite for luxury interiors. Its light shade creates a spacious, airy feeling, ideal for bathrooms, kitchens, and pool surroundings across contemporary projects.",
+    "date": "2025-01-18",
+    "category": "travertine",
+    "cover": "/images/homepage/Ivory/ivory.webp"
+  },
+  {
+    "slug": "travertines/light-travertine",
+    "title": "Light Travertine",
+    "excerpt": "Light travertine offers warm beige tones that blend seamlessly with modern and classic schemes. Versatile for flooring, wall cladding, and outdoor landscaping across residential and commercial spaces.",
+    "date": "2025-01-18",
+    "category": "travertine",
+    "cover": "/images/homepage/Light/light.webp"
+  },
+  {
+    "slug": "travertines/antico-travertine",
+    "title": "Antico Travertine",
+    "excerpt": "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
+    "date": "2025-01-18",
+    "category": "travertine",
+    "cover": "/images/homepage/antik/antik.webp"
+  },
+
+
+  {
+    "slug": "travertines/travertine-flooring",
+    "title": "Travertine Flooring",
+    "excerpt": "Travertine flooring is prized for durability and natural beauty. With varied finishes and colors, it enhances modern and classic interiors and withstands daily use in homes and commercial spaces.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Light/lighttasarim3.webp"
+  },
+  {
+    "slug": "travertines/travertine-cladding",
+    "title": "Travertine Cladding",
+    "excerpt": "Travertine cladding adds elegance to walls and facades, delivering natural insulation and timeless style. A popular choice for residential projects and commercial architecture alike.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Light/lighttasarim4.webp"
+  },
+  {
+    "slug": "travertines/travertine-facade",
+    "title": "Travertine Facade",
+    "excerpt": "Travertine facades create strong, stylish exteriors. Weather resistance and natural variation make them ideal for modern buildings and restoration work seeking authentic stone character.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Antik/Antiktasarim4.webp"
+  },
+  {
+    "slug": "travertines/travertine-bathroom",
+    "title": "Travertine Bathroom",
+    "excerpt": "Travertine bathrooms evoke luxury and calm. Used in tiles, mosaics, and vanity tops, the stone brings spa-like warmth and texture to contemporary and classic spaces.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Ivory/Ivorytasarim1.webp"
+  },
+  {
+    "slug": "travertines/travertine-kitchen",
+    "title": "Travertine Kitchen",
+    "excerpt": "In kitchens, travertine works for countertops, backsplashes, and floors. Its natural tones pair beautifully with wood, metal, and minimalist cabinetry for enduring design.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Antik/Antiktasarim2.webp"
+  },
+  {
+    "slug": "travertines/travertine-pool",
+    "title": "Travertine Pool",
+    "excerpt": "Travertine pool surrounds are slip-resistant, heat-friendly, and refined. They provide a safe, elegant solution for outdoor leisure areas and resort-style landscapes.",
+    "date": "2025-01-17",
+    "category": "travertine",
+    "cover": "/images/homepage/Ivory/Ivorytasarim2.webp"
+  },
+
+ 
+  {
+    "slug": "travertines/travertine-turkey",
+    "title": "Travertine Turkey",
+    "excerpt": "Travertine Turkey is synonymous with quality and scale. Vast reserves and skilled craftsmanship position the country as a top global source for natural stone products.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  },
+  {
+    "slug": "travertines/turkish-travertine",
+    "title": "Turkish Travertine",
+    "excerpt": "Turkish travertine is globally recognized for color diversity and durability. Exported to major markets, it’s a leading material for construction and design projects worldwide.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  },
+  {
+    "slug": "travertines/travertine-quarry",
+    "title": "Travertine Quarry",
+    "excerpt": "Travertine quarries in Turkey produce high-quality blocks at scale. These raw materials are processed into tiles, slabs, and custom products for global distribution.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/tab2.webp"
+  },
+  {
+    "slug": "travertines/travertine-supplier",
+    "title": "Travertine Supplier",
+    "excerpt": "A travertine supplier delivers ready-to-use tiles and slabs to buyers worldwide. Reliable partners ensure consistent quality assurance and on-time delivery.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  },
+  {
+    "slug": "travertines/travertine-exporter",
+    "title": "Travertine Exporter",
+    "excerpt": "Travertine exporters connect Turkish stone with international markets, managing logistics, documentation, and quality control throughout the supply chain.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  },
+  {
+    "slug": "travertines/travertine-manufacturer",
+    "title": "Travertine Manufacturer",
+    "excerpt": "Travertine manufacturers process raw blocks into finished products with advanced machinery. Precision cutting, polishing, and customization meet project demands.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  },
+  {
+    "slug": "travertines/travertine-distributor",
+    "title": "Travertine Distributor",
+    "excerpt": "Travertine distributors supply natural stone to contractors, retailers, and wholesalers, ensuring availability and after-sales support across regions.",
+    "date": "2025-01-16",
+    "category": "travertine",
+    "cover": "/images/homepage/antikoarkplan.webp"
+  }
     ]
   },
 
@@ -1043,7 +1227,11 @@
     "q3":"What are the differences between filled & unfilled?",
     "answer3":"Filled travertine has pores filled with resin/cement for a smooth finish. Unfilled keeps natural cavities for a rustic texture.",
     "q4":"How do I maintain travertine?",
-    "answer4":"Seal periodically, use pH-neutral cleaners, and avoid acidic products. Outdoor pavers may require re-sealing based on climate."
+    "answer4":"Seal periodically, use pH-neutral cleaners, and avoid acidic products. Outdoor pavers may require re-sealing based on climate.",
+    "q5":"Is travertine from Turkey suitable for commercial projects?",
+    "answer5":"Yes. Thanks to density and color range, Turkish travertine performs in hotels, offices and retail spaces when specified with the right finish and thickness.",
+    "q6":"How do I choose between tiles, slabs and pavers?",
+    "answer6":"Use tiles for interiors and walls, slabs for seamless surfaces or countertops, and pavers for outdoor traffic areas. Share drawings and we’ll suggest the most efficient mix."
   },
 
     "light-traverten-ile-modern-ic-mekan": {

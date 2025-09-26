@@ -20,7 +20,7 @@ import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntr
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
 const sizeLabelFromSlug = (slug) =>
   slug === "custom"

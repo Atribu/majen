@@ -2,7 +2,7 @@
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/og-travertine.jpg`;
 
 export async function generateMetadata({ params }) {

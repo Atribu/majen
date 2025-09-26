@@ -22,7 +22,7 @@ const META_BY_PRODUCT = {
     slabs: {
       title: "Wholesale Travertine Slabs From Turkey | 2cm 3cm 5cm – Majen",
       description:
-        "Majen supplies Wholesale Travertine Slabs From Turkey – Blaundos Antiko, Light, Ivory. Slabs in 2cm, 3cm, 5cm thickness with polished, honed, brushed, or tumbled finishes. FOB/CIF worldwide export.",
+        "Explore high-quality wholesale travertine slabs from Turkey. Durable, stylish, and directly from the quarry. Partner with Majen today.",
     },
     tiles: {
       title: "Wholesale Travertine Tiles From Turkey | 30×60 60×60 – Majen",

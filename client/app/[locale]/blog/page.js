@@ -5,8 +5,9 @@ import { getTranslations } from "next-intl/server";
 import ContactFrom from "../components/generalcomponent/ContactFrom";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+const POSTS_PER_PAGE = 20;
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params, searchParams }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "BlogIndex" });
   const title = t("title", { default: "Travertine Blog" });
@@ -26,85 +27,220 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function Page({ params }) {
+// Pagination Component
+function Pagination({ currentPage, totalPages, locale }) {
+  if (totalPages <= 1) return null;
+
+  const pages = [];
+  const showPages = 5; // Gösterilecek sayfa sayısı
+  
+  let startPage = Math.max(1, currentPage - Math.floor(showPages / 2));
+  let endPage = Math.min(totalPages, startPage + showPages - 1);
+  
+  if (endPage - startPage + 1 < showPages) {
+    startPage = Math.max(1, endPage - showPages + 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+
+  return (
+    <nav className="flex justify-center mt-12" aria-label="Pagination">
+      <div className="flex items-center space-x-1">
+        {/* Previous button */}
+        {currentPage > 1 && (
+          <Link
+            href={`/${locale}/blog?page=${currentPage - 1}`}
+            className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
+          >
+            ‹
+          </Link>
+        )}
+
+        {/* First page */}
+        {startPage > 1 && (
+          <>
+            <Link
+              href={`/${locale}/blog?page=1`}
+              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
+            >
+              1
+            </Link>
+            {startPage > 2 && (
+              <span className="px-3 py-2 text-sm font-medium text-gray-500">
+                ...
+              </span>
+            )}
+          </>
+        )}
+
+        {/* Page numbers */}
+        {pages.map((page) => (
+          <Link
+            key={page}
+            href={`/${locale}/blog?page=${page}`}
+            className={`px-3 py-2 text-sm font-medium rounded-md ${
+              currentPage === page
+                ? "bg-teal-600 text-white border border-teal-600"
+                : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+            }`}
+          >
+            {page}
+          </Link>
+        ))}
+
+        {/* Last page */}
+        {endPage < totalPages && (
+          <>
+            {endPage < totalPages - 1 && (
+              <span className="px-3 py-2 text-sm font-medium text-gray-500">
+                ...
+              </span>
+            )}
+            <Link
+              href={`/${locale}/blog?page=${totalPages}`}
+              className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
+            >
+              {totalPages}
+            </Link>
+          </>
+        )}
+
+        {/* Next button */}
+        {currentPage < totalPages && (
+          <Link
+            href={`/${locale}/blog?page=${currentPage + 1}`}
+            className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700"
+          >
+            ›
+          </Link>
+        )}
+      </div>
+    </nav>
+  );
+}
+
+export default async function Page({ params, searchParams }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "BlogIndex" });
-  const posts = t.raw("posts") || [];
+  const allPosts = t.raw("posts") || [];
+  
+  // Sayfa numarasını al
+  const page = parseInt(searchParams?.page) || 1;
+  const currentPage = Math.max(1, page);
+  
+  // Toplam sayfa sayısını hesapla
+  const totalPosts = allPosts.length;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  
+  // Mevcut sayfa için postları filtrele
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+  const posts = allPosts.slice(startIndex, endIndex);
 
   return (
     <main className="px-5 py-10 mt-10 lg:py-24">
       {/* Header */}
       <header className="mx-auto max-w-5xl">
-        <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold tracking-tight">{t("title")}</h1>
-        <p className="mt-2 text-neutral-700 max-w-3xl text-[12px] md:text-[14px] lg:text-[16px]">{t("intro")}</p>
+        <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-semibold tracking-tight">
+          {t("title")}
+        </h1>
+        <p className="mt-2 text-neutral-700 max-w-3xl text-[12px] md:text-[14px] lg:text-[16px]">
+          {t("intro")}
+        </p>
+        
+        {/* Post count info */}
+        {totalPosts > 0 && (
+          <div className="mt-4 text-sm text-neutral-600">
+            {totalPosts > POSTS_PER_PAGE 
+              ? `Toplam ${totalPosts} yazıdan ${startIndex + 1}-${Math.min(endIndex, totalPosts)} arası gösteriliyor`
+              : `Toplam ${totalPosts} yazı`
+            }
+          </div>
+        )}
       </header>
 
       {/* Grid */}
-      <section
-        className="
-          mx-auto mt-5 md:mt-10 max-w-7xl
-          grid gap-6 sm:gap-7
-          [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
-        {posts.map((p) => (
-          <article
-            key={p.slug}
-            className="
-              group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white
-              shadow-[0_8px_24px_-16px_rgba(0,0,0,0.2)]
-              transition-transform hover:-translate-y-0.5
-            "
-          >
-            <Link href={`/${locale}/blog/${p.slug}`} className="block focus:outline-none">
-              {/* Cover */}
-              <div className="relative w-full aspect-[16/10] bg-neutral-100">
-                <Image
-                  src={"/images/homepage/antikoarkplan.webp"}
-                  alt={p.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  priority={false}
-                />
-              </div>
-
-              {/* Body */}
-              <div className="p-4 md:p-5">
-                <div className="flex items-center gap-2 text-neutral-500 text-[12px] md:text-[14px] lg:text-[16px]">
-                  {p.date ? <time dateTime={p.date}>{p.date}</time> : null}
-                  {p.category ? (
-                    <>
-                      <span>•</span>
-                      <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 ">
-                        {t(`categories.${p.category}`, { default: p.category })}
-                      </span>
-                    </>
-                  ) : null}
+      {posts.length > 0 ? (
+        <section
+          className="
+            mx-auto mt-5 md:mt-10 max-w-7xl
+            grid gap-6 sm:gap-7
+            [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]"
+        >
+          {posts.map((p) => (
+            <article
+              key={p.slug}
+              className="
+                group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white
+                shadow-[0_8px_24px_-16px_rgba(0,0,0,0.2)]
+                transition-transform hover:-translate-y-0.5
+              "
+            >
+              <Link href={`/${locale}/blog/${p.slug}`} className="block focus:outline-none">
+                {/* Cover */}
+                <div className="relative w-full aspect-[16/10] bg-neutral-100">
+                  <Image
+                    src={"/images/homepage/antikoarkplan.webp"}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    priority={false}
+                  />
                 </div>
 
-                <h2 className="mt-2  text-[16px] md:text-[18px] lg:text-[20px] font-semibold leading-snug line-clamp-2">
-                  {p.title}
-                </h2>
+                {/* Body */}
+                <div className="p-4 md:p-5">
+                  <div className="flex items-center gap-2 text-neutral-500 text-[12px] md:text-[14px] lg:text-[16px]">
+                    {p.date ? <time dateTime={p.date}>{p.date}</time> : null}
+                    {p.category ? (
+                      <>
+                        <span>•</span>
+                        <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 ">
+                          {t(`categories.${p.category}`, { default: p.category })}
+                        </span>
+                      </>
+                    ) : null}
+                  </div>
 
-                <p className="mt-1 lg:mt-2 text-sm text-neutral-700 line-clamp-3 text-[12px] md:text-[14px] lg:text-[16px]">
-                  {p.excerpt}
-                </p>
+                  <h2 className="mt-2  text-[16px] md:text-[18px] lg:text-[20px] font-semibold leading-snug line-clamp-2">
+                    {p.title}
+                  </h2>
 
-                <span className="mt-2 lg:mt-3 inline-flex items-center gap-2 text-[12px] md:text-[14px] lg:text-[16px] font-medium text-teal-700">
-                  {t("readMore")}
-                  <svg
-                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
-                  >
-                    <path d="M7 5l5 5-5 5" />
-                  </svg>
-                </span>
-              </div>
-            </Link>
-          </article>
-        ))}
-      </section>
+                  <p className="mt-1 lg:mt-2 text-sm text-neutral-700 line-clamp-3 text-[12px] md:text-[14px] lg:text-[16px]">
+                    {p.excerpt}
+                  </p>
 
-      <ContactFrom/>
+                  <span className="mt-2 lg:mt-3 inline-flex items-center gap-2 text-[12px] md:text-[14px] lg:text-[16px] font-medium text-teal-700">
+                    {t("readMore")}
+                    <svg
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                    >
+                      <path d="M7 5l5 5-5 5" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </section>
+      ) : (
+        <div className="mx-auto mt-10 max-w-5xl text-center">
+          <p className="text-neutral-600">Henüz blog yazısı bulunmuyor.</p>
+        </div>
+      )}
+
+      {/* Pagination */}
+      <Pagination 
+        currentPage={currentPage}
+        totalPages={totalPages}
+        locale={locale}
+      />
+
+      <ContactFrom />
     </main>
   );
 }
