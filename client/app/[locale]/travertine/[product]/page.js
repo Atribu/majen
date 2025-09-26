@@ -282,7 +282,9 @@ const productAltMap = {
 
       <SocialMediaSection />
       <ContactFrom />
-      <QuestionsSection items={items} span={`Travertine ${productAltMap[productKey]}`}/>
+      <div id="faq" className="max-w-5xl mx-auto mt-12">
+        <QuestionsSection items={items} span={`Travertine ${productAltMap[productKey]}`}/>
+      </div>
       <OtherOptions
        heading="Other Options"
   excludeProduct={productKey}                         

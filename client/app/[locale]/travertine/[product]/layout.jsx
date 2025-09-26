@@ -20,7 +20,7 @@ const META_BY_PRODUCT = {
         "Majen supplies Wholesale Travertine Blocks From Turkey – Blaundos Antiko, Light, Ivory. Average 280×220×200 cm, 30–35 tons. FOB/CIF worldwide shipping with full documentation.",
     },
     slabs: {
-      title: "Wholesale Travertine Slabs From Turkey | 2cm 3cm 5cm – Majen",
+      title: "Wholesale Travertine Slabs from Turkey | Majen",
       description:
         "Explore high-quality wholesale travertine slabs from Turkey. Durable, stylish, and directly from the quarry. Partner with Majen today.",
     },
@@ -196,37 +196,40 @@ export default async function ProductLayout({ children, params }) {
   // Not: TR/EN metinleriniz ProductPage.{productKey}.QuestionsItems altında ise:
   // {aboutpage_s4_faq1_header, aboutpage_s4_faq1_text, ...}
   let faqJSONLD = null;
-  try {
-    const tQA = await getTranslations({
-      locale,
-      namespace: `ProductPage.${productKey}.QuestionsItems`,
-    });
+try {
+  const tQA = await getTranslations({
+    locale,
+    namespace: `ProductPage.${productKey}.QuestionsItems`,
+  });
 
-    // 1..10 arası bak, olanları ekle
-    const faqList = [];
-    for (let i = 1; i <= 10; i++) {
-      const qKey = `aboutpage_s4_faq${i}_header`;
-      const aKey = `aboutpage_s4_faq${i}_text`;
-      if (tQA.has(qKey) && tQA.has(aKey)) {
-        faqList.push({
-          "@type": "Question",
-          name: tQA(qKey),
-          acceptedAnswer: { "@type": "Answer", text: tQA(aKey) },
-        });
-      }
+  const faqList = [];
+  for (let i = 1; i <= 20; i++) {
+    const qKey = `aboutpage_s4_faq${i}_header`;
+    const aKey = `aboutpage_s4_faq${i}_text`;
+    if (tQA.has(qKey) && tQA.has(aKey)) {
+      faqList.push({
+        "@type": "Question",
+        name: tQA(qKey),
+        acceptedAnswer: { "@type": "Answer", text: tQA(aKey) },
+      });
+    } else {
+      break;
     }
-
-    if (faqList.length > 0) {
-      faqJSONLD = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqList,
-      };
-    }
-  } catch {
-    // namespace yoksa FAQ eklemeyiz (sessizce geç)
-    faqJSONLD = null;
   }
+
+  if (faqList.length > 0) {
+    faqJSONLD = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${productUrl}#faq`,
+      inLanguage: locale,                 // "en" | "tr"
+      mainEntityOfPage: productUrl,       // sayfa bağlamı
+      mainEntity: faqList,
+    };
+  }
+} catch {
+  faqJSONLD = null;
+}
 
   return (
     <>
