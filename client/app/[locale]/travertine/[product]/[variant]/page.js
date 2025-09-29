@@ -365,7 +365,7 @@ const accordionItems = [
       {/* Application Section */}
       {appSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
-          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
             <h2 className="text-[24px] md:text-[26px]">{appSection.title}</h2>
             {appSection.text && (
               <p className="mt-2 text-[12px] lg:text-[14px]">{appSection.text}</p>
@@ -384,7 +384,7 @@ const accordionItems = [
 {/* Available Sizes Section */}
       {availSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
-          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
             <h2 className="text-[24px] md:text-[26px]">{availSection.title}</h2>
             {availSection.text && (
               <p className="mt-2 text-[12px] lg:text-[14px]">{availSection.text}</p>
@@ -403,7 +403,7 @@ const accordionItems = [
 {/* Finishes Section */}
       {finishSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
-          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
             <h2 className="text-[24px] md:text-[26px]">{finishSection.title}</h2>
             {finishSection.text && (
               <p className="mt-2 text-[12px] lg:text-[14px]">{finishSection.text}</p>
@@ -427,7 +427,7 @@ const accordionItems = [
 {/* Partner Section with Accordion */}
       {partnerSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
-          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
             <h2 className="text-[24px] md:text-[26px]">{partnerSection.title}</h2>
             {partnerSection.description && (
               <p className="mt-2 text-[12px] lg:text-[14px]">{partnerSection.description}</p>
@@ -452,7 +452,7 @@ const accordionItems = [
           title={title}
           paragraphs={paragraphs}
           schema={schema}
-          className="max-w-5xl mx-auto mt-12"
+          className="max-w-5xl mx-auto mt-0"
           clampMobile={3}
           as="section"
         />
@@ -460,10 +460,10 @@ const accordionItems = [
 
       {/* Micro-proof (varsa) */}
       {microProof.length > 0 && (
-        <section className="max-w-5xl mx-auto mt-0 items-center justify-center text-center">
+        <section className="max-w-5xl mx-auto -mt-1 items-center justify-center text-center">
           <ul className="micro-proof pl-6 space-y-1 text-sm text-neutral-700">
             {microProof.map((line, i) => (
-              <li key={i}>{line}</li>
+              <li key={i}>- {line}</li>
             ))}
           </ul>
         </section>

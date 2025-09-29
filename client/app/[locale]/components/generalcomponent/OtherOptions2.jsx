@@ -112,46 +112,57 @@ export default function OtherOptions2({
           <Link
             key={card.key}
             href={card.href}
-            className="group relative rounded-2xl overflow-hidden bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.15)] ring-1 ring-neutral-200 hover:shadow-[0_12px_40px_-10px_rgba(0,0,0,0.25)] hover:ring-neutral-300 transition-all duration-300"
+            className="group relative overflow-hidden "
           >
-            {/* Görsel */}
-            <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-              <Image
-                src={card.imageSrc}
-                alt={card.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              {/* Hover icon */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                <svg className="w-4 h-4 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
+         {/* Dairesel görsel (gölge + ring) */}
+<div className="pt-6 flex justify-center">
+  <div
+    className="
+      relative w-[180px] h-[180px] md:w-[210px] md:h-[210px]
+      rounded-full overflow-hidden
+      ring-1 ring-neutral-200
+      shadow-[0_16px_36px_-12px_rgba(0,0,0,0.35)]
+      group-hover:shadow-[0_24px_50px_-14px_rgba(0,0,0,0.45)]
+      transition-shadow duration-300
+    "
+  >
+    <Image
+      src={card.imageSrc}
+      alt={card.alt}
+      fill
+      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      sizes="(max-width: 640px) 180px, (max-width: 1024px) 210px, 210px"
+      priority={false}
+    />
+   
+    {/* Hover icon (opsiyonel) */}
+    {/* <div className="absolute bottom-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+      <svg className="w-4 h-4 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </div> */}
+  </div>
+</div>
 
-            {/* İçerik */}
-            <div className="p-5">
-              <h3 className="font-semibold text-neutral-900 text-lg mb-2 group-hover:text-neutral-700 transition-colors">
-                {card.title}
-              </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
-                {card.variantTitle}
-              </p>
-              
-              {/* Alt çizgi animasyonu */}
-              <div className="mt-3 pt-3 border-t border-neutral-200">
-                <span className="text-sm font-medium text-neutral-700 group-hover:text-neutral-900 transition-colors">
-                  {locale === 'tr' ? 'Detayları Görüntüle' : 'View Details'}
-                  <span className="inline-block ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
-                </span>
-              </div>
-            </div>
+{/* Metinler dairenin DIŞINDA, hemen altında */}
+<div className="px-5 pb-5 pt-4 text-center">
+  {/* İsterseniz sıralamayı değiştirin: varyant üstte, ürün altta gibi */}
+  <h3 className="font-semibold text-neutral-900 text-base md:text-lg mb-1 group-hover:text-neutral-700 transition-colors">
+    {card.variantTitle}
+  </h3>
+  <p className="text-neutral-600 text-sm">
+    {card.title}
+  </p>
+
+  {/* Alt çizgi/CTA (aynı kalsın) */}
+  <div className="mt-3 pt-3 border-t border-neutral-200">
+    <span className="text-sm font-medium text-neutral-700 group-hover:text-neutral-900 transition-colors">
+      {locale === 'tr' ? 'Detayları Görüntüle' : 'View Details'}
+      <span className="inline-block ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+    </span>
+  </div>
+</div>
+
           </Link>
         ))}
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import IntroSection from '../IntroSection'
 import { useTranslations } from 'next-intl'
-import img1 from "@/public/images/export/fob.jpg"
+import img1 from "@/public/images/export/FOB.webp"
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export const metadata = {
       "FOB shipping for travertine from Turkey: process, documents, packaging, ports and lead times.",
     url: "https://majen.com.tr/en/export/fob-travertine",
     type: "article",
-    images: ["/images/export/fob.jpg"],
+    images: ["/images/export/FOB.webp"],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -49,7 +49,7 @@ export default async function Page({ params }) {
       
       <section className="relative isolate overflow-hidden">
         <Image
-          src="/images/export/fob.jpg"
+          src="/images/export/FOB.webp"
           alt="FOB Travertine Export From Turkey – container loading at Izmir Alsancak port"
           width={1920}
           height={900}

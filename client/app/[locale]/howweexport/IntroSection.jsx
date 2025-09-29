@@ -139,7 +139,7 @@ export default function IntroSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Sol: Hero görsel (stabil yükseklik, soft radius) */}
           <div className="lg:col-span-7">
-            <div className="relative h-[280px] sm:h-[360px] lg:h-[520px] rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-2xl">
+            <div className="relative h-[280px] sm:h-[360px] lg:h-[560px] rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-2xl">
               <Image
                 src={heroSrc}
                 alt={imageAlt}
@@ -168,25 +168,25 @@ export default function IntroSection({
             <div className="relative rounded-2xl border border-white/20 bg-white/70 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(0,0,0,0.3)] p-5 sm:p-7">
               <h1
                 id="intro-heading"
-                className="text-[26px] sm:text-[32px] lg:text-[36px] font-semibold leading-tight text-neutral-900"
+                className="text-[28px] sm:text-[30px] lg:text-[34px] font-semibold leading-tight text-neutral-900"
               >
                 {title}
               </h1>
 
               {intro && (
-                <p className="mt-3 text-[13px] sm:text-[15px] leading-[135%] text-neutral-700">
+                <p className="mt-3 text-[12px] sm:text-[14px] leading-[135%] text-neutral-700">
                   {intro}
                 </p>
               )}
 
               {title2 && (
-                <h2 className="mt-5 text-[18px] sm:text-[20px] font-semibold text-neutral-900">
+                <h2 className="mt-5 text-[18px] sm:text-[20px] lg:text-[22px] font-semibold text-neutral-900">
                   {title2}
                 </h2>
               )}
 
               {intro2 && (
-                <p className="mt-2 text-[13px] sm:text-[15px] leading-[135%] text-neutral-700">
+                <p className="mt-2 text-[12px] sm:text-[14px] leading-[135%] text-neutral-700">
                   {intro2}
                 </p>
               )}

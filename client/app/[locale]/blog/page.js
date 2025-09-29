@@ -3,9 +3,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import ContactFrom from "../components/generalcomponent/ContactFrom";
+const PAGE_COVERS = [
+  "/images/homepage/antikoarkplan.webp",
+  "/images/tiles/antikokesim.webp",
+  "/images/slabs/newLight.webp",
+];
+
+const CARD_COVERS = [
+  "/images/homepage/antikoarkplan.webp",
+  "/images/tiles/antikokesim.webp",
+  "/images/blog/covers/card-3.webp",
+  "/images/slabs/newLight.webp",
+];
+
+// Slug'a göre stabil indeks (kart kapağı seçiminde çok işe yarar)
+function hashSlug(slug = "") {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const POSTS_PER_PAGE = 20;
+const POSTS_PER_PAGE_Mobile = 10;
 
 export async function generateMetadata({ params, searchParams }) {
   const { locale } = await params;
@@ -13,6 +33,7 @@ export async function generateMetadata({ params, searchParams }) {
   const title = t("title", { default: "Travertine Blog" });
   const description = t("intro", { default: "Guides and insights…" }).slice(0, 160);
   const canonical = `${SITE_URL}/${locale}/blog`;
+  
 
   return {
     title,

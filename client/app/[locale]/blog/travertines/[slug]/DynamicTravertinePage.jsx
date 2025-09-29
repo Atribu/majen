@@ -612,9 +612,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
        {s.gallery && (
               <Section id="gallery" title={s.gallery.h2}>
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {(img?.gallery || []).map((g) => (
+                  {(img?.gallery || []).map((g,i) => (
                     <div
-                      key={g.src}
+                     key={`${g.src}-${i}`}
                       className="relative h-56 w-full rounded-2xl overflow-hidden"
                     >
                       <Image

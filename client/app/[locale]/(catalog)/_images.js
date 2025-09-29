@@ -29,9 +29,10 @@ import tilesLight from "@/public/images/homepage/kesim.webp";
 import tilesAntik from "@/public/images/tiles/antikokesim.webp";
 
 // --- Special (örnek yolları değiştir)
-import specialIvory from "@/public/images/homepage/masa.webp";
-import specialLight from "@/public/images/homepage/masa.webp";
-import specialAntik from "@/public/images/homepage/masa.webp";
+import specialIvory from "@/public/images/design/IvoryMasa.webp";
+import specialLight from "@/public/images/design/LightMasa.webp";
+import specialAntik from "@/public/images/design/AntikoMasa.webp";
+import travertineTurkey from "@/public/images/blogs/TravertineTurkey.webp"
 
 /**
  * Ürün başına görsel haritası:
@@ -520,22 +521,22 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-turkey": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: travertineTurkey, alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
-      ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
-      light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
-      antico: { src: slabAntik, alt: "Antico travertine slab rustic hues" }
+      ivory:  { src: travertineTurkey,  alt: "Ivory travertine slab close-up" },
+      light:  { src: travertineTurkey,  alt: "Light travertine slab warm beige" },
+      antico: { src: travertineTurkey, alt: "Antico travertine slab rustic hues" }
     },
     finishes: {
-      polished: { src: "/images/newblog/Polishedtravertine.webp", alt: "Polished travertine slab reflective" },
-      honed:     { src: "/images/newblog/Polishedtravertine.webp",  alt: "Honed travertine slab matte" },
-      brushed:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Brushed travertine slab texture" },
-      tumbled:  { src: "/images/newblog/travertinetumbled.webp",  alt: "Tumbled travertine slab antique finish" }
+      polished: { src: "/images/blogs/TravertineTurkey.webp", alt: "Polished travertine slab reflective" },
+      honed:     { src: "/images/blogs/TravertineTurkey.webp",  alt: "Honed travertine slab matte" },
+      brushed:  { src: "/images/blogs/TravertineTurkey.webp", alt: "Brushed travertine slab texture" },
+      tumbled:  { src: "/images/blogs/TravertineTurkey.webp",  alt: "Tumbled travertine slab antique finish" }
     },
     gallery: [
-      { src: "/images/homepage/Light/Lighttasarim1.webp", alt: "Travertine slab facade on a modern building" },
-      { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Kitchen countertop in Ivory travertine slab" },
-      { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Bathroom vanity top from Light travertine slab" }
+      { src: "/images/blogs/TravertineTurkey.webp", alt: "Travertine slab facade on a modern building" },
+      { src: "/images/blogs/TravertineTurkey.webp", alt: "Kitchen countertop in Ivory travertine slab" },
+      { src: "/images/blogs/TravertineTurkey.webp", alt: "Bathroom vanity top from Light travertine slab" }
     ]
   },
 

@@ -25,7 +25,7 @@ const CardsSection = () => {
     
   return (
     <div className='flex flex-col items-center justify-center gap-3 lg:gap-8'>
-      <h2 className='text-[24px] md:text-[32px] lg:text-[36px] font-semibold'>International Shipping Methods</h2>
+      <h2 className='text-[24px] md:text-[28px] lg:text-[30px] font-semibold'>International Shipping Methods</h2>
       <section className="mb-8 md:mb-10 lg:mb-20 mt-5 lg:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
               {cards.map((c, i) => (
                 <InfoCard key={i} title={c.title}>

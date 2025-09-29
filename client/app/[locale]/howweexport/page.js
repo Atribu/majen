@@ -7,9 +7,9 @@ import QuestionsSection from "../components/generalcomponent/QuestionsSection";
 import ContactFrom from "../components/generalcomponent/ContactFrom";
 import CardsSection from "./CardsSection";
 import TextSection from "../components/products1/TextSection";
-import img1 from "@/public/images/export/fob.jpg"
-import img2 from "@/public/images/export/cif.jpg"
-import img3 from "@/public/images/export/exw.jpg"
+import img1 from "@/public/images/export/FOB.webp"
+import img2 from "@/public/images/export/CIF.webp"
+import img3 from "@/public/images/export/EXW.webp"
 import ThreeUpShowcase from "./ThreeUpShowcase";
 import ExportMethodsShowcase from "./ExportMethodsShowcase";
 import Link from "next/link";
@@ -69,6 +69,8 @@ export default async function Page({ params }) {
   const tS2 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection2" });
   const tS3 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection3" });
   const tS4 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection4" });
+  const tS5 = await getTranslations({ locale, namespace: "HowWeExportPage.ThreeUpShowcase" });
+   const tS6 = await getTranslations({ locale, namespace: "HowWeExportPage.Links" });
 
   const items = [
     { q: tQ("q1"), a: tQ("answer1") },
@@ -142,8 +144,8 @@ export default async function Page({ params }) {
         intro={t("intro")}
         title2={t("title2")}
         intro2={t("intro2")}
-        heroSrc="/images/export/howweexport.jpg"
-        bgMobile="/images/export/howweexport.jpg"
+        heroSrc="/images/export/WhoWorks.webp"
+        bgMobile="/images/export/WhoWorks.webp"
         bgDesktop="/images/homepage/antikarkaplan2.webp"
         bgPanel="/images/homepage/antikarkaplan4.webp"
         imageAlt={isTR ? "Traverten ihracat yöntemleri" : "Travertine export methods"}
@@ -155,74 +157,32 @@ export default async function Page({ params }) {
       />
 
  
-{/* <ExportMethodsShowcase
-  heading="How We Export Travertine Worldwide"
-  description="FOB/CIF sevkiyat, tam dokümantasyon ve güçlendirilmiş paketleme ile güvenli teslimat."
-  defaultIndex={0}
-  items={[
-    {
-      img: img1,
-      alt: "Container loading at port (alt: FOB shipping for travertine from Turkey)",
-      title: "FOB (Free on Board)",
-      href: "/en/howweexport/fob",
-      cta: "View details",
-      text: "Majen loads travertine containers at Turkish ports. Buyers arrange international freight. Most common for bulk travertine block orders.",
-      linkifyPatterns: [
-        { pattern: "(FOB|Free on Board)", flags: "i", href: "/en/howweexport/fob" }
-      ],
-    },
-    {
-      img: img2,
-      alt: "Ship at sea (alt: CIF shipment with insurance & freight included)",
-      title: "CIF (Cost, Insurance, Freight)",
-      href: "/en/howweexport/cif",
-      cta: "See documents",
-      text: "Majen manages shipping, insurance, and freight to buyer’s destination port. Importers prefer this hassle-free option for slabs and tiles.",
-      linkifyPatterns: [
-        { pattern: "(CIF|Cost, Insurance, Freight)", flags: "i", href: "/en/howweexport/cif" }
-      ],
-    },
-    {
-      img: img3,
-      alt: "Export docs (alt: Export documents: invoice, packing list, certificate of origin)",
-      title: "EXW (Ex Works)",
-      href: "/en/howweexport/exw",
-      cta: "How it works",
-      text: "Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners.",
-      linkifyPatterns: [
-        { pattern: "(EXW|Ex Works)", flags: "i", href: "/en/howweexport/exw" }
-      ],
-    },
-  ]}
-/> */}
-
-
       <CardsSection />
 
       <ThreeUpShowcase
-      heading="How We Export Travertine Worldwide"
-      description="FOB/CIF sevkiyat, tam dokümantasyon ve güçlendirilmiş paketleme ile güvenli teslimat."
+      heading={tS5("title")}
+      description={tS5("text")}
       items={[
         {
           img: img1,
           alt: "Container loading at port (alt: FOB shipping for travertine from Turkey)",
-          title: "FOB Shipping",
-          href: "/en/howweexport/fob",
-          cta: "View details"
+          title: tS5("list1"),
+          href: "/howweexport/fob",
+          cta: tS5("buttonText1"),
         },
         {
           img: img2,
           alt: "Ship at sea (alt: CIF shipment with insurance & freight included)",
-          title: "CIF",
-          href: "/en/howweexport/cif",
-          cta: "See documents"
+          title: tS5("list2"),
+          href: "/howweexport/cif",
+          cta: tS5("buttonText2"),
         },
         {
           img: img3,
           alt: "Export docs (alt: Export documents: invoice, packing list, certificate of origin)",
-          title: "EXW",
-          href: "/en/howweexport/exw",
-          cta: "How it works"
+          title: tS5("list3"),
+          href: "/howweexport/exw",
+          cta: tS5("buttonText3"),
         }
       ]}
     />
@@ -267,11 +227,11 @@ export default async function Page({ params }) {
       <ContactFrom />
 
       <nav aria-label="Related links" className="text-sm text-neutral-600 my-8 text-center flex gap-3 items-center justify-center">
-  <Link href="/en/travertine/blocks">Travertine Blocks</Link> •
-  <Link href="/en/travertine/slabs">Travertine Slabs</Link> •
-  <Link href="/en/travertine/tiles">Travertine Tiles</Link> •
-  <Link href="/en/travertine/special-designs">Custom Designs</Link> •
-  <Link href="/en/how-we-export">How We Export</Link>
+  <Link href="/en/travertine/blocks">{tS6("link1")}</Link> •
+  <Link href="/en/travertine/slabs">{tS6("link2")}</Link> •
+  <Link href="/en/travertine/tiles">{tS6("link3")}</Link> •
+  <Link href="/en/travertine/special-designs">{tS6("link4")}</Link> •
+  <Link href="/en/how-we-export">{tS6("link5")}</Link>
 </nav>
 
 

@@ -963,6 +963,18 @@
     "text3":"Buyers arrange pickup directly from our quarry/warehouse. Suitable for importers with their own freight partners."
   },
 
+  "ThreeUpShowcase":{
+    "title":"How We Export Travertine Worldwide",
+    "text":"FOB/CIF shipping, full documentation, and reinforced packaging for secure delivery.",
+    "list1":"FOB Shipping",
+    "list2":"CIF",
+    "list3":"EXW",
+    "buttonText1":"View details",
+    "buttonText2":"See documents",
+    "buttonText3":"How it works"
+
+  },
+
   "Questions":{
     "q1":"Which shipping terms do you offer?",
     "answer1":"FOB and CIF are standard, EXW available on request.",
@@ -1018,6 +1030,14 @@
       "list3":"Secure packaging & reliable shipping partners",
       "list4":"Transparent communication & fast response times"
     
+  },
+
+  "Links":{
+    "link1":"Travertine Blocks",
+    "link2":"Travertine Slabs",
+    "link3":"Travertine Tiles",
+    "link4":"Custom Designs",
+    "link5":"How We Export"
   }
 },
 

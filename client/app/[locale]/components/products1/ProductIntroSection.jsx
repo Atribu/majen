@@ -31,6 +31,7 @@ export default function ProductIntroSection({
   crumbHome = "Ana Sayfa",
   crumbProducts = "Travertines",
   depth = 1, 
+  span
 }) {
   // JSON-LD Schema
   const breadcrumbSchema = {
@@ -64,7 +65,7 @@ export default function ProductIntroSection({
 
         <div className="relative z-10 text-center text-white max-w-[95%]">
           <h1 id="intro-heading" className="text-[24px] md:text-[24px] lg:text-[26px] font-semibold">
-            {title} <span>Direct Quarry Supplier</span>
+            {title} <span>{span}</span>
           </h1>
           <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
 
@@ -127,7 +128,7 @@ export default function ProductIntroSection({
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}
   <header className="relative px-5 pt-5 w-[80%]">
-    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5">{title} <span>- Direct Quarry Supplier</span></h1>
+    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5">{title} <span>{span}</span></h1>
     <p className="text-[12px] lg:text-[14px] mb-10 lg:leading-[140%]">{intro}</p>
     
      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title2}</h2>

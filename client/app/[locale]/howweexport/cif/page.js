@@ -1,7 +1,7 @@
 import React from 'react'
 import IntroSection from '../IntroSection'
 import { useTranslations } from 'next-intl'
-import img1 from "@/public/images/export/fob.jpg"
+import img1 from "@/public/images/export/CIF.webp"
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export const metadata = {
       "CIF shipping for travertine: we manage freight, insurance and documentation to your destination port.",
     url: "https://majen.com.tr/en/export/cif-travertine",
     type: "article",
-    images: ["/images/export/cif.jpg"],
+    images: ["/images/export/CIF.webp"],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -46,7 +46,7 @@ export default async function Page({ params }) {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <Image
-          src="/images/export/cif.jpg"
+          src="/images/export/CIF.webp"
           alt="CIF Travertine Export From Turkey – containerized shipment with insurance and freight"
           width={1920}
           height={900}

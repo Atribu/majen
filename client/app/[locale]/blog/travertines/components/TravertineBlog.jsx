@@ -208,7 +208,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Turkey",
         slug: "/blog/travertines/travertine-turkey",
-         img: "/images/homepage/antikoarkplan.webp",
+         img: "/images/blogs/TravertineTurkey.webp",
         alt: "Travertine quarry in Turkey",
         excerpt:
           "Travertine Turkey is synonymous with quality and scale. Vast reserves and skilled craftsmanship position the country as a top global source for natural stone products.",
@@ -216,7 +216,7 @@ export default function TravertineBlog() {
       {
         title: "Turkish Travertine",
         slug: "/blog/travertines/turkish-travertine",
-        img: "/images/homepage/antikoarkplan.webp",
+        img: "/images/blogs/TurkishTravertine.webp",
         alt: "Turkish travertine close-up",
         excerpt:
           "Turkish travertine is globally recognized for color diversity and durability. Exported to major markets, it’s a leading material for construction and design projects worldwide.",
@@ -224,7 +224,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Quarry",
         slug: "/blog/travertines/travertine-quarry",
-        img: "/images/homepage/tab2.webp",
+        img: "/images/blogs/TravertineQuarry.webp",
         alt: "Travertine quarry blocks",
         excerpt:
           "Travertine quarries in Turkey produce high-quality blocks at scale. These raw materials are processed into tiles, slabs, and custom products for global distribution.",
@@ -232,7 +232,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Supplier",
         slug: "/blog/travertines/travertine-supplier",
-        img: "/images/homepage/antikoarkplan.webp",
+        img: "/images/blogs/Travertinesupplier.webp",
         alt: "Warehouse of travertine tiles",
         excerpt:
           "A travertine supplier delivers ready-to-use tiles and slabs to buyers worldwide. Reliable partners ensure consistent quality assurance and on-time delivery.",
@@ -240,7 +240,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Exporter",
         slug: "/blog/travertines/travertine-exporter",
-        img: "/images/homepage/antikoarkplan.webp",
+        img: "/images/blogs/TravertineExporter.webp",
         alt: "Container shipping travertine",
         excerpt:
           "Travertine exporters connect Turkish stone with international markets, managing logistics, documentation, and quality control throughout the supply chain.",
@@ -248,7 +248,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Manufacturer",
         slug: "/blog/travertines/travertine-manufacturer",
-         img: "/images/homepage/antikoarkplan.webp",
+         img: "/images/blogs/Travertinemanufacturer.webp",
         alt: "Factory processing travertine slabs",
         excerpt:
           "Travertine manufacturers process raw blocks into finished products with advanced machinery. Precision cutting, polishing, and customization meet project demands.",
@@ -256,7 +256,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Distributor",
         slug: "/blog/travertines/travertine-distributor",
-         img: "/images/homepage/antikoarkplan.webp",
+         img: "/images/blogs/travertinedistributor.webp",
         alt: "Distribution center with stone pallets",
         excerpt:
           "Travertine distributors supply natural stone to contractors, retailers, and wholesalers, ensuring availability and after-sales support across regions.",
@@ -292,7 +292,7 @@ const Section = ({ id, title, intro, children }) => (
   const Card = ({ title, slug, img, alt, excerpt }) => (
     <article className="group rounded-2xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <Link href={slug} className="block">
-        <div className="relative h-48 w-full">
+        <div className="relative h-48 lg:h-64 w-full">
           <Image src={img} alt={alt} fill className="object-cover" />
         </div>
         <div className="p-5">

@@ -1,7 +1,7 @@
 import React from 'react'
 import IntroSection from '../IntroSection'
 import { useTranslations } from 'next-intl'
-import img1 from "@/public/images/export/fob.jpg"
+import img1 from "@/public/images/export/EXW.webp"
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export const metadata = {
       "Ex Works pickup for travertine blocks, slabs and tiles. How EXW works, documentation, packaging, pickup points and timelines.",
     url: "https://majen.com.tr/en/export/exw-travertine",
     type: "article",
-    images: ["/images/export/exw.jpg"],
+    images: ["/images/export/EXW.webp"],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -47,7 +47,7 @@ export default async function Page({ params }) {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <Image
-          src="/images/export/exw.jpg"
+          src="/images/export/EXW.webp"
           alt="EXW Travertine Export From Turkey – pickup from Majen quarry warehouse"
           width={1920}
           height={900}
