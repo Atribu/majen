@@ -398,10 +398,46 @@
         "sizes": ["2 cm (20 mm)", "3 cm (30 mm)", "5 cm (50 mm)"],
         "finishes": ["Polished", "Honed", "Brushed", "Tumbled"],
 
-        "cards":[
-          "Design Versatility",
-          ""
-        ],
+        "cards":{
+          "title1":"Design Versatility",
+          "text1":"From luxury hospitality to private villas, Blaundos Antico adapts to varied aesthetics. Its neutral warmth pairs well with wood, metal, and glass, allowing cohesive palettes in mixed-material schemes. Designers value its ability to soften minimal interiors or enrich traditional settings with organic texture. Available finishes expand possibilities, from refined polished looks to tactile brushed or tumbled surfaces ideal for outdoor paths and pool surrounds. The result is a reliable, elegant stone that elevates spaces without visual noise.",
+          "title2":"Performance for High-Traffic Areas",
+          "text2":"Calibrated thickness, consistent flatness, and suitable surface treatments help Blaundos Antico perform in lobbies, corridors, and retail zones. Anti-slip options support safety outdoors, while proper sealing enhances stain resistance indoors. With accurate cutting and tight tolerances, installers achieve clean joints and level surfaces, reducing rework and time on site. This blend of aesthetics and practicality positions Blaundos Antico as a proven specification for demanding, design-driven environments across climates and usage patterns."
+        },
+
+        "ApplicationSection":{
+          "title":"Applications of Blaundos Antico Travertine Slabs",
+          "text":" Blaundos Antico is specified for floors, wall cladding, countertops, fireplace surrounds, stair treads, and exterior façades. Its antique texture lends character to boutique hotels and residences, while honed or polished finishes suit refined interiors. Outdoors, brushed or tumbled slabs complement landscaping, garden paths, and pool decks. The stone’s tonal stability supports continuity between inside and outside, helping designers create cohesive transitions. With accurate sizing and reliable supply, it scales from small renovations to flagship builds.",
+          "subtitle":"Interior & Exterior Use Cases",
+          "subtext":"Indoors, Blaundos Antico brings warmth to living areas and statement value to feature walls or reception desks. In kitchens and baths, sealed surfaces provide practical durability with natural beauty. Externally, its weathered look enriches patios and façades, aging gracefully over time. For public spaces, coordinated formats (slabs, tiles, custom pieces) keep design language consistent. Majen’s technical support advises on finish selection, slip ratings, and maintenance to match climate, footfall, and performance requirements."
+        },
+
+          "AvailableSection":{
+          "title":"Available Sizes & Thickness",
+          "text":" Majen supplies slabs commonly at 2 cm and 3 cm thickness, cut from blocks selected for tone and structure. Custom dimensions can be produced on request, including book-matched sets for feature walls. Tight calibration and precision polishing ensure flatness and clean edges that speed installation. For special elements—vanities, stair treads, or oversized cladding—our team provides cut-to-size options that maintain vein continuity. Consistent sizing across batches supports predictable waste rates and accurate take-offs.",
+          "subtitle":"Dimensional Tolerances",
+          "subtext":"Slab thickness is controlled within industry tolerances to support even load distribution and dependable adhesion. Surface regularity reduces lippage risk on large floors, while square edges and stable geometry help installers achieve fine joints in visual-critical areas. For ventilated façades and lightweight assemblies, we coordinate with fabricators to meet bracket and anchor constraints. All dimensions are verified at dispatch, and reports are available for documentation and submittal packages when required."
+        },
+
+        "FinishesSection":{
+          "title":"Finishes & Packaging Options",
+          "text":" Blaundos Antico can be supplied polished, honed, brushed, or tumbled to align with design intent and slip resistance needs. Finishes are applied with calibrated equipment to keep tone and sheen consistent across lots. For export, slabs are packed in reinforced wooden bundles with corner guards, interleaves, and strapping that limits movement in transit. Moisture-resistant wrapping and clear labeling aid handling at ports and job sites. Packaging is optimized for container loading to minimize risk and freight costs.",
+          "subtitle":"Surface Finish Guidance",
+          "subtext":"Select polished for premium interiors, honed for low-glare sophistication, brushed where texture is desired, and tumbled for rustic, outdoor-ready charm. In wet areas or exterior paths, combine texture with appropriate sealers to improve maintenance and slip performance. We can supply matched samples across finishes so teams preview appearance under project lighting. This process helps align expectations early, reducing change orders and helping stakeholders approve materials quickly and confidently.",
+           "subtitle2":"Export Packaging Standards",
+          "subtext2":"Each bundle is photographed and measured prior to loading. Straps, braces, and internal blocking limit vibration, while protective interlayers reduce abrasion. Bundle IDs map to packing lists for fast checks at customs and on site. Shock indicators can be added on request. The goal is simple: slabs arrive installation-ready, with documentation that keeps receiving and quality verification efficient for importers and contractors."
+        },
+
+        "PartnerSection":{
+          "title":"Why Partner with Majen for Travertine Slabs?",
+          "description":" Beyond quarry access, Majen offers technical guidance, flexible MOQs, and dependable lead times that fit real-world schedules. Direct sourcing keeps costs predictable and ensures tone matching across lots. Reinforced packaging, thorough documentation, and responsive support reduce friction during shipping and receiving. We build long-term relationships with importers, distributors, and contractors, providing post-delivery assistance and repeatable quality so projects finish on brief, on budget, and on time.",
+          "list1":"Service & Support",
+          "text1":"From sampling and mock-ups to installation advice, our team responds quickly with practical guidance. Multilingual communication, transparent timelines, and after-sales follow-up help keep stakeholders aligned. Whether you need book-matched features, custom cuts, or coordinated tiles, we manage details and share progress so decisions stay informed.",
+           "list2":"Sustainability & Traceability",
+          "text2":"We prioritize responsible quarrying, water recycling, and waste reduction. Material traceability and documentation support green building goals and client ESG policies. These practices contribute to durable, long-life installations with lower lifecycle impact.",
+           "list3":"Compliance & Documentation",
+          "text3":"We provide packing data, certificates of origin, and HS codes; optional lab tests and slip ratings can be arranged. This documentation simplifies import processes and supports submittals for architects and contractors, helping approvals proceed without delays."
+        },
 
         "features": [
           "Bookmatch-ready vein-cut options",
@@ -442,6 +478,14 @@
             {
               "q": "What are standard slab thicknesses?",
               "a": "Typically 2 cm and 3 cm; custom sizes and book-matched sets are available on request."
+            },
+            {
+              "q": "How are slabs packaged for export?",
+              "a": "In reinforced wooden bundles with interleaves, corner guards, strapping, and moisture-resistant wrapping."
+            },
+            {
+              "q": "Do you export worldwide?",
+              "a": "Yes. We ship under FOB or CIF terms with full documentation and logistics support."
             }
           ]
         },
@@ -463,6 +507,48 @@
         ],
         "sizes": ["2 cm", "3 cm"],
         "finishes": ["Polished", "Honed", "Brushed"],
+
+        "cards":{
+          "title1":"Design Versatility",
+          "text1":"From luxury hospitality to private villas, Blaundos Antico adapts to varied aesthetics. Its neutral warmth pairs well with wood, metal, and glass, allowing cohesive palettes in mixed-material schemes. Designers value its ability to soften minimal interiors or enrich traditional settings with organic texture. Available finishes expand possibilities, from refined polished looks to tactile brushed or tumbled surfaces ideal for outdoor paths and pool surrounds. The result is a reliable, elegant stone that elevates spaces without visual noise.",
+          "title2":"Performance for High-Traffic Areas",
+          "text2":"Calibrated thickness, consistent flatness, and suitable surface treatments help Blaundos Antico perform in lobbies, corridors, and retail zones. Anti-slip options support safety outdoors, while proper sealing enhances stain resistance indoors. With accurate cutting and tight tolerances, installers achieve clean joints and level surfaces, reducing rework and time on site. This blend of aesthetics and practicality positions Blaundos Antico as a proven specification for demanding, design-driven environments across climates and usage patterns."
+        },
+
+        "ApplicationSection":{
+          "title":"Applications of Blaundos Antico Travertine Slabs",
+          "text":" Blaundos Antico is specified for floors, wall cladding, countertops, fireplace surrounds, stair treads, and exterior façades. Its antique texture lends character to boutique hotels and residences, while honed or polished finishes suit refined interiors. Outdoors, brushed or tumbled slabs complement landscaping, garden paths, and pool decks. The stone’s tonal stability supports continuity between inside and outside, helping designers create cohesive transitions. With accurate sizing and reliable supply, it scales from small renovations to flagship builds.",
+          "subtitle":"Interior & Exterior Use Cases",
+          "subtext":"Indoors, Blaundos Antico brings warmth to living areas and statement value to feature walls or reception desks. In kitchens and baths, sealed surfaces provide practical durability with natural beauty. Externally, its weathered look enriches patios and façades, aging gracefully over time. For public spaces, coordinated formats (slabs, tiles, custom pieces) keep design language consistent. Majen’s technical support advises on finish selection, slip ratings, and maintenance to match climate, footfall, and performance requirements."
+        },
+
+          "AvailableSection":{
+          "title":"Available Sizes & Thickness",
+          "text":" Majen supplies slabs commonly at 2 cm and 3 cm thickness, cut from blocks selected for tone and structure. Custom dimensions can be produced on request, including book-matched sets for feature walls. Tight calibration and precision polishing ensure flatness and clean edges that speed installation. For special elements—vanities, stair treads, or oversized cladding—our team provides cut-to-size options that maintain vein continuity. Consistent sizing across batches supports predictable waste rates and accurate take-offs.",
+          "subtitle":"Dimensional Tolerances",
+          "subtext":"Slab thickness is controlled within industry tolerances to support even load distribution and dependable adhesion. Surface regularity reduces lippage risk on large floors, while square edges and stable geometry help installers achieve fine joints in visual-critical areas. For ventilated façades and lightweight assemblies, we coordinate with fabricators to meet bracket and anchor constraints. All dimensions are verified at dispatch, and reports are available for documentation and submittal packages when required."
+        },
+
+        "FinishesSection":{
+          "title":"Finishes & Packaging Options",
+          "text":" Blaundos Antico can be supplied polished, honed, brushed, or tumbled to align with design intent and slip resistance needs. Finishes are applied with calibrated equipment to keep tone and sheen consistent across lots. For export, slabs are packed in reinforced wooden bundles with corner guards, interleaves, and strapping that limits movement in transit. Moisture-resistant wrapping and clear labeling aid handling at ports and job sites. Packaging is optimized for container loading to minimize risk and freight costs.",
+          "subtitle":"Surface Finish Guidance",
+          "subtext":"Select polished for premium interiors, honed for low-glare sophistication, brushed where texture is desired, and tumbled for rustic, outdoor-ready charm. In wet areas or exterior paths, combine texture with appropriate sealers to improve maintenance and slip performance. We can supply matched samples across finishes so teams preview appearance under project lighting. This process helps align expectations early, reducing change orders and helping stakeholders approve materials quickly and confidently.",
+           "subtitle2":"Export Packaging Standards",
+          "subtext2":"Each bundle is photographed and measured prior to loading. Straps, braces, and internal blocking limit vibration, while protective interlayers reduce abrasion. Bundle IDs map to packing lists for fast checks at customs and on site. Shock indicators can be added on request. The goal is simple: slabs arrive installation-ready, with documentation that keeps receiving and quality verification efficient for importers and contractors."
+        },
+
+        "PartnerSection":{
+          "title":"Why Partner with Majen for Travertine Slabs?",
+          "description":" Beyond quarry access, Majen offers technical guidance, flexible MOQs, and dependable lead times that fit real-world schedules. Direct sourcing keeps costs predictable and ensures tone matching across lots. Reinforced packaging, thorough documentation, and responsive support reduce friction during shipping and receiving. We build long-term relationships with importers, distributors, and contractors, providing post-delivery assistance and repeatable quality so projects finish on brief, on budget, and on time.",
+          "list1":"Service & Support",
+          "text1":"From sampling and mock-ups to installation advice, our team responds quickly with practical guidance. Multilingual communication, transparent timelines, and after-sales follow-up help keep stakeholders aligned. Whether you need book-matched features, custom cuts, or coordinated tiles, we manage details and share progress so decisions stay informed.",
+           "list2":"Sustainability & Traceability",
+          "text2":"We prioritize responsible quarrying, water recycling, and waste reduction. Material traceability and documentation support green building goals and client ESG policies. These practices contribute to durable, long-life installations with lower lifecycle impact.",
+           "list3":"Compliance & Documentation",
+          "text3":"We provide packing data, certificates of origin, and HS codes; optional lab tests and slip ratings can be arranged. This documentation simplifies import processes and supports submittals for architects and contractors, helping approvals proceed without delays."
+        },
+
         "features": [
           "Uniform tone for continuous panels",
           "Cut-to-size friendly",
@@ -490,6 +576,49 @@
         ],
         "sizes": ["2 cm", "3 cm"],
         "finishes": ["Polished", "Honed"],
+
+        "cards":{
+          "title1":"Design Versatility",
+          "text1":"From luxury hospitality to private villas, Blaundos Antico adapts to varied aesthetics. Its neutral warmth pairs well with wood, metal, and glass, allowing cohesive palettes in mixed-material schemes. Designers value its ability to soften minimal interiors or enrich traditional settings with organic texture. Available finishes expand possibilities, from refined polished looks to tactile brushed or tumbled surfaces ideal for outdoor paths and pool surrounds. The result is a reliable, elegant stone that elevates spaces without visual noise.",
+          "title2":"Performance for High-Traffic Areas",
+          "text2":"Calibrated thickness, consistent flatness, and suitable surface treatments help Blaundos Antico perform in lobbies, corridors, and retail zones. Anti-slip options support safety outdoors, while proper sealing enhances stain resistance indoors. With accurate cutting and tight tolerances, installers achieve clean joints and level surfaces, reducing rework and time on site. This blend of aesthetics and practicality positions Blaundos Antico as a proven specification for demanding, design-driven environments across climates and usage patterns."
+        },
+
+        "ApplicationSection":{
+          "title":"Applications of Blaundos Antico Travertine Slabs",
+          "text":" Blaundos Antico is specified for floors, wall cladding, countertops, fireplace surrounds, stair treads, and exterior façades. Its antique texture lends character to boutique hotels and residences, while honed or polished finishes suit refined interiors. Outdoors, brushed or tumbled slabs complement landscaping, garden paths, and pool decks. The stone’s tonal stability supports continuity between inside and outside, helping designers create cohesive transitions. With accurate sizing and reliable supply, it scales from small renovations to flagship builds.",
+          "subtitle":"Interior & Exterior Use Cases",
+          "subtext":"Indoors, Blaundos Antico brings warmth to living areas and statement value to feature walls or reception desks. In kitchens and baths, sealed surfaces provide practical durability with natural beauty. Externally, its weathered look enriches patios and façades, aging gracefully over time. For public spaces, coordinated formats (slabs, tiles, custom pieces) keep design language consistent. Majen’s technical support advises on finish selection, slip ratings, and maintenance to match climate, footfall, and performance requirements."
+        },
+
+          "AvailableSection":{
+          "title":"Available Sizes & Thickness",
+          "text":" Majen supplies slabs commonly at 2 cm and 3 cm thickness, cut from blocks selected for tone and structure. Custom dimensions can be produced on request, including book-matched sets for feature walls. Tight calibration and precision polishing ensure flatness and clean edges that speed installation. For special elements—vanities, stair treads, or oversized cladding—our team provides cut-to-size options that maintain vein continuity. Consistent sizing across batches supports predictable waste rates and accurate take-offs.",
+          "subtitle":"Dimensional Tolerances",
+          "subtext":"Slab thickness is controlled within industry tolerances to support even load distribution and dependable adhesion. Surface regularity reduces lippage risk on large floors, while square edges and stable geometry help installers achieve fine joints in visual-critical areas. For ventilated façades and lightweight assemblies, we coordinate with fabricators to meet bracket and anchor constraints. All dimensions are verified at dispatch, and reports are available for documentation and submittal packages when required."
+        },
+
+        "FinishesSection":{
+          "title":"Finishes & Packaging Options",
+          "text":" Blaundos Antico can be supplied polished, honed, brushed, or tumbled to align with design intent and slip resistance needs. Finishes are applied with calibrated equipment to keep tone and sheen consistent across lots. For export, slabs are packed in reinforced wooden bundles with corner guards, interleaves, and strapping that limits movement in transit. Moisture-resistant wrapping and clear labeling aid handling at ports and job sites. Packaging is optimized for container loading to minimize risk and freight costs.",
+          "subtitle":"Surface Finish Guidance",
+          "subtext":"Select polished for premium interiors, honed for low-glare sophistication, brushed where texture is desired, and tumbled for rustic, outdoor-ready charm. In wet areas or exterior paths, combine texture with appropriate sealers to improve maintenance and slip performance. We can supply matched samples across finishes so teams preview appearance under project lighting. This process helps align expectations early, reducing change orders and helping stakeholders approve materials quickly and confidently.",
+           "subtitle2":"Export Packaging Standards",
+          "subtext2":"Each bundle is photographed and measured prior to loading. Straps, braces, and internal blocking limit vibration, while protective interlayers reduce abrasion. Bundle IDs map to packing lists for fast checks at customs and on site. Shock indicators can be added on request. The goal is simple: slabs arrive installation-ready, with documentation that keeps receiving and quality verification efficient for importers and contractors."
+        },
+
+        "PartnerSection":{
+          "title":"Why Partner with Majen for Travertine Slabs?",
+          "description":" Beyond quarry access, Majen offers technical guidance, flexible MOQs, and dependable lead times that fit real-world schedules. Direct sourcing keeps costs predictable and ensures tone matching across lots. Reinforced packaging, thorough documentation, and responsive support reduce friction during shipping and receiving. We build long-term relationships with importers, distributors, and contractors, providing post-delivery assistance and repeatable quality so projects finish on brief, on budget, and on time.",
+          "list1":"Service & Support",
+          "text1":"From sampling and mock-ups to installation advice, our team responds quickly with practical guidance. Multilingual communication, transparent timelines, and after-sales follow-up help keep stakeholders aligned. Whether you need book-matched features, custom cuts, or coordinated tiles, we manage details and share progress so decisions stay informed.",
+           "list2":"Sustainability & Traceability",
+          "text2":"We prioritize responsible quarrying, water recycling, and waste reduction. Material traceability and documentation support green building goals and client ESG policies. These practices contribute to durable, long-life installations with lower lifecycle impact.",
+           "list3":"Compliance & Documentation",
+          "text3":"We provide packing data, certificates of origin, and HS codes; optional lab tests and slip ratings can be arranged. This documentation simplifies import processes and supports submittals for architects and contractors, helping approvals proceed without delays."
+        },
+
+
         "features": [
           "Bright neutral base",
           "High selection consistency",

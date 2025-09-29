@@ -30,18 +30,101 @@ import TextSection from "@/app/[locale]/components/products1/TextSection";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import OtherOptions2 from "@/app/[locale]/components/generalcomponent/OtherOptions2";
+import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
 // Basit InfoCard
-function InfoCard({ title, children }) {
+function InfoCard({ title, children, className = "" }) {
   return (
-    <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
-      <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
+    <div className={`rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5 ${className}`}>
+      <h3 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h3>
       <div className="text-sm text-neutral-600 leading-[1.7] text-center">
-        {children}
+        {/* children slot */}
+        {Array.isArray(children) ? children.join(", ") : children}
       </div>
     </div>
   );
 }
+
+// ---- Accordion (smooth height) ----
+function Collapse({ open, children }) {
+  const ref = React.useRef(null);
+  const [height, setHeight] = React.useState("0px");
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (open) {
+      // open: set to scrollHeight then auto
+      el.style.height = "0px";
+      const target = el.scrollHeight;
+      requestAnimationFrame(() => {
+        el.style.height = target + "px";
+      });
+      const onEnd = () => {
+        if (open) el.style.height = "auto";
+      };
+      el.addEventListener("transitionend", onEnd, { once: true });
+    } else {
+      // close: from current height to 0
+      const current = el.scrollHeight;
+      el.style.height = current + "px";
+      requestAnimationFrame(() => {
+        el.style.height = "0px";
+      });
+    }
+  }, [open]);
+
+  return (
+    <div
+      ref={ref}
+      className="overflow-hidden transition-[height] duration-400 ease-in-out"
+      style={{ height }}
+    >
+      <div className="py-4">{children}</div>
+    </div>
+  );
+}
+
+function AccordionItem({ title, body, defaultOpen = false }) {
+  const [open, setOpen] = React.useState(!!defaultOpen);
+  return (
+    <div className="rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-sm shadow-[0_6px_24px_-10px_rgba(0,0,0,0.15)]">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+      >
+        <span className="font-medium text-neutral-900">{title}</span>
+        <span
+          className={`inline-block transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        >
+          ▼
+        </span>
+      </button>
+      <Collapse open={open}>
+        <div className="px-5 text-sm leading-7 text-neutral-700">{body}</div>
+      </Collapse>
+    </div>
+  );
+}
+
+function AccordionGroup({ items = [], defaultOpenIndex = 0, className = "" }) {
+  return (
+    <div className={`space-y-3 ${className}`}>
+      {items.map((it, i) => (
+        <AccordionItem
+          key={i}
+          title={it.title}
+          body={typeof it.body === "string" ? it.body : (it.body?.join?.(" ") ?? "")}
+          defaultOpen={i === defaultOpenIndex}
+        />
+      ))}
+    </div>
+  );
+}
+
 
 
 export default function VariantPage() {
@@ -153,16 +236,30 @@ export default function VariantPage() {
   // ---- InfoCard başlıkları (detailsHeadings)
   const dh = vOverrides?.detailsHeadings || t.raw(`${productKey}.detailsHeadings`) || {};
 
-  const infoCards = [
-    {
-      title: "Design Versatility",
-      content: "From luxury hospitality to private villas, Blaundos Antico adapts to varied aesthetics. Its neutral warmth pairs well with wood, metal, and glass, allowing cohesive palettes in mixed-material schemes. Designers value its ability to soften minimal interiors or enrich traditional settings with organic texture. Available finishes expand possibilities, from refined polished looks to tactile brushed or tumbled surfaces ideal for outdoor paths and pool surrounds. The result is a reliable, elegant stone that elevates spaces without visual noise.",
-    },
-    {
-      title: "Performance for High-Traffic Areas",
-      content: "Calibrated thickness, consistent flatness, and suitable surface treatments help Blaundos Antico perform in lobbies, corridors, and retail zones. Anti-slip options support safety outdoors, while proper sealing enhances stain resistance indoors. With accurate cutting and tight tolerances, installers achieve clean joints and level surfaces, reducing rework and time on site. This blend of aesthetics and practicality positions Blaundos Antico as a proven specification for demanding, design-driven environments across climates and usage patterns.",
-    }
-  ];
+  const cardsData = vOverrides?.cards || {};
+const infoCards = [
+  {
+    title: cardsData.title1 || "Design Versatility",
+    content: cardsData.text1 || description[0],
+  },
+  {
+    title: cardsData.title2 || "Performance",
+    content: cardsData.text2 || description[1],
+  }
+];
+
+const appSection = vOverrides?.ApplicationSection || {};
+
+const availSection = vOverrides?.AvailableSection || {};
+
+const finishSection = vOverrides?.FinishesSection || {};
+
+const partnerSection = vOverrides?.PartnerSection || {};
+const accordionItems = [
+  { title: partnerSection.list1, body: partnerSection.text1 },
+  { title: partnerSection.list2, body: partnerSection.text2 },
+  { title: partnerSection.list3, body: partnerSection.text3 },
+];
 
   // ---- TextSection (varyant özel -> ürün genel)
   const buildSections = (srcObj) => {
@@ -258,72 +355,95 @@ export default function VariantPage() {
 
       {/* 4 INFO CARD */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5 max-w-[1200px] mx-auto">
-        {infoCards.map((c, i) => (
-          <InfoCard key={i} title={c.title}>
-            {typeof c.content === "string"
-              ? c.content
-              : Array.isArray(c.content)
-              ? c.content.join(", ")
-              : null}
-          </InfoCard>
-        ))}
-      </section>
+  {infoCards.map((c, i) => (
+    <InfoCard key={i} title={c.title}>
+      {c.content}
+    </InfoCard>
+  ))}
+</section>
 
-      {/* <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
-        <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
-          <h2 className="text-[24px] md:text-[26px]">Applications of Blaundos Antico Travertine Slabs</h2>
-          <p className="mt-2 text-[12px] lg:tetx-[14px9">Blaundos Antico is specified for floors, wall cladding, countertops, fireplace surrounds, stair treads, and exterior façades. Its antique texture lends character to boutique hotels and residences, while honed or polished finishes suit refined interiors. Outdoors, brushed or tumbled slabs complement landscaping, garden paths, and pool decks. The stone’s tonal stability supports continuity between inside and outside, helping designers create cohesive transitions. With accurate sizing and reliable supply, it scales from small renovations to flagship builds.</p>
+      {/* Application Section */}
+      {appSection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{appSection.title}</h2>
+            {appSection.text && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{appSection.text}</p>
+            )}
+          </div>
+          {appSection.subtitle && (
+            <div className="flex max-w-[1200px] mt-8">
+              <InfoCard title={appSection.subtitle}>
+                {appSection.subtext}
+              </InfoCard>
+            </div>
+          )}
         </div>
-        <div className="flex max-w-[1200px] mt-8">
-          <InfoCard title="Interior & Exterior Use Cases" children="Indoors, Blaundos Antico brings warmth to living areas and statement value to feature walls or reception desks. In kitchens and baths, sealed surfaces provide practical durability with natural beauty. Externally, its weathered look enriches patios and façades, aging gracefully over time. For public spaces, coordinated formats (slabs, tiles, custom pieces) keep design language consistent. Majen’s technical support advises on finish selection, slip ratings, and maintenance to match climate, footfall, and performance requirements."/>
+      )}
+
+{/* Available Sizes Section */}
+      {availSection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{availSection.title}</h2>
+            {availSection.text && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{availSection.text}</p>
+            )}
+          </div>
+          {availSection.subtitle && (
+            <div className="flex max-w-[1200px] mt-8">
+              <InfoCard title={availSection.subtitle}>
+                {availSection.subtext}
+              </InfoCard>
+            </div>
+          )}
         </div>
-      </div>
+      )}
 
-         <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
-        <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
-          <h2 className="text-[24px] md:text-[26px]">Available Sizes & Thickness</h2>
-          <p className="mt-2 text-[12px] lg:tetx-[14px9">Majen supplies slabs commonly at 2 cm and 3 cm thickness, cut from blocks selected for tone and structure. Custom dimensions can be produced on request, including book-matched sets for feature walls. Tight calibration and precision polishing ensure flatness and clean edges that speed installation. For special elements—vanities, stair treads, or oversized cladding—our team provides cut-to-size options that maintain vein continuity. Consistent sizing across batches supports predictable waste rates and accurate take-offs.</p>
+{/* Finishes Section */}
+      {finishSection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{finishSection.title}</h2>
+            {finishSection.text && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{finishSection.text}</p>
+            )}
+          </div>
+          <div className="flex max-w-[1150px] mt-8 gap-4 flex-col md:flex-row">
+            {finishSection.subtitle && (
+              <InfoCard title={finishSection.subtitle}>
+                {finishSection.subtext}
+              </InfoCard>
+            )}
+            {finishSection.subtitle2 && (
+              <InfoCard title={finishSection.subtitle2}>
+                {finishSection.subtext2}
+              </InfoCard>
+            )}
+          </div>
         </div>
-        <div className="flex max-w-[1200px] mt-8">
-          <InfoCard title="Dimensional Tolerances" children="Slab thickness is controlled within industry tolerances to support even load distribution and dependable adhesion. Surface regularity reduces lippage risk on large floors, while square edges and stable geometry help installers achieve fine joints in visual-critical areas. For ventilated façades and lightweight assemblies, we coordinate with fabricators to meet bracket and anchor constraints. All dimensions are verified at dispatch, and reports are available for documentation and submittal packages when required."/>
+      )}
+
+{/* Partner Section with Accordion */}
+      {partnerSection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{partnerSection.title}</h2>
+            {partnerSection.description && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{partnerSection.description}</p>
+            )}
+          </div>
+
+          {accordionItems.length > 0 && (
+            <div className="w-full max-w-[1100px] mt-8 px-4 md:px-0">
+              <AccordionGroup
+                defaultOpenIndex={0}
+                items={accordionItems}
+              />
+            </div>
+          )}
         </div>
-      </div>
-
-
-      <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
-        <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
-          <h2 className="text-[24px] md:text-[26px]">Finishes & Packaging Options</h2>
-          <p className="mt-2 text-[12px] lg:tetx-[14px9">Blaundos Antico can be supplied polished, honed, brushed, or tumbled to align with design intent and slip resistance needs. Finishes are applied with calibrated equipment to keep tone and sheen consistent across lots. For export, slabs are packed in reinforced wooden bundles with corner guards, interleaves, and strapping that limits movement in transit. Moisture-resistant wrapping and clear labeling aid handling at ports and job sites. Packaging is optimized for container loading to minimize risk and freight costs.</p>
-        </div>
-        <div className="flex max-w-[1150px] mt-8 gap-4">
-          <InfoCard title="Surface Finish Guidance" children="Select polished for premium interiors, honed for low-glare sophistication, brushed where texture is desired, and tumbled for rustic, outdoor-ready charm. In wet areas or exterior paths, combine texture with appropriate sealers to improve maintenance and slip performance. We can supply matched samples across finishes so teams preview appearance under project lighting. This process helps align expectations early, reducing change orders and helping stakeholders approve materials quickly and confidently."/>
-          <InfoCard title="Export Packaging Standards" children="Each bundle is photographed and measured prior to loading. Straps, braces, and internal blocking limit vibration, while protective interlayers reduce abrasion. Bundle IDs map to packing lists for fast checks at customs and on site. Shock indicators can be added on request. The goal is simple: slabs arrive installation-ready, with documentation that keeps receiving and quality verification efficient for importers and contractors."/>
-        </div>
-      </div>
-
-          <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
-        <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
-          <h2 className="text-[24px] md:text-[26px]">Travertine Slab Export Process</h2>
-          <p className="mt-2 text-[12px] lg:tetx-[14px9">We coordinate the entire export cycle—from quarry selection and block cutting to finishing, inspection, and documentation. Orders include commercial invoice, packing list, and certificate of origin. With FOB and CIF terms available, our logistics team manages bookings, customs, and container optimization to protect material and timelines. Pre-shipment photos and QC summaries provide transparency. This streamlined process reduces administrative load for buyers and helps large projects maintain predictable schedules worldwide.</p>
-        </div>
-     
-      </div>
-
-
-       <div className="flex flex-col w-screen items-center justify-center my-6 md:my-12">
-        <div className="flex flex-col w-[80%] max-w-[1400px] items-center justify-center text-center">
-          <h2 className="text-[24px] md:text-[26px]">Why Partner with Majen for Travertine Slabs?</h2>
-          <p className="mt-2 text-[12px] lg:tetx-[14px9">Beyond quarry access, Majen offers technical guidance, flexible MOQs, and dependable lead times that fit real-world schedules. Direct sourcing keeps costs predictable and ensures tone matching across lots. Reinforced packaging, thorough documentation, and responsive support reduce friction during shipping and receiving. We build long-term relationships with importers, distributors, and contractors, providing post-delivery assistance and repeatable quality so projects finish on brief, on budget, and on time.</p>
-        </div>
-        <div className="flex max-w-[1100px] mt-8 gap-4">
-          <InfoCard title="Service & Support" children="From sampling and mock-ups to installation advice, our team responds quickly with practical guidance. Multilingual communication, transparent timelines, and after-sales follow-up help keep stakeholders aligned. Whether you need book-matched features, custom cuts, or coordinated tiles, we manage details and share progress so decisions stay informed."/>
-          <InfoCard title="Sustainability & Traceability" children="We prioritize responsible quarrying, water recycling, and waste reduction. Material traceability and documentation support green building goals and client ESG policies. These practices contribute to durable, long-life installations with lower lifecycle impact."/>
-           <InfoCard title="Compliance & Documentation" children="We provide packing data, certificates of origin, and HS codes; optional lab tests and slip ratings can be arranged. This documentation simplifies import processes and supports submittals for architects and contractors, helping approvals proceed without delays."/>
-        </div>
-      </div> */}
-
-
-
+      )}
 
       {/* Varyant/Ürün TextSection blokları */}
       {sections.map(({ id, title, paragraphs }) => (
@@ -340,8 +460,8 @@ export default function VariantPage() {
 
       {/* Micro-proof (varsa) */}
       {microProof.length > 0 && (
-        <section className="max-w-5xl mx-auto mt-10">
-          <ul className="micro-proof list-disc pl-6 space-y-1 text-sm text-neutral-700">
+        <section className="max-w-5xl mx-auto mt-0 items-center justify-center text-center">
+          <ul className="micro-proof pl-6 space-y-1 text-sm text-neutral-700">
             {microProof.map((line, i) => (
               <li key={i}>{line}</li>
             ))}
@@ -369,6 +489,7 @@ export default function VariantPage() {
   productImages={PRODUCT_IMG}
   currentVariantSlug={vSlug}
 />
+
       <ContactFrom />
     </main>
   );

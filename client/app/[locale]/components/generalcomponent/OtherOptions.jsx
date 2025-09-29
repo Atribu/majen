@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 export default function OtherOptions({
   heading,
   productOrder = ["block", "slabs", "tiles", "special"],
-  excludeProduct = null,            // ⬅️ YENİ
+  excludeProduct = null,        
   variantSlugs = [],
   baseHref,
   productSegments,

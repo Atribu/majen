@@ -48,7 +48,7 @@ export default function TextSection({
 
   return (
     <As
-      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 lg:mb-10 text-center lg:text-start ${className}`}
+      className={`mx-auto w-full max-w-[1100px] px-5 md:px-8 lg:px-0 lg:mb-10 text-center ${className}`}
       aria-label={title}
     >
       {jsonLd ? (
@@ -88,7 +88,7 @@ export default function TextSection({
             <button
               type="button"
               onClick={() => setExpanded((s) => !s)}
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-800 hover:bg-neutral-900 hover:text-white transition"
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-800 hover:bg-neutral-900 hover:text-white transition text-center "
               aria-expanded={expanded}
               aria-controls="seo-more-content"
             >
