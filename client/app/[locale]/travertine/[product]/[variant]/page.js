@@ -4,7 +4,7 @@
 "use client";
 
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import Link from "next/link";
 
@@ -15,6 +15,7 @@ import {
   PRODUCT_SLUGS,
   VARIANT_KEY_BY_SLUG,
   buildVariantChildPath,
+  hasDeepLevels,
 } from "@/lib/travertine";
 
 import {
@@ -22,6 +23,9 @@ import {
   IMAGE_BY_PRODUCT_AND_VARIANT,
   IMAGE_BY_PRODUCT_VARIANT_AND_CUT,
 } from "@/app/[locale]/(catalog)/_images";
+
+const showVariantCircleFor = new Set(["slabs", "tiles"]);
+
 
 // UI parçaları
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
@@ -32,6 +36,7 @@ import QuestionsSection from "@/app/[locale]/components/generalcomponent/Questio
 import OtherOptions2 from "@/app/[locale]/components/generalcomponent/OtherOptions2";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
+import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
 
 // Basit InfoCard
 function InfoCard({ title, children, className = "" }) {
@@ -207,6 +212,8 @@ export default function VariantPage() {
   const pageIntro2 = vOverrides?.intro2 || baseIntro;
   const pageAlt = vOverrides?.alt || vAlt || baseAlt;
 
+  const variantTitle = vOverrides?.varianttitle
+
   // ---- Diziler (override -> ürün geneli -> [])
   const sizes =
     (Array.isArray(vOverrides?.sizes) && vOverrides.sizes) ||
@@ -329,6 +336,15 @@ const accordionItems = [
   // ---- Micro-proof (varyant özel)
   const microProof = Array.isArray(vOverrides?.microProof) ? vOverrides.microProof : [];
 
+  const   depth = 2
+      const pathname = usePathname() || ""; // boş string fallback
+      const segments = pathname.split("/").filter(Boolean); 
+      const lastSegment = pathname.split("/").filter(Boolean).pop(); 
+      const selectedSegments = segments.slice(-depth);
+  
+const showVariantCircle = hasDeepLevels
+  ? hasDeepLevels(productKey)
+  : showVariantCircleFor.has(productKey);
   // ---- UI
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
@@ -347,17 +363,29 @@ const accordionItems = [
         depth={2}
       />
 
+
+       <BreadcrumbsExact
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+        selectedSegments={selectedSegments}
+        className="mt-6"
+      />
+
             {/* CUT dairesel grid – VariantCircleSection */}
      
-        <VariantCircleSection
-          heading={locale.startsWith("tr") ? "Kesim şekli" : "Cut options"}
-          variantCards={cutCards}
-          imgMap={PRODUCT_IMG[productKey]}
-          heroSrc={heroSrc}
-          IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
-          productKey={productKey}
-          imgAlt={`${vTitle}`}
-        />
+        {showVariantCircle && (
+   <VariantCircleSection
+     heading={locale.startsWith("tr") ? "Kesim şekli" : `${vTitle} Cut Options`}
+     variantCards={cutCards}
+     imgMap={PRODUCT_IMG[productKey]}
+     heroSrc={heroSrc}
+     IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+     productKey={productKey}
+     imgAlt={`${vTitle}`}
+   />
+ )}
  
 
       {/* 4 INFO CARD */}

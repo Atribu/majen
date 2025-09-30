@@ -759,7 +759,9 @@
     "blocks": "Blok",
     "slabs": "Plakalar",
     "tiles": "Karolar",
-    "special": "Özel Tasarım"
+    "special": "Özel Tasarım",
+    "general":"Genel",
+    "export":"İhracat"
   },
 
 

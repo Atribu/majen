@@ -77,7 +77,7 @@ export default function TextSection({
         ) : null}
 
         {text2 ? (
-          <p className="-mt-3 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
+          <p className="-mt-3 mt-0 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
             {text2}
           </p>
         ) : null}

@@ -4,29 +4,50 @@ import {useTranslations} from 'next-intl';
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 import Image from "next/image"
-import block1 from "@/public/images/homepage/Ivoryblok.webp"
-import block2 from "@/public/images/blocks/antik2.webp"
-import block3 from "@/public/images/blocks/antik.webp"
-import block4 from "@/public/images/blocks/Lightblok.webp"
+import block1 from "@/public/images/homepage/Ivoryblok.webp";
+import block2 from "@/public/images/homepage/lightblok3.webp";
+import block3 from "@/public/images/homepage/Blokantiko.webp";
 
-import slabs1 from "@/public/images/slabs/antik.webp"
-import slabs2 from "@/public/images/slabs/antikcorscut.webp"
-import slabs3 from "@/public/images/slabs/antikveincut.webp"
-import slabs4 from "@/public/images/slabs/Iverycrosscut2.webp"
-import slabs5 from "@/public/images/slabs/light.webp"
-import slabs6 from "@/public/images/slabs/lightcrosscut.webp"
-import slabs7 from "@/public/images/slabs/lightveincut.webp"
+import slabs1  from "@/public/images/slabs/antikveincut.webp";
+import slabs2 from "@/public/images/slabs/antikcorscut.webp";
+import slabs3  from "@/public/images/slabs/lightveincut.webp";
+import slabs4 from "@/public/images/slabs/lightcrosscut.webp";
+import slabs5  from "@/public/images/slabs/Ivoryveincut2.webp";
+import slabs6 from "@/public/images/slabs/Iverycrosscut2.webp";
+import slabIvory from "@/public/images/slabs/newIvory.webp";
+import slabLight from "@/public/images/slabs/newLight.webp";
+import slabAntik from "@/public/images/slabs/newAntiko.webp";
 
-import tiles1 from "@/public/images/homepage/kesim.webp"
-import tiles2 from "@/public/images/homepage/kesim.webp"
-import tiles3 from "@/public/images/homepage/kesim.webp"
-import tiles4 from "@/public/images/homepage/kesim.webp"
+import tiles1 from "@/public/images/tiles/Ivorykesim.webp";
+import tiles2 from "@/public/images/homepage/kesim.webp";
+import tiles3 from "@/public/images/tiles/antikokesim.webp";
 
-import special1 from "@/public/images/homepage/masa.webp"
-import special2 from "@/public/images/homepage/masa.webp"
-import special3 from "@/public/images/homepage/masa.webp"
-import special4 from "@/public/images/homepage/masa.webp"
-import special5 from "@/public/images/homepage/masa.webp"
+import special1 from "@/public/images/design/IvoryMasa.webp";
+import special2 from "@/public/images/design/LightMasa.webp";
+import special3 from "@/public/images/design/AntikoMasa.webp";
+
+import general1 from "@/public/images/newblog/Polishedtravertine.webp";
+import general2 from "@/public/images/newblog/travertinetumbled.webp";
+import general3 from "@/public/images/newblog/Filledtravertine.webp";
+import general4 from "@/public/images/newblog/travertinepavers.webp";
+import general5 from "@/public/images/homepage/antikarkaplan2.webp";
+import general6 from "@/public/images/homepage/antikarkaplan4.webp";
+import general7 from "@/public/images/homepage/antikoarkplan.webp";
+import general8 from "@/public/images/homepage/Antiktasarim3.webp";
+import general9 from "@/public/images/homepage/Lighttasarim1.webp";
+import general10 from "@/public/images/homepage/Ivorytasarim1.webp";
+
+import export1 from "@/public/images/blogs/travertinedistributor.webp";
+import export2 from "@/public/images/blogs/Travertinemanufacturer.webp";
+import export3 from "@/public/images/blogs/travertineexporter.webp";
+import export4 from "@/public/images/blogs/Travertinesupplier.webp"
+import export5 from "@/public/images/blogs/TravertineQuarry.webp"
+import export6 from "@/public/images/blogs/TurkishTravertine.webp"
+import export7 from "@/public/images/blogs/TravertineTurkey.webp"
+import export8 from "@/public/images/export/WhoWorks.webp"
+import export9 from "@/public/images/export/FOB.webp"
+import export10 from "@/public/images/export/CIF.webp"
+import export11 from "@/public/images/export/EXW.webp"
 
 
 const GalleryScrollSection = () => {
@@ -35,10 +56,12 @@ const GalleryScrollSection = () => {
 
   // Kategorilere göre resimler
 const imageCategories = {
-  [t("blocks")]: [block1,block2, block3, block4,block1,block2, block3, block4],
-  [t("slabs")]: [slabs1, slabs2, slabs3, slabs4, slabs5,slabs6,slabs7],
-  [t("tiles")]: [tiles1, tiles2, tiles3, tiles4,tiles1, tiles2, tiles3, tiles4],
-  [t("special")]: [special1, special2, special3, special4, special5],
+  [t("general")]: [special3, slabs1,general1,block1, general2,tiles1, slabs2, general3, general4,slabs3, general5, special3, tiles2, general6,general7,block2,general8,general9, tiles3, general10,block3,special2],
+  [t("blocks")]: [block1,block2, block3,,block1,block2, block3,],
+  [t("slabs")]: [slabs1, slabs2, slabs3, slabs4, slabs5,slabs6,slabIvory,slabLight,slabAntik],
+  [t("tiles")]: [tiles1, tiles2, tiles3,tiles1, tiles2, tiles3,],
+  [t("special")]: [special1, special2, special3, special1, special2],
+  [t("export")]: [export1, export2, export3, export4, export5,export6,export7,export8,export9,export10,export11],
 
 }
 

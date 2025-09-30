@@ -69,7 +69,7 @@ export default function VariantCircleSection2({
         ) : null}
 
         <p className="text-[12px] lg:text-[14px] w-[90%] flex mb-3">
-          Majen offers a full range of Wholesale Travertine From Turkey...
+        Turkish travertine from our Uşak–Ulubey quarry is available across four categories—Blocks, Slabs, Tiles, and Custom Designs—to suit projects from luxury interiors to large façades. Choose classic Blaundos Antico, Light, or Ivory tones, with polished, honed, brushed, or tumbled finishes and vein-cut or cross-cut options. Blocks are selected for high yield, slabs are calibrated in 2–3 cm, and tiles are cut to size for durable floors and wall cladding. We provide reinforced export packing and full documentation with FOB/CIF/EXW terms. Explore the categories below for technical data, recommended applications, and current availability.
         </p>
 
         <div className={gridClassName}>
@@ -94,7 +94,7 @@ export default function VariantCircleSection2({
 
                 {/* Başlık */}
                 <Link href={productRoute(pkey)}>
-                  <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900">
+                  <h4 className="mt-4 text-[18px] lg:text-[20px] font-semibold text-neutral-900 leading-relaxed">
                     {productLabels[pkey]}
                   </h4>
                 </Link>

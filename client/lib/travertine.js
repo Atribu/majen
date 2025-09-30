@@ -64,3 +64,18 @@ export function buildVariantChildPath(locale, productSlug, variantSlug, parts = 
 export const isCutValid = (cut) => CUTS.includes(String(cut || "").toLowerCase());
 export const isProcessValid = (p) => PROCESSES.includes(String(p || "").toLowerCase());
 export const isFinishValid = (f) => FINISHES.includes(String(f || "").toLowerCase());
+
+// lib/travertine.js (sonuna ekleyin)
+// Hangi ürünlerin derin segmentleri var?
+export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];   // bunlar devam eder
+export const PRODUCTS_NO_DEEP_LEVELS  = ["block", "special"];  // burada biter
+
+export function hasDeepLevels(productKey) {
+  return PRODUCTS_WITH_DEEP_LEVELS.includes(productKey);
+}
+
+// Varyantın kanonik URL'i (cut/process olmadan)
+export function variantUrl(locale, productSlug, variantSlug) {
+  const base = baseFor(locale); // "travertine" | "traverten"
+  return `/${locale}/${base}/${productSlug}/${variantSlug}`;
+}
