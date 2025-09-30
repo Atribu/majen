@@ -24,6 +24,7 @@ export default function VariantCircleSection({
   heroSrc,
   IMAGE_BY_PRODUCT_AND_VARIANT,
   productKey,
+  imgAlt=""
 }) {
   return (
     <section className="flex mt-14 w-screen text-center items-center justify-center">
@@ -46,6 +47,7 @@ export default function VariantCircleSection({
             (typeof imgMap === "object" ? imgMap[vKey] : imgMap) ??
             heroSrc;
 
+
           return (
             // Kart: DIŞARI div, İÇERDE iki ayrı link
             <div key={slug} className="group flex flex-col items-center text-center">
@@ -58,7 +60,7 @@ export default function VariantCircleSection({
                 <div className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]">
                   <Image
                     src={cardSrc}
-                    alt={"Wholesale " + title}
+                    alt={ imgAlt + title}
                     fill
                     className="object-cover transition-transform duration-500 scale-80 group-hover:scale-95"
                     sizes="160px"

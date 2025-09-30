@@ -31,6 +31,7 @@ import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom"
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import OtherOptions2 from "@/app/[locale]/components/generalcomponent/OtherOptions2";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
+import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 
 // Basit InfoCard
 function InfoCard({ title, children, className = "" }) {
@@ -255,6 +256,11 @@ const availSection = vOverrides?.AvailableSection || {};
 const finishSection = vOverrides?.FinishesSection || {};
 
 const partnerSection = vOverrides?.PartnerSection || {};
+
+const exportSection = vOverrides?.ExportSection || {};
+
+const qualitySection = vOverrides?.QualitySection || {};
+
 const accordionItems = [
   { title: partnerSection.list1, body: partnerSection.text1 },
   { title: partnerSection.list2, body: partnerSection.text2 },
@@ -333,7 +339,7 @@ const accordionItems = [
         heroSrc={heroSrc}
          title2={pageTitle2}
         intro2={pageIntro2}
-        alt={vAlt || pageAlt}
+        alt={`${vTitle}`}
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
@@ -350,6 +356,7 @@ const accordionItems = [
           heroSrc={heroSrc}
           IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
           productKey={productKey}
+          imgAlt={`${vTitle}`}
         />
  
 
@@ -424,6 +431,46 @@ const accordionItems = [
         </div>
       )}
 
+      {/* Export Section */}
+      {exportSection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{exportSection.title}</h2>
+            {exportSection.text && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{exportSection.text}</p>
+            )}
+          </div>
+          <div className="flex max-w-[1150px] mt-2 gap-4 flex-col md:flex-row">
+            {exportSection.subtitle && (
+              <InfoCard title={exportSection.subtitle}>
+                {exportSection.subtext}
+              </InfoCard>
+            )}
+         
+          </div>
+        </div>
+      )}
+
+      {/* Quality Section */}
+      {qualitySection.title && (
+        <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
+          <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
+            <h2 className="text-[24px] md:text-[26px]">{qualitySection.title}</h2>
+            {qualitySection.text && (
+              <p className="mt-2 text-[12px] lg:text-[14px]">{qualitySection.text}</p>
+            )}
+          </div>
+          <div className="flex max-w-[1150px] mt-8 gap-4 flex-col md:flex-row">
+            {qualitySection.subtitle && (
+              <InfoCard title={qualitySection.subtitle}>
+                {qualitySection.subtext}
+              </InfoCard>
+            )}
+    
+          </div>
+        </div>
+      )}
+
 {/* Partner Section with Accordion */}
       {partnerSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
@@ -479,6 +526,8 @@ const accordionItems = [
           />
         </div>
       )}
+      <SocialMediaSection/>
+
 <OtherOptions2
   heading={locale === 'tr' ? "Diğer Seçenekler" : "Other Options"}
   excludeProduct={productKey}                         

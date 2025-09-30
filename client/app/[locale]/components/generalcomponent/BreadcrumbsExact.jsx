@@ -52,22 +52,75 @@ export default function BreadcrumbsExact({
           </li>
 
           {/* SECTION */}
-          <li className="flex items-center">
-            <Link
-              href={baseHref}
-              className="px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition"
-            >
-              {crumbProducts}
-            </Link>
-          </li>
-          {selectedSegments.map((seg, i) => (
-                <React.Fragment key={i}>
-                  <li><svg viewBox="0 0 20 20" aria-hidden="true" className="mx-1 h-4 w-4 text-neutral-400">
-              <path d="M7.5 3.5 13 10l-5.5 6.5" fill="none" stroke="currentColor" strokeWidth="2" />
-            </svg></li>
-                  <li className="capitalize px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition">{seg}</li>
-                </React.Fragment>
-              ))}
+  {(() => {
+            // base link: eğer baseHref absolute değilse prefix ile birleştir
+            const baseLink = (baseHref?.startsWith('/'))
+              ? baseHref
+              : `${prefix}/${baseHref ?? ''}`.replace(/\/+/g, '/');
+
+            // gelen segmentleri normalize et ve baz segment tekrarını at
+            const rawSegs = Array.isArray(selectedSegments) ? selectedSegments : (segments || []);
+            const baseNames = new Set([
+              String(baseHref || '').toLowerCase(),
+              'travertine', 'travertines',
+              'traverten', 'travertenler'
+            ]);
+            const segs = rawSegs
+              .filter(Boolean)
+              .map(s => String(s).trim())
+              .filter(s => !baseNames.has(s.toLowerCase()));
+
+            // breadcrumb parçalarını linklemek için birikimli href
+            const parts = [baseLink];
+
+            return (
+              <>
+                <li className="flex items-center">
+                  <Link
+                    href={baseLink}
+                    className="px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition"
+                  >
+                    {crumbProducts}
+                  </Link>
+                </li>
+
+                {segs.map((seg, i) => {
+                  const href = `${parts[parts.length - 1]}/${seg}`.replace(/\/+/g, '/');
+                  parts.push(href);
+
+                  const isLast = i === segs.length - 1;
+                  const label = seg.replace(/-/g, ' ');
+
+                  return (
+                    <React.Fragment key={`${seg}-${i}`}>
+                      <li>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" className="mx-1 h-4 w-4 text-neutral-400">
+                          <path d="M7.5 3.5 13 10l-5.5 6.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                        </svg>
+                      </li>
+                      <li>
+                        {isLast ? (
+                          <span
+                            aria-current="page"
+                            className="capitalize px-2.5 py-1 rounded-full bg-white border border-neutral-200"
+                          >
+                            {label}
+                          </span>
+                        ) : (
+                          <Link
+                            href={href}
+                            className="capitalize px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition"
+                          >
+                            {label}
+                          </Link>
+                        )}
+                      </li>
+                    </React.Fragment>
+                  );
+                })}
+              </>
+            );
+          })()}
         </ol>
       </div>
     </nav>

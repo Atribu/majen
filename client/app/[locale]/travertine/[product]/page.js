@@ -56,7 +56,7 @@ export default function ProductPage() {
   const baseHref = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
 
   const productKey =
-    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) ;
 
         const t2 = useTranslations(`ProductPage.${productKey}.QuestionsItems`);
   const messages = useMessages();
