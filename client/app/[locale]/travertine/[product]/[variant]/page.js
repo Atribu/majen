@@ -342,7 +342,7 @@ const accordionItems = [
       />
 
             {/* CUT dairesel grid – VariantCircleSection */}
-      {productKey !== "block" && (
+     
         <VariantCircleSection
           heading={locale.startsWith("tr") ? "Kesim şekli" : "Cut options"}
           variantCards={cutCards}
@@ -351,7 +351,7 @@ const accordionItems = [
           IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
           productKey={productKey}
         />
-      )}
+ 
 
       {/* 4 INFO CARD */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5 max-w-[1200px] mx-auto">

@@ -48,7 +48,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Pavers",
         slug: "/blog/travertines/travertine-pavers",
-        img: "/images/tiles/Ivorykesim.webp",
+        img: "/images/newblog/travertinepavers.webp",
         alt: "Outdoor travertine pavers for patios and pools",
         excerpt:
           "Travertine pavers are durable outdoor solutions for paths, driveways, patios, and pool decks. Their slip-resistant surface and weather endurance make them a preferred choice for landscaping and exterior projects.",
@@ -70,7 +70,7 @@ export default function TravertineBlog() {
       {
         title: "Polished Travertine",
         slug: "/blog/travertines/polished-travertine",
-        img: "/images/blog/polished.jpg",
+        img: "/images/newblog/Polishedtravertine.webp",
         alt: "Polished travertine surface",
         excerpt:
           "Polished travertine offers a glossy, reflective surface ideal for luxury interiors. It enhances the stone’s natural patterns while creating a modern, elegant atmosphere in residential and commercial spaces.",
@@ -86,7 +86,7 @@ export default function TravertineBlog() {
       {
         title: "Tumbled Travertine",
         slug: "/blog/travertines/tumbled-travertine",
-        img: "/images/blog/Tumbled.webp",
+        img: "/images/newblog/travertinetumbled.webp",
         alt: "Tumbled travertine edges",
         excerpt:
           "Tumbled travertine features a weathered, rustic texture that adds character to spaces. Common in outdoor areas, patios, and pool surrounds, it creates a classic Mediterranean or antique style.",
@@ -102,7 +102,7 @@ export default function TravertineBlog() {
       {
         title: "Filled Travertine",
         slug: "/blog/travertines/filled-travertine",
-        img: "/images/blog/filled.jpg",
+        img: "/images/newblog/Filledtravertine.webp",
         alt: "Filled travertine pores",
         excerpt:
           "Filled travertine has natural pores sealed with resin or cement, creating a smoother surface. Often paired with polished finishes for modern interiors where a clean and refined look is desired.",
@@ -240,7 +240,7 @@ export default function TravertineBlog() {
       {
         title: "Travertine Exporter",
         slug: "/blog/travertines/travertine-exporter",
-        img: "/images/blogs/TravertineExporter.webp",
+        img: "/images/blogs/travertineexporter.webp",
         alt: "Container shipping travertine",
         excerpt:
           "Travertine exporters connect Turkish stone with international markets, managing logistics, documentation, and quality control throughout the supply chain.",
@@ -293,7 +293,7 @@ const Section = ({ id, title, intro, children }) => (
     <article className="group rounded-2xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <Link href={slug} className="block">
         <div className="relative h-48 lg:h-64 w-full">
-          <Image src={img} alt={alt} fill className="object-cover" />
+          <Image src={img} alt={alt} fill className="object-cover" loading="lazy" />
         </div>
         <div className="p-5">
           <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">{title}</h3>
@@ -376,7 +376,7 @@ const handleClick = (e, id) => {
         <div className="relative h-56 md:h-72 ">
           <Image
             src="/images/homepage/antikarkaplan4.webp"
-            alt="Travertine hero image"
+            alt="Turkish travertine blocks, slabs and tiles supplier – Majen"
             fill
             className="object-cover opacity-95"
             priority

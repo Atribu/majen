@@ -7,13 +7,46 @@ const PAGE_COVERS = [
   "/images/homepage/antikoarkplan.webp",
   "/images/tiles/antikokesim.webp",
   "/images/slabs/newLight.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
 ];
 
 const CARD_COVERS = [
   "/images/homepage/antikoarkplan.webp",
   "/images/tiles/antikokesim.webp",
-  "/images/blog/covers/card-3.webp",
-  "/images/slabs/newLight.webp",
+    "/images/slabs/newLight.webp",
+   "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
+  "/images/homepage/antikoarkplan.webp",
 ];
 
 // Slug'a göre stabil indeks (kart kapağı seçiminde çok işe yarar)
@@ -202,6 +235,37 @@ export default async function Page({ params, searchParams }) {
               <Link href={`/${locale}/blog/${p.slug}`} className="block focus:outline-none">
                 {/* Cover */}
                 <div className="relative w-full aspect-[16/10] bg-neutral-100">
+   {(() => {
+     // A) Post JSON'da varsa kullan (en.json/tr.json: posts[].cover ya da image)
+     const postCover =
+       p.cover?.src || p.cover || p.image || p.img || null;
+
+     // B) Sayfa numarasına göre tek kapak (tüm kartlar aynı resmi kullanır)
+     const pageCover =
+       PAGE_COVERS[(currentPage - 1) % PAGE_COVERS.length];
+
+     // C) Her kart için farklı kapak:
+     //  - Stabil: slug hash'ine göre
+     //  - Ya da sırayla: (startIndex + i) % CARD_COVERS.length
+     const stableCardCover =
+       CARD_COVERS[hashSlug(p.slug) % CARD_COVERS.length];
+
+    // Seçim: A yoksa C'yi kullan; istersen B'yi tercih edebilirsin
+     const coverSrc = postCover || stableCardCover; // alternatif: postCover || pageCover
+
+     return (
+       <Image
+         src={coverSrc}
+        alt={p.alt || p.title}
+         fill
+         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+         priority={false}
+       />
+     );
+   })()}
+ </div>
+             {/* <div className="relative w-full aspect-[16/10] bg-neutral-100">
                   <Image
                     src={"/images/homepage/antikoarkplan.webp"}
                     alt={p.title}
@@ -210,7 +274,7 @@ export default async function Page({ params, searchParams }) {
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     priority={false}
                   />
-                </div>
+                </div> */}
 
                 {/* Body */}
                 <div className="p-4 md:p-5">

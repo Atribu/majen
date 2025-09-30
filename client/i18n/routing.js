@@ -1,6 +1,7 @@
 // i18n/routing.js
 import { defineRouting } from 'next-intl/routing';
 
+
 export const config = {
   locales: ['tr', 'en'],
   defaultLocale: 'tr',

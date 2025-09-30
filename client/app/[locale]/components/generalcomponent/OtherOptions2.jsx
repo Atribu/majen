@@ -133,6 +133,7 @@ export default function OtherOptions2({
       className="object-cover transition-transform duration-500 group-hover:scale-105"
       sizes="(max-width: 640px) 180px, (max-width: 1024px) 210px, 210px"
       priority={false}
+      loading="lazy"
     />
    
     {/* Hover icon (opsiyonel) */}
