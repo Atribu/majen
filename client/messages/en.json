@@ -765,7 +765,24 @@
           "Shade-verified A/B selections available",
           "Photo-documented loading & seal numbers",
           "FOB İzmir, CIF worldwide shipping"
-        ]
+        ],
+
+         "veincut": {
+      "title": "Vein Cut Blaundos Antico Slabs",
+      "intro": "...",
+      "title2": "...",
+      "intro2": "...",
+      "cards": { "title1": "...", "text1": "..." },
+      "ApplicationSection": { "title": "...", "text": "..." },
+      "AvailableSection": { "title": "...", "text": "..." },
+      "FinishesSection": { "title": "...", "text": "..." },
+      "TextSection": { "header1": "...", "text1": "..." }
+    },
+    
+    "crosscut": {
+      "title": "Cross Cut Blaundos Antico Slabs",
+      "intro": "..."
+    }
       },
 
       "light": {

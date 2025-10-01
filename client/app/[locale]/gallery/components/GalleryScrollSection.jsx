@@ -18,6 +18,13 @@ import slabIvory from "@/public/images/slabs/newIvory.webp";
 import slabLight from "@/public/images/slabs/newLight.webp";
 import slabAntik from "@/public/images/slabs/newAntiko.webp";
 
+import slabAntikVein  from "@/public/images/slabs/antikveincut.webp";
+import slabAntikCross from "@/public/images/slabs/antikcorscut.webp";
+import slabLightVein  from "@/public/images/slabs/lightveincut.webp";
+import slabLightCross from "@/public/images/slabs/lightcrosscut.webp";
+import slabIvoryVein  from "@/public/images/slabs/Ivoryveincut2.webp";
+import slabIvoryCross from "@/public/images/slabs/Iverycrosscut2.webp";
+
 import tiles1 from "@/public/images/tiles/Ivorykesim.webp";
 import tiles2 from "@/public/images/homepage/kesim.webp";
 import tiles3 from "@/public/images/tiles/antikokesim.webp";
@@ -25,6 +32,22 @@ import tiles3 from "@/public/images/tiles/antikokesim.webp";
 import special1 from "@/public/images/design/IvoryMasa.webp";
 import special2 from "@/public/images/design/LightMasa.webp";
 import special3 from "@/public/images/design/AntikoMasa.webp";
+import special4 from "@/public/images/design/antiko/Antikoaksesuar.webp";
+import special5 from "@/public/images/design/antiko/Antikoaksesuar2.webp";
+import special6 from "@/public/images/design/antiko/Antikoaksesuar3.webp";
+import special7 from "@/public/images/design/antiko/Antikoaksesuar4.webp";
+import special8 from "@/public/images/design/antiko/Antikoaksesuar5.webp";
+import special9 from "@/public/images/design/light/Lightaksesuar1.webp";
+import special10 from "@/public/images/design/light/Lightaksesuar2.webp";
+import special11 from "@/public/images/design/light/Lightaksesuar3.webp";
+import special12 from "@/public/images/design/light/lighttasarim5.webp";
+import special13 from "@/public/images/design/light/lighttasarim6.webp";
+import special14 from "@/public/images/design/light/lighttasarim7.webp";
+import special15 from "@/public/images/design/ivory/IvoryAksesuar2.webp";
+import special16 from "@/public/images/design/ivory/IvoryAksesuar3.webp";
+import special17 from "@/public/images/design/ivory/IvoryAksesuar4.webp";
+import special18 from "@/public/images/design/ivory/IvoryAksesuar5.webp";
+import special19 from "@/public/images/design/ivory/IvoryAksesuar6.webp";
 
 import general1 from "@/public/images/newblog/Polishedtravertine.webp";
 import general2 from "@/public/images/newblog/travertinetumbled.webp";
@@ -36,6 +59,9 @@ import general7 from "@/public/images/homepage/antikoarkplan.webp";
 import general8 from "@/public/images/homepage/Antiktasarim3.webp";
 import general9 from "@/public/images/homepage/Lighttasarim1.webp";
 import general10 from "@/public/images/homepage/Ivorytasarim1.webp";
+import general11 from "@/public/images/design/design1.webp";
+import general12 from "@/public/images/design/design2.webp";
+import general13 from "@/public/images/design/design3.webp";
 
 import export1 from "@/public/images/blogs/travertinedistributor.webp";
 import export2 from "@/public/images/blogs/Travertinemanufacturer.webp";
@@ -49,18 +75,17 @@ import export9 from "@/public/images/export/FOB.webp"
 import export10 from "@/public/images/export/CIF.webp"
 import export11 from "@/public/images/export/EXW.webp"
 
-
 const GalleryScrollSection = () => {
   const [modalIndex, setModalIndex] = useState(null);
   const t = useTranslations('Gallery');
 
   // Kategorilere göre resimler
 const imageCategories = {
-  [t("general")]: [special3, slabs1,general1,block1, general2,tiles1, slabs2, general3, general4,slabs3, general5, special3, tiles2, general6,general7,block2,general8,general9, tiles3, general10,block3,special2],
+  [t("general")]: [special3, general11, special4, slabs1,general1,block1, general2,special5, tiles1, slabs2, special6,special18, special12, general3, general4,special8, slabs3, general5,special9, general12, special3, tiles2, general6,general7,special10, block2,general8,general9,special18, tiles3, general13, general10,block3,special2],
   [t("blocks")]: [block1,block2, block3,,block1,block2, block3,],
-  [t("slabs")]: [slabs1, slabs2, slabs3, slabs4, slabs5,slabs6,slabIvory,slabLight,slabAntik],
+  [t("slabs")]: [slabIvory,slabs1, slabs2, slabLight, slabs3, slabs4, slabs5, slabAntik, slabs6, slabAntikVein, slabIvoryVein],
   [t("tiles")]: [tiles1, tiles2, tiles3,tiles1, tiles2, tiles3,],
-  [t("special")]: [special1, special2, special3, special1, special2],
+  [t("special")]: [special1, special2, special3, general11, general12, general13,special4,special5,special6,special7,special8,special9,special10,special11,special12,special13,special14,special15,special16,special17,special18,special19],
   [t("export")]: [export1, export2, export3, export4, export5,export6,export7,export8,export9,export10,export11],
 
 }
@@ -111,7 +136,7 @@ const categories = Object.keys(imageCategories)
     <div className="flex w-screen items-center justify-center mt-[50px] max-w-[1440px]">
       <div className="flex flex-col items-center justify-between w-[87.79%] md:w-[91.4%] lg:w-[76.8%] gap-[40px]">
         {/* Butonlar */}
-        <div className="grid grid-cols-4 xl:flex items-center justify-center gap-[10px] lg:gap-[30px] w-full max-w-[1008px]">
+        <div className="grid grid-cols-3 xl:flex items-center justify-center gap-[10px] lg:gap-[30px] w-full max-w-[1008px]">
           {Object.keys(imageCategories).map((category) => (
             <button
               key={category}

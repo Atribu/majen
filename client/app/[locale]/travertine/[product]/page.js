@@ -75,7 +75,6 @@ const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
   }
 
 
-
   // Metinler
   const title   = t(`${productKey}.title`);
   const alt     = t(`${productKey}.alt`);
@@ -200,7 +199,7 @@ const productAltMap = {
     const selectedSegments = segments.slice(-depth);
 
   return (
-    <main className=" py-7 mt-16 overflow-x-hidden">
+    <main className=" py-6 mt-16 overflow-x-hidden">
       {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}

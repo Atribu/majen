@@ -123,22 +123,113 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_CUT = {
       "vein-cut":  phTiles,
       "cross-cut": phTiles,
     },
-  },
+  }
+};
 
-    special: {
+export const IMAGE_BY_PRODUCT_VARIANT_AND_PROCESS = {
+  slabs: {
     "blaundos-antiko": {
-      "vein-cut":  phSpecial,
-      "cross-cut": phSpecial,
+      "vein-cut":  {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+      "cross-cut": {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+    },
+
+    "blaundos-light": {
+      "vein-cut":  {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+      "cross-cut": {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+    },
+
+    "blaundos-ivory": {
+      "vein-cut":  {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+      "cross-cut": {
+        "natural":slabAntikVein,
+        "filling":slabAntikVein,
+        "epoxy":slabAntikVein,
+        "transparent":slabAntikVein,
+        "antique":slabAntikVein,
+      },
+    },
+  },
+  
+  tiles: {
+    "blaundos-antiko": {
+      "vein-cut":  {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
+      "cross-cut": {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
     },
     "blaundos-light": {
-      "vein-cut":  phSpecial,
-      "cross-cut": phSpecial,
+      "vein-cut":  {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
+      "cross-cut": {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
     },
     "blaundos-ivory": {
-      "vein-cut":  phSpecial,
-      "cross-cut": phSpecial,
+      "vein-cut":  {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
+      "cross-cut": {
+        "natural":phTiles,
+        "filling":phTiles,
+        "epoxy":phTiles,
+        "transparent":phTiles,
+        "antique":phTiles,
+      },
     },
-  },
+  }
 };
 
 
@@ -223,7 +314,7 @@ export const IMAGES_BLOG = {
     ]
   },
   "travertine-mosaics": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/antikarkaplan4.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -262,7 +353,7 @@ export const IMAGES_BLOG = {
   },
 
    "honed-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blog/honed.jpg", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -301,7 +392,7 @@ export const IMAGES_BLOG = {
     ]
   },
   "brushed-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blog/Brushed.jpg", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -341,7 +432,7 @@ export const IMAGES_BLOG = {
   },
 
   "unfilled-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blog/unfilled.jpg", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -361,7 +452,7 @@ export const IMAGES_BLOG = {
   },
 
     "ivory-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Ivory/ivory.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -381,7 +472,7 @@ export const IMAGES_BLOG = {
   },
 
   "light-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src:  "/images/homepage/Light/light.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -401,7 +492,7 @@ export const IMAGES_BLOG = {
   },
 
   "antico-travertine": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/antik/antik.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -421,7 +512,7 @@ export const IMAGES_BLOG = {
   },
 
     "travertine-flooring": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Light/lighttasarim3.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -441,7 +532,7 @@ export const IMAGES_BLOG = {
   },
 
       "travertine-cladding": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Light/lighttasarim4.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -461,7 +552,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-facade": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Antik/Antiktasarim4.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -481,7 +572,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-bathroom": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Ivory/Ivorytasarim1.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -501,7 +592,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-kitchen": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Antik/Antiktasarim2.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -521,7 +612,7 @@ export const IMAGES_BLOG = {
   },
 
    "travertine-pool": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/homepage/Ivory/Ivorytasarim2.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -561,7 +652,7 @@ export const IMAGES_BLOG = {
   },
 
   "turkish-travertine": {
-    hero: { src: travertineTurkey, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blogs/TurkishTravertine.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -581,7 +672,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-quarry": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blogs/TravertineQuarry.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -601,7 +692,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-supplier": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blogs/Travertinesupplier.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -621,7 +712,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-exporter": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src:  "/images/blogs/travertineexporter.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -641,7 +732,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-manufacturer": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blogs/Travertinemanufacturer.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },
@@ -661,7 +752,7 @@ export const IMAGES_BLOG = {
   },
 
   "travertine-distributor": {
-    hero: { src: tilesIvory, alt: "Large Ivory travertine slab on a kitchen island" },
+    hero: { src: "/images/blogs/travertinedistributor.webp", alt: "Large Ivory travertine slab on a kitchen island" },
     colors: {
       ivory:  { src: slabIvory,  alt: "Ivory travertine slab close-up" },
       light:  { src: slabLight,  alt: "Light travertine slab warm beige" },

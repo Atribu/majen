@@ -1,6 +1,3 @@
-// app/[locale]/travertine/[product]/[variant]/page.js
-// (TR için aynı dosya adı "traverten" klasörü altında)
-// "use client" zorunlu çünkü hooks kullanılıyor
 "use client";
 
 import React from "react";
@@ -26,7 +23,6 @@ import {
 
 const showVariantCircleFor = new Set(["slabs", "tiles"]);
 
-
 // UI parçaları
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
@@ -37,6 +33,7 @@ import OtherOptions2 from "@/app/[locale]/components/generalcomponent/OtherOptio
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
+import IncotermLinkify from "@/app/[locale]/components/generalcomponent/IncotermLinkify";
 
 // Basit InfoCard
 function InfoCard({ title, children, className = "" }) {
@@ -131,8 +128,6 @@ function AccordionGroup({ items = [], defaultOpenIndex = 0, className = "" }) {
   );
 }
 
-
-
 export default function VariantPage() {
   // --- JSON-LD şeması
   const schema = {
@@ -143,11 +138,12 @@ export default function VariantPage() {
     publisher: { "@type": "Organization", name: "Majen" },
   };
 
-  // ---- Router & i18n
+  // ---- Router & i18n - TÜM HOOK'LARI EN BAŞTA ÇAĞIR
   const { product: rawProduct, variant: vSlug } = useParams();
   const locale = useLocale();
   const t = useTranslations("ProductPage");
   const messages = useMessages();
+  const pathname = usePathname() || ""; // usePathname'ı buraya taşıdık
 
   // ---- Yol/segment yardımcıları
   const prefix = `/${locale}`;
@@ -158,7 +154,15 @@ export default function VariantPage() {
   const productKey =
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === rawProduct) || "block";
   const vKey = VARIANT_KEY_BY_SLUG[vSlug];
+  
+  // Eğer vKey yoksa, hook'lardan sonra return edelim
   if (!vKey) return null;
+
+  // Breadcrumbs için segmentleri hook'lardan sonra hesaplayalım
+  const depth = 2;
+  const segments = pathname.split("/").filter(Boolean); 
+  const lastSegment = pathname.split("/").filter(Boolean).pop(); 
+  const selectedSegments = segments.slice(-depth);
 
   // ---- Slug'dan varyant key'ini çıkar (blaundos-antiko -> antiko)
   const getVariantKeyFromSlug = (slug) => {
@@ -208,7 +212,7 @@ export default function VariantPage() {
 
   const pageTitle = vOverrides?.title || vTitle || baseTitle;
   const pageIntro = vOverrides?.intro || baseIntro;
-    const pageTitle2 = vOverrides?.title2 || vTitle || baseTitle;
+  const pageTitle2 = vOverrides?.title2 || vTitle || baseTitle;
   const pageIntro2 = vOverrides?.intro2 || baseIntro;
   const pageAlt = vOverrides?.alt || vAlt || baseAlt;
 
@@ -336,15 +340,10 @@ const accordionItems = [
   // ---- Micro-proof (varyant özel)
   const microProof = Array.isArray(vOverrides?.microProof) ? vOverrides.microProof : [];
 
-  const   depth = 2
-      const pathname = usePathname() || ""; // boş string fallback
-      const segments = pathname.split("/").filter(Boolean); 
-      const lastSegment = pathname.split("/").filter(Boolean).pop(); 
-      const selectedSegments = segments.slice(-depth);
-  
-const showVariantCircle = hasDeepLevels
-  ? hasDeepLevels(productKey)
-  : showVariantCircleFor.has(productKey);
+  const showVariantCircle = hasDeepLevels
+    ? hasDeepLevels(productKey)
+    : showVariantCircleFor.has(productKey);
+
   // ---- UI
   return (
     <main className="px-5 md:px-8 lg:px-0 py-7 mt-16">
@@ -353,7 +352,7 @@ const showVariantCircle = hasDeepLevels
         title={`${vTitle}`}
         intro={pageIntro}
         heroSrc={heroSrc}
-         title2={pageTitle2}
+        title2={pageTitle2}
         intro2={pageIntro2}
         alt={`${vTitle}`}
         prefix={prefix}
@@ -363,8 +362,7 @@ const showVariantCircle = hasDeepLevels
         depth={2}
       />
 
-
-       <BreadcrumbsExact
+      <BreadcrumbsExact
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
@@ -373,29 +371,27 @@ const showVariantCircle = hasDeepLevels
         className="mt-6"
       />
 
-            {/* CUT dairesel grid – VariantCircleSection */}
-     
-        {showVariantCircle && (
-   <VariantCircleSection
-     heading={locale.startsWith("tr") ? "Kesim şekli" : `${vTitle} Cut Options`}
-     variantCards={cutCards}
-     imgMap={PRODUCT_IMG[productKey]}
-     heroSrc={heroSrc}
-     IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
-     productKey={productKey}
-     imgAlt={`${vTitle}`}
-   />
- )}
- 
+      {/* CUT dairesel grid – VariantCircleSection */}
+      {showVariantCircle && (
+        <VariantCircleSection
+          heading={locale.startsWith("tr") ? "Kesim şekli" : `${vTitle} Cut Options`}
+          variantCards={cutCards}
+          imgMap={PRODUCT_IMG[productKey]}
+          heroSrc={heroSrc}
+          IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+          productKey={productKey}
+          imgAlt={`${vTitle}`}
+        />
+      )}
 
       {/* 4 INFO CARD */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5 max-w-[1200px] mx-auto">
-  {infoCards.map((c, i) => (
-    <InfoCard key={i} title={c.title}>
-      {c.content}
-    </InfoCard>
-  ))}
-</section>
+        {infoCards.map((c, i) => (
+          <InfoCard key={i} title={c.title}>
+            {c.content}
+          </InfoCard>
+        ))}
+      </section>
 
       {/* Application Section */}
       {appSection.title && (
@@ -416,7 +412,7 @@ const showVariantCircle = hasDeepLevels
         </div>
       )}
 
-{/* Available Sizes Section */}
+      {/* Available Sizes Section */}
       {availSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
           <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
@@ -435,7 +431,7 @@ const showVariantCircle = hasDeepLevels
         </div>
       )}
 
-{/* Finishes Section */}
+      {/* Finishes Section */}
       {finishSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
           <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
@@ -465,17 +461,18 @@ const showVariantCircle = hasDeepLevels
           <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
             <h2 className="text-[24px] md:text-[26px]">{exportSection.title}</h2>
             {exportSection.text && (
-              <p className="mt-2 text-[12px] lg:text-[14px]">{exportSection.text}</p>
+              <p className="mt-2 text-[12px] lg:text-[14px]">
+   <IncotermLinkify text={exportSection.text} />
+ </p>
             )}
           </div>
-          <div className="flex max-w-[1150px] mt-2 gap-4 flex-col md:flex-row">
+          {/* <div className="flex max-w-[1150px] mt-2 gap-4 flex-col md:flex-row">
             {exportSection.subtitle && (
               <InfoCard title={exportSection.subtitle}>
                 {exportSection.subtext}
               </InfoCard>
             )}
-         
-          </div>
+          </div> */}
         </div>
       )}
 
@@ -494,12 +491,11 @@ const showVariantCircle = hasDeepLevels
                 {qualitySection.subtext}
               </InfoCard>
             )}
-    
           </div>
         </div>
       )}
 
-{/* Partner Section with Accordion */}
+      {/* Partner Section with Accordion */}
       {partnerSection.title && (
         <div className="flex flex-col w-full items-center justify-center my-6 md:my-12">
           <div className="flex flex-col w-[80%] max-w-[1200px] items-center justify-center text-center">
@@ -556,16 +552,16 @@ const showVariantCircle = hasDeepLevels
       )}
       <SocialMediaSection/>
 
-<OtherOptions2
-  heading={locale === 'tr' ? "Diğer Seçenekler" : "Other Options"}
-  excludeProduct={productKey}                         
-  productOrder={["block", "slabs", "tiles", "special"]}
-  baseHref={`${prefix}/${baseSegment}`}
-  productSegments={PRODUCT_SLUGS[locale]}
-  locale={locale}
-  productImages={PRODUCT_IMG}
-  currentVariantSlug={vSlug}
-/>
+      <OtherOptions2
+        heading={locale === 'tr' ? "Diğer Seçenekler" : "Other Options"}
+        excludeProduct={productKey}                         
+        productOrder={["block", "slabs", "tiles", "special"]}
+        baseHref={`${prefix}/${baseSegment}`}
+        productSegments={PRODUCT_SLUGS[locale]}
+        locale={locale}
+        productImages={PRODUCT_IMG}
+        currentVariantSlug={vSlug}
+      />
 
       <ContactFrom />
     </main>

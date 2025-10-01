@@ -55,13 +55,13 @@ export default async function Page({ params }) {
           sizes="(max-width: 768px) 100vw, 1920px"
           className="h-[46vh] md:h-[60vh] w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <div className="max-w-4xl text-center text-white">
-            <h1 className="text-3xl md:text-5xl font-bold">
+            <h1 className="text-[24px] md:text-[28px] lg:text-[30px] font-bold">
               EXW Travertine Export From Turkey – Ex Works Pickup
             </h1>
-            <p className="mt-4 text-base md:text-lg leading-relaxed">
+            <p className="mt-4 text-[12px] md:text-[14px] lg:text-[16px] md:text-lg leading-relaxed">
               Under <strong>EXW Travertine Export From Turkey</strong>, buyers
               collect goods directly from Majen’s quarry/warehouse. We prepare
               products and packaging at origin; importers arrange trucking,
@@ -72,13 +72,13 @@ export default async function Page({ params }) {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/contactus"
-                className="rounded-2xl bg-amber-600 px-5 py-3 font-semibold text-white shadow"
+                className="rounded-2xl bg-amber-600 px-4 lg:px-5 py-2 lg:py-3 text-[14px] lg:text-[16px] font-semibold text-white shadow"
               >
                 Get a Pickup Slot
               </Link>
               <Link
                 href="/en/how-we-export"
-                className="rounded-2xl bg-white px-5 py-3 font-semibold text-neutral-900 shadow"
+                className="rounded-2xl bg-white px-4 lg:px-5 py-2 lg:py-3 text-[14px] lg:text-[16px] font-semibold text-neutral-900 shadow"
               >
                 How We Export
               </Link>
@@ -89,10 +89,10 @@ export default async function Page({ params }) {
 
       {/* WHAT IS EXW */}
       <section className="max-w-[1200px] mx-auto px-5 py-10 items-center justify-center flex flex-col text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+        <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
           What Is EXW (Ex Works) in International Trade?
         </h2>
-        <p className="mt-3 text-neutral-700 leading-relaxed">
+        <p className="mt-3 text-neutral-700 leading-relaxed text-[12px] md:text-[14px] lg:text-[16px]">
           EXW (Ex Works) is an Incoterm where the seller makes goods available
           at their premises and the buyer takes over from that point. For{" "}
           <strong>EXW Travertine Export From Turkey</strong>, Majen prepares
@@ -131,7 +131,7 @@ export default async function Page({ params }) {
       {/* PROCESS TIMELINE */}
       <section className="bg-neutral-50 py-12">
         <div className="max-w-[1000px] mx-auto px-5">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+          <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
             The EXW Travertine Export Process With Majen
           </h2>
         </div>
@@ -177,26 +177,26 @@ export default async function Page({ params }) {
       <section className="max-w-[1200px] mx-auto px-5 py-12">
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold">
               Documents Provided for EXW
             </h2>
             <h4 className="mt-2 font-semibold">Included at Origin</h4>
-            <ul className="mt-2 list-disc pl-5 text-neutral-700">
+            <ul className="mt-2 list-disc pl-5 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
               <li>Commercial invoice & packing list</li>
               <li>HS code & product specs (on invoice)</li>
               <li>Quality/inspection report (if requested)</li>
               <li>Load photos and package labels</li>
             </ul>
             <h4 className="mt-4 font-semibold">By Buyer / Broker</h4>
-            <ul className="mt-2 list-disc pl-5 text-neutral-700">
+            <ul className="mt-2 list-disc pl-5 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
               <li>Export declaration & permits</li>
               <li>Insurance certificate</li>
               <li>Freight booking & bill of lading/CMR/AWB</li>
             </ul>
           </article>
 
-          <article className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow">
-            <h2 className="text-xl md:text-2xl font-bold">
+          <article className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow text-[12px] md:text-[14px] lg:text-[16px]">
+            <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold">
               Pickup Locations, Lead Times & MOQs
             </h2>
             <h4 className="mt-2 font-semibold">Pickup Points</h4>
@@ -218,17 +218,17 @@ export default async function Page({ params }) {
       {/* H5 RESPONSIBILITY CHECKLIST */}
       <section className="bg-neutral-50 py-12">
         <div className="max-w-[1200px] mx-auto px-5">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+          <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
             Responsibilities Under EXW (At a Glance)
           </h2>
           <h5 className="mt-4 text-lg font-semibold">Seller (Majen)</h5>
-          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700">
+          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
             <li>Produce & stage goods at origin</li>
             <li>Packaging suitable for international transport</li>
             <li>Provide invoice, packing list, specs, load photos</li>
           </ul>
           <h5 className="mt-6 text-lg font-semibold">Buyer / Forwarder</h5>
-          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700">
+          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
             <li>Truck pickup & loading equipment</li>
             <li>Export clearance, permits & broker</li>
             <li>Freight booking, insurance & destination charges</li>
@@ -239,11 +239,10 @@ export default async function Page({ params }) {
       {/* FAQ */}
      <QuestionsSection span="EXW Travertine Export" items={items}/>
       {/* RELATED LINKS */}
-      <section className="max-w-[1200px] mx-auto px-5 py-10">
+      <section className="max-w-[1200px] mx-auto px-3 lg:px-5 py-10">
         <nav
           aria-label="Related links"
-          className="text-sm text-neutral-600 text-center gap-3 flex items-center justify-center"
-        >
+          className="text-[12px] md:text-sm text-neutral-600 text-center gap-1 md:gap-2 lg:gap-3 flex items-center justify-center">
           <Link href="/en/export/fob-travertine">FOB Export</Link> {" • "}
           <Link href="/en/export/cif-travertine">CIF Export</Link> {" • "}
           <Link href="/en/export/exw-travertine">EXW Export</Link> {" • "}

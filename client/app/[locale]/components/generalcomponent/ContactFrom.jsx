@@ -82,7 +82,7 @@ export default function ContactFrom() {
   }
 
   return (
-    <section className="relative mt-12 mb-12">
+    <section className="relative mt-7 lg:mt-12 mb-12">
       <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
         <header className="mb-2 lg:mb-6">
           <span className="text-[20px] md:text-[24px] font-semibold tracking-tight">

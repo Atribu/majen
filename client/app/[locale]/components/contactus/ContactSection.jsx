@@ -5,25 +5,25 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col h-[88vh] items-start gap-5 lg:gap-12 justify-center">
-        <h1 className="text-6xl font-bold">Contact Us</h1>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col min-h-[88vh] items-center text-center lg:text-start lg:items-start gap-5 lg:gap-12 justify-center my-5">
+        <h1 className="text-[40px] text-6xl font-bold">Contact Us</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Column */}
         <div>
           <h2 className="mt-4 text-2xl font-semibold">Get in touch</h2>
-          <p className="mt-2 text-base text-gray-700">
+          <p className="mt-2 text-[14px] lg:text-base text-gray-700">
             Thank you for your interest in our services! If you have any questions 
             or would like to book a service, please don’t hesitate to contact us. 
             Our team is dedicated to providing you with the highest level of service 
             and support, and we are committed to working with you to make your business a success.
           </p>
 
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 space-y-6 flex flex-col items-center justify-center text-center lg:items-start lg:justify-start">
             <div className="flex items-start">
               <FaEnvelope className="text-2xl text-green-900 mt-1" />
               <div className="ml-4">
                 <h3 className="text-sm font-semibold uppercase">Email Address</h3>
-                <p className="mt-1 text-gray-700">info@majen.com.tr</p>
+                <p className="mt-1 text-gray-700 text-[14px] lg:text-base">info@majen.com.tr</p>
               </div>
             </div>
 
@@ -31,7 +31,7 @@ export default function ContactSection() {
               <FaPhone className="text-2xl text-green-900 mt-1" />
               <div className="ml-4">
                 <h3 className="text-sm font-semibold uppercase">Phone Number</h3>
-                <p className="mt-1 text-gray-700">+90 533 556 10 92</p>
+                <p className="mt-1 text-gray-700 text-[14px] lg:text-base">+90 533 556 10 92</p>
               </div>
             </div>
 
@@ -39,7 +39,7 @@ export default function ContactSection() {
               <FaMapMarkerAlt className="text-2xl text-green-900 mt-1" />
               <div className="ml-4">
                 <h3 className="text-sm font-semibold uppercase">Our Address</h3>
-                <p className="mt-1 text-gray-700">Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi No:110 F/5 Muratpaşa/ANTALYA</p>
+                <p className="mt-1 text-gray-700 text-[14px] lg:text-base">Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi No:110 F/5 Muratpaşa/ANTALYA</p>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function ContactSection() {
             <div>
               <button
                 type="submit"
-                className="w-[150px] inline-flex justify-center bg-green-900 text-white py-3 px-6 rounded-md hover:bg-green-800 transition"
+                className="lg:w-[150px] inline-flex justify-center bg-green-900 text-white py-2 lg:py-3 px-5 lg:px-6 rounded-md hover:bg-green-800 transition"
               >
                 Get in touch
               </button>

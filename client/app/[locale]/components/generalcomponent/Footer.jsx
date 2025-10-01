@@ -27,13 +27,12 @@ export default function Footer() {
     { label: t("nav.primary.home"), href: `${prefix}` },
     { label: t("nav.primary.blog"), href: `${prefix}${L("/blog", "/blog")}` },
     { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/about")}` },
-    { label: t("nav.primary.contact"), href: `${prefix}${L("/iletisim", "/contact")}` },
+    { label: t("nav.primary.contact"), href: `${prefix}${L("/iletisim", "/contactus")}` },
   ];
 
   const navSecondary = [
     { label: t("nav.secondary.product"), href: `${prefix}${L("/projeler", "/travertine")}` },
-    { label: t("nav.secondary.shop"), href: `${prefix}${L("/magaza", "/shop")}` },
-    { label: t("nav.secondary.pages"), href: `${prefix}${L("/sayfalar", "/pages")}` },
+    { label: t("nav.secondary.shop"), href: `${prefix}${L("/magaza", "/howweexport")}` },
     { label: t("nav.secondary.privacy"), href: `${prefix}${L("/kvkk", "/privacy")}` },
   ];
 

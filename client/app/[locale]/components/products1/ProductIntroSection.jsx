@@ -52,7 +52,7 @@ export default function ProductIntroSection({
   return (
     <section className="relative mt-2 overflow-hidden" aria-labelledby="intro-heading">
       {/* === Mobile & Tablet === */}
-      <div className="lg:hidden relative w-full h-[500px] flex items-center justify-center">
+      <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center">
         {/* Background */}
         <Image
           src={heroSrc}
@@ -64,36 +64,19 @@ export default function ProductIntroSection({
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 text-center text-white max-w-[95%]">
-          <h1 id="intro-heading" className="text-[24px] md:text-[24px] lg:text-[26px] font-semibold">
+          <h1 id="intro-heading" className="text-[24px] md:text-[24px] lg:text-[26px] font-semibold leading-[120%]">
             {title} <span>{span}</span>
           </h1>
-          <p className="mt-3 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
+          <p className="mt-2 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
 
-            <h2 id="intro-heading" className="text-[24px] md:text-[32px] lg:text-[36px] font-semibold">
+            <h2 id="intro-heading" className="text-[22px] md:text-[24px] lg:text-[36px] font-semibold leading-[110%] mt-2">
             {title2}
           </h2>
-          <p className="mt-3 text-[12px] md:text-[14px] leading-tight lg:leading-relaxed">{intro2}</p>
+          <p className="mt-2 text-[12px] md:text-[14px] leading-tight lg:leading-relaxed">{intro2}</p>
           <div className=" mt-3">
                       <ShareButton label="Share" />
                     </div>
 
-          {/* Breadcrumbs */}
-          <nav
-            className="mt-5 inline-flex items-center rounded-lg bg-white/20 backdrop-blur px-3 py-1.5 text-xs sm:text-sm"
-            aria-label="breadcrumb"
-          >
-            <ol className="flex items-center gap-x-2">
-              <li>
-                <Link href={prefix} className="hover:underline">{crumbHome}</Link>
-              </li>
-              <li className="text-white/60">/</li>
-              <li>
-                <Link href={baseHref} className="hover:underline">{crumbProducts}s</Link>
-              </li>
-              <li className="text-white/60">/</li>
-              <li className="text-white/90"> {lastSegment}</li>
-            </ol>
-          </nav>
         </div>
       </div>
 
@@ -128,7 +111,7 @@ export default function ProductIntroSection({
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}
   <header className="relative px-5 pt-5 w-[80%]">
-    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5">{title} <span>{span}</span></h1>
+    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5 ">{title} <span>{span}</span></h1>
     <p className="text-[12px] lg:text-[14px] mb-10 lg:leading-[140%]">{intro}</p>
     
      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title2}</h2>

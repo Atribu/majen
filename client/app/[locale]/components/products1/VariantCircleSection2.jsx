@@ -68,8 +68,8 @@ export default function VariantCircleSection2({
           <h3 className="text-[20px] lg:text-[22px] font-semibold mb-2">{heading}</h3>
         ) : null}
 
-        <p className="text-[12px] lg:text-[14px] w-[90%] flex mb-3">
-        Turkish travertine from our Uşak–Ulubey quarry is available across four categories—Blocks, Slabs, Tiles, and Custom Designs—to suit projects from luxury interiors to large façades. Choose classic Blaundos Antico, Light, or Ivory tones, with polished, honed, brushed, or tumbled finishes and vein-cut or cross-cut options. Blocks are selected for high yield, slabs are calibrated in 2–3 cm, and tiles are cut to size for durable floors and wall cladding. We provide reinforced export packing and full documentation with FOB/CIF/EXW terms. Explore the categories below for technical data, recommended applications, and current availability.
+        <p className="text-[12px] lg:text-[14px] w-[90%] mb-3">
+        Turkish travertine from our Uşak–Ulubey quarry is available across four categories—Blocks, Slabs, Tiles, and Custom Designs—to suit projects from luxury interiors to large façades. Choose classic Blaundos Antico, Light, or Ivory tones, with polished, honed, brushed, or tumbled finishes and vein-cut or cross-cut options. Blocks are selected for high yield, slabs are calibrated in 2–3 cm, and tiles are cut to size for durable floors and wall cladding. We provide reinforced export packing and full documentation with <Link href="/howweexport/fob" className="cursor-pointer text-teal-700">FOB</Link>/ <Link href="/howweexport/cif" className="cursor-pointer text-teal-700">CIF</Link>/ <Link href="/howweexport/exw" className="cursor-pointer text-teal-700">EXW</Link> terms. Explore the categories below for technical data, recommended applications, and current availability.
         </p>
 
         <div className={gridClassName}>
@@ -104,7 +104,7 @@ export default function VariantCircleSection2({
                   {startText}{" "}
                   {variantSlugs.map((slug, i) => (
                     <span key={`${pkey}-${slug}`}>
-                      <Link href={variantRoute(pkey, slug)} className="text-blue-600 hover:underline">
+                      <Link href={variantRoute(pkey, slug)} className="text-teal-700 hover:underline">
                         {variantLabel(slug)}
                       </Link>
                       {i < variantSlugs.length - 1 ? ", " : ""}

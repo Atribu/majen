@@ -1,7 +1,8 @@
-// app/components/seo/TextSection.jsx
 "use client";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Script from "next/script";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export default function TextSection({
   title,
@@ -15,8 +16,40 @@ export default function TextSection({
 }) {
   const [expanded, setExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const locale = useLocale();
 
-  // Yalnızca istemcide ölç: md breakpoint ~768px (Tailwind varsayılanı)
+  // locale'e göre doğru base
+  const prefix = `/${locale}`;
+  const exportBase = locale === "tr" ? "nasıl-ihracat-yapıyoruz" : "how-we-export";
+
+  // Metindeki FOB/CIF/EXW'yi linke çevir
+  const renderWithIncotermLinks = useCallback((text = "") => {
+    const pattern = /\b(FOB|CIF|EXW)\b/g; // büyük/küçük duyarsızlık için 'i' de ekleyebilirsin
+    const nodes = [];
+    let last = 0;
+    let m;
+    let k = 0;
+
+    while ((m = pattern.exec(text)) !== null) {
+      if (m.index > last) nodes.push(text.slice(last, m.index));
+      const token = m[1].toUpperCase();
+      const href = `${prefix}/${exportBase}/${token.toLowerCase()}`;
+      nodes.push(
+        <Link
+          key={`incoterm-${k++}-${m.index}`}
+          href={href}
+          className="text-teal-700 underline underline-offset-4 hover:no-underline"
+        >
+          {token}
+        </Link>
+      );
+      last = m.index + token.length;
+    }
+    if (last < text.length) nodes.push(text.slice(last));
+    return nodes;
+  }, [prefix, exportBase]);
+
+  // Yalnızca istemcide ölç: md breakpoint ~768px
   useEffect(() => {
     const check = () => setIsMobile(window.matchMedia("(max-width: 767px)").matches);
     check();
@@ -25,7 +58,6 @@ export default function TextSection({
   }, []);
 
   const visibleParagraphs = useMemo(() => {
-    // Sadece mobilde ve expanded=false iken clamp uygula
     if (isMobile && !expanded && clampMobile > 0) {
       return paragraphs.slice(0, clampMobile);
     }
@@ -40,7 +72,7 @@ export default function TextSection({
           "@context": "https://schema.org",
           "@type": schema.type || "Article",
           headline: title,
-          inLanguage: schema.lang || "tr",
+          inLanguage: schema.lang || locale,
           url: schema.url,
           articleBody: paragraphs.join("\n\n"),
         }
@@ -65,30 +97,29 @@ export default function TextSection({
         </h3>
       ) : null}
 
-      <div className="mt-0 text-neutral-800 lg:leading-[1.85] text-[12px] md:text-[14px] leading-tight ">
+      <div className="mt-0 text-neutral-800 lg:leading-[1.85] text-[12px] md:text-[14px] leading-tight">
         {visibleParagraphs.map((p, i) => (
-          <p key={i}>{p}</p>
+          <p key={i}>{renderWithIncotermLinks(String(p))}</p>
         ))}
 
         {title2 ? (
-          <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black">
+          <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black mt-2">
             {title2}
           </h4>
         ) : null}
 
         {text2 ? (
-          <p className="-mt-3 mt-0 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
-            {text2}
+          <p className="mt-1 lg:mt-2 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
+            {renderWithIncotermLinks(String(text2))}
           </p>
         ) : null}
 
-        {/* 'Devamını oku' sadece mobilde ve kesilecek içerik varsa */}
         {hasMore && (
           <div className="pt-2">
             <button
               type="button"
               onClick={() => setExpanded((s) => !s)}
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-800 hover:bg-neutral-900 hover:text-white transition text-center "
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-800 hover:bg-neutral-900 hover:text-white transition text-center"
               aria-expanded={expanded}
               aria-controls="seo-more-content"
             >

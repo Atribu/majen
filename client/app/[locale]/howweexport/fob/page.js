@@ -57,13 +57,13 @@ export default async function Page({ params }) {
           sizes="(max-width: 768px) 100vw, 1920px"
           className="h-[46vh] md:h-[60vh] w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <div className="max-w-4xl text-center text-white">
-            <h1 className="text-3xl md:text-5xl font-bold">
+            <h1 className="text-[24px] md:text-[28px] lg:text-[30px] font-bold leading-[120%]">
               FOB Travertine Export From Turkey – Direct Quarry Supplier
             </h1>
-            <p className="mt-4 text-base md:text-lg leading-relaxed">
+            <p className="mt-4 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed">
               Majen supplies <strong>FOB Travertine Export From Turkey</strong>,
               covering blocks, slabs, tiles and custom designs. We load
               containers at Turkish ports, handle export clearance and provide
@@ -74,13 +74,12 @@ export default async function Page({ params }) {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href="/en/contactus"
-                className="rounded-2xl bg-amber-600 px-5 py-3 font-semibold text-white shadow"
-              >
+                className="rounded-2xl bg-amber-600 px-4 lg:px-5 py-2 lg:py-3 text-[14px] lg:text-[16px] font-semibold text-white shadow">
                 Get a Quote
               </Link>
               <Link
                 href="/en/how-we-export"
-                className="rounded-2xl bg-white px-5 py-3 font-semibold text-neutral-900 shadow"
+                className="rounded-2xl bg-white px-4 lg:px-5 py-2 lg:py-3 text-[14px] lg:text-[16px] font-semibold text-neutral-900 shadow"
               >
                 How We Export
               </Link>
@@ -91,10 +90,10 @@ export default async function Page({ params }) {
 
       {/* WHAT IS FOB */}
       <section className="max-w-[1200px] mx-auto px-5 py-10 items-center justify-center flex flex-col text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+        <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
           What Is FOB in International Trade?
         </h2>
-        <p className="mt-3 text-neutral-700 leading-relaxed">
+        <p className="mt-3 text-neutral-800 leading-[135%] lg:leading-relaxed text-[12px] md:text-[14px] lg:text-[16px]">
           FOB (Free On Board) is an Incoterm that splits responsibilities
           clearly. Under FOB, Majen delivers goods to the port, clears them for
           export and loads them onto the buyer’s nominated vessel. From that
@@ -124,8 +123,8 @@ export default async function Page({ params }) {
               key={c.t}
               className="rounded-2xl bg-white p-5 ring-1 ring-neutral-200 shadow"
             >
-              <h3 className="mb-1 font-semibold">{c.t}</h3>
-              <p className="text-neutral-700 text-sm leading-relaxed">{c.d}</p>
+              <h3 className="mb-1 font-semibold text-[18px] md:text-[20px]">{c.t}</h3>
+              <p className="text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed" >{c.d}</p>
             </article>
           ))}
         </div>
@@ -134,7 +133,7 @@ export default async function Page({ params }) {
       {/* PROCESS TIMELINE */}
       <section className="bg-neutral-50 py-12">
         <div className="max-w-[1000px] mx-auto px-5">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+          <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
             The FOB Travertine Export Process With Majen
           </h2>
           <ol className="relative mt-6 border-l pl-6">
@@ -167,7 +166,7 @@ export default async function Page({ params }) {
               <li key={i} className="mb-6 ml-2">
                 <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-teal-700" />
                 <h3 className="font-semibold">{it.s}</h3>
-                <p className="text-neutral-700 text-sm leading-relaxed">{it.d}</p>
+                <p className="text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed">{it.d}</p>
               </li>
             ))}
           </ol>
@@ -175,10 +174,10 @@ export default async function Page({ params }) {
       </section>
 
       {/* DOCUMENTS + PORTS GRID */}
-      <section className="max-w-[1200px] mx-auto px-5 py-12">
+      <section className="max-w-[1200px] mx-auto px-5 py-12 text-[12px] md:text-[14px] lg:text-[16px]">
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold">
               Documentation Provided Under FOB
             </h2>
             <h4 className="mt-2 font-semibold">Essential Export Documents</h4>
@@ -196,20 +195,20 @@ export default async function Page({ params }) {
           </article>
 
           <article className="rounded-2xl bg-white p-6 ring-1 ring-neutral-200 shadow">
-            <h2 className="text-xl md:text-2xl font-bold">
+            <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold">
               Ports & Lead Times (FOB)
             </h2>
             <h4 className="mt-2 font-semibold">Major Export Ports</h4>
-            <p className="text-neutral-700">
+            <p className="text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
               İzmir Alsancak • Aliağa Nemrut • Gemlik
             </p>
             <h4 className="mt-4 font-semibold">Typical Lead Times</h4>
-            <p className="text-neutral-700">
+            <p className="text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
               Production & packaging: 10–20 business days • Port handling &
               loading: 3–5 days
             </p>
             <h4 className="mt-4 font-semibold">Minimum Order Quantities</h4>
-            <p className="text-neutral-700">
+            <p className="text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
               Blocks: 1 piece • Slabs: by bundle • Tiles: by crate or m²
             </p>
           </article>
@@ -217,12 +216,12 @@ export default async function Page({ params }) {
       </section>
 
       {/* CASE + H5 KEY TAKEAWAYS */}
-      <section className="bg-neutral-50 py-12">
+      <section className="bg-neutral-50 py-9 lg:py-12">
         <div className="max-w-[1200px] mx-auto px-5">
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+          <h2 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-neutral-900">
             FOB Export in Action 
           </h2>
-          <p className="mt-3 text-neutral-700 leading-relaxed">
+          <p className="mt-3 text-neutral-700 leading-relaxed text-[12px] md:text-[14px] lg:text-[16px]">
             A US importer orders 5 containers of travertine blocks. Majen
             manages production, packaging, trucking, export clearance and vessel
             loading at İzmir Alsancak. The buyer books freight and insurance.
@@ -232,7 +231,7 @@ export default async function Page({ params }) {
           <h5 className="mt-6 text-lg font-semibold">
             Key Takeaways for FOB Travertine Export From Turkey
           </h5>
-          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700">
+          <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
             <li>Ideal for large block/slab orders</li>
             <li>Buyer controls freight & insurance</li>
             <li>Majen handles quarry-to-port with documentation</li>
@@ -245,11 +244,10 @@ export default async function Page({ params }) {
     <QuestionsSection span="FOB Travertine Export" items={items} />
 
       {/* RELATED LINKS */}
-      <section className="max-w-[1200px] mx-auto px-5 py-10">
+      <section className="max-w-[1200px] mx-auto px-3 lg:px-5 py-10">
         <nav
           aria-label="Related links"
-          className="text-sm text-neutral-600 text-center gap-3 flex items-center justify-center"
-        >
+          className="text-[12px] md:text-sm text-neutral-600 text-center gap-1 md:gap-2 lg:gap-3 flex items-center justify-center">
           <Link href="/en/export/fob-travertine">FOB Export</Link> {" • "}
           <Link href="/en/export/cif-travertine">CIF Export</Link> {" • "}
           <Link href="/en/export/exw-travertine">EXW Export</Link> {" • "}

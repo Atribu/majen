@@ -33,9 +33,6 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   const s = safePage.sections || {};
   const img = IMAGES_BLOG?.[currentSlug] || {};
 
-  
-  
-
   // --------- Routing / canonicals / breadcrumbs ----------
   const bc = [
     { name: t("common.breadcrumbs.home"), href: `/${locale}` },

@@ -28,7 +28,7 @@ export default function BreadcrumbsExact({
 }) {
   return (
     <div className={className}>
-     <nav aria-label="breadcrumb" className="max-w-6xl mx-auto">
+     <nav aria-label="breadcrumb" className="max-w-6xl mx-auto w-[98%]">
       <div className="rounded-xl border border-neutral-200 bg-white/80 backdrop-blur shadow-sm ring-1 ring-black/5 px-3 py-2 md:px-4 md:py-2">
         <ol className="flex flex-wrap items-center gap-1 text-xs md:text-sm text-neutral-700">
           {/* HOME */}
