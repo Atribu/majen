@@ -107,15 +107,7 @@ export default async function Page({ params }) {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* Breadcrumb */}
-      <div className="mx-auto w-[92%] max-w-[1160px] py-3 text-sm text-slate-500">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2">
-          <Link href="/en" className="hover:underline">Home</Link>
-          <span aria-hidden>›</span>
-          <span>Travertine</span>
-        </nav>
-      </div>
-
+    
       <TravertineBlog/>
 
       {/* SUPPLY & EXPORT */}

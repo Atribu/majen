@@ -151,8 +151,17 @@ export default function VariantPage() {
   const baseHref = locale === "tr" ? "travertenler" : "travertines"; // breadcrumb için
 
   // ---- productKey & vKey çıkar
-  const productKey =
-    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === rawProduct) || "block";
+function resolveProductKeyFromAnyLocale(slug) {
+  for (const loc of Object.keys(PRODUCT_SLUGS)) {
+    const map = PRODUCT_SLUGS[loc] || {};
+    const entry = Object.entries(map).find(([, val]) => val === slug);
+    if (entry) return entry[0]; // productKey (canonical)
+  }
+  return null;
+}
+
+const productKey =
+  resolveProductKeyFromAnyLocale(rawProduct) || "block";
   const vKey = VARIANT_KEY_BY_SLUG[vSlug];
   
   // Eğer vKey yoksa, hook'lardan sonra return edelim
@@ -374,7 +383,7 @@ const accordionItems = [
       {/* CUT dairesel grid – VariantCircleSection */}
       {showVariantCircle && (
         <VariantCircleSection
-          heading={locale.startsWith("tr") ? "Kesim şekli" : `${vTitle} Cut Options`}
+          heading={locale.startsWith("tr") ? `${vTitle} Kesim şekli` : `${vTitle} Cut Options`}
           variantCards={cutCards}
           imgMap={PRODUCT_IMG[productKey]}
           heroSrc={heroSrc}

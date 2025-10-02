@@ -2,7 +2,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { useTranslations, useLocale } from "next-intl";
@@ -14,8 +13,6 @@ export default function IntroSection({
   intro,
   title2,
   intro2,
-  span,
-
   // Görseller (opsiyonel)
   heroSrc = "/images/homepage/kesim.webp",
   bgMobile = "/images/homepage/kesim.webp",
@@ -166,32 +163,6 @@ export default function IntroSection({
           </div>
 
           </header>
-
-         
-
-        
-     
-
-          {/* {showBreadcrumb && (
-            <nav
-              className="bg-transparent px-4 py-3 rounded-sm text-black z-[999]"
-              aria-label="breadcrumb"
-            >
-              <ol className="flex flex-wrap items-center gap-x-1 text-sm">
-                <li>
-                  <Link href={_crumbHomeHref} className="hover:underline">
-                    {_crumbHomeLabel}
-                  </Link>
-                </li>
-                <li>
-                  <span className="mx-1 text-black/50">/</span>
-                  <Link href={_crumbSectionHref} className="hover:underline">
-                    {_crumbSectionLabel}
-                  </Link>
-                </li>
-              </ol>
-            </nav>
-          )} */}
 
           {/* Sağ görsel */}
           <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[500px] ">

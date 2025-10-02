@@ -262,28 +262,7 @@ export default function CutPage() {
         crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
         depth={3}
       />
-
-      {/* Cut Selector */}
-      <section className="mt-12 max-w-[1200px] mx-auto">
-        <h3 className="text-lg md:text-xl font-semibold mb-3">
-          {locale === "tr" ? "Kesim Seç" : "Choose Cut"}
-        </h3>
-        <div className="flex flex-wrap gap-3">
-          {CUTS.map((c) => (
-            <Link
-              key={c}
-              href={`${prefix}/${baseSegment}/${rawProduct}/${vSlug}/${c}`}
-              className={`px-4 py-2 rounded-full border transition ${
-                c === cutSlug
-                  ? "border-black bg-black text-white"
-                  : "border-neutral-300 hover:border-black hover:bg-black hover:text-white"
-              }`}
-            >
-              {getCutLabel(c)}
-            </Link>
-          ))}
-        </div>
-      </section>
+      
 
       {/* Info Cards */}
       {infoCards.length > 0 && (

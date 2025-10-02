@@ -1,11 +1,10 @@
 
 // app/[locale]/(catalog)/travertine/page.jsx
 "use client";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
-import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
 import IntroSection from "../../components/products1/IntroSection";
 import VariantCircleSection2 from "../../components/products1/VariantCircleSection2";
 import block from "@/public/images/deneme/ivoryblok.webp";
@@ -14,15 +13,11 @@ import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
 import InfoCard from "../../components/products1/InfoCard"
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
-import BackgroundSection from '../../components/homepage/BackgroundSection';
 import TextSection from "../../components/products1/TextSection";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
-
-const PRODUCT_ORDER = ["block", "slabs", "tiles", "special"]; // 4 ürün
-const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"]; // 3 renk
 
 const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
@@ -53,12 +48,7 @@ export default function TravertinePageClient() {
     { pattern: /tiles?/i,                            href: hrefForProduct("tiles")   },
     { pattern: /(travertine\s*)?custom\s*designs?/i, href: hrefForProduct("special") },
   ];
-  // Intro
   
-  const heroFallback =
-    typeof PRODUCT_IMG?.block === "object"
-      ? PRODUCT_IMG.block.cover ?? Object.values(PRODUCT_IMG.block)[0]
-      : PRODUCT_IMG?.block;
 
         const cards = [
     {

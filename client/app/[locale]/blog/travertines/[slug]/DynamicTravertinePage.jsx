@@ -310,7 +310,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       </Head>
 
       {/* Breadcrumbs */}
-      <div className="bg-neutral-50 border-b">
+      {/* <div className="bg-neutral-50 border-b">
         <Container>
           <nav className="text-sm py-3 flex flex-wrap gap-2">
             {bc.map((b, i) => (
@@ -323,7 +323,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             ))}
           </nav>
         </Container>
-      </div>
+      </div> */}
 
       {/* Hero + H1 + Lead + Intro */}
 {/* Hero + H1 + Lead + Intro */}

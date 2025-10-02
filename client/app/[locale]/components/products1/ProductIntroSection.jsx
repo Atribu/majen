@@ -83,30 +83,36 @@ export default function ProductIntroSection({
       {/* === Desktop === */}
       <div className="hidden lg:flex flex-row items-center justify-start h-[500px] relative">
         {/* Arka plan */}
-       <div
-          className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px]"
-          style={{
-            backgroundImage: "url('/images/homepage/antikarkaplan2.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+       <div className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px] relative overflow-hidden">
+  <Image
+    src="/images/homepage/antikarkaplan2.webp"
+    alt=""                       // dekoratif; erişilebilirlik için boş bırakın
+    fill
+    sizes="(max-width: 1023px) 0px, 70vw"  // lg ve üstünde ~%70 genişlik
+    quality={68}
+    priority={false}
+    className="object-cover"
+  />
+</div>
+
 
         {/* İçerik kutusu */}
         <div
   className="absolute rounded-sm h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-black flex flex-col justify-between left-1/2 -translate-x-1/2 "
 >
   {/* Blur katmanı */}
-  <div
-    className="absolute inset-0  shadow-2xl"
-    style={{
-      backgroundImage: "url('/images/homepage/antikarkaplan4.webp')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}
+ <div className="absolute inset-0 shadow-2xl overflow-hidden">
+  <Image
+    src="/images/homepage/antikarkaplan4.webp"
+    alt=""                       // dekoratif arkaplan
+    fill
+    sizes="(max-width: 1023px) 0px, 50vw"  // bu kutu ~860–1000px; 50vw güvenli
+    quality={68}
+    priority={false}
+    className="object-cover"
   />
+</div>
+
  <div className="absolute inset-y-0 left-0 w-[1000px] bg-gradient-to-r from-white/100 to-transparent pointer-events-none" />
  <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
   {/* İçerik (blur’dan etkilenmez) */}

@@ -51,7 +51,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function HomePage({ params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // Locale'e göre base segment (tr: traverten, en: travertine)
   const baseSeg = locale === "tr" ? "traverten" : "travertine";

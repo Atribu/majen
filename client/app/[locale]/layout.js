@@ -122,10 +122,8 @@ export default async function RootLayout({ children, params }) {
                 });
               `}
             </Script>
-
-        
     <Suspense fallback={null}>
-      <GaPageView />
+    <GaPageView />
     </Suspense>
           </>
         )}

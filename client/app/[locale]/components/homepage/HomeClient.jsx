@@ -33,8 +33,9 @@ const HomeClient = () => {
       <ServicesSection/>
       <HighlightSection/>
       <QuestionsSection color="#000000" span=" Wholesale Travertine From Turkey" items={items} linkMap={{
-    FOB: "/ihracat/fob",
-    CIF: "/ihracat/cif"
+    FOB: "/howweexport/fob",
+    CIF: "/howweexport/cif",
+    EXW: "/howweexport/exw",
   }}/>
       <BackgroundSection2/>
     </div>
