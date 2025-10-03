@@ -6,10 +6,11 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import {
   FaYoutube,
-  FaTwitter,
+  FaInstagram,
   FaFacebook,
   FaLinkedin,
   FaWhatsapp,
+  FaWikipediaW
 } from "react-icons/fa";
 
 import logoBlack from "@/public/images/majenlogo.webp";
@@ -26,7 +27,7 @@ export default function Footer() {
   const navPrimary = [
     { label: t("nav.primary.home"), href: `${prefix}` },
     { label: t("nav.primary.blog"), href: `${prefix}${L("/blog", "/blog")}` },
-    { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/about")}` },
+    { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/aboutus")}` },
     { label: t("nav.primary.contact"), href: `${prefix}${L("/iletisim", "/contactus")}` },
   ];
 
@@ -109,33 +110,50 @@ export default function Footer() {
 
               <div className="mt-5 flex items-center justify-center lg:justify-start gap-4">
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@MajenMadencilik"
+                   target="_blank"
+                              rel="noopener noreferrer"
                   aria-label={t("social.youtube")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaYoutube size={18} />
                 </a>
                 <a
-                  href="#"
-                  aria-label={t("social.twitter")}
+                  href="https://www.instagram.com/p/DOn657JjD08/"
+                   target="_blank"
+                              rel="noopener noreferrer"
+                  aria-label={t("social.instagram")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
-                  <FaTwitter size={18} />
+                  <FaInstagram size={18} />
                 </a>
                 <a
                   href="#"
+                   target="_blank"
+                              rel="noopener noreferrer"
                   aria-label={t("social.facebook")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaFacebook size={18} />
                 </a>
                 <a
+                  href="https://en.wikipedia.org/wiki/Travertine"
+                   target="_blank"
+                              rel="noopener noreferrer"
+                  aria-label={t("social.facebook")}
+                  className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
+                >
+                  <FaWikipediaW size={18} />
+                </a>
+                {/* <a
                   href="#"
+                   target="_blank"
+                              rel="noopener noreferrer"
                   aria-label={t("social.linkedin")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaLinkedin size={18} />
-                </a>
+                </a> */}
                 <a
                   href={whatsappHref}
                   target="_blank"

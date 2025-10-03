@@ -27,7 +27,7 @@ const SocialMediaSection = () => {
                               <FaWikipediaW size={35} className='hidden md:flex'/>
                             </a>
                             <a
-                              href="https://www.youtube.com/"
+                              href="https://www.youtube.com/@MajenMadencilik"
                               aria-label="twitter"
                                 target="_blank"
                               rel="noopener noreferrer"

@@ -43,49 +43,64 @@ export default function LocaleSwitcherSelect({
   }
 
   // --- Path'i hedef dile göre yeniden kur
-  function buildLocalizedPath(path, targetLocale) {
-    const seg = path.split("/");           // ["", "en", "travertine", "slabs", ...]
-    if (seg.length < 2) return `/${targetLocale}`;
+  // app/components/LocaleSwitcherSelect.jsx
+// ...
+function buildLocalizedPath(path, targetLocale) {
+  const seg = (path || "/").split("/"); // ["", "tr", "travertenler", "plakalar", ...]
+  if (seg.length < 2) return `/${targetLocale}`;
 
-    const currentLocale = seg[1] || "en";
-    const currentBase   = seg[2];          // "travertine" | "traverten" | başka
-    const productSlug   = seg[3];          // olabilir de olmayabilir
-    const rest          = seg.slice(4);    // [variant, cut, process, ...]
+  const currentLocale = seg[1] || "en";
+  const currentBase   = seg[2];          // "travertines" | "travertenler" | "travertine" | "traverten"
+  const productSlug   = seg[3];
+  const rest          = seg.slice(4);
 
-    // Katalog sayfaları için basit tespit
-    const knownBases = new Set(["travertine", "traverten"]);
-    const isCatalog  = knownBases.has(currentBase);
+  // 1) Katalog base’lerini çoğul+tekil olarak tanı
+  const CATALOG_BASES = new Set([
+    "travertine", "travertines",
+    "traverten",  "travertenler",
+  ]);
+  const isCatalog = CATALOG_BASES.has(currentBase);
 
-    // Katalog değilse sadece locale segmentini değiştir
-    if (!isCatalog) {
-      seg[1] = targetLocale;
-      return seg.join("/");
-    }
-
-    const newBase = baseFor(targetLocale); // hedef dilin base'i
-
-    // Katalog kökünde isek (/tr/traverten) → sadece base'i çevir
-    if (!productSlug) {
-      return `/${targetLocale}/${newBase}`;
-    }
-
-    // Ürün slug -> productKey (çok dilli sağlam çözüm)
-    const productKey =
-      productKeyFromSlug(currentLocale, productSlug) ||
-      productKeyFromSlug(targetLocale, productSlug) ||
-      resolveProductKeyFromAnyLocale(productSlug);
-
-    // Bulunamazsa güvenli fallback: sadece base'e dön
-    if (!productKey) {
-      return `/${targetLocale}/${newBase}`;
-    }
-
-    // Hedef dilin ürün slug'ını al, geri kalanı olduğu gibi bırak
-    const newProduct = productSlugFor(targetLocale, productKey);
-    const tail = rest.length ? `/${rest.join("/")}` : "";
-
-    return `/${targetLocale}/${newBase}/${newProduct}${tail}`;
+  // 2) Katalog değilse: sadece locale’i değiştir
+  if (!isCatalog) {
+    seg[1] = targetLocale;
+    return seg.join("/");
   }
+
+  // 3) Hedef dil için doğru base’i (çoğul form) seç
+  // baseFor() varsa onu kullan, yoksa locale’e göre varsayılan ver
+  const rawBase = (typeof baseFor === "function" && baseFor(targetLocale)) 
+    || (targetLocale.startsWith("tr") ? "travertenler" : "travertines");
+
+  // rawBase tekil dönerse çoğula çevir
+  const toPluralBase = (base, loc) => {
+    if (loc.startsWith("tr")) return base === "traverten" ? "travertenler" : "travertenler";
+    return base === "travertine" ? "travertines" : "travertines";
+  };
+  const newBase = toPluralBase(rawBase, targetLocale);
+
+  // 4) Katalog kökü ise: sadece base’i çevir
+  if (!productSlug) {
+    return `/${targetLocale}/${newBase}`;
+  }
+
+  // 5) Ürün slugu → productKey (çok dilli sağlam çözüm)
+  const productKey =
+    productKeyFromSlug(currentLocale, productSlug) ||
+    productKeyFromSlug(targetLocale, productSlug) ||
+    resolveProductKeyFromAnyLocale(productSlug); // sizin yardımcı fonksiyon
+
+  // Bulunamazsa güvenli fallback
+  if (!productKey) {
+    return `/${targetLocale}/${newBase}`;
+  }
+
+  // 6) Hedef dilde ilgili slugu yaz ve kuyruğu koru
+  const newProduct = productSlugFor(targetLocale, productKey);
+  const tail = rest.length ? `/${rest.join("/")}` : "";
+  return `/${targetLocale}/${newBase}/${newProduct}${tail}`;
+}
+
 
   function handleLangChange(lang) {
     sessionStorage.setItem("scrollPosition", window.scrollY);

@@ -41,9 +41,9 @@ export default function OtherOptions2({
     // Ürün adını düzenle
     const getProductTitle = (key) => {
       const titles = {
-        block: locale === 'tr' ? 'Blok' : 'Block',
-        slabs: locale === 'tr' ? 'Levha' : 'Slabs', 
-        tiles: locale === 'tr' ? 'Karo' : 'Tiles',
+        block: locale === 'tr' ? 'Bloklar' : 'Blocks',
+        slabs: locale === 'tr' ? 'Plakalar' : 'Slabs', 
+        tiles: locale === 'tr' ? 'Karolar' : 'Tiles',
         special: locale === 'tr' ? 'Özel' : 'Special'
       };
       return titles[key] || key;

@@ -121,7 +121,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function ProductLayout({ children, params }) {
-  const { locale, product } = params;
+  const { locale, product } = await params;
 
   // URL ve i18n temel değişkenler
   const productKey =

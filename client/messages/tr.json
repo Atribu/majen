@@ -12,7 +12,8 @@
     "blog": "Blog",
     "contactUs": "İletişim",
     "callUs": "Bizi ara: +90 533 556 10 92",
-    "gallery":"Galeri"
+    "gallery":"Galeri",
+    "aboutus":"Hakkımızda"
   },
 
   "Footer": {
@@ -47,7 +48,8 @@
       "twitter": "Twitter",
       "facebook": "Facebook",
       "linkedin": "LinkedIn",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+       "instagram": "Instagram"
     },
     "whatsappText": "Merhaba Majen ekibi!",
     "poweredBy": "Altyapı:",
@@ -1656,7 +1658,13 @@
 
   "ContactForm": {
     "title": "Bize Ulaşın",
+      "getintouch": "Bizimle iletişime geçin",
+    "text": "Hizmetlerimize ilgi gösterdiğiniz için teşekkür ederiz! Sorularınız varsa veya bir hizmet talep etmek istiyorsanız, lütfen bizimle iletişime geçmekten çekinmeyin. Ekibimiz en üst düzeyde hizmet ve destek sunmaya adanmıştır ve işinizi başarıya ulaştırmak için sizinle birlikte çalışmaya kararlıyız.",
+    "emailaddress": "E-posta Adresi",
+    "phonenumber": "Telefon Numarası",
+    "ouraddress": "Adresimiz",
     "subtitle": "Projeniz için en kısa sürede dönüş yapalım.",
+     "labelText":"Daha iyi bir deneyim için e-posta takibini kabul ediyorum.",
     "fields": {
       "name": "Ad Soyad",
       "email": "E-posta",
@@ -4923,6 +4931,50 @@
           }
         }
       }
+    }
+  },
+
+  "AboutPage": {
+    "seo": {
+      "title": "Majen Hakkında | Türkiye’den Ocak Çıkışlı Traverten Tedarikçisi",
+      "description": "Majen; Uşak–Ulubey’den traverten blok, plaka ve karo tedarik eder. Sıkı kalite kontrol, güçlendirilmiş paketleme ve FOB/CIF ihracat."
+    },
+    "breadcrumbs": { "home": "Ana Sayfa", "about": "Hakkımızda" },
+    "hero": {
+      "alt": "Majen ocağı ve ihracat operasyonları",
+      "title": "Hakkımızda",
+      "subtitle": "Uşak–Ulubey’den ocak çıkışlı traverten; ihracat kalitesi ve güvenilir lojistik."
+    },
+    "blocks": {
+      "mission": { "title": "Misyonumuz", "text": "Şeffaf lojistik ve uzun dönemli iş ortaklıklarıyla tutarlı A-sınıfı traverten sunmak." },
+      "quality": { "title": "Kalite", "text": "Sıkı derecelendirme, kalibrasyon ve yükleme öncesi fotoğraflı kalite kontrol." },
+      "logistics": { "title": "Lojistik", "text": "FOB İzmir ve tüm dünyaya CIF; fatura, çeki listesi ve menşe şahadetnamesi ile." }
+    },
+    "explore": {
+      "title": "Ürünler & İhracat",
+      "blocks": "Traverten Blok",
+      "slabs": "Traverten Plaka",
+      "tiles": "Traverten Karo",
+      "export": "Nasıl İhraç Ediyoruz"
+    },
+    "trust": {
+      "title": "Dokümantasyon & Şeffaflık",
+      "text": "Mimar, ithalatçı ve yüklenicileri tam dokümantasyon ve izlenebilirlikle destekleriz.",
+      "items": {
+        "qualityReports": "Kalite raporları ve ton kontrolü",
+        "packingPhotos": "Kasa/paketleme fotoğrafları",
+        "sealNumbers": "Konteyner mühür numaraları",
+        "docs": "Menşe/Fatura/Çeki listesi & GTİP"
+      }
+    },
+    "Questions": {
+      "title": "FAQ",
+      "q1": "Do you ship under FOB or CIF terms?",
+      "a1": "Yes. We ship under FOB İzmir and CIF worldwide with full documentation.",
+      "q2": "Can you share QC photos before loading?",
+      "a2": "Absolutely. We provide graded lot photos, bundle IDs and container seal numbers.",
+      "q3": "Do you offer cut-to-size production?",
+      "a3": "Yes, we supply slabs, tiles and custom cut-to-size elements upon request."
     }
   }
   

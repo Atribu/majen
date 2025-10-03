@@ -18,6 +18,11 @@ export const config = {
       en: '/contactus',
     },
 
+      '/aboutus': {
+      tr: '/hakkimizda',
+      en: '/aboout-us',
+    },
+
     // Base & product & variant
     '/travertine': {
       en: '/travertines',
