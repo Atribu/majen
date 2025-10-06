@@ -78,7 +78,6 @@ import lightepoxycrossunpolish from "@/public/images/cut/light/epoxy/Cross/Light
 import lightfillingcrosspolish from "@/public/images/cut/light/Filling/Crosscut/lightgcrosspolish.webp"
 import lightfillingcrossunpolish from "@/public/images/cut/light/Filling/Crosscut/lightguncrosspolish.webp"
 
-import lightfillingveinpolish from "@/public/images/cut/light/Filling/Veincut/lightpolishedvein.webp"
 import lightfillingveinunpolish from "@/public/images/cut/light/Filling/Veincut/lightunpolishedvein.webp"
 
 import lightslabcross from "@/public/images/cut/light/Slab/lightcrosscut.webp"
@@ -200,7 +199,7 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_PROCESS = {
     "blaundos-light": {
       "vein-cut":  {
         "natural":lightslabvein,
-        "filling":lightfillingveinpolish,
+        "filling":lightfillingveinunpolish,
         "epoxy":slabAntikVein,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
