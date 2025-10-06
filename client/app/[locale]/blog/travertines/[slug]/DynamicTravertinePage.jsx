@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { IMAGES_BLOG } from "@/app/[locale]/(catalog)/_images";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
+import IncotermLinkify from "@/app/[locale]/components/generalcomponent/IncotermLinkify";
 
 /**
  * Dynamic SEO Landing Template for Travertine pages (Tiles/Slabs/Blocks/Pavers/Mosaics)
@@ -327,7 +328,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
 
       {/* Hero + H1 + Lead + Intro */}
 {/* Hero + H1 + Lead + Intro */}
-<header className="relative ">
+<header className="relative mt-12 flex flex-col items-center justify-center">
  
   <Container>
     <div className="py-4 lg:py-8 flex flex-col items-center justify-center text-center">
@@ -338,26 +339,26 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {/* YENİ: Lead (yalnızca varsa) */}
       {safePage.lead && (
         <p className="mt-2 max-w-[1100px] text-[12px] md:text-[14px] lg:text-[16px] text-neutral-800">
-          <strong>{safePage.lead.strong}</strong>
-          {safePage.lead.rest}
+         <strong><IncotermLinkify text={safePage.lead.strong} /></strong>
+    <IncotermLinkify text={safePage.lead.rest} />
         </p>
       )}
 
       {/* Mevcut intro (varsa) */}
       {safePage.intro && (
         <p className="mt-3 max-w-[1300px] text-[12px] md:text-[14px] lg:text-[16px] text-neutral-700 leading-relaxed">
-          {safePage.intro}
+          <IncotermLinkify text={safePage.intro} />
         </p>
       )}
     </div>
   </Container>
-   <div className="relative h-60 md:h-80">
+   <div className="relative h-60 md:h-[56vh] w-[60vw] max-h-[460px]">
     {img?.hero?.src ? (
       <Image
         src={img.hero.src}
-        alt={img.hero.alt || safePage.h1}
+        alt={safePage.h1}
         fill
-        className="object-cover"
+        className="object-cover "
         priority
       />
     ) : (
@@ -424,9 +425,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {/* 1) COLORS (varsa) */}
       {s.colors && (
         <Section id="colors" title={s.colors.h2}>
-          {s.colors.intro && (
-            <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.colors.intro}</p>
-          )}
+         {s.colors.intro && <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={s.colors.intro} /></p>}
 
           {/* YENİ: ekstra H3 bloklar (varsa) */}
           {Array.isArray(s.colors.extras) && s.colors.extras.length > 0 && (
@@ -434,7 +433,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
               {s.colors.extras.map((x) => (
                 <div key={x.h3}>
                   <h3 className="text-lg font-semibold">{x.h3}</h3>
-                  <p className="text-[12px] md:text-[14px] lg:text-[16px]">{x.p}</p>
+                   <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={x.p} /></p>
                 </div>
               ))}
             </div>
@@ -445,7 +444,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             {(s.colors.items || []).map((it) => (
               <Card
                 key={it.slug}
-                href={`/${locale}/blog/travertines/${currentSlug}/${it.slug}`}
+                href={it.link}
                 imgSrc={img?.colors?.[it.slug]?.src || null}
                 alt={img?.colors?.[it.slug]?.alt || it.h3}
                 title={it.h3}
@@ -459,9 +458,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {/* 2) FINISHES (varsa) */}
       {s.finishes && (
         <Section id="finishes" title={s.finishes.h2}>
-          {s.finishes.intro && (
-            <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.finishes.intro}</p>
-          )}
+           {s.finishes.intro && <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={s.finishes.intro} /></p>}
 
           {/* YENİ: ekstra H3 bloklar (varsa) */}
           {Array.isArray(s.finishes.extras) && s.finishes.extras.length > 0 && (
@@ -469,7 +466,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
               {s.finishes.extras.map((x) => (
                 <div key={x.h3} className="rounded-2xl border p-5">
                   <h3 className="text-base font-semibold">{x.h3}</h3>
-                  <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px]">{x.p}</p>
+                  <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={x.p} /></p>
                 </div>
               ))}
             </div>
@@ -495,9 +492,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {s.applications && (
         <Section id="applications" title={s.applications.h2}>
           {s.applications.intro && (
-            <p className="text-[12px] md:text-[14px] lg:text-[16px]">
-              {s.applications.intro}
-            </p>
+            <div className="text-[12px] md:text-[14px] lg:text-[16px]">
+            {s.applications.intro && <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={s.applications.intro} /></p>}
+            </div>
           )}
 
           {/* YENİ: flooring/bathroom/kitchen detayları (varsa) */}
@@ -506,7 +503,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
               {s.applications.details.map((x) => (
                 <div key={x.slug}>
                   <h3 className="text-base md:text-lg font-semibold">{x.h3}</h3>
-                  <p className="text-[12px] md:text-[14px] lg:text-[16px]">{x.p}</p>
+                  <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={x.p} /></p>
                 </div>
               ))}
             </div>
@@ -517,7 +514,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             {(s.applications.cards || []).map((c) => (
               <div key={c.slug} className="rounded-2xl border p-5">
                 <h3 className="text-base font-semibold">{c.title}</h3>
-                <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px]">{c.desc}</p>
+               <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={c.desc} /></p>
                 <Link
                   href={`/${locale}/blog/travertines/${currentSlug}/${c.slug}`}
                   className="mt-3 inline-block underline"
@@ -533,13 +530,11 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {/* 4) SPECIFICATIONS (varsa) */}
       {s.specs && (
         <Section id="specs" title={s.specs.h2}>
-          {s.specs.intro && (
-            <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.specs.intro}</p>
-          )}
+          {s.specs.intro && <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={s.specs.intro} /></p>}
           <div className="overflow-auto mt-4 hidden md:flex">
             <table className="min-w-[640px] w-full text-sm border rounded-2xl overflow-hidden">
               <thead>
-                <tr className="bg-neutral-50 text-left">
+                <tr className="bg-neutral-50 text-center">
                   <th className="p-3">Property</th>
                   <th className="p-3">Typical Value</th>
                   <th className="p-3">Notes</th>
@@ -549,8 +544,8 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                 {[...(s.specs.table || []), ...(s.specs.extraRows || [])].map((row, i) => (
                   <tr key={i} className="border-t">
                     <td className="p-3">{row.prop}</td>
-                    <td className="p-3">{row.value}</td>
-                    <td className="p-3">{row.notes}</td>
+                    <td className="p-3"><IncotermLinkify text={row.value} /></td>
+                    <td className="p-3"><IncotermLinkify text={row.notes} /></td>
                   </tr>
                 ))}
               </tbody>
@@ -562,19 +557,13 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
       {/* 5) INSTALLATION & CARE (varsa) */}
       {s.install && (
         <Section id="install" title={s.install.h2}>
-          {s.install.intro && (
-            <p className="text-[12px] md:text-[14px] lg:text-[16px]">{s.install.intro}</p>
-          )}
+          {s.install.intro && <p className="text-[12px] md:text-[14px] lg:text-[16px]"><IncotermLinkify text={s.install.intro} /></p>}
 
           {/* YENİ: bakım notları (varsa) */}
           {Array.isArray(s.install.careNotes) && s.install.careNotes.length > 0 && (
             <div className="flex flex-col items-center justify-center text-center">
               <ul className="care-notes mt-4 list-disc pl-5 space-y-1 text-left">
-              {s.install.careNotes.map((x, i) => (
-                <li key={i} className="text-[12px] md:text-[14px] lg:text-[16px]">
-                  {x}
-                </li>
-              ))}
+              {s.install.careNotes.map((x, i) => (<li key={i}><IncotermLinkify text={x} /></li>))}
             </ul>
             </div>
           )}
@@ -588,17 +577,13 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             <div className="rounded-2xl border p-5">
               <h3 className="text-base font-semibold">Pros</h3>
               <ul className="mt-2 list-disc pl-5 space-y-1">
-                {(s.proscons.pros || []).map((p, i) => (
-                  <li key={i}>{p}</li>
-                ))}
+                {(s.proscons.pros || []).map((p, i) => <li key={i}><IncotermLinkify text={p} /></li>)}
               </ul>
             </div>
             <div className="rounded-2xl border p-5">
               <h3 className="text-base font-semibold">Cons</h3>
               <ul className="mt-2 list-disc pl-5 space-y-1">
-                {(s.proscons.cons || []).map((c, i) => (
-                  <li key={i}>{c}</li>
-                ))}
+                {(s.proscons.cons || []).map((c, i) => <li key={i}><IncotermLinkify text={c} /></li>)}
               </ul>
             </div>
           </div>

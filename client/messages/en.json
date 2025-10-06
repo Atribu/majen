@@ -1689,7 +1689,7 @@
     "placeholders": {
       "name": "Your full name",
       "email": "example@email.com",
-      "phone": "+1 555 000 0000",
+      "phone": "https://api.whatsapp.com/send?phone=905335561092&text=Merhaba%20Majen%20ekibi!",
       "subject": "A short headline",
       "message": "Tell us briefly about your project or request..."
     },
@@ -2288,7 +2288,7 @@
     "excerpt": "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
     "date": "2025-01-18",
     "category": "travertine",
-    "cover": "/images/homepage/antik/antik.webp"
+    "cover": "/images/homepage/Antik/antik.webp"
   },
 
 
@@ -3023,9 +3023,9 @@
 
 
       "extras": [
-        { "h3": "Ivory Travertine Blocks", "p": "Bright creamy background with subtle pores. Ideal for producing slabs and tiles aimed at modern interiors where consistent shade is important." },
-        { "h3": "Light Travertine Blocks", "p": "Warm beige tones with balanced veining. A versatile choice for high-volume tile and slab production due to stable color demand." },
-        { "h3": "Antico Travertine Blocks", "p": "Rustic, character-rich look with pronounced cavities. Great for tumbled/antiqued finishes and exterior design concepts." }
+        { "h3": "Ivory Travertine Blocks", "p": "Bright creamy background with subtle pores. Ideal for producing slabs and tiles aimed at modern interiors where consistent shade is important.", "link":"/blocks/blaundos-ivory" },
+        { "h3": "Light Travertine Blocks", "p": "Warm beige tones with balanced veining. A versatile choice for high-volume tile and slab production due to stable color demand.", "link":"/blocks/blaundos-light" },
+        { "h3": "Antico Travertine Blocks", "p": "Rustic, character-rich look with pronounced cavities. Great for tumbled/antiqued finishes and exterior design concepts.", "link":"/blocks/blaundos-antico" }
       ]
     },
 

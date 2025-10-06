@@ -86,7 +86,7 @@ export default function ProductIntroSection({
        <div className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px] relative overflow-hidden">
   <Image
     src="/images/homepage/antikarkaplan2.webp"
-    alt=""                       // dekoratif; erişilebilirlik için boş bırakın
+    alt={alt}                       // dekoratif; erişilebilirlik için boş bırakın
     fill
     sizes="(max-width: 1023px) 0px, 70vw"  // lg ve üstünde ~%70 genişlik
     quality={68}
@@ -104,7 +104,7 @@ export default function ProductIntroSection({
  <div className="absolute inset-0 shadow-2xl overflow-hidden">
   <Image
     src="/images/homepage/antikarkaplan4.webp"
-    alt=""                       // dekoratif arkaplan
+    alt={alt}                      // dekoratif arkaplan
     fill
     sizes="(max-width: 1023px) 0px, 50vw"  // bu kutu ~860–1000px; 50vw güvenli
     quality={68}

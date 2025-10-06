@@ -9,7 +9,7 @@ const VARIANT_SLUG_TO_KEY = {
 };
 
 export async function generateMetadata({ params }) {
-  const { locale, product, variant } = params;
+  const { locale, product, variant } = await params;
   const t = await getTranslations({ locale, namespace: "ProductPage" });
 
   // productKey: slabs/blocks/tiles/special

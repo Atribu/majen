@@ -34,6 +34,58 @@ import specialLight from "@/public/images/design/LightMasa.webp";
 import specialAntik from "@/public/images/design/AntikoMasa.webp";
 import travertineTurkey from "@/public/images/blogs/TravertineTurkey.webp"
 
+//-------------------Cut
+import anticoepoxycrosspolish from "@/public/images/cut/antico/epoxy/Cross/Antikcrossepoxypolished.webp"
+import anticoepoxycrossunpolish from "@/public/images/cut/antico/epoxy/Cross/Antikcrossepoxyunpolished.webp"
+
+import anticoepoxyveinpolish from "@/public/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp"
+import anticoepoxyveinunpolish from "@/public/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp"
+
+import anticofillingcrosspolish from "@/public/images/cut/antico/filling/Crosscut/Antikfillingpolishedcross.webp"
+import anticofillingcrossunpolish from "@/public/images/cut/antico/filling/Crosscut/Antikfillingunpolishedcross.webp"
+
+import anticofillingveinpolish from "@/public/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp"
+import anticofillingveinunpolish from "@/public/images/cut/antico/filling/Veincut/Antikveincutfillingunpolished.webp"
+
+import anticoslabcrosscut from "@/public/images/cut/antico/Slab/Antikcrosscut.webp"
+import anticoslabveincut from "@/public/images/cut/antico/Slab/Antikveincut.webp"
+
+import anticotransparentcrosspolish from "@/public/images/cut/antico/Transparent/cross/antikcrosstransparentpolished.webp"
+import anticotransparentcrossunpolish from "@/public/images/cut/antico/Transparent/cross/Antikcrosstransparentunpolished.webp"
+
+import ivoryAntiquecrosspolish from "@/public/images/cut/ivory/Antique/cross/Iverycrossantiquepolished.webp"
+import ivoryAntiquecrossunpolish from "@/public/images/cut/ivory/Antique/cross/Iverycrossantiqueunpolished.webp"
+
+import ivoryepoxycrosspolish from "@/public/images/cut/ivory/epoxy/Cross/Iverycrossepoxypolished.webp"
+import ivoryepoxycrossunpolish from "@/public/images/cut/ivory/epoxy/Cross/Iverycrossepoxyunpolished.webp"
+
+import ivoryepoxyveinpolish from "@/public/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp"
+import ivoryepoxyveinunpolish from "@/public/images/cut/ivory/epoxy/vein/Iveryveinepoxyunpolished.webp"
+
+import ivoryfillingcrosspolish from "@/public/images/cut/ivory/Filling/Crosscut/crosscutfillingpolished.webp"
+import ivoryfillingcrossunpolish from "@/public/images/cut/ivory/Filling/Crosscut/crosscutfillingunpolished.webp"
+
+import ivoryfillingveinunpolish from "@/public/images/cut/ivory/Filling/Veincut/Ivoryveinfilling.png"
+
+import ivoryslabcross from "@/public/images/cut/ivory/Slab/Iverycrosscut.webp"
+import ivoryslabvein from "@/public/images/cut/ivory/Slab/Iveryveincut.webp"
+
+import ivorytransparentcross from "@/public/images/cut/ivory/Transparent/Iverycrosstransparent.webp"
+
+import lightepoxycrosspolish from "@/public/images/cut/light/epoxy/Cross/Lightcrossepoxypolished.webp"
+import lightepoxycrossunpolish from "@/public/images/cut/light/epoxy/Cross/Lightcrossepoxyunpolished.webp"
+
+import lightfillingcrosspolish from "@/public/images/cut/light/Filling/Crosscut/lightgcrosspolish.webp"
+import lightfillingcrossunpolish from "@/public/images/cut/light/Filling/Crosscut/lightguncrosspolish.webp"
+
+import lightfillingveinpolish from "@/public/images/cut/light/Filling/Veincut/lightpolishedvein.webp"
+import lightfillingveinunpolish from "@/public/images/cut/light/Filling/Veincut/lightunpolishedvein.webp"
+
+import lightslabcross from "@/public/images/cut/light/Slab/lightcrosscut.webp"
+import lightslabvein from "@/public/images/cut/light/Slab/lightveincut.webp"
+
+import lightslabveinpolish from "@/public/images/cut/light/Transparent/Lightcrosstransparent.webp"
+
 /**
  * Ürün başına görsel haritası:
  * - Tek görsel istersen "cover" yeter.
@@ -97,16 +149,16 @@ export const IMAGE_BY_PRODUCT_AND_VARIANT = {
 export const IMAGE_BY_PRODUCT_VARIANT_AND_CUT = {
   slabs: {
     "blaundos-antiko": {
-      "vein-cut":  slabAntikVein,
-      "cross-cut": slabAntikCross,
+      "vein-cut":  anticoepoxyveinpolish,
+      "cross-cut": anticoepoxycrosspolish,
     },
     "blaundos-light": {
-      "vein-cut":  slabLightVein,
-      "cross-cut": slabLightCross,
+      "vein-cut":  lightslabvein,
+      "cross-cut": lightslabcross,
     },
     "blaundos-ivory": {
-      "vein-cut":  slabIvoryVein,
-      "cross-cut": slabIvoryCross,
+      "vein-cut":  ivoryslabvein,
+      "cross-cut": ivoryslabcross,
     },
   },
   
@@ -130,16 +182,16 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_PROCESS = {
   slabs: {
     "blaundos-antiko": {
       "vein-cut":  {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
-        "epoxy":slabAntikVein,
+        "natural":anticoslabveincut,
+        "filling":anticofillingveinpolish,
+        "epoxy":anticoepoxyveinpolish,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
       },
       "cross-cut": {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
-        "epoxy":slabAntikVein,
+        "natural":anticoslabcrosscut,
+        "filling":anticofillingcrosspolish,
+        "epoxy":anticoepoxycrosspolish,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
       },
@@ -147,16 +199,16 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_PROCESS = {
 
     "blaundos-light": {
       "vein-cut":  {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
+        "natural":lightslabvein,
+        "filling":lightfillingveinpolish,
         "epoxy":slabAntikVein,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
       },
       "cross-cut": {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
-        "epoxy":slabAntikVein,
+        "natural":lightslabcross,
+        "filling":lightfillingcrosspolish,
+        "epoxy":lightepoxycrosspolish,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
       },
@@ -164,17 +216,17 @@ export const IMAGE_BY_PRODUCT_VARIANT_AND_PROCESS = {
 
     "blaundos-ivory": {
       "vein-cut":  {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
-        "epoxy":slabAntikVein,
+        "natural":ivoryslabvein,
+        "filling":ivoryfillingveinunpolish,
+        "epoxy":ivoryepoxyveinpolish,
         "transparent":slabAntikVein,
         "antique":slabAntikVein,
       },
       "cross-cut": {
-        "natural":slabAntikVein,
-        "filling":slabAntikVein,
-        "epoxy":slabAntikVein,
-        "transparent":slabAntikVein,
+        "natural":ivoryslabcross,
+        "filling":ivoryfillingcrosspolish,
+        "epoxy":ivoryepoxycrosspolish,
+        "transparent":ivorytransparentcross,
         "antique":slabAntikVein,
       },
     },

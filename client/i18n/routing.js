@@ -22,6 +22,7 @@ export const config = {
       tr: '/hakkimizda',
       en: '/aboout-us',
     },
+    
 
     // Base & product & variant
     '/travertine': {

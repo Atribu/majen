@@ -1675,7 +1675,7 @@
     "placeholders": {
       "name": "Adınız Soyadınız",
       "email": "ornek@eposta.com",
-      "phone": "+90 5xx xxx xx xx",
+      "phone": "https://api.whatsapp.com/send?phone=905335561092&text=Merhaba%20Majen%20ekibi!",
       "subject": "Kısa bir başlık",
       "message": "Projeniz veya talebinizi kısaca anlatın..."
     },
@@ -2358,7 +2358,7 @@
     "excerpt": "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
     "date": "2025-01-18",
     "category": "travertine",
-    "cover": "/images/homepage/antik/antik.webp"
+    "cover": "/images/homepage/Antik/antik.webp"
   },
 
 

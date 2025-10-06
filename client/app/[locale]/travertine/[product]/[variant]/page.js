@@ -549,6 +549,10 @@ const accordionItems = [
         </section>
       )}
 
+        <SocialMediaSection/>
+
+        <ContactFrom />
+
       {/* FAQ (varyant özel -> ürün genel fallback) */}
       {faqItems.length > 0 && (
         <div id="faq" className="max-w-5xl mx-auto mt-12">
@@ -559,7 +563,7 @@ const accordionItems = [
           />
         </div>
       )}
-      <SocialMediaSection/>
+    
 
       <OtherOptions2
         heading={locale === 'tr' ? "Diğer Seçenekler" : "Other Options"}
@@ -572,7 +576,6 @@ const accordionItems = [
         currentVariantSlug={vSlug}
       />
 
-      <ContactFrom />
     </main>
   );
 }
