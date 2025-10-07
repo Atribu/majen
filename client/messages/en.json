@@ -250,6 +250,11 @@
       "heading": "Product Description"
     },
 
+       "cuts": {
+        "heading":"Travertine Slabs Cut Options",
+        "text":"gdfbhjen gher"
+      },
+
     "block": {
       "title": "Wholesale Travertine Blocks from Turkey",
       "span":"Direct Quarry Supplier",
@@ -317,6 +322,67 @@
     "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
   },
+
+   "cuts": {
+        "heading":"Travertine Slabs Cut Options",
+        "text":" Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high‑end interiors. Finishes are applied with calibrated machinery for consistent tone and sheen. For export, tiles are packed in reinforced wooden crates with dividers and moisture‑resistant wraps, optimized for sea freight.",
+        "vein-cut": {
+          "title": "Vein Cut Travertine Slabs",
+          "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Vein cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+            }
+          }
+        },
+        "cross-cut": {
+          "title": "Cross Cut Travertine Slabs",
+           "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Cross cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural cross-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed cross-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished cross-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed cross-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled cross-cut travertine slab" }
+            }
+          }
+        }
+      },
 
   "antiko": {
         "title": "Wholesale Travertine Blocks Blaundos Antico",
@@ -592,6 +658,68 @@
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
     },
+
+      "cuts": {
+        "heading":"Travertine Slabs Cut Options",
+        "text":" Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high‑end interiors. Finishes are applied with calibrated machinery for consistent tone and sheen. For export, tiles are packed in reinforced wooden crates with dividers and moisture‑resistant wraps, optimized for sea freight.",
+        "vein-cut": {
+          "title": "Vein Cut Travertine Slabs",
+          "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Vein cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+            }
+          }
+        },
+        "cross-cut": {
+          "title": "Cross Cut Travertine Slabs",
+           "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Cross cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural cross-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed cross-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished cross-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed cross-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled cross-cut travertine slab" }
+            }
+          }
+        }
+      },
+
       "description": [
         "High durability, quarry-direct sourcing from Uşak–Ulubey, and precise cutting deliver consistent A-grade travertine slabs. Reliable lead times and reinforced packing make Majen a trusted partner for global projects.",
         "Travertine slabs are used for countertops, wall cladding, interior floors and exterior façades in residential, hospitality and commercial developments. Blaundos Antiko, Light and Ivory offer distinct tones for different design intents.",
@@ -1044,6 +1172,68 @@
     "aboutpage_s4_faq4_text": "Tiles are packed in reinforced wooden crates, strapped and wrapped to ensure safe container loading for sea freight."
     
   },
+ "cuts": {
+        "heading":"Travertine Slabs Cut Options",
+        "text":" Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high‑end interiors. Finishes are applied with calibrated machinery for consistent tone and sheen. For export, tiles are packed in reinforced wooden crates with dividers and moisture‑resistant wraps, optimized for sea freight.",
+        "vein-cut": {
+          "title": "Vein Cut Travertine Slabs",
+          "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Vein cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+            }
+          }
+        },
+        "cross-cut": {
+          "title": "Cross Cut Travertine Slabs",
+           "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Cross cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural cross-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed cross-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished cross-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed cross-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled cross-cut travertine slab" }
+            }
+          }
+        }
+      },
+
+
   "antiko": {
     "seo": {
           "title": "Wholesale Travertine Tiles Blaundos Antico | Majen",
@@ -1409,6 +1599,67 @@
     "aboutpage_s4_faq3_text": "All designs are packed in reinforced wooden crates, strapped and wrapped to ensure safe transport."
   },
 
+   "cuts": {
+        "heading":"Travertine Slabs Cut Options",
+        "text":" Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high‑end interiors. Finishes are applied with calibrated machinery for consistent tone and sheen. For export, tiles are packed in reinforced wooden crates with dividers and moisture‑resistant wraps, optimized for sea freight.",
+        "vein-cut": {
+          "title": "Vein Cut Travertine Slabs",
+          "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Vein cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+            }
+          }
+        },
+        "cross-cut": {
+          "title": "Cross Cut Travertine Slabs",
+           "description":"Large-size blocks selected at the quarry with consistent ",
+          "alt": "Cross cut travertine slabs wholesale from Turkey",
+          "processes": {
+            "heading": "Choose Your Process",
+            "subtext": "Select the surface treatment.",
+            "groups": {
+              "filled": {
+                "heading": "Filled Processes",
+                "text": "Filled options suitable for polished looks and dense surfaces.",
+                "items": ["honed", "polished", "brushed", "tumbled"]
+              },
+              "unfilled": {
+                "heading": "Unfilled Processes",
+                "text": "Natural look & texture. Note: “Natural” has no filling.",
+                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+              }
+            },
+            "meta": {
+              "natural":  { "title": "Natural",  "alt": "Natural cross-cut travertine slab" },
+              "honed":    { "title": "Honed",    "alt": "Honed cross-cut travertine slab" },
+              "polished": { "title": "Polished", "alt": "Polished cross-cut travertine slab" },
+              "brushed":  { "title": "Brushed",  "alt": "Brushed cross-cut travertine slab" },
+              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled cross-cut travertine slab" }
+            }
+          }
+        }
+      },
+
   "antiko": {
         "title": "Wholesale Travertine Special Design Blaundos Antico",
         "intro": "Blaundos Antico travertine is a warm, beige-toned stone with antique character and subtle movement that suits both classic and contemporary designs. Sourced directly from our Uşak–Ulubey region, Majen supplies wholesale slabs with consistent grading, reliable lead times, and reinforced packaging for export. Architects, importers, and contractors choose this variety for durable floors, façades, countertops, and bespoke interior features, achieving timeless elegance with dependable performance across residential and commercial projects.",
@@ -1760,7 +2011,9 @@
       "block": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
       "slabs": "Travertine slabs Turkey – 2cm polished Blaundos Light for interiors",
       "tiles": "Travertine tiles – 30×60 honed Blaundos Ivory for bathrooms and pools",
-      "special": "Custom travertine designs – steps, mosaics, borders packed for sea freight"
+      "special": "Custom travertine designs – steps, mosaics, borders packed for sea freight",
+       "blocks": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
+       "special-designs": "Custom travertine designs – steps, mosaics, borders packed for sea freight"
     },
 
      "TextSection":{
@@ -2167,15 +2420,15 @@
     },
     "posts": [
       {
-        "slug": "travertines",
-        "title": "Travertines",
+        "slug": "travertine-guide",
+        "title": "Travertine Guide",
         "excerpt": "How to create clean, contemporary spaces using light travertine surfaces.",
         "date": "2025-01-18",
         "category": "travertine",
         "cover": "/images/homepage/antikoarkplan.webp"
       },
      {
-    "slug": "travertines/travertine-tiles",
+    "slug": "/travertine-tiles-guide",
     "title": "Travertine Tiles",
     "excerpt": "Travertine tiles are widely used in flooring and wall coverings, combining natural aesthetics with durability. Available in multiple finishes, they suit modern and traditional designs in residential and commercial spaces.",
     "date": "2025-01-20",
@@ -2183,7 +2436,7 @@
     "cover": "/images/homepage/kesim.webp"
   },
   {
-    "slug": "travertines/travertine-slabs",
+    "slug": "/travertine-slabs-guide",
     "title": "Travertine Slabs",
     "excerpt": "Travertine slabs are ideal for large-scale projects requiring seamless surfaces like countertops and facades. Their wide dimensions highlight natural patterns, delivering a luxurious look for interiors and architecture.",
     "date": "2025-01-20",
@@ -2191,7 +2444,7 @@
     "cover": "/images/homepage/slabler2.webp"
   },
   {
-    "slug": "travertines/travertine-blocks",
+    "slug": "/travertine-blocks-guide",
     "title": "Travertine Blocks",
     "excerpt": "Travertine blocks are the raw form extracted from quarries, then cut and processed into tiles or slabs. Valued by manufacturers and exporters, they are the base material for large projects and custom stonework.",
     "date": "2025-01-20",
@@ -2199,7 +2452,7 @@
     "cover": "/images/homepage/Ivoryblok.webp"
   },
   {
-    "slug": "travertines/travertine-pavers",
+    "slug": "travertines/travertine-pavers-guide",
     "title": "Travertine Pavers",
     "excerpt": "Travertine pavers are durable outdoor solutions for paths, driveways, patios, and pool decks. Their slip-resistant surface and weather endurance make them a preferred choice for landscaping and exterior projects.",
     "date": "2025-01-20",
@@ -2207,7 +2460,7 @@
     "cover": "/images/newblog/travertinepavers.webp"
   },
   {
-    "slug": "travertines/travertine-mosaics",
+    "slug": "travertines/travertine-mosaics-guide",
     "title": "Travertine Mosaics",
     "excerpt": "Travertine mosaics combine small stone pieces into decorative patterns. Popular in bathrooms, kitchens, and feature walls, they add texture and style while maintaining the durability of natural stone.",
     "date": "2025-01-20",
@@ -2217,7 +2470,7 @@
 
 
   {
-    "slug": "travertines/polished-travertine",
+    "slug": "travertines/polished-travertine-guide",
     "title": "Polished Travertine",
     "excerpt": "Polished travertine offers a glossy, reflective surface ideal for luxury interiors. It enhances the stone’s natural patterns while creating a modern, elegant atmosphere in residential and commercial spaces.",
     "date": "2025-01-19",

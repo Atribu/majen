@@ -55,10 +55,10 @@ export default function InfoSection() {
   const contactPath = `${prefix}/${lang === "tr" ? "iletisim" : "contact"}`;
 
   const items = [
-    { key: "product1", img: block,   href: `${prefix}/${base}/${productSlugFor(locale, "block")}`},
-    { key: "product2", img: slabs,   href: `${prefix}/${base}/${productSlugFor(locale, "slabs")}` },
-    { key: "product3", img: tiles,   href: `${prefix}/${base}/${productSlugFor(locale, "tiles")}`  },
-    { key: "product4", img: special, href: `${prefix}/${base}/${productSlugFor(locale, "special")}` },
+    { key: "product1", img: block,   href: `${prefix}/travertine-${productSlugFor(locale, "block")}`},
+    { key: "product2", img: slabs,   href: `${prefix}/travertine-${productSlugFor(locale, "slabs")}` },
+    { key: "product3", img: tiles,   href: `${prefix}/travertine-${productSlugFor(locale, "tiles")}`  },
+    { key: "product4", img: special, href: `${prefix}/travertine-${productSlugFor(locale, "special")}` },
   ];
 
   // t("__contactPath") hilesi: Card içinde contactPath'e erişmek için geçici key

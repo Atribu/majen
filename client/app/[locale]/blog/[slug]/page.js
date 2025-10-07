@@ -1,111 +1,61 @@
-// import { getTranslations } from "next-intl/server";
+// app/[locale]/[slug]/page.js
+import DynamicTravertinePage from "./DynamicTravertinePage";
+import { getTranslations } from "next-intl/server";
 
-// const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+export async function generateMetadata({ params }) {
+  const { slug, locale } = await params;
+  const loc = locale || "en";
+  // JSON’daki başlık/açıklamayı okumaya çalış (başarısızsa fallback)
+  let metaTitle = "Travertine Guide";
+  let metaDesc =
+    "Explore travertine products: tiles, slabs, finishes, specs and care. Quarry-backed supplier.";
+  let ogImage = "https://www.majen.com.tr/media/travertine-tiles-hero.webp";
+  const canonical = `https://www.majen.com.tr/${loc}/blog/travertines/${slug}`;
 
-// export async function generateMetadata({ params }) {
-//   const { locale, slug } = await params;
-//   const t = await getTranslations({ locale, namespace: "BlogPost" });
+  try {
+    const t = await getTranslations({ locale: loc, namespace: "blog" });
+    const pages = t.raw("pages");
+    const page = pages?.[slug];
+    if (page?.metaTitle) metaTitle = page.metaTitle;
+    if (page?.metaDesc) metaDesc = page.metaDesc;
+    if (page?.socialImage) ogImage = page.socialImage;
+  } catch {}
 
-//   const post = t.raw(slug) || null;
-//   const fallbackTitle = t("back", { default: "Blog" });
-//   const title = post?.title || fallbackTitle;
-//   const description = (post?.sections?.[0]?.p || "").slice(0, 160);
-//   const canonical = `${SITE_URL}/${locale}/blog/${slug}`;
+  // TR muadili yoksa sadece en + x-default
+  const alternates =
+    loc === "en"
+      ? {
+          canonical,
+          languages: {
+            en: canonical,
+            "x-default": canonical,
+          },
+        }
+      : {
+          canonical,
+        };
 
-//   return {
-//     title,
-//     description,
-//     alternates: {
-//       canonical,
-//       languages: {
-//         en: canonical.replace(`/${locale}/`, `/en/`),
-//         tr: canonical.replace(`/${locale}/`, `/tr/`),
-//       },
-//     },
-//     openGraph: {
-//       title,
-//       description,
-//       url: canonical,
-//       type: "article",
-//       locale,
-//       images: post?.cover ? [{ url: `${SITE_URL}${post.cover}` }] : undefined
-//     },
-//     twitter: { card: "summary_large_image", title, description },
-//     robots: { index: true, follow: true },
-//   };
-// }
-
-// export default async function BlogPostPage({ params }) {
-//   const { locale, slug } = await params;
-//   const t = await getTranslations({ locale, namespace: "BlogPost" });
-//   const post = t.raw(slug);
-
-//   if (!post) {
-//     return (
-//       <main className="max-w-3xl mx-auto px-5 py-16">
-//         <h1 className="text-2xl font-semibold">Not found</h1>
-//       </main>
-//     );
-//   }
-
-//   // FAQ schema (varsa)
-//   const faq = Array.isArray(post.faq) ? post.faq : [];
-//   const faqLd = faq.length
-//     ? {
-//         "@context": "https://schema.org",
-//         "@type": "FAQPage",
-//         "mainEntity": faq.map((f) => ({
-//           "@type": "Question",
-//           "name": f.q,
-//           "acceptedAnswer": { "@type": "Answer", "text": f.a }
-//         }))
-//       }
-//     : null;
-
-//   return (
-//     <main className="max-w-3xl mx-auto px-5 py-10 lg:py-20">
-//       <article>
-//         {post.cover ? (
-//           // eslint-disable-next-line @next/next/no-img-element
-//           <img src={post.cover} alt={post.title} className="w-full h-64 object-cover rounded-xl mb-6" />
-//         ) : null}
-//         <h1 className="text-3xl font-semibold">{post.title}</h1>
-//         {post.date ? <p className="text-sm text-neutral-500 mt-1">{post.date}</p> : null}
-
-//         <div className="prose max-w-none mt-6">
-//           {(post.sections || []).map((sec, i) => (
-//             <section key={i} className="mb-6">
-//               {sec.h2 ? <h2>{sec.h2}</h2> : null}
-//               {sec.p ? <p>{sec.p}</p> : null}
-//             </section>
-//           ))}
-//         </div>
-
-//         {faqLd ? (
-//           <script
-//             type="application/ld+json"
-//             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-//           />
-//         ) : null}
-
-//         <div className="mt-10">
-//           <a href={`/${locale}/blog`} className="text-blue-600 hover:underline">
-//             ← {t("back")}
-//           </a>
-//         </div>
-//       </article>
-//     </main>
-//   );
-// }
-
-import React from 'react'
-
-const page = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  return {
+    title: metaTitle,
+    description: metaDesc,
+    alternates,
+    openGraph: {
+      type: "article",
+      title: metaTitle,
+      description: metaDesc,
+      url: canonical,
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDesc,
+      images: [ogImage],
+    },
+  };
 }
 
-export default page
+export default async function Page({ params }) {
+  const { slug, locale } = await params;
+  return <DynamicTravertinePage slug={slug} localeFromServer={locale} />;
+}

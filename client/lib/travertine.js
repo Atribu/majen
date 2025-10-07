@@ -1,82 +1,149 @@
-export const BASE_BY_LOCALE = { en: "travertine", tr: "traverten" };
+// lib/travertine.js
 
-export const PRODUCT_KEYS = ["block", "slabs", "tiles", "special"];
+// Base sadece breadcrumb vs. için lazım olabilir.
+export const BASE_BY_LOCALE = {
+  en: "travertine",
+  tr: "traverten"
+};
 
+export const PRODUCT_KEYS = ["blocks", "slabs", "tiles", "special"];
+
+// İçte [product] paramını “slabs|tiles|blocks|special” yapıyoruz.
+// routing.js path template "travertine-[product]" ile birleşince SEO URL çıkacak.
 export const PRODUCT_SLUGS = {
-  en: { block: "blocks", slabs: "slabs", tiles: "tiles", special: "special-designs" },
-  tr: { block: "bloklar",  slabs: "plakalar", tiles: "karolar", special: "ozel-tasarimlar" },
+  en: { blocks: "blocks", slabs: "slabs", tiles: "tiles", "special": "special" },
+  tr: { blocks: "bloklar", slabs: "plakalar", tiles: "karolar", "special": "ozel-tasarim" },
 };
 
-export const VARIANT_KEY_BY_SLUG = {
-  "blaundos-antiko": "variant1",
-  "blaundos-light":  "variant2",
-  "blaundos-ivory":  "variant3",
+// Sayfa içi gösterebilirsin
+export const COLOR_VARIANTS = {
+  en: { ivory: "ivory", light: "light", antico: "antico" },
+  tr:  { ivory: "ivory", light: "light", antico: "antico" },
 };
 
-// --- NEW: locale normalize + helper'lar ---
+// CUT’lar dış slug’ları: ürün tipi gömülü.
+export const CUTS = {
+  en: {
+    "vein-cut": "vein-cut-travertine-slabs",
+    "cross-cut": "cross-cut-travertine-slabs"
+  },
+  tr: {
+    "vein-cut": "damar-kesim-traverten-plakalar",
+    "cross-cut": "enine-kesim-traverten-plakalar"
+  }
+};
+
+// Process iç anahtarları
+export const PROCESSES = {
+  en: ["natural", "honed", "polished", "brushed", "tumbled"],
+  tr: ["dogal", "honlanmis", "cilali", "fircalanmis", "eskitilmis"]
+};
+
+export const FILLING = {
+  en: { filled: "filled", unfilled: "unfilled" },
+  tr: { filled: "dolgulu", unfilled: "dolgusuz" }
+};
+
+export const THICKNESS = ["2cm", "3cm", "5cm"];
+
+// --- Helpers ---
+
 export function getLang(locale) {
-  return String(locale || "en").toLowerCase().split("-")[0]; // "tr-TR" -> "tr"
+  return String(locale || "en").toLowerCase().split("-")[0];
 }
+
 export function baseFor(locale) {
   const lang = getLang(locale);
   return BASE_BY_LOCALE[lang] || BASE_BY_LOCALE.en;
 }
+
 export function productSlugFor(locale, key) {
   const lang = getLang(locale);
   return PRODUCT_SLUGS[lang]?.[key] ?? key;
 }
+
 export function productKeyFromSlug(locale, slug) {
   const lang = getLang(locale);
   const table = PRODUCT_SLUGS[lang] || {};
-  return Object.keys(table).find((k) => table[k] === slug) || "block";
+  return Object.keys(table).find((k) => table[k] === slug) || "slabs";
 }
 
-export const CUTS = ["vein-cut", "cross-cut"]; // kesim şekli
-
-export const PROCESSES = [
-  "natural",
-  "honed",
-  "polished",
-  "brushed",
-  "tumbled",
-  
-]; // işleme
-
-// Ürüne göre genişletebilirsin; şimdilik ortak
-export const FINISHES = ["polished", "unpolished"];
-
-// --- Ölçü slug yardımcıları (ilerisi için hazır) ---
-export function sizeLabelToSlug(label) {
-  return String(label).toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, "").replace(/"/g, "");
-}
-export function sizeSlugToLabel(slug) {
-  if (slug === "custom") return "Custom / Project-based";
-  return String(slug).replace(/x/g, "×").replace(/([0-9])cm$/, "$1 cm");
+export function cutSlugFor(locale, cut) {
+  const lang = getLang(locale);
+  return CUTS[lang]?.[cut] || cut;
 }
 
-// --- Derin yol kurucu: variant altına istediğin segmentleri ekler ---
-export function buildVariantChildPath(locale, productSlug, variantSlug, parts = []) {
-  const base = baseFor(locale); // "travertine" | "traverten"
-  const segs = ["", locale, base, productSlug, variantSlug, ...parts.filter(Boolean)];
-  return segs.join("/");
+// 🔁 SEO kurallarına göre: "filled-honed" sırası ve "natural" tek başına
+export function buildProcessSlug(locale, process, filling) {
+  const lang = getLang(locale);
+
+  // natural → tek segment
+  if ((lang === "tr" && process === "dogal") || process === "natural") {
+    return lang === "tr" ? "dogal" : "natural";
+  }
+
+  const procMap = {
+    en: { honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled" },
+    tr: { honlanmis:"honlanmis", cilali:"cilali", fircalanmis:"fircalanmis", eskitilmis:"eskitilmis" }
+  };
+  const fillMap = FILLING[lang] || { filled:"filled", unfilled:"unfilled" };
+
+  const p = procMap[lang]?.[process] ?? process;
+  const f = fillMap[filling || "filled"] ?? (lang === "tr" ? "dolgulu" : "filled");
+
+  // İstenen sıra: filled-honed (fill önce)
+  return `${f}-${p}`;
 }
 
-// (opsiyonel) doğrulayıcılar
-export const isCutValid = (cut) => CUTS.includes(String(cut || "").toLowerCase());
-export const isProcessValid = (p) => PROCESSES.includes(String(p || "").toLowerCase());
-export const isFinishValid = (f) => FINISHES.includes(String(f || "").toLowerCase());
-
-// lib/travertine.js (sonuna ekleyin)
-// Hangi ürünlerin derin segmentleri var?
-export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];   // bunlar devam eder
-export const PRODUCTS_NO_DEEP_LEVELS  = ["block", "special"];  // burada biter
+// Bu ürünler derinleşir (cut/process)
+export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];
+export const PRODUCTS_NO_DEEP_LEVELS = ["blocks", "special-designs"];
 
 export function hasDeepLevels(productKey) {
   return PRODUCTS_WITH_DEEP_LEVELS.includes(productKey);
 }
 
-// Varyantın kanonik URL'i (cut/process olmadan)
-export function variantUrl(locale, productSlug, variantSlug) {
-  const base = baseFor(locale); // "travertine" | "traverten"
-  return `/${locale}/${base}/${productSlug}/${variantSlug}`;
+// --- SEO path builder'lar ---
+// /{locale}/travertine
+export function buildSeoBasePath(locale) {
+  return `/${getLang(locale)}/travertine`;
+}
+
+// /{locale}/travertine-slabs (template: travertine-[product])
+export function buildSeoProductPath(locale, productKey) {
+  const lang = getLang(locale);
+  const p = productSlugFor(locale, productKey);
+  const prefix = lang === "tr" ? "traverten" : "travertine";
+  return `/${lang}/${prefix}-${p}`;
+}
+
+// /{locale}/vein-cut-travertine-slabs
+export function buildSeoCutPath(locale, productKey, cutKey) {
+  const lang = getLang(locale);
+  const cutSeo = CUTS[lang]?.[cutKey] ?? cutKey;
+  return `/${lang}/${cutSeo}`;
+}
+
+// /{locale}/filled-honed-vein-cut-travertine-slabs  veya  /{locale}/natural-vein-cut-travertine-slabs
+export function buildSeoProcessPath(locale, productKey, cutKey, process, filling) {
+  const lang = getLang(locale);
+  const cutSeo = CUTS[lang]?.[cutKey] ?? cutKey;
+  const proc = buildProcessSlug(locale, process, filling); // "filled-honed" ya da "natural"
+  return `/${lang}/${proc}-${cutSeo}`;
+}
+
+/**
+ * Eğer component'lerin eski helper'ı kullanıyorsa (kanonik iç rota) burada
+ * artık direkt SEO path döndürelim ki Link hep kısa URL'ye gitsin.
+ */
+
+// Ürün ana sayfası SEO URL'i
+export function productUrl(locale, productKey) {
+  return buildSeoProductPath(locale, productKey);
+}
+
+// Tam URL (cut + process + filling) → direkt SEO pattern
+export function buildProductPath(locale, productKey, cutKey, process, filling, thickness = null) {
+  // thickness SEO'da görünmeyecek; filtre olarak UI'da kalır.
+  return buildSeoProcessPath(locale, productKey, cutKey, process, filling);
 }

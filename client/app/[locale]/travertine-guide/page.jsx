@@ -1,7 +1,7 @@
 // app/en/travertine/page.jsx
 import Image from "next/image";
 import Link from "next/link";
-import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
+import QuestionsSection from "../components/generalcomponent/QuestionsSection";
 import { getTranslations } from "next-intl/server";
 import TravertineBlog from "./components/TravertineBlog";
 
