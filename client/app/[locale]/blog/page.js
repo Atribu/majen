@@ -65,27 +65,45 @@ const HUB_SLUGS = new Set([
 
 ]);
 
-function resolvePostHref(locale, raw = "") {
-  if (!raw) return `/${locale}/blog`;
-  // Dış linkse aynen bırak
+// --- BLOG LINK HELPERS (ürüne değil blog alt sayfalarına götürür) ---
+function normalizePostSlug(raw = "") {
+  // Dış link ise olduğu gibi bırak
   if (/^https?:\/\//i.test(raw)) return raw;
 
-  // Baştaki / ve olası locale önekini temizle
-  let s = raw.replace(/^\/+/, "").replace(/^(en|tr)\//i, "").toLowerCase();
+  // Baştaki slash ve olası locale/blog klasörlerini temizle
+  let s = String(raw)
+    .trim()
+    .replace(/^\/+/, "")
+    .replace(/^(en|tr)\//i, "")
+    .replace(/^blog\//i, "")
+    .replace(/^travertines?\//i, ""); // eski klasörlü veriler için
 
-  // HUB → /:locale/travertine-guide
-  if (HUB_SLUGS.has(s)) {
-    return `/${locale}/travertine-guide`;
-  }
-
-  // Eski klasörlü yapıları sadeleştir: blog/travertines/xxx → xxx
+  // Güvenli slug (bozuk karakterleri tireye çevir)
   s = s
-    .replace(/^(blog\/)?travertines\//i, "")
-    .replace(/^travertines\//i, "");
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
-  // Artık kalan direkt slug: /:locale/:slug
-  return `/${locale}/${s}`;
+  return s;
 }
+
+
+
+function buildBlogHref(locale, raw = "") {
+  // Dış link ise dokunma
+  if (/^https?:\/\//i.test(raw)) return raw;
+
+  const slug = normalizePostSlug(raw);
+  if (slug === "travertine-guide") {
+    return locale === "tr"
+      ? "/travertine-guide"
+      : "/travertine-guide";
+  }
+  return `/${locale}/blog/${slug}`;
+  // return slug ? `/${locale}/blog/${slug}` : `/${locale}/blog`;
+}
+
 
 export async function generateMetadata({ params, searchParams }) {
   const { locale } = await params;
@@ -259,7 +277,8 @@ export default async function Page({ params, searchParams }) {
                 transition-transform hover:-translate-y-0.5
               "
             >
-          <Link href={resolvePostHref(locale, p.slug)} className="block focus:outline-none">
+       <Link href={buildBlogHref(locale, p.slug)} className="block focus:outline-none">
+
                 {/* Cover */}
                 <div className="relative w-full aspect-[16/10] bg-neutral-100">
    {(() => {

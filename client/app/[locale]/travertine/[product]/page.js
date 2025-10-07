@@ -3,67 +3,94 @@
 
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+
 import {
-  BASE_BY_LOCALE,
-  PRODUCT_KEYS,
-  PRODUCT_SLUGS,
-  VARIANT_KEY_BY_SLUG,
+  baseFor,
+  productSlugFor,
+  productKeyFromSlug,
+  hasDeepLevels,
+  CUTS,
+  getLang,
+  productUrl,
+  cutSlugFor,
 } from "@/lib/travertine";
+
 import block from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
 
-import {
-  PRODUCT_IMG,
-  IMAGE_BY_PRODUCT_AND_VARIANT,
-} from "@/app/[locale]/(catalog)/_images";
+import { PRODUCT_IMG, IMAGE_BY_PRODUCT_AND_VARIANT } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
-import VariantCircleSection from "../../components/products1/VariantCircleSection";
 import ProductIntroSection from "../../components/products1/ProductIntroSection";
 import TextSection from "../../components/products1/TextSection";
 import ContactFrom from "../../components/generalcomponent/ContactFrom";
 import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
-import VariantCircleSection2 from "../../components/products1/VariantCircleSection2";
+import VariantCircleSection2 from "../../components/products1/VariantCircleSection"; // cut kartları için
 import OtherOptions from "../../components/generalcomponent/OtherOptions";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
 
-const VARIANT_SLUGS = ["blaundos-antiko", "blaundos-light", "blaundos-ivory"];
-
-function InfoCard({ title, children, contentClassName =
-  "text-sm text-neutral-600 leading-tight text-center"}) {
+function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
     <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
       <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
-      <div className="text-sm text-neutral-600 leading-[1.7] text-center">
-        {children}
-      </div>
+      <div className={contentClassName}>{children}</div>
     </div>
   );
 }
 
 export default function ProductPage() {
-  const { product } = useParams();
+  const { product } = useParams(); // bu, URL'deki product SLUG'ı (yerelleştirilmiş)
   const locale = useLocale();
+  const lang = getLang(locale);
   const t = useTranslations("ProductPage");
-  const t3 = useTranslations("TravertinePage");
 
-  const prefix = `/${locale}`;
-  const baseSegment = BASE_BY_LOCALE[locale];
-  const baseHref = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
-
-  const productKey =
-    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) ;
-
-        const t2 = useTranslations(`ProductPage.${productKey}.QuestionsItems`);
+const opt = (key, fallback = "") => {
+  try {
+    const v = t(key);
+    return v && v !== key ? v : fallback; // key aynen dönerse bulunamamıştır
+  } catch {
+    return fallback;
+  }
+};
+const optRaw = (key, fallback = null) => {
+  try {
+    const v = t.raw(key);
+    return v ?? fallback;
+  } catch {
+    return fallback;
+  }
+};
   const messages = useMessages();
 
-const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
+  // ---- Slug -> key
+  const productKey = productKeyFromSlug(locale, String(product));
 
+  // ---- Base segment (ör. /en/wholesale-travertine-from-turkey)
+  const baseSegment = baseFor(locale);
+  const prefix = `/${locale}`;
+  const baseHref = `/${locale}/${baseSegment}`; // yeni base; artık "travertines/travertenler" değil
 
+  // ---- Ürün ana başlıkları
+const title  = t(`${productKey}.title`);
+  const alt    = opt(`${productKey}.alt`, "");
+  const intro  = opt(`${productKey}.intro`, "");
+  const title2 = opt(`${productKey}.title2`, "");
+  const alt2   = opt(`${productKey}.alt2`, "");
+  const intro2 = opt(`${productKey}.intro2`, "");
+
+ const cardTitle1 = opt(`${productKey}.detailsHeadings.title1`, "");
+ const cardTitle2 = opt(`${productKey}.detailsHeadings.title2`, "");
+ const cardTitle3 = opt(`${productKey}.detailsHeadings.title3`, "");
+ const cardTitle4 = opt(`${productKey}.detailsHeadings.title4`, "");
+ const description = optRaw(`${productKey}.description`, intro) || intro;
+
+  // ---- FAQ
+  const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
   const items = [];
   let j = 1;
   while (qItems[`aboutpage_s4_faq${j}_header`] && qItems[`aboutpage_s4_faq${j}_text`]) {
@@ -74,132 +101,77 @@ const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
     j++;
   }
 
+  // ---- Cut heading/text (i18n)
+  const cutsHeading = opt(`${productKey}.cuts.heading`, opt("cuts.heading", "Select Your Cut Type"));
+  const cutsText    = opt(`${productKey}.cuts.text`,    opt("cuts.text",    "Choose between vein-cut and cross-cut."));
 
-  // Metinler
-  const title   = t(`${productKey}.title`);
-  const alt     = t(`${productKey}.alt`);
-  const intro   = t(`${productKey}.intro`);
-  const title2  = t(`${productKey}.title2`, { default: "" });
-  const alt2    = t(`${productKey}.alt2`, { default: "" });
-  const intro2  = t(`${productKey}.intro2`, { default: "" });
-
-  const cardTitle1      = t.raw(`${productKey}.detailsHeadings.title1`) || [];
-  const cardTitle2   = t.raw(`${productKey}.detailsHeadings.title2`) || [];
-  const cardTitle3   = t.raw(`${productKey}.detailsHeadings.title3`) || [];
-  const cardTitle4   = t.raw(`${productKey}.detailsHeadings.title4`) || [];
-  const description= t.raw(`${productKey}.description`) || intro;
-  const variantsHeading = t(`${productKey}.variants.heading`);
-  const variantsText = t(`${productKey}.variants.text`);
-
-  // Görsel
+  // ---- Hero image
   const imgMap = PRODUCT_IMG[productKey];
-  const heroSrc =
-    typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
+  const heroSrc = typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
-const productAltMap = {
-  block: "Blocks",
-  slabs: "Slabs",
-  tiles: "Tiles",
-  special: "Custom Designs",
-};
+  // ---- Hangi ürün derinleşir?
+  const showCutSelection = hasDeepLevels(productKey);
 
-  // Varyant kartları
-  const variantCards = VARIANT_SLUGS.map((slug) => {
-    const vKey = VARIANT_KEY_BY_SLUG[slug];
-    return {
-      slug,
-      vKey,
-      title: t(`${productKey}.variants.${vKey}.title`),
-      alt: `Wholesale Travertine ${productAltMap[productKey] || productKey} from Turkey`,
-     href: `${product}/${slug}`,
-    };
-  });
+  // ---- CUT kartları (yalnız slabs/tiles)
+  const productSlug = productSlugFor(locale, productKey);
+  const cutCards = showCutSelection
+    ? Object.keys(CUTS[lang] || {}).map((cutKey) => {
+        const localizedCutSlug = CUTS[lang][cutKey];
+        return {
+          slug: cutKey,
+          title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
+          description: opt(`${productKey}.cuts.${cutKey}.description`, ""),
+          href: `/${locale}/${baseSegment}/${productSlug}/${localizedCutSlug}`,
+          image: `/images/cuts/${cutKey}.jpg`,
+        };
+      })
+    : [];
 
-  // Info kartları
+  // ---- Info cards içeriği
   const cards = [
     {
-       title: cardTitle1,
+      title: cardTitle1,
       content: Array.isArray(description) ? description[0] : description || intro,
     },
     {
-       title: cardTitle2,
+      title: cardTitle2,
       content: Array.isArray(description) ? description[1] ?? intro : intro,
     },
     {
       title: cardTitle3,
-      content: Array.isArray(description) ? description[2] ?? intro : intro,
+      content: Array.isArray(description) ? description[2] ?? "" : "",
     },
-     {
-       title: cardTitle4,
-      content: Array.isArray(description) ? description[3] ?? intro : intro,
-    }
+    {
+      title: cardTitle4,
+      content: Array.isArray(description) ? description[3] ?? "" : "",
+    },
   ];
 
-  // SEO schema
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Travertine from Turkey",
-    author: { "@type": "Organization", name: "Majen" },
-    publisher: { "@type": "Organization", name: "Majen" },
-  };
-
-  // === TextSection verilerini i18n'den dinamik çek ===
-  // ProductPage.{productKey}.TextSection altında bekliyoruz
-  const textSectionRaw = t.raw(`${productKey}.TextSection`) || {};
-
-  // header1/text1/subheader1/subtext1 ... yapısından bölümler üret
-  // Kaç adet varsa (1..N) otomatik yakalar
-  const sections = [];
-  let i = 1;
-  while (
-    textSectionRaw[`header${i}`] ||
-    textSectionRaw[`text${i}`] ||
-    textSectionRaw[`subheader${i}`] ||
-    textSectionRaw[`subtext${i}`]
-  ) {
-    const header     = textSectionRaw[`header${i}`];
-    const text       = textSectionRaw[`text${i}`];
-
-    // Başlık: headerN varsa onu kullan, yoksa subheaderN’ı title gibi kullanabiliriz (opsiyonel)
-    const titleForSection =
-      header  || `${title} — Section ${i}`;
-
-    // Paragraflar: text/subtext olanları sırayla ekle
-    const paragraphsForSection = [text].filter(Boolean);
-
-    // Sadece title veya en az bir paragraf varsa render’a ekle
-    if (titleForSection || paragraphsForSection.length) {
-      sections.push({
-        id: i,
-        title: titleForSection,
-        paragraphs: paragraphsForSection,
-      });
-    }
-    i++;
-  }
-
+  // ---- Inline link patternleri (metin içi “vein/cross” tıklanabilir)
   const linkPatterns = [
-  { pattern: /Blaundos Antiko/i, href: `${baseHref}/${product}/blaundos-antiko` },
-  { pattern: / Light/i,  href: `${baseHref}/${product}/blaundos-light` },
-  { pattern: / Ivory/i,  href: `${baseHref}/${product}/blaundos-ivory` },
-];
+    { pattern: /vein[- ]cut/i, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugFor(locale, "vein-cut")}` },
+    { pattern: /cross[- ]cut/i, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugFor(locale, "cross-cut")}` },
+  ];
 
- const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
-
-  const hrefForProduct = (key) => `${baseHref}/${PRODUCT_SLUGS[locale][key]}`;
-  
+  const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
+  // ---- Breadcrumb
+  const rawPath = usePathname();
+  const pathname = typeof rawPath === "string" ? rawPath : "";
+  const segments = pathname.split("/").filter(Boolean);
+  const selectedSegments = segments.slice(-1);
 
-   const   depth = 1
-    const pathname = usePathname() || ""; // boş string fallback
-    const segments = pathname.split("/").filter(Boolean); 
-    const lastSegment = pathname.split("/").filter(Boolean).pop(); 
-    const selectedSegments = segments.slice(-depth);
+  // ---- Diğer seçenekler (çoğul anahtarlar!)
+  const productAltMap = {
+    blocks: "Blocks",
+    slabs: "Slabs",
+    tiles: "Tiles",
+    "special-designs": "Custom Designs",
+  };
 
   return (
-    <main className=" py-6 mt-16 overflow-x-hidden">
+    <main className="py-6 mt-16 overflow-x-hidden">
       {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}
@@ -215,86 +187,111 @@ const productAltMap = {
         span="- Direct Quarry Supplier"
       />
 
-    
- <BreadcrumbsExact
-  prefix={prefix}
-  baseHref={baseHref}
-  crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
-  crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
-  selectedSegments={selectedSegments}
-  className="mt-6"
-/>
-
-
-      {/* 4 BİLGİ KARTI */}
-     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
-  {cards.map((c, i) => {
-    const plain =
-      typeof c.content === "string"
-        ? c.content
-        : Array.isArray(c.content)
-        ? c.content.join(", ")
-        : null;
-
-    return (
-      <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
-        {i === 1 ? (
-          <InlineLinks
-            text={plain || ""}
-            patterns={linkPatterns}
-            textClassName={cardTextClass}   // link olmayan parçalar da aynı stil
-            // linkClassName istersen özel ver:
-            // linkClassName="text-blue-600 hover:underline font-medium"
-          />
-        ) : (
-          <span className={cardTextClass}>{plain}</span>
-        )}
-      </InfoCard>
-    );
-  })}
-</section>
-
-
-      {/* VARYANTLAR */}
-      <VariantCircleSection
-        heading={variantsHeading}
-        text={variantsText}
-        variantCards={variantCards}
-        imgMap={imgMap}
-        heroSrc={heroSrc}
-        IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
-        productKey={productKey}
+      <BreadcrumbsExact
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+        selectedSegments={selectedSegments}
+        className="mt-6"
       />
 
-      {sections.map(({ id, title: secTitle, paragraphs }) => (
-        <TextSection
-          key={id}
-          title={secTitle}
-          paragraphs={paragraphs}
-          schema={schema}
-          className="max-w-5xl mx-auto mt-12"
-          clampMobile={3}
-          as="section"
-          title2=""
-          text2=""
+      {/* 4 BİLGİ KARTI */}
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+        {cards.map((c, i) => {
+          const plain =
+            typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
+
+          return (
+            <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+              {i === 1 ? (
+                <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
+              ) : (
+                <span className={cardTextClass}>{plain}</span>
+              )}
+            </InfoCard>
+          );
+        })}
+      </section>
+
+      {/* SLABS / TILES → Kesim seçimi */}
+      {showCutSelection && (
+        <VariantCircleSection2
+          heading={cutsHeading}
+          text={cutsText}
+          variantCards={cutCards}
+          imgMap={imgMap}
+          heroSrc={heroSrc}
+          IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+          productKey={productKey}
         />
-      ))}
+      )}
+
+      {/* Blocks / Special-Designs → burada artık renk varyantı YOK. 
+          İstersen bu blok yerine direkt teknik bölümleri, CTA, görseller vs. göster. */}
+
+      {/* Serbest metin bölümleri */}
+      {(() => {
+        const textSectionRaw = optRaw(`${productKey}.TextSection`, {}) || {};
+        const sections = [];
+        let i = 1;
+        while (
+          textSectionRaw[`header${i}`] ||
+          textSectionRaw[`text${i}`] ||
+          textSectionRaw[`subheader${i}`] ||
+          textSectionRaw[`subtext${i}`]
+        ) {
+          const header = textSectionRaw[`header${i}`];
+          const text = textSectionRaw[`text${i}`];
+          const titleForSection = header || `${title} — Section ${i}`;
+          const paragraphsForSection = [text].filter(Boolean);
+
+          if (titleForSection || paragraphsForSection.length) {
+            sections.push({ id: i, title: titleForSection, paragraphs: paragraphsForSection });
+          }
+          i++;
+        }
+        return sections.map(({ id, title: secTitle, paragraphs }) => (
+          <TextSection
+            key={id}
+            title={secTitle}
+            paragraphs={paragraphs}
+            schema={{
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: `Wholesale Travertine ${productAltMap[productKey]} from Turkey`,
+              author: { "@type": "Organization", name: "Majen" },
+              publisher: { "@type": "Organization", name: "Majen" },
+            }}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"
+            title2=""
+            text2=""
+          />
+        ));
+      })()}
 
       <SocialMediaSection />
       <ContactFrom />
       <div id="faq" className="max-w-5xl mx-auto mt-12">
-        <QuestionsSection items={items} span={`Travertine ${productAltMap[productKey]}`}/>
+        <QuestionsSection items={items} span={`Travertine ${productAltMap[productKey]}`} />
       </div>
+
       <OtherOptions
-       heading="Other Options"
-  excludeProduct={productKey}                         
-  productOrder={["block", "slabs", "tiles", "special"]}
-  variantSlugs={["antiko", "light", "ivory"]}
-  baseHref={`${prefix}/${baseSegment}`}
-  productSegments={PRODUCT_SLUGS[locale]}
-  locale={locale}
-  productImages={{ block, slabs, tiles, special }}
-  productHrefFor={(pkey) => `${prefix}/${baseSegment}/${PRODUCT_SLUGS[locale][pkey]}`}
+        heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
+        excludeProduct={productKey}
+        productOrder={["blocks", "slabs", "tiles", "special-designs"]}
+        baseHref={`${prefix}/${baseSegment}`}
+        productSegments={{
+          blocks: productSlugFor(locale, "blocks"),
+          slabs: productSlugFor(locale, "slabs"),
+          tiles: productSlugFor(locale, "tiles"),
+          "special-designs": productSlugFor(locale, "special-designs"),
+        }}
+        locale={locale}
+        productImages={{ blocks: block, slabs, tiles, "special-designs": special }}
+        productHrefFor={(pkey) => productUrl(locale, pkey)}
       />
     </main>
   );
