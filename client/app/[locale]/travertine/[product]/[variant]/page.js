@@ -385,7 +385,7 @@ const accordionItems = [
         <VariantCircleSection
           heading={locale.startsWith("tr") ? `${vTitle} Kesim şekli` : `${vTitle} Cut Options`}
           variantCards={cutCards}
-          imgMap={PRODUCT_IMG[productKey]}
+          imgMap={IMAGE_BY_PRODUCT_VARIANT_AND_CUT[productKey]}
           heroSrc={heroSrc}
           IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
           productKey={productKey}

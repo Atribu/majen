@@ -35,10 +35,11 @@ export const CUTS = ["vein-cut", "cross-cut"]; // kesim şekli
 
 export const PROCESSES = [
   "natural",
-  "filling",
-  "epoxy",
-  "transparent",
-  "antique",
+  "honed",
+  "polished",
+  "brushed",
+  "tumbled",
+  
 ]; // işleme
 
 // Ürüne göre genişletebilirsin; şimdilik ortak

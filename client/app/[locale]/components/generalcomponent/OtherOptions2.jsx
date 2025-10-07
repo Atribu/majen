@@ -158,7 +158,7 @@ export default function OtherOptions2({
   {/* Alt çizgi/CTA (aynı kalsın) */}
   <div className="mt-3 pt-3 border-t border-neutral-200">
     <span className="text-sm font-medium text-neutral-700 group-hover:text-neutral-900 transition-colors">
-      {locale === 'tr' ? 'Detayları Görüntüle' : 'View Details'}
+      {locale === 'tr' ? 'Sayfaya git' : 'Go to page'}
       <span className="inline-block ml-1 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
     </span>
   </div>

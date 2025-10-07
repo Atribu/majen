@@ -8,6 +8,7 @@ import { IMAGES_BLOG } from "@/app/[locale]/(catalog)/_images";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 import IncotermLinkify from "@/app/[locale]/components/generalcomponent/IncotermLinkify";
+import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 
 /**
  * Dynamic SEO Landing Template for Travertine pages (Tiles/Slabs/Blocks/Pavers/Mosaics)
@@ -589,6 +590,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
           </div>
         </Section>
       )}
+      
+<SocialMediaSection/>
+ <ContactFrom/>
 
       {/* 7) GALLERY (varsa ve resimler korunur) */}
        {s.gallery && (
@@ -624,7 +628,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
        </Section>
       )}
     </div>
-    <ContactFrom/>
+   
   </div>
 </Container>
 
