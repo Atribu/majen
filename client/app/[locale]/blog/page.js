@@ -60,6 +60,33 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const POSTS_PER_PAGE = 20;
 const POSTS_PER_PAGE_Mobile = 10;
 
+const HUB_SLUGS = new Set([
+  "travertine-guide",
+
+]);
+
+function resolvePostHref(locale, raw = "") {
+  if (!raw) return `/${locale}/blog`;
+  // Dış linkse aynen bırak
+  if (/^https?:\/\//i.test(raw)) return raw;
+
+  // Baştaki / ve olası locale önekini temizle
+  let s = raw.replace(/^\/+/, "").replace(/^(en|tr)\//i, "").toLowerCase();
+
+  // HUB → /:locale/travertine-guide
+  if (HUB_SLUGS.has(s)) {
+    return `/${locale}/travertine-guide`;
+  }
+
+  // Eski klasörlü yapıları sadeleştir: blog/travertines/xxx → xxx
+  s = s
+    .replace(/^(blog\/)?travertines\//i, "")
+    .replace(/^travertines\//i, "");
+
+  // Artık kalan direkt slug: /:locale/:slug
+  return `/${locale}/${s}`;
+}
+
 export async function generateMetadata({ params, searchParams }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "BlogIndex" });
@@ -232,7 +259,7 @@ export default async function Page({ params, searchParams }) {
                 transition-transform hover:-translate-y-0.5
               "
             >
-              <Link href={`/${locale}/blog/${p.slug}`} className="block focus:outline-none">
+          <Link href={resolvePostHref(locale, p.slug)} className="block focus:outline-none">
                 {/* Cover */}
                 <div className="relative w-full aspect-[16/10] bg-neutral-100">
    {(() => {

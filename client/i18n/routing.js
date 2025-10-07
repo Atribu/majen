@@ -79,7 +79,8 @@ export const config = {
     // i18n/routing.js
 
   '/blog': { en: '/blog', tr: '/blog' },
-  '/blog/[slug]': { en: '/blog/[slug]', tr: '/blog/[slug]' },
+  '/[slug]': { en: '/[slug]', tr: '/[slug]' },
+
 
   },
 };
