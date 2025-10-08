@@ -95,6 +95,7 @@ export function buildProcessSlug(locale, process, filling) {
   return `${f}-${p}`;
 }
 
+
 // Bu ürünler derinleşir (cut/process)
 export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];
 export const PRODUCTS_NO_DEEP_LEVELS = ["blocks", "special-designs"];
@@ -146,4 +147,141 @@ export function productUrl(locale, productKey) {
 export function buildProductPath(locale, productKey, cutKey, process, filling, thickness = null) {
   // thickness SEO'da görünmeyecek; filtre olarak UI'da kalır.
   return buildSeoProcessPath(locale, productKey, cutKey, process, filling);
+}
+
+// --- RENKLER (variant) ---
+export const VARIANT_KEYS = ["ivory", "light", "antico"];
+
+export const VARIANTS = {
+  en: {
+    ivory:  { slug: "ivory",  label: "Ivory"  },
+    light:  { slug: "light",  label: "Light"  },
+    antico: { slug: "antico", label: "Antico" }
+  },
+  tr: {
+    ivory:  { slug: "ivory",  label: "Ivory"  },
+    light:  { slug: "light",  label: "Light"  },
+    antico: { slug: "antico", label: "Antiko" }
+  }
+};
+
+// slug -> key eşlemesi (her iki dilde de aynı slug'lar)
+export const VARIANT_KEY_BY_SLUG = {
+  ivory: "ivory",
+  light: "light",
+  antico: "antico",
+};
+
+export function variantSlugFor(locale, key) {
+  const lang = getLang(locale);
+  return VARIANTS[lang]?.[key]?.slug ?? key;
+}
+export function variantLabelFor(locale, key) {
+  const lang = getLang(locale);
+  return VARIANTS[lang]?.[key]?.label ?? key;
+}
+export function variantKeys() {
+  return [...VARIANT_KEYS];
+}
+
+
+// /{lang}/[process]-[cut]/[variant]
+export function buildSeoVariantPath(locale, productKey, cutKey, process, filling, variantKey) {
+  const lang = getLang(locale);
+  const cutSeo = CUTS[lang]?.[cutKey] ?? cutKey;
+  const proc  = buildProcessSlug(locale, process, filling); // "filled-honed" ya da "natural"
+  const varSlug = variantSlugFor(locale, variantKey);       // "ivory" / "light" / "antico"
+  return `/${lang}/${proc}-${cutSeo}/${varSlug}`;
+}
+
+// (İstersen boyut/kalınlık ekli tam yol)
+// /{lang}/[process]-[cut]/[variant]/[finishOrSize]
+export function buildSeoVariantWithSizePath(locale, productKey, cutKey, process, filling, variantKey, sizeSlug) {
+  return `${buildSeoVariantPath(locale, productKey, cutKey, process, filling, variantKey)}/${sizeSlug}`;
+}
+
+// === Color helpers (alias) ===
+
+// --- COLORS ---
+export const COLOR_KEYS = ["ivory", "light", "antico"];
+
+export const COLORS = {
+  en: {
+    ivory:  { slug: "ivory",  label: "Ivory"  },
+    light:  { slug: "light",  label: "Light"  },
+    antico: { slug: "antico", label: "Antico" }
+  },
+  tr: {
+    // slug'ları SEO için sabit tutmak istersen EN ile aynı bırakabilirsin.
+    // Eğer TR'de URL'de yerelleştirilmiş slug istiyorsan burayı değiştir.
+    ivory:  { slug: "ivory",  label: "Ivory"  },
+    light:  { slug: "acik",   label: "Açık"   },
+    antico: { slug: "antiko", label: "Antiko" }
+  }
+};
+
+// slug -> colorKey (her iki dil)
+export const COLOR_KEY_BY_SLUG = {
+  // EN
+  ivory: "ivory",
+  light: "light",
+  antico:"antico",
+  // TR yerelleştirilmiş slug'lar (kullanıyorsan)
+  fildisi: "ivory",
+  acik:    "light",
+  antiko:  "antico"
+};
+
+export function colorKeys() {
+  return [...COLOR_KEYS];
+}
+export function colorSlugFor(locale, key) {
+  const lang = getLang(locale);
+  return COLORS[lang]?.[key]?.slug ?? key;
+}
+export function colorLabelFor(locale, key) {
+  const lang = getLang(locale);
+  return COLORS[lang]?.[key]?.label ?? key;
+}
+
+// --- SIZE helpers (renk sayfasındaki "Choose Thickness / Size" için) ---
+export function sizeSlugListForProduct(productKey, t) {
+  if (productKey === "slabs") return ["2cm", "3cm", "5cm"];
+  if (productKey === "tiles") {
+    const sizes = (t?.raw && t.raw("tiles.sizes")) || ["30x60", "60x60", "60x120"];
+    return sizes.map((s) =>
+      String(s).toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, "")
+    );
+  }
+  return ["custom"];
+}
+export function sizeLabelFromSlug(slug) {
+  if (slug === "custom") return "Custom / Project-based";
+  return String(slug).replace(/x/g, "×").replace(/([0-9])cm$/, "$1 cm");
+}
+
+
+// export function buildSeoColorPath(locale, productKey, cutSlugOrKey, processSlug, colorKey) {
+//   const lang = getLang(locale);
+//   const cutSeo = CUTS[lang]?.[cutSlugOrKey] ?? cutSlugOrKey;     // key verildiyse slug'a çevir, yoksa olduğu gibi
+//   const colorSeo = variantSlugFor(locale, colorKey);             // "ivory" | "light" | "antico"
+//   const proc = String(processSlug).toLowerCase();                // "natural" | "filled-honed" | "dolgulu-honlanmis"
+
+//   return `/${colorSeo}-${proc}-${cutSeo}`;
+// }
+
+export function buildSeoColorPath(locale, productKey, cutSlug, processSlug, colorKey) {
+  const lang = getLang(locale);
+
+  // colorSlugFor: en→ ivory|light|antico, tr→ fildisi|acik|antiko
+  const cSlug = colorSlugFor(locale, colorKey);   // örn: 'ivory' / 'fildisi'
+
+  // processSlug: zaten birleşik ve yerelleştirilmiş geliyor (filled-honed / dogal / dolgusuz-honlanmis ...)
+  const pSlug = String(processSlug).toLowerCase();
+
+  // cutSlug: SEO tam slug (vein-cut-travertine-slabs / damar-kesim-traverten-plakalar ...)
+  const cut = String(cutSlug);
+
+  // YENİ PATTERN: /{lang}/{color}-{process}-{cut}
+  return `/${cSlug}-${pSlug}-${cut}`;
 }
