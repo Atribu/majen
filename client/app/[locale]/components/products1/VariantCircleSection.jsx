@@ -30,6 +30,23 @@ import { Link } from "@/i18n/navigation";
  *   // { slabs: { "blaundos-ivory": { "vein-cut": <img>, "cross-cut": <img> } } }
  * - variantSlug?: string  // cut kartlarında: "blaundos-ivory" gibi (opsiyonel)
  */
+
+function normalizeHref(href, locale) {
+  if (!href) return "#";
+
+  // Dış link
+  if (/^https?:\/\//i.test(href)) return href;
+
+  // Zaten locale ile başlıyor: "/en/..." veya "/tr/..."
+  if (/^\/(en|tr)\//i.test(href)) return href;
+
+  // Kökten başlıyor ama locale yoksa: "/filled-honed-..." → "/en/filled-honed-..."
+  if (href.startsWith("/")) return `/${locale}${href}`;
+
+  // Görece segment geldiyse: "filled-honed-..." → "/en/filled-honed-..."
+  return `/${locale}/${href.replace(/^\//, "")}`;
+}
+
 export default function VariantCircleSection({
   heading,
   text,

@@ -663,9 +663,32 @@
     "heading": "Travertine Slabs Cut Options",
     "text": "Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high-end interiors.",
     "vein-cut": {
-      "title": "Vein Cut Travertine Slabs",
+       "title": "Vein Cut Travertine Slabs",
+          "alt": "Vein-cut travertine slabs",
+          "span": "Direct Quarry Supplier",
+          "intro": "Vein-cut slabs reveal linear banding for strong directionality in design.",
+          "title2": "Why Choose Vein-Cut?",
+          "intro2": "Parallel bands create visual continuity across large surfaces.",
+          "hero": {
+            "src": "/media/slabs/vein-cut-hero.webp",
+            "alt": "Vein-cut slab hero image"
+          },
       "description": "Large-size blocks selected at the quarry with consistent character.",
-      "alt": "Vein cut travertine slabs wholesale from Turkey",
+          "TextSection": {
+            "header1": "Vein-Cut — Visual Character",
+            "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
+            "header2": "Best Use-Cases",
+            "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
+          },
+          "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Vein-Cut",
+            "aboutpage_s4_faq1_header": "Why choose vein-cut slabs?",
+            "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
+            "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
+            "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
+          },
+
       "processes": {
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
@@ -1386,8 +1409,31 @@
 
     "cross-cut": {
       "title": "Cross Cut Travertine Slabs",
+          "alt": "Cross-cut travertine slabs",
+          "span": "Direct Quarry Supplier",
+          "intro": "Cross-cut slabs present a cloudy, more homogeneous texture with softer movement.",
+          "title2": "Why Choose Cross-Cut?",
+          "intro2": "Soft, non-directional texture for calm, uniform fields.",
+          "hero": {
+            "src": "/media/slabs/cross-cut-hero.webp",
+            "alt": "Cross-cut slab hero image"
+          },
       "description": "Large-size blocks selected at the quarry with consistent character.",
-      "alt": "Cross cut travertine slabs wholesale from Turkey",
+       "TextSection": {
+            "header1": "Vein-Cut — Visual Character",
+            "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
+            "header2": "Best Use-Cases",
+            "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
+          },
+          "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Vein-Cut",
+            "aboutpage_s4_faq1_header": "Why choose vein-cut slabs?",
+            "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
+            "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
+            "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
+          },
+          
       "processes": {
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
