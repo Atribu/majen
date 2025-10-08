@@ -39,6 +39,7 @@ export default function CutPage() {
 
   // "vein-cut" | "cross-cut" key'ini bul
   const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlugSegment) || "vein-cut";
+  const canonicalCutSlug = CUTS[lang]?.[cutKey] || "vein-cut-travertine-slabs";
 
   // i18n içerik
   const processNode = opt(() => messages.ProductPage.slabs.cuts[cutKey].processes, {});
@@ -76,9 +77,26 @@ export default function CutPage() {
       const title = meta[p]?.title || p;
       const alt   = meta[p]?.alt   || `${title}`;
 
-      const href = isNatural
-        ? buildSeoProcessPath(locale, productKey, cutKey, p, null)               // /en/natural-vein-cut-...
-        : buildSeoProcessPath(locale, productKey, cutKey, p, fillForGroup);      // /en/filled-honed-vein-cut-...
+
+
+      // locale'e göre process slug
+     const fillSlug =
+       lang === "tr"
+         ? (fillForGroup === "filled" ? "dolgulu" : "dolgusuz")
+         : (fillForGroup === "filled" ? "filled"  : "unfilled");
+     const procSlug = isNatural
+       ? (lang === "tr" ? "dogal" : "natural")
+       : `${fillSlug}-${p}`; // örn: filled-honed
+
+     // next-intl route object → kesin olarak process page'e gider
+     const href = {
+       pathname: "/travertine/[product]/[cut]/[process]",
+       params: {
+         product: String(productSlug),
+         cut: canonicalCutSlug, // KESİNLİKLE kanonik slug!
+         process: procSlug
+       }
+     };
 
       return {
         slug: p,

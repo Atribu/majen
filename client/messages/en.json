@@ -660,65 +660,1452 @@
     },
 
       "cuts": {
-        "heading":"Travertine Slabs Cut Options",
-        "text":" Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high‑end interiors. Finishes are applied with calibrated machinery for consistent tone and sheen. For export, tiles are packed in reinforced wooden crates with dividers and moisture‑resistant wraps, optimized for sea freight.",
-        "vein-cut": {
-          "title": "Vein Cut Travertine Slabs",
-          "description":"Large-size blocks selected at the quarry with consistent ",
-          "alt": "Vein cut travertine slabs wholesale from Turkey",
-          "processes": {
-            "heading": "Choose Your Process",
-            "subtext": "Select the surface treatment.",
-            "groups": {
-              "filled": {
-                "heading": "Filled Processes",
-                "text": "Filled options suitable for polished looks and dense surfaces.",
-                "items": ["honed", "polished", "brushed", "tumbled"]
-              },
-              "unfilled": {
-                "heading": "Unfilled Processes",
-                "text": "Natural look & texture. Note: “Natural” has no filling.",
-                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+    "heading": "Travertine Slabs Cut Options",
+    "text": "Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high-end interiors.",
+    "vein-cut": {
+      "title": "Vein Cut Travertine Slabs",
+      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "alt": "Vein cut travertine slabs wholesale from Turkey",
+      "processes": {
+        "heading": "Choose Your Process",
+        "subtext": "Select the surface treatment.",
+        "groups": {
+          "filled": {
+            "heading": "Filled Processes",
+            "text": "Filled options suitable for polished looks and dense surfaces.",
+            "items": ["honed", "polished", "brushed", "tumbled"]
+          },
+          "unfilled": {
+            "heading": "Unfilled Processes",
+            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+          }
+        },
+        "meta": {
+          "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+          "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+          "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+          "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+          "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+        },
+
+        "natural": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
               }
             },
-            "meta": {
-              "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
-              "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
-              "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
-              "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
-              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
             }
           }
         },
-        "cross-cut": {
-          "title": "Cross Cut Travertine Slabs",
-           "description":"Large-size blocks selected at the quarry with consistent ",
-          "alt": "Cross cut travertine slabs wholesale from Turkey",
-          "processes": {
-            "heading": "Choose Your Process",
-            "subtext": "Select the surface treatment.",
-            "groups": {
-              "filled": {
-                "heading": "Filled Processes",
-                "text": "Filled options suitable for polished looks and dense surfaces.",
-                "items": ["honed", "polished", "brushed", "tumbled"]
-              },
-              "unfilled": {
-                "heading": "Unfilled Processes",
-                "text": "Natural look & texture. Note: “Natural” has no filling.",
-                "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+
+          "unfilled-honed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
               }
             },
-            "meta": {
-              "natural":  { "title": "Natural",  "alt": "Natural cross-cut travertine slab" },
-              "honed":    { "title": "Honed",    "alt": "Honed cross-cut travertine slab" },
-              "polished": { "title": "Polished", "alt": "Polished cross-cut travertine slab" },
-              "brushed":  { "title": "Brushed",  "alt": "Brushed cross-cut travertine slab" },
-              "tumbled":  { "title": "Tumbled",  "alt": "Tumbled cross-cut travertine slab" }
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+          "filled-honed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "filled-polished": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+         "unfilled-polished": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Unfilled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+         "filled-brushed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "unfilled-brushed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "filled-tumbled": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+          "unfilled-tumbled": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
             }
           }
         }
-      },
+      }
+    },
+
+    "cross-cut": {
+      "title": "Cross Cut Travertine Slabs",
+      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "alt": "Cross cut travertine slabs wholesale from Turkey",
+      "processes": {
+        "heading": "Choose Your Process",
+        "subtext": "Select the surface treatment.",
+        "groups": {
+          "filled": {
+            "heading": "Filled Processes",
+            "text": "Filled options suitable for polished looks and dense surfaces.",
+            "items": ["honed", "polished", "brushed", "tumbled"]
+          },
+          "unfilled": {
+            "heading": "Unfilled Processes",
+            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "items": ["natural", "honed", "polished", "brushed", "tumbled"]
+          }
+        },
+        "meta": {
+          "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
+          "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
+          "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
+          "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
+          "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+        },
+
+        "natural": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+          "unfilled-honed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+          "filled-honed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "filled-polished": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+         "unfilled-polished": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Unfilled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+         "filled-brushed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "unfilled-brushed": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+        "filled-tumbled": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+          "unfilled-tumbled": {
+           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
+              "title": "Filled · Polished (Vein-Cut)",
+              "lead": "High-gloss luxury with dense, filled surface.",
+          "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
 
       "description": [
         "High durability, quarry-direct sourcing from Uşak–Ulubey, and precise cutting deliver consistent A-grade travertine slabs. Reliable lead times and reinforced packing make Majen a trusted partner for global projects.",

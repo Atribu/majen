@@ -2,8 +2,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { FaYoutube } from "react-icons/fa";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Dairesel kart grid (variant / cut / process için ortak)

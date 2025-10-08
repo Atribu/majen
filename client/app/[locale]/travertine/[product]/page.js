@@ -3,7 +3,6 @@
 
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
-import Link from "next/link";
 import React from "react";
 
 import {
@@ -16,12 +15,10 @@ import {
   productUrl,
   cutSlugFor,
 } from "@/lib/travertine";
-
 import block from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
-
 import { PRODUCT_IMG, IMAGE_BY_PRODUCT_AND_VARIANT } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "../../components/products1/ProductIntroSection";
@@ -121,7 +118,10 @@ const title  = t(`${productKey}.title`);
           slug: cutKey,
           title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
           description: opt(`${productKey}.cuts.${cutKey}.description`, ""),
-          href: `/${locale}/${baseSegment}/${productSlug}/${localizedCutSlug}`,
+          href: {
+           pathname: "/travertine/[product]/[cut]",
+           params: { product: productSlug, cut: localizedCutSlug }
+         },
           image: `/images/cuts/${cutKey}.jpg`,
         };
       })
@@ -149,8 +149,8 @@ const title  = t(`${productKey}.title`);
 
   // ---- Inline link patternleri (metin içi “vein/cross” tıklanabilir)
   const linkPatterns = [
-    { pattern: /vein[- ]cut/i, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugFor(locale, "vein-cut")}` },
-    { pattern: /cross[- ]cut/i, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugFor(locale, "cross-cut")}` },
+    { pattern: /vein[- ]cut/i,  href: { pathname: "/travertine/[product]/[cut]", params: { product: productSlug, cut: cutSlugFor(locale, "vein-cut") } } },
+   { pattern: /cross[- ]cut/i, href: { pathname: "/travertine/[product]/[cut]", params: { product: productSlug, cut: cutSlugFor(locale, "cross-cut") } } },
   ];
 
   const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
