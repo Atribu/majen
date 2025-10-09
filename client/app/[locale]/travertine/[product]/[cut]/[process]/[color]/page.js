@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-
 import {
   baseFor,
   productKeyFromSlug,
@@ -17,38 +16,33 @@ import {
   CUTS,
   getLang
 } from "@/lib/travertine";
-
-import { IMAGE_BY_PRODUCT_AND_VARIANT as IMAGE_BY_PRODUCT_AND_COLOR } from "@/app/[locale]/(catalog)/_images";
+import {
+  IMAGE_BY_PRODUCT,
+  IMAGE_BY_PRODUCT_AND_VARIANT as IMAGE_BY_PRODUCT_AND_COLOR,
+  PROCESS_THUMB_BY_COMBINED
+} from "@/app/[locale]/(catalog)/_images";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
-
 
 export default function ColorDetailPage() {
   const { product: productSlug, cut: cutSlug, process: processSlug, color: colorSlug } = useParams();
   const locale = useLocale();
   const lang = getLang(locale);
   const t = useTranslations("ProductPage");
-
-  // productKey: "slabs" | "tiles" | ...
   const productKey = productKeyFromSlug(locale, String(productSlug));
-
-  // cutSlug (tam SEO) -> cutKey ("vein-cut" | "cross-cut")
-  const cutKey =
-    Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut";
-
-  // process: TAM slug ile çalış (ör. "filled-polished" / "natural")
+  const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut";
   const procKeyFull = String(processSlug || "").toLowerCase();
-
-  // color key (ivory|light|antico) – güvenli
   const colorKey = (COLOR_KEY_BY_SLUG && COLOR_KEY_BY_SLUG[colorSlug]) || String(colorSlug || "").toLowerCase();
+  const sizeSlugs = sizeSlugListForProduct(productKey, t);
+  const [selected, setSelected] = React.useState(sizeSlugs[0]);
 
-  if (!productKey || !colorKey || !procKeyFull) return null;
+  if (!productKey || !colorKey || !procKeyFull) {
+    return <main className="p-10 text-center text-neutral-500">Loading...</main>;
+  }
 
-  // JSON: product > cuts > [cutKey] > processes > [procKeyFull] > colors > [colorKey]
   let page = t.raw(`${productKey}.cuts.${cutKey}.processes.${procKeyFull}.colors.${colorKey}`) || null;
 
-  // Eğer TR JSON'unda EN anahtarlar kullanılıyorsa basit TR->EN map ile bir daha dene (opsiyonel).
   if (!page && locale === "tr") {
     const TR2EN = {
       "dogal": "natural",
@@ -67,62 +61,64 @@ export default function ColorDetailPage() {
     }
   }
 
-   const chooseThicknessLabel =
-    page?.ui?.chooseThickness ||
-    (locale.startsWith("tr") ? "Kalınlık Seç" : "Choose Thickness");
-
-  const applicationsLabel =
-    page?.ui?.applicationsLabel ||
-    (locale.startsWith("tr") ? "Uygulamalar" : "Applications");
-
-  const specsLabel =
-    page?.ui?.specsLabel ||
-    (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");
-
-  const faqLabel =
-    page?.ui?.faqLabel ||
-    (locale.startsWith("tr") ? "SSS" : "FAQ");
-
-
-
-  // Fallback başlık/metinler
+  const chooseThicknessLabel = page?.ui?.chooseThickness || (locale.startsWith("tr") ? "Kalınlık Seç" : "Choose Thickness");
+  const applicationsLabel = page?.ui?.applicationsLabel || (locale.startsWith("tr") ? "Uygulamalar" : "Applications");
+  const specsLabel = page?.ui?.specsLabel || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");
+  const faqLabel = page?.ui?.faqLabel || (locale.startsWith("tr") ? "SSS" : "FAQ");
   const colorLabel = colorLabelFor(locale, colorKey);
-  const processLabel =
-    t.raw(`${productKey}.cuts.${cutKey}.processes.${procKeyFull}.title`) ||
-    procKeyFull.replace(/-/g, " ");
+  const processLabel = t.raw(`${productKey}.cuts.${cutKey}.processes.${procKeyFull}.title`) || procKeyFull.replace(/-/g, " ");
   const H1 = page?.h1 || `${colorLabel} · ${processLabel}`;
   const lead = page?.lead || "";
   const intro = page?.intro || "";
-
-  // Meta
   const metaTitle = page?.metaTitle || H1;
   const metaDesc = page?.metaDesc || intro;
+// process → combinedKey
+const combinedKey = combinedKeyFromProc(procKeyFull, locale);
 
-  // Hero görsel (ürün+renk)
-  const heroSrc =
-    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorSlug] ||
-    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.cover ||
-    "/images/homepage/antikoarkplan.webp";
+// 1) _images: product → colorThumbs → cut → combinedKey → colorKey
+const fromColorByProcess =
+  IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKey];
+
+// 2) ürün-variant genel renk görselleri (slug ya da key)
+const fromVariant =
+  IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorSlug]
+  || IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey];
+
+// 3) process thumb (global)
+const fromProcessThumb = PROCESS_THUMB_BY_COMBINED?.[combinedKey];
+
+// 4) en son genel cover
+const heroSrc =
+  fromColorByProcess
+  || fromVariant
+  || fromProcessThumb
+  || IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]   // cut cover varsa
+  || IMAGE_BY_PRODUCT?.[productKey]?.cover
+  || "/images/homepage/antikoarkplan.webp";
 
   const baseSegment = baseFor(locale);
-
-  // Canonical (renk-önce kısa URL ile)
   const canonical = `https://www.majen.com.tr/${locale}/${colorSlug}-${processSlug}-${cutSlug}`;
-
-  // Sections
   const sections = page?.sections || {};
-  const apps  = sections.applications;
+  const apps = sections.applications;
   const specs = sections.specs;
-  const faq   = sections.faq;
+  const faqItems = Array.isArray(sections?.faq?.items) ? sections.faq.items.filter((it) => it && typeof it.q === "string" && typeof it.a === "string") : [];
 
-  const faqItems = Array.isArray(sections?.faq?.items)
-  ? sections.faq.items
-      .filter((it) => it && typeof it.q === "string" && typeof it.a === "string")
-  : [];
+  function combinedKeyFromProc(proc = "", locale = "en") {
+  const s = String(proc).toLowerCase().trim();
+  if (!s) return null;
+  if (s === "natural" || s === "dogal") return "natural";
 
-  // Size/Thickness içi
-  const sizeSlugs = sizeSlugListForProduct(productKey, t);
-  const [selected, setSelected] = React.useState(sizeSlugs[0]);
+  const fillMap = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" };
+  const procMap = {
+    honlanmis: "honed", cilali: "polished", fircalanmis: "brushed", eskitilmis: "tumbled",
+    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+  };
+
+  const [fillRaw, procRaw] = s.split("-");
+  const fill = fillMap[fillRaw] || fillRaw;
+  const p    = procMap[procRaw] || procRaw;
+  return `${fill}:${p}`; // örn: "filled:polished"
+}
 
   return (
     <main className="px-5 md:px-8 lg:px-0 py-10 mt-14">
@@ -141,7 +137,6 @@ export default function ColorDetailPage() {
         <meta name="twitter:image" content={heroSrc} />
       </Head>
 
-      {/* Hero + Başlık */}
       <header className="mx-auto max-w-[1200px] grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
         <div className="relative h-56 md:h-80 w-full overflow-hidden rounded-2xl">
           <Image src={heroSrc} alt={H1} fill className="object-cover" />
@@ -150,12 +145,8 @@ export default function ColorDetailPage() {
           <h1 className="text-2xl md:text-3xl font-semibold">{H1}</h1>
           {lead && <p className="mt-2 text-neutral-700">{lead}</p>}
           {intro && <p className="mt-2 text-neutral-700">{intro}</p>}
-
-          {/* Kalınlık/Ebat seçimi (URL değişmez) */}
           <div className="mt-4">
-            <h3 className="text-sm font-semibold">
-              {chooseThicknessLabel}
-            </h3>
+            <h3 className="text-sm font-semibold">{chooseThicknessLabel}</h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {sizeSlugs.map((s) => {
                 const active = selected === s;
@@ -183,7 +174,6 @@ export default function ColorDetailPage() {
         </div>
       </header>
 
-      {/* Applications */}
       {apps && (
         <section className="mx-auto max-w-[1100px] mt-10">
           <h2 className="text-xl md:text-2xl font-semibold">
@@ -193,7 +183,6 @@ export default function ColorDetailPage() {
         </section>
       )}
 
-      {/* Specs */}
       {specs && Array.isArray(specs.rows) && specs.rows.length > 0 && (
         <section className="mx-auto max-w-[1100px] mt-10 overflow-auto">
           <h2 className="text-xl md:text-2xl font-semibold">
@@ -212,28 +201,11 @@ export default function ColorDetailPage() {
         </section>
       )}
 
-      {/* FAQ */}
-     {faqItems.length > 0 && (
-  <div id="faq" className="mx-auto max-w-[1100px] mt-10">
-    <QuestionsSection
-      items={faqItems}
-      span={`${colorLabel} · ${processLabel}`}
-    />
-  </div>
-)}
-
-      {/* CTA */}
-      {/* <section className="mx-auto max-w-[1100px] mt-10">
-        <Link
-          href={{
-            pathname: `/${locale}/contactus`,
-            query: { product: productKey, cut: cutSlug, process: processSlug, color: colorSlug, thickness: selected }
-          }}
-          className="inline-block rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800"
-        >
-          {locale.startsWith("tr") ? "Teklif İste" : "Get a Quote"}
-        </Link>
-      </section> */}
+      {faqItems.length > 0 && (
+        <div id="faq" className="mx-auto max-w-[1100px] mt-10">
+          <QuestionsSection items={faqItems} span={`${colorLabel} · ${processLabel}`} />
+        </div>
+      )}
 
       <TextSection
         title={locale.startsWith("tr") ? "Türkiye'den Toptan Traverten" : "Wholesale Travertine from Turkey"}

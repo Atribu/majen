@@ -663,14 +663,14 @@
     "heading": "Travertine Slabs Cut Options",
     "text": "Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high-end interiors.",
     "vein-cut": {
-       "title": "Vein Cut Travertine Slabs",
+       "title": "Vein Cut Travertine Slabs ",
           "alt": "Vein-cut travertine slabs",
-          "span": "Direct Quarry Supplier",
+          "span": "",
           "intro": "Vein-cut slabs reveal linear banding for strong directionality in design.",
           "title2": "Why Choose Vein-Cut?",
           "intro2": "Parallel bands create visual continuity across large surfaces.",
           "hero": {
-            "src": "/media/slabs/vein-cut-hero.webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein-cut slab hero image"
           },
       "description": "Large-size blocks selected at the quarry with consistent character.",
@@ -690,6 +690,19 @@
           },
 
       "processes": {
+        "images": {
+              "combined": {
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
+              }
+            },
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
         "groups": {
@@ -1415,7 +1428,7 @@
           "title2": "Why Choose Cross-Cut?",
           "intro2": "Soft, non-directional texture for calm, uniform fields.",
           "hero": {
-            "src": "/media/slabs/cross-cut-hero.webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
       "description": "Large-size blocks selected at the quarry with consistent character.",
@@ -1435,6 +1448,19 @@
           },
           
       "processes": {
+        "images": {
+              "combined": {
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
+              }
+            },
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
         "groups": {

@@ -96,9 +96,7 @@ function buildBlogHref(locale, raw = "") {
 
   const slug = normalizePostSlug(raw);
   if (slug === "travertine-guide") {
-    return locale === "tr"
-      ? "/travertine-guide"
-      : "/travertine-guide";
+   return `/${locale}/travertine-guide`;
   }
   return `/${locale}/blog/${slug}`;
   // return slug ? `/${locale}/blog/${slug}` : `/${locale}/blog`;

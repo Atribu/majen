@@ -23,12 +23,11 @@ export const config = {
       tr: '/traverten-[product]'
     },
 
+ // Blog’un slug sayfaları
    '/blog/[slug]': { en: '/[slug]', tr: '/[slug]' },
 
-    '/blog/travertine-guide': {
-  en: '/travertine-guide',
-  tr: '/travertine-guide',
-},
+   // ÖZEL SAYFA: dosya yapısı app/[locale]/travertine-guide/page.js
+   '/travertine-guide': { en: '/travertine-guide', tr: '/travertine-guide' },
 
     // Process(+fill) level → /en/filled-honed-vein-cut-travertine-slabs
     // [process] param'ı "filled-honed" veya "natural" gibi birleşik gelir (lib'te buildProcessSlug).
@@ -63,8 +62,9 @@ export const config = {
     '/howweexport/fob': { en: '/how-we-export/fob', tr: '/nasil-ihracat-yapiyoruz/fob' },
     '/howweexport/cif': { en: '/how-we-export/cif', tr: '/nasil-ihracat-yapiyoruz/cif' },
     '/howweexport/exw': { en: '/how-we-export/exw', tr: '/nasil-ihracat-yapiyoruz/exw' },
-    '/blog': { en: '/blog', tr: '/blog' },
-    '/[slug]': { en: '/[slug]', tr: '/[slug]' },
+       '/blog': { en: '/blog', tr: '/blog' },
+   '/[slug]': { en: '/[slug]', tr: '/[slug]' },
+
   },
 };
 

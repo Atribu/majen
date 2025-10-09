@@ -90,6 +90,23 @@ import lightslabveinpolish from "@/public/images/cut/light/Transparent/Lightcros
  * - Tek görsel istersen "cover" yeter.
  * - Varyant bazlı kart/hero için { cover, ivory, light, antiko } yapısı.
  */
+export const PROCESS_THUMB_BY_CUT = {
+  "vein-cut": {
+    honed:    "/images/travertine/thumbs/process/honed.webp",
+    polished: "/images/travertine/thumbs/process/polished.webp",
+    brushed:  "/images/travertine/thumbs/process/brushed.webp",
+    tumbled:  "/images/travertine/thumbs/process/tumbled.webp",
+    natural:  "/images/travertine/thumbs/process/natural.webp",
+  },
+  "cross-cut": {
+    honed:    "/images/travertine/thumbs/process/honed.webp",
+    polished: "/images/travertine/thumbs/process/polished.webp",
+    brushed:  "/images/travertine/thumbs/process/brushed.webp",
+    tumbled:  "/images/travertine/thumbs/process/tumbled.webp",
+    natural:  "/images/travertine/thumbs/process/natural.webp",
+  },
+};
+
 export const PRODUCT_IMG = {
   block: {
     cover: blockIvory ?? phBlock, // fallback mevcut tek görselin
@@ -116,6 +133,249 @@ export const PRODUCT_IMG = {
     antiko: specialAntik,
   },
 };
+
+// app/[locale]/(catalog)/_images.js
+
+// 1) CUT HERO — ürün + cut seviyesinde
+export const IMAGE_BY_PRODUCT = {
+  slabs: {
+    cover: "/images/slabs/cover.webp",
+    "vein-cut": "/images/slabs/vein-hero.webp",
+    "cross-cut": "/images/slabs/cross-hero.webp",
+
+    // cut’a göre process thumb’ları
+    processThumbs: {
+      "vein-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        natural: "/images/cut/antico/Slab/Antikveincut.webp"
+      },
+      "cross-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
+      }
+    },
+
+    colorThumbs: {
+      "vein-cut": {
+        "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
+          light:  "/images/cut/light/Slab/lightveincut.webp",
+          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+      },
+
+      "cross-cut": {
+         "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        // ... diğer combinedKey'ler
+      }
+    },
+    
+  },
+  // tiles/blocks/special için de benzer yapı ekleyebilirsin
+};
+
+// en geniş genelleme (global fallback)
+export const PROCESS_THUMB_BY_COMBINED = {
+  "filled:honed":    "/images/process/fallback/filled-honed.webp",
+  "filled:polished": "/images/process/fallback/filled-polished.webp",
+  "filled:brushed":  "/images/process/fallback/filled-brushed.webp",
+  "filled:tumbled":  "/images/process/fallback/filled-tumbled.webp",
+  "unfilled:honed":    "/images/process/fallback/unfilled-honed.webp",
+  "unfilled:polished": "/images/process/fallback/unfilled-polished.webp",
+  "unfilled:brushed":  "/images/process/fallback/unfilled-brushed.webp",
+  "unfilled:tumbled":  "/images/process/fallback/unfilled-tumbled.webp",
+  natural: "/images/process/fallback/natural.webp"
+};
+// 2) PROCESS THUMB — *normalize edilmiş* anahtarlarla (EN formu)
+// natural, filled-honed, unfilled-honed, filled-polished, ...
+export const PROCESS_THUMB_BY_KEY = {
+  "natural":            "/images/process/natural.webp",
+  "filled-honed":       "/images/process/filled-honed.webp",
+  "filled-polished":    "/images/process/filled-polished.webp",
+  "filled-brushed":     "/images/process/filled-brushed.webp",
+  "filled-tumbled":     "/images/process/filled-tumbled.webp",
+  "unfilled-honed":     "/images/process/unfilled-honed.webp",
+  "unfilled-polished":  "/images/process/unfilled-polished.webp",
+  "unfilled-brushed":   "/images/process/unfilled-brushed.webp",
+  "unfilled-tumbled":   "/images/process/unfilled-tumbled.webp",
+};
+
+// 3) (OPS) RENK görünümü — eğer renk sayfaları için kullanıyorsanız
+export const IMAGE_BY_PRODUCT_AND_COLOR = {
+  slabs: {
+    ivory:  "/images/colors/slabs-ivory.webp",
+    light:  "/images/colors/slabs-light.webp",
+    antico: "/images/colors/slabs-antico.webp",
+    cover:  "/images/slabs/cover.webp",
+  },
+  // tiles/blocks/special ... isteğe göre
+};
+
+// ---- Helpers ----
+
+// TR → EN normalize: "dolgulu-honlanmis" → "filled-honed", "dogal" → "natural"
+export function normalizeProcessSlugToKey(locale, processSlug) {
+  if (!processSlug) return null;
+  const s = String(processSlug).toLowerCase();
+
+  if (s === "natural" || s === "dogal") return "natural";
+
+  // EN zaten EN
+  if (!String(locale).startsWith("tr")) return s;
+
+  // TR map
+  const map = {
+    "dolgulu-honlanmis": "filled-honed",
+    "dolgulu-cilali": "filled-polished",
+    "dolgulu-fircalanmis": "filled-brushed",
+    "dolgulu-eskitilmis": "filled-tumbled",
+    "dolgusuz-honlanmis": "unfilled-honed",
+    "dolgusuz-cilali": "unfilled-polished",
+    "dolgusuz-fircalanmis": "unfilled-brushed",
+    "dolgusuz-eskitilmis": "unfilled-tumbled",
+  };
+  return map[s] || s;
+}
+
+/**
+ * Process kart görseli belirleme sırası:
+ * 1) i18n override: slabs.cuts.[cutKey].processes.metaCombined.[procKeyNormalized].img
+ * 2) PROCESS_THUMB_BY_KEY[procKeyNormalized]
+ * 3) generic fallback
+ */
+export function processThumbFor({ t, productKey, cutKey, locale, processSlug }) {
+  const normalized = normalizeProcessSlugToKey(locale, processSlug);
+  let override = undefined;
+  try {
+    override = t.raw(`slabs.cuts.${cutKey}.processes.metaCombined.${normalized}.img`);
+  } catch {}
+  return (
+    override ||
+    PROCESS_THUMB_BY_KEY[normalized] ||
+    "/images/process/default.webp"
+  );
+}
+
 
 /**
  * ÜRÜN + SLUG'a göre kesin görsel seçimi:
