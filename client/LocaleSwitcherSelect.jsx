@@ -9,6 +9,8 @@ import {
   productKeyFromSlug, // (locale, slug) -> "block" | "slabs" | ...
   productSlugFor,     // (locale, key) -> locale'ye uygun slug
   PRODUCT_SLUGS,      // { en: {block:"blocks",...}, tr:{block:"bloklar",...}, ... }
+  CUTS,
+  COLOR_VARIANTS
 } from "@/lib/travertine";
 
 export default function LocaleSwitcherSelect({
@@ -46,59 +48,115 @@ export default function LocaleSwitcherSelect({
   // app/components/LocaleSwitcherSelect.jsx
 // ...
 function buildLocalizedPath(path, targetLocale) {
-  const seg = (path || "/").split("/"); // ["", "tr", "travertenler", "plakalar", ...]
-  if (seg.length < 2) return `/${targetLocale}`;
+  const segs = (path || "/").split("/").filter(Boolean); // ["tr", "vein-cut-travertine-slabs"] gibi
+  if (segs.length === 0) return `/${targetLocale}`;
 
-  const currentLocale = seg[1] || "en";
-  const currentBase   = seg[2];          // "travertines" | "travertenler" | "travertine" | "traverten"
-  const productSlug   = seg[3];
-  const rest          = seg.slice(4);
+  const currentLocale = segs[0] || "en";
+  const afterLocale   = segs[1]; // kısa SEO formu genelde burada
+  const tail          = segs.slice(2); // (kalınlık vs. pek yok; anchor'a dönüştürmüştük)
 
-  // 1) Katalog base’lerini çoğul+tekil olarak tanı
-  const CATALOG_BASES = new Set([
-    "travertine", "travertines",
-    "traverten",  "travertenler",
-  ]);
-  const isCatalog = CATALOG_BASES.has(currentBase);
+  // 0) Locale yalnızsa
+  if (!afterLocale) return `/${targetLocale}`;
 
-  // 2) Katalog değilse: sadece locale’i değiştir
-  if (!isCatalog) {
-    seg[1] = targetLocale;
-    return seg.join("/");
+  // 0.5) ÖZEL SAYFA: travertine-guide → aynı slug iki dilde de sabit
+  if (afterLocale === "travertine-guide") {
+    return `/${targetLocale}/travertine-guide`;
   }
 
-  // 3) Hedef dil için doğru base’i (çoğul form) seç
-  // baseFor() varsa onu kullan, yoksa locale’e göre varsayılan ver
-  const rawBase = (typeof baseFor === "function" && baseFor(targetLocale)) 
-    || (targetLocale.startsWith("tr") ? "travertenler" : "travertines");
+  // Yardımcılar
+  const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
+  const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
+  const PROC_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))$/i;
+  const PROC_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
 
-  // rawBase tekil dönerse çoğula çevir
-  const toPluralBase = (base, loc) => {
-    if (loc.startsWith("tr")) return base === "traverten" ? "travertenler" : "travertenler";
-    return base === "travertine" ? "travertines" : "travertines";
+  const isCutSlug = (loc, slug) =>
+    loc === "tr" ? CUT_TR.test(slug) : CUT_EN.test(slug);
+
+  const cutKeyFromExternalSlug = (loc, cutSlug) => {
+    const table = CUTS[loc] || {};
+    return Object.keys(table).find((k) => table[k] === String(cutSlug)) || null;
   };
-  const newBase = toPluralBase(rawBase, targetLocale);
+  const externalCutSlugFor = (loc, cutKey) => {
+    const table = CUTS[loc] || {};
+    return table[cutKey] || cutKey;
+  };
+  const toCombined = (loc, procSlug) => {
+    const s = String(procSlug).toLowerCase();
+    if (s === "natural" || s === "dogal") return "natural";
+    const fillMap = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" };
+    const procMap = {
+      honlanmis: "honed", cilali: "polished", fircalanmis: "brushed", eskitilmis: "tumbled",
+      honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+    };
+    const [f, p] = s.split("-");
+    return `${fillMap[f] || f}:${procMap[p] || p}`; // "filled:polished"
+  };
+  const fromCombined = (loc, combined) => {
+    if (combined === "natural") return loc === "tr" ? "dogal" : "natural";
+    const [f, p] = combined.split(":");
+   if (loc === "tr") {
+      const fMap = { filled: "dolgulu", unfilled: "dolgusuz" };
+      const pMap = { honed: "honlanmis", polished: "cilali", brushed: "fircalanmis", tumbled: "eskitilmis" };
+      return `${fMap[f] || f}-${pMap[p] || p}`;
+    }
+    return `${f}-${p}`;
+  };
+  const colorToTarget = (curLoc, tgtLoc, colorSlug) => {
+    // COLOR_VARIANTS: { en:{ivory:'ivory',...}, tr:{ivory:'fildisi',...} }
+    // önce color key’i bul
+    const curMap = COLOR_VARIANTS[curLoc] || {};
+   const key = Object.keys(curMap).find((k) => curMap[k] === colorSlug) || colorSlug;
+    return (COLOR_VARIANTS[tgtLoc] || {})[key] || colorSlug;
+  };
 
-  // 4) Katalog kökü ise: sadece base’i çevir
-  if (!productSlug) {
-    return `/${targetLocale}/${newBase}`;
+  // 1) CUT sayfası (/{locale}/{cut})
+  if (isCutSlug(currentLocale, afterLocale)) {
+    const cutKey = cutKeyFromExternalSlug(currentLocale, afterLocale);
+    const targetCut = externalCutSlugFor(targetLocale, cutKey);
+    return `/${targetLocale}/${targetCut}`;
   }
 
-  // 5) Ürün slugu → productKey (çok dilli sağlam çözüm)
-  const productKey =
-    productKeyFromSlug(currentLocale, productSlug) ||
-    productKeyFromSlug(targetLocale, productSlug) ||
-    resolveProductKeyFromAnyLocale(productSlug); // sizin yardımcı fonksiyon
+  // 2) PROCESS + CUT (/{locale}/{process}-{cut})
+  //    last 4 token cut; baştaki kısım process
+  const tokens = afterLocale.split("-");
+  if (tokens.length >= 4) {
+    const cutCandidate = tokens.slice(-4).join("-");
+    if (isCutSlug(currentLocale, cutCandidate)) {
+      const procSlug = tokens.slice(0, tokens.length - 4).join("-");
+      const cutKey   = cutKeyFromExternalSlug(currentLocale, cutCandidate);
+      const targetCut = externalCutSlugFor(targetLocale, cutKey);
 
-  // Bulunamazsa güvenli fallback
-  if (!productKey) {
-    return `/${targetLocale}/${newBase}`;
+      // proc map
+      const isProcOk = currentLocale === "tr" ? PROC_TR.test(procSlug) : PROC_EN.test(procSlug);
+      if (isProcOk) {
+        const combined = toCombined(currentLocale, procSlug);
+        const targetProc = fromCombined(targetLocale, combined);
+        return `/${targetLocale}/${targetProc}-${targetCut}`;
+      }
+    }
   }
 
-  // 6) Hedef dilde ilgili slugu yaz ve kuyruğu koru
-  const newProduct = productSlugFor(targetLocale, productKey);
-  const tail = rest.length ? `/${rest.join("/")}` : "";
-  return `/${targetLocale}/${newBase}/${newProduct}${tail}`;
+  // 3) COLOR + PROCESS + CUT (/{locale}/{color}-{process}-{cut})
+  //    color ilk token, son 4 token cut, arası process
+  if (tokens.length >= 6) {
+    const colorSlug = tokens[0];
+    const cutCandidate = tokens.slice(-4).join("-");
+    const procSlug = tokens.slice(1, tokens.length - 4).join("-");
+    if (isCutSlug(currentLocale, cutCandidate)) {
+      const cutKey    = cutKeyFromExternalSlug(currentLocale, cutCandidate);
+      const targetCut = externalCutSlugFor(targetLocale, cutKey);
+      const combined  = toCombined(currentLocale, procSlug);
+      const targetProc  = fromCombined(targetLocale, combined);
+      const targetColor = colorToTarget(currentLocale, targetLocale, colorSlug);
+      // (Kalınlık parametresi varsa middleware’iniz zaten anchor’a çevrildi; tail’i korumuyoruz)
+      return `/${targetLocale}/${targetColor}-${targetProc}-${targetCut}`;
+    }
+  }
+
+  // 4) Diğer tüm yollar: sadece locale’i değiştir (mevcut davranış)
+  const raw = [targetLocale, ...segs.slice(1)].join("/");
+  return `/${raw}`;
+
 }
 
 

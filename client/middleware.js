@@ -65,10 +65,8 @@ const PROC_ONLY_TR = /^(dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanm
 const COLORS_EN = new Set(['ivory','light','antico']);
 const COLORS_TR = new Set(['fildisi','acik','antiko']);
 
-// Locale'e göre base segment (travertine|traverten)
-function baseSeg(locale) {
-  return locale === 'tr' ? 'traverten' : 'travertine';
-}
+// ⚠️ FS tabanı: dosya sistemi her zaman "travertine"
+const FS_BASE = 'travertine';
 
 // Cut slug'ından **LOCALE’E UYGUN** ürün segmentini çıkar (EN: slabs/tiles, TR: plakalar/karolar)
 function localizedProductFromCut(locale, cutSlug) {
@@ -148,7 +146,7 @@ export default function middleware(req) {
         if (colorOk && procOk) {
           const cutSlugFull = last4;
           const productSeg  = localizedProductFromCut(locale, cutSlugFull);
-          const base        = baseSeg(locale);
+          const base        = FS_BASE;
 
           // opsiyonel thickness
           if (parts.length === 3) {
@@ -183,7 +181,7 @@ export default function middleware(req) {
       const cutSlugFull = `${cutType}-travertine-${productEn}`; // tam cut SEO slug
       const tail = parts.slice(2).join('/'); // color[/thickness] olabilir
 
-      url.pathname = `/${locale}/${baseSeg(locale)}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
+       url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
       return NextResponse.rewrite(url);
     }
 
@@ -200,7 +198,7 @@ export default function middleware(req) {
       const cutSlugFull = `${cutTypeTr}-traverten-${productTr}`;
       const tail = parts.slice(2).join('/');
 
-      url.pathname = `/${locale}/${baseSeg(locale)}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
+      url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
       return NextResponse.rewrite(url);
     }
   }
@@ -213,7 +211,7 @@ export default function middleware(req) {
     const seg2 = parts[1];
     if (CUT_EN.test(seg2) || CUT_TR.test(seg2)) {
       const productSeg = localizedProductFromCut(locale, seg2);
-      url.pathname = `/${locale}/${baseSeg(locale)}/${productSeg}/${seg2}`;
+      url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${seg2}`;
       return NextResponse.rewrite(url);
     }
   }

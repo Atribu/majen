@@ -4,7 +4,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import {
   baseFor,
@@ -26,7 +26,9 @@ import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 
 export default function ColorDetailPage() {
-  const { product: productSlug, cut: cutSlug, process: processSlug, color: colorSlug } = useParams();
+  const { product: productSlug, cut: cutSlug, process: processSlug, color: colorSlug, thickness } = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const locale = useLocale();
   const lang = getLang(locale);
   const t = useTranslations("ProductPage");
@@ -35,8 +37,20 @@ export default function ColorDetailPage() {
   const procKeyFull = String(processSlug || "").toLowerCase();
   const colorKey = (COLOR_KEY_BY_SLUG && COLOR_KEY_BY_SLUG[colorSlug]) || String(colorSlug || "").toLowerCase();
   const sizeSlugs = sizeSlugListForProduct(productKey, t);
-  const [selected, setSelected] = React.useState(sizeSlugs[0]);
+  // Hash'tan oku (örn. #2cm). Uyum yoksa ilk boy.
+  const hashValue = typeof window !== "undefined" ? decodeURIComponent(window.location.hash.replace(/^#/, "")) : "";
+  const initialFromHash = hashValue && sizeSlugs.includes(hashValue) ? hashValue : sizeSlugs[0];
+  const [selected, setSelected] = React.useState(initialFromHash);
 
+  // Hash değişirse state’i senkronize et
+  React.useEffect(() => {
+    const onHashChange = () => {
+      const v = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      if (v && sizeSlugs.includes(v)) setSelected(v);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, [sizeSlugs]);
   if (!productKey || !colorKey || !procKeyFull) {
     return <main className="p-10 text-center text-neutral-500">Loading...</main>;
   }
@@ -97,6 +111,7 @@ const heroSrc =
   || "/images/homepage/antikoarkplan.webp";
 
   const baseSegment = baseFor(locale);
+  // SEO notu: hash canonical'a eklenmez (arama motorları # sonrasını dikkate almaz).
   const canonical = `https://www.majen.com.tr/${locale}/${colorSlug}-${processSlug}-${cutSlug}`;
   const sections = page?.sections || {};
   const apps = sections.applications;
@@ -153,7 +168,11 @@ const heroSrc =
                 return (
                   <button
                     key={s}
-                    onClick={() => setSelected(s)}
+                   onClick={() => {
+                  setSelected(s);
+                  // Hash ile güncelle: sayfa değişmez, middleware tetiklenmez
+                  router.replace(`${pathname}#${encodeURIComponent(s)}`, { scroll: false });
+                }}
                     className={[
                       "px-4 py-2 rounded-full border text-sm transition",
                       active
@@ -173,14 +192,19 @@ const heroSrc =
           </div>
         </div>
       </header>
-
+{/* İletişim linkine kalınlığı query ile geçelim (hash SEO sayılmaz) */}
       {apps && (
         <section className="mx-auto max-w-[1100px] mt-10">
-          <h2 className="text-xl md:text-2xl font-semibold">
-            {apps.h2 || t("ui.applications", { default: "Applications" })}
-          </h2>
-          {apps.p && <p className="mt-2 text-neutral-700">{apps.p}</p>}
-        </section>
+     <Link
+       href={{
+         pathname: `/${locale}/contactus`,
+        query: { product: productKey, cut: cutSlug, process: processSlug, color: colorSlug, thickness: selected }
+       }}
+       className="inline-block rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800"
+     >
+       {locale.startsWith("tr") ? "Teklif İste" : "Get a Quote"}
+     </Link>
+   </section>
       )}
 
       {specs && Array.isArray(specs.rows) && specs.rows.length > 0 && (

@@ -285,3 +285,14 @@ export function buildSeoColorPath(locale, productKey, cutSlug, processSlug, colo
   // YENİ PATTERN: /{lang}/{color}-{process}-{cut}
   return `/${cSlug}-${pSlug}-${cut}`;
 }
+
+export function cutKeyFromExternalSlug(locale, cutSlug) {
+  const lang = getLang(locale);
+  const table = CUTS[lang] || {};
+  return Object.keys(table).find((k) => table[k] === String(cutSlug)) || null;
+}
+
+export function externalCutSlugFor(locale, cutKey) {
+  const lang = getLang(locale);
+  return CUTS[lang]?.[cutKey] || cutKey;
+}
