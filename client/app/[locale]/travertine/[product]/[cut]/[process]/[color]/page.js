@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter, usePathname } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations, useMessages } from "next-intl";
 import {
   baseFor,
   productKeyFromSlug,
@@ -25,6 +25,25 @@ import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom"
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 
+const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
+
+
+function trCombinedToEn(procKey = "") {
+  const s = String(procKey).toLowerCase().trim();
+  if (!s) return s;
+  if (s === "dogal") return "natural";
+  const [fillRaw, procRaw] = s.split("-");
+  const fill = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" }[fillRaw] || fillRaw;
+  const proc = {
+    honlanmis: "honed",
+    cilali: "polished",
+    fircalanmis: "brushed",
+    eskitilmis: "tumbled",
+    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+  }[procRaw] || procRaw;
+  return `${fill}-${proc}`;
+}
+
 export default function ColorDetailPage() {
   const { product: productSlug, cut: cutSlug, process: processSlug, color: colorSlug, thickness } = useParams();
   const router = useRouter();
@@ -32,6 +51,7 @@ export default function ColorDetailPage() {
   const locale = useLocale();
   const lang = getLang(locale);
   const t = useTranslations("ProductPage");
+  const messages = useMessages(); 
   const productKey = productKeyFromSlug(locale, String(productSlug));
   const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut";
   const procKeyFull = String(processSlug || "").toLowerCase();
@@ -55,32 +75,50 @@ export default function ColorDetailPage() {
     return <main className="p-10 text-center text-neutral-500">Loading...</main>;
   }
 
-  let page = t.raw(`${productKey}.cuts.${cutKey}.processes.${procKeyFull}.colors.${colorKey}`) || null;
 
-  if (!page && locale === "tr") {
-    const TR2EN = {
-      "dogal": "natural",
-      "dolgulu-honlanmis": "filled-honed",
-      "dolgulu-cilali": "filled-polished",
-      "dolgulu-fircalanmis": "filled-brushed",
-      "dolgulu-eskitilmis": "filled-tumbled",
-      "dolgusuz-honlanmis": "unfilled-honed",
-      "dolgusuz-cilali": "unfilled-polished",
-      "dolgusuz-fircalanmis": "unfilled-brushed",
-      "dolgusuz-eskitilmis": "unfilled-tumbled"
-    };
-    const tryEnKey = TR2EN[procKeyFull];
-    if (tryEnKey) {
-      page = t.raw(`${productKey}.cuts.${cutKey}.processes.${tryEnKey}.colors.${colorKey}`) || null;
-    }
-  }
+ let page =
+   messages?.ProductPage?.[productKey]
+            ?.cuts?.[cutKey]
+            ?.processes?.[procKeyFull]
+            ?.colors?.[colorKey]
+   || null;
+
+ // 2) TR yoksa, EN birleşik anahtara çevirip tekrar dene
+ if (!page && locale.startsWith("tr")) {
+   const enKey = trCombinedToEn(procKeyFull);
+   if (enKey) {
+     page =
+       messages?.ProductPage?.[productKey]
+                ?.cuts?.[cutKey]
+                ?.processes?.[enKey]
+                ?.colors?.[colorKey]
+       || null;
+   }
+ }
 
   const chooseThicknessLabel = page?.ui?.chooseThickness || (locale.startsWith("tr") ? "Kalınlık Seç" : "Choose Thickness");
   const applicationsLabel = page?.ui?.applicationsLabel || (locale.startsWith("tr") ? "Uygulamalar" : "Applications");
   const specsLabel = page?.ui?.specsLabel || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");
   const faqLabel = page?.ui?.faqLabel || (locale.startsWith("tr") ? "SSS" : "FAQ");
   const colorLabel = colorLabelFor(locale, colorKey);
-  const processLabel = t.raw(`${productKey}.cuts.${cutKey}.processes.${procKeyFull}.title`) || procKeyFull.replace(/-/g, " ");
+  let processLabel =
+   messages?.ProductPage?.[productKey]
+            ?.cuts?.[cutKey]
+            ?.processes?.[procKeyFull]
+            ?.title
+   || null;
+
+ if (!processLabel && locale.startsWith("tr")) {
+   const enKey = trCombinedToEn(procKeyFull);
+   processLabel =
+     messages?.ProductPage?.[productKey]
+              ?.cuts?.[cutKey]
+              ?.processes?.[enKey]
+              ?.title
+     || null;
+ }
+ processLabel = processLabel || procKeyFull.replace(/-/g, " ");
+
   const H1 = page?.h1 || `${colorLabel} · ${processLabel}`;
   const lead = page?.lead || "";
   const intro = page?.intro || "";
@@ -118,22 +156,28 @@ const heroSrc =
   const specs = sections.specs;
   const faqItems = Array.isArray(sections?.faq?.items) ? sections.faq.items.filter((it) => it && typeof it.q === "string" && typeof it.a === "string") : [];
 
-  function combinedKeyFromProc(proc = "", locale = "en") {
+function combinedKeyFromProc(proc = "", locale = "en") {
   const s = String(proc).toLowerCase().trim();
   if (!s) return null;
   if (s === "natural" || s === "dogal") return "natural";
 
   const fillMap = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" };
   const procMap = {
-    honlanmis: "honed", cilali: "polished", fircalanmis: "brushed", eskitilmis: "tumbled",
+    honlanmis: "honed",
+    cilali: "polished",
+    fircalanmis: "brushed",
+    eskitilmis: "tumbled",
     honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
   };
 
   const [fillRaw, procRaw] = s.split("-");
   const fill = fillMap[fillRaw] || fillRaw;
   const p    = procMap[procRaw] || procRaw;
-  return `${fill}:${p}`; // örn: "filled:polished"
+
+  // COLOR thumbs ve PROCESS_THUMB_BY_COMBINED colon (:) ile indexleniyor
+  return `${fill}:${p}`;
 }
+
 
   return (
     <main className="px-5 md:px-8 lg:px-0 py-10 mt-14">

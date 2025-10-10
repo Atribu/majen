@@ -25,6 +25,23 @@ const handleI18nRouting = createMiddleware(routing, { localeDetection: false });
  *   /{locale}/travertine|traverten/{product}/{cut}/{process}/{color}/{thickness}
  */
 
+const COLOR_KEY_FROM_ANY = new Map([
+  // EN → key
+  ['ivory', 'ivory'], ['light', 'light'], ['antico', 'antico'],
+  // TR → key
+  ['fildisi', 'ivory'], ['acik', 'light'], ['antiko', 'antico'],
+]);
+const COLOR_SLUG_BY_LOCALE = {
+  en: { ivory: 'ivory', light: 'light', antico: 'antico' },
+  tr: { ivory: 'fildisi', light: 'acik',  antico: 'antiko'  }
+};
+function normalizeColorSlugForLocale(locale, rawSlug) {
+  const key = COLOR_KEY_FROM_ANY.get(String(rawSlug || '').toLowerCase());
+  if (!key) return null; // bilinmeyen renk
+  const lang = locale === 'tr' ? 'tr' : 'en';
+  return COLOR_SLUG_BY_LOCALE[lang][key] || null;
+}
+
 // Ürün ana sayfaları whitelist (blog’a düşmemesi için)
 const EN_PRODUCTS = new Set([
   'travertine-blocks',
@@ -54,12 +71,15 @@ const PROC_CUT_WITH_PRODUCT_EN =
   /^((?:(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
 
 // TR ör: dolgulu-honlanmis-damar-kesim-traverten-plakalar
+// EN işlem adlarını da kabul et (honed|polished|brushed|tumbled) + "natural"
 const PROC_CUT_WITH_PRODUCT_TR =
-  /^((?:(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
+  /^((?:(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))|dogal|natural)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
 
 // Sadece process (renk-önde kuralı için)
 const PROC_ONLY_EN = /^(natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))$/i;
-const PROC_ONLY_TR = /^(dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
+// TR’de process-only kontrolü (color-first match için) — EN varyantlarını da kabul et
+const PROC_ONLY_TR =
+  /^(?:dogal|natural|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))$/i;
 
 // Colors
 const COLORS_EN = new Set(['ivory','light','antico']);
@@ -137,10 +157,12 @@ export default function middleware(req) {
       const isCutTR = CUT_TR.test(last4);
 
       if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
-        const colorSlug   = tokens[0]; // ilk token
+        const rawColor    = tokens[0]; // ilk token (EN/TR olabilir)
         const processSlug = tokens.slice(1, tokens.length - 4).join('-'); // aradaki tüm tokenlar
 
-        const colorOk = locale === 'tr' ? COLORS_TR.has(colorSlug) : COLORS_EN.has(colorSlug);
+         // Renk: EN ya da TR gelmiş olabilir → hedef locale’e çevir
+        const colorSlug = normalizeColorSlugForLocale(locale, rawColor);
+        const colorOk = !!colorSlug;
         const procOk  = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
 
         if (colorOk && procOk) {
@@ -171,7 +193,7 @@ export default function middleware(req) {
     // EN
     let m = seg2.match(PROC_CUT_WITH_PRODUCT_EN);
     if (m) {
-      const processSlug = m[1];                 // natural | filled-honed ...
+      let processSlug = m[1];                 // natural | filled-honed ...
       const cutType     = m[2];                 // vein-cut | cross-cut
       const productEn   = m[3].toLowerCase();   // slabs | tiles
       const productSeg  = locale === 'tr'
@@ -188,12 +210,30 @@ export default function middleware(req) {
     // TR
     m = seg2.match(PROC_CUT_WITH_PRODUCT_TR);
     if (m) {
-      const processSlug = m[1];                 // dogal | dolgulu-honlanmis ...
+      let processSlug = m[1];                 // dogal | dolgulu-honlanmis ...
       const cutTypeTr   = m[2];                 // damar-kesim | enine-kesim
       const productTr   = m[3].toLowerCase();   // plakalar | karolar
       const productSeg  = locale === 'tr'
         ? productTr
         : (productTr === 'plakalar' ? 'slabs' : 'tiles');
+
+         // 🔁 İngilizce işlem adlarını TR’ye normalize et (rewrite’ı garantiye al)
+    const EN2TR = {
+      'honed': 'honlanmis',
+      'polished': 'cilali',
+      'brushed': 'fircalanmis',
+      'tumbled': 'eskitilmis'
+    };
+    // natural → dogal
+    if (processSlug.toLowerCase() === 'natural') {
+      processSlug = 'dogal';
+    } else {
+      // "dolgulu-polished" gibi birleşik geldiyse sağdaki kısmı çevir
+      processSlug = processSlug.replace(
+        /(dolgulu|dolgusuz)-(honed|polished|brushed|tumbled)/i,
+        (_, fill, proc) => `${fill.toLowerCase()}-${EN2TR[proc.toLowerCase()] || proc.toLowerCase()}`
+      );
+    }
 
       const cutSlugFull = `${cutTypeTr}-traverten-${productTr}`;
       const tail = parts.slice(2).join('/');

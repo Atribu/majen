@@ -51,14 +51,15 @@ export default function InfoSection() {
   const locale = useLocale();
   const lang = getLang(locale);
   const prefix = `/${locale}`;
- const base = locale === "tr" ? "travertenler" : "travertines"; // ✅ doğru
+  const base = locale === "tr" ? "travertenler" : "travertines"; 
+  const shortBase = locale === "tr" ? "traverten" : "travertine"; 
   const contactPath = `${prefix}/${lang === "tr" ? "iletisim" : "contact"}`;
 
   const items = [
-    { key: "product1", img: block,   href: `${prefix}/travertine-${productSlugFor(locale, "block")}`},
-    { key: "product2", img: slabs,   href: `${prefix}/travertine-${productSlugFor(locale, "slabs")}` },
-    { key: "product3", img: tiles,   href: `${prefix}/travertine-${productSlugFor(locale, "tiles")}`  },
-    { key: "product4", img: special, href: `${prefix}/travertine-${productSlugFor(locale, "special")}` },
+     { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "block")}`},
+    { key: "product2", img: slabs,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "slabs")}` },
+    { key: "product3", img: tiles,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "tiles")}`  },
+    { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "special")}` },
   ];
 
   // t("__contactPath") hilesi: Card içinde contactPath'e erişmek için geçici key

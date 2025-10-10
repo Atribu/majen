@@ -63,6 +63,29 @@ function buildLocalizedPath(path, targetLocale) {
     return `/${targetLocale}/travertine-guide`;
   }
 
+  const mShort = afterLocale.match(/^(travertine|traverten)-(.+)$/i);
+  if (mShort) {
+    const part = mShort[2].toLowerCase(); // "slabs" | "plakalar" | ...
+    // ürün key'ini EN/TR tablolarında ara
+    let key = null;
+    for (const k of Object.keys(PRODUCT_SLUGS.en || {})) {
+      if (String(PRODUCT_SLUGS.en[k]).toLowerCase() === part) { key = k; break; }
+    }
+    if (!key) {
+      for (const k of Object.keys(PRODUCT_SLUGS.tr || {})) {
+        if (String(PRODUCT_SLUGS.tr[k]).toLowerCase() === part) { key = k; break; }
+      }
+    }
+    // bulunduysa hedef dile göre kısa slug üret
+    if (key) {
+      const prefix = targetLocale.startsWith("tr") ? "traverten" : "travertine";
+      const pslug  = PRODUCT_SLUGS[targetLocale]?.[key] ?? key;
+      return `/${targetLocale}/${prefix}-${pslug}`;
+    }
+    // bulunamazsa sadece locale değiştir
+    return `/${[targetLocale, ...segs.slice(1)].join("/")}`;
+  }
+
   // Yardımcılar
   const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
   const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;

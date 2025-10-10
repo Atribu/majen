@@ -90,6 +90,24 @@ const safe = (fn, fallback) => {
   try { const v = fn(); return v ?? fallback; } catch { return fallback; }
 };
 
+// TR birleşik → EN birleşik ("dolgulu-cilali" → "filled-polished")
+function trCombinedToEn(procKey = "") {
+  const s = String(procKey).toLowerCase().trim();
+  if (!s) return s;
+  if (s === "dogal") return "natural";
+  const [fillRaw, procRaw] = s.split("-");
+  const fill = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" }[fillRaw] || fillRaw;
+  const proc = {
+    honlanmis: "honed",
+    cilali: "polished",
+    fircalanmis: "brushed",
+    eskitilmis: "tumbled",
+    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+  }[procRaw] || procRaw;
+  return `${fill}-${proc}`;
+}
+
+
 export default function ProcessPage() {
   const { product: productSlug, cut: cutSlug, process } = useParams();
   const locale = useLocale();
@@ -110,6 +128,10 @@ export default function ProcessPage() {
   const procKey = normalizeProcKey(process, locale);
   const procLabel = friendlyProcessLabel(procKey, locale);
 
+  // TR'de "dolgulu-..." anahtarını EN'e çevirip lookup'ı tek kanaldan yapalım
+const lookupProcKey =
+  locale.startsWith("tr") ? trCombinedToEn(procKey) : procKey;
+
   // === ÜRÜN GENEL ===
   const productTitle = safe(() => t(`${productKey}.title`), "Product");
   const productIntro = safe(() => t(`${productKey}.intro`), "");
@@ -118,11 +140,12 @@ export default function ProcessPage() {
   const features = safe(() => t.raw(`${productKey}.features`), []) || [];
   const description = safe(() => t.raw(`${productKey}.description`), productIntro) || productIntro;
 
-  // === PROCESS DÜĞÜMÜ ===
-  // Artık process node, birleşik anahtarla gelir: processes["filled-polished"] vs processes["natural"]
-  const processNode = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${procKey}`), {}) || {};
+// === PROCESS DÜĞÜMÜ === (tek anahtarla; TR ise EN'e çevrilmiş hali)
+const processNode =
+  safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`), {}) || {};
 
-  const processTitle = processNode.title || procLabel; // i18n yoksa okunaklı başlık
+// Başlık
+const processTitle = processNode.title || procLabel;
   const processIntro = processNode.lead || processNode.intro || safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.subtext`), "");
 
  // Görsel / alt başlıklar / span (process → combined key)
