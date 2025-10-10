@@ -130,7 +130,8 @@ if (isBlocks) {
     return {
       slug,
       vKey: ckey,
-      title: label,
+      title: `Travertine Blocks Blaundos ${label}`,
+      description:`Travertine Blocks Blaundos ${label}`,
       // Yeni rota: /travertine/[product]/[color]
       // Yeni: kısa SEO link (string). Middleware bunu FS rotasına REWRITE edecek.
      href: pretty,
