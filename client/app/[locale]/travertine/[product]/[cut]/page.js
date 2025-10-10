@@ -5,7 +5,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
-import { getLang, baseFor, productKeyFromSlug, CUTS } from "@/lib/travertine";
+import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor} from "@/lib/travertine";
 import { IMAGE_BY_PRODUCT, PROCESS_THUMB_BY_COMBINED } from "@/app/[locale]/(catalog)/_images";
 
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
@@ -13,6 +13,20 @@ import VariantCircleSection from "@/app/[locale]/components/products1/VariantCir
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
+import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
+import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
+import slabs from "@/public/images/deneme/slabson.webp";
+import tiles from "@/public/images/homepage/kesim.webp";
+import special from "@/public/images/deneme/masa2.webp";
+
+function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
+  return (
+    <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
+      <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
+      <div className={contentClassName}>{children}</div>
+    </div>
+  );
+}
 
 // helpers
 const safe = (fn, fb = undefined) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
@@ -31,6 +45,7 @@ export default function CutPage() {
   const locale  = useLocale();
   const lang    = getLang(locale);
   const t       = useTranslations("ProductPage");
+    const prefix = `/${locale}`;
 
   const productKey  = productKeyFromSlug(locale, String(productSlug)) || "slabs";
   const baseSegment = baseFor(locale);
@@ -67,7 +82,54 @@ export default function CutPage() {
   );
   const title2   = safe(() => t(`slabs.cuts.${cutKey}.title2`), safe(() => t(`slabs.title2`), null));
   const intro2   = safe(() => t(`slabs.cuts.${cutKey}.intro2`),  safe(() => t(`slabs.intro2`),  null));
-  const span     = safe(() => t(`slabs.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`), "- Direct Quarry Supplier"));
+  const span     = safe(() => t(`slabs.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`),null));
+
+   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
+
+  const opt = (key, fallback = "") => {
+  try {
+    const v = t(key);
+    return v && v !== key ? v : fallback; // key aynen dönerse bulunamamıştır
+  } catch {
+    return fallback;
+  }
+};
+
+  const linkPatterns = [
+    {
+      pattern: /vein[- ]cut/i,
+      href: {
+        pathname: "/travertine/[product]/[cut]",
+        params: { product: productSlug, cut: cutSlugForProduct(locale, "vein-cut", productKey) }
+      }
+    },
+    {
+      pattern: /cross[- ]cut/i,
+      href: {
+        pathname: "/travertine/[product]/[cut]",
+        params: { product: productSlug, cut: cutSlugForProduct(locale, "cross-cut", productKey) }
+      }
+    },
+  ];
+
+const optRaw = (key, fallback = null) => {
+  try {
+    const v = t.raw(key);
+    return v ?? fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+   const cardTitle1 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title1`, "");
+ const cardTitle2 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title2`, "");
+ const cardTitle3 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title3`, "");
+ const cardTitle4 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title4`, "");
+ const description = optRaw(`${productKey}.cuts.${cutKey}.description`, "");
+
+  const variantHeader = optRaw(`${productKey}.cuts.${cutKey}.variants.title`, "");
+
+  const variantText = optRaw(`${productKey}.cuts.${cutKey}.variants.text`, "");
 
   // Hero görsel (ürün+cut → cover → fallback)
   const heroOverride = safe(() => t.raw(`slabs.cuts.${cutKey}.hero.src`), null);
@@ -181,8 +243,58 @@ const makeGroupCards = (groupName) => {
     }
   }
 
+    // ---- Info cards içeriği
+  const cards = [
+    {
+      title: cardTitle1,
+      content: Array.isArray(description) ? description[0] : description ,
+    },
+    {
+      title: cardTitle2,
+      content: Array.isArray(description) ? description[1] :"",
+    },
+    {
+      title: cardTitle3,
+      content: Array.isArray(description) ? description[2] ?? "" : "",
+    },
+    {
+      title: cardTitle4,
+      content: Array.isArray(description) ? description[3] ?? "" : "",
+    },
+  ];
+
+  const otherCutKey = cutKey === "vein-cut" ? "cross-cut" : "vein-cut";
+
+const hrefForCut = (pkey, ckey) => ({
+  pathname: "/travertine/[product]/[cut]",
+  params: {
+    product: productSlugFor(locale, pkey),
+    cut:     cutSlugForProduct(locale, ckey, pkey),
+  },
+});
+
+// 🔸 yalnızca slabs/tiles/special-designs göster
+const CUT_PRODUCTS = ["slabs", "tiles", "special-designs"];
+
+// current product için sadece karşı cut; diğerleri için iki cut
+const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
+  if (pkey === productKey) {
+    // aynı ürün → sadece diğer cut
+    acc[pkey] = [
+      { label: otherCutKey.replace("-", " "), href: hrefForCut(pkey, otherCutKey) },
+    ];
+  } else {
+    // farklı ürün → iki cut da
+    acc[pkey] = [
+      { label: "vein-cut",  href: hrefForCut(pkey, "vein-cut")  },
+      { label: "cross-cut", href: hrefForCut(pkey, "cross-cut") },
+    ];
+  }
+  return acc;
+}, {});
+
   return (
-    <main className="py-6 mt-16 overflow-x-hidden">
+    <main className="py-6 mt-16 overflow-x-hidden text-center w-full">
       <ProductIntroSection
         title={cutTitle}
         intro={cutIntro}
@@ -196,6 +308,27 @@ const makeGroupCards = (groupName) => {
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
         span={span}
       />
+
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+              {cards.map((c, i) => {
+                const plain =
+                  typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
+      
+                return (
+                  <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+                    {i === 1 ? (
+                      <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
+                    ) : (
+                      <span className={cardTextClass}>{plain}</span>
+                    )}
+                  </InfoCard>
+                );
+              })}
+            </section>
+
+
+<h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
+<p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2"> {variantText}</p>
 
       {/* Filled */}
       {filledBlock.variantCards.length > 0 && (
@@ -248,6 +381,24 @@ const makeGroupCards = (groupName) => {
       )}
 
       <ContactFrom />
+
+{/* <OtherOptions
+  heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
+  excludeProduct={productKey}
+  productOrder={["slabs", "tiles", "special-designs"]}   // ⬅️ blocks yok
+  baseHref={`${prefix}/${baseSegment}`}
+  productSegments={{
+    slabs:            productSlugFor(locale, "slabs"),
+    tiles:            productSlugFor(locale, "tiles"),
+    "special-designs": productSlugFor(locale, "special-designs"),
+  }}
+  locale={locale}
+  productImages={{ slabs, tiles, "special-designs": special }}
+  productHrefFor={(pkey) => ({ pathname: "/travertine/[product]", params: { product: productSlugFor(locale, pkey) } })}
+  variantLinks={variantLinks}
+/> */}
+
+      
     </main>
   );
 }

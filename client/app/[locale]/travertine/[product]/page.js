@@ -16,7 +16,7 @@ import {
   productUrl,
   cutSlugFor,
 } from "@/lib/travertine";
-import block from "@/public/images/deneme/ivoryblok.webp";
+import blocks from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
@@ -85,7 +85,7 @@ const title  = t(`${productKey}.title`);
  const cardTitle2 = opt(`${productKey}.detailsHeadings.title2`, "");
  const cardTitle3 = opt(`${productKey}.detailsHeadings.title3`, "");
  const cardTitle4 = opt(`${productKey}.detailsHeadings.title4`, "");
- const description = optRaw(`${productKey}.description`, intro) || intro;
+ const description = optRaw(`${productKey}.description`, intro);
 
   // ---- FAQ
   const qItems = messages?.ProductPage?.[productKey]?.QuestionsItems || {};
@@ -122,10 +122,9 @@ if (isBlocks) {
     const slug  = colorSlugFor(locale, ckey);             // "ivory" → "ivory" | "fildisi"
     const label = colorLabelFor(locale, ckey);  
      // Kısa SEO URL: /{locale}/{color}-travertine-blocks  (TR: /{locale}/{color}-traverten-bloklar)
-   const pretty =
-     locale.startsWith("tr")
-       ? `/${locale}/${slug}-traverten-bloklar`
-       : `/${locale}/${slug}-travertine-blocks`;          // “Ivory” | “Fildişi”
+const pretty = locale.startsWith("tr")
+  ? `/${slug}-traverten-bloklar`
+  : `/${slug}-travertine-blocks`;
 
     return {
       slug,
@@ -166,7 +165,7 @@ if (isBlocks) {
         return {
           slug: cutKey,
           title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
-          description: opt(`${productKey}.cuts.${cutKey}.description`, ""),
+          description: opt(`${productKey}.cuts.${cutKey}.desc`, ""),
           href: {
            pathname: "/travertine/[product]/[cut]",
            params: { product: productSlug, cut: localizedCutSlug }
@@ -354,16 +353,16 @@ if (isBlocks) {
       <OtherOptions
         heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
         excludeProduct={productKey}
-        productOrder={["blocks", "slabs", "tiles", "special-designs"]}
+        productOrder={["blocks", "slabs", "tiles", "special"]} //blocks olmalı burası
         baseHref={`${prefix}/${baseSegment}`}
         productSegments={{
           blocks: productSlugFor(locale, "blocks"),
           slabs: productSlugFor(locale, "slabs"),
           tiles: productSlugFor(locale, "tiles"),
-          "special-designs": productSlugFor(locale, "special-designs"),
+          "special": productSlugFor(locale, "special"),
         }}
         locale={locale}
-        productImages={{ blocks: block, slabs, tiles, "special-designs": special }}
+        productImages={{ blocks: blocks, slabs, tiles, "special": special }}
         productHrefFor={(pkey) => productUrl(locale, pkey)}
       />
     </main>

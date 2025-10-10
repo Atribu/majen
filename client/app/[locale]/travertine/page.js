@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // URL & metinleri locale'e göre kur
   const baseSeg = locale === "tr" ? "traverten" : "travertine";

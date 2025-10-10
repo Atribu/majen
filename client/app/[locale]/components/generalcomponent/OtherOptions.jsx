@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 export default function OtherOptions({
   heading,
-  productOrder = ["block", "slabs", "tiles", "special"],
+  productOrder = ["blocks", "slabs", "tiles", "special"],
   excludeProduct = null,        
   variantSlugs = [],
   baseHref,
@@ -25,13 +25,13 @@ export default function OtherOptions({
   const defaultProductLabels =
     locale === "tr"
       ? {
-          block: t("variantsubtitle1"),
+          blocks: t("variantsubtitle1"),
           slabs: t("variantsubtitle2"),
           tiles: t("variantsubtitle3"),
           special: t("variantsubtitle4"),
         }
       : {
-          block: t("variantsubtitle1"),
+          blocks: t("variantsubtitle1"),
           slabs: t("variantsubtitle2"),
           tiles: t("variantsubtitle3"),
           special: t("variantsubtitle4"),
@@ -57,7 +57,7 @@ export default function OtherOptions({
 
   // Ürün-bazlı açılış cümlesi (yalnızca "start" farklı)
   const startByProduct = {
-    block: t("variantSentence.block.start"),
+    blocks: t("variantSentence.blocks.start"),
     slabs: t("variantSentence.slabs.start"),
     tiles: t("variantSentence.tiles.start"),
     special: t("variantSentence.special.start"),

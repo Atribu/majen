@@ -10,7 +10,6 @@ export default function VariantCircleSection2({
   heading,
   productOrder = ["blocks", "slabs", "tiles", "special-designs"],
   variantSlugs = [],
-  // baseHref,  // <-- ARTIK GEREK YOK
   locale = "tr",
   labels = {},
   productImages = {},
@@ -67,8 +66,8 @@ export default function VariantCircleSection2({
   };
 
  const startByProduct = {
-    block: t("variantSentence.block.start"),
-    blocks: t("variantSentence.block.start"),
+    // block: t("variantSentence.block.start"),
+    blocks: t("variantSentence.blocks.start"),
     slabs: t("variantSentence.slabs.start"),
     tiles: t("variantSentence.tiles.start"),
     special: t("variantSentence.special.start"),

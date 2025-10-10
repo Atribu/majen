@@ -60,7 +60,7 @@ export default function ProductIntroSection({
   const selectedSegments = segments.slice(-depth);
 
   return (
-    <section className="relative mt-2 overflow-hidden" aria-labelledby="intro-heading">
+    <section className="relative mt-2 overflow-hidden text-center lg:text-start" aria-labelledby="intro-heading">
       {/* === Mobile & Tablet === */}
       <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center">
         {/* Background */}
@@ -195,7 +195,7 @@ export default function ProductIntroSection({
           </nav> */}
 
           {/* Sağdaki görsel */}
-          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[720px] h-[500px] z-[999]">
+          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[720px] h-[500px] z-[999] max-w-[690px]">
             <Image
                src={safeHeroSrc}
               alt={safeAlt}
