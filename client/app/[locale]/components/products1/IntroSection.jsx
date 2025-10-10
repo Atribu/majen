@@ -117,7 +117,7 @@ export default function IntroSection({
         <div className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px] relative overflow-hidden">
           <Image
             src={bgDesktop}
-            alt="Why Choose Travertine From Turkey"
+            alt="Why Choose Travertine"
             fill
             className="object-cover"
             priority
@@ -168,7 +168,7 @@ export default function IntroSection({
           <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[800px] h-[500px] ">
             <Image
               src={heroSrc}
-              alt="Wholesale Travertine From Turkey"
+              alt="Wholesale Travertine"
               fill
               className="object-contain"
               priority

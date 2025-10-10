@@ -61,6 +61,32 @@ const EXEMPT_TOP_LEVEL = new Set([
   'travertine-guide', // özel blog sayfan (örn: /en/travertine-guide)
 ]);
 
+
+// --- COLOR + BLOCKS kısa SEO ---
+// /{locale}/{color}-travertine-blocks  (EN)
+// /{locale}/{color}-traverten-bloklar (TR)
+const COLOR_BLOCKS_EN = /^([a-z-]+)-travertine-blocks$/i;
+const COLOR_BLOCKS_TR = /^([a-z-]+)-traverten-bloklar$/i;
+
+// if (parts.length === 2) {
+//   const seg2 = parts[1];
+//   let m;
+//   if (locale === "en") m = seg2.match(COLOR_BLOCKS_EN);
+//   else                 m = seg2.match(COLOR_BLOCKS_TR);
+
+//   if (m) {
+//     const rawColor = m[1];
+//     const colorSlug = normalizeColorSlugForLocale(locale, rawColor);
+//     if (colorSlug) {
+//       url.pathname = `/${locale}/travertine/blocks/${colorSlug}`;
+//       return NextResponse.rewrite(url);
+//     }
+//   }
+// }
+
+
+
+
 // Kısa CUT slug desenleri (EN/TR) – ürün tipi cut slug içinde gömülü
  const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
  const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
@@ -104,6 +130,12 @@ function localizedProductFromCut(locale, cutSlug) {
   return locale === 'tr' ? 'plakalar' : 'slabs';
 }
 
+// --- BLOCKS: COLOR-ONLY kısa URL’ler ---
+// EN: /{locale}/{color}-travertine-blocks
+// TR: /{locale}/{color}-traverten-bloklar
+const BLOCKS_COLOR_EN = /^([a-z0-9-]+)-travertine-blocks$/i;
+const BLOCKS_COLOR_TR = /^([a-z0-9-]+)-traverten-bloklar$/i;
+
 export default function middleware(req) {
   const url = req.nextUrl;
   const parts = url.pathname.split('/').filter(Boolean); // ["en", "...", ...]
@@ -128,6 +160,7 @@ export default function middleware(req) {
   if (parts.length === 2 && EXEMPT_TOP_LEVEL.has(parts[1])) {
     return handleI18nRouting(req);
   }
+
 
   // Üst düzey travertine-* benzeri görünüm:
   // Ürün whitelist’te değilse → blog’a rewrite
@@ -217,6 +250,26 @@ export default function middleware(req) {
        url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
       return NextResponse.rewrite(url);
     }
+
+     // ✳️ BLOCKS renk kısa URL → FS rotasına rewrite
+  //     /{locale}/{color}-travertine-blocks
+  //     /{locale}/{color}-traverten-bloklar
+  // FS: /{locale}/travertine/blocks/{color}
+  if (parts.length === 2) {
+    const seg2 = parts[1];
+    let m;
+    if (locale === 'en' && (m = seg2.match(BLOCKS_COLOR_EN))) {
+      const rawColor = m[1];   // "ivory" | "light" | "antico" (veya ileride eklenecekler)
+      url.pathname = `/${locale}/travertine/blocks/${rawColor}`;
+      return NextResponse.rewrite(url);
+    }
+    if (locale === 'tr' && (m = seg2.match(BLOCKS_COLOR_TR))) {
+      const color = m[1]; // fildisi|acik|antiko...
+      url.pathname = `/${locale}/traverten/bloklar/damar-kesim-traverten-bloklar/dogal/${color}`;
+      return NextResponse.rewrite(url);
+    }
+  }
+
 
     // TR
     m = seg2.match(PROC_CUT_WITH_PRODUCT_TR);

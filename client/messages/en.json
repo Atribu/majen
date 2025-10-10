@@ -256,13 +256,13 @@
       },
 
     "blocks": {
-      "title": "Wholesale Travertine Blocks from Turkey",
+      "title": "Wholesale Travertine Blocks",
       "span":"Direct Quarry Supplier",
       "alt": "Block product image",
-      "intro": "Majen is a trusted supplier of Wholesale Travertine Blocks From Turkey, offering premium quality in Blaundos Antiko, Light, and Ivory varieties. Extracted from our Uşak–Ulubey quarry, blocks average 280×220×200 cm and weigh 30–35 tons. With reinforced packaging and container-ready preparation, these blocks are export-ready for factories and wholesalers worldwide. Importers rely on Majen’s quarry-direct supply, consistent quality, and reliable FOB/CIF shipping options for long-term projects.",
-      "title2": "Why Choose Wholesale Travertine Blocks from Turkey?",
+      "intro": "Majen is a trusted supplier of Wholesale Travertine Blocks , offering premium quality in Blaundos Antiko, Light, and Ivory varieties. Extracted from our Uşak–Ulubey quarry, blocks average 280×220×200 cm and weigh 30–35 tons. With reinforced packaging and container-ready preparation, these blocks are export-ready for factories and wholesalers worldwide. Importers rely on Majen’s quarry-direct supply, consistent quality, and reliable FOB/CIF shipping options for long-term projects.",
+      "title2": "Why Choose Wholesale Travertine Blocks ?",
       "alt2": "Block product image",
-      "intro2": "Our Wholesale Travertine Blocks From Turkey are preferred by global importers for durability, size, and versatility. Direct quarry sourcing ensures uniform texture and A-grade quality, while certified inspections guarantee reliability. Whether destined for slab cutting, tile processing, or custom designs, Majen provides stable supply with transparent logistics. Architects and wholesalers trust our blocks to meet international standards, combining natural beauty with cost-effective production.",
+      "intro2": "Our Wholesale Travertine Blocks are preferred by global importers for durability, size, and versatility. Direct quarry sourcing ensures uniform texture and A-grade quality, while certified inspections guarantee reliability. Whether destined for slab cutting, tile processing, or custom designs, Majen provides stable supply with transparent logistics. Architects and wholesalers trust our blocks to meet international standards, combining natural beauty with cost-effective production.",
       "sizes": ["Free-size blocks"],
       "finishes": ["Raw block"],
       "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
@@ -283,7 +283,7 @@
       ],
       "variants": {
         "heading": "Travertine Block Varieties",
-        "text":"We supply three exclusive varieties of Wholesale Travertine Blocks From Turkey: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs.",
+        "text":"We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs.",
         "variant1": { "title": "Travertine Blocks Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
         "variant2": { "title": "Travertine Blocks Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
         "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
@@ -321,6 +321,16 @@
     "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
     "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
+  },
+
+  "colors":{
+    "ivory":{
+
+    },
+
+    "light":{},
+
+    "antico":{}
   },
 
    "cuts": {
@@ -2099,13 +2109,13 @@
     },
 
     "slabs": {
-      "title": "Wholesale Travertine Slabs From Turkey | Majen",
+      "title": "Wholesale Travertine Slabs | Majen",
       "span":"Direct Quarry Supplier",
       "alt": "Slab product image",
-      "intro": "Majen is a leading exporter of Wholesale Travertine Slabs From Turkey, supplying 2cm, 3cm, and 5cm slabs directly from our Uşak–Ulubey quarry. Available in Blaundos Antiko, Light, and Ivory, our travertine slabs are crafted for consistency, durability, and natural elegance. Each slab is carefully cut and inspected to meet A-grade standards, reinforced for international shipment, and trusted by architects and wholesalers worldwide.",
-      "title2": "Why Choose Wholesale Travertine Slabs From Turkey?",
+      "intro": "Majen is a leading exporter of Wholesale Travertine Slabs , supplying 2cm, 3cm, and 5cm slabs directly from our Uşak–Ulubey quarry. Available in Blaundos Antiko, Light, and Ivory, our travertine slabs are crafted for consistency, durability, and natural elegance. Each slab is carefully cut and inspected to meet A-grade standards, reinforced for international shipment, and trusted by architects and wholesalers worldwide.",
+      "title2": "Why Choose Wholesale Travertine Slabs ?",
       "alt2": "Slab product image",
-      "intro2": "Turkey is the world’s largest supplier of travertine, and Majen delivers premium selections. Our Wholesale Travertine Slabs From Turkey offer polished, honed, brushed, and tumbled finishes to suit diverse projects. Quarry-direct sourcing ensures consistent supply and competitive pricing. Importers and designers rely on Majen slabs for residential, commercial, and hospitality projects requiring both strength and timeless beauty.",
+      "intro2": "Turkey is the world’s largest supplier of travertine, and Majen delivers premium selections. Our Wholesale Travertine Slabs offer polished, honed, brushed, and tumbled finishes to suit diverse projects. Quarry-direct sourcing ensures consistent supply and competitive pricing. Importers and designers rely on Majen slabs for residential, commercial, and hospitality projects requiring both strength and timeless beauty.",
       "sizes": ["2 cm", "3 cm","5cm"],
       "finishes": ["Polished", "Unpolished"],
       "features": ["Calibration", "Reinforcement", "High surface quality"],
@@ -3680,7 +3690,7 @@
     "aboutpage_s4_faq2_header": "What finishes can be applied to slabs?",
     "aboutpage_s4_faq2_text": "Slabs are available in polished, honed, brushed, and tumbled finishes, offering flexibility for diverse projects.",
     "aboutpage_s4_faq3_header": "Do you export slabs worldwide?",
-    "aboutpage_s4_faq3_text": "Yes. Majen exports Wholesale Travertine Slabs From Turkey globally with FOB and CIF shipping terms and full documentation.",
+    "aboutpage_s4_faq3_text": "Yes. Majen exports Wholesale Travertine Slabs globally with FOB and CIF shipping terms and full documentation.",
     "aboutpage_s4_faq4_header": "How are slabs packaged for shipping?",
     "aboutpage_s4_faq4_text": "Slabs are securely packed in reinforced wooden crates, strapped and wrapped to ensure safe sea freight.",
     "aboutpage_s4_faq5_header": "Why choose Majen for travertine slabs?",
@@ -4026,13 +4036,13 @@
     },
 
     "tiles": {
-      "title": "Wholesale Travertine Tiles From Turkey",
+      "title": "Wholesale Travertine Tiles",
       "span":"Direct Quarry Supplier",
       "alt": "Tile product image",
-      "intro": "Majen is a leading supplier of Wholesale Travertine Tiles From Turkey, offering Blaundos Antiko, Light, and Ivory varieties. Tiles are available in popular sizes such as 30×60, 60×60, and 40×80 cm, making them suitable for bathrooms, kitchens, patios, and pool areas. With finishes including polished, honed, brushed, and tumbled, our quarry-direct tiles are trusted by importers worldwide. Majen ensures reliable logistics, FOB/CIF shipping, and certified A-grade quality.",
-        "title2": "Why Choose Wholesale Travertine Tiles From Turkey?",
+      "intro": "Majen is a leading supplier of Wholesale Travertine Tiles , offering Blaundos Antiko, Light, and Ivory varieties. Tiles are available in popular sizes such as 30×60, 60×60, and 40×80 cm, making them suitable for bathrooms, kitchens, patios, and pool areas. With finishes including polished, honed, brushed, and tumbled, our quarry-direct tiles are trusted by importers worldwide. Majen ensures reliable logistics, FOB/CIF shipping, and certified A-grade quality.",
+        "title2": "Why Choose Wholesale Travertine Tiles ?",
       "alt2": "Tile product image",
-      "intro2": "Wholesale Travertine Tiles From Turkey combine durability, natural slip resistance, and timeless aesthetics. Directly sourced from our Uşak–Ulubey quarry, these tiles are reinforced with consistent grading and inspected for international standards. Architects and wholesalers prefer Majen for reliable supply, transparent pricing, and diverse color selections. Whether for luxury hotels, villas, or residential projects, our travertine tiles deliver long-term performance and beauty.",
+      "intro2": "Wholesale Travertine Tiles combine durability, natural slip resistance, and timeless aesthetics. Directly sourced from our Uşak–Ulubey quarry, these tiles are reinforced with consistent grading and inspected for international standards. Architects and wholesalers prefer Majen for reliable supply, transparent pricing, and diverse color selections. Whether for luxury hotels, villas, or residential projects, our travertine tiles deliver long-term performance and beauty.",
       "sizes": ["30×60", "60×60", "60×120"],
       "finishes": ["Polished", "Unpolished"],
       "features": ["Tight tolerances", "Fast installation", "Low maintenance"],
@@ -4046,14 +4056,14 @@
       "features": "Öne Çıkanlar"
     },
       "description": [
-        "High durability, precise cutting, and quarry-direct sourcing from Uşak–Ulubey make Majen a trusted supplier of Wholesale Travertine Tiles From Turkey. Our tiles provide consistent sizing, A-grade quality, and secure packaging for reliable international supply.",
+        "High durability, precise cutting, and quarry-direct sourcing from Uşak–Ulubey make Majen a trusted supplier of Wholesale Travertine Tiles. Our tiles provide consistent sizing, A-grade quality, and secure packaging for reliable international supply.",
         "Travertine tiles are ideal for bathrooms, kitchens, interior floors, patios, and pool decks. Blaundos Antiko, Light, and Ivory offer distinct tones for residential, hospitality, and commercial projects worldwide.",
         "Standard formats include 30×60, 60×60, and 40×80 cm, typically in 1–2 cm thickness. Precision cutting helps minimize waste and ensures predictable installation for distributors, contractors, and large-scale developments.",
         "Available finishes: polished, honed, brushed, and tumbled. For export, tiles are packed in reinforced wooden crates, strapped and wrapped to ensure safe container loading and long-distance sea freight."
       ],
       "variants": {
         "heading": "Travertine Tile Varieties",
-        "text":"Majen offers three main types of Wholesale Travertine Tiles From Turkey: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is cut and finished to highlight natural elegance and durability, then reinforced for secure sea freight—providing dependable material for importers and construction firms worldwide.",
+        "text":"Majen offers three main types of Wholesale Travertine Tiles : Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is cut and finished to highlight natural elegance and durability, then reinforced for secure sea freight—providing dependable material for importers and construction firms worldwide.",
         "variant1": { "title": "Travertine Tiles Blaundos Antico", "alt": "Blaundos Antico tile", "href": "/en/travertine/tiles/blaundos-antiko" },
         "variant2": { "title": "Travertine Tiles Blaundos Light", "alt": "Blaundos Light tile", "href": "/en/travertine/tiles/blaundos-light" },
         "variant3": { "title": "Travertine Tiles Blaundos Ivory", "alt": "Blaundos Ivory tile", "href": "/en/travertine/tiles/blaundos-ivory" }
@@ -4086,7 +4096,7 @@
     "aboutpage_s4_faq2_header": "What finishes can be applied to travertine tiles?",
     "aboutpage_s4_faq2_text": "Tiles are available in polished, honed, brushed, and tumbled finishes for different design needs.",
     "aboutpage_s4_faq3_header": "Do you export tiles worldwide?",
-    "aboutpage_s4_faq3_text": "TYes. Majen exports Wholesale Travertine Tiles From Turkey with FOB and CIF terms, providing full export documentation.",
+    "aboutpage_s4_faq3_text": "TYes. Majen exports Wholesale Travertine Tiles with FOB and CIF terms, providing full export documentation.",
     "aboutpage_s4_faq4_header": "How are tiles packaged for shipping?",
     "aboutpage_s4_faq4_text": "Tiles are packed in reinforced wooden crates, strapped and wrapped to ensure safe container loading for sea freight."
     
@@ -4098,7 +4108,7 @@
        "title": "Vein Cut Travertine Slabs ",
           "alt": "Vein-cut travertine slabs",
           "span": "",
-          "intro": "Vein-cut slabs reveal linear banding for strong directionality in design.",
+          "intro": "Vein-cut tiles reveal linear banding for strong directionality in design.",
           "title2": "Why Choose Vein-Cut?",
           "intro2": "Parallel bands create visual continuity across large surfaces.",
           "hero": {
@@ -5914,13 +5924,13 @@
     },
 
     "special": {
-      "title": "Wholesale Travertine Special Designs From Turkey",
+      "title": "Wholesale Travertine Special Designs",
       "span":"Direct Quarry Supplier",
       "alt": "Custom design product image",
-      "intro": "Majen designs and manufactures Custom Travertine Designs From Turkey, including steps, stair treads, risers, pool copings, mosaics, borders, thresholds, sills, columns, and other cut-to-size pieces. Produced in Blaundos Antiko, Light, and Ivory, each item is crafted to project specs with CNC profiling and edge detailing. Reinforced crates and clear labelling make installation faster on site. Importers rely on Majen for Custom Travertine Designs From Turkey with consistent quality and FOB/CIF export options.",
-      "title2": "Why Choose Wholesale Travertine Special Designs From Turkey?",
+      "intro": "Majen designs and manufactures Custom Travertine Designs, including steps, stair treads, risers, pool copings, mosaics, borders, thresholds, sills, columns, and other cut-to-size pieces. Produced in Blaundos Antiko, Light, and Ivory, each item is crafted to project specs with CNC profiling and edge detailing. Reinforced crates and clear labelling make installation faster on site. Importers rely on Majen for Custom Travertine Designs with consistent quality and FOB/CIF export options.",
+      "title2": "Why Choose Wholesale Travertine Special Designs ?",
       "alt2": "Custom design product image",
-      "intro2": "Custom Travertine Designs From Turkey offer unique value for villas, hotels, retail and public spaces where standard tiles or slabs are not enough. Majen’s quarry-direct supply, certified inspections and CAD-to-production workflow reduce errors and lead times. Our team collaborates with architects and contractors to match finishes, edges and radiuses across the project, ensuring design consistency and predictable outcomes at scale.",
+      "intro2": "Custom Travertine Designs offer unique value for villas, hotels, retail and public spaces where standard tiles or slabs are not enough. Majen’s quarry-direct supply, certified inspections and CAD-to-production workflow reduce errors and lead times. Our team collaborates with architects and contractors to match finishes, edges and radiuses across the project, ensuring design consistency and predictable outcomes at scale.",
       "sizes": ["Project-based dimensions"],
       "finishes": ["Project-based finishes"],
       "features": ["Custom cutting", "Personalization", "Turnkey delivery"],
@@ -5934,14 +5944,14 @@
       "features": "Öne Çıkanlar"
     },
       "description": [
-        "Majen is a trusted supplier of Wholesale Travertine Special Designs From Turkey, offering steps, mosaics, borders, and unique architectural elements crafted from Blaundos travertine. Our designs combine durability with timeless aesthetics and are reinforced for secure international shipments.",
+        "Majen is a trusted supplier of Wholesale Travertine Special Designs, offering steps, mosaics, borders, and unique architectural elements crafted from Blaundos travertine. Our designs combine durability with timeless aesthetics and are reinforced for secure international shipments.",
         "Special travertine pieces are ideal for staircases, poolsides, hotel lobbies, villas, and custom architectural projects. Blaundos Antiko, Light, and Ivory provide versatile tones, enabling designers and importers to meet diverse creative needs.",
         "Travertine special designs are available in thicknesses from 2–5 cm, with custom dimensions available on request. Every bespoke piece is cut and finished with precision to ensure accuracy, stability, and consistency across large projects.",
         "Custom designs are available in polished, honed, brushed, and tumbled finishes. For export, each item is carefully packed in reinforced wooden crates with nylon wrapping and metal strapping, ensuring safe container loading and delivery worldwide."
       ],
       "variants": {
         "heading": "Travertine Special Desing Varieties",
-         "text":"Majen offers three primary types of Wholesale Travertine Special Designs From Turkey: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is crafted with precision at our Uşak–Ulubey quarry, ensuring durability, consistent texture, and aesthetic value. Export-ready and reinforced for sea freight, these bespoke travertine designs are trusted by architects, importers, and wholesalers worldwide.",
+         "text":"Majen offers three primary types of Wholesale Travertine Special Designs: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is crafted with precision at our Uşak–Ulubey quarry, ensuring durability, consistent texture, and aesthetic value. Export-ready and reinforced for sea freight, these bespoke travertine designs are trusted by architects, importers, and wholesalers worldwide.",
         "variant1": { "title": "Travertine Special Design Blaundos Antico", "alt": "Blaundos Antico special design", "href": "/en/travertine/special-designs/blaundos-antiko" },
         "variant2": { "title": "Travertine Special Design Blaundos Light", "alt": "Blaundos Light special design", "href": "/en/travertine/special-designs/blaundos-light" },
         "variant3": { "title": "Travertine Special Design Blaundos Ivory", "alt": "Blaundos Ivory special design", "href": "/en/travertine/special-designs/blaundos-ivory" }
@@ -5972,7 +5982,7 @@
     "aboutpage_s4_faq1_header": "What types of travertine special designs are available?",
     "aboutpage_s4_faq1_text": "Steps, mosaics, borders, columns, and bespoke architectural elements crafted from Blaundos travertine.",
     "aboutpage_s4_faq2_header": "Do you export special designs worldwide?",
-    "aboutpage_s4_faq2_text": "Yes. Majen exports Wholesale Travertine Special Designs From Turkey globally with FOB and CIF terms.",
+    "aboutpage_s4_faq2_text": "Yes. Majen exports Wholesale Travertine Special Designs globally with FOB and CIF terms.",
     "aboutpage_s4_faq3_header": "How are custom travertine pieces packaged for shipping?",
     "aboutpage_s4_faq3_text": "All designs are packed in reinforced wooden crates, strapped and wrapped to ensure safe transport."
   },
@@ -7800,16 +7810,16 @@
     "buttonText":"Go to page",
     "metaTitle":"Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
     "metaDescription":"Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping",
-    "title": "Wholesale Travertine From Turkey ",
+    "title": "Wholesale Travertine  ",
     "span":"Direct Quarry Supplier in Uşak",
-    "intro": "Majen is a leading supplier of travertine export from Turkey, offering blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we provide Blaundos Antiko, Light, and Ivory travertine varieties trusted by architects and importers worldwide. Our quarry-direct supply ensures consistent A-grade quality, sustainable production, and competitive FOB/CIF shipping terms. By choosing Majen, you gain a reliable partner for all your travertine projects.",
-    "title2":"Why Choose Wholesale Travertine From Turkey?",
-    "intro2":"Turkey is the world’s largest exporter of travertine, and Majen delivers premium selections to international buyers. Our Wholesale Travertine From Turkey combines natural beauty, durability, and cost-effectiveness. Sourced from Uşak–Ulubey, our travertine meets international standards with certified quality control. Importers and wholesalers benefit from stable supply, transparent logistics, and flexible shipping options. Majen is the trusted quarry-direct source for clients seeking long-term partnerships in the natural stone industry.",
+    "intro": "Majen is a leading supplier of travertine export, offering blocks, slabs, tiles, and custom designs directly from our Uşak–Ulubey quarry. With decades of expertise, we provide Blaundos Antiko, Light, and Ivory travertine varieties trusted by architects and importers worldwide. Our quarry-direct supply ensures consistent A-grade quality, sustainable production, and competitive FOB/CIF shipping terms. By choosing Majen, you gain a reliable partner for all your travertine projects.",
+    "title2":"Why Choose Wholesale Travertine?",
+    "intro2":"Turkey is the world’s largest exporter of travertine, and Majen delivers premium selections to international buyers. Our Wholesale Travertine combines natural beauty, durability, and cost-effectiveness. Sourced from Uşak–Ulubey, our travertine meets international standards with certified quality control. Importers and wholesalers benefit from stable supply, transparent logistics, and flexible shipping options. Majen is the trusted quarry-direct source for clients seeking long-term partnerships in the natural stone industry.",
     "home":"Home",
      "travertine":"Travertine",
     "cards": {
       "quality": "Why Our Travertine?",
-      "qualityText": "High durability, natural beauty, and sustainably quarried travertine direct from Uşak – Ulubey. Majen is a trusted supplier of wholesale travertine from Turkey.",
+      "qualityText": "High durability, natural beauty, and sustainably quarried travertine direct from Uşak – Ulubey. Majen is a trusted supplier of wholesale travertine .",
       "applications": "Applications",
       "applicationsText": "Travertine blocks, slabs, tiles and travertine custom designns are ideal for flooring, wall cladding, pool decks, countertops, and bespoke architectural projects.",
       "sizes": "Sizes & Thickness",

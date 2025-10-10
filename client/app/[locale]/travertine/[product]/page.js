@@ -4,6 +4,7 @@
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import React from "react";
+import { colorKeys, colorSlugFor, colorLabelFor } from "@/lib/travertine";
 
 import {
   baseFor,
@@ -107,10 +108,36 @@ const title  = t(`${productKey}.title`);
   const heroSrc = typeof imgMap === "object" ? imgMap.cover ?? Object.values(imgMap)[0] : imgMap;
 
   // ---- Hangi ürün derinleşir?
-  const showCutSelection = hasDeepLevels(productKey);
+ const showCutSelection = hasDeepLevels(productKey) && productKey !== "blocks";
 
   // ---- CUT kartları (yalnız slabs/tiles)
   const productSlug = productSlugFor(locale, productKey);
+
+
+  const isBlocks = productKey === "blocks";
+let colorCards = [];
+if (isBlocks) {
+  const colors = colorKeys(); // örn: ["ivory","light","antico"]
+  colorCards = colors.map((ckey) => {
+    const slug  = colorSlugFor(locale, ckey);             // "ivory" → "ivory" | "fildisi"
+    const label = colorLabelFor(locale, ckey);  
+     // Kısa SEO URL: /{locale}/{color}-travertine-blocks  (TR: /{locale}/{color}-traverten-bloklar)
+   const pretty =
+     locale.startsWith("tr")
+       ? `/${locale}/${slug}-traverten-bloklar`
+       : `/${locale}/${slug}-travertine-blocks`;          // “Ivory” | “Fildişi”
+
+    return {
+      slug,
+      vKey: ckey,
+      title: label,
+      // Yeni rota: /travertine/[product]/[color]
+      // Yeni: kısa SEO link (string). Middleware bunu FS rotasına REWRITE edecek.
+     href: pretty,
+    };
+  });
+}
+
     // Ürüne göre cut slug'ını düzelt (slabs→tiles/blocks/special-designs)
    function cutSlugForProduct(locale, cutKey, productKey) {
     const lang = getLang(locale);
@@ -224,7 +251,7 @@ const title  = t(`${productKey}.title`);
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
-        crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
         selectedSegments={selectedSegments}
         className="mt-6"
       />
@@ -248,17 +275,29 @@ const title  = t(`${productKey}.title`);
       </section>
 
       {/* SLABS / TILES → Kesim seçimi */}
-      {showCutSelection && (
-        <VariantCircleSection2
-          heading={cutsHeading}
-          text={cutsText}
-          variantCards={cutCards}
-          imgMap={imgMap}
-          heroSrc={heroSrc}
-          IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
-          productKey={productKey}
-        />
-      )}
+ {showCutSelection ? (
+   <VariantCircleSection2
+     heading={cutsHeading}
+     text={cutsText}
+     variantCards={cutCards}
+     imgMap={imgMap}
+     heroSrc={heroSrc}
+     IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+     productKey={productKey}
+   />
+ ) : isBlocks ? (
+   <VariantCircleSection2
+     heading={locale.startsWith("tr") ? "Traverten Blok Renkler" : "Travertines Blocks Colors"}
+     text={locale.startsWith("tr")
+       ? "Bloklarda doğrudan renk seçebilirsiniz."
+       : "We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs."}
+     variantCards={colorCards}
+     imgMap={IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey] || imgMap}
+     heroSrc={heroSrc}
+     IMAGE_BY_PRODUCT_AND_VARIANT={IMAGE_BY_PRODUCT_AND_VARIANT}
+     productKey={productKey}
+   />
+ ) : null}
 
       {/* Blocks / Special-Designs → burada artık renk varyantı YOK. 
           İstersen bu blok yerine direkt teknik bölümleri, CTA, görseller vs. göster. */}

@@ -53,8 +53,12 @@ export default function ColorDetailPage() {
   const t = useTranslations("ProductPage");
   const messages = useMessages(); 
   const productKey = productKeyFromSlug(locale, String(productSlug));
-  const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut";
-  const procKeyFull = String(processSlug || "").toLowerCase();
+   const isBlocks = productKey === "blocks";   // ⬅️ blocks kısa akışı
+   
+  const cutKey = isBlocks
+    ? null
+    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut");
+  const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
   const colorKey = (COLOR_KEY_BY_SLUG && COLOR_KEY_BY_SLUG[colorSlug]) || String(colorSlug || "").toLowerCase();
   const sizeSlugs = sizeSlugListForProduct(productKey, t);
   // Hash'tan oku (örn. #2cm). Uyum yoksa ilk boy.
@@ -71,28 +75,36 @@ export default function ColorDetailPage() {
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [sizeSlugs]);
-  if (!productKey || !colorKey || !procKeyFull) {
+  // blocks'ta process/cut olmayabilir; yalnızca product+color yeterli
+  if (!productKey || !colorKey || (!procKeyFull && !isBlocks)) {
     return <main className="p-10 text-center text-neutral-500">Loading...</main>;
   }
 
 
- let page =
-   messages?.ProductPage?.[productKey]
-            ?.cuts?.[cutKey]
-            ?.processes?.[procKeyFull]
-            ?.colors?.[colorKey]
-   || null;
+ let page = null;
+ if (isBlocks) {
+   // Blocks: direkt renk düğümü (cut/process yok)
+   page = messages?.ProductPage?.[productKey]?.colors?.[colorKey] || null;
+ } else {
+   // Mevcut (slabs/tiles/special) akış
+   page =
+     messages?.ProductPage?.[productKey]
+              ?.cuts?.[cutKey]
+              ?.processes?.[procKeyFull]
+              ?.colors?.[colorKey]
+     || null;
 
- // 2) TR yoksa, EN birleşik anahtara çevirip tekrar dene
- if (!page && locale.startsWith("tr")) {
-   const enKey = trCombinedToEn(procKeyFull);
-   if (enKey) {
-     page =
-       messages?.ProductPage?.[productKey]
-                ?.cuts?.[cutKey]
-                ?.processes?.[enKey]
-                ?.colors?.[colorKey]
-       || null;
+   // TR’de birleşik anahtar çevirme fallback'i
+   if (!page && locale.startsWith("tr")) {
+     const enKey = trCombinedToEn(procKeyFull);
+     if (enKey) {
+       page =
+         messages?.ProductPage?.[productKey]
+                  ?.cuts?.[cutKey]
+                  ?.processes?.[enKey]
+                  ?.colors?.[colorKey]
+         || null;
+     }
    }
  }
 
@@ -101,35 +113,30 @@ export default function ColorDetailPage() {
   const specsLabel = page?.ui?.specsLabel || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");
   const faqLabel = page?.ui?.faqLabel || (locale.startsWith("tr") ? "SSS" : "FAQ");
   const colorLabel = colorLabelFor(locale, colorKey);
-  let processLabel =
-   messages?.ProductPage?.[productKey]
-            ?.cuts?.[cutKey]
-            ?.processes?.[procKeyFull]
-            ?.title
-   || null;
+ let processLabel = "";
+  if (!isBlocks) {
+    processLabel =
+      messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[procKeyFull]?.title || null;
+    if (!processLabel && locale.startsWith("tr")) {
+      const enKey = trCombinedToEn(procKeyFull);
+      processLabel =
+        messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[enKey]?.title || null;
+    }
+    processLabel = processLabel || procKeyFull.replace(/-/g, " ");
+  }
 
- if (!processLabel && locale.startsWith("tr")) {
-   const enKey = trCombinedToEn(procKeyFull);
-   processLabel =
-     messages?.ProductPage?.[productKey]
-              ?.cuts?.[cutKey]
-              ?.processes?.[enKey]
-              ?.title
-     || null;
- }
- processLabel = processLabel || procKeyFull.replace(/-/g, " ");
-
-  const H1 = page?.h1 || `${colorLabel} · ${processLabel}`;
+ const H1 = page?.h1 || (isBlocks ? `${colorLabel}` : `${colorLabel} · ${processLabel}`);
   const lead = page?.lead || "";
   const intro = page?.intro || "";
   const metaTitle = page?.metaTitle || H1;
   const metaDesc = page?.metaDesc || intro;
-// process → combinedKey
-const combinedKey = combinedKeyFromProc(procKeyFull, locale);
+// process → combinedKey (blocks’ta yok)
+const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
 
 // 1) _images: product → colorThumbs → cut → combinedKey → colorKey
-const fromColorByProcess =
-  IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKey];
+const fromColorByProcess = !isBlocks && combinedKey
+  ? IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKey]
+  : null;
 
 // 2) ürün-variant genel renk görselleri (slug ya da key)
 const fromVariant =
@@ -137,20 +144,24 @@ const fromVariant =
   || IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey];
 
 // 3) process thumb (global)
-const fromProcessThumb = PROCESS_THUMB_BY_COMBINED?.[combinedKey];
+const fromProcessThumb = !isBlocks && combinedKey
+  ? PROCESS_THUMB_BY_COMBINED?.[combinedKey]
+  : null;
 
 // 4) en son genel cover
 const heroSrc =
   fromColorByProcess
   || fromVariant
   || fromProcessThumb
-  || IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]   // cut cover varsa
+  || (!isBlocks ? IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] : null)   // blocks’ta cut yok
   || IMAGE_BY_PRODUCT?.[productKey]?.cover
   || "/images/homepage/antikoarkplan.webp";
 
   const baseSegment = baseFor(locale);
   // SEO notu: hash canonical'a eklenmez (arama motorları # sonrasını dikkate almaz).
-  const canonical = `https://www.majen.com.tr/${locale}/${colorSlug}-${processSlug}-${cutSlug}`;
+   const canonical = isBlocks
+    ? `https://www.majen.com.tr/${locale}/${colorSlug}-${(locale.startsWith("tr") ? "traverten-bloklar" : "travertine-blocks")}`
+    : `https://www.majen.com.tr/${locale}/${colorSlug}-${processSlug}-${cutSlug}`;
   const sections = page?.sections || {};
   const apps = sections.applications;
   const specs = sections.specs;
@@ -237,7 +248,7 @@ function combinedKeyFromProc(proc = "", locale = "en") {
         </div>
       </header>
 {/* İletişim linkine kalınlığı query ile geçelim (hash SEO sayılmaz) */}
-      {apps && (
+      {apps && !isBlocks && (
         <section className="mx-auto max-w-[1100px] mt-10">
      <Link
        href={{
@@ -269,7 +280,7 @@ function combinedKeyFromProc(proc = "", locale = "en") {
         </section>
       )}
 
-      {faqItems.length > 0 && (
+     {faqItems.length > 0 && !isBlocks && (
         <div id="faq" className="mx-auto max-w-[1100px] mt-10">
           <QuestionsSection items={faqItems} span={`${colorLabel} · ${processLabel}`} />
         </div>
