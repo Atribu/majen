@@ -33,6 +33,16 @@ export default function ProductIntroSection({
   depth = 1, 
   span
 }) {
+
+  // --- Görsel & alt güvenli hale getir ---
+  const FALLBACK = "/images/homepage/antikoarkaplan.webp";
+  const safeHeroSrc = React.useMemo(() => {
+    if (!heroSrc) return FALLBACK;
+    if (typeof heroSrc === "string") return heroSrc.trim() || FALLBACK;
+    // StaticImport ise direkt dön
+    return heroSrc;
+  }, [heroSrc]);
+  const safeAlt = (alt && String(alt).trim()) || "Travertine";
   // JSON-LD Schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -55,8 +65,8 @@ export default function ProductIntroSection({
       <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center">
         {/* Background */}
         <Image
-          src={heroSrc}
-          alt="Travertine"
+          src={safeHeroSrc}
+          alt={safeAlt}
           fill
           priority
           className="object-cover"
@@ -187,8 +197,8 @@ export default function ProductIntroSection({
           {/* Sağdaki görsel */}
           <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[720px] h-[500px] z-[999]">
             <Image
-              src={heroSrc}
-              alt={alt}
+               src={safeHeroSrc}
+              alt={safeAlt}
               fill
               className="object-contain"
               priority

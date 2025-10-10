@@ -47,7 +47,7 @@ const EN_PRODUCTS = new Set([
   'travertine-blocks',
   'travertine-slabs',
   'travertine-tiles',
-  'travertine-special-design'
+  'travertine-special'
 ]);
 const TR_PRODUCTS = new Set([
   'traverten-bloklar',

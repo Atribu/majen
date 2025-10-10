@@ -1,16 +1,16 @@
 // app/components/products1/VariantCircleSection2.jsx
 "use client";
 import React from "react";
-import { Link } from "@/i18n/navigation"; // <-- DEĞİŞTİ
+import { Link } from "@/i18n/navigation";
+import { productSlugFor } from "@/lib/travertine";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function VariantCircleSection2({
   heading,
-  productOrder = ["block", "slabs", "tiles", "special"],
+  productOrder = ["blocks", "slabs", "tiles", "special-designs"],
   variantSlugs = [],
   // baseHref,  // <-- ARTIK GEREK YOK
-  productSegments,
   locale = "tr",
   labels = {},
   productImages = {},
@@ -19,13 +19,26 @@ export default function VariantCircleSection2({
 }) {
   const t = useTranslations("TravertinePage");
 
+  const CANON = { block: "blocks", blocks: "blocks", special: "special-designs", "special-designs": "special-designs", slabs: "slabs", tiles: "tiles" };
+  // Tek noktadan doğru dış slug’ı üret (özellikle special-designs için)
+  const getProductSlug = (loc, canonKey) => {
+    const key = CANON[canonKey] || canonKey;
+    const slug = productSlugFor(loc, key) || key;
+    // Bazı projelerde productSlugFor "special-designs" dönebiliyor; burada kesinleştiriyoruz:
+    if (key === "special-designs") {
+      return loc.startsWith("tr") ? "ozel-tasarim" : "special";
+    }
+    return slug;
+  };
+
   const defaultProductLabels = {
-    block: t("variantsubtitle1"),
+    blocks: t("variantsubtitle1"),
     slabs: t("variantsubtitle2"),
     tiles: t("variantsubtitle3"),
-    special: t("variantsubtitle4"),
+    "special-designs": t("variantsubtitle4"),
   };
   const productLabels = { ...defaultProductLabels, ...(labels.product || {}) };
+  
 
   const VARIANT_SLUG_MAP = {
     antiko: "blaundos-antiko",
@@ -39,13 +52,13 @@ export default function VariantCircleSection2({
   const variantLabel = (slug) => labels.variants?.[slug] ?? humanize(slug);
 
   // i18n Link için route object üreten yardımcılar:
-  const productRoute = (productKey) => ({
-    pathname: "/travertine/[product]",
-    params: { product: productSegments?.[productKey] ?? productKey }
-  });
+ const productRoute = (productKeyRaw) => {
+    const product = getProductSlug(locale, productKeyRaw);
+    return { pathname: "/travertine/[product]", params: { product } };
+  };
 
-  const variantRoute = (productKey, variantSlug) => {
-    const seg = productSegments?.[productKey] ?? productKey;
+  const variantRoute = (productKeyRaw, variantSlug) => {
+    const seg = getProductSlug(locale, productKeyRaw);
     const finalSlug = VARIANT_SLUG_MAP[variantSlug] || variantSlug;
     return {
       pathname: "/travertine/[product]/[variant]",
@@ -53,12 +66,15 @@ export default function VariantCircleSection2({
     };
   };
 
-  const startByProduct = {
+ const startByProduct = {
     block: t("variantSentence.block.start"),
+    blocks: t("variantSentence.block.start"),
     slabs: t("variantSentence.slabs.start"),
     tiles: t("variantSentence.tiles.start"),
     special: t("variantSentence.special.start"),
+    "special-designs": t("variantSentence.special.start"),
   };
+
   const endCommon = t("variantSentence.end");
 
   return (
@@ -73,8 +89,12 @@ export default function VariantCircleSection2({
         </p>
 
         <div className={gridClassName}>
-          {productOrder.map((pkey) => {
+          {productOrder.map((raw) => {
+            const pkey = CANON[raw] || raw; // kanonikle
             const startText = startByProduct[pkey] || "";
+             // Görsel anahtarını normalize et (images objesinde block/special var)
+            const IMG_KEY = { blocks: "block", "special-designs": "special", slabs: "slabs", tiles: "tiles" };
+            const imgKey = IMG_KEY[pkey] || pkey;
             return (
               <div key={pkey} className="group flex flex-col items-center text-center">
                 {/* Ürün görseli */}
@@ -83,7 +103,7 @@ export default function VariantCircleSection2({
                   className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] block"
                 >
                   <Image
-                    src={productImages[pkey]}
+                     src={productImages[imgKey] || productImages[pkey] || productImages[raw]}
                     alt={t(`altTexts.${pkey}`)}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
