@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 /**
  * Dairesel kart grid (variant / cut / process için ortak)
@@ -59,6 +60,7 @@ export default function VariantCircleSection({
   IMAGE_BY_PRODUCT_VARIANT_AND_CUT,
   variantSlug, // opsiyonel
 }) {
+  const locale = useLocale();
   // Tailwind’in compile-time sınırlaması için grid kolonlarını basit tutalım
   const colBase = "grid-cols-1";
   const colSm = variantCards.length <= 1 ? "sm:grid-cols-1" : "sm:grid-cols-2";
@@ -103,7 +105,11 @@ export default function VariantCircleSection({
 
             const cardSrc = img ?? byCut ?? byVariant ?? fromMap ?? heroSrc;
 
-            return (
+           // string href geldiyse locale ön-ekini ekle; object geldiyse olduğu gibi bırak
+            const hrefFinal =
+              typeof href === "string" ? normalizeHref(href, locale) : href;
+
+           return (
               <div
                 key={`${title}-${typeof href === "string" ? href : JSON.stringify(href)}`}
                 className="group flex flex-col items-center text-center"

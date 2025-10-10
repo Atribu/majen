@@ -56,7 +56,7 @@ export default function InfoSection() {
   const contactPath = `${prefix}/${lang === "tr" ? "iletisim" : "contact"}`;
 
   const items = [
-     { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "block")}`},
+     { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "blocks")}`},
     { key: "product2", img: slabs,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "slabs")}` },
     { key: "product3", img: tiles,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "tiles")}`  },
     { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "special")}` },

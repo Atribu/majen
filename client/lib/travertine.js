@@ -97,8 +97,8 @@ export function buildProcessSlug(locale, process, filling) {
 
 
 // Bu ürünler derinleşir (cut/process)
-export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];
-export const PRODUCTS_NO_DEEP_LEVELS = ["blocks", "special-designs"];
+export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles", "blocks", "special"];
+export const PRODUCTS_NO_DEEP_LEVELS = [];
 
 export function hasDeepLevels(productKey) {
   return PRODUCTS_WITH_DEEP_LEVELS.includes(productKey);

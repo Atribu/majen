@@ -62,18 +62,18 @@ const EXEMPT_TOP_LEVEL = new Set([
 ]);
 
 // Kısa CUT slug desenleri (EN/TR) – ürün tipi cut slug içinde gömülü
-const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
-const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
+ const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
+ const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
 
 // Process(+fill) + CUT **birleşik** desenleri (EN/TR)
 // EN ör: filled-honed-vein-cut-travertine-slabs
-const PROC_CUT_WITH_PRODUCT_EN =
-  /^((?:(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
+ const PROC_CUT_WITH_PRODUCT_EN =
+   /^((?:(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
 
 // TR ör: dolgulu-honlanmis-damar-kesim-traverten-plakalar
 // EN işlem adlarını da kabul et (honed|polished|brushed|tumbled) + "natural"
 const PROC_CUT_WITH_PRODUCT_TR =
-  /^((?:(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))|dogal|natural)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
+   /^((?:(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))|dogal|natural)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
 
 // Sadece process (renk-önde kuralı için)
 const PROC_ONLY_EN = /^(natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))$/i;
@@ -91,11 +91,15 @@ const FS_BASE = 'travertine';
 // Cut slug'ından **LOCALE’E UYGUN** ürün segmentini çıkar (EN: slabs/tiles, TR: plakalar/karolar)
 function localizedProductFromCut(locale, cutSlug) {
   if (locale === 'tr') {
-    if (/-traverten-plakalar$/i.test(cutSlug)) return 'plakalar';
-    if (/-traverten-karolar$/i.test(cutSlug))  return 'karolar';
+    if (/-traverten-plakalar$/i.test(cutSlug))       return 'plakalar';
+    if (/-traverten-karolar$/i.test(cutSlug))        return 'karolar';
+    if (/-traverten-bloklar$/i.test(cutSlug))        return 'bloklar';
+    if (/-traverten-ozel-tasarim$/i.test(cutSlug))   return 'ozel-tasarim';
   } else {
-    if (/-travertine-slabs$/i.test(cutSlug)) return 'slabs';
-    if (/-travertine-tiles$/i.test(cutSlug)) return 'tiles';
+    if (/-travertine-slabs$/i.test(cutSlug))   return 'slabs';
+    if (/-travertine-tiles$/i.test(cutSlug))   return 'tiles';
+    if (/-travertine-blocks$/i.test(cutSlug))  return 'blocks';
+    if (/-travertine-special$/i.test(cutSlug)) return 'special';
   }
   return locale === 'tr' ? 'plakalar' : 'slabs';
 }
@@ -149,16 +153,23 @@ export default function middleware(req) {
     const seg2 = parts[1]; // color-process-cut
     const tokens = seg2.split('-');
 
-    if (tokens.length >= 6) {
-      // Son 4 token cut: EN: vein-cut-travertine-slabs|tiles
-      //                  TR: damar|enine-kesim-traverten-plakalar|karolar
-      const last4 = tokens.slice(-4).join('-');
-      const isCutEN = CUT_EN.test(last4);
-      const isCutTR = CUT_TR.test(last4);
+     if (tokens.length >= 6) {
+    // EN'de cut 4 token; TR'de "ozel-tasarim" varsa 5 token.
+    const maybeLast5 = tokens.slice(-5).join('-'); // ...-damar-kesim-traverten-ozel-tasarim
+    const last4      = tokens.slice(-4).join('-'); // ...-damar-kesim-traverten-plakalar|karolar
+
+    // Locale'e göre doğru adayı seç
+    const cutCandidate =
+      locale === 'tr' && /-traverten-ozel-tasarim$/i.test(maybeLast5)
+        ? maybeLast5
+        : last4;
+
+    const isCutEN = CUT_EN.test(cutCandidate);
+    const isCutTR = CUT_TR.test(cutCandidate);
 
       if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
         const rawColor    = tokens[0]; // ilk token (EN/TR olabilir)
-        const processSlug = tokens.slice(1, tokens.length - 4).join('-'); // aradaki tüm tokenlar
+          const processSlug = tokens.slice(1, tokens.length - cutCandidate.split('-').length).join('-'); // aradaki tüm tokenlar
 
          // Renk: EN ya da TR gelmiş olabilir → hedef locale’e çevir
         const colorSlug = normalizeColorSlugForLocale(locale, rawColor);
@@ -166,7 +177,7 @@ export default function middleware(req) {
         const procOk  = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
 
         if (colorOk && procOk) {
-          const cutSlugFull = last4;
+          const cutSlugFull = cutCandidate;
           const productSeg  = localizedProductFromCut(locale, cutSlugFull);
           const base        = FS_BASE;
 

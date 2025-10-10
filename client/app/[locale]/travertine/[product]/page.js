@@ -111,9 +111,30 @@ const title  = t(`${productKey}.title`);
 
   // ---- CUT kartları (yalnız slabs/tiles)
   const productSlug = productSlugFor(locale, productKey);
+    // Ürüne göre cut slug'ını düzelt (slabs→tiles/blocks/special-designs)
+   function cutSlugForProduct(locale, cutKey, productKey) {
+    const lang = getLang(locale);
+    const base = (CUTS[lang] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
+    if (!base || typeof base !== "string") return cutKey;
+    // EN dönüşümleri
+    if (locale.startsWith("en")) {
+      if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
+     if (productKey === "tiles")             return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
+      if (productKey === "blocks")            return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
+      if (productKey === "special" || productKey === "special-designs")
+                                              return base.replace(/-travertine-slabs$/i, "-travertine-special");
+    }
+    // TR dönüşümleri
+    if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
+     if (productKey === "tiles")             return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
+    if (productKey === "blocks")            return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
+    if (productKey === "special" || productKey === "special-designs")
+                                              return base.replace(/-traverten-plakalar$/i, "-traverten-ozel-tasarim");
+  }
+
   const cutCards = showCutSelection
     ? Object.keys(CUTS[lang] || {}).map((cutKey) => {
-        const localizedCutSlug = CUTS[lang][cutKey];
+        const localizedCutSlug = cutSlugForProduct(locale, cutKey, productKey);
         return {
           slug: cutKey,
           title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
@@ -149,8 +170,20 @@ const title  = t(`${productKey}.title`);
 
   // ---- Inline link patternleri (metin içi “vein/cross” tıklanabilir)
   const linkPatterns = [
-    { pattern: /vein[- ]cut/i,  href: { pathname: "/travertine/[product]/[cut]", params: { product: productSlug, cut: cutSlugFor(locale, "vein-cut") } } },
-   { pattern: /cross[- ]cut/i, href: { pathname: "/travertine/[product]/[cut]", params: { product: productSlug, cut: cutSlugFor(locale, "cross-cut") } } },
+    {
+      pattern: /vein[- ]cut/i,
+      href: {
+        pathname: "/travertine/[product]/[cut]",
+        params: { product: productSlug, cut: cutSlugForProduct(locale, "vein-cut", productKey) }
+      }
+    },
+    {
+      pattern: /cross[- ]cut/i,
+      href: {
+        pathname: "/travertine/[product]/[cut]",
+        params: { product: productSlug, cut: cutSlugForProduct(locale, "cross-cut", productKey) }
+      }
+    },
   ];
 
   const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;

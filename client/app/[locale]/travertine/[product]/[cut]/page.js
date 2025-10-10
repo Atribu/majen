@@ -35,10 +35,29 @@ export default function CutPage() {
   const productKey  = productKeyFromSlug(locale, String(productSlug)) || "slabs";
   const baseSegment = baseFor(locale);
 
+  // Ürüne göre cut slug'ını normalize et (slabs→tiles/blocks/special)
+  function cutSlugForProduct(locale, cutKey, productKey) {
+    const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
+    if (typeof base !== "string") return cutKey;
+    if (locale.startsWith("en")) {
+        if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
+      if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
+      if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
+      if (productKey === "special")  return base.replace(/-travertine-slabs$/i, "-travertine-special");
+      return base; // slabs
+    }
+    // TR dönüşümleri
+    if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
+    if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
+    if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
+    if (productKey === "special")  return base.replace(/-traverten-plakalar$/i, "-traverten-ozel-tasarim");
+    return base; // plakalar (slabs)
+  }
+
   // cut key + kanonik slug
   const cutKey =
     Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlugSegment) || "vein-cut";
-  const canonicalCutSlug = CUTS[lang]?.[cutKey] || String(cutSlugSegment);
+  const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || String(cutSlugSegment);
 
   // ProductIntroSection içerikleri
   const cutTitle = safe(() => t(`slabs.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
@@ -103,7 +122,7 @@ const makeGroupCards = (groupName) => {
 
     const href = {
       pathname: "/travertine/[product]/[cut]/[process]",
-      params: { product: String(productSlug), cut: canonicalCutSlug, process: processSlug }
+       params: { product: String(productSlug), cut: canonicalCutSlug, process: processSlug }
     };
 
     return {

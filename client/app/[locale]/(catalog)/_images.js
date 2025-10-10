@@ -108,7 +108,7 @@ export const PROCESS_THUMB_BY_CUT = {
 };
 
 export const PRODUCT_IMG = {
-  block: {
+  blocks: {
     cover: blockIvory ?? phBlock, // fallback mevcut tek görselin
     ivory: blockIvory,
     light: blockLight,
@@ -138,6 +138,160 @@ export const PRODUCT_IMG = {
 
 // 1) CUT HERO — ürün + cut seviyesinde
 export const IMAGE_BY_PRODUCT = {
+   blocks: {
+    cover: "/images/slabs/cover.webp",
+    "vein-cut": "/images/slabs/vein-hero.webp",
+    "cross-cut": "/images/slabs/cross-hero.webp",
+
+    // cut’a göre process thumb’ları
+    processThumbs: {
+      "vein-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        natural: "/images/cut/antico/Slab/Antikveincut.webp"
+      },
+      "cross-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
+      }
+    },
+
+    colorThumbs: {
+      "vein-cut": {
+        "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
+          light:  "/images/cut/light/Slab/lightveincut.webp",
+          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+      },
+
+      "cross-cut": {
+         "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        // ... diğer combinedKey'ler
+      }
+    },
+    
+  },
+
   slabs: {
     cover: "/images/slabs/cover.webp",
     "vein-cut": "/images/slabs/vein-hero.webp",
@@ -291,7 +445,314 @@ export const IMAGE_BY_PRODUCT = {
     },
     
   },
-  // tiles/blocks/special için de benzer yapı ekleyebilirsin
+
+   tiles: {
+    cover: "/images/slabs/cover.webp",
+    "vein-cut": "/images/slabs/vein-hero.webp",
+    "cross-cut": "/images/slabs/cross-hero.webp",
+
+    // cut’a göre process thumb’ları
+    processThumbs: {
+      "vein-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        natural: "/images/cut/antico/Slab/Antikveincut.webp"
+      },
+      "cross-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
+      }
+    },
+
+    colorThumbs: {
+      "vein-cut": {
+        "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
+          light:  "/images/cut/light/Slab/lightveincut.webp",
+          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+      },
+
+      "cross-cut": {
+         "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        // ... diğer combinedKey'ler
+      }
+    },
+    
+  },
+
+   special: {
+    cover: "/images/slabs/cover.webp",
+    "vein-cut": "/images/slabs/vein-hero.webp",
+    "cross-cut": "/images/slabs/cross-hero.webp",
+
+    // cut’a göre process thumb’ları
+    processThumbs: {
+      "vein-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
+        natural: "/images/cut/antico/Slab/Antikveincut.webp"
+      },
+      "cross-cut": {
+        "filled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
+      }
+    },
+
+    colorThumbs: {
+      "vein-cut": {
+        "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
+          light:  "/images/cut/light/Slab/lightveincut.webp",
+          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+      },
+
+      "cross-cut": {
+         "filled:honed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:honed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        natural: {
+          ivory:  "/images/slabs/vein/natural/ivory.webp",
+          light:  "/images/slabs/vein/natural/light.webp",
+          antico: "/images/slabs/vein/natural/antico.webp",
+        },
+       "filled:tumbled": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:tumbled": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        "filled:brushed": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:brushed": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+           "filled:polished": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:polished": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+
+         "filled:natural": {
+          ivory:  "/images/slabs/vein/filled-honed/ivory.webp",
+          light:  "/images/slabs/vein/filled-honed/light.webp",
+          antico: "/images/slabs/vein/filled-honed/antico.webp",
+        },
+        "unfilled:natural": {
+          ivory:  "/images/slabs/vein/unfilled-honed/ivory.webp",
+          light:  "/images/slabs/vein/unfilled-honed/light.webp",
+          antico: "/images/slabs/vein/unfilled-honed/antico.webp",
+        },
+        // ... diğer combinedKey'ler
+      }
+    },
+    
+  },
 };
 
 // en geniş genelleme (global fallback)
@@ -328,7 +789,14 @@ export const IMAGE_BY_PRODUCT_AND_COLOR = {
     antico: "/images/colors/slabs-antico.webp",
     cover:  "/images/slabs/cover.webp",
   },
-  // tiles/blocks/special ... isteğe göre
+
+    tiles: {
+    ivory:  "/images/colors/slabs-ivory.webp",
+    light:  "/images/colors/slabs-light.webp",
+    antico: "/images/colors/slabs-antico.webp",
+    cover:  "/images/slabs/cover.webp",
+  },
+
 };
 
 // ---- Helpers ----

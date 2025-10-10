@@ -83,7 +83,7 @@ export default function ContactFrom() {
 
   return (
     <section className="relative mt-7 lg:mt-12 mb-12">
-      <div className="max-w-[1400px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
+      <div className="max-w-[1200px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
         <header className="mb-2 lg:mb-6">
           <span className="text-[20px] md:text-[24px] font-semibold tracking-tight">
             {t("title")}
@@ -142,7 +142,7 @@ export default function ContactFrom() {
                 className={fieldClass}
                 value={values.phone}
                 onChange={(e) => setValues((s) => ({ ...s, phone: e.target.value }))}
-                placeholder={t("placeholders.phone")}
+                placeholder="+90 555 555 55 55"
                 inputMode="tel"
               />
               <p className={helpClass}>{t("helps.phone")}</p>
@@ -166,7 +166,7 @@ export default function ContactFrom() {
     <textarea
       id="message"
       rows={5}
-      className={fieldClass + " lg:min-h-[220px]"}
+      className={fieldClass + " lg:min-h-[140px]"}
       value={values.message}
       onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
       placeholder={t("placeholders.message")}
