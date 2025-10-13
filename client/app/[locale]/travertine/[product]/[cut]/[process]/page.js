@@ -139,6 +139,9 @@ export default function ProcessPage() {
 const lookupProcKey =
   locale.startsWith("tr") ? trCombinedToEn(procKey) : procKey;
 
+  const youtubeByColor =
+   (safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.youtubeByColor`), {}) || {});
+
   // === ÜRÜN GENEL ===
   const productTitle = safe(() => t(`${productKey}.title`), "Product");
   const productIntro = safe(() => t(`${productKey}.intro`), "");
@@ -275,12 +278,15 @@ const colorImgMap = Object.fromEntries(
 const colorCards = cKeys.map((key) => {
   const label = colorLabelFor(locale, key);
   const slug  = colorSlugFor(locale, key);
+ const youtubeUrl = youtubeByColor && typeof youtubeByColor === "object" ? youtubeByColor[key] : null;
+
   return {
     slug,
-    vKey: slug,       // VariantCircleSection imgMap’i slug ile okuyorsa
+    vKey: slug,       
     title: label,
     alt: label,
-    href: buildSeoColorPath(locale, productKey, cutSlug, process, key)
+    href: buildSeoColorPath(locale, productKey, cutSlug, process, key),
+    youtubeUrl: youtubeUrl || undefined,  // ⬅️ eklenen alan
   };
 });
 
