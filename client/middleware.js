@@ -75,7 +75,7 @@ const COLOR_BLOCKS_TR = /^([a-z-]+)-traverten-bloklar$/i;
 // Process(+fill) + CUT **birleşik** desenleri (EN/TR)
 // EN ör: filled-honed-vein-cut-travertine-slabs
  const PROC_CUT_WITH_PRODUCT_EN =
-   /^((?:(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
+   /^((?:(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)))-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
 
 // TR ör: dolgulu-honlanmis-damar-kesim-traverten-plakalar
 // EN işlem adlarını da kabul et (honed|polished|brushed|tumbled) + "natural"
@@ -83,10 +83,10 @@ const PROC_CUT_WITH_PRODUCT_TR =
    /^((?:(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))|dogal|natural)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
 
 // Sadece process (renk-önde kuralı için)
-const PROC_ONLY_EN = /^(natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))$/i;
+const PROC_ONLY_EN = /^(natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
 // TR’de process-only kontrolü (color-first match için) — EN varyantlarını da kabul et
 const PROC_ONLY_TR =
-  /^(?:dogal|natural|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))$/i;
+  /^(?:dogal|natural|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled|dogal|natural))$/i;
 
 // Colors
 const COLORS_EN = new Set(['ivory','light','antico']);

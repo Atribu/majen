@@ -18,6 +18,7 @@ import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOption
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
+import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 
 function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
@@ -163,12 +164,15 @@ const makeGroupCards = (groupName) => {
       : `slabs.cuts.${cutKey}.processes.meta.${pKey}.title`;
     const title = safe(() => t(titleKey), pKey);
 
-    const processSlug = isNatural
-      ? procSlugFor(locale, "natural", "natural")
-      : procSlugFor(locale, groupName, pKey);
+const processSlug =
+  (pKey === "natural" || pKey === "dogal")
+    ? (locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural")
+    : procSlugFor(locale, groupName, pKey);
 
-    // 🔑 combined key (doldulu/dolgusuz ayrımı için)
-    const combinedKey = isNatural ? "natural" : `${groupName}:${pKey}`;
+const combinedKey =
+  (pKey === "natural" || pKey === "dogal")
+    ? "unfilled:natural"
+    : `${groupName}:${pKey}`;
 
     // görseli 3 kaynaktan dene: i18n → _images → fallback
     const imagesCombined =
@@ -379,6 +383,8 @@ const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
           <QuestionsSection items={faqItems} span={cutTitle} />
         </div>
       )}
+
+      <SocialMediaSection/>
 
       <ContactFrom />
 
