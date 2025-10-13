@@ -2383,7 +2383,9 @@
                 "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
                 "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
                 "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp", 
+                "filled-natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfillednatural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
         "heading": "Choose Your Process",
@@ -2583,7 +2585,7 @@
 
       "description": [
         " Authentic linear veins with natural pores left open for tactile texture and organic appearance. Sustainably sourced, durable, and suitable for both rustic and modern projects.",
-        "Offered in Ivory, Light, and Antico tones ",
+        "Offered in Ivory, Light, and Antico tones. Each color maintains native harmony and vein flow, creating warmth and balance in every environment.",
         " Produced in 2 cm, 3 cm, and 5 cm. Large formats available for continuous vein alignment and easy installation.",
         "Primary finish: Natural (Unfilled) with matte texture. Packed securely in reinforced wooden crates for worldwide export."
       ],
@@ -2612,6 +2614,146 @@
             "aboutpage_s4_faq3_text":" Yes. The unfilled surface naturally resists slipping and weathers gracefully in open-air environments.",
             "aboutpage_s4_faq4_header":"How should it be maintained?",
             "aboutpage_s4_faq4_text":"Use neutral pH cleaners and breathable sealers to protect against dust and moisture while keeping the natural look intact."
+          },
+
+          "colors": {
+            "title":"Color Options: Ivory, Light, and Antico",  
+            "text":"To match different design palettes, Majen offers Ivory, Light, and Antico tones. Ivory delivers warm cream elegance with gentle, continuous veining; Light provides a neutral beige ideal for minimal interiors; Antico offers a slightly deeper, earthy character for richer contrasts. All colors are curated from the same quarry bench to keep hue and pattern continuity across large areas, enabling vein matching and seamless book-look layouts on walls and floors.",
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          }
+        },
+
+         "filled-natural": {
+           "youtubeByColor": {
+                "ivory": "https://youtu.be/Fhn1dAK2joE",
+                "light": "https://youtu.be/Fhn1dAK2joE",
+                "antico": "https://youtu.be/Fhn1dAK2joE"
+              },
+            "seo": {
+            "title": "Filled Natural Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
+            "description": "Explore Filled Natural Vein Cut Travertine Slabs with linear veins and balanced natural texture. Ivory, Light, and Antico tones available for worldwide export.",
+            "image": "/images/og/vein-custom.webp"
+          },
+              "h1": "Filled Natural Vein Cut Travertine Slabs",
+              "title": "Filled Natural Vein Cut Travertine Slabs",
+              "lead": "Majen supplies Filled Natural Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Each slab is cut parallel to the natural bedding layers, revealing continuous linear veins and balanced tone movement. The filled natural finish enhances stability and ease of maintenance while preserving authentic color and surface character. Perfect for interior floors, walls, and large architectural projects that demand durability with timeless natural beauty.",
+              "intro":"Majen supplies Filled Natural Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Each slab is cut parallel to the natural bedding layers, revealing continuous linear veins and balanced tone movement. The filled natural finish enhances stability and ease of maintenance while preserving authentic color and surface character. Perfect for interior floors, walls, and large architectural projects that demand durability with timeless natural beauty.",
+              "title2":"What Is Filled Natural Vein Cut Travertine?",
+              "intro2":"“Vein Cut” travertine is sliced along its natural layers, exposing elegant, directional veins that flow smoothly across the surface. “Filled” slabs have natural cavities sealed for density and cleanliness, while “Natural” preserves the original tone and soft texture. This finish combines technical reliability with authentic, organic aesthetics—ideal for both modern and classical spaces. Majen ensures consistent pattern alignment and color harmony across all slabs.",
+              
+              "detailsHeadings": {
+      "title1":"Why Our Filled Natural Vein Cut?",
+      "title2": "Color Options",
+      "title3": "Sizes & Thickness",
+      "title4": "Finishes & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+        "variants":{
+            "title":"Color Options: Ivory, Light, and Antico",
+            "text":"Majen offers Ivory, Light, and Antico tones in Filled Natural Vein Cut Travertine Slabs. Ivory creates warm sophistication with subtle linear movement. Light offers calm beige tones for minimalist interiors, and Antico brings deeper earthy contrast for rustic elegance. All colors are carefully selected from the same quarry bench to ensure consistent hue, vein direction, and visual rhythm across installations."
+          },
+
+      "description": [
+        " Quarry-direct slabs with strong linear veins, filled for stability, and natural surface preserved for timeless charm. Durable, refined, and authentically elegant.",
+        "Available in Ivory, Light, and Antico tones. Each offers distinctive warmth and visual balance while maintaining pattern consistency.",
+        " Produced in 2 cm, 3 cm, and 5 cm. Large formats ensure continuous vein direction and seamless installation.",
+        "Primary finish: Natural with filled structure. Slabs are packed in reinforced wooden crates with moisture protection for global export."
+      ],
+
+      "TextSection": {
+            "header1": "Advantages of the Filled Natural Finish on Vein Cut Slabs",
+            "text1": "The filled natural finish delivers the perfect balance between strength and authenticity. Filled pores increase durability and simplify cleaning, while the natural surface preserves true stone character. Linear veining enhances spatial flow and adds architectural rhythm to interior designs. Majen’s precise filling and calibration ensure dimensional accuracy and long-term performance for all applications.",
+            "header2": "Recommended Applications & Design Pairings",
+            "text2": "Filled Natural Vein Cut Travertine Slabs are perfect for wall cladding, floors, facades, and staircases. Their linear pattern brings depth and movement, ideal for hotel lobbies, residences, and commercial interiors. Pair with honed or brushed surfaces to create contrast while maintaining material unity. Majen’s cut-to-size service allows continuous vein matching across large projects for flawless visual consistency.",
+            "header3": "Sizes, Thickness & Fabrication",
+            "text3": "Produced in 2 cm, 3 cm, and 5 cm thicknesses, with large-format options for seamless layouts. Each slab is precisely filled and calibrated to maintain even thickness and pattern flow. Edges can be straight or eased according to project specifications. Fabrication notes: align vein direction during installation, apply breathable sealers, and avoid heavy resin coatings to maintain natural appeal.",
+            "header4": "Why Choose Majen for Filled Natural Vein Cut Travertine?",
+            "text4": "Majen manages the entire process from quarry extraction to export, ensuring quality and consistency. Each slab is hand-selected for clarity of veins, color balance, and structure. We provide FOB/CIF shipping with reinforced wooden crates, full documentation, and export certificates. With strong logistics and sustainable practices, Majen guarantees reliability and excellence for every international order.",
+            "header5":"Global Export & Maintenance Guidelines",
+            "text5":" Majen exports Filled Natural Vein Cut Travertine Slabs worldwide, meeting ISO-certified standards for surface finish and dimensional accuracy. Routine cleaning with mild, neutral cleaners preserves color and natural tone. Occasional resealing enhances stain protection without altering the original finish. Over time, the stone develops a subtle patina, enriching its authentic and elegant appearance."
+          },
+
+      "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Filled Natural Vein Cut Travertine",
+            "aboutpage_s4_faq1_header": "What makes filled natural vein cut travertine unique?",
+            "aboutpage_s4_faq1_text": " It combines the durability of filled travertine with the authentic texture and tone of the natural surface, revealing elegant linear veins.",
+            "aboutpage_s4_faq2_header": " Which colors are available?",
+            "aboutpage_s4_faq2_text": "Ivory, Light, and Antico — each maintaining tone consistency and vein flow across slabs.",
+            "aboutpage_s4_faq3_header":"Is it suitable for high-traffic areas?",
+            "aboutpage_s4_faq3_text":"Yes, the filled natural surface offers excellent strength and easy maintenance for both residential and commercial use.",
+            "aboutpage_s4_faq4_header":"How should it be maintained?",
+            "aboutpage_s4_faq4_text":"Clean with neutral cleaners, reseal periodically, and avoid acidic products to protect the natural tone and structure."
           },
 
           "colors": {
@@ -3885,7 +4027,9 @@
                 "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled-natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfillednatural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
         "heading": "Choose Your Process",
@@ -4084,7 +4228,7 @@
 
       "description": [
         "Balanced combination of strength and authenticity. Filled for durability, natural tone preserved for timeless, elegant appearance.",
-        "Available in Ivory, Light, and Antico tones. Each color ensures pattern harmony and natural movement across all slabs.",
+        "Available in Ivory, Light, and Antico tones. Each color ensures pattern harmony and native movement across all slabs.",
         "Produced in 2 cm, 3 cm, and 5 cm. Large-format slabs enhance pattern continuity and reduce grout visibility.",
         "Primary finish: Natural with filled pores. Packed in reinforced wooden crates with moisture barriers for global shipment."
       ],
@@ -4223,7 +4367,7 @@
 
       "description": [
         "Quarry-direct slabs with open natural pores and soft cloud-like patterns. Breathable, durable, and perfect for rustic or modern organic spaces.",
-        "Available in Ivory, Light, and Antico tones. Each color provides balanced warmth and movement across surfaces.",
+        "Available in Ivory, Light, and Antico tones. Each color provides balanced warmth and native movement across surfaces.",
         " Produced in 2 cm, 3 cm, and 5 cm. Large formats offer seamless pattern flow and ease of installation.",
         "Primary finish: Natural Unfilled. Packed in reinforced wooden crates with moisture protection for global export."
       ],

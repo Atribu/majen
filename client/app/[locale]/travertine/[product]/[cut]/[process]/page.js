@@ -353,6 +353,7 @@ const PROCESS_EN = [
   "filled-polished","unfilled-polished",
   "filled-brushed","unfilled-brushed",
   "filled-tumbled","unfilled-tumbled",
+  "filled-natural","unfilled-natural",
 ];
 
 // TR metinlerde de yakalamak istersen (opsiyonel ama faydalı)
@@ -362,6 +363,7 @@ const PROCESS_TR = [
   "dolgulu-cilali","dolgusuz-cilali",
   "dolgulu-fircalanmis","dolgusuz-fircalanmis",
   "dolgulu-eskitilmis","dolgusuz-eskitilmis",
+  "dolgulu-dogal","dolgusuz-dogal",
 ];
 
 // Bu helper, "filled-honed" gibi bir anahtar için hem "filled honed" hem "filled-honed" yazımını yakalayan regex üretir

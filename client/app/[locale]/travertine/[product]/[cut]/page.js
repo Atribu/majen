@@ -34,11 +34,16 @@ const safe = (fn, fb = undefined) => { try { const v = fn(); return v ?? fb; } c
 
 function procSlugFor(locale, group, key) {
   const tr = String(locale).startsWith("tr");
-  if (group === "natural" || key === "natural" || key === "dogal") {
-    return tr ? "dogal" : "natural";
-  }
-  const fill = group === "filled" ? (tr ? "dolgulu" : "filled") : (tr ? "dolgusuz" : "unfilled");
-  return `${fill}-${key}`;
+   // natural ise filled/unfilled önekiyle birlikte üret
+ const isNatural = (key === "natural" || key === "dogal");
+ if (isNatural) {
+   const fillTr = group === "filled" ? "dolgulu" : "dolgusuz";
+   const fillEn = group === "filled" ? "filled"  : "unfilled";
+   return tr ? `${fillTr}-dogal` : `${fillEn}-natural`;
+ }
+ // diğer işlemler
+ const fill = group === "filled" ? (tr ? "dolgulu" : "filled") : (tr ? "dolgusuz" : "unfilled");
+ return `${fill}-${key}`;
 }
 
 export default function CutPage() {
@@ -146,6 +151,19 @@ const optRaw = (key, fallback = null) => {
   const processNode = safe(() => t.raw(`slabs.cuts.${cutKey}.processes`), {});
   const groups = processNode?.groups || {};
   const meta   = processNode?.meta   || {};
+  // i18n’de filled-natural var mı?
+ const hasFilledNatural =
+   safe(() => t.has(`slabs.cuts.${cutKey}.processes.filled-natural.title`), false) ||
+   safe(() => t.has(`slabs.cuts.${cutKey}.processes.filled-natural.h1`), false);
+
+ // filled grubunun item’larına natural/dogal’ı gerektiğinde en sona ekle
+ if (hasFilledNatural) {
+   const arr = Array.isArray(groups?.filled?.items) ? [...groups.filled.items] : [];
+   if (!arr.includes("natural") && !arr.includes("dogal")) {
+     arr.push("natural"); // TR’de de çalışır; aşağıda pKey normalizasyonu yapıyoruz
+   }
+   groups.filled = { ...(groups.filled || {}), items: arr };
+ }
 
   // ... imports arasında IMAGE_BY_PRODUCT ve PROCESS_THUMB_BY_COMBINED var
 
@@ -164,15 +182,15 @@ const makeGroupCards = (groupName) => {
       : `slabs.cuts.${cutKey}.processes.meta.${pKey}.title`;
     const title = safe(() => t(titleKey), pKey);
 
-const processSlug =
-  (pKey === "natural" || pKey === "dogal")
-    ? (locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural")
-    : procSlugFor(locale, groupName, pKey);
+// natural artık *gruba göre* slug alıyor (filled → filled-natural / unfilled → unfilled-natural)
+   const processSlug = isNatural
+     ? procSlugFor(locale, groupName, "natural")
+     : procSlugFor(locale, groupName, pKey);
 
-const combinedKey =
-  (pKey === "natural" || pKey === "dogal")
-    ? "unfilled:natural"
-    : `${groupName}:${pKey}`;
+
+ // combinedKey de gruba göre: "filled:natural" | "unfilled:natural"
+   const normalizedKey = isNatural ? "natural" : pKey;
+   const combinedKey   = `${groupName}:${normalizedKey}`;
 
     // görseli 3 kaynaktan dene: i18n → _images → fallback
     const imagesCombined =
@@ -181,7 +199,14 @@ const combinedKey =
     const imgByProduct =
       IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || null;
     const image =
-      imgI18n || imgByProduct || PROCESS_THUMB_BY_COMBINED?.[combinedKey] || heroSrc;
+       imgI18n
+     || imgByProduct
+     || PROCESS_THUMB_BY_COMBINED?.[combinedKey]
+     || (isNatural
+           ? (PROCESS_THUMB_BY_COMBINED?.[`unfilled:natural`]
+               || PROCESS_THUMB_BY_COMBINED?.[`filled:natural`])
+           : null)
+     || heroSrc;
 
     // ❗ imgMap, karttaki *slug* ile eşleşiyor → slug'ı combinedKey yapıyoruz
     groupImgMap[combinedKey] = image;

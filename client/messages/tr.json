@@ -651,7 +651,14 @@
             "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein-cut slab hero image"
           },
-      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "description": [
+        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Slabsdeliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
+        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
+        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
+        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+      ],
+
+       "desc": " Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
           "TextSection": {
             "header1": "Vein-Cut — Visual Character",
             "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
@@ -1409,16 +1416,23 @@
             "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
-      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "description": [
+        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Cross Cut Travertine Slabsdeliver clear, continuous linear cross with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
+        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
+        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
+        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+      ],
+
+       "desc": " Cross Cut Travertine Slabs reveal the natural linear cross of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
        "TextSection": {
-            "header1": "Vein-Cut — Visual Character",
+            "header1": "Cross-Cut — Visual Character",
             "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
             "header2": "Best Use-Cases",
             "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
           },
           "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Vein-Cut",
+            "aboutpage_s4_faq_span1": "Cross-Cut",
             "aboutpage_s4_faq1_header": "Why choose vein-cut slabs?",
             "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
             "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
@@ -3471,7 +3485,7 @@
       "special": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
     },
      "variantSentence": {
-      "block": {
+      "blocks": {
         "start": "As Majen, we offer Travertine Blocks in varieties such as"
       },
       "slabs": {

@@ -246,7 +246,7 @@ export default function middleware(req) {
     }
     if (locale === 'tr' && (m = seg2.match(BLOCKS_COLOR_TR))) {
       const color = m[1]; // fildisi|acik|antiko...
-      url.pathname = `/${locale}/traverten/bloklar/damar-kesim-traverten-bloklar/dogal/${color}`;
+      url.pathname = `/${locale}/traverten/damar-kesim-traverten-bloklar/dogal/${color}`;
       return NextResponse.rewrite(url);
     }
   }
