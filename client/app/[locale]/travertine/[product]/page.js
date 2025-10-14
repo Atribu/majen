@@ -115,6 +115,17 @@ const title  = t(`${productKey}.title`);
   const isBlocks = productKey === "blocks";
 let colorCards = [];
 if (isBlocks) {
+   // i18n’den toplu görsel ve YouTube map’leri
+    const blockImages =
+      optRaw(`blocks.images`, null)    // "block" yazılmış olabilir; önce blocks
+      || optRaw(`block.images`, null)  // fallback "block"
+      || {};
+    const blockYoutube =
+      optRaw(`blocks.youtube`, null)
+      || optRaw(`block.youtube`, null)
+      || {};
+
+
   const colors = colorKeys(); // örn: ["ivory","light","antico"]
   colorCards = colors.map((ckey) => {
     const slug  = colorSlugFor(locale, ckey);             // "ivory" → "ivory" | "fildisi"
@@ -124,6 +135,13 @@ const pretty = locale.startsWith("tr")
   ? `/${slug}-traverten-bloklar`
   : `/${slug}-travertine-blocks`;
 
+  // Görsel & YouTube (i18n → image map → fallback)
+      const byVariantMap = (IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey] || {});
+      const i18nImg = blockImages?.[ckey] || blockImages?.[slug];
+      const mapImg  = byVariantMap?.[ckey] || byVariantMap?.[slug];
+      const image   = i18nImg || mapImg || (typeof imgMap === "object" ? imgMap?.[ckey] : undefined) || `/images/blocks/${slug}.jpg`;
+      const youtubeUrl = blockYoutube?.[ckey] || blockYoutube?.[slug] || "";
+
     return {
       slug,
       vKey: ckey,
@@ -132,6 +150,8 @@ const pretty = locale.startsWith("tr")
       // Yeni rota: /travertine/[product]/[color]
       // Yeni: kısa SEO link (string). Middleware bunu FS rotasına REWRITE edecek.
      href: pretty,
+     img:image,
+     youtubeUrl
     };
   });
 }
@@ -160,17 +180,28 @@ const pretty = locale.startsWith("tr")
   const cutCards = showCutSelection
     ? Object.keys(CUTS[lang] || {}).map((cutKey) => {
         const localizedCutSlug = cutSlugForProduct(locale, cutKey, productKey);
+         const cutImagesObj = optRaw(`${productKey}.cuts.images`, {}) || {};
+       const i18nImageTop = cutImagesObj?.[cutKey]; // (A) toplu
+       const i18nImageOne = opt(`${productKey}.cuts.${cutKey}.image`, ""); // (B) tekil
+       const image =
+         i18nImageTop ||
+         i18nImageOne ||
+         (typeof imgMap === "object" ? imgMap?.[cutKey] : undefined) ||
+         `/images/cuts/${cutKey}.jpg` ||
+         heroSrc;
+
          const youtubeUrl = opt(`${productKey}.cuts.${cutKey}.youtube`, ""); // i18n’den oku
         return {
           slug: cutKey,
           title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
           description: opt(`${productKey}.cuts.${cutKey}.desc`, ""),
+          img: image,
           youtubeUrl, 
           href: {
            pathname: "/travertine/[product]/[cut]",
            params: { product: productSlug, cut: localizedCutSlug }
          },
-          image: `/images/cuts/${cutKey}.jpg`,
+        
         };
       })
     : [];

@@ -281,6 +281,19 @@
          "Standard block size is approx. 280×220×200 cm, with natural quarry faces and an average weight of 30–35 tons. Bulk orders are export-ready and reinforced for container loading, ensuring safe handling during international shipments.",
          "Blocks are supplied with natural/raw surfaces (wire-cut) straight from the quarry. For export, reinforced wooden frames, nylon wrapping, and metal strapping are applied, minimizing risk and ensuring that travertine blocks arrive safely worldwide."
       ],
+
+      "images": {
+          "antico": "/images/homepage/Blokantiko.webp",
+        "light":  "/images/homepage/lightblok3.webp",
+        "ivory":  "/images/homepage/Ivoryblok.webp"
+        },
+
+         "youtube": {
+        "antico": "https://youtu.be/R-Egyq7BjL4",
+        "light":  "https://youtu.be/95DfWUBq6UY",
+        "ivory":  "https://youtu.be/7YoOIsMVUkw"
+      },
+
       "variants": {
         "heading": "Travertine Block Varieties",
         "text":"We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs.",
@@ -323,15 +336,77 @@
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
   },
 
-  "colors":{
-    "ivory":{
-
-    },
-
-    "light":{},
-
-    "antico":{}
-  },
+  "colors": {
+            "ivory":  {
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Polish emphasizes veining and light reflectance.",
+               "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "metaTitle": "Light · Polished Vein-Cut Slabs",
+              "metaDesc":  "Warm tone with elegant sheen.",
+              "h1":        "Light · Polished Vein-Cut Slabs",
+              "lead":      "Refined glow for upscale spaces.",
+              "intro":     "Enhances warmth and visual depth.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                }
+              }
+            },
+            "antico": {
+              "metaTitle": "Antico · Polished Vein-Cut Slabs",
+              "metaDesc":  "Classic rich character with glossy depth.",
+              "h1":        "Antico · Polished Vein-Cut Slabs",
+              "lead":      "Traditional luxury reimagined.",
+              "intro":     "Deep contrast and refined highlights.",
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                }
+              }
+            }
+          },
 
    "cuts": {
     "heading": "Travertine Blocks Cut Options",
@@ -2305,6 +2380,11 @@
         "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
       ],
 
+      "images": {
+          "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
+          "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
+        },
+
 
     "vein-cut": {
        "seo": {
@@ -2312,6 +2392,9 @@
             "description": "Discover ...",
             "image": "/images/og/vein-custom.webp"
           },
+
+          "image": "/images/new/slab/antico/Antikveincut.webp",
+ 
        "title": "Vein Cut Travertine Slabs ",
           "alt": "Vein-cut travertine slabs",
           "span": "",
@@ -3415,7 +3498,7 @@
            "seo": {
             "title": "Filled Brushed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
             "description": "Discover Filled Brushed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-            "image": "/images/og/vein-custom.webp"
+            "image": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp"
           },
 
            "h1": "Filled Brushed Vein Cut Travertine Slabs",
@@ -3974,6 +4057,9 @@
             "description": "Discover ...",
             "image": "/images/og/vein-custom.webp"
           },
+
+          "image":  "/images/new/slab/antico/Antikcrosscut.webp",
+
       "title": "Cross Cut Travertine Slabs",
           "alt": "Cross-cut travertine slabs",
           "span": "",
@@ -6032,6 +6118,20 @@
         "Standard formats include 30×60, 60×60, and 40×80 cm, typically in 1–2 cm thickness. Precision cutting helps minimize waste and ensures predictable installation for distributors, contractors, and large-scale developments.",
         "Available finishes: polished, honed, brushed, and tumbled. For export, tiles are packed in reinforced wooden crates, strapped and wrapped to ensure safe container loading and long-distance sea freight."
       ],
+
+       "images": {
+          "antico": "/images/tiles/antikokesim.webp",
+        "light":  "/images/homepage/lightblok3.webp",
+        "ivory":  "/images/tiles/Ivorykesim.webp"
+        },
+
+         "youtube": {
+        "antico": "https://youtu.be/R-Egyq7BjL4",
+        "light":  "/images/homepage/kesim.webp",
+        "ivory":  "https://youtu.be/7YoOIsMVUkw"
+      },
+
+
       "variants": {
         "heading": "Travertine Tile Varieties",
         "text":"Majen offers three main types of Wholesale Travertine Tiles : Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is cut and finished to highlight natural elegance and durability, then reinforced for secure sea freight—providing dependable material for importers and construction firms worldwide.",
@@ -6092,7 +6192,17 @@
         "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
       ],
 
+       "images": {
+          "vein-cut": "/images/tiles/Ivorykesim.webp",
+          "cross-cut": "/images/homepage/kesim.webp"
+        },
+
     "vein-cut": {
+      "seo": {
+            "title": "Vein Cut ... | Majen",
+            "description": "Discover ...",
+            "image": "/images/og/vein-custom.webp"
+          },
        "title": "Vein Cut Travertine Slabs ",
           "alt": "Vein-cut travertine slabs",
           "span": "",
@@ -6103,7 +6213,7 @@
             "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein Cut Travertine Slabs"
           },
-      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "desc": "Large-size blocks selected at the quarry with consistent character.",
           "TextSection": {
             "header1": "Vein-Cut — Visual Character",
             "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
@@ -6118,6 +6228,32 @@
             "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
             "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
           },
+
+              "variants":{
+            "title":"Filled and Unfilled Surface Options",
+            "text":"Majen’s Vein Cut Travertine Slabs are available in filled and unfilled varieties to match different design needs. Filled slabs are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled slabs preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
+          },
+
+            "detailsHeadings": {
+      "title1":"Why Our Vein-Cut Travertine?",
+      "title2": "Applications of Vein-Cut Slabs",
+      "title3": "Slab Sizes & Thickness",
+      "title4": "Finishes & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+
+            "description": [
+        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Slabsdeliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
+        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
+        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
+        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+      ],
+
+           "image": "/images/tiles/antikokesim.webp",
+           "youtube": "https://youtu.be/GNdnB-TN2uA",
+   
 
       "processes": {
         "images": {
@@ -6851,6 +6987,11 @@
     },
 
     "cross-cut": {
+      "seo": {
+            "title": "Vein Cut ... | Majen",
+            "description": "Discover ...",
+            "image": "/images/og/vein-custom.webp"
+          },
       "title": "Cross Cut Travertine Slabs",
           "alt": "Cross-cut travertine slabs",
           "span": "Direct Quarry Supplier",
@@ -6861,7 +7002,7 @@
             "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
-      "description": "Large-size blocks selected at the quarry with consistent character.",
+      "desc": "Large-size blocks selected at the quarry with consistent character.",
        "TextSection": {
             "header1": "Vein-Cut — Visual Character",
             "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
@@ -6876,6 +7017,32 @@
             "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
             "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
           },
+
+               "variants":{
+            "title":"Filled and Unfilled Surface Options",
+            "text":"Majen’s Vein Cut Travertine Slabs are available in filled and unfilled varieties to match different design needs. Filled slabs are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled slabs preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
+          },
+
+            "detailsHeadings": {
+      "title1":"Why Our Vein-Cut Travertine?",
+      "title2": "Applications of Vein-Cut Slabs",
+      "title3": "Slab Sizes & Thickness",
+      "title4": "Finishes & Packaging",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+
+
+            "description": [
+        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Slabsdeliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
+        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
+        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
+        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+      ],
+
+          "image": "/images/tiles/kesim.webp",
+          "youtube": "https://youtu.be/GNdnB-TN2uA",
           
       "processes": {
         "images": {
