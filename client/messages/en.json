@@ -2323,6 +2323,8 @@
             "alt": "Vein Cut Travertine Slabs"
           },
 
+          "youtube": "https://youtu.be/GNdnB-TN2uA",
+
            "variants":{
             "title":"Filled and Unfilled Surface Options",
             "text":"Majen’s Vein Cut Travertine Slabs are available in filled and unfilled varieties to match different design needs. Filled slabs are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled slabs preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
@@ -2379,8 +2381,8 @@
                 "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
                 "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
                 "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
                 "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
                 "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
                 "natural": "/images/cut/antico/Slab/Antikveincut.webp", 
@@ -2388,6 +2390,22 @@
                 "unfillednatural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
+
+             "youtube": {
+           "combined": {
+      "filled:honed": "https://youtu.be/z2hHL90nCVg",
+      "unfilled:honed": "https://youtu.be/z2hHL90nCVg",
+      "unfilled:natural": "https://youtu.be/z2hHL90nCVg",
+      "filled:natural": "https://youtu.be/z2hHL90nCVg",
+      "unfilled:brushed": "https://youtu.be/z2hHL90nCVg",
+      "filled:brushed": "https://youtu.be/z2hHL90nCVg",
+      "unfilled:tumbled": "https://youtu.be/z2hHL90nCVg",
+      "filled:tumbled": "https://youtu.be/z2hHL90nCVg",
+      "unfilled:polished": "https://youtu.be/z2hHL90nCVg",
+      "filled:polished": "https://youtu.be/z2hHL90nCVg"
+    }
+  },
+
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
         "groups": {
@@ -3972,6 +3990,8 @@
             "text":"Majen’s Cross Cut Travertine Slabs are available in both filled and unfilled versions to suit different project aesthetics. Filled slabs offer a dense and smooth surface, ideal for high-end interiors, while unfilled slabs showcase natural pores and depth. Both types undergo thorough quality checks, ensuring stable structures and flawless finishes before export. Each shipment is carefully documented with certificates of origin and reinforced wooden crate packaging."
           },
 
+          "youtube": "https://youtu.be/II8CJhIGhQo",
+
       "desc": " Cross Cut Travertine Slabs expose the stone’s soft cloud-like patterns, resulting in a balanced and consistent appearance. Perfect for calm, modern interiors and uniform facade applications.",
        "TextSection": {
             "header1": "Surface Finishes and Textures",
@@ -4023,8 +4043,8 @@
                 "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedunfilled.webp",
                 "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
                 "natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
@@ -4032,6 +4052,22 @@
                 "unfillednatural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
+
+              "youtube": {
+           "combined": {
+      "filled:honed": "https://youtu.be/Zo_jkfLhM7c",
+      "unfilled:honed": "https://youtu.be/Zo_jkfLhM7c",
+      "unfilled:natural": "https://youtu.be/Zo_jkfLhM7c",
+      "filled:natural": "https://youtu.be/Zo_jkfLhM7c",
+      "unfilled:brushed": "https://youtu.be/Zo_jkfLhM7c",
+      "filled:brushed": "https://youtu.be/Zo_jkfLhM7c",
+      "unfilled:tumbled": "https://youtu.be/Zo_jkfLhM7c",
+      "filled:tumbled": "https://youtu.be/Zo_jkfLhM7c",
+      "unfilled:polished": "https://youtu.be/Zo_jkfLhM7c",
+      "filled:polished": "https://youtu.be/Zo_jkfLhM7c"
+    }
+  },
+            
         "heading": "Choose Your Process",
         "subtext": "Select the surface treatment.",
         "groups": {

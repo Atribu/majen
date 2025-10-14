@@ -1,6 +1,6 @@
 "use client";
 //resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve variant kısmının resimleri colorThumbs dan (_images)
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 import {
@@ -28,6 +28,7 @@ import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom"
 import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
+import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
 
 function InfoCard({ title, children }) {
   return (
@@ -124,6 +125,12 @@ export default function ProcessPage() {
   const prefix = `/${locale}`;
   const baseSegment = baseFor(locale);
   const baseHref = `${prefix}/${baseSegment}`;
+
+    // ---- Breadcrumb
+    const rawPath = usePathname();
+    const pathname = typeof rawPath === "string" ? rawPath : "";
+    const segments = pathname.split("/").filter(Boolean);
+    const selectedSegments = segments.slice(-1);
 
   const productKey = productKeyFromSlug(locale, String(productSlug)) || "slabs";
 
@@ -488,6 +495,15 @@ const optRaw = (key, fallback = null) => {
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
         depth={3}
       />
+
+        <BreadcrumbsExact
+              prefix={prefix}
+              baseHref={baseHref}
+              crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+              crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+              selectedSegments={selectedSegments}
+              className="mt-6"
+            />
 
       {/* INFO CARDS */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">

@@ -2,7 +2,7 @@
 "use client";
 //resimler en.json'dan geliyor process image kısmı
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor} from "@/lib/travertine";
@@ -19,6 +19,7 @@ import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
+import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
 
 function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
@@ -55,6 +56,14 @@ export default function CutPage() {
 
   const productKey  = productKeyFromSlug(locale, String(productSlug)) || "slabs";
   const baseSegment = baseFor(locale);
+  const baseHref = `/${locale}/${baseSegment}`; 
+
+    // ---- Breadcrumb
+    const rawPath = usePathname();
+    const pathname = typeof rawPath === "string" ? rawPath : "";
+    const segments = pathname.split("/").filter(Boolean);
+    const selectedSegments = segments.slice(-1);
+
 
   // Ürüne göre cut slug'ını normalize et (slabs→tiles/blocks/special)
   function cutSlugForProduct(locale, cutKey, productKey) {
@@ -151,6 +160,9 @@ const optRaw = (key, fallback = null) => {
   const processNode = safe(() => t.raw(`slabs.cuts.${cutKey}.processes`), {});
   const groups = processNode?.groups || {};
   const meta   = processNode?.meta   || {};
+
+  const ytCombined  = safe(() => t.raw(`slabs.cuts.${cutKey}.processes.youtube.combined`), {}) || {};
+
   // i18n’de filled-natural var mı?
  const hasFilledNatural =
    safe(() => t.has(`slabs.cuts.${cutKey}.processes.filled-natural.title`), false) ||
@@ -192,6 +204,8 @@ const makeGroupCards = (groupName) => {
    const normalizedKey = isNatural ? "natural" : pKey;
    const combinedKey   = `${groupName}:${normalizedKey}`;
 
+   const youtubeUrl = ytCombined[combinedKey] || null;
+
     // görseli 3 kaynaktan dene: i18n → _images → fallback
     const imagesCombined =
       safe(() => t.raw(`slabs.cuts.${cutKey}.processes.images.combined`), null);
@@ -221,8 +235,8 @@ const makeGroupCards = (groupName) => {
       vKey: combinedKey,     // (komponent vKey kullanıyorsa)
       title,
       href,
-      alt: title
-      // card.image vermesek de olur; imgMap üzerinden bulunacak
+      alt: title,
+      youtubeUrl  
     };
   });
 
@@ -337,6 +351,16 @@ const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
         span={span}
       />
+
+      <BreadcrumbsExact
+              prefix={prefix}
+              baseHref={baseHref}
+              crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+              crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+              selectedSegments={selectedSegments}
+              className="mt-6"
+            />
+      
 
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
               {cards.map((c, i) => {

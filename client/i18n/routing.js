@@ -23,6 +23,7 @@ export const config = {
       tr: '/traverten-[product]'
     },
 
+
  // Blog’un slug sayfaları
    '/blog/[slug]': { en: '/[slug]', tr: '/[slug]' },
 

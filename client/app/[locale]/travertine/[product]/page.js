@@ -1,11 +1,9 @@
 // app/[locale]/(catalog)/product/page.jsx
 "use client";
-
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import React from "react";
 import { colorKeys, colorSlugFor, colorLabelFor } from "@/lib/travertine";
-
 import {
   baseFor,
   productSlugFor,
@@ -162,10 +160,12 @@ const pretty = locale.startsWith("tr")
   const cutCards = showCutSelection
     ? Object.keys(CUTS[lang] || {}).map((cutKey) => {
         const localizedCutSlug = cutSlugForProduct(locale, cutKey, productKey);
+         const youtubeUrl = opt(`${productKey}.cuts.${cutKey}.youtube`, ""); // i18n’den oku
         return {
           slug: cutKey,
           title: opt(`${productKey}.cuts.${cutKey}.title`, cutKey),
           description: opt(`${productKey}.cuts.${cutKey}.desc`, ""),
+          youtubeUrl, 
           href: {
            pathname: "/travertine/[product]/[cut]",
            params: { product: productSlug, cut: localizedCutSlug }
