@@ -113,6 +113,15 @@ import slabIvoryVeincutBrushedUnfilled from "@/public/images/new/slab/ivory/Ivor
  * - Tek görsel istersen "cover" yeter.
  * - Varyant bazlı kart/hero için { cover, ivory, light, antiko } yapısı.
  */
+
+export const GALLERY_BY_PRODUCT_AND_VARIANT = {
+  blocks: {
+    ivory:  [blockIvory,blockIvory,blockIvory],
+    light:  ["/images/blocks/light/1.webp"],
+    antico: ["/images/blocks/antico/1.webp"]
+  }
+};
+
 export const PROCESS_THUMB_BY_CUT = {
   "vein-cut": {
     honed:    "/images/travertine/thumbs/process/honed.webp",

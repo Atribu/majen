@@ -108,48 +108,56 @@ export async function generateMetadata({ params }) {
   }
 
   const isTR = locale === "tr";
-  const base = BASE_BY_LOCALE[locale] || BASE_BY_LOCALE.en;
   const normalizedCut = ensureProductInCutSlug(locale, cut, product);
 
-  // canonical: /{locale}/{base}/{product}/{cut}/{process}
-  const canonicalPath = `/${locale}/${base}/${product}/${normalizedCut}/${process}`;
+  // 🔹 Kısa SEO canonical: /{locale}/{process}-{cut}
+  // (Routing’de '/travertine/[product]/[cut]/[process]' → '/[process]-[cut]' map'lenmişti)
+  const canonicalPath = `/${locale}/${process}-${normalizedCut}`;
   const canonicalUrl  = `${SITE_URL}${canonicalPath}`;
 
-  // i18n SEO override (process düğümü)
-  const cutShort = shortCutKey(normalizedCut); // "vein-cut" | "cross-cut"
-  const procLookup = toLookupProcKey(process); // EN birleşik anahtar (filled-polished vb.) ya da "natural"
+  // 🔹 i18n SEO override:
+  // ProductPage.{product}.cuts.{vein-cut|cross-cut}.processes.{filled-polished|...}.seo
+  const cutShort  = shortCutKey(normalizedCut);      // "vein-cut" | "cross-cut"
+  const procLookup = toLookupProcKey(process);       // "filled-polished" | "natural" ...
 
-  let t;
+  let tSeo;
   try {
-    t = await getTranslations({ locale, namespace: `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}.seo` });
+    tSeo = await getTranslations({
+      locale,
+      namespace: `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}.seo`
+    });
   } catch {
-    t = null;
+    tSeo = { has: () => false };
   }
 
   const ogFallback =
     OG_BY_PRODUCT_AND_CUT[product]?.[cutTypeKey(normalizedCut)]?.[isTR ? "tr" : "en"] ||
     OG_BY_PRODUCT_AND_CUT.slabs.vein.en;
 
-  const title = t?.has?.("title")
-    ? t("title")
-    : (isTR
-        ? "Traverten | Majen"
-        : "Travertine | Majen");
+  const title =
+    (tSeo.has?.("title") && tSeo("title")) ||
+    (isTR ? "Traverten | Majen" : "Travertine | Majen");
 
-  const description = t?.has?.("description")
-    ? t("description")
-    : (isTR
-        ? "Doğrudan ocaktan tedarik, güvenilir ihracat."
-        : "Direct quarry supply with reliable export terms.");
+  const description =
+    (tSeo.has?.("description") && tSeo("description")) ||
+    (isTR
+      ? "Doğrudan ocaktan tedarik, güvenilir ihracat."
+      : "Direct quarry supply with reliable export terms.");
 
-  const ogImage = t?.has?.("image") ? t("image") : ogFallback;
+  const ogImage =
+    (tSeo.has?.("image") && tSeo("image")) ||
+    ogFallback;
 
   return {
     title,
     description,
     alternates: {
       canonical: canonicalUrl,
-      languages: languageAlternates(canonicalUrl, locale),
+      // Projede aktif olan diller: en & tr
+      languages: {
+        en: canonicalUrl.replace(`/${locale}/`, `/en/`),
+        tr: canonicalUrl.replace(`/${locale}/`, `/tr/`),
+      },
     },
     openGraph: {
       title,
@@ -168,6 +176,7 @@ export async function generateMetadata({ params }) {
     robots: { index: true, follow: true },
   };
 }
+
 
 export default async function ProcessLayout({ children, params }) {
   const { locale, product, cut, process } = await params;
@@ -214,15 +223,16 @@ export default async function ProcessLayout({ children, params }) {
   };
 
   // Product JSON-LD (process seviyesinde)
-  const productJSONLD = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: `${processTitle} ${isTR ? "" : ""}| Majen`.replace("  ", " ").trim(),
-    brand: { "@type": "Organization", name: "Majen" },
-    category: "Natural Stone",
-    url: pageUrl,
-    offers: { "@type": "Offer", priceCurrency: "USD", availability: "http://schema.org/InStock" },
-  };
+const productJSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  // ör: "Unfilled Honed - Cross Cut | Majen"
+  name: `${humanProcessName(process, locale)} - ${cutName} | Majen`,
+  brand: { "@type": "Organization", name: "Majen" },
+  category: "Natural Stone",
+  url: pageUrl,
+  offers: { "@type": "Offer", priceCurrency: "USD", availability: "http://schema.org/InStock" },
+};
 
   // FAQ JSON-LD — process-level (varsa)
   let faqJSONLD = null;

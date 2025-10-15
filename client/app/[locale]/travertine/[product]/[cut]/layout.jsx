@@ -80,57 +80,66 @@ function cutTypeKey(cut) {
 export async function generateMetadata({ params }) {
   const { locale, product, cut } = await params;
   const isTR = locale === "tr";
-  const base = BASE_BY_LOCALE[locale] || BASE_BY_LOCALE.en;
 
   // blocks için cut layout yok
   if (!CUT_PRODUCTS.has(product)) {
     return { robots: { index: false, follow: false } };
   }
 
-  // cut slug ürününe uydur (örn slabs → tiles’ken gelen slug düzelsin)
+  // cut slug’ı ürününe uydur (…-travertine-slabs|tiles|special / …-traverten-…)
   const normalizedCut = ensureProductInCutSlug(locale, cut, product);
-  const canonicalPath = `/${locale}/${base}/${product}/${normalizedCut}`;
+
+  // canonical: kısa public URL
+  const canonicalPath = `/${locale}/${normalizedCut}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
-  // i18n SEO override: Seo.{product}.cuts.{fullCutSlug}.{title|description|image}
-  // Örn: Seo.slabs.cuts['vein-cut-travertine-slabs'].title
-    const cutKeyType = cutTypeKey(normalizedCut); // "vein" | "cross"
+  // i18n SEO override:
+  // ProductPage.{product}.cuts.{cutShort}.seo.{title|description|image}
+  const cutShort = /^vein-cut|^damar-kesim/i.test(normalizedCut) ? "vein-cut"
+                  : /^cross-cut|^enine-kesim/i.test(normalizedCut) ? "cross-cut"
+                  : "vein-cut";
 
-  const ns = `ProductPage.${product}.cuts.${cutKeyType}-cut.seo`;
-  let t;
+  let tSeo;
   try {
-    t = await getTranslations({ locale, namespace: ns });
+    tSeo = await getTranslations({
+      locale,
+      namespace: `ProductPage.${product}.cuts.${cutShort}.seo`,
+    });
   } catch {
-    t = { has: () => false, _: (k) => k };
+    // namespace yoksa tSeo.has undefined olmasın
+    tSeo = { has: () => false };
   }
 
-
+  const cutKeyType = /^vein-cut|^damar-kesim/.test(normalizedCut) ? "vein" : "cross";
   const ogFallback =
     OG_BY_PRODUCT_AND_CUT[product]?.[cutKeyType]?.[isTR ? "tr" : "en"] ||
     OG_BY_PRODUCT_AND_CUT.slabs.vein.en;
 
   const title =
-    (t.has(`${normalizedCut}.title`) && t(`${normalizedCut}.title`)) ||
+    (tSeo.has?.("title") && tSeo("title")) ||
     (isTR
       ? `${cutHumanName(normalizedCut, locale, product)} ${PRODUCT_LABEL[product]?.tr || "Traverten"} | Majen`
       : `${cutHumanName(normalizedCut, locale, product)} ${PRODUCT_LABEL[product]?.en || "Travertine"} | Majen`);
 
   const description =
-    (t.has(`${normalizedCut}.description`) && t(`${normalizedCut}.description`)) ||
+    (tSeo.has?.("description") && tSeo("description")) ||
     (isTR
       ? "Yüzey seçenekleriyle (cilalı, honlu, fırçalı, tamburlu) ve güvenilir ihracat süreçleriyle tedarik ediyoruz."
       : "Available in polished, honed, brushed and tumbled finishes with reliable export terms.");
 
   const ogImage =
-    (t.has(`${normalizedCut}.image`) && t(`${normalizedCut}.image`)) ||
-    ogFallback;
+    (tSeo.has?.("image") && tSeo("image")) || ogFallback;
 
   return {
     title,
     description,
     alternates: {
       canonical: canonicalUrl,
-      languages: languageAlternates(canonicalUrl, locale),
+      // yalnızca mevcut diller
+      languages: {
+        en: canonicalUrl.replace(`/${locale}/`, `/en/`),
+        tr: canonicalUrl.replace(`/${locale}/`, `/tr/`),
+      },
     },
     openGraph: {
       title,
@@ -150,6 +159,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
 export default async function CutLayout({ children, params }) {
   const { locale, product, cut } = await params;
   if (!CUT_PRODUCTS.has(product)) {
@@ -158,14 +168,14 @@ export default async function CutLayout({ children, params }) {
   }
 
   const isTR = locale === "tr";
-  const base = BASE_BY_LOCALE[locale] || BASE_BY_LOCALE.en;
+
   const normalizedCut = ensureProductInCutSlug(locale, cut, product);
 
   // URL’ler
   const homeUrl = `${SITE_URL}/${locale}`;
-  const catUrl = `${homeUrl}/${base}`;
-  const productUrl = `${catUrl}/${product}`;
-  const pageUrl = `${productUrl}/${normalizedCut}`;
+const catUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}`;
+  const productUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}-${product === "special" ? "special" : product}`;
+  const pageUrl = `${homeUrl}/${normalizedCut}`;
 
   // İsimler
   const productLabel = PRODUCT_LABEL[product]?.[isTR ? "tr" : "en"] || (isTR ? "Traverten" : "Travertine");

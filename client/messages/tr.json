@@ -314,14 +314,72 @@
     "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
   },
 
+    "gallery": {
+        "ivory": [
+          "/images/blocks/ivory/1.webp",
+          "/images/blocks/ivory/2.webp",
+          "/images/blocks/ivory/3.webp"
+        ],
+        "light": [ "/images/blocks/light/1.webp" ],
+        "antico": [ "/images/blocks/antico/1.webp" ]
+      },
+
   "colors": {
             "ivory":  {
+              "desc": "",
               "metaTitle": "Ivory · Polished Vein-Cut Slabs",
               "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "h1":        "Ivory Travertine Blocks",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
               "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
+              "intro":     "Ivory Travertine Blocks are extracted from the finest quarries in Turkey, known for their warm beige color and uniform structure. These natural stone blocks are the ideal raw material for high-end architectural and construction projects worldwide. Whether you’re producing slabs, tiles, or cut‑to‑size panels, Majen’s premium travertine guarantees durability, elegance, and color consistency. With direct quarry access and global export logistics, we ensure top quality and competitive pricing for every order.",
+              "intro2":     "Ivory Travertine Blocks are widely used across luxury villas, hotel façades, shopping centers, and public buildings thanks to their timeless tone and balanced veining. Indoors, they suit floors, wall cladding, staircases, and feature walls where warmth and light reflection are desired. Outdoors, the stone enhances pool decks, garden paths, and exterior cladding with its natural slip resistance and weather tolerance. Its stability across temperature shifts makes it reliable in both hot and continental climates. Majen supplies blocks optimized for multiple finishes — honed, polished, brushed, tumbled — to match every aesthetic and technical requirement.",
+              
+              "h3":"Travertine Block Prices and Cost Factors",
+              "text3":"The price of Ivory Travertine Blocks depends on block size, color grade, extraction quality, and order volume. Typical ranges are *USD 190–320 per m³*, with customized dimensions potentially affecting the price per ton. Freight terms (FOB/CIF), packing type, and required certifications may also influence the final quote. Majen follows a transparent pricing policy with detailed itemization, so you always see quarry grade, tonnage, and logistics components clearly. Share your specifications to receive a tailored quotation for your project.",
+              "h4":" Travertine Block Sizes & Standard Dimensions",
+              "text4":"Standard quarry‑run blocks are typically available up to *3.2 m × 2.0 m × 1.6 m*, subject to bench conditions. Each block is measured, coded, and inspected before loading to ensure dimensional accuracy and optimal yield during slab production. Consistent sizing simplifies nesting and reduces waste in fabrication lines. Whether you need large‑format cladding or smaller architectural details, Majen offers flexible cutting options and batch grouping by tone and vein to maintain aesthetic continuity across projects.",
+              "h5":"H5 — Travertine Blocks vs Slabs: Which Is Right for You?",
+              "text5":"Choose *blocks* when you need maximum flexibility, better material yield control, and cost efficiency at scale — ideal for quarries, processors, and distributors. Choose *slabs* when you require ready‑to‑install surfaces and faster turnaround for small to medium projects. Blocks minimize per‑m² cost in large fabrication workflows, while slabs reduce on‑site complexity. Majen provides both supply modes so you can balance budget, lead time, and customization based on your production setup and project timeline.",
+
+              "finishes":{
+                "title":"Finishes & Processing Options",
+                "list1":"Honed:* matte look, low glare for interiors.",
+                "list2":"Polished:* high reflectance for premium lobbies and walls.",
+                 "list3":"Brushed/Tumbled:* textured surfaces for outdoor and rustic concepts",
+                  "list4":"Filled/Unfilled:* pore management depending on slip resistance and hygiene needs."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging:* steel‑belted, wooden cribbing, coded blocks with moisture checks.",
+                "list2":"Logistics:* FOB/CIF terms, port handling, insurance, full export documentation (invoice, packing list, COO, HS code).",
+                 "list3":"Traceability:* batch and tone codes maintained through loading."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Common Questions About Ivory Travertine Blocks",
+            "aboutpage_s4_faq1_header": "How much does an Ivory Travertine Block cost?",
+            "aboutpage_s4_faq1_text": " Pricing varies by size and grade, generally *USD 190–320 per m³*. Request a tailored quote with your dimensions and volume.",
+            "aboutpage_s4_faq2_header": " What are the standard block sizes available?",
+            "aboutpage_s4_faq2_text": " Standard dimensions reach up to *3.2 m × 2.0 m × 1.6 m*; custom sizes depend on quarry bench and order plan.",
+            "aboutpage_s4_faq3_header":"Do you export globally and handle documentation?",
+            "aboutpage_s4_faq3_text":" Yes. We ship worldwide and prepare all documents (invoice, packing list, COO, HS code) along with insurance and port handling.",
+            "aboutpage_s4_faq4_header":" How consistent is the color across batches?",
+            "aboutpage_s4_faq4_text":"Blocks are graded by tone and vein, then grouped into batches to maintain visual continuity across large projects.",
+            "aboutpage_s4_faq5_header":" What finish should I choose for pool decks?",
+            "aboutpage_s4_faq5_text":"Opt for *brushed or tumbled unfilled* for better traction; seal according to local climate and usage.",
+            "aboutpage_s4_faq6_header":"What is the minimum order quantity?",
+            "aboutpage_s4_faq6_text":"MOQ varies by stock and quarry schedule; share your target volume and timeline for allocation.",
+            "aboutpage_s4_faq7_header":"What are typical lead times?",
+            "aboutpage_s4_faq7_text":"Lead times depend on extraction and port schedules; provide your delivery window to align quarry and vessel bookings.",
+            "aboutpage_s4_faq8_header":" Can I receive a current block list?",
+            "aboutpage_s4_faq8_text":"Yes. Request the *available stock list* (with sizes, tones, and weights) to plan your fabrication yield."
+          },
+
+              "ui": {
                     "chooseThickness": "Choose Thickness",
                     "applicationsLabel": "Applications",
                     "specsLabel": "Specifications",
@@ -332,8 +390,14 @@
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Compressive Strength", "value": "~55 MPa" },
+    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
+    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
+    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
                   ]
                 },
                 "faq": {
@@ -352,9 +416,15 @@
                 "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
                 "specs": {
                   "h2": "Specifications",
-                  "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                 "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Compressive Strength", "value": "~55 MPa" },
+    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
+    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
+    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
                   ]
                 },
                 "faq": {
@@ -374,8 +444,14 @@
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Compressive Strength", "value": "~55 MPa" },
+    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
+    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
+    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
                   ]
                 },
                 "faq": {

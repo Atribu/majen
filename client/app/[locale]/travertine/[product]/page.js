@@ -284,7 +284,7 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
         crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
-        span="- Direct Quarry Supplier"
+        span=""
       />
 
       <BreadcrumbsExact
