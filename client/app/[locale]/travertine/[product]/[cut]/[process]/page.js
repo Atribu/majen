@@ -20,7 +20,6 @@ import {
    IMAGE_BY_PRODUCT_AND_VARIANT,   // renk görselleri (color)
    PROCESS_THUMB_BY_COMBINED       // global fallback (filled:honed vb.)
  } from "@/app/[locale]/(catalog)/_images";
-
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
@@ -29,6 +28,7 @@ import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks"
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
+import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
 
 function InfoCard({ title, children }) {
   return (
@@ -478,6 +478,19 @@ const optRaw = (key, fallback = null) => {
   const variantHeader = optRaw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.title`, "");
   const variantText = optRaw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.text`, "");
 
+const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug;
+const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;
+
+// process slug’ını göster (TR’de “dolgulu-cilali”)
+const processSlugLocalized = procSlugForLocale(locale, process);
+
+const items = [
+  { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
+  { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
+  { label: cutLabel,     href: `/${locale}/${cutSlug}` },               // kısa cut sayfası
+  { label: processSlugLocalized, href: `/${locale}/${process}-${cutSlug}` }, // current
+];
+
   return (
     <main className="py-6 mt-16 overflow-x-hidden text-center w-full">
       {/* INTRO */}
@@ -503,6 +516,7 @@ const optRaw = (key, fallback = null) => {
               crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
               selectedSegments={selectedSegments}
               className="mt-6"
+               items={items}
             />
 
       {/* INFO CARDS */}

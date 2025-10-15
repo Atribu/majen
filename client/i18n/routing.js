@@ -10,6 +10,8 @@ export const config = {
     '/contactus': { tr: '/iletisim', en: '/contactus' },
     '/aboutus': { tr: '/hakkimizda', en: '/about-us' },
 
+     '/gallery': { en: '/gallery', tr: '/galeri' },   
+
     // Base
     '/travertine': {
       en: '/travertine',

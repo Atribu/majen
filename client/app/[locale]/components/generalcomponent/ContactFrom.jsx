@@ -15,7 +15,7 @@ const initialState = {
 };
 
 const fieldClass =
-  "w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-[15px] outline-none focus:border-black focus:ring-1 focus:ring-black transition";
+  "w-full rounded-md border border-neutral-300 bg-white px-3 py-[5px] text-[15px] outline-none focus:border-black focus:ring-1 focus:ring-black transition";
 
 const labelClass = "block text-sm font-medium text-neutral-800 mb-1";
 const errorClass = "mt-1 text-xs text-red-600";
@@ -83,7 +83,7 @@ export default function ContactFrom() {
 
   return (
     <section className="relative mt-7 lg:mt-12 mb-12">
-      <div className="max-w-[1200px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
+      <div className="max-w-[1100px] mx-auto p-6 md:p-8 bg-white/80 backdrop-blur-sm shadow-sm text-center lg:text-start ">
         <header className="mb-2 lg:mb-6">
           <span className="text-[20px] md:text-[24px] font-semibold tracking-tight">
             {t("title")}
@@ -166,7 +166,7 @@ export default function ContactFrom() {
     <textarea
       id="message"
       rows={5}
-      className={fieldClass + " lg:min-h-[140px]"}
+      className={fieldClass + " lg:min-h-[110px]"}
       value={values.message}
       onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
       placeholder={t("placeholders.message")}

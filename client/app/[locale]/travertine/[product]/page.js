@@ -248,10 +248,19 @@ const pretty = locale.startsWith("tr")
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
   // ---- Breadcrumb
-  const rawPath = usePathname();
-  const pathname = typeof rawPath === "string" ? rawPath : "";
-  const segments = pathname.split("/").filter(Boolean);
-  const selectedSegments = segments.slice(-1);
+const rawPath   = usePathname();
+const pathname  = typeof rawPath === "string" ? rawPath : "";
+const segments  = pathname.split("/").filter(Boolean);
+
+const lastSeg   = segments.at(-1) ?? "";                    // örn: "vein-cut"
+const words     = lastSeg.split(/[-\s]+/).filter(Boolean);  // ["vein","cut"]
+
+// Sadece iki kelimeyse sonuncuyu al; değilse segmenti aynen bırak
+const lastWord  = (words.length === 2) ? words[1] : lastSeg;
+
+// Eğer breadcrumb’da son öğe olarak bunu göstereceksen:
+const selectedSegments = [...segments.slice(-1)];
+if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = lastWord;
 
   // ---- Diğer seçenekler (çoğul anahtarlar!)
   const productAltMap = {

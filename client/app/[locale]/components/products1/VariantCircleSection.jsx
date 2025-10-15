@@ -123,7 +123,7 @@ export default function VariantCircleSection({
                   <div className="relative h-40 w-40 sm:h-44 sm:w-44 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]">
                     <Image
                       src={cardSrc}
-                      alt={`${imgAlt}${title}`}
+                      alt={`${imgAlt} ${title}`}
                       fill
                       className="object-cover transition-transform duration-500 scale-100 group-hover:scale-105"
                       sizes="160px"

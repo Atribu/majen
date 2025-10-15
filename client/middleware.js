@@ -10,7 +10,11 @@ const FS_BASE = 'travertine';
 const EN_PRODUCTS = new Set(['travertine-blocks','travertine-slabs','travertine-tiles','travertine-special']);
 const TR_PRODUCTS = new Set(['traverten-bloklar','traverten-plakalar','traverten-karolar','traverten-ozel-tasarim']);
 
-const EXEMPT_TOP_LEVEL = new Set(['travertine-guide']);
+const EXEMPT_TOP_LEVEL = new Set([
+  'travertine-guide',
+  'gallery',  // en
+  'galeri',   // tr
+]);
 
 const COLOR_KEY_FROM_ANY = new Map([
   ['ivory','ivory'], ['light','light'], ['antico','antico'],
@@ -33,27 +37,30 @@ const PROC_CUT_WITH_PRODUCT_EN =
   /^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
 
 const PROC_CUT_WITH_PRODUCT_TR =
-  /^(?:dogal|natural|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled))-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
+  /^((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
 
 const PROC_ONLY_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
-const PROC_ONLY_TR = /^(?:dogal|natural|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|honed|polished|brushed|tumbled|dogal|natural))$/i;
+const PROC_ONLY_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
 
 const BLOCKS_COLOR_EN = /^([a-z0-9-]+)-travertine-blocks$/i;
 const BLOCKS_COLOR_TR = /^([a-z0-9-]+)-traverten-bloklar$/i;
 
 function localizedProductFromCut(locale, cutSlug) {
+  // İç route için DAIMA İNGİLİZCE key döndür (slabs, tiles, blocks, special)
+  // Çünkü dosya yapınız app/[locale]/travertine/[product]/... şeklinde
+  
   if (locale === 'tr') {
-    if (/-traverten-plakalar$/i.test(cutSlug))     return 'plakalar';
-    if (/-traverten-karolar$/i.test(cutSlug))      return 'karolar';
-    if (/-traverten-bloklar$/i.test(cutSlug))      return 'bloklar';
-    if (/-traverten-ozel-tasarim$/i.test(cutSlug)) return 'ozel-tasarim';
+    if (/-traverten-plakalar$/i.test(cutSlug))     return 'slabs';      // ✅ değişti
+    if (/-traverten-karolar$/i.test(cutSlug))      return 'tiles';      // ✅ değişti
+    if (/-traverten-bloklar$/i.test(cutSlug))      return 'blocks';     // ✅ değişti
+    if (/-traverten-ozel-tasarim$/i.test(cutSlug)) return 'special';    // ✅ değişti
   } else {
     if (/-travertine-slabs$/i.test(cutSlug))   return 'slabs';
     if (/-travertine-tiles$/i.test(cutSlug))   return 'tiles';
     if (/-travertine-blocks$/i.test(cutSlug))  return 'blocks';
     if (/-travertine-special$/i.test(cutSlug)) return 'special';
   }
-  return locale === 'tr' ? 'plakalar' : 'slabs';
+  return 'slabs'; // default
 }
 
 export default function middleware(req) {
@@ -104,53 +111,54 @@ export default function middleware(req) {
   }
 
   // 2) PROCESS+CUT kısa URL’ler (+tail)
-  if (parts.length >= 2) {
-    const seg2 = parts[1];
+ if (parts.length >= 2) {
+  const seg2 = parts[1];
 
-    // EN
-    let m = seg2.match(PROC_CUT_WITH_PRODUCT_EN);
-    if (m) {
-      const processSlug = m[1];
-      const cutType     = m[2];
-      const productEn   = m[3].toLowerCase();
-      const productSeg  = locale === 'tr'
-        ? (productEn === 'slabs' ? 'plakalar'
-          : productEn === 'tiles' ? 'karolar'
-          : productEn === 'blocks' ? 'bloklar'
-          : 'ozel-tasarim')
-        : productEn;
-      const cutSlugFull = `${cutType}-travertine-${productEn}`;
-      const tail = parts.slice(2).join('/');
-      url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
-      return NextResponse.rewrite(url);
-    }
-
-    // TR
-    m = seg2.match(PROC_CUT_WITH_PRODUCT_TR);
-    if (m) {
-      let processSlug = m[1];
-      const cutTypeTr = m[2];
-      const productTr = m[3].toLowerCase();
-
-      const EN2TR = { honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis' };
-      if (processSlug.toLowerCase() === 'natural') processSlug = 'dogal';
-      processSlug = processSlug.replace(
-        /(dolgulu|dolgusuz)-(honed|polished|brushed|tumbled)/i,
-        (_, f, p) => `${f.toLowerCase()}-${EN2TR[p.toLowerCase()] || p.toLowerCase()}`
-      );
-
-      const cutSlugFull = `${cutTypeTr}-traverten-${productTr}`;
-      const tail = parts.slice(2).join('/');
-      const productSeg = locale === 'tr'
-        ? productTr
-        : (productTr === 'plakalar' ? 'slabs'
-          : productTr === 'karolar' ? 'tiles'
-          : productTr === 'bloklar' ? 'blocks'
-          : 'special');
-      url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
-      return NextResponse.rewrite(url);
-    }
+  // EN
+  let m = seg2.match(PROC_CUT_WITH_PRODUCT_EN);
+  if (m && m[1] && m[2] && m[3]) {  // ✅ Güvenli kontrol
+    const processSlug = m[1];
+    const cutType     = m[2];
+    const productEn   = m[3].toLowerCase();
+    const productSeg  = locale === 'tr'
+      ? (productEn === 'slabs' ? 'slabs'  // ✅ EN key kullan
+        : productEn === 'tiles' ? 'tiles'
+        : productEn === 'blocks' ? 'blocks'
+        : 'special')
+      : productEn;
+    const cutSlugFull = `${cutType}-travertine-${productEn}`;
+    const tail = parts.slice(2).join('/');
+    url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
+    return NextResponse.rewrite(url);
   }
+
+  // TR kısmını şöyle değiştirin (güvenli kontroller ile):
+  m = seg2.match(PROC_CUT_WITH_PRODUCT_TR);
+  if (m && m[1] && m[2] && m[3]) {  // ✅ Tüm grupların var olduğunu kontrol et
+    let processSlug = m[1];
+    const cutTypeTr = m[2];
+    const productTr = m[3].toLowerCase();
+
+    const EN2TR = { honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis' };
+    if (processSlug.toLowerCase() === 'natural') processSlug = 'dogal';
+    processSlug = processSlug.replace(
+      /(dolgulu|dolgusuz)-(honed|polished|brushed|tumbled)/i,
+      (_, f, p) => `${f.toLowerCase()}-${EN2TR[p.toLowerCase()] || p.toLowerCase()}`
+    );
+
+    const cutSlugFull = `${cutTypeTr}-traverten-${productTr}`;
+    const tail = parts.slice(2).join('/');
+    
+    // ✅ İç route için EN key kullan
+    const productSeg = 
+      productTr === 'plakalar' ? 'slabs' :
+      productTr === 'karolar' ? 'tiles' :
+      productTr === 'bloklar' ? 'blocks' : 'special';
+    
+    url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
+    return NextResponse.rewrite(url);
+  }
+}
 
   // 3) COLOR-FIRST kısa URL
   if (parts.length >= 2) {

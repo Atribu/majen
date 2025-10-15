@@ -92,7 +92,7 @@ export default function TravertinePageClient() {
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
-        crumbProducts={locale === "tr" ? "Travertenler" : "Travertines"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
         selectedSegments={selectedSegments}
         className="mt-4 mb-10"
       />

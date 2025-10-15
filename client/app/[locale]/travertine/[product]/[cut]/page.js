@@ -7,7 +7,6 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor} from "@/lib/travertine";
 import { IMAGE_BY_PRODUCT, PROCESS_THUMB_BY_COMBINED } from "@/app/[locale]/(catalog)/_images";
-
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
@@ -20,6 +19,7 @@ import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/deneme/masa2.webp";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
+import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
 
 function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
@@ -33,18 +33,49 @@ function InfoCard({ title, children, contentClassName = "text-sm text-neutral-60
 // helpers
 const safe = (fn, fb = undefined) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
 
+// === Title formatting helpers (process ve cut yazıları) ===
+
 function procSlugFor(locale, group, key) {
   const tr = String(locale).startsWith("tr");
-   // natural ise filled/unfilled önekiyle birlikte üret
- const isNatural = (key === "natural" || key === "dogal");
- if (isNatural) {
-   const fillTr = group === "filled" ? "dolgulu" : "dolgusuz";
-   const fillEn = group === "filled" ? "filled"  : "unfilled";
-   return tr ? `${fillTr}-dogal` : `${fillEn}-natural`;
- }
- // diğer işlemler
- const fill = group === "filled" ? (tr ? "dolgulu" : "filled") : (tr ? "dolgusuz" : "unfilled");
- return `${fill}-${key}`;
+  
+  // natural ise filled/unfilled önekiyle birlikte üret
+  const isNatural = (key === "natural" || key === "dogal");
+  if (isNatural) {
+    const fillTr = group === "filled" ? "dolgulu" : "dolgusuz";
+    const fillEn = group === "filled" ? "filled"  : "unfilled";
+    return tr ? `${fillTr}-dogal` : `${fillEn}-natural`;
+  }
+  
+  // ✅ EN → TR dönüşümü
+  const PROCESS_MAP = {
+    en: {
+      honed: "honed",
+      polished: "polished",
+      brushed: "brushed",
+      tumbled: "tumbled"
+    },
+    tr: {
+      honed: "honlanmis",
+      polished: "cilali",
+      brushed: "fircalanmis",
+      tumbled: "eskitilmis",
+      // İngilizce key gelebilir, onları da map'le
+      honlanmis: "honlanmis",
+      cilali: "cilali",
+      fircalanmis: "fircalanmis",
+      eskitilmis: "eskitilmis"
+    }
+  };
+  
+  const processMap = tr ? PROCESS_MAP.tr : PROCESS_MAP.en;
+  const processSlug = processMap[key] || key;
+  
+  // dolgu öneki
+  const fill = group === "filled" 
+    ? (tr ? "dolgulu" : "filled") 
+    : (tr ? "dolgusuz" : "unfilled");
+  
+  return `${fill}-${processSlug}`;
 }
 
 export default function CutPage() {
@@ -274,8 +305,8 @@ const makeGroupCards = (groupName) => {
   }
 
   // FAQ: önce CUT altında, yoksa ürün kökü
-  const qCut = safe(() => t.raw(`slabs.cuts.${cutKey}.QuestionsItems`), null);
-  const qTop = safe(() => t.raw(`slabs.QuestionsItems`), {});
+  const qCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.QuestionsItems`), null);
+  const qTop = safe(() => t.raw(`${productKey}.cuts.${cutKey}.QuestionsItems`), {});
   const qSrc = qCut || qTop;
   const faqItems = [];
   if (qSrc) {
@@ -306,7 +337,6 @@ const makeGroupCards = (groupName) => {
     },
   ];
 
-  const otherCutKey = cutKey === "vein-cut" ? "cross-cut" : "vein-cut";
 
 const hrefForCut = (pkey, ckey) => ({
   pathname: "/travertine/[product]/[cut]",
@@ -319,22 +349,68 @@ const hrefForCut = (pkey, ckey) => ({
 // 🔸 yalnızca slabs/tiles/special-designs göster
 const CUT_PRODUCTS = ["slabs", "tiles", "special-designs"];
 
-// current product için sadece karşı cut; diğerleri için iki cut
-const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
-  if (pkey === productKey) {
-    // aynı ürün → sadece diğer cut
-    acc[pkey] = [
-      { label: otherCutKey.replace("-", " "), href: hrefForCut(pkey, otherCutKey) },
-    ];
-  } else {
-    // farklı ürün → iki cut da
-    acc[pkey] = [
-      { label: "vein-cut",  href: hrefForCut(pkey, "vein-cut")  },
-      { label: "cross-cut", href: hrefForCut(pkey, "cross-cut") },
-    ];
-  }
-  return acc;
-}, {});
+
+
+const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug; // tr→ "plakalar"
+const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;      // tr→ "damar kesim"
+
+const items = [
+  { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
+  { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
+  { label: cutLabel,     href: `/${locale}/${canonicalCutSlug}` }, // kısa cut URL
+];
+
+//otherOptions için
+const otherCutKey = cutKey === "vein-cut" ? "cross-cut" : "vein-cut";
+
+// vitrin için 3 kombinasyon (istersen değiştirebilirsin)
+const SHOWCASE_COMBOS = [
+  { group: "filled",   proc: "polished" },
+  { group: "filled",   proc: "honed"    },
+  { group: "unfilled", proc: "honed"    },
+];
+
+const processTitleFor = (group, proc) => {
+  const tr = locale.startsWith("tr");
+  const fillText = tr
+    ? (group === "filled" ? "Dolgulu" : "Dolgusuz")
+    : (group === "filled" ? "Filled"  : "Unfilled");
+  const procMap = tr
+    ? { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş", natural:"Doğal" }
+    : { honed:"Honed",     polished:"Polished", brushed:"Brushed",   tumbled:"Tumbled",    natural:"Natural" };
+  return `${fillText}  ${procMap[proc] || proc}`;
+};
+
+const otherCutLabel =
+  (typeof CUT_LABEL !== "undefined" && CUT_LABEL[lang]?.[otherCutKey]) ||
+  otherCutKey.replace("", " ");
+
+const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
+  const combinedKey = `${group}:${proc}`;
+  const img =
+    IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[otherCutKey]?.[combinedKey] ||
+    IMAGE_BY_PRODUCT?.[productKey]?.[otherCutKey] ||
+    IMAGE_BY_PRODUCT?.[productKey]?.cover ||
+    heroSrc;
+
+  // zaten bu dosyada var: procSlugFor(locale, group, key)
+  const processSlug = procSlugFor(locale, group, proc);
+
+  return {
+    title: `${processTitleFor(group, proc)} ${otherCutLabel}  `,
+    img,
+    href: {
+      pathname: "/travertine/[product]/[cut]/[process]",
+      params: {
+        product: String(productSlug),
+        cut:     cutSlugForProduct(locale, otherCutKey, productKey),
+        process: processSlug
+      }
+    }
+  };
+});
+
+
 
   return (
     <main className="py-6 mt-16 overflow-x-hidden text-center w-full">
@@ -359,6 +435,7 @@ const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
               crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
               selectedSegments={selectedSegments}
               className="mt-6"
+              items={items}
             />
       
 
@@ -393,6 +470,7 @@ const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
           heroSrc={heroSrc}
           IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
           productKey={productKey}
+          imgAlt={`${productKey}  ${cutKey} `}
         />
       )}
 
@@ -437,21 +515,25 @@ const variantLinks = CUT_PRODUCTS.reduce((acc, pkey) => {
 
       <ContactFrom />
 
-{/* <OtherOptions
+<OtherOptions
   heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
+  customItems={otherOptionsItems}         // ← sadece bunu ekledik
   excludeProduct={productKey}
-  productOrder={["slabs", "tiles", "special-designs"]}   // ⬅️ blocks yok
+  productOrder={["slabs", "tiles", "special-designs"]}
   baseHref={`${prefix}/${baseSegment}`}
   productSegments={{
-    slabs:            productSlugFor(locale, "slabs"),
-    tiles:            productSlugFor(locale, "tiles"),
+    slabs: productSlugFor(locale, "slabs"),
+    tiles: productSlugFor(locale, "tiles"),
     "special-designs": productSlugFor(locale, "special-designs"),
   }}
   locale={locale}
   productImages={{ slabs, tiles, "special-designs": special }}
-  productHrefFor={(pkey) => ({ pathname: "/travertine/[product]", params: { product: productSlugFor(locale, pkey) } })}
-  variantLinks={variantLinks}
-/> */}
+  productHrefFor={(pkey) => ({
+    pathname: "/travertine/[product]",
+    params: { product: productSlugFor(locale, pkey) }
+  })}
+/>
+
 
       
     </main>
