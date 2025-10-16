@@ -1,5 +1,5 @@
 "use client";
-
+//gallery images came from _images GALLERY_BY_PRODUCT_AND_VARIANT
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +13,9 @@ import {
   colorSlugFor,
 } from "@/lib/travertine";
 import blockIvory from "@/public/images/homepage/Ivoryblok.webp";
+import slabAnticoVeincut from "@/public/images/new/slab/antico/Antikveincut.webp"
+import slabAnticoCrosscut from "@/public/images/new/slab/antico/Antikcrosscut.webp"
+import tilesLight from "@/public/images/homepage/kesim.webp";
 
 import { IMAGE_BY_PRODUCT_AND_VARIANT, GALLERY_BY_PRODUCT_AND_VARIANT } from "@/app/[locale]/(catalog)/_images";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
@@ -24,6 +27,7 @@ import SpecTable from "./SpecTable";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import InfoListCard from "./InfoListCard";
 import SocialBlock from "./SocialBlock";
+import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
 export default function BlockColorClient({ locale, color }) {
   const t = useTranslations("ProductPage");
@@ -189,7 +193,7 @@ const exportTitle   = exportNode.title   || (locale === "tr" ? "İhracat & Paket
 
 
   return (
-    <main className="py-6 mt-16 overflow-x-hidden gap-10 flex flex-col">
+    <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden gap-5 flex flex-col">
       <ProductIntroSection
         title={title}
         intro={intro}
@@ -264,6 +268,38 @@ const exportTitle   = exportNode.title   || (locale === "tr" ? "İhracat & Paket
       <QuestionsSection items={faqItems} span={`Common Questions About  ${label} Travertine Blocks`}/>
       <SocialMediaSection />
       <ContactFrom />
+
+      <OtherOptions
+  locale={locale}                 // resolveHref locale'yi prefixlemek için kullanıyor
+  heading={t("blocks.otherOptions.heading", { default: "Other Options" })}
+  customItems={[
+    {
+      // Slabs / Vein-Cut
+      title: locale === "tr" ? "Plakalar • Vein-Cut" : "Slabs • Vein-Cut",
+      text:  locale === "tr"
+        ? "Damar yönünde kesimle daha çizgisel görünüm."
+        : "Linear look with vein-direction cut.",
+      img: slabAnticoVeincut,
+      href: { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "vein-cut" } },
+    },
+    {
+      // Slabs / Cross-Cut
+      title: locale === "tr" ? "Plakalar • Cross-Cut" : "Slabs • Cross-Cut",
+      text:  locale === "tr"
+        ? "Damağa kesit görünümüyle daha bulutumsu desen."
+        : "Cloudy, mosaic-like pattern via cross-cut.",
+      img:  slabAnticoCrosscut,
+      href: { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "cross-cut" } },
+    },
+
+    {
+      title: locale === "tr" ? "Karo • Vein-Cut" : "Tiles • Vein-Cut",
+      text:  locale === "tr" ? "Proje ihtiyaçlarına göre ölçüler." : "Cut-to-size options for projects.",
+      img:   tilesLight,
+      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "tiles", cut: "vein-cut" } },
+    },
+  ]}
+/>
     </main>
   );
 }

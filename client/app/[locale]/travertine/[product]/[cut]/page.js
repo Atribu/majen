@@ -413,7 +413,7 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
 
 
   return (
-    <main className="py-6 mt-16 overflow-x-hidden text-center w-full">
+    <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
       <ProductIntroSection
         title={cutTitle}
         intro={cutIntro}

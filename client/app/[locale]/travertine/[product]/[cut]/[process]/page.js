@@ -2,6 +2,7 @@
 //resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve variant kısmının resimleri colorThumbs dan (_images)
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import React from "react";
 
 import {
   baseFor,
@@ -29,6 +30,8 @@ import QuestionsSection from "@/app/[locale]/components/generalcomponent/Questio
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
 import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
+import { Link } from "@/i18n/navigation";
+import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
 function InfoCard({ title, children }) {
   return (
@@ -491,8 +494,94 @@ const items = [
   { label: processSlugLocalized, href: `/${locale}/${process}-${cutSlug}` }, // current
 ];
 
+const ALL_PROCS_EN = [
+  "filled-polished","filled-honed","filled-brushed","filled-tumbled",
+  "unfilled-honed","unfilled-brushed","unfilled-tumbled","unfilled-natural",
+];
+const otherProcKeysEN = ALL_PROCS_EN.filter((p) => p !== lookupProcKey).slice(0, 3);
+
+// 2) Kart başına 3 renk (öncelik sırası)
+const COLOR_PRIORITY = ["ivory", "light", "antico"]; // istersen farklı sıraya al
+const colorKeyList = colorKeys();                     // i18n key ailesi
+// color slug ve label'ları hazırla (locale'e göre)
+const colorTriplet = COLOR_PRIORITY
+  .map((enKey) => {
+    // projende renk key ↔ slug farklı olabilir; hem key hem slug deneyelim
+    const slug = colorSlugFor(locale, enKey);
+    const label = colorLabelFor(locale, enKey);
+    // gerçekte varsa kullan; yoksa colorKeys() listesinden sıradakiyle doldur
+    return { key: enKey, slug, label };
+  })
+  .slice(0, 3);
+
+// 3) Her process için görsel (thumb) bul (product/cut/process → combined key)
+function combinedKeyFromEn(enCombo) {
+  // "filled-polished" → "filled:polished"
+  if (!enCombo) return null;
+  const s = String(enCombo).trim();
+  if (s === "natural" || s === "unfilled-natural") return "unfilled:natural";
+  const [fi, pr] = s.split("-");
+  return `${fi}:${pr}`;
+}
+
+function processThumbFor(enCombo) {
+  const cKey = combinedKeyFromEn(enCombo);
   return (
-    <main className="py-6 mt-16 overflow-x-hidden text-center w-full">
+    IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[cKey] ||
+    PROCESS_THUMB_BY_COMBINED?.[cKey] ||
+    heroSrc
+  );
+}
+
+// 4) Kartların link ve metinlerini üret
+const otherProcessCards = otherProcKeysEN.map((enCombo) => {
+  // başlık (locale'e uygun “Filled · Honed” biçimi)
+  const procTitle = friendlyProcessLabel(enCombo, locale);
+  const targetProcessSlug = procSlugForLocale(locale, enCombo); // hedef URL process segmenti (locale'li)
+  const img = processThumbFor(enCombo);
+
+  // buton, ilk renge gitsin
+  const firstColor = colorTriplet[0];
+  const buttonHref = buildSeoColorPath(
+    locale,
+    productKey,
+    cutSlug,               // bulunduğun cut SEO segmenti
+    targetProcessSlug,     // hedef process segmenti
+    firstColor.key         // renk key (EN family), buildSeoColorPath içinde doğru çözümleniyor
+  );
+
+  // kart gövdesinde 3 renk linki
+  const textJsx = (
+    <>
+      {(locale.startsWith("tr") ? "Renkler: " : "Colors: ")}
+      {colorTriplet.map((c, idx) => {
+        const href = buildSeoColorPath(locale, productKey, cutSlug, targetProcessSlug, c.key);
+        return (
+          <React.Fragment key={`${enCombo}-${c.key}`}>
+            <Link href={href} className="text-teal-700 hover:underline">
+              {c.label}
+            </Link>
+            {idx < colorTriplet.length - 1 ? " · " : ""}
+          </React.Fragment>
+        );
+      })}
+    </>
+  );
+
+  return {
+    title: procTitle,
+    textJsx,
+    img,
+    href: {
+      // buton (Go to page) için ilk renge deep link veriyoruz
+      pathname: buttonHref, // i18n Link locale’i ekleyecek, path locale’siz olmalı
+    },
+  };
+});
+
+
+  return (
+    <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
       {/* INTRO */}
       <ProductIntroSection
         title={processNode.h1 || `${productTitle} · ${cutTitle} · ${processTitle}`}
@@ -571,6 +660,14 @@ const items = [
       <SocialMediaSection/>
   
       <ContactFrom />
+      
+      <OtherOptions
+  locale={locale}
+  heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"}
+  customItems={otherProcessCards}
+  // İstersen 3 kart tek satır
+  gridClassName="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center"
+/>
     </main>
   );
 }

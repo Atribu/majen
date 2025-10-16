@@ -271,7 +271,7 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
   };
 
   return (
-    <main className="py-6 mt-16 overflow-x-hidden">
+    <main className="py-6  mt-[22px] lg:mt-7 overflow-x-hidden">
       {/* ÜST INTRO */}
       <ProductIntroSection
         title={title}

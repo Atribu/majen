@@ -29,7 +29,7 @@ export default function IntroSection({
 
   // Schema (opsiyonel)
   schemaId = "breadcrumb-schema",
-  className = "relative mt-12 lg:mt-20 mb-10 overflow-hidden",
+  className = "relative mt-8 mb-10 overflow-hidden",
 }) {
   const t = useTranslations("TravertinePage");
   const locale = useLocale();

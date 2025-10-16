@@ -346,7 +346,13 @@
         "antico": [ "/images/blocks/antico/1.webp" ]
       },
 
+      "otherOptions":{
+        "heading":"Other Options",
+        "":""
+      },
+
   "colors": {
+
             "ivory":  {
               "desc": "",
               "metaTitle": "Ivory · Polished Vein-Cut Slabs",
@@ -8240,7 +8246,16 @@
         "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
       ],
 
+        "images": {
+          "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
+          "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
+        },
+
     "vein-cut": {
+       "image": "/images/new/slab/antico/Antikveincut.webp",
+         "youtube": "https://youtu.be/II8CJhIGhQo",
+          "desc": " Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
+ 
        "title": "Vein Cut Travertine Special Design ",
           "alt": "Vein-cut travertine special design",
           "span": "",
@@ -8999,6 +9014,10 @@
     },
 
     "cross-cut": {
+       "image": "/images/new/slab/antico/Antikveincut.webp",
+         "youtube": "https://youtu.be/II8CJhIGhQo",
+          "desc": " Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
+ 
       "title": "Cross Cut Travertine Special Designs",
           "alt": "Cross-cut travertine special designs",
           "span": "Direct Quarry Supplier",

@@ -117,8 +117,8 @@ import slabIvoryVeincutBrushedUnfilled from "@/public/images/new/slab/ivory/Ivor
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
     ivory:  [blockIvory,blockIvory,blockIvory],
-    light:  ["/images/blocks/light/1.webp"],
-    antico: ["/images/blocks/antico/1.webp"]
+    light:  [blockLight,blockLight,blockLight,blockLight],
+    antico: [blockAntik,blockAntik,blockAntik,blockAntik]
   }
 };
 

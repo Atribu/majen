@@ -1,4 +1,3 @@
-// app/components/products1/VariantCircleSection2.jsx
 "use client";
 import React from "react";
 import Link from "next/link";
@@ -25,30 +24,61 @@ export default function OtherOptions(props) {
   const t = useTranslations("TravertinePage");
 
   // 🔧 Yardımcı: dinamik href objesini SEO kısa URL string’ine çevir
+  // Locale-aware SEO path builder (LOCALE PREFIX EKLEME — i18n <Link> ekler)
+  const PRODUCT_TAIL = locale.startsWith("tr")
+    ? { blocks: "traverten-bloklar", slabs: "traverten-plakalar", tiles: "traverten-karolar", "special-designs": "traverten-ozel-tasarim" }
+    : { blocks: "travertine-blocks", slabs: "travertine-slabs", tiles: "travertine-tiles", "special-designs": "travertine-special" };
+
+ const CUT = locale.startsWith("tr")
+    ? { "vein-cut": "damar-kesim", "cross-cut": "enine-kesim" }
+    : { "vein-cut": "vein-cut", "cross-cut": "cross-cut" };
+
+  const FILL = locale.startsWith("tr") ? { filled: "dolgulu", unfilled: "dolgusuz" } : { filled: "filled", unfilled: "unfilled" };
+  const FINISH = locale.startsWith("tr")
+    ? { polished: "cilali", honed: "honlanmis", brushed: "fircalanmis", tumbled: "eskitilmis" }
+    : { polished: "polished", honed: "honed", brushed: "brushed", tumbled: "tumbled" };
+
+  const canon = (p) => ({"block":"blocks","blocks":"blocks","special":"special-designs","special-designs":"special-designs","slabs":"slabs","tiles":"tiles"}[p] || p);
+
   const resolveHref = (hrefLike) => {
     if (!hrefLike) return "#";
-    if (typeof hrefLike === "string") return hrefLike;
+    if (typeof hrefLike === "string") return hrefLike;   // zaten locale’siz path veriyorsan dokunma
 
     const { pathname, params = {} } = hrefLike || {};
-    const L = `/${locale}`;
+    const product = canon(params.product);
+    const tail = PRODUCT_TAIL[product] || PRODUCT_TAIL.slabs;
 
-    // Bizim route map’imiz:
-    // '/travertine/[product]'                    → '/travertine-[product]'
-    // '/travertine/[product]/[cut]'              → '/[cut]'
-    // '/travertine/[product]/[cut]/[process]'    → '/[process]-[cut]'
+    // /travertine/[product]  ->  /<tail>
     if (pathname === "/travertine/[product]") {
-      return `${L}/travertine-${params.product}`;
-    }
-    if (pathname === "/travertine/[product]/[cut]") {
-      return `${L}/${params.cut}`;
-    }
-    if (pathname === "/travertine/[product]/[cut]/[process]") {
-      return `${L}/${params.process}-${params.cut}`;
+      return `/${tail}`;
     }
 
-    // Fallback: en kötü ihtimalle locale + join
-    const tail = Object.values(params).filter(Boolean).join("/");
-    return `${L}/${tail}`;
+    // /travertine/[product]/[cut]  ->  /<cut>-<tail>
+    if (pathname === "/travertine/[product]/[cut]") {
+      const rawCut = String(params.cut).toLowerCase();
+      const cutNormInTr = locale.startsWith("tr")
+        ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) // giriş normalizasyonu
+        : rawCut;
+      const cut = CUT[cutNormInTr] || cutNormInTr;
+      return `/${cut}-${tail}`;
+    }
+
+    // /travertine/[product]/[cut]/[process]  ->  /<fill>-<finish>-<cut>-<tail>
+    if (pathname === "/travertine/[product]/[cut]/[process]") {
+      const rawCut = String(params.cut).toLowerCase();
+  const cutNormInTr = locale.startsWith("tr")
+    ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut)
+    : rawCut;
+  const cut = CUT[cutNormInTr] || cutNormInTr;
+      const [fillRaw, finishRaw] = String(params.process).toLowerCase().split("-");
+      const fill = FILL[fillRaw] || fillRaw;
+      const finish = FINISH[finishRaw] || finishRaw;
+      return `/${fill}-${finish}-${cut}-${tail}`;
+    }
+
+    // Son çare: param değerlerini sırayla joinle (locale prefix YOK)
+    const tailUnknown = Object.values(params).filter(Boolean).join("/");
+    return `/${tailUnknown}`;
   };
 
   // … defaultProductLabels, productLabels, VARIANT_SLUG_MAP, humanize, variantLabel aynı …
@@ -104,7 +134,11 @@ export default function OtherOptions(props) {
                       {it.title}
                     </h4>
 
-                    {it.text ? (
+                     {it.textJsx ? (
+                      <div className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
+                        {it.textJsx}
+                      </div>
+                    ) : it.text ? (
                       <p className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
                         {it.text}
                       </p>

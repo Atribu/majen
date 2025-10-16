@@ -87,7 +87,7 @@ export default function Footer() {
 
       {/* İçeriğin okunurluğu için hafif cam efekti */}
       <div className="backdrop-blur-sm supports-[backdrop-filter]:bg-white/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:pb-8 pt-11">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Brand + Social */}
             <div className="text-center lg:text-left">
@@ -252,7 +252,7 @@ export default function Footer() {
             <div className="inline-flex items-center gap-1">
            
               <Link href="https://dgtlface.com"   rel="norefferer nofollower"
-                  target="_blank" className="flex w-full text-[12px] font-normal leading-normal font-jost tracking-[0.56px] mb-2 md:py-[1.8%] text-center justify-center items-center gap-[9.13px] text-neutral-700">
+                  target="_blank" className="flex w-full text-[12px] font-normal leading-normal font-jost tracking-[0.56px] md:py-[1.8%] text-center justify-center items-center gap-[9.13px] text-neutral-700">
             Powered by <DgtlfaceSvg className="flex" width={104} height={27} />
       </Link>
             </div>

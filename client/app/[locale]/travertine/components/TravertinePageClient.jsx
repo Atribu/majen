@@ -85,7 +85,7 @@ export default function TravertinePageClient() {
       const selectedSegments = segments.slice(-depth);
 
   return (
-    <main className=" py-10 overflow-hidden">
+    <main className="mt-[22px] lg:mt-7 overflow-hidden">
      <IntroSection/>
 
       <BreadcrumbsExact
