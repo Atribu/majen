@@ -3,7 +3,7 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useParams, useRouter, usePathname } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import {
@@ -24,6 +24,14 @@ import {
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
+import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
+import EmblaCarousel from "@/app/[locale]/components/generalcomponent/EmblaCarousel";
+import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
+import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
+import SpecTable from "@/app/[locale]/travertine/blocks/[color]/SpecTable";
+import InfoListCard from "@/app/[locale]/travertine/blocks/[color]/InfoListCard";
+import SocialBlock from "@/app/[locale]/travertine/blocks/[color]/SocialBlock";
+import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 
 const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
 
@@ -126,8 +134,10 @@ export default function ColorDetailPage() {
   }
 
  const H1 = page?.h1 || (isBlocks ? `${colorLabel}` : `${colorLabel} · ${processLabel}`);
+ const H2 = page?.title || (isBlocks ? `${colorLabel}` : `${colorLabel} · ${processLabel}`);
   const lead = page?.lead || "";
   const intro = page?.intro || "";
+  const intro2 = page?.intro2 || "";
   const metaTitle = page?.metaTitle || H1;
   const metaDesc = page?.metaDesc || intro;
 // process → combinedKey (blocks’ta yok)
@@ -157,6 +167,16 @@ const heroSrc =
   || IMAGE_BY_PRODUCT?.[productKey]?.cover
   || "/images/homepage/antikoarkplan.webp";
 
+  // === GALLERY ===
+const i18nGallery =
+  (page?.gallery && Array.isArray(page.gallery) ? page.gallery : null) || null;
+
+function getGallery() {
+  if (Array.isArray(i18nGallery) && i18nGallery.length) return i18nGallery;
+  if (heroSrc) return [heroSrc, heroSrc, heroSrc]; // basit fallback
+  return [];
+}
+
   const baseSegment = baseFor(locale);
   // SEO notu: hash canonical'a eklenmez (arama motorları # sonrasını dikkate almaz).
    const canonical = isBlocks
@@ -165,7 +185,7 @@ const heroSrc =
   const sections = page?.sections || {};
   const apps = sections.applications;
   const specs = sections.specs;
-  const faqItems = Array.isArray(sections?.faq?.items) ? sections.faq.items.filter((it) => it && typeof it.q === "string" && typeof it.a === "string") : [];
+const { items: faqItems, span: faqSpan } = extractFaqFromPage(page);
 
 function combinedKeyFromProc(proc = "", locale = "en") {
   const s = String(proc).toLowerCase().trim();
@@ -189,6 +209,93 @@ function combinedKeyFromProc(proc = "", locale = "en") {
   return `${fill}:${p}`;
 }
 
+const finishesNode = page?.finishes || {};
+const exportNode   = page?.export  || {};
+
+const finishesItems = [finishesNode.list1, finishesNode.list2, finishesNode.list3, finishesNode.list4].filter(Boolean);
+const exportItems   = [exportNode.list1,   exportNode.list2,   exportNode.list3,   exportNode.list4].filter(Boolean);
+
+const finishesTitle = finishesNode.title || (locale.startsWith("tr") ? "Yüzey İşlemleri" : "Finishes & Processing Options");
+const exportTitle   = exportNode.title   || (locale.startsWith("tr") ? "İhracat & Paketleme" : "Export, Packaging & Shipping");
+
+const title3 = page?.h3, text3 = page?.text3;
+const title4 = page?.h4, text4 = page?.text4;
+const title5 = page?.h5, text5 = page?.text5;
+
+// page içinden FAQ çıkar (hem sections.faq.items hem QuestionsItems destekli)
+function extractFaqFromPage(page) {
+  if (!page || typeof page !== "object") return { items: [], span: "" };
+
+  // 1) Modern dizi şeması: sections.faq.items: [{ q, a }]
+  const arr = Array.isArray(page?.sections?.faq?.items)
+    ? page.sections.faq.items
+    : null;
+  if (arr && arr.length) {
+    const items = arr
+      .filter(it => it && typeof it.q === "string" && typeof it.a === "string")
+      .map(it => ({ q: it.q.trim(), a: it.a.trim() }))
+      .filter(it => it.q && it.a);
+    const span =
+      page?.sections?.faq?.span ||
+      page?.QuestionsItems?.aboutpage_s4_faq_span1 ||
+      "";
+    return { items, span };
+  }
+
+  // 2) Legacy/flat şema: QuestionsItems objesi
+  const qItems = page?.QuestionsItems || {};
+  if (!qItems || typeof qItems !== "object") {
+    return { items: [], span: "" };
+  }
+
+  // İki düzeni de tara:
+  //  - aboutpage_s4_faq1_header / aboutpage_s4_faq1_text
+  //  - aboutpage_s4_faq_header1 / aboutpage_s4_faq_text1
+  const pairs = [];
+  for (const key of Object.keys(qItems)) {
+    let idx = null;
+    let kind = null;
+
+    // Düzen A
+    let m = key.match(/aboutpage_s4_faq(\d+)_(header|text)$/i);
+    if (m) {
+      idx = Number(m[1]);
+      kind = m[2].toLowerCase();
+    } else {
+      // Düzen B
+      m = key.match(/aboutpage_s4_faq_(header|text)(\d+)$/i);
+      if (m) {
+        kind = m[1].toLowerCase();
+        idx = Number(m[2]);
+      }
+    }
+    if (!idx || !kind) continue;
+
+    const val = qItems[key];
+    if (typeof val !== "string") continue;
+
+    let slot = pairs.find(p => p.idx === idx);
+    if (!slot) {
+      slot = { idx };
+      pairs.push(slot);
+    }
+    slot[kind] = val.trim();
+  }
+
+  const items = pairs
+    .sort((a, b) => a.idx - b.idx)
+    .filter(p => p.header && p.text)
+    .map(p => ({ q: p.header, a: p.text }));
+
+  const span =
+    qItems.aboutpage_s4_faq_span1 ||
+    page?.sections?.faq?.span ||
+    "";
+
+  return { items, span };
+}
+
+
 
   return (
     <main className="px-5 md:px-8 lg:px-0 py-10 mt-14">
@@ -207,94 +314,114 @@ function combinedKeyFromProc(proc = "", locale = "en") {
         <meta name="twitter:image" content={heroSrc} />
       </Head>
 
-      <header className="mx-auto max-w-[1200px] grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
-        <div className="relative h-56 md:h-80 w-full overflow-hidden rounded-2xl">
-          <Image src={heroSrc} alt={H1} fill className="object-cover" />
+     
+     {/* Intro (başlık + hero) */}
+  <ProductIntroSection
+  title={H1}
+  intro={intro}
+  title2={H2}
+  intro2={intro2}
+  heroSrc={heroSrc}
+  alt={H1}
+  prefix={`/${locale}`}
+  baseHref={`/${locale}/${baseFor(locale)}`}
+  crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
+  crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+  span=""
+/>
+
+  {/* Breadcrumbs (opsiyonel ama önerilir) */}
+  <BreadcrumbsExact
+  prefix={`/${locale}`}
+  baseHref={`/${locale}/${baseFor(locale)}`}
+  crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
+  crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+  selectedSegments={(typeof window !== "undefined" ? window.location.pathname : "").split("/").filter(Boolean).slice(-1)}
+  className="mt-4"
+/>
+
+
+  {/* Carousel + Sağ panel */}
+<section className="mx-auto text-center flex flex-col items-center justify-center max-w-[1400px] w-[95%] mt-6">
+  <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start w-full">
+    <div className="w-[90%] lg:w-[45%] items-center justify-start flex">
+      <EmblaCarousel images={getGallery()} altPrefix={H1} />
+    </div>
+    <div className="flex flex-col w-[90%] lg:w-[45%] gap-5">
+      {specs?.rows?.length ? (
+        <div className="space-y-4 text-start bg-white rounded-xl p-6 shadow-md">
+          <SpecTable
+            rows={specs.rows}
+            title={specs.h2 || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications")}
+          />
         </div>
-        <div className="flex flex-col justify-center">
-          <h1 className="text-2xl md:text-3xl font-semibold">{H1}</h1>
-          {lead && <p className="mt-2 text-neutral-700">{lead}</p>}
-          {intro && <p className="mt-2 text-neutral-700">{intro}</p>}
-          <div className="mt-4">
-            <h3 className="text-sm font-semibold">{chooseThicknessLabel}</h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {sizeSlugs.map((s) => {
-                const active = selected === s;
-                return (
-                  <button
-                    key={s}
-                   onClick={() => {
-                  setSelected(s);
-                  // Hash ile güncelle: sayfa değişmez, middleware tetiklenmez
-                  router.replace(`${pathname}#${encodeURIComponent(s)}`, { scroll: false });
-                }}
-                    className={[
-                      "px-4 py-2 rounded-full border text-sm transition",
-                      active
-                        ? "bg-neutral-900 text-white border-neutral-900"
-                        : "bg-white hover:bg-neutral-100 border-neutral-300 text-neutral-800"
-                    ].join(" ")}
-                    aria-pressed={active}
-                  >
-                    {sizeLabelFromSlug(s)}
-                  </button>
-                );
-              })}
-            </div>
-            <p className="mt-2 text-xs text-neutral-500">
-              {selected ? `Selected: ${sizeLabelFromSlug(selected)}` : null}
-            </p>
-          </div>
-        </div>
-      </header>
-{/* İletişim linkine kalınlığı query ile geçelim (hash SEO sayılmaz) */}
-      {apps && !isBlocks && (
-        <section className="mx-auto max-w-[1100px] mt-10">
-     <Link
-       href={{
-         pathname: `/${locale}/contactus`,
-        query: { product: productKey, cut: cutSlug, process: processSlug, color: colorSlug, thickness: selected }
-       }}
-       className="inline-block rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800"
-     >
-       {locale.startsWith("tr") ? "Teklif İste" : "Get a Quote"}
-     </Link>
-   </section>
-      )}
+      ) : null}
 
-      {specs && Array.isArray(specs.rows) && specs.rows.length > 0 && (
-        <section className="mx-auto max-w-[1100px] mt-10 overflow-auto">
-          <h2 className="text-xl md:text-2xl font-semibold">
-            {specs.h2 || t("ui.specs", { default: "Specifications" })}
-          </h2>
-          <table className="mt-3 min-w-[520px] w-full text-sm border rounded-2xl overflow-hidden">
-            <tbody>
-              {specs.rows.map((r, i) => (
-                <tr key={i} className="border-b">
-                  <td className="p-3 font-medium">{r.prop}</td>
-                  <td className="p-3">{r.value}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )}
+      {/* (isteğe bağlı) Sağ panelde kalınlık seçim kartını burada tutabilirsiniz */}
+      {/* mevcut selected/sizeSlugs mantığınız bozulmaz */}
 
-     {faqItems.length > 0 && !isBlocks && (
-        <div id="faq" className="mx-auto max-w-[1100px] mt-10">
-          <QuestionsSection items={faqItems} span={`${colorLabel} · ${processLabel}`} />
-        </div>
-      )}
+      <SocialBlock />
+    </div>
+  </div>
+</section>
 
-      <TextSection
-        title={locale.startsWith("tr") ? "Türkiye'den Toptan Traverten" : "Wholesale Travertine from Turkey"}
-        paragraphs={[metaDesc || intro]}
-        className="max-w-5xl mx-auto mt-12"
-        clampMobile={3}
-        as="section"
-      />
+{/* Finishes & Export kartları */}
+{(finishesItems.length || exportItems.length) ? (
+  <section className="max-w-[1400px] w-[95%] mx-auto mt-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {finishesItems.length ? <InfoListCard title={finishesTitle} items={finishesItems} prefix={`/${locale}`} /> : null}
+      {exportItems.length   ? <InfoListCard title={exportTitle}   items={exportItems}   prefix={`/${locale}`} /> : null}
+    </div>
+  </section>
+) : null}
 
-      <ContactFrom />
+{/* Uzun metin başlıkları */}
+{(title3 || title4 || title5) && (
+  <section className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
+    {title3 ? (<><h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{title3}</h3>{text3 ? <p className="text-[12px] lg:text-[14px]">{text3}</p> : null}</>) : null}
+    {title4 ? (<><h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{title4}</h4>{text4 ? <p className="text-[12px] lg:text-[14px]">{text4}</p> : null}</>) : null}
+    {title5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{title5}</h5>{text5 ? <p className="text-[12px] lg:text-[14px]">{text5}</p> : null}</>) : null}
+  </section>
+)}
+
+{/* FAQ (zaten mevcut çıkarımını kullanıyoruz) */}
+{faqItems.length > 0 && (
+   <div id="faq" className="max-w-5xl mx-auto mt-12">
+     <QuestionsSection items={faqItems} span={faqSpan || H1} />
+   </div>
+ )}
+
+<SocialMediaSection/>
+
+<ContactFrom />
+
+{/* OtherOptions: mevcut locale-aware resolveHref ile */}
+<OtherOptions
+  locale={locale}
+  heading={locale.startsWith("tr") ? "Diğer Seçenekler" : "Other Options"}
+  customItems={[
+    {
+      title: locale.startsWith("tr") ? "Plakalar • Damar Kesim" : "Slabs • Vein-Cut",
+      text:  locale.startsWith("tr") ? "Damar yönünde kesimle çizgisel görünüm." : "Linear look with vein direction.",
+      img:   IMAGE_BY_PRODUCT?.slabs?.[cutKey] || heroSrc,
+      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "vein-cut" } },
+    },
+    {
+      title: locale.startsWith("tr") ? "Plakalar • Enine Kesim" : "Slabs • Cross-Cut",
+      text:  locale.startsWith("tr") ? "Bulutumsu, mozaik görünüm." : "Cloudy, mosaic-like pattern.",
+      img:   IMAGE_BY_PRODUCT?.slabs?.[cutKey] || heroSrc,
+      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "cross-cut" } },
+    },
+    {
+      title: locale.startsWith("tr") ? "Karolar • Damar Kesim" : "Tiles • Vein-Cut",
+      text:  locale.startsWith("tr") ? "Proje ölçülerine göre kesim." : "Cut-to-size options.",
+      img:   IMAGE_BY_PRODUCT?.tiles?.[cutKey] || heroSrc,
+      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "tiles", cut: "vein-cut" } },
+    },
+  ]}
+/>
+
+
     </main>
   );
 }

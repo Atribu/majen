@@ -160,14 +160,11 @@ const specsTitle = colorContent?.sections?.specs?.h2
   ?? "Technical Specifications (Typical Values)";
 
 const qi = colorContent?.QuestionsItems || {};
-const faqSpan = qi?.aboutpage_s4_faq_span1 || "";   // alt başlık varsa kullan
-const faqItems = [];
-for (let i = 1; ; i++) {
-  const q = qi[`aboutpage_s4_faq${i}_header`];
-  const a = qi[`aboutpage_s4_faq${i}_text`];
-  if (!q || !a) break;
-  faqItems.push({ q, a });
-}
+const faqItems = extractFaqFromColor(colorContent);
+const faqSpan =
+  colorContent?.QuestionsItems?.aboutpage_s4_faq_span1 ||
+  colorContent?.sections?.faq?.span ||
+  "";
 
 
 const finishesNode = colorContent?.finishes || {};
@@ -190,6 +187,66 @@ const exportItems = [
 // Başlıklar (JSON yoksa kısa fallback verelim)
 const finishesTitle = finishesNode.title || (locale === "tr" ? "Yüzey İşlemleri" : "Finishes");
 const exportTitle   = exportNode.title   || (locale === "tr" ? "İhracat & Paketleme" : "Export & Packaging");
+
+// --- FAQ: color'a göre robust çıkarım ---
+function extractFaqFromColor(colorNode) {
+  if (!colorNode || typeof colorNode !== "object") return [];
+
+  // 0) Eğer yanlışlıkla dizi bekleyen kod kalmışsa null'a düşür
+  if (Array.isArray(colorNode?.QuestionsItems)) {
+    // Yeni JSON'da QuestionsItems bir OBJE; eski dizi yaklaşımı yok.
+    // Yine de destek olsun diye q/a alanlı dizi gelirse alalım.
+    const arr = colorNode.QuestionsItems.filter(
+      it => it && typeof it.q === "string" && typeof it.a === "string"
+    ).map(it => ({ q: it.q.trim(), a: it.a.trim() }));
+    if (arr.length) return arr;
+  }
+
+  const qItems = colorNode?.QuestionsItems || {};
+  const pairs = [];
+
+  // Her anahtarı gez ve hem "faqN_header" hem "faq_headerN" düzenlerini yakala.
+  // Örnekler:
+  //  - aboutpage_s4_faq1_header / aboutpage_s4_faq1_text
+  //  - aboutpage_s4_faq_header1 / aboutpage_s4_faq_text1
+  for (const key of Object.keys(qItems)) {
+    let idx = null;
+    let kind = null;
+
+    // Düzen A: ..._faq1_header / ..._faq1_text
+    let m = key.match(/aboutpage_s4_faq(\d+)_(header|text)$/i);
+    if (m) {
+      idx = Number(m[1]);
+      kind = m[2].toLowerCase(); // header | text
+    } else {
+      // Düzen B: ..._faq_header1 / ..._faq_text1
+      m = key.match(/aboutpage_s4_faq_(header|text)(\d+)$/i);
+      if (m) {
+        kind = m[1].toLowerCase();
+        idx = Number(m[2]);
+      }
+    }
+
+    if (!idx || !kind) continue;
+    const val = qItems[key];
+    if (typeof val !== "string") continue;
+
+    // pairs: { idx, header?: string, text?: string }
+    let slot = pairs.find(p => p.idx === idx);
+    if (!slot) {
+      slot = { idx };
+      pairs.push(slot);
+    }
+    slot[kind] = val.trim();
+  }
+
+  // indeks sırasına göre ve hem header hem text olanları filtrele
+  return pairs
+    .sort((a, b) => a.idx - b.idx)
+    .filter(p => p.header && p.text)
+    .map(p => ({ q: p.header, a: p.text }));
+}
+
 
 
   return (

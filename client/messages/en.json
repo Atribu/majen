@@ -368,15 +368,15 @@
               "text3":"The price of Ivory Travertine Blocks depends on block size, color grade, extraction quality, and order volume. Typical ranges are *USD 190–320 per m³*, with customized dimensions potentially affecting the price per ton. Freight terms (FOB/CIF), packing type, and required certifications may also influence the final quote. Majen follows a transparent pricing policy with detailed itemization, so you always see quarry grade, tonnage, and logistics components clearly. Share your specifications to receive a tailored quotation for your project.",
               "h4":" Travertine Block Sizes & Standard Dimensions",
               "text4":"Standard quarry‑run blocks are typically available up to *3.2 m × 2.0 m × 1.6 m*, subject to bench conditions. Each block is measured, coded, and inspected before loading to ensure dimensional accuracy and optimal yield during slab production. Consistent sizing simplifies nesting and reduces waste in fabrication lines. Whether you need large‑format cladding or smaller architectural details, Majen offers flexible cutting options and batch grouping by tone and vein to maintain aesthetic continuity across projects.",
-              "h5":"H5 — Travertine Blocks vs Slabs: Which Is Right for You?",
-              "text5":"Choose *blocks* when you need maximum flexibility, better material yield control, and cost efficiency at scale — ideal for quarries, processors, and distributors. Choose *slabs* when you require ready‑to‑install surfaces and faster turnaround for small to medium projects. Blocks minimize per‑m² cost in large fabrication workflows, while slabs reduce on‑site complexity. Majen provides both supply modes so you can balance budget, lead time, and customization based on your production setup and project timeline.",
+              "h5":"Travertine Blocks vs Slabs: Which Is Right for You?",
+              "text5":"Choose blocks when you need maximum flexibility, better material yield control, and cost efficiency at scale — ideal for quarries, processors, and distributors. Choose *slabs* when you require ready‑to‑install surfaces and faster turnaround for small to medium projects. Blocks minimize per‑m² cost in large fabrication workflows, while slabs reduce on‑site complexity. Majen provides both supply modes so you can balance budget, lead time, and customization based on your production setup and project timeline.",
 
               "finishes":{
                 "title":"Finishes & Processing Options",
                 "list1":"Honed:* matte look, low glare for interiors.",
-                "list2":"Polished:* high reflectance for premium lobbies and walls.",
-                 "list3":"Brushed/Tumbled:* textured surfaces for outdoor and rustic concepts",
-                  "list4":"Filled/Unfilled:* pore management depending on slip resistance and hygiene needs."
+                "list2":"Polished: high reflectance for premium lobbies and walls.",
+                 "list3":"Brushed/Tumbled: textured surfaces for outdoor and rustic concepts",
+                  "list4":"Filled/Unfilled: pore management depending on slip resistance and hygiene needs."
               },
 
                 "export":{
@@ -386,7 +386,7 @@
                  "list3":"Traceability:* batch and tone codes maintained through loading."
               },
 
-               "QuestionsItems": {
+                    "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
             "aboutpage_s4_faq_span1": "Common Questions About Ivory Travertine Blocks",
             "aboutpage_s4_faq1_header": "How much does an Ivory Travertine Block cost?",
@@ -405,6 +405,86 @@
             "aboutpage_s4_faq7_text":"Lead times depend on extraction and port schedules; provide your delivery window to align quarry and vessel bookings.",
             "aboutpage_s4_faq8_header":" Can I receive a current block list?",
             "aboutpage_s4_faq8_text":"Yes. Request the *available stock list* (with sizes, tones, and weights) to plan your fabrication yield."
+          },
+
+         
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                   { "prop": "Bulk Density",         "value": "~2,600–2,650 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.4%" },
+    { "prop": "Compressive Strength", "value": "~50–55 MPa" },
+    { "prop": "Tone Grades",          "value": "A–D (light cream to softly veined)" },
+    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
+    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "light":  {
+              "desc": "",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Light Travertine Blocks",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Light Travertine Blocks are sourced from leading Turkish quarries and admired for their soft cream tones, subtle veining, and highly workable structure. As a versatile raw material, they can be processed into slabs, tiles, and cut‑to‑size elements for high‑end residential and commercial projects. The stone’s bright color improves light reflection indoors and creates a warm, welcoming aesthetic outdoors. With Majen’s direct quarry access and strict quality selection, every block is delivered with consistent tone, reliable strength, and export‑ready documentation.",
+              "intro2":     "Light Travertine is a favorite for luxury villas, hospitality spaces, shopping galleries, and public buildings that require timeless elegance and durability. Indoors, it elevates floors, wall cladding, staircases, and feature walls, pairing well with wood and metal finishes. Outdoors, it performs beautifully on façades, pool decks, terraces, and landscaping paths thanks to its heat resistance and natural slip performance when finished appropriately. Majen supplies finish‑ready blocks to fit honed, brushed, tumbled, polished, filled, or unfilled processes based on your design and technical needs.",
+              
+              "h3":"Travertine Block Prices and Cost Factors",
+              "text3":"Pricing for Light Travertine Blocks depends on block size, tone uniformity, quarry grade, and order volume. Typical market ranges are USD 180–300 per m³, with custom dimensions and premium tone selections potentially influencing the quote per ton. Freight terms (FOB/CIF), packaging type, and requested certifications can also affect final pricing. Majen uses an itemized quotation model that clearly separates material, logistics, and document costs, allowing procurement teams to compare scenarios transparently. Share your specs to receive a tailored offer.",
+              "h4":" Travertine Block Sizes & Standard Dimensions",
+              "text4":"Standard quarry‑run blocks are commonly produced up to 3.2 m × 2.0 m × 1.6 m, subject to bench conditions and safety parameters. Each block is measured, tone‑graded, and code‑labeled before dispatch to maximize yield during slab production. Consistent sizing reduces fabrication waste and simplifies nesting for large façade or flooring packages. For projects requiring strict module continuity, Majen can group blocks by tone and vein to maintain visual harmony across long runs, from entrance halls to exterior elevations.",
+              "h5":"Travertine Blocks vs Slabs: Which Fits Your Workflow?",
+              "text5":"Choose blocks when you manage fabrication lines or need maximum flexibility over thickness, finish, and sizing — this approach optimizes cost per m² at scale. Opt for slabs when installation speed and predictable dimensions are the priority for small and mid‑sized projects. Blocks favor distributors and processors who plan yield across multiple orders, while slabs reduce on‑site complexity for fast‑track schedules. Majen supplies both options, helping teams balance budget, lead time, and customization with dependable logistics.",
+
+              "finishes":{
+                "title":"Finishes & Processing Options",
+                "list1":"Honed: matte look, low glare for interiors.",
+                "list2":"Polished: high reflectance for premium lobbies and walls.",
+                 "list3":"Brushed/Tumbled:* textured surfaces for outdoor and rustic concepts",
+                  "list4":"Filled/Unfilled:* pore management depending on slip resistance and hygiene needs."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging: steel‑belted, wooden cribbing, moisture‑checked, code‑labeled.",
+                "list2":"Logistics: FOB/CIF terms, port handling, insurance, customs pack (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: batch and tone codes carried through loading for QA."
+              },
+
+              "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Light Travertine Blocks",
+            "aboutpage_s4_faq1_header": "What is the price range for Light Travertine Blocks?",
+            "aboutpage_s4_faq1_text": " Typically USD 180–300 per m³, depending on size, tone grade, and order volume. Request a detailed quotation for your specs.",
+            "aboutpage_s4_faq2_header": "What standard sizes can I expect?",
+            "aboutpage_s4_faq2_text": " Blocks are available up to 3.2 m × 2.0 m × 1.6 m; custom dimensions depend on quarry bench and schedule.",
+            "aboutpage_s4_faq3_header":"Do you export globally?",
+            "aboutpage_s4_faq3_text":" Yes. We manage worldwide shipments with full documentation and cargo insurance.",
+            "aboutpage_s4_faq4_header":"How do you keep color consistent across a project?",
+            "aboutpage_s4_faq4_text":"Blocks are tone‑graded and grouped into batches to ensure visual continuity across large surface areas.",
+            "aboutpage_s4_faq5_header":"Which finish is best for outdoor use?",
+            "aboutpage_s4_faq5_text":"Brushed or tumbled unfilled for traction; seal based on climate and exposure conditions.",
+            "aboutpage_s4_faq6_header":"What is the MOQ and lead time?",
+            "aboutpage_s4_faq6_text":"MOQ and lead time vary by quarry schedule; share your timeline and volume for allocation."
+            
           },
 
               "ui": {
@@ -434,59 +514,81 @@
                 }
               }
             },
-            "light":  {
+
+            "antico": {
               "desc": "",
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Antico Travertine Blocks",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Travertine Blocks are extracted from Turkey’s premium quarries, featuring a distinctive mix of beige, walnut, and cream tones with expressive natural veining. This ancient‑looking travertine offers a rustic and historic feel while maintaining modern durability. Perfect for restoration, classic architecture, and landscape design, Antico Travertine combines traditional character with long‑lasting strength. With Majen’s direct quarry sourcing and global export experience, every block is carefully inspected, graded, and shipped with full documentation and tone consistency.",
+              "intro2":     "Antico Travertine Blocks are highly sought after for restoration projects, heritage buildings, and luxury architectural designs seeking a timeless aesthetic. Indoors, they add warmth and texture to lobbies, staircases, and wall claddings, offering a natural patina that evolves beautifully over time. Outdoors, this stone is ideal for façades, courtyards, pool decks, and garden walls where antique charm meets strength and slip resistance. The stone’s earthy color palette harmonizes with Mediterranean, rustic, and contemporary architectural styles alike, making it one of the most versatile choices for designers and builders.",
+              
+              "h3":"Travertine Block Prices and Cost Factors",
+              "text3":"Antico Travertine Blocks typically range from USD 200–340 per m³, depending on size, tone, and quarry selection. Factors like color intensity, vein distribution, and processing requirements may influence the total cost per ton. Majen maintains a transparent pricing structure — offering itemized quotations that separate quarry value, logistics, and certifications. By ordering directly from Majen’s quarry network, clients benefit from competitive pricing, reduced intermediaries, and reliable delivery schedules for both domestic and export shipments.",
+              "h4":" Travertine Block Sizes & Standard Dimensions",
+              "text4":"Standard Antico Travertine Blocks are available in sizes up to 3.2 m × 2.0 m × 1.6 m, with smaller or custom‑cut formats available upon request. Each block is tone‑graded, dimension‑checked, and coded for full traceability. Consistency in block size improves yield during slab or tile production, minimizing waste and ensuring efficient cutting. Majen provides custom batch matching for projects requiring continuity of tone and texture, allowing architects and contractors to achieve seamless visual results across both interior and exterior applications.",
+              "h5":"Travertine Blocks vs Slabs: Which Fits Your Workflow?",
+              "text5":"Travertine blocks are ideal for processors, exporters, and large fabrication facilities needing flexibility in thickness and finish. Blocks optimize cost per m² and allow for selective processing to match various design goals. Slabs, however, are suitable for ready‑to‑install projects where time and size predictability are critical. For Antico Travertine, blocks preserve the natural raw texture that enhances its antique character, while slabs deliver a refined and polished version of the same tone. Majen supplies both, offering clients the freedom to choose based on project scale and finish preference.",
+
+              "finishes":{
+                "title":"Finishes & Processing Options",
+                "list1":"Antique Finish: aged texture with weathered edges for classic restorations.",
+                "list2":"Honed: smooth, matte surfaces for understated interiors.",
+                 "list3":"Brushed/Tumbled: natural, slip‑resistant textures ideal for outdoor applications.",
+                  "list4":"Polished: glossy, elegant finish for contemporary settings."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging: wooden crate framing with steel reinforcement, moisture protection.",
+                "list2":"Logistics: FOB/CIF terms, full export pack (Invoice, Packing List, COO, HS code), insured transit.",
+                 "list3":"Traceability: tone batch code labeling and block numbering for each shipment."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Travertine Blocks",
+            "aboutpage_s4_faq1_header": "What is the price range for Antico Travertine Blocks?",
+            "aboutpage_s4_faq1_text": " Typically USD 200–340 per m³, depending on quarry selection and tone quality.",
+            "aboutpage_s4_faq2_header": " What standard sizes are available?",
+            "aboutpage_s4_faq2_text": " Blocks up to 3.2 m × 2.0 m × 1.6 m; custom sizing available for specific project requirements",
+            "aboutpage_s4_faq3_header":"Do you export globally?",
+            "aboutpage_s4_faq3_text":" Yes, Majen exports worldwide with full documentation, insurance, and port handling.",
+            "aboutpage_s4_faq4_header":" What makes Antico Travertine unique?",
+            "aboutpage_s4_faq4_text":"Its aged texture and multi‑tone palette provide a distinctive antique look suitable for restorations and timeless design projects.",
+            "aboutpage_s4_faq5_header":" Which finish best preserves the antique look?",
+            "aboutpage_s4_faq5_text":"Antique or brushed finishes are recommended to highlight natural texture and rustic appearance.",
+            "aboutpage_s4_faq6_header":"What is the lead time for orders?",
+            "aboutpage_s4_faq6_text":"Lead times depend on quarry production and shipment schedules; Majen coordinates each order based on project delivery requirements."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
                      { "prop": "Material",       "value": "Natural Travertine" },
                      { "prop": "Origin",       "value": "Turkey" },
                    { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
-    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Water Absorption",     "value": "≤ 1.3%" },
     { "prop": "Compressive Strength", "value": "~55 MPa" },
-    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
+    { "prop": "Tone Grades",          "value": "A–D (cream‑beige to rustic brown)" },
     { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
     { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
                   ]
                 },
                 "faq": {
                   "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
-                }
-              }
-            },
-            "antico": {
-              "desc": "",
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
-                "specs": {
-                  "h2": "Specifications",
-                 "rows": [
-                     { "prop": "Material",       "value": "Natural Travertine" },
-                     { "prop": "Origin",       "value": "Turkey" },
-                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
-    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
-    { "prop": "Compressive Strength", "value": "~55 MPa" },
-    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
-    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
-    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
               }
             }
@@ -3220,15 +3322,58 @@
           },
 
           "colors": {
-            "title":"Color Options: Ivory, Light, and Antico",  
-            "text":"To match different design palettes, Majen offers Ivory, Light, and Antico tones. Ivory delivers warm cream elegance with gentle, continuous veining; Light provides a neutral beige ideal for minimal interiors; Antico offers a slightly deeper, earthy character for richer contrasts. All colors are curated from the same quarry bench to keep hue and pattern continuity across large areas, enabling vein matching and seamless book-look layouts on walls and floors.",
+
             "ivory":  {
+              "desc": "",
               "metaTitle": "Ivory · Polished Vein-Cut Slabs",
               "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "h1":        "Ivory Filled Honed Vein Cut Travertine Slabs ",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
               "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
+              "intro":     "Ivory Filled Honed Vein Cut Travertine Slabs deliver a refined, contemporary look with consistent linear veining and a smooth, low‑gloss surface. The filled pores create a seamless feel ideal for high‑traffic interiors, while the honed finish reduces glare and highlights the stone’s warm beige tone. Sourced from leading Turkish quarries and processed to tight tolerances, these slabs are engineered for easy fabrication and color continuity across large areas. Majen supplies multiple thicknesses with export‑ready packaging and flexible logistics for global projects.",
+              "intro2":     "This finish and cut combination excels in residential and commercial spaces that demand both elegance and practicality. Indoors, slabs perform beautifully on floors, walls, bathrooms, and kitchen splashbacks, pairing well with metal, wood, and glass details. In hospitality and retail environments, the calm honed surface supports a premium ambience without visual noise. For covered exteriors, vein cut geometry delivers striking linear movement on façades and columns. Architects choose this specification to achieve modern lines, uniform color, and easy maintenance in daily use.",
+              
+              "h3":"Pricing, Thickness Options & Formats",
+              "text3":"TPricing is influenced by slab thickness, grade, and selection consistency. Common thicknesses include 2 cm and 3 cm, with custom options available for specialty applications. Standard slab formats support efficient nesting in fabrication and minimize waste for large flooring runs. Typical price ranges are USD 22–45 per m² for 2 cm and USD 32–58 per m² for 3 cm depending on tone, finish quality, and order volume. Majen provides transparent, itemized quotes that separate material, finishing, and logistics so procurement teams can compare scenarios precisely.",
+              "h4":" Technical Features: Filled • Honed • Vein Cut",
+              "text4":"Filled: micro‑pore cavities are filled for a smooth, hygienic surface suitable for bathrooms and kitchens. Honed: a matte, low‑reflection finish that emphasizes warmth and texture while resisting fingerprints and glare. Vein Cut: slicing parallel to the bedding creates directional, linear veining ideal for modern, continuous designs. Combined, these properties deliver a balanced surface with reliable slip behavior indoors and a uniform visual rhythm. For outdoor or wet zones, specify appropriate sealing and R‑rating according to local code and usage conditions.",
+              "h5":"Vein Cut vs Cross Cut • Filled vs Unfilled",
+              "text5":"Vein Cut vs Cross Cut: Vein cut yields linear movement and tonal stripes; cross cut reveals cloud‑like patterns and softer transitions. Choose vein cut for corridors and large runs where directionality guides the eye; choose cross cut for calmer, diffuse visuals. Filled vs Unfilled: Filled surfaces are smooth and easy to clean; unfilled maintains natural texture and additional traction. For wet indoor areas, filled + honed offers hygiene and maintenance advantages; for rustic or exterior looks, unfilled may suit better with proper sealing.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Tone selection and slab matching for batch consistency.",
+                "list2":"Factory filling with high‑grade resin; final honing to uniform sheen.",
+                 "list3":"Dimensional checks for thickness tolerance and flatness."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging: A‑frame or bundle with edge protection, moisture control, and barcode labels.",
+                "list2":"Logistics: FOB/CIF terms, port handling, cargo insurance, full export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: batch and tone codes maintained through loading."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Ivory Filled Honed Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "Which thickness should I choose?",
+            "aboutpage_s4_faq1_text": " 2 cm suits most interior walls and residential floors; 3 cm is preferred for high‑traffic zones, countertops, or commercial uses.",
+            "aboutpage_s4_faq2_header": "Are filled & honed slabs suitable for bathrooms?",
+            "aboutpage_s4_faq2_text": " Yes. The filled surface is easy to clean and honed finish reduces glare; apply appropriate sealers per humidity and use.",
+            "aboutpage_s4_faq3_header":"How does vein cut affect design?",
+            "aboutpage_s4_faq3_text":" It creates linear continuity across corridors and large rooms, ideal for modern layouts and book‑matched patterns.",
+            "aboutpage_s4_faq4_header":"What maintenance is required?",
+            "aboutpage_s4_faq4_text":"Regular pH‑neutral cleaning and periodic sealing based on traffic and exposure. Avoid harsh acids and abrasive pads.",
+            "aboutpage_s4_faq5_header":"Can I order matched batches for large projects?",
+            "aboutpage_s4_faq5_text":"Yes. Majen groups slabs by tone and vein to ensure visual continuity across multi‑phase installations.",
+            "aboutpage_s4_faq6_header":"Do you export internationally?",
+            "aboutpage_s4_faq6_text":"We ship worldwide with full documentation, insurance, and reliable port handling."
+            
+          },
+
+              "ui": {
                     "chooseThickness": "Choose Thickness",
                     "applicationsLabel": "Applications",
                     "specsLabel": "Specifications",
@@ -3239,8 +3384,14 @@
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Compressive Strength", "value": "~55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear pattern)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" }
                   ]
                 },
                 "faq": {
@@ -3250,44 +3401,156 @@
               }
             },
             "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
+              "desc": "",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Light Filled Honed Vein Cut Travertine Slabs",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Light Filled Honed Vein Cut Travertine Slabs showcase the perfect balance between brightness and natural texture. Their creamy beige tone, subtle linear veining, and silky matte finish make them ideal for contemporary interiors and calm, light-filled spaces. The filled pores create a smooth and hygienic surface, while the honed finish diffuses light evenly, enhancing both comfort and visual harmony. Majen sources and processes each slab to strict quality standards, offering uniform color, precise thickness, and global export support for architects and fabricators worldwide.",
+              "intro2":     "These slabs are widely used in modern villas, hotels, commercial interiors, and luxury residences seeking natural brightness and elegance. Indoors, they elevate floors, wall panels, and staircases while pairing beautifully with minimalist or Scandinavian design palettes. In hospitality settings, the honed matte surface supports a tranquil aesthetic under soft lighting. Vein cut geometry creates graceful linear patterns that enhance continuity across large spaces such as lobbies or corridors. For semi-outdoor or covered terraces, Light Travertine maintains color stability and pleasant underfoot comfort even in warm climates.",
+              
+              "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Pricing varies based on slab thickness, tone selection, and finish grade. Standard options include 2 cm and 3 cm thicknesses, both calibrated for uniform fabrication. Typical price ranges are USD 20–42 per m² for 2 cm and USD 30–55 per m² for 3 cm slabs, depending on order volume and finish precision. Large-format slabs optimize yield for wide-area flooring and wall cladding. Majen’s transparent pricing includes clear separation of material, processing, and logistics, ensuring clients receive accurate, competitive quotations with no hidden costs.",
+              "h4":"Technical Features: Filled • Honed • Vein Cut",
+              "text4":"Filled: open pores are sealed with durable resin, resulting in a clean, smooth surface ideal for interiors and wet zones.Honed: low-gloss matte finish reduces reflections and provides a soft, elegant texture.Vein Cut: slicing parallel to the bedding layer highlights the stone’s natural linear motion, creating flow and direction in design.Together, these treatments yield a durable, easy-to-maintain surface that’s as functional as it is beautiful. When properly sealed, these slabs maintain their tone and structure for decades.",
+              "h5":"Vein Cut vs Cross Cut • Filled vs Unfilled",
+              "text5":"Vein Cut vs Cross Cut: Vein cut reveals parallel lines and uniformity, perfect for modern layouts; cross cut shows cloud-like patterns for organic appeal. Choose vein cut for sleek linear walls or floors that guide movement through space. Filled vs Unfilled: Filled slabs deliver smooth comfort and cleanliness for interiors, while unfilled offers rustic texture with higher grip for outdoor areas. Filled + honed slabs are the best choice for bright contemporary interiors seeking elegance and practicality.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Color and tone selection for project batch consistency.",
+                "list2":"Factory-applied resin filling and precise honing.",
+                 "list3":"Dimensional calibration for thickness and flatness tolerances."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging: A-frame or bundle format with foam padding and wooden edge guards.",
+                "list2":"Logistics: FOB/CIF terms with full documentation (Invoice, Packing List, COO, HS code) and insured transport.",
+                 "list3":"Traceability: each slab marked with tone batch and serial ID for full export transparency."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": " Light Filled Honed Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "Are these slabs suitable for high-traffic areas?",
+            "aboutpage_s4_faq1_text": "Yes. When properly sealed, filled & honed slabs resist wear and remain easy to maintain in busy interiors.",
+            "aboutpage_s4_faq2_header": "Which thickness should I select?",
+            "aboutpage_s4_faq2_text": "2 cm is ideal for walls and standard flooring; 3 cm for heavy-traffic commercial areas and countertops.",
+            "aboutpage_s4_faq3_header":"Can these slabs be used in bathrooms or kitchens?",
+            "aboutpage_s4_faq3_text":" Absolutely. The filled surface resists moisture absorption, and the honed finish ensures safety and comfort.",
+            "aboutpage_s4_faq4_header":" How is vein cut different from cross cut visually?",
+            "aboutpage_s4_faq4_text":"Vein cut highlights directional lines; cross cut shows cloud-like, non-linear patterns.",
+            "aboutpage_s4_faq5_header":" What maintenance routine is recommended?",
+            "aboutpage_s4_faq5_text":"Clean with pH-neutral products and reseal every 1–2 years depending on use intensity.",
+            "aboutpage_s4_faq6_header":" Do you export internationally?",
+            "aboutpage_s4_faq6_text":"Yes. Majen ships globally with full documentation, insurance, and port logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,630 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.3%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear pattern)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" }
                   ]
                 },
                 "faq": {
                   "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
               }
             },
+
             "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
+              "desc": "",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Antico Filled Honed Vein Cut Travertine Slabs",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Filled Honed Vein Cut Travertine Slabs combine the natural charm of aged travertine with refined modern finishing. Their warm beige and walnut tones, complemented by linear vein patterns, create a sophisticated yet rustic aesthetic perfect for classic and Mediterranean architecture. The filled surface provides smoothness and hygiene, while the honed finish enhances tactile comfort and low reflectivity. Sourced from premium Turkish quarries, each slab is processed to exacting standards for consistent tone, flatness, and export‑grade packaging.",
+              "intro2":     "Antico Travertine is a designer favorite for projects that merge history with modern comfort. Indoors, these slabs are ideal for villa floors, hotel lobbies, feature walls, staircases, and bathrooms seeking natural elegance. Outdoors, they perform beautifully on covered terraces, façades, and colonnades, adding a warm, lived‑in feel. The vein‑cut texture provides direction and rhythm, while the filled, honed surface makes maintenance effortless. This combination suits restoration works, classical interiors, and spaces where authenticity meets contemporary design harmony.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Filled Honed Vein Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses, both optimized for durability and visual consistency. Pricing generally ranges from USD 24–48 per m² for 2 cm and USD 34–60 per m² for 3 cm, depending on tone selection, batch grade, and finish precision. Custom sizes or matched batches are available for large‑scale architectural projects. Majen’s transparent pricing structure provides full clarity on material, processing, and export costs — helping contractors and designers make informed procurement decisions.",
+              "h4":"Technical Features: Filled • Honed • Vein Cut",
+              "text4":"Filled: Surface pores are carefully filled with high‑grade resin, producing a sleek, easy‑to‑clean surface ideal for interior use. Honed: The matte, low‑gloss texture enhances the stone’s warm hues and natural feel while reducing glare. Vein Cut: Linear slicing along the bedding layer reveals distinctive horizontal patterns, adding depth and movement to surfaces. Together, these features deliver a stone that feels timeless yet contemporary — combining rustic warmth with architectural precision. ",
+              "h5":"Vein Cut vs Cross Cut • Filled vs Unfilled",
+              "text5":"Vein Cut vs Cross Cut: Vein cut slabs emphasize continuity and flow, highlighting the stone’s stratified texture, whereas cross cut offers cloud‑like patterns ideal for softer visuals. Vein cut Antico Travertine is preferred in formal and large‑scale spaces that benefit from linear rhythm. Filled vs Unfilled: Filled travertine ensures smoothness and easy maintenance for interiors, while unfilled surfaces provide a natural, tactile look suited to outdoor or rustic design concepts. The filled and honed pairing is the best choice for interior luxury flooring and feature applications.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Batch tone selection for visual harmony.",
+                "list2":"Factory resin filling and fine honing for uniform smoothness.",
+                 "list3":"Dimensional calibration ensuring thickness tolerance within ±0.5 mm.",
+                  "list4":"Polished: glossy, elegant finish for contemporary settings."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: A‑frame and bundle packing with wooden reinforcement and foam padding.",
+                "list2":"Logistics: FOB/CIF terms, full export documents (Invoice, Packing List, COO, HS code), insured delivery.",
+                 "list3":"Traceability: tone and batch codes maintained across the supply chain."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Filled Honed Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What makes Antico Travertine unique?",
+            "aboutpage_s4_faq1_text": " Its warm tone variation and aged vein texture evoke a timeless, natural atmosphere ideal for classic interiors.",
+            "aboutpage_s4_faq2_header": "What are standard thicknesses available?",
+            "aboutpage_s4_faq2_text": "Slabs are produced in 2 cm and 3 cm thicknesses, with custom sizes available upon request.",
+            "aboutpage_s4_faq3_header":"Is the filled and honed finish suitable for bathrooms?",
+            "aboutpage_s4_faq3_text":"Yes. The filled surface prevents moisture absorption, while the honed finish offers a comfortable matte feel.",
+            "aboutpage_s4_faq4_header":"How should I maintain Antico Travertine?",
+            "aboutpage_s4_faq4_text":"Clean with pH‑neutral stone cleaner and reseal every 1–2 years depending on usage and exposure.",
+            "aboutpage_s4_faq5_header":"Can these slabs be used for exterior cladding?",
+            "aboutpage_s4_faq5_text":"Yes, provided they are installed with appropriate fixing systems and sealed for weather resistance.",
+            "aboutpage_s4_faq6_header":"Do you export globally?",
+            "aboutpage_s4_faq6_text":"Yes. Majen ships worldwide with certified documentation, insurance, and full logistical coordination."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,630 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.4%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" }
                   ]
                 },
                 "faq": {
                   "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
               }
             }
@@ -3360,14 +3623,59 @@
           },
 
 
-          "colors": {
+        "colors": {
+
             "ivory":  {
+              "desc": "",
               "metaTitle": "Ivory · Polished Vein-Cut Slabs",
               "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
+              "h1":        "IIvory Filled Polished Vein Cut Travertine Slabs",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
               "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
+              "intro":     "Ivory Filled Polished Vein Cut Travertine Slabs combine the timeless beauty of natural stone with a high-gloss, mirror-like finish. Their warm beige tone and linear vein pattern create a sophisticated and modern look suitable for luxury interiors. The filled surface ensures a smooth and seamless texture, while the polished finish enhances depth, light reflection, and elegance. Sourced from Turkey’s top quarries, Majen’s slabs are carefully processed to achieve perfect flatness, consistent tone, and flawless polish, ensuring every project exudes prestige and refinement.",
+              "intro2":     "These slabs are the preferred choice for upscale spaces where elegance and light play a key role. Indoors, they are used for floors, wall cladding, countertops, columns, and hotel lobbies. The polished finish enhances visual depth, making interiors appear brighter and more spacious. Architects choose Ivory Polished Travertine for corporate headquarters, high-end residences, and hospitality environments seeking natural luxury. For semi-covered outdoor areas, proper sealing and shading preserve the stone’s reflective brilliance while maintaining its durability.",
+              
+              "h3":" Pricing, Thickness Options & Formats",
+              "text3":"Ivory Filled Polished Vein Cut Travertine Slabs are produced in 2 cm and 3 cm thicknesses, with custom options available on request. Pricing ranges between USD 25–55 per m² for 2 cm slabs and USD 35–65 per m² for 3 cm slabs, depending on tone uniformity, polish grade, and order volume. Polished surfaces require higher finishing precision, influencing cost slightly compared to honed variants. Majen’s transparent quotations include material, processing, and export logistics for accurate cost estimation across all project scales.",
+              "h4":"  Technical Features: Filled • Polished • Vein Cut",
+              "text4":"Filled: Cavities are resin-filled to deliver a seamless, non-porous surface perfect for high-traffic interiors. Polished: Achieved through multiple diamond-grinding stages for a glossy, reflective finish that amplifies color and depth. Vein Cut: Linear slicing accentuates the stone’s natural flow, offering visual harmony in modern architectural lines. The combination of filling, polishing, and vein orientation results in an elegant surface ideal for feature walls and expansive flooring installations.",
+              "h5":"Vein Cut vs Cross Cut • Polished vs Honed",
+              "text5":"Vein Cut vs Cross Cut: Vein cut highlights linear structure and continuity, preferred in modern interiors; cross cut provides cloudy patterns with softer transitions. Polished vs Honed: Polished travertine delivers reflective brilliance and color richness, while honed offers a matte, subtle effect. Use polished slabs where lighting enhances luxury—such as hotel lobbies and residential entrances—while honed is better for minimal or glare-sensitive spaces.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Multi-stage polishing for mirror-like finish.",
+                "list2":"Color sorting for tone uniformity across slabs.",
+                 "list3":"Dimensional precision and edge calibration for seamless installation."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: A-frame or wooden bundle with foam separators and edge protection.",
+                "list2":"Logistics: FOB/CIF terms, full documentation (Invoice, Packing List, COO, HS code), and insured global transport.",
+                 "list3":"Traceability: Each batch is coded by tone and finish grade for export documentation."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Ivory Filled Polished Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What makes polished travertine different from honed?",
+            "aboutpage_s4_faq1_text": " The polished surface reflects light, enhancing depth and luxury, while honed offers a soft matte texture.",
+            "aboutpage_s4_faq2_header": "Is polished travertine slippery?",
+            "aboutpage_s4_faq2_text": " Indoors, it’s safe when installed properly. For wet areas, honed or brushed finishes are recommended.",
+            "aboutpage_s4_faq3_header":"What thickness should I choose for my project?",
+            "aboutpage_s4_faq3_text":" 2 cm suits wall cladding and residential flooring; 3 cm is best for commercial floors and countertops.",
+            "aboutpage_s4_faq4_header":"How do I maintain polished travertine?",
+            "aboutpage_s4_faq4_text":"Clean with pH-neutral products and reseal annually to preserve gloss and protection.",
+            "aboutpage_s4_faq5_header":"Can polished slabs be used outdoors?",
+            "aboutpage_s4_faq5_text":"Yes, under covered or shaded areas. Direct sun exposure can dull the polish over time, so sealing is key.",
+            "aboutpage_s4_faq6_header":"Do you export globally?",
+            "aboutpage_s4_faq6_text":"Yes. Majen handles international shipments with full insurance, port coordination, and certified documentation."
+            
+          },
+
+              "ui": {
                     "chooseThickness": "Choose Thickness",
                     "applicationsLabel": "Applications",
                     "specsLabel": "Specifications",
@@ -3378,8 +3686,15 @@
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,640 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
+    { "prop": "Compressive Strength", "value": "~55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear pattern)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" },
+     { "prop": " Surface Treatment Factory",       "value": "resin fill + diamond polish" }
                   ]
                 },
                 "faq": {
@@ -3389,44 +3704,157 @@
               }
             },
             "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
+              "desc": "",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Light Filled Polished Vein Cut Travertine Slabs",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Light Filled Polished Vein Cut Travertine Slabs bring luminous sophistication to architectural and interior spaces. With their soft cream-beige tone and finely linear veining, they reflect light beautifully while maintaining the warmth of natural stone. The filled surface ensures a flawless, seamless texture, while the polished finish enhances color depth and visual brilliance. Majen’s expert quarry selection and polishing techniques deliver unmatched quality, consistent tone, and mirror-smooth precision for global luxury projects.",
+              "intro2":     "These slabs are a top choice for modern interiors that seek natural brightness and elegant reflection. Perfect for hotel lobbies, residential flooring, reception halls, and vertical wall cladding, they elevate any environment with refined light diffusion. The vein-cut structure creates a dynamic sense of movement across large spaces, complementing minimalist and Mediterranean design aesthetics alike. In commercial spaces, the polished surface amplifies perceived area size, creating a luxurious yet timeless visual effect.",
+              
+              "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Light Filled Polished Vein Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses, calibrated for precision and durability. Price ranges average USD 23–50 per m² for 2 cm slabs and USD 33–62 per m² for 3 cm slabs, depending on tone uniformity and finish quality. Custom dimensions and pre-matched batches are available for designers and contractors requiring seamless continuity. Majen’s transparent pricing model includes full clarity across material, finishing, and export logistics for accurate project budgeting.",
+              "h4":"Technical Features: Filled • Honed • Vein Cut",
+              "text4":"Filled: Surface pores are filled with high-performance resin for a smooth and hygienic texture, ideal for interior spaces. Polished: Diamond-polished for a glossy, reflective finish that enhances depth, brightness, and natural beauty. Vein Cut: Linear slicing along the bedding direction produces graceful striations that guide visual flow and continuity. Together, these processes produce a radiant, durable surface suitable for luxury interiors that demand precision and elegance.",
+              "h5":"Vein Cut vs Cross Cut • Filled vs Unfilled",
+              "text5":"Vein Cut vs Cross Cut: Vein cut showcases elegant horizontal lines, perfect for directional design and optical balance; cross cut emphasizes softer, more organic patterns. Polished vs Honed: Polished surfaces reflect light and enrich color depth for grand interiors, while honed offers subtle sophistication. Use polished for feature floors, lobbies, and statement walls where illumination enhances aesthetic impact.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Multi-stage diamond polishing for maximum reflectivity.",
+                "list2":"Tone calibration for color harmony and matching across slabs.",
+                 "list3":"Dimensional accuracy with tight tolerance for perfect installation."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Global Shipping",
+                "list1":"Packaging: Wooden A-frame or bundle system with foam separators and moisture barrier.",
+                "list2":"Logistics: FOB/CIF terms, insured global transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch labeling maintained through the export process."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": " Light Filled Polished Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "Where are polished light travertine slabs best used?",
+            "aboutpage_s4_faq1_text": "Ideal for indoor flooring, wall cladding, bathrooms, and lobbies where brightness and elegance are desired.",
+            "aboutpage_s4_faq2_header": "Are polished slabs slippery?",
+            "aboutpage_s4_faq2_text": "When installed properly indoors, no. For wet or outdoor areas, honed or brushed finishes are recommended.",
+            "aboutpage_s4_faq3_header":"How do I maintain polished travertine?",
+            "aboutpage_s4_faq3_text":" Clean with pH-neutral products and reseal annually to protect gloss and prevent staining.",
+            "aboutpage_s4_faq4_header":" Can these slabs be used in commercial projects?",
+            "aboutpage_s4_faq4_text":"Yes. Their dense structure and durable polish make them perfect for hotels, offices, and high-traffic interiors.",
+            "aboutpage_s4_faq5_header":"How do vein cut slabs differ visually from cross cut?",
+            "aboutpage_s4_faq5_text":"Vein cut displays elegant linear bands, while cross cut shows soft, cloudy patterns — both natural and timeless.",
+            "aboutpage_s4_faq6_header":"Do you export globally?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports worldwide with full documentation, insurance, and port logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,640 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.3%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear pattern)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" },
+    { "prop": "Surface Treatment Factory",       "value": "resin fill + mirror-grade polishing" }
                   ]
                 },
                 "faq": {
                   "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
               }
             },
+
             "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
+              "desc": "",
+              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
+              "h1":        "Antico Filled Honed Vein Cut Travertine Slabs",
+              "title":        "Ivory Travertine Blocks",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Filled Honed Vein Cut Travertine Slabs combine the natural charm of aged travertine with refined modern finishing. Their warm beige and walnut tones, complemented by linear vein patterns, create a sophisticated yet rustic aesthetic perfect for classic and Mediterranean architecture. The filled surface provides smoothness and hygiene, while the honed finish enhances tactile comfort and low reflectivity. Sourced from premium Turkish quarries, each slab is processed to exacting standards for consistent tone, flatness, and export‑grade packaging.",
+              "intro2":     "Antico Travertine is a designer favorite for projects that merge history with modern comfort. Indoors, these slabs are ideal for villa floors, hotel lobbies, feature walls, staircases, and bathrooms seeking natural elegance. Outdoors, they perform beautifully on covered terraces, façades, and colonnades, adding a warm, lived‑in feel. The vein‑cut texture provides direction and rhythm, while the filled, honed surface makes maintenance effortless. This combination suits restoration works, classical interiors, and spaces where authenticity meets contemporary design harmony.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Filled Honed Vein Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses, both optimized for durability and visual consistency. Pricing generally ranges from USD 24–48 per m² for 2 cm and USD 34–60 per m² for 3 cm, depending on tone selection, batch grade, and finish precision. Custom sizes or matched batches are available for large‑scale architectural projects. Majen’s transparent pricing structure provides full clarity on material, processing, and export costs — helping contractors and designers make informed procurement decisions.",
+              "h4":"Technical Features: Filled • Honed • Vein Cut",
+              "text4":"Filled: Surface pores are carefully filled with high‑grade resin, producing a sleek, easy‑to‑clean surface ideal for interior use. Honed: The matte, low‑gloss texture enhances the stone’s warm hues and natural feel while reducing glare. Vein Cut: Linear slicing along the bedding layer reveals distinctive horizontal patterns, adding depth and movement to surfaces. Together, these features deliver a stone that feels timeless yet contemporary — combining rustic warmth with architectural precision. ",
+              "h5":"Vein Cut vs Cross Cut • Filled vs Unfilled",
+              "text5":"Vein Cut vs Cross Cut: Vein cut slabs emphasize continuity and flow, highlighting the stone’s stratified texture, whereas cross cut offers cloud‑like patterns ideal for softer visuals. Vein cut Antico Travertine is preferred in formal and large‑scale spaces that benefit from linear rhythm. Filled vs Unfilled: Filled travertine ensures smoothness and easy maintenance for interiors, while unfilled surfaces provide a natural, tactile look suited to outdoor or rustic design concepts. The filled and honed pairing is the best choice for interior luxury flooring and feature applications.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Batch tone selection for visual harmony.",
+                "list2":"Factory resin filling and fine honing for uniform smoothness.",
+                 "list3":"Dimensional calibration ensuring thickness tolerance within ±0.5 mm.",
+                  "list4":"Polished: glossy, elegant finish for contemporary settings."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: A‑frame and bundle packing with wooden reinforcement and foam padding.",
+                "list2":"Logistics: FOB/CIF terms, full export documents (Invoice, Packing List, COO, HS code), insured delivery.",
+                 "list3":"Traceability: tone and batch codes maintained across the supply chain."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Filled Honed Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What makes Antico Travertine unique?",
+            "aboutpage_s4_faq1_text": " Its warm tone variation and aged vein texture evoke a timeless, natural atmosphere ideal for classic interiors.",
+            "aboutpage_s4_faq2_header": "What are standard thicknesses available?",
+            "aboutpage_s4_faq2_text": "Slabs are produced in 2 cm and 3 cm thicknesses, with custom sizes available upon request.",
+            "aboutpage_s4_faq3_header":"Is the filled and honed finish suitable for bathrooms?",
+            "aboutpage_s4_faq3_text":"Yes. The filled surface prevents moisture absorption, while the honed finish offers a comfortable matte feel.",
+            "aboutpage_s4_faq4_header":"How should I maintain Antico Travertine?",
+            "aboutpage_s4_faq4_text":"Clean with pH‑neutral stone cleaner and reseal every 1–2 years depending on usage and exposure.",
+            "aboutpage_s4_faq5_header":"Can these slabs be used for exterior cladding?",
+            "aboutpage_s4_faq5_text":"Yes, provided they are installed with appropriate fixing systems and sealed for weather resistance.",
+            "aboutpage_s4_faq6_header":"Do you export globally?",
+            "aboutpage_s4_faq6_text":"Yes. Majen ships worldwide with certified documentation, insurance, and full logistical coordination."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
                 "specs": {
                   "h2": "Specifications",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,630 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.4%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Vein Cut (linear)" },
+    { "prop": "Finish Options",       "value": "Filled & Honed (matte)" }
                   ]
                 },
                 "faq": {
                   "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
               }
             }
