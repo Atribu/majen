@@ -226,79 +226,162 @@ const title5 = page?.h5, text5 = page?.text5;
 function extractFaqFromPage(page) {
   if (!page || typeof page !== "object") return { items: [], span: "" };
 
-  // 1) Modern dizi şeması: sections.faq.items: [{ q, a }]
-  const arr = Array.isArray(page?.sections?.faq?.items)
-    ? page.sections.faq.items
-    : null;
-  if (arr && arr.length) {
-    const items = arr
-      .filter(it => it && typeof it.q === "string" && typeof it.a === "string")
-      .map(it => ({ q: it.q.trim(), a: it.a.trim() }))
-      .filter(it => it.q && it.a);
-    const span =
-      page?.sections?.faq?.span ||
-      page?.QuestionsItems?.aboutpage_s4_faq_span1 ||
-      "";
-    return { items, span };
+  const qObj = page?.QuestionsItems;
+  if (!qObj || typeof qObj !== "object") return { items: [], span: "" };
+
+  // indexleri topla (her iki pattern’i destekle)
+  const idxSet = new Set();
+  for (const k of Object.keys(qObj)) {
+    let m = k.match(/^aboutpage_s4_faq(\d+)_(header|text)$/i); // ...faq1_header / ...faq1_text
+    if (m) { idxSet.add(Number(m[1])); continue; }
+    m = k.match(/^aboutpage_s4_faq_(header|text)(\d+)$/i);     // ...faq_header1 / ...faq_text1
+    if (m) { idxSet.add(Number(m[2])); }
   }
 
-  // 2) Legacy/flat şema: QuestionsItems objesi
-  const qItems = page?.QuestionsItems || {};
-  if (!qItems || typeof qItems !== "object") {
-    return { items: [], span: "" };
-  }
-
-  // İki düzeni de tara:
-  //  - aboutpage_s4_faq1_header / aboutpage_s4_faq1_text
-  //  - aboutpage_s4_faq_header1 / aboutpage_s4_faq_text1
-  const pairs = [];
-  for (const key of Object.keys(qItems)) {
-    let idx = null;
-    let kind = null;
-
-    // Düzen A
-    let m = key.match(/aboutpage_s4_faq(\d+)_(header|text)$/i);
-    if (m) {
-      idx = Number(m[1]);
-      kind = m[2].toLowerCase();
-    } else {
-      // Düzen B
-      m = key.match(/aboutpage_s4_faq_(header|text)(\d+)$/i);
-      if (m) {
-        kind = m[1].toLowerCase();
-        idx = Number(m[2]);
-      }
-    }
-    if (!idx || !kind) continue;
-
-    const val = qItems[key];
-    if (typeof val !== "string") continue;
-
-    let slot = pairs.find(p => p.idx === idx);
-    if (!slot) {
-      slot = { idx };
-      pairs.push(slot);
-    }
-    slot[kind] = val.trim();
-  }
-
-  const items = pairs
-    .sort((a, b) => a.idx - b.idx)
-    .filter(p => p.header && p.text)
-    .map(p => ({ q: p.header, a: p.text }));
+  const items = Array.from(idxSet)
+    .sort((a, b) => a - b)
+    .map((n) => {
+      const q =
+        (typeof qObj[`aboutpage_s4_faq${n}_header`] === "string" && qObj[`aboutpage_s4_faq${n}_header`].trim()) ||
+        (typeof qObj[`aboutpage_s4_faq_header${n}`] === "string" && qObj[`aboutpage_s4_faq_header${n}`].trim()) ||
+        "";
+      const a =
+        (typeof qObj[`aboutpage_s4_faq${n}_text`] === "string" && qObj[`aboutpage_s4_faq${n}_text`].trim()) ||
+        (typeof qObj[`aboutpage_s4_faq_text${n}`] === "string" && qObj[`aboutpage_s4_faq_text${n}`].trim()) ||
+        "";
+      return q && a ? { q, a } : null;
+    })
+    .filter(Boolean);
 
   const span =
-    qItems.aboutpage_s4_faq_span1 ||
-    page?.sections?.faq?.span ||
-    "";
+    (typeof qObj.aboutpage_s4_faq_span1 === "string" && qObj.aboutpage_s4_faq_span1.trim()) || "";
 
   return { items, span };
 }
 
 
+function procSlugForLocale(locale, procKey) {
+  const s = String(procKey || "").toLowerCase().trim();
+  if (!s) return "";
+  // "natural" tek başına gelirse canonical yap
+  if (s === "natural" || s === "dogal") {
+    return locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural";
+  }
+  // TR birleşik gelirse EN’e çevir, sonra tekrar TR'ye map et
+  const [fillEn, pEn] = trCombinedToEn(s).split("-");
+  if (locale.startsWith("tr")) {
+    const fillTr = fillEn === "filled" ? "dolgulu" : "dolgusuz";
+    const procTr = { honed:"honlanmis", polished:"cilali", brushed:"fircalanmis", tumbled:"eskitilmis", natural:"dogal" }[pEn] || pEn;
+    return `${fillTr}-${procTr}`;
+  }
+  // EN
+  return `${fillEn}-${pEn}`;
+}
+
+// ↑ dosyanın üst tarafına (helper’ların yanına) ekle
+const VALID_PROCS_EN = new Set([
+  "natural",
+  "filled-honed","unfilled-honed",
+  "filled-polished","unfilled-polished",
+  "filled-brushed","unfilled-brushed",
+  "filled-tumbled","unfilled-tumbled",
+  "filled-natural","unfilled-natural",
+]);
+
+function normalizeProcEn(key) {
+  const s = String(key || "").toLowerCase().trim();
+  if (!s) return "";
+  if (s === "dogal" || s === "natural") return "natural";
+  // TR birleşik geldiyse EN’e çevir
+  return trCombinedToEn(s);
+}
+
+function friendlyProcessLabelForLocale(procKey, locale) {
+  const s = normalizeProcEn(procKey);           // "filled-polished" | "natural"
+  if (!s) return "";
+  if (s === "natural") return locale.startsWith("tr") ? "Dolgusuz · Doğal" : "Unfilled · Natural";
+  const [fill, proc] = s.split("-");
+  const fillTR = fill === "filled" ? "Dolgulu" : "Dolgusuz";
+  const procTR = { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş", natural:"Doğal" }[proc] || proc;
+  const procEN = proc.charAt(0).toUpperCase() + proc.slice(1);
+  const fillEN = fill.charAt(0).toUpperCase() + fill.slice(1);
+  return locale.startsWith("tr") ? `${fillTR} · ${procTR}` : `${fillEN} · ${procEN}`;
+}
+
+function procSlugForLocale(locale, procKey) {
+  const en = normalizeProcEn(procKey); // en canonical
+  if (locale.startsWith("tr")) {
+    if (en === "natural") return "dolgusuz-dogal";
+    const [fill, p] = en.split("-");
+    const fillTr = fill === "filled" ? "dolgulu" : "dolgusuz";
+    const pTr = { honed:"honlanmis", polished:"cilali", brushed:"fircalanmis", tumbled:"eskitilmis", natural:"dogal" }[p] || p;
+    return `${fillTr}-${pTr}`;
+  }
+  return en; // en slug
+}
+
+
+// ↓ mevcut buildOtherProcessItems()’ı bununla değiştir
+function buildOtherProcessItems() {
+  if (isBlocks || !productKey || !cutKey || !colorKey) return [];
+
+  const procDict = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes || {};
+  // Sadece geçerli process anahtarlarını al
+  const allProcKeys = Object.keys(procDict).filter((k) => VALID_PROCS_EN.has(normalizeProcEn(k)));
+
+  // bulunduğun işlemi çıkar
+  const currentEn = normalizeProcEn(procKeyFull);
+  const others = allProcKeys
+    .filter((k) => normalizeProcEn(k) !== currentEn)
+    .slice(0, 3);
+
+  return others.map((otherProcKeyRaw) => {
+    const otherProcKey = otherProcKeyRaw.toLowerCase();
+    const node = procDict[otherProcKey] || {};
+
+    // Başlık: process label + (opsiyonel renk)
+    const procLabel = friendlyProcessLabelForLocale(otherProcKey, locale);
+    const title = `${colorLabel} · ${procLabel}`;
+
+    // Kısa açıklama: varsa node.lead/intro; yoksa sade fallback
+    const text =
+      (typeof node.lead === "string" && node.lead) ||
+      (typeof node.intro === "string" && node.intro) ||
+      (locale.startsWith("tr")
+        ? "Bu işlem/yüzey için detayları görüntüleyin."
+        : "View details for this finish/process.");
+
+    // Görsel önceliği: aynı renk + diğer işlem thumb → global process thumb → mevcut hero
+    const ck = combinedKeyFromProc(otherProcKey, locale);
+    const colorThumb =
+      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[ck]?.[colorKey];
+    const processThumb = PROCESS_THUMB_BY_COMBINED?.[ck];
+    const img = colorThumb || processThumb || heroSrc;
+
+    // Hedef rota: aynı product + cut + color, sadece process değişiyor
+    const processSlugLocalized = procSlugForLocale(locale, otherProcKey);
+
+    return {
+      title,
+      text,
+      img,
+      href: {
+        pathname: "/travertine/[product]/[cut]/[process]/[color]",
+        params: {
+          product: productSlug,
+          cut: cutSlug,
+          process: processSlugLocalized,
+          color: colorSlug,
+        },
+      },
+    };
+  });
+}
+
+
 
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-10 mt-14">
+    <main className="px-5 md:px-8 lg:px-0 py-10 mt-5">
       <Head>
         <title>{metaTitle}</title>
         {metaDesc ? <meta name="description" content={metaDesc} /> : null}
@@ -398,27 +481,8 @@ function extractFaqFromPage(page) {
 {/* OtherOptions: mevcut locale-aware resolveHref ile */}
 <OtherOptions
   locale={locale}
-  heading={locale.startsWith("tr") ? "Diğer Seçenekler" : "Other Options"}
-  customItems={[
-    {
-      title: locale.startsWith("tr") ? "Plakalar • Damar Kesim" : "Slabs • Vein-Cut",
-      text:  locale.startsWith("tr") ? "Damar yönünde kesimle çizgisel görünüm." : "Linear look with vein direction.",
-      img:   IMAGE_BY_PRODUCT?.slabs?.[cutKey] || heroSrc,
-      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "vein-cut" } },
-    },
-    {
-      title: locale.startsWith("tr") ? "Plakalar • Enine Kesim" : "Slabs • Cross-Cut",
-      text:  locale.startsWith("tr") ? "Bulutumsu, mozaik görünüm." : "Cloudy, mosaic-like pattern.",
-      img:   IMAGE_BY_PRODUCT?.slabs?.[cutKey] || heroSrc,
-      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "slabs", cut: "cross-cut" } },
-    },
-    {
-      title: locale.startsWith("tr") ? "Karolar • Damar Kesim" : "Tiles • Vein-Cut",
-      text:  locale.startsWith("tr") ? "Proje ölçülerine göre kesim." : "Cut-to-size options.",
-      img:   IMAGE_BY_PRODUCT?.tiles?.[cutKey] || heroSrc,
-      href:  { pathname: "/travertine/[product]/[cut]", params: { product: "tiles", cut: "vein-cut" } },
-    },
-  ]}
+  heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"}
+  customItems={buildOtherProcessItems()}
 />
 
 
