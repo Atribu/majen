@@ -100,6 +100,7 @@ export default function OtherOptions(props) {
   const visibleOrder = excludeProduct
     ? productOrder.filter((k) => k !== excludeProduct)
     : productOrder;
+    
 
   return (
     <section className={className}>
@@ -135,11 +136,11 @@ export default function OtherOptions(props) {
                     </h4>
 
                      {it.textJsx ? (
-                      <div className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
+                      <div className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%] line-clamp-3">
                         {it.textJsx}
                       </div>
                     ) : it.text ? (
-                      <p className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%]">
+                      <p className="lg:mt-2 text-center text-sm md:text-[14px] text-neutral-700 w-[90%] leading-[120%] line-clamp-3">
                         {it.text}
                       </p>
                     ) : null}

@@ -320,6 +320,22 @@ function procSlugForLocale(locale, procKey) {
   return en; // en slug
 }
 
+function colorsForProcess(procKeyEn) {
+  const node = messages?.ProductPage?.[productKey]
+    ?.cuts?.[cutKey]?.processes?.[procKeyEn];
+  const cols = node?.colors && typeof node.colors === "object"
+    ? Object.keys(node.colors)
+    : [];
+  return cols; // örn: ["ivory","light","antico"]
+}
+
+function pickColorForProcess(procKeyEn, preferNot = colorKey) {
+  const list = colorsForProcess(procKeyEn);
+  // mevcut sayfa rengi haric ilk uygun rengi tercih et
+  const alt = list.find((c) => c && c !== preferNot);
+  return alt || preferNot; // yoksa mevcut renk
+}
+
 
 // ↓ mevcut buildOtherProcessItems()’ı bununla değiştir
 function buildOtherProcessItems() {
@@ -381,7 +397,7 @@ function buildOtherProcessItems() {
 
 
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-10 mt-5">
+    <main className="px-5 md:px-8 lg:px-0 py-10 mt-2 lg:mt-4">
       <Head>
         <title>{metaTitle}</title>
         {metaDesc ? <meta name="description" content={metaDesc} /> : null}
