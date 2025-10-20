@@ -318,17 +318,27 @@ function colorsForProcess(procKeyEn) {
     : [];
 }
 
+const TOPOLOGICAL_ORDER = [
+  "unfilled-natural", "filled-natural",
+  "unfilled-honed",   "filled-honed",
+  "unfilled-polished","filled-polished",
+  "unfilled-brushed", "filled-brushed",
+  "unfilled-tumbled", "filled-tumbled",
+];
+
+// "natural" ➜ "unfilled-natural" olarak grupla; diğerleri aynen
+function toDisplayKey(procEn) {
+  const s = normalizeProcEn(procEn);
+  return s === "natural" ? "unfilled-natural" : s;
+}
+
 function pickColorPreferIvory(procKeyEn, avoidColor = colorKey) {
   const list = colorsForProcess(procKeyEn);
   if (!list.length) return avoidColor;
-  // 1) mümkünse IVORY
   if (list.includes("ivory")) return "ivory";
-  // 2) sayfadaki renkten farklı ilk uygun
   const alt = list.find(c => c && c !== avoidColor);
-  // 3) herhangi biri
   return alt || list[0] || avoidColor;
 }
-
 function normalizeProcEn(key) {
   const s = String(key || "").toLowerCase().trim();
   if (!s) return "";
@@ -350,38 +360,42 @@ function buildOtherProcessItems() {
   if (isBlocks || !productKey || !cutKey || !colorKey) return [];
 
   const procDict = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes || {};
+  const currentDisplay = toDisplayKey(procKeyFull);
 
-  // Tüm process anahtarlarını al ve normalize ederek benzersizleştir
-  const uniques = [];
-  const seenProc = new Set();
+  // 1) Adayları topla (normalize + valid + mevcutla aynı display grubunu at)
+  const candidates = [];
+  const seenDisplay = new Set();
   for (const rawKey of Object.keys(procDict)) {
     const en = normalizeProcEn(rawKey);
     if (!VALID_PROCS_EN.has(en)) continue;
-    if (en === normalizeProcEn(procKeyFull)) continue; // mevcut process’i çıkar
-    if (seenProc.has(en)) continue;
-    seenProc.add(en);
-    uniques.push({ rawKey, en });
-    if (uniques.length >= 6) break; // güvenli üst sınır
+
+    const displayKey = toDisplayKey(en);
+    if (displayKey === currentDisplay) continue;  // bulunduğun grubu gösterme
+    if (seenDisplay.has(displayKey)) continue;    // aynı display grubundan ikinci kez alma
+
+    seenDisplay.add(displayKey);
+    candidates.push({ rawKey, en, displayKey });
   }
 
+  // 2) Çeşitlilik için sabit sıraya göre (TOPOLOGICAL_ORDER) sırala
+  candidates.sort((a, b) =>
+    (TOPOLOGICAL_ORDER.indexOf(a.displayKey) >>> 0) -
+    (TOPOLOGICAL_ORDER.indexOf(b.displayKey) >>> 0)
+  );
+
+  // 3) İlk 3 farklı display grubunu karta dönüştür
   const items = [];
-  const seenCombo = new Set(); // process:color tekrarını engelle
-
-  for (const { rawKey, en } of uniques) {
+  for (const { rawKey, en, displayKey } of candidates) {
     if (items.length >= 3) break;
-
-    // ❗ tercihen IVORY; yoksa o prosesin başka bir rengi
-    const colorForCard = pickColorPreferIvory(en, colorKey);
-    const combo = `${en}:${colorForCard}`;
-    if (seenCombo.has(combo)) continue;
-    seenCombo.add(combo);
 
     const node = procDict[rawKey] || procDict[en] || {};
 
-    const procLabel = friendlyProcessLabelForLocale(en, locale);
+    // Kart başlığı: Renk + Süreç etiketi
+    const procLabel = friendlyProcessLabelForLocale(displayKey, locale);
+    const colorForCard = pickColorPreferIvory(en, colorKey); // (her kartta renk aynı olabilir; önemli olan process'in farklı olması)
     const title = `${colorLabelForLocale(locale, colorForCard)} · ${procLabel}`;
 
-    // açıklama (kısa)
+    // Kısa açıklama
     const text =
       (typeof node.lead === "string" && node.lead) ||
       (typeof node.intro === "string" && node.intro) ||
@@ -389,16 +403,16 @@ function buildOtherProcessItems() {
         ? "Bu işlem/yüzey için detayları görüntüleyin."
         : "View details for this finish/process.");
 
-    // görsel: önce seçilen renk için process thumb → varyant → global process thumb → hero
-    const ck = combinedKeyFromProc(en, locale);
+    // Görsel: renkli process thumb > varyant resmi > global process thumb > hero
+    const ck = combinedKeyFromProc(displayKey, locale); // displayKey kullanıyoruz
     const colorThumb =
       IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[ck]?.[colorForCard];
-    const variantImg   =
-      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorForCard];
+    const variantImg   = IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorForCard];
     const processThumb = PROCESS_THUMB_BY_COMBINED?.[ck];
     const img = colorThumb || variantImg || processThumb || heroSrc;
 
-    const processSlugLocalized = procSlugForLocale(locale, en);
+    // Link: aynı ürün + aynı kesim + seçilen renk, sadece process değişiyor
+    const processSlugLocalized = procSlugForLocale(locale, displayKey);
 
     items.push({
       title,
@@ -410,7 +424,7 @@ function buildOtherProcessItems() {
           product: productSlug,
           cut:     cutSlug,
           process: processSlugLocalized,
-          color:   colorForCard, // 👈 kart rengi (tercihen ivory)
+          color:   colorForCard,
         },
       },
     });

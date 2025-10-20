@@ -40,46 +40,63 @@ export default function OtherOptions(props) {
 
   const canon = (p) => ({"block":"blocks","blocks":"blocks","special":"special-designs","special-designs":"special-designs","slabs":"slabs","tiles":"tiles"}[p] || p);
 
-  const resolveHref = (hrefLike) => {
-    if (!hrefLike) return "#";
-    if (typeof hrefLike === "string") return hrefLike;   // zaten locale’siz path veriyorsan dokunma
+const resolveHref = (hrefLike) => {
+  if (!hrefLike) return "#";
+  if (typeof hrefLike === "string") return hrefLike;
 
-    const { pathname, params = {} } = hrefLike || {};
-    const product = canon(params.product);
-    const tail = PRODUCT_TAIL[product] || PRODUCT_TAIL.slabs;
+  const { pathname, params = {} } = hrefLike || {};
+  const product = canon(params.product);
+  const tail = PRODUCT_TAIL[product] || PRODUCT_TAIL.slabs;
 
-    // /travertine/[product]  ->  /<tail>
-    if (pathname === "/travertine/[product]") {
-      return `/${tail}`;
-    }
+  // ✅ 1) /travertine/[product]/[cut]/[process]/[color]
+  if (pathname === "/travertine/[product]/[cut]/[process]/[color]") {
+    const rawCut = String(params.cut).toLowerCase();
+    const cutNormInTr = locale.startsWith("tr") ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) : rawCut;
+    const cut = CUT[cutNormInTr] || cutNormInTr;
 
-    // /travertine/[product]/[cut]  ->  /<cut>-<tail>
-    if (pathname === "/travertine/[product]/[cut]") {
-      const rawCut = String(params.cut).toLowerCase();
-      const cutNormInTr = locale.startsWith("tr")
-        ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) // giriş normalizasyonu
-        : rawCut;
-      const cut = CUT[cutNormInTr] || cutNormInTr;
-      return `/${cut}-${tail}`;
-    }
+    const [fillRaw, finishRaw] = String(params.process).toLowerCase().split("-");
+    const fill   = FILL[fillRaw]    || fillRaw;    // filled | dolgulu
+    const finish = FINISH[finishRaw] || finishRaw; // brushed | fircalanmis
 
-    // /travertine/[product]/[cut]/[process]  ->  /<fill>-<finish>-<cut>-<tail>
-    if (pathname === "/travertine/[product]/[cut]/[process]") {
-      const rawCut = String(params.cut).toLowerCase();
-  const cutNormInTr = locale.startsWith("tr")
-    ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut)
-    : rawCut;
-  const cut = CUT[cutNormInTr] || cutNormInTr;
-      const [fillRaw, finishRaw] = String(params.process).toLowerCase().split("-");
-      const fill = FILL[fillRaw] || fillRaw;
-      const finish = FINISH[finishRaw] || finishRaw;
-      return `/${fill}-${finish}-${cut}-${tail}`;
-    }
+    const color = String(params.color).toLowerCase(); // ivory | light | antico
+    let out = `/${color}-${fill}-${finish}-${cut}-${tail}`;
+    // güvenlik: kuyruk iki kez eklenmişse düzelt
+    out = out.replace(new RegExp(`-${tail}-${tail}$`), `-${tail}`);
+    return out;
+  }
 
-    // Son çare: param değerlerini sırayla joinle (locale prefix YOK)
-    const tailUnknown = Object.values(params).filter(Boolean).join("/");
-    return `/${tailUnknown}`;
-  };
+  // 2) /travertine/[product]
+  if (pathname === "/travertine/[product]") {
+    return `/${tail}`;
+  }
+
+  // 3) /travertine/[product]/[cut]
+  if (pathname === "/travertine/[product]/[cut]") {
+    const rawCut = String(params.cut).toLowerCase();
+    const cutNormInTr = locale.startsWith("tr") ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) : rawCut;
+    const cut = CUT[cutNormInTr] || cutNormInTr;
+    return `/${cut}-${tail}`;
+  }
+
+  // 4) /travertine/[product]/[cut]/[process]
+  if (pathname === "/travertine/[product]/[cut]/[process]") {
+    const rawCut = String(params.cut).toLowerCase();
+    const cutNormInTr = locale.startsWith("tr") ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) : rawCut;
+    const cut = CUT[cutNormInTr] || cutNormInTr;
+    const [fillRaw, finishRaw] = String(params.process).toLowerCase().split("-");
+    const fill = FILL[fillRaw] || fillRaw;
+    const finish = FINISH[finishRaw] || finishRaw;
+    let out = `/${fill}-${finish}-${cut}-${tail}`;
+    out = out.replace(new RegExp(`-${tail}-${tail}$`), `-${tail}`);
+    return out;
+  }
+
+  // fallback
+  const tailUnknown = Object.values(params).filter(Boolean).join("/");
+  return `/${tailUnknown}`;
+};
+
+
 
   // … defaultProductLabels, productLabels, VARIANT_SLUG_MAP, humanize, variantLabel aynı …
 
@@ -115,7 +132,7 @@ export default function OtherOptions(props) {
           {/* ① customItems varsa sadece onları göster */}
           {Array.isArray(customItems) && customItems.length > 0
             ? customItems.slice(0, 3).map((it, i) => {
-                const cardHref = resolveHref(it.href); // ← 🔴 burada string’e çeviriyoruz
+                const cardHref = resolveHref(it.href); 
                 return (
                   <div key={i} className="group flex flex-col items-center text-center">
                     <Link
