@@ -9,6 +9,29 @@ export const CUT_LABEL = {
   tr: { "vein-cut": "damar kesim", "cross-cut": "enine kesim" },
 };
 
+/**
+ * NEW: Color labels for last-level pages (Ivory / Antico / Light)
+ * Slug keys lowercase sabit: ivory, antico, light
+ */
+export const COLOR_LABEL = {
+  en: { ivory: "Ivory", antico: "Antico", light: "Light" },
+  tr: { ivory: "Fildişi", antico: "Antik", light: "Açık" },
+};
+
+/** küçük yardımcı: locale → 'en' | 'tr' */
+const L = (locale) => (String(locale).toLowerCase().startsWith("tr") ? "tr" : "en");
+
+/** Güvenli label okuyucu (bulunamazsa slug’ı insanlaştırır) */
+export function colorLabelForLocale(locale, slug = "") {
+  const key = String(slug).toLowerCase();
+  const map = COLOR_LABEL[L(locale)] || {};
+  const fall = key
+    .split("-")
+    .map((s) => (s ? s[0].toUpperCase() + s.slice(1) : s))
+    .join(" ");
+  return map[key] || fall;
+}
+
 // EN↔TR process slug dönüştürücü: "filled-polished" → "dolgulu-cilali"
 export function procSlugForLocale(locale, proc) {
   const s = String(proc || "").toLowerCase();

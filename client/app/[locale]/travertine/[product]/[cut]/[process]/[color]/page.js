@@ -21,6 +21,7 @@ import {
   IMAGE_BY_PRODUCT_AND_VARIANT as IMAGE_BY_PRODUCT_AND_COLOR,
   PROCESS_THUMB_BY_COMBINED
 } from "@/app/[locale]/(catalog)/_images";
+import { PRODUCT_LABEL, CUT_LABEL, colorLabelForLocale, procSlugForLocale } from "@/lib/labels";
 import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
@@ -34,7 +35,6 @@ import SocialBlock from "@/app/[locale]/travertine/blocks/[color]/SocialBlock";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 
 const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
-
 
 function trCombinedToEn(procKey = "") {
   const s = String(procKey).toLowerCase().trim();
@@ -278,16 +278,6 @@ function procSlugForLocale(locale, procKey) {
   return `${fillEn}-${pEn}`;
 }
 
-// ↑ dosyanın üst tarafına (helper’ların yanına) ekle
-const VALID_PROCS_EN = new Set([
-  "natural",
-  "filled-honed","unfilled-honed",
-  "filled-polished","unfilled-polished",
-  "filled-brushed","unfilled-brushed",
-  "filled-tumbled","unfilled-tumbled",
-  "filled-natural","unfilled-natural",
-]);
-
 function normalizeProcEn(key) {
   const s = String(key || "").toLowerCase().trim();
   if (!s) return "";
@@ -323,43 +313,75 @@ function procSlugForLocale(locale, procKey) {
 function colorsForProcess(procKeyEn) {
   const node = messages?.ProductPage?.[productKey]
     ?.cuts?.[cutKey]?.processes?.[procKeyEn];
-  const cols = node?.colors && typeof node.colors === "object"
+  return node?.colors && typeof node.colors === "object"
     ? Object.keys(node.colors)
     : [];
-  return cols; // örn: ["ivory","light","antico"]
 }
 
-function pickColorForProcess(procKeyEn, preferNot = colorKey) {
+function pickColorPreferIvory(procKeyEn, avoidColor = colorKey) {
   const list = colorsForProcess(procKeyEn);
-  // mevcut sayfa rengi haric ilk uygun rengi tercih et
-  const alt = list.find((c) => c && c !== preferNot);
-  return alt || preferNot; // yoksa mevcut renk
+  if (!list.length) return avoidColor;
+  // 1) mümkünse IVORY
+  if (list.includes("ivory")) return "ivory";
+  // 2) sayfadaki renkten farklı ilk uygun
+  const alt = list.find(c => c && c !== avoidColor);
+  // 3) herhangi biri
+  return alt || list[0] || avoidColor;
 }
 
+function normalizeProcEn(key) {
+  const s = String(key || "").toLowerCase().trim();
+  if (!s) return "";
+  if (s === "dogal" || s === "natural") return "natural";
+  return trCombinedToEn(s);
+}
+
+const VALID_PROCS_EN = new Set([
+  "natural",
+  "filled-honed","unfilled-honed",
+  "filled-polished","unfilled-polished",
+  "filled-brushed","unfilled-brushed",
+  "filled-tumbled","unfilled-tumbled",
+  "filled-natural","unfilled-natural",
+]);
 
 // ↓ mevcut buildOtherProcessItems()’ı bununla değiştir
 function buildOtherProcessItems() {
   if (isBlocks || !productKey || !cutKey || !colorKey) return [];
 
   const procDict = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes || {};
-  // Sadece geçerli process anahtarlarını al
-  const allProcKeys = Object.keys(procDict).filter((k) => VALID_PROCS_EN.has(normalizeProcEn(k)));
 
-  // bulunduğun işlemi çıkar
-  const currentEn = normalizeProcEn(procKeyFull);
-  const others = allProcKeys
-    .filter((k) => normalizeProcEn(k) !== currentEn)
-    .slice(0, 3);
+  // Tüm process anahtarlarını al ve normalize ederek benzersizleştir
+  const uniques = [];
+  const seenProc = new Set();
+  for (const rawKey of Object.keys(procDict)) {
+    const en = normalizeProcEn(rawKey);
+    if (!VALID_PROCS_EN.has(en)) continue;
+    if (en === normalizeProcEn(procKeyFull)) continue; // mevcut process’i çıkar
+    if (seenProc.has(en)) continue;
+    seenProc.add(en);
+    uniques.push({ rawKey, en });
+    if (uniques.length >= 6) break; // güvenli üst sınır
+  }
 
-  return others.map((otherProcKeyRaw) => {
-    const otherProcKey = otherProcKeyRaw.toLowerCase();
-    const node = procDict[otherProcKey] || {};
+  const items = [];
+  const seenCombo = new Set(); // process:color tekrarını engelle
 
-    // Başlık: process label + (opsiyonel renk)
-    const procLabel = friendlyProcessLabelForLocale(otherProcKey, locale);
-    const title = `${colorLabel} · ${procLabel}`;
+  for (const { rawKey, en } of uniques) {
+    if (items.length >= 3) break;
 
-    // Kısa açıklama: varsa node.lead/intro; yoksa sade fallback
+    // ❗ tercihen IVORY; yoksa o prosesin başka bir rengi
+    const colorForCard = pickColorPreferIvory(en, colorKey);
+    const combo = `${en}:${colorForCard}`;
+    if (seenCombo.has(combo)) continue;
+    seenCombo.add(combo);
+
+    const node = procDict[rawKey] || procDict[en] || {};
+
+    const procLabel = friendlyProcessLabelForLocale(en, locale);
+    const title = `${colorLabelForLocale(locale, colorForCard)} · ${procLabel}`;
+
+    // açıklama (kısa)
     const text =
       (typeof node.lead === "string" && node.lead) ||
       (typeof node.intro === "string" && node.intro) ||
@@ -367,17 +389,18 @@ function buildOtherProcessItems() {
         ? "Bu işlem/yüzey için detayları görüntüleyin."
         : "View details for this finish/process.");
 
-    // Görsel önceliği: aynı renk + diğer işlem thumb → global process thumb → mevcut hero
-    const ck = combinedKeyFromProc(otherProcKey, locale);
+    // görsel: önce seçilen renk için process thumb → varyant → global process thumb → hero
+    const ck = combinedKeyFromProc(en, locale);
     const colorThumb =
-      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[ck]?.[colorKey];
+      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[ck]?.[colorForCard];
+    const variantImg   =
+      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorForCard];
     const processThumb = PROCESS_THUMB_BY_COMBINED?.[ck];
-    const img = colorThumb || processThumb || heroSrc;
+    const img = colorThumb || variantImg || processThumb || heroSrc;
 
-    // Hedef rota: aynı product + cut + color, sadece process değişiyor
-    const processSlugLocalized = procSlugForLocale(locale, otherProcKey);
+    const processSlugLocalized = procSlugForLocale(locale, en);
 
-    return {
+    items.push({
       title,
       text,
       img,
@@ -385,15 +408,40 @@ function buildOtherProcessItems() {
         pathname: "/travertine/[product]/[cut]/[process]/[color]",
         params: {
           product: productSlug,
-          cut: cutSlug,
+          cut:     cutSlug,
           process: processSlugLocalized,
-          color: colorSlug,
+          color:   colorForCard, // 👈 kart rengi (tercihen ivory)
         },
       },
-    };
-  });
+    });
+  }
+
+  return items;
 }
 
+const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug;
+const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;
+
+const processLabelLocalized = friendlyProcessLabelForLocale(procKeyFull, locale);
+const colorLabelLocalized = colorLabelForLocale(locale, colorKey);
+
+// process slug’ını göster (TR’de “dolgulu-cilali”)
+const processSlugLocalized = procSlugForLocale(locale, process);
+
+  const prefix = `/${locale}`;
+  const baseHref = `${prefix}/${baseSegment}`;
+   // ---- Breadcrumb
+    const pathnameBreadcrumbs = typeof pathname === "string" ? pathname : "";
+    const segments = pathnameBreadcrumbs.split("/").filter(Boolean);
+    const selectedSegments = segments.slice(-1);
+
+const items = [
+  { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
+  { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
+  { label: cutLabel, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlug}` },
+  { label: processLabelLocalized, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlug}` },
+  { label: colorLabelLocalized, href: `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlug}/${colorSlug}` },
+];
 
 
   return (
@@ -429,15 +477,15 @@ function buildOtherProcessItems() {
   span=""
 />
 
-  {/* Breadcrumbs (opsiyonel ama önerilir) */}
-  <BreadcrumbsExact
-  prefix={`/${locale}`}
-  baseHref={`/${locale}/${baseFor(locale)}`}
-  crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
-  crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
-  selectedSegments={(typeof window !== "undefined" ? window.location.pathname : "").split("/").filter(Boolean).slice(-1)}
-  className="mt-4"
-/>
+     <BreadcrumbsExact
+              prefix={prefix}
+              baseHref={baseHref}
+              crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+              crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+              selectedSegments={selectedSegments}
+              className="mt-6"
+               items={items}
+            />
 
 
   {/* Carousel + Sağ panel */}
