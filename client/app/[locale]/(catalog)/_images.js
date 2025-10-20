@@ -108,6 +108,16 @@ import slabIvoryCrosscutBrushedFilled from "@/public/images/new/slab/ivory/Ivory
 import slabIvoryCrosscutBrushedUnfilled from "@/public/images/new/slab/ivory/Ivorybrushedunfilledcrosscut.webp"
 import slabIvoryVeincutBrushedFilled from "@/public/images/new/slab/ivory/Ivoryveinbrushedfilled.webp"
 import slabIvoryVeincutBrushedUnfilled from "@/public/images/new/slab/ivory/Ivoryveinbrushedunfilled.webp"
+
+import blockAntico1 from "@/public/images/new/block/antiko1.webp"
+import blockAntico2 from "@/public/images/new/block/antiko2.webp"
+import blockAntico3 from "@/public/images/new/block/antiko3.webp"
+import blockvariantIvory1 from "@/public/images/new/block/ivory1.webp"
+import blockvariantIvory2 from "@/public/images/new/block/ivory2.webp"
+import blockvariantIvory3 from "@/public/images/new/block/ivory3.webp"
+import blockvariantLight1 from "@/public/images/new/block/light1.webp"
+import blockvariantLight2 from "@/public/images/new/block/light2.webp"
+import blockvariantLight3 from "@/public/images/new/block/light3.webp"
 /**
  * Ürün başına görsel haritası:
  * - Tek görsel istersen "cover" yeter.
@@ -116,9 +126,9 @@ import slabIvoryVeincutBrushedUnfilled from "@/public/images/new/slab/ivory/Ivor
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
-    ivory:  [blockIvory,blockIvory,blockIvory],
-    light:  [blockLight,blockLight,blockLight,blockLight],
-    antico: [blockAntik,blockAntik,blockAntik,blockAntik]
+    ivory:  [blockIvory,blockvariantIvory1,blockvariantIvory2,blockvariantIvory3],
+    light:  [blockLight,blockvariantLight1,blockvariantLight2,blockvariantLight3],
+    antico: [blockAntik,blockAntico1,blockAntico2,blockAntico3]
   }
 };
 
