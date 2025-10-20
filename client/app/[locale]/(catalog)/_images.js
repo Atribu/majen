@@ -362,60 +362,60 @@ export const IMAGE_BY_PRODUCT = {
     colorThumbs: {
       "vein-cut": {
         "filled:honed": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  slabLightVeincutHonedFilled,
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+           ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:honed": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+            ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         natural: {
-        ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+          ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
        "filled:tumbled": {
-           ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+             ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:tumbled": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+            ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "filled:brushed": {
-           ivory:  slabIvoryVeincutBrushedFilled,
-          light:  slabLightVeincutBrushedFilled,
-          antico: slabAnticoVeincutBrushedFilled
+           ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:brushed": {
-         ivory:  slabIvoryVeincutBrushedUnfilled,
-          light:  slabLightVeincutBrushedUnfilled,
-          antico: slabAnticoVeincutBrushedUnfilled
+    ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
            "filled:polished": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+             ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:polished": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+         ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
 
          "filled:natural": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+          ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:natural": {
-           ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+             ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
       },
 

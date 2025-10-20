@@ -28,6 +28,7 @@ function normalizeColorSlugForLocale(locale, raw) {
   const key = COLOR_KEY_FROM_ANY.get(String(raw||'').toLowerCase());
   if (!key) return null;
   return (locale === 'tr' ? COLOR_SLUG_BY_LOCALE.tr : COLOR_SLUG_BY_LOCALE.en)[key] || null;
+
 }
 
 const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
@@ -61,6 +62,39 @@ function localizedProductFromCut(locale, cutSlug) {
     if (/-travertine-special$/i.test(cutSlug)) return 'special';
   }
   return 'slabs'; // default
+}
+
+  const TILE_SIZE_CANON = new Map([
+  ['8x8', '8x8'],
+  ['12x12', '12x12'],
+  ['12x24', '12x24'],
+  ['16x16', '16x16'],
+  ['18x18', '18x18'],
+  ['24x24', '24x24'],
+  ['24x48', '24x48'],
+  ['48x110', '48x110'],
+  ['versailles-set', 'versailles-set'],
+  ['versailles', 'versailles-set'],
+]);
+
+function normalizeTileSizeSlug(raw) {
+  if (!raw) return null;
+  let s = String(raw).trim().toLowerCase();
+
+  // “12"×24"”, '12in x 24in', '12 x 24', '12×24' gibi yazımları yakala
+  s = s
+    .replace(/["“”]/g, "")         // inç işaretlerini kaldır
+    .replace(/[×x]/g, "x")         // × → x
+    .replace(/\s+/g, "");          // boşlukları kaldır
+
+  // bilinen kalıpları doğrudan eşle
+  if (TILE_SIZE_CANON.has(s)) return TILE_SIZE_CANON.get(s);
+
+  // 12x24 gibi NxM kalıplarını doğrula (N ve M tamsayı)
+  const m = s.match(/^(\d{1,3})x(\d{1,3})$/);
+  if (m) return `${m[1]}x${m[2]}`;
+
+  return null;
 }
 
 export default function middleware(req) {
@@ -160,36 +194,54 @@ export default function middleware(req) {
   }
 }
 
-  // 3) COLOR-FIRST kısa URL
-  if (parts.length >= 2) {
-    const seg2 = parts[1];
-    const tokens = seg2.split('-');
-    if (tokens.length >= 6) {
-      const maybeLast5 = tokens.slice(-5).join('-');
-      const last4      = tokens.slice(-4).join('-');
-      const cutCandidate =
-        locale === 'tr' && /-traverten-ozel-tasarim$/i.test(maybeLast5) ? maybeLast5 : last4;
+  // 3) COLOR-FIRST / SIZE-FIRST kısa URL
+if (parts.length >= 2) {
+  const seg2 = parts[1];
+  const tokens = seg2.split('-');
 
-      const isCutEN = CUT_EN.test(cutCandidate);
-      const isCutTR = CUT_TR.test(cutCandidate);
-      if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
-        const rawColor    = tokens[0];
-        const processSlug = tokens.slice(1, tokens.length - cutCandidate.split('-').length).join('-');
-        const colorSlug   = normalizeColorSlugForLocale(locale, rawColor);
-        const procOk      = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
-        if (colorSlug && procOk) {
-          const productSeg = localizedProductFromCut(locale, cutCandidate);
-          if (parts.length === 3) {
-            const thickness = parts[2];
-            url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutCandidate}/${processSlug}/${colorSlug}/${thickness}`;
-          } else {
-            url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutCandidate}/${processSlug}/${colorSlug}`;
-          }
-          return NextResponse.rewrite(url);
+  if (tokens.length >= 6) {
+    const maybeLast5 = tokens.slice(-5).join('-');
+    const last4      = tokens.slice(-4).join('-');
+    const cutCandidate =
+      (locale === 'tr' && /-traverten-ozel-tasarim$/i.test(maybeLast5)) ? maybeLast5 : last4;
+
+    const isCutEN = CUT_EN.test(cutCandidate);
+    const isCutTR = CUT_TR.test(cutCandidate);
+
+    if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
+      const firstToken  = tokens[0];
+      const processSlug = tokens.slice(1, tokens.length - cutCandidate.split('-').length).join('-');
+
+      // ürün tipi (iç rota için İngilizce key)
+      const productSeg = localizedProductFromCut(locale, cutCandidate); // 'slabs' | 'tiles' | ...
+
+      // process doğrulaması (mevcut)
+      const procOk = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
+
+      // ① önce renk normalizasyonunu dene (slabs vb. için)
+      const colorSlug = normalizeColorSlugForLocale(locale, firstToken);
+
+      // ② tiles ise ve renk bulunamadıysa, size normalizasyonu dene
+      const sizeSlug = (!colorSlug && productSeg === 'tiles')
+        ? normalizeTileSizeSlug(firstToken)
+        : null;
+
+      if (procOk && (colorSlug || sizeSlug)) {
+        const leaf = colorSlug || sizeSlug; // tiles→size, diğerleri→color
+
+        if (parts.length === 3) {
+          // opsiyonel kalınlık segmenti varsa
+          const thickness = parts[2];
+          url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutCandidate}/${processSlug}/${leaf}/${thickness}`;
+        } else {
+          url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutCandidate}/${processSlug}/${leaf}`;
         }
+        return NextResponse.rewrite(url);
       }
     }
   }
+}
+
 
   // 4) BLOCKS: COLOR-ONLY kısa URL’ler  ✅ (fonksiyonun İÇİNDE!)
   if (parts.length === 2) {

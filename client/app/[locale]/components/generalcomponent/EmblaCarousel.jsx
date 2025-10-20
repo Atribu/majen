@@ -105,7 +105,7 @@ export default function EmblaCarousel({
                 onClick={() => scrollTo(i)}
                 aria-label={`Go to image ${i + 1}`}
                 className={`relative h-20 w-28 flex-[0_0_auto] overflow-hidden rounded-lg ring-2 transition
-                  ${isActive ? "ring-black" : "ring-transparent hover:ring-neutral-300"}`}
+                  ${isActive ? "ring-teal-700" : "ring-transparent hover:ring-neutral-300"}`}
                 title={`${altPrefix} ${i + 1}`}
               >
                 <Image

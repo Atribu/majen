@@ -1,3 +1,4 @@
+// app/[locale]/travertine/[product]/[cut]/[process]/page.js
 "use client";
 //resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve variant kısmının resimleri colorThumbs dan (_images)
 import { useParams, usePathname } from "next/navigation";
@@ -29,7 +30,7 @@ import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks"
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
-import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
+import { PRODUCT_LABEL, CUT_LABEL, TILE_SIZE_SLUGS, tileSizeLabelForLocale } from "@/lib/labels";
 import { Link } from "@/i18n/navigation";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
@@ -100,6 +101,8 @@ function friendlyProcessLabel(procKey, locale) {
 const safe = (fn, fallback) => {
   try { const v = fn(); return v ?? fallback; } catch { return fallback; }
 };
+
+const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
 
 // TR birleşik → EN birleşik ("dolgulu-cilali" → "filled-polished")
 function trCombinedToEn(procKey = "") {
@@ -262,28 +265,31 @@ const cards = [
 
 const colorImgMap = Object.fromEntries(
   cKeys.map((key) => {
-    // slug (route) ve key (en.json anahtarı) aynı aile ama ayrışık olabilir; slug görseli için de lazım
     const slug = colorSlugFor(locale, key);
 
-    // ✅ 1. öncelik: _images → product → colorThumbs → cut → combinedKey → colorKey
+    // 1) _images → colorThumbs (artık dizi olabilir)
     const fromColorByProcess =
       IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[key];
 
-    // ✅ 2. öncelik: ürün-variant (renk) görselleri (genel)
+    // 2) ürün-variant (tekil ya da bazen dizi olabilir)
     const fromVariant =
-      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ||
-      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[key]; // bazı projelerde slug==key olmayabiliyor
+      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ??
+      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[key];
 
-    // ✅ 3. öncelik: process thumb (global)
-    const fromProcessThumb =
-      PROCESS_THUMB_BY_COMBINED?.[combinedKey];
+    // 3) global process thumb (tekil)
+    const fromProcessThumb = PROCESS_THUMB_BY_COMBINED?.[combinedKey];
 
-    // ✅ 4. fallback: sayfanın hero görseli
-    const src = fromColorByProcess || fromVariant || fromProcessThumb || heroSrc;
+    // ✅ dizi ise ilkini al, değilse doğrudan kullan
+    const src =
+      pickFirst(fromColorByProcess) ||
+      pickFirst(fromVariant) ||
+      pickFirst(fromProcessThumb) ||
+      heroSrc;
 
     return [slug, src];
   })
 );
+
 
 const colorCards = cKeys.map((key) => {
   const label = colorLabelFor(locale, key);
@@ -579,6 +585,39 @@ const otherProcessCards = otherProcKeysEN.map((enCombo) => {
   };
 });
 
+const isTiles = productKey === "tiles";
+
+// === TILES: renk yerine ölçü kartları ===
+const sizeCards = isTiles
+  ? TILE_SIZE_SLUGS.map((sizeSlug) => {
+      const title = tileSizeLabelForLocale(locale, sizeSlug);
+
+      // Kart linki → /travertine/[product]/[cut]/[process]/[color]
+      // Tiles'ta [color] = sizeSlug olacak
+      const href = {
+        pathname: "/travertine/[product]/[cut]/[process]/[color]",
+        params: {
+          product: productSlug,   // "tiles"
+          cut: cutSlug,           // örn. "vein-cut-travertine-tiles"
+          process: process,       // URL’deki process segmenti
+          color: sizeSlug,        // 👈 tiles'ta son segment ölçü
+        },
+      };
+
+      // Görsel: ilgili process thumb ya da hero
+      const img = processThumbFor(lookupProcKey) || heroSrc;
+
+      return {
+        slug: sizeSlug,
+        vKey: sizeSlug,
+        title,
+        href,
+        img,
+      };
+    })
+  : [];
+
+
 
   return (
     <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
@@ -631,13 +670,21 @@ const otherProcessCards = otherProcKeysEN.map((enCombo) => {
 
       {/* COLOR SEÇİMİ */}
       <VariantCircleSection
-        heading={`${processTitle} ${locale.startsWith("tr") ? "Renkleri" : "Colors"}`}
-        variantCards={colorCards}
-        imgMap={colorImgMap} 
-        heroSrc={heroSrc}
-        IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
-        productKey="color"
-      />
+  heading={
+    isTiles
+      ? (locale.startsWith("tr") ? "Mevcut Ölçüler" : "Available Sizes")
+      : `${processTitle} ${locale.startsWith("tr") ? "Renkleri" : "Colors"}`
+  }
+  variantCards={isTiles ? sizeCards : colorCards}
+  // Tiles’ta özel bir imgMap’e ihtiyaç yok; hero yeterli
+  imgMap={isTiles ? { cover: heroSrc } : colorImgMap}
+  heroSrc={heroSrc}
+  IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
+  // VariantCircleSection productKey’i yalnızca iç görsel fallback için kullanıyor;
+  // burada önemli değil ama ayırt etmek adına farklı veriyoruz:
+  productKey={isTiles ? "tiles-sizes" : "color"}
+/>
+
 
       {/* Metin / CTA */}
 {textSections.length > 0 && textSections.map(({ id, title, paragraphs }) => (

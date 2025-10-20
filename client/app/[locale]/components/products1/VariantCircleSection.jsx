@@ -66,24 +66,27 @@ export default function VariantCircleSection({
   const colSm = variantCards.length <= 1 ? "sm:grid-cols-1" : "sm:grid-cols-2";
   const colLg =
     variantCards.length <= 2
-      ? "lg:grid-cols-2"
+      ? "lg:grid-cols-2 grid"
       : variantCards.length === 3
-      ? "lg:grid-cols-3"
+      ? "lg:grid-cols-3 grid"
       : variantCards.length === 4
-      ? "lg:grid-cols-4"
-      : "lg:grid-cols-5";
+      ? "lg:grid-cols-4 grid"
+        : variantCards.length === 9
+      ? "flex flex-wrap justify-center gap-8"
+      : "flex flex-wrap justify-center gap-8";
+      
 
   return (
-    <section className="flex mt-14 w-screen text-center items-center justify-center">
+    <section className="flex mt-14 w-full text-center items-center justify-center">
       <div className="flex flex-col max-w-[1200px] items-center justify-center text-center">
         {heading && (
           <h3 className="text-[20px] lg:text-[22px] font-semibold">{heading}</h3>
         )}
         {text && (
-          <p className="text-[12px] lg:text-[14px] mt-2 w-[90%]">{text}</p>
+          <p className="text-[12px] lg:text-[14px] mt-2 w-[90%] items-center">{text}</p>
         )}
 
-        <div className={`mt-6 grid gap-8 ${colBase} ${colSm} ${colLg}`}>
+        <div className={`mt-6  gap-8 ${colBase} ${colSm} ${colLg}`}>
           {variantCards.map(({ slug, vKey, title, href, img, youtubeUrl, description }) => {
             // Görsel seçim sırası:
             // 1) Karttan gelen img

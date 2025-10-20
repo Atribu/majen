@@ -9,6 +9,37 @@ export const CUT_LABEL = {
   tr: { "vein-cut": "damar kesim", "cross-cut": "enine kesim" },
 };
 
+// ✅ TILE size slug listesi (route’ta kullanılacak)
+export const TILE_SIZE_SLUGS = [
+  "8x8","12x12","12x24","16x16","18x18","24x24","24x48","48x110","versailles-set"
+];
+
+// ✅ TILE size etiketleri (UI’de gösterilecek)
+export const TILE_SIZE_LABEL = {
+  en: {
+    "8x8": `8"×8"`,
+    "12x12": `12"×12"`,
+    "12x24": `12"×24"`,
+    "16x16": `16"×16"`,
+    "18x18": `18"×18"`,
+    "24x24": `24"×24"`,
+    "24x48": `24"×48"`,
+    "48x110": `48"×110"`,
+    "versailles-set": "Versailles Set",
+  },
+  tr: {
+    "8x8": `8"×8"`,
+    "12x12": `12"×12"`,
+    "12x24": `12"×24"`,
+    "16x16": `16"×16"`,
+    "18x18": `18"×18"`,
+    "24x24": `24"×24"`,
+    "24x48": `24"×48"`,
+    "48x110": `48"×110"`,
+    "versailles-set": "Versailles Set",
+  },
+};
+
 /**
  * NEW: Color labels for last-level pages (Ivory / Antico / Light)
  * Slug keys lowercase sabit: ivory, antico, light
@@ -51,4 +82,11 @@ export function procSlugForLocale(locale, proc) {
   const fillTr = fillEn === "filled" ? "dolgulu" : "dolgusuz";
   const procTr = { honed:"honlanmis", polished:"cilali", brushed:"fircalanmis", tumbled:"eskitilmis" }[procEn] || procEn;
   return `${fillTr}-${procTr}`;
+}
+
+
+// yardımcı: locale’e göre ölçü etiketi
+export function tileSizeLabelForLocale(locale, slug) {
+  const lang = locale?.startsWith("tr") ? "tr" : "en";
+  return TILE_SIZE_LABEL[lang]?.[slug] || slug;
 }
