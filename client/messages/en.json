@@ -2685,7 +2685,7 @@
           },
           "unfilled": {
             "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "text": "Unfilled options suitable for polished looks and dense surfaces..",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
@@ -5983,7 +5983,7 @@
           },
           "unfilled": {
             "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "text": "Unfilled options suitable for polished looks and dense surfaces.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
@@ -9658,56 +9658,68 @@
 
     "vein-cut": {
       "seo": {
-            "title": "Vein Cut ... | Majen",
-            "description": "Discover ...",
+            "title": "Vein Cut Travertine Tiles | Natural Stone Supplier – Majen",
+            "description": "Discover Majen’s vein cut travertine tiles – premium linear-pattern slabs for walls, floors, and facades. Sustainably sourced, precisely cut, and globally exported with unmatched quality.",
             "image": "/images/og/vein-custom.webp"
           },
        "title": "Vein Cut Travertine Tiles ",
           "alt": "Vein-cut travertine tiles",
           "span": "",
-          "intro": "Vein-cut tiles reveal linear banding for strong directionality in design.",
-          "title2": "Why Choose Vein-Cut?",
-          "intro2": "Parallel bands create visual continuity across large surfaces.",
+          "intro": "Vein Cut Travertine Tiles by Majen showcase the timeless beauty of natural stone with continuous, elegant linear veins. Each slab is cut parallel to the bedding layers, creating a refined, directional pattern ideal for walls, floors, and facades. Preferred by architects and designers worldwide, Majen’s vein-cut travertine delivers unmatched visual harmony, durability, and sophistication for both modern and classical spaces.",
+          "title2": "What Is Vein Cut Travertine?",
+          "intro2": "Vein Cut Travertine is produced by slicing the stone in parallel with its natural bedding layers. This reveals continuous linear veins that emphasize structure, rhythm, and movement. The result is a refined stone that enhances architectural balance and visual depth. It’s an excellent choice for luxury interiors, high-end facades, and commercial spaces seeking a modern yet organic appearance.",
           "hero": {
             "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein Cut Travertine Tiles"
           },
       "desc": "Large-size blocks selected at the quarry with consistent character.",
           "TextSection": {
-            "header1": "Vein-Cut — Visual Character",
-            "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
-            "header2": "Best Use-Cases",
-            "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
+            "header1": "Applications and Use-Cases",
+            "text1": "Vein Cut Travertine Tiles are ideal for wall cladding, flooring, countertops, lobbies, and facades. Their directional flow enhances architectural symmetry and continuity. Designers value these slabs for creating expansive, harmonious spaces with natural elegance. Whether used in hotels, villas, or commercial projects, vein-cut travertine offers timeless appeal with the resilience required for both interior and exterior environments.",
+            "header2": "Color Options and Natural Variations",
+            "text2": "Majen’s vein-cut travertine tiles are available in a beautiful palette ranging from light beige and ivory to silver and gold tones. Each slab showcases unique vein patterns formed naturally over thousands of years, ensuring no two pieces are identical. These organic variations create a bespoke aesthetic appeal, allowing designers to achieve both consistent and dynamic looks depending on project requirements.",
+            "header3":"Maintenance & Longevity of Travertine Tiles",
+            "text3":"Proper maintenance ensures that vein-cut travertine remains as elegant as the day it was installed. Regular cleaning with a neutral pH cleaner and periodic resealing preserve its natural sheen and prevent staining. With proper care, Majen’s travertine tiles maintain their color integrity and surface strength for decades, making them a long-term investment for luxury architectural and interior applications.",
+            "header4":"Why Choose Majen as Your Global Supplier?",
+            "text4":"Majen operates as a direct quarry supplier in Turkey, ensuring consistent quality, transparency, and export reliability. Every block is selected for vein clarity and color uniformity, calibrated for precise fabrication. With efficient FOB and CIF export services, reinforced packaging, and responsive customer care, Majen stands as a trusted partner for architects, distributors, and contractors worldwide."
           },
           "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
             "aboutpage_s4_faq_span1": "Vein-Cut",
-            "aboutpage_s4_faq1_header": "Why choose vein-cut tiles?",
-            "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
-            "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
-            "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
+            "aboutpage_s4_faq1_header": "What makes vein-cut travertine different from cross-cut?",
+            "aboutpage_s4_faq1_text": "Vein-cut travertine highlights linear, parallel veins, while cross-cut shows cloudy, irregular patterns. The vein-cut process emphasizes movement and flow, ideal for modern, symmetrical designs.",
+            "aboutpage_s4_faq2_header": "Can vein-cut travertine be used outdoors?",
+            "aboutpage_s4_faq2_text": "Yes, with proper sealing. Majen’s brushed or tumbled finishes offer excellent slip resistance and weather durability, making them suitable for outdoor facades, patios, and pool areas.",
+            "aboutpage_s4_faq3_header":"What are the available thickness options?",
+            "aboutpage_s4_faq3_text":"Standard slab thicknesses are 2 cm, 3 cm, and 5 cm. Custom thicknesses are available upon request for specific architectural or fabrication requirements.",
+            "aboutpage_s4_faq4_header":"How do you maintain vein-cut travertine surfaces?",
+            "aboutpage_s4_faq4_text":"Use a neutral pH cleaner and reseal periodically. Avoid acidic or abrasive products to preserve the stone’s natural luster and structure.",
+            "aboutpage_s4_faq5_header":"Does Majen ship internationally?",
+            "aboutpage_s4_faq5_text":"Absolutely. Majen exports globally with FOB and CIF terms, ensuring reliable delivery through reinforced packaging and full export documentation.",
+            "aboutpage_s4_faq6_header":"What is the best finish for high-traffic areas?",
+            "aboutpage_s4_faq6_text":"Brushed or honed finishes are ideal for high-traffic areas, providing natural slip resistance while maintaining an elegant matte appearance."
           },
 
               "variants":{
-            "title":"Filled and Unfilled Surface Options",
-            "text":"Majen’s Vein Cut Travertine Tiles are available in filled and unfilled varieties to match different design needs. Filled tiles are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled tiles preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
+            "title":"Surface Finishes and Design Options",
+            "text":"Majen’s vein-cut travertine is available in a wide range of surface finishes: honed, polished, brushed, tumbled, and natural. Each finish transforms the texture and feel of the stone to suit different design goals — from sleek, contemporary looks to rustic, aged aesthetics. Our slabs are produced with advanced calibration standards to ensure smooth surfaces, precise thickness, and consistent color tones for global projects."
           },
 
             "detailsHeadings": {
-      "title1":"Why Our Vein-Cut Travertine?",
-      "title2": "Applications of Vein-Cut Tiles",
-      "title3": "Slab Sizes & Thickness",
-      "title4": "Finishes & Packaging",
+      "title1":"Precise Cutting & Calibration",
+      "title2": "Sustainable Quarry Practices",
+      "title3": "Custom Finishing Options",
+      "title4": "Export Reliability Worldwide",
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
     },
 
             "description": [
-        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Tiles deliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
-        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
-        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
-        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options. Tiles are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+        " Each travertine block is expertly cut using advanced machinery to ensure consistent thickness and precision. Majen’s tight calibration guarantees seamless installations with minimal material loss and superior structural integrity for every project.",
+        "Majen follows eco-conscious quarrying methods to minimize environmental impact. Responsible extraction, water recycling, and efficient logistics ensure sustainable stone production that aligns with international green building standards.",
+        " Choose from multiple surface treatments—honed, polished, brushed, tumbled, or natural—to achieve your desired look. Each option enhances the stone’s natural depth, adapting perfectly to both contemporary and classic design settings.",
+        "Majen’s logistics and packaging meet international export standards. Reinforced wooden crates, moisture protection, and accurate documentation (FOB/CIF) ensure your travertine tiles arrive safely, ready for global-scale projects."
       ],
 
            "image": "/images/tiles/antikokesim.webp",
@@ -9738,7 +9750,7 @@
           },
           "unfilled": {
             "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "text": "Unfilled options suitable for polished looks and dense surfaces.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
@@ -11174,46 +11186,58 @@
 
     "cross-cut": {
       "seo": {
-            "title": "Vein Cut ... | Majen",
-            "description": "Discover ...",
+            "title": "Cross Cut Travertine Tiles | Natural Stone Supplier – Majen",
+            "description": "Explore Majen’s cross cut travertine tiles – premium cloudy-pattern slabs for walls, floors, and interiors. Sustainably sourced, precisely cut, and globally exported with outstanding quality.",
             "image": "/images/og/vein-custom.webp"
           },
-      "title": "Cross Cut Travertine tiles",
+      "title": "Cross Cut Travertine Tiles",
           "alt": "Cross-cut travertine tiles",
           "span": "Direct Quarry Supplier",
-          "intro": "Cross-cut tiles present a cloudy, more homogeneous texture with softer movement.",
-          "title2": "Why Choose Cross-Cut?",
-          "intro2": "Soft, non-directional texture for calm, uniform fields.",
+          "intro": "Cross Cut Travertine Tiles by Majen reveal the natural beauty of travertine through a cloudy, soft pattern that highlights the stone’s internal texture. Each slab is sliced perpendicular to the bedding layers, resulting in a unique, cloud-like appearance that brings warmth and calmness to any architectural space. Ideal for modern homes, hotels, and commercial interiors, Majen’s cross-cut travertine offers timeless style, durability, and global appeal.",
+          "title2": "What Is Cross Cut Travertine?",
+          "intro2": "Cross cut travertine is formed when the stone is sliced across its bedding plane, exposing circular and irregular patterns instead of linear veins. This natural formation creates a smooth, cloud-like design that enhances light and adds visual softness to interior and exterior spaces. Cross cut travertine is ideal for those seeking a neutral, organic aesthetic that complements both contemporary and traditional designs.",
           "hero": {
             "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
       "desc": "Large-size blocks selected at the quarry with consistent character.",
        "TextSection": {
-            "header1": "Vein-Cut — Visual Character",
-            "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
-            "header2": "Best Use-Cases",
-            "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
+            "header1": "Applications and Use-Cases",
+            "text1": "Cross cut travertine tiles are a favorite for flooring, wall cladding, countertops, and bathroom interiors. Their soft pattern harmonizes with various design palettes and enhances spatial depth. This stone’s neutral tones make it suitable for both residential and commercial environments, offering natural beauty that endures. When used in large areas, the pattern continuity creates a luxurious yet balanced aesthetic.",
+            "header2": "Color Options and Natural Variations",
+            "text2": "Majen’s cross cut travertine comes in a spectrum of beige, ivory, cream, and walnut tones. Each slab features organic, cloud-like movement and color transitions that create an inviting, natural warmth. These tonal variations ensure every project has its own identity, from minimalist modern designs to rustic architectural concepts — always retaining the timeless elegance of natural travertine.",
+            "header3":"Maintenance & Durability",
+            "text3":"Cross cut travertine requires minimal maintenance when properly sealed. Routine cleaning with a neutral pH solution keeps the surface looking pristine. Its dense structure makes it resistant to wear, moisture, and temperature changes. With proper sealing and care, Majen’s travertine tiles maintain their smooth surface and natural beauty for decades, even in high-traffic or humid environments.",
+            "header4":"Why Choose Majen as Your Global Supplier?",
+            "text4":"Majen is a trusted Turkish natural stone producer specializing in travertine quarrying and export. By managing every stage from quarry to shipment, Majen ensures top quality, consistent color matching, and reliable supply for international projects. Offering FOB and CIF shipping, secure packaging, and responsive service, Majen stands as a dependable partner for architects, builders, and distributors worldwide."
           },
           "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
             "aboutpage_s4_faq_span1": "Vein-Cut",
-            "aboutpage_s4_faq1_header": "Why choose vein-cut tiles?",
-            "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
-            "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
-            "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
+            "aboutpage_s4_faq1_header": "What distinguishes cross cut from vein cut travertine?",
+            "aboutpage_s4_faq1_text": "Cross cut travertine reveals soft, cloudy textures formed perpendicular to the veins, while vein cut shows linear patterns. Cross cut is ideal for a more subtle, balanced look.",
+            "aboutpage_s4_faq2_header": "Is cross cut travertine suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. With proper sealing, it performs well in outdoor settings like terraces, pathways, and façades. The tumbled or brushed finish provides excellent slip resistance.",
+             "aboutpage_s4_faq3_header": "What thicknesses are available?",
+            "aboutpage_s4_faq3_text": "Standard sizes include 2 cm and 3 cm slabs, with custom dimensions available upon request. Majen offers bespoke production for architectural projects.",
+            "aboutpage_s4_faq4_header":"How should I clean cross cut travertine?",
+            "aboutpage_s4_faq4_text":"Clean using a soft cloth and pH-neutral stone cleaner. Avoid harsh chemicals or acidic solutions to preserve the stone’s natural structure and finish.",
+            "aboutpage_s4_faq5_header":"Does Majen offer wholesale and export options?",
+            "aboutpage_s4_faq5_text":"Yes, Majen exports globally with FOB and CIF terms, providing fast shipment, safe packaging, and full export documentation.",
+            "aboutpage_s4_faq6_header":"Which finish is best for high-moisture areas?",
+            "aboutpage_s4_faq6_text":"Honed and filled finishes are recommended for bathrooms and kitchens, offering a smooth, sealed surface that resists water absorption and staining."
           },
 
                "variants":{
-            "title":"Filled and Unfilled Surface Options",
-            "text":"Majen’s Vein Cut Travertine tiles are available in filled and unfilled varieties to match different design needs. Filled tiles are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled tiles preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
+            "title":"Surface Finishes and Design Possibilities",
+            "text":"Majen’s cross cut travertine tiles are available in multiple finishes: honed, polished, brushed, tumbled, and filled. Each treatment gives a distinct texture and reflectivity, allowing architects to achieve different visual effects. Polished finishes bring out subtle tonal variations, while honed or brushed surfaces provide a natural, matte feel. Every slab undergoes precision calibration for consistent thickness and smooth installation."
           },
 
             "detailsHeadings": {
-      "title1":"Why Our Vein-Cut Travertine?",
-      "title2": "Applications of Vein-Cut tiles",
-      "title3": "Slab Sizes & Thickness",
-      "title4": "Finishes & Packaging",
+      "title1":"Natural Beauty & Texture",
+      "title2": "Precision Fabrication",
+      "title3": "Eco-Responsible Quarrying",
+      "title4": "Reliable Global Export Service",
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
@@ -11221,10 +11245,10 @@
 
 
             "description": [
-        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine tiles deliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
-        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
-        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
-        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options. Tiles are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+        " Majen’s cross cut travertine features organic clouds and subtle tonal shifts that bring depth and sophistication to interiors. The natural patterning provides a warm and timeless character suitable for both modern and classical designs.",
+        "Advanced cutting and calibration technology ensure uniform thickness, precise edges, and easy installation. Every tile is inspected for surface quality and tone harmony, guaranteeing high performance and consistent appearance in every project.",
+        "Majen operates with sustainable quarry practices—water recycling, efficient energy use, and responsible extraction. Our approach minimizes environmental impact while ensuring long-term resource preservation and global compliance standards.",
+        "Each order is securely packed in reinforced crates and moisture-protected for long-distance transport. Majen’s export team manages full documentation, customs, and logistics to deliver your travertine tiles safely to any destination."
       ],
 
           "image": "/images/tiles/kesim.webp",
@@ -11254,7 +11278,7 @@
           },
           "unfilled": {
             "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "text": "Unfilled options suitable for polished looks and dense surfaces.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
@@ -12408,7 +12432,7 @@
           },
           "unfilled": {
             "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "text": "Unfilled options suitable for polished looks and dense surfaces.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },

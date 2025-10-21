@@ -118,11 +118,31 @@ import blockvariantIvory3 from "@/public/images/new/block/ivory3.webp"
 import blockvariantLight1 from "@/public/images/new/block/light1.webp"
 import blockvariantLight2 from "@/public/images/new/block/light2.webp"
 import blockvariantLight3 from "@/public/images/new/block/light3.webp"
-/**
- * Ürün başına görsel haritası:
- * - Tek görsel istersen "cover" yeter.
- * - Varyant bazlı kart/hero için { cover, ivory, light, antiko } yapısı.
- */
+
+import galleryLightVeincutUnfilledPolished1 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledPolished.webp"
+import galleryLightVeincutUnfilledPolished2 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledPolished2.webp"
+import galleryLightVeincutUnfilledPolished3 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledPolished3.webp"
+
+import galleryLightVeincutFilledPolished1 from "@/public/images/new/slab/light/gallery/lightVeincutFilledPolished.webp"
+import galleryLightVeincutFilledPolished2 from "@/public/images/new/slab/light/gallery/lightVeincutFilledPolished2.webp"
+import galleryLightVeincutFilledPolished3 from "@/public/images/new/slab/light/gallery/lightVeincutFilledPolished3.webp"
+
+import galleryLightCrosscutFilledPolished1 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledPolished.webp"
+import galleryLightCrosscutFilledPolished2 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledPolished2.webp"
+import galleryLightCrosscutFilledPolished3 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledPolished3.webp"
+
+import galleryLightCrosscutUnfilledPolished1 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledPolished.webp"
+import galleryLightCrosscutUnfilledPolished2 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledPolished2.webp"
+import galleryLightCrosscutUnfilledPolished3 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledPolished3.webp"
+
+import galleryIvoryFilledPolished1 from "@/public/images/new/slab/ivory/gallery/filledPolishedIvory.webp"
+import galleryIvoryFilledPolished2 from "@/public/images/new/slab/ivory/gallery/filledPolishedIvory2.webp"
+import galleryIvoryFilledPolished3 from "@/public/images/new/slab/ivory/gallery/filledPolishedIvory3.webp"
+
+import galleryIvoryUnfilledPolished1 from "@/public/images/new/slab/ivory/gallery/unfilledPolishedIvory.webp"
+import galleryIvoryUnfilledPolished2 from "@/public/images/new/slab/ivory/gallery/unfilledPolishedIvory2.webp"
+import galleryIvoryUnfilledPolished3 from "@/public/images/new/slab/ivory/gallery/unfilledPolishedIvory3.webp"
+
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
@@ -408,12 +428,12 @@ export const IMAGE_BY_PRODUCT = {
         },
            "filled:polished": {
              ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
-          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, galleryLightVeincutFilledPolished1, galleryLightVeincutFilledPolished2,galleryLightVeincutFilledPolished3],
           antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
         "unfilled:polished": {
          ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
-          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
+          light:  [slabLightVeincutBrushedFilled, galleryLightVeincutUnfilledPolished1, galleryLightVeincutUnfilledPolished2,galleryLightVeincutUnfilledPolished3],
           antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
         },
 
@@ -467,12 +487,12 @@ export const IMAGE_BY_PRODUCT = {
         },
            "filled:polished": {
          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
+          light:  ["/images/cut/light/Slab/lightveincut.webp", galleryLightCrosscutFilledPolished1,galleryLightCrosscutFilledPolished2,galleryLightCrosscutFilledPolished3],
           antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
         },
         "unfilled:polished": {
           ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
+          light:  ["/images/cut/light/Slab/lightveincut.webp",galleryLightCrosscutUnfilledPolished1,galleryLightCrosscutUnfilledPolished2,galleryLightCrosscutUnfilledPolished3],
           antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
         },
 

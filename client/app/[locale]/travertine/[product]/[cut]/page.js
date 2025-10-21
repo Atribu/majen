@@ -85,7 +85,7 @@ export default function CutPage() {
   const t       = useTranslations("ProductPage");
     const prefix = `/${locale}`;
 
-  const productKey  = productKeyFromSlug(locale, String(productSlug)) || "slabs";
+  const productKey  = productKeyFromSlug(locale, String(productSlug)) ;
   const baseSegment = baseFor(locale);
   const baseHref = `/${locale}/${baseSegment}`; 
 
@@ -117,18 +117,18 @@ export default function CutPage() {
 
   // cut key + kanonik slug
   const cutKey =
-    Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlugSegment) || "vein-cut";
+    Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlugSegment) || "vein-cut" ;
   const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || String(cutSlugSegment);
 
   // ProductIntroSection içerikleri
-  const cutTitle = safe(() => t(`slabs.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
+  const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
   const cutIntro = safe(
-    () => t(`slabs.cuts.${cutKey}.intro`),
-    safe(() => t(`slabs.cuts.${cutKey}.processes.subtext`), "")
+    () => t(`${productKey}.cuts.${cutKey}.intro`),
+    safe(() => t(`${productKey}.cuts.${cutKey}.processes.subtext`), "")
   );
-  const title2   = safe(() => t(`slabs.cuts.${cutKey}.title2`), safe(() => t(`slabs.title2`), null));
-  const intro2   = safe(() => t(`slabs.cuts.${cutKey}.intro2`),  safe(() => t(`slabs.intro2`),  null));
-  const span     = safe(() => t(`slabs.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`),null));
+  const title2   = safe(() => t(`${productKey}.cuts.${cutKey}.title2`), safe(() => t(`slabs.title2`), null));
+  const intro2   = safe(() => t(`${productKey}.cuts.${cutKey}.intro2`),  safe(() => t(`slabs.intro2`),  null));
+  const span     = safe(() => t(`${productKey}.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`),null));
 
    const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
@@ -178,8 +178,8 @@ const optRaw = (key, fallback = null) => {
   const variantText = optRaw(`${productKey}.cuts.${cutKey}.variants.text`, "");
 
   // Hero görsel (ürün+cut → cover → fallback)
-  const heroOverride = safe(() => t.raw(`slabs.cuts.${cutKey}.hero.src`), null);
-  const heroAltOver  = safe(() => t(`slabs.cuts.${cutKey}.hero.alt`), null);
+  const heroOverride = safe(() => t.raw(`${productKey}.cuts.${cutKey}.hero.src`), null);
+  const heroAltOver  = safe(() => t(`${productKey}.cuts.${cutKey}.hero.alt`), null);
   const heroSrc =
     heroOverride ||
     IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] ||
@@ -196,8 +196,8 @@ const optRaw = (key, fallback = null) => {
 
   // i18n’de filled-natural var mı?
  const hasFilledNatural =
-   safe(() => t.has(`slabs.cuts.${cutKey}.processes.filled-natural.title`), false) ||
-   safe(() => t.has(`slabs.cuts.${cutKey}.processes.filled-natural.h1`), false);
+   safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.title`), false) ||
+   safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.h1`), false);
 
  // filled grubunun item’larına natural/dogal’ı gerektiğinde en sona ekle
  if (hasFilledNatural) {
@@ -212,8 +212,8 @@ const optRaw = (key, fallback = null) => {
 
 const makeGroupCards = (groupName) => {
   const items   = groups[groupName]?.items || [];
-  const heading = safe(() => t(`slabs.cuts.${cutKey}.processes.groups.${groupName}.heading`), groupName);
-  const text    = safe(() => t(`slabs.cuts.${cutKey}.processes.groups.${groupName}.text`), "");
+  const heading = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.heading`), groupName);
+  const text    = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.text`), "");
 
   // bu grubun görsel haritasını burada topluyoruz
   const groupImgMap = {};
@@ -221,8 +221,8 @@ const makeGroupCards = (groupName) => {
   const variantCards = items.map((pKey) => {
     const isNatural = (pKey === "natural" || pKey === "dogal");
     const titleKey  = isNatural
-      ? `slabs.cuts.${cutKey}.processes.meta.natural.title`
-      : `slabs.cuts.${cutKey}.processes.meta.${pKey}.title`;
+      ? `${productKey}.cuts.${cutKey}.processes.meta.natural.title`
+      : `${productKey}.cuts.${cutKey}.processes.meta.${pKey}.title`;
     const title = safe(() => t(titleKey), pKey);
 
 // natural artık *gruba göre* slug alıyor (filled → filled-natural / unfilled → unfilled-natural)
@@ -239,7 +239,7 @@ const makeGroupCards = (groupName) => {
 
     // görseli 3 kaynaktan dene: i18n → _images → fallback
     const imagesCombined =
-      safe(() => t.raw(`slabs.cuts.${cutKey}.processes.images.combined`), null);
+      safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.images.combined`), null);
     const imgI18n = imagesCombined?.[combinedKey] ?? null;
     const imgByProduct =
       IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || null;
@@ -282,8 +282,8 @@ const makeGroupCards = (groupName) => {
   const variantImgMapAll = { ...(filledBlock.imgMap || {}), ...(unfilledBlock.imgMap || {}) };
 
   // TextSection: önce CUT altında, yoksa ürün kökü
-  const textSectionCut = safe(() => t.raw(`slabs.cuts.${cutKey}.TextSection`), null);
-  const textSectionTop = safe(() => t.raw(`slabs.TextSection`), {});
+  const textSectionCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.TextSection`), null);
+  const textSectionTop = safe(() => t.raw(`${productKey}.TextSection`), {});
   const textSectionObj = textSectionCut || textSectionTop;
 
   const textSections = [];
