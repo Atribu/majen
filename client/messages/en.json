@@ -10202,6 +10202,160 @@
           },
 
                "sizes": {
+                "8x8": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "12x12": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
                 "12x24": {
                   "h1": "12×24 Filled · Honed Travertine Tiles",
                   "h2": "12×24 Filled · Honed Travertine Tiles ghtehetr",
@@ -10249,14 +10403,468 @@
                     "subtext1": "Use tight joints for a sleek look."
                   }
                 },
-                "24x24": {
-                  "h1": "24×24 Filled · Honed Travertine Tiles",
-                  "lead": "Large square format for seamless visuals."
+                  "16x16": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
                 },
-                "versailles-set": {
-                  "h1": "Versailles Set Filled · Honed",
-                  "lead": "Classic French pattern set."
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
                 }
+              }
+            },
+            "18x18": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "24x24": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "24x48": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "48x110": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            },
+            "versailles": {
+              "desc": "",
+              "metaTitle": "Antico Filled  Tumbled Cross-Cut Slabs",
+              "metaDesc":  "High-gloss luxury look with bright antico tone.",
+              "h1":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title":        "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+              "title2":" Applications and Ideal Use Cases",
+              "lead":      "Mirror-like sheen elevates contemporary interiors.",
+              "intro":     "Antico Unfilled Tumbled Cross Cut Travertine Slabs reflect the true essence of rustic elegance. The unfilled surface preserves open pores for natural breathability, while the tumbled finish adds a warm, antique touch with softened edges and matte texture. Cross cut orientation creates gentle, cloud-like patterns across the stone, blending organic movement with historic character. Majen’s tone-matched, precisely calibrated slabs deliver harmony, durability, and export-quality performance for classic and modern spaces.",
+              "intro2":     "This finish is ideal for projects emphasizing timeless authenticity and tactile comfort. Indoors, it adds warmth and texture to villa floors, staircases, and feature walls. Outdoors, its tumbled surface provides natural slip resistance, perfect for courtyards, pool decks, and terraces. The cross cut geometry creates soft transitions, ideal for large continuous spaces. Antico Tumbled Travertine brings character and soul to Mediterranean, rustic, and restoration-style architecture.",
+              
+             "h3":"Pricing, Thickness Options & Formats",
+              "text3":"Antico Unfilled Tumbled Cross Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Average pricing: USD 25–50 per m² (2 cm) and USD 35–60 per m² (3 cm), depending on tone consistency and order volume. Tumbling enhances stone individuality and surface depth, while unfilled texture maintains authenticity. Majen provides itemized quotations separating material, finishing, and logistics for transparent pricing and efficient global delivery.",
+              "h4":"Technical Features: Unfilled • Tumbled • Cross Cut",
+              "text4":"Unfilled: Pores remain open to maintain tactile texture and natural airflow. Tumbled: Rounded edges and softened surfaces create antique charm with barefoot comfort. Cross Cut: Cutting perpendicular to bedding exposes cloudy, non-directional patterns for balanced visuals. Combined, these features deliver a rich, aged aesthetic with natural strength and timeless appeal.",
+              "h5":"Cross Cut vs Vein Cut • Tumbled vs Honed/Brushed",
+              "text5":"Cross Cut vs Vein Cut: Cross cut offers calm, cloud-like motion; vein cut provides structured, linear patterns. Cross cut is best for relaxed, atmospheric designs. Tumbled vs Honed/Brushed: Tumbled brings soft, worn texture and antique depth; honed is smoother and matte; brushed adds refined tactility. Choose tumbled for rustic charm and authentic natural elegance.",
+
+              "finishes":{
+                "title":"Processing & Quality Control",
+                "list1":"Controlled tumbling for consistent texture and edge rounding.",
+                "list2":"Tone and batch matching for harmonious aesthetics.",
+                "list3":"Dimensional calibration for easy installation precision."
+              },
+
+                "export":{
+                "title":"Export, Packaging & Shipping",
+                "list1":"Packaging: Wooden A-frames or bundled crates with foam separators, edge guards, and moisture barriers.",
+                "list2":"Logistics: FOB/CIF terms, insured international transport, complete export documentation (Invoice, Packing List, COO, HS code).",
+                 "list3":"Traceability: Tone and batch codes maintained through production and export."
+              },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Antico Unfilled Tumbled Cross Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What defines Antico Tumbled Travertine?",
+            "aboutpage_s4_faq1_text": "Its rounded edges, open pores, and aged surface provide timeless rustic charm and warmth.",
+            "aboutpage_s4_faq2_header": "Is it suitable for outdoor use?",
+            "aboutpage_s4_faq2_text": "Yes. The tumbled finish offers natural grip and weather resistance for terraces, paths, and courtyards.",
+            "aboutpage_s4_faq3_header":"How do I maintain it?",
+            "aboutpage_s4_faq3_text":"Clean with mild, pH-neutral cleaners and reseal every 1–2 years to maintain protection and tone.",
+            "aboutpage_s4_faq4_header":"How does cross cut differ from vein cut visually?",
+            "aboutpage_s4_faq4_text":"Cross cut displays cloudy, organic transitions; vein cut emphasizes linear, structured veining.",
+            "aboutpage_s4_faq5_header":"What thickness should I choose?",
+            "aboutpage_s4_faq5_text":"2 cm for interiors and walls; 3 cm for outdoor or high-traffic applications.",
+            "aboutpage_s4_faq6_header":"Do you export worldwide?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports globally with full insurance, documentation, and professional logistics support."
+          },
+
+              "ui": {
+                    "chooseThickness": "Choose Thickness",
+                    "applicationsLabel": "Applications",
+                    "specsLabel": "Specifications",
+                    "faqLabel": "FAQ"
+                  },
+              "sections": {
+                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "specs": {
+                  "h2": "Specifications",
+                  "rows": [
+                     { "prop": "Material",       "value": "Natural Travertine" },
+                     { "prop": "Origin",       "value": "Turkey" },
+                         { "prop": "Thickness Options",          "value": "2 cm, 3 cm (custom on request)" },
+                   { "prop": "Bulk Density",         "value": "~2,620 kg/m³" },
+    { "prop": "Water Absorption",     "value": "≤ 1.6%" },
+    { "prop": "Compressive Strength", "value": "~52–55 MPa" },
+    { "prop": "Cut Direction", "value": "Cross Cut" },
+    { "prop": "Finish Options",       "value": "Unfilled & Tumbled (antique matte)" },
+     { "prop": "Surface Treatment",       "value": "Natural unfilled + mechanical tumbling; optional breathable sealer" }
+                  ]
+                },
+                "faq": {
+                  "h2": "FAQ",
+                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                }
+              }
+            }
               },
           "colors": {
             "ivory":  {

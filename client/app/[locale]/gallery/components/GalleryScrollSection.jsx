@@ -75,45 +75,110 @@ import export9 from "@/public/images/export/FOB.webp"
 import export10 from "@/public/images/export/CIF.webp"
 import export11 from "@/public/images/export/EXW.webp"
 
+// --- SEO helpers -------------------------------------------------------------
+const img = (src, caption = null, alt = "gallery") => ({ src, caption, alt });
+
+function inferColorFromPath(srcPath = "") {
+  const p = String(srcPath).toLowerCase();
+  if (/ivory/.test(p)) return "Ivory";
+  if (/light/.test(p)) return "Light";
+  if (/(antik|antico)/.test(p)) return "Antico";
+  return null;
+}
+
+function inferCutFromPath(srcPath = "") {
+  const p = String(srcPath).toLowerCase();
+  if (/vein/.test(p)) return "Vein Cut";
+  if (/cross/.test(p)) return "Cross Cut";
+  return null;
+}
+
+function makeSeoMeta(srcModule, category /* "blocks" | "slabs" | ... */) {
+  const path = (srcModule && srcModule.src) || String(srcModule || "");
+  const color = inferColorFromPath(path);
+  const cut   = inferCutFromPath(path);
+
+  if (category === "blocks") {
+    const text = `Travertine Blocks${color ? ` — ${color}` : ""}`;
+    return { alt: text, caption: text };
+  }
+  if (category === "slabs") {
+    const text = `Travertine Slabs${color ? ` — ${color}` : ""}${cut ? ` (${cut})` : ""}`;
+    return { alt: text, caption: text };
+  }
+
+  const defaults = {
+    tiles:   "Travertine Tiles",
+    special: "Travertine Special Designs",
+    export:  "Travertine Export & Logistics",
+    general: "Travertine Gallery",
+  };
+  const text = defaults[category] || "Travertine";
+  return { alt: text, caption: text };
+}
+
+function addSeo(list, category) {
+  return (list || []).map((src) => {
+    const { alt, caption } = makeSeoMeta(src, category);
+    return img(src, caption, alt);
+  });
+}
+// ---------------------------------------------------------------------------
+
+
 const GalleryScrollSection = () => {
   const [modalIndex, setModalIndex] = useState(null);
   const t = useTranslations('Gallery');
 
   // Kategorilere göre resimler
 const imageCategories = {
-  [t("general")]: [special3, general11, special4, slabs1,general1,block1, general2,special5, tiles1, slabs2, special6,special18, special12, general3, general4,special8, slabs3, general5,special9, general12, special3, tiles2, general6,general7,special10, block2,general8,general9,special18, tiles3, general13, general10,block3,special2],
-  [t("blocks")]: [block1,block2, block3,,block1,block2, block3,],
-  [t("slabs")]: [slabIvory,slabs1, slabs2, slabLight, slabs3, slabs4, slabs5, slabAntik, slabs6, slabAntikVein, slabIvoryVein],
-  [t("tiles")]: [tiles1, tiles2, tiles3,tiles1, tiles2, tiles3,],
-  [t("special")]: [special1, special2, special3, general11, general12, general13,special4,special5,special6,special7,special8,special9,special10,special11,special12,special13,special14,special15,special16,special17,special18,special19],
-  [t("export")]: [export1, export2, export3, export4, export5,export6,export7,export8,export9,export10,export11],
+  [t("general")]: addSeo(
+    [special3, general11, special4, slabs1, general1, block1, general2, special5, tiles1,
+     slabs2, special6, special18, special12, general3, general4, special8, slabs3, general5,
+     special9, general12, special3, tiles2, general6, general7, special10, block2, general8,
+     general9, special18, tiles3, general13, general10, block3, special2],
+    "general"
+  ),
+  [t("blocks")]: addSeo([block1, block2, block3], "blocks"),
+  [t("slabs")]: addSeo(
+    [slabIvory, slabs1, slabs2, slabLight, slabs3, slabs4, slabs5, slabAntik,
+     slabs6, slabAntikVein, slabIvoryVein],
+    "slabs"
+  ),
+  [t("tiles")]:   addSeo([tiles1, tiles2, tiles3], "tiles"),
+  [t("special")]: addSeo([special1, special2, special3, general11, general12, general13,
+                          special4, special5, special6, special7, special8, special9, special10,
+                          special11, special12, special13, special14, special15, special16,
+                          special17, special18, special19], "special"),
+  [t("export")]:  addSeo([export1, export2, export3, export4, export5, export6, export7,
+                          export8, export9, export10, export11], "export"),
+};
 
-}
 
 const categories = Object.keys(imageCategories)
   // Seçili kategori (başlangıçta "GENERAL VIEW")
   const [selectedCategory, setSelectedCategory] = useState(categories[0])
   const [modalImage, setModalImage] = useState(null) 
 
-  const openModal = (img, index) => {
-    setModalImage(img);
-    setModalIndex(index);
-  };
+const openModal = (index) => setModalIndex(index);
 
-  const scrollPrev = () => {
-    const images = imageCategories[selectedCategory];
-    const newIndex = modalIndex === 0 ? images.length - 1 : modalIndex - 1;
-    setModalIndex(newIndex);
-    setModalImage(images[newIndex]);
-  };
+// aktif dizi ve görsel (seçili kategoriden)
+const activeList = imageCategories[selectedCategory] || [];
+const activeItem = (modalIndex != null) ? activeList[modalIndex] : null; 
 
-  // Sağ ok: index'i artır, wrap-around uygulayarak ilk elemana geçsin
-  const scrollNext = () => {
-    const images = imageCategories[selectedCategory];
-    const newIndex = modalIndex === images.length - 1 ? 0 : modalIndex + 1;
-    setModalIndex(newIndex);
-    setModalImage(images[newIndex]);
-  };
+const scrollPrev = () => {
+  const images = imageCategories[selectedCategory];
+  if (!images?.length) return;
+  const newIndex = modalIndex === 0 ? images.length - 1 : modalIndex - 1;
+  setModalIndex(newIndex);
+};
+
+const scrollNext = () => {
+  const images = imageCategories[selectedCategory];
+  if (!images?.length) return;
+  const newIndex = modalIndex === images.length - 1 ? 0 : modalIndex + 1;
+  setModalIndex(newIndex);
+};
 
   useEffect(() => {
     if (!modalImage) return; // Modal kapalıysa listener ekleme
@@ -154,51 +219,66 @@ const categories = Object.keys(imageCategories)
         <div className="flex lg:w-[1006px] h-[500px] md:h-[1000px] lg:h-[1700px]">
           <div className="flex flex-col w-full overflow-auto hover:overflow-scroll custom-scroll h-auto">
             <div className="columns-2 lg:columns-3 gap-[16px] lg:gap-[0px] transition-all duration-[350ms] ease-in-out cursor-pointer">
-              {imageCategories[selectedCategory].map((imgSrc, index) => (
-                <div
-                  className="mb-[19.16px] transition-all duration-[350ms] ease-in-out cursor-pointer"
-                  key={index}
-                  onClick={() => openModal(imgSrc,index)} // Resme tıklandığında modal açılır
-                >
-                  <Image src={imgSrc} alt="gallery" className="lg:w-[322px] h-full" />
-                </div>
-              ))}
+             {imageCategories[selectedCategory].map(({ src, alt, caption }, index) => (
+  <figure
+    className="mb-[19.16px] transition-all duration-[350ms] ease-in-out cursor-pointer"
+    key={index}
+    onClick={() => openModal(index)}  // ← sadece index gönder
+  >
+    <Image src={src} alt={alt} className="lg:w-[322px] h-full" />
+    {/* İstersen küçük alt yazı */}
+    {/* <figcaption className="mt-1 text-[11px] text-neutral-600">{caption}</figcaption> */}
+  </figure>
+))}
+
             </div>
           </div>
         </div>
 
         {/* Modal (Lightbox) */}
-        {modalImage && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
-            onClick={() => setModalImage(null)} // Modal dışına tıklandığında kapanır
-          >
-            <div className="relative w-[80%] " onClick={(e) => e.stopPropagation()}>
-              <Image src={modalImage} alt="Enlarged gallery" className="w-full h-auto object-cover max-h-[890px]" />
-              <button
-                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-gray-700 bg-opacity-50 hover:bg-opacity-75 text-white"
-                onClick={scrollPrev}
-                aria-label="Previous"
-              >
-                <MdArrowBackIosNew size={32} />
-              </button>
-              {/* Sağ Ok */}
-              <button
-                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-gray-700 bg-opacity-50 hover:bg-opacity-75 text-white"
-                onClick={scrollNext}
-                aria-label="Next"
-              >
-                <MdArrowForwardIos size={32} />
-              </button>
-            </div>
-            <button
-                className="absolute top-6 right-4 text-white text-4xl"
-                onClick={() => setModalImage(null)}
-              >
-                &times;
-              </button>
-          </div>
-        )}
+       {activeItem && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+    onClick={() => setModalIndex(null)}
+  >
+    <div className="relative w-[80%]" onClick={(e) => e.stopPropagation()}>
+      <Image
+        src={activeItem.src}
+        alt={activeItem.alt}
+        className="w-full h-auto object-cover max-h-[890px]"
+      />
+      {activeItem.caption && (
+        <div className="mt-2 text-center text-white/90 text-sm">
+          {activeItem.caption}
+        </div>
+      )}
+
+      <button
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-gray-700/50 hover:bg-gray-700/75 text-white"
+        onClick={scrollPrev}
+        aria-label="Previous"
+      >
+        <MdArrowBackIosNew size={32} />
+      </button>
+
+      <button
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-gray-700/50 hover:bg-gray-700/75 text-white"
+        onClick={scrollNext}
+        aria-label="Next"
+      >
+        <MdArrowForwardIos size={32} />
+      </button>
+    </div>
+
+    <button
+      className="absolute top-6 right-4 text-white text-4xl"
+      onClick={() => setModalIndex(null)}
+      aria-label="Close"
+    >
+      &times;
+    </button>
+  </div>
+)}
 
       </div>
     </div>

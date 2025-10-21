@@ -64,8 +64,22 @@ export function productSlugFor(locale, key) {
 
 export function productKeyFromSlug(locale, slug) {
   const lang = getLang(locale);
+  const s = String(slug || "").toLowerCase();
   const table = PRODUCT_SLUGS[lang] || {};
-  return Object.keys(table).find((k) => table[k] === slug) || "slabs";
+
+  // 1) Mevcut dil haritasında ara
+  const inLang = Object.keys(table).find((k) => table[k] === s);
+  if (inLang) return inLang;
+
+  // 2) Slug zaten iç anahtar olabilir (tiles/slabs/blocks/special)
+  if (PRODUCT_KEYS.includes(s)) return s;
+
+  // 3) EN haritasında da dene (middleware iç rotayı EN key ile kurabiliyor)
+  const inEn = Object.keys(PRODUCT_SLUGS.en || {}).find((k) => PRODUCT_SLUGS.en[k] === s);
+  if (inEn) return inEn;
+
+  // 4) Fallback
+  return "slabs";
 }
 
 export function cutSlugFor(locale, cut) {

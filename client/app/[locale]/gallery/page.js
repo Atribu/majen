@@ -1,3 +1,4 @@
+
 import React from 'react'
 import GalleryBanner from './components/GalleryBanner'
 import mainImg from "@/public/images/homepage/antikarkaplan2.webp"

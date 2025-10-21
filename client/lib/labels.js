@@ -11,7 +11,7 @@ export const CUT_LABEL = {
 
 // ✅ TILE size slug listesi (route’ta kullanılacak)
 export const TILE_SIZE_SLUGS = [
-  "8x8","12x12","12x24","16x16","18x18","24x24","24x48","48x110","versailles-set"
+  "8x8","12x12","12x24","16x16","18x18","24x24","24x48","48x110","versailles"
 ];
 
 // ✅ TILE size etiketleri (UI’de gösterilecek)
@@ -25,7 +25,7 @@ export const TILE_SIZE_LABEL = {
     "24x24": `24"×24"`,
     "24x48": `24"×48"`,
     "48x110": `48"×110"`,
-    "versailles-set": "Versailles Set",
+    "versailles": "versailles",
   },
   tr: {
     "8x8": `8"×8"`,
@@ -36,14 +36,11 @@ export const TILE_SIZE_LABEL = {
     "24x24": `24"×24"`,
     "24x48": `24"×48"`,
     "48x110": `48"×110"`,
-    "versailles-set": "Versailles Set",
+    "versailles": "versailles",
   },
 };
 
-/**
- * NEW: Color labels for last-level pages (Ivory / Antico / Light)
- * Slug keys lowercase sabit: ivory, antico, light
- */
+
 export const COLOR_LABEL = {
   en: { ivory: "Ivory", antico: "Antico", light: "Light" },
   tr: { ivory: "Fildişi", antico: "Antik", light: "Açık" },
@@ -86,7 +83,30 @@ export function procSlugForLocale(locale, proc) {
 
 
 // yardımcı: locale’e göre ölçü etiketi
-export function tileSizeLabelForLocale(locale, slug) {
-  const lang = locale?.startsWith("tr") ? "tr" : "en";
-  return TILE_SIZE_LABEL[lang]?.[slug] || slug;
+// export function tileSizeLabelForLocale(locale, slug) {
+//   const lang = locale?.startsWith("tr") ? "tr" : "en";
+//   return TILE_SIZE_LABEL[lang]?.[slug] || slug;
+// }
+
+export function tileSizeLabelForLocale(locale, sizeKey) {
+  const lang = locale?.toString().startsWith("tr") ? "tr" : "en";
+  return TILE_SIZE_LABEL[lang]?.[sizeKey] ?? sizeKey;
+}
+
+// 4) (opsiyonel ama faydalı) slug <-> key yardımcıları
+//    TR ve EN’de slug’larımız zaten aynı; yine de normalize edip güvene alıyoruz.
+export function sizeKeyFromSlug(locale, slug) {
+  if (!slug) return null;
+  let s = String(slug).trim().toLowerCase()
+    .replace(/["“”]/g, "")     // 12"x24" → 12x24
+    .replace(/[×x]/g, "x")
+    .replace(/\s+/g, "");
+  // versailles eş anlamlıları
+  if (s === "versailles" || s === "versailles-set") s = "versailles-set";
+  return TILE_SIZE_SLUGS.includes(s) ? s : null;
+}
+
+export function sizeSlugForLocale(locale, sizeKey) {
+  // şu an TR/EN aynı; ileride değişirse buradan yönetilir
+  return TILE_SIZE_SLUGS.includes(sizeKey) ? sizeKey : null;
 }
