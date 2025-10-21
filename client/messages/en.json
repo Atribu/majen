@@ -9917,9 +9917,73 @@
         },
 
           "filled-honed": {
-           "h1": "Travertine tiles · Vein-Cut · Filled · Polished",
-              "title": "Filled · Polished (Vein-Cut)",
-              "lead": "High-gloss luxury with dense, filled surface.",
+            "youtubeByColor": {
+                "ivory": "https://youtu.be/Fhn1dAK2joE",
+                "light": "https://youtu.be/Fhn1dAK2joE",
+                "antico": "https://youtu.be/Fhn1dAK2joE"
+              },
+             "seo": {
+            "title": "Filled Honed Vein Cut Travertine Tiles | Premium Natural Stone – Majen",
+            "description": "Explore Majen’s filled honed vein cut travertine tiles — smooth, matte-finished slabs for luxury walls and floors. Precisely cut, filled, and globally exported with consistent quality.",
+            "image": "/images/og/vein-custom.webp"
+          },
+                  "h1": "Filled Honed Vein Cut Travertine Slabs",
+              "title": "Filled Honed Vein Cut Travertine Slabs",
+              "lead": "Majen supplies Filled Honed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. The stone is sliced parallel to the bedding layers to reveal elegant, continuous veins; pores are professionally filled to achieve a dense, smooth structure. A precise honed finish delivers a refined matte surface with excellent flatness, color harmony, and slip comfort—ideal for upscale interiors, long corridors, wall cladding, and large-format floors. FOB/CIF worldwide export with reinforced packaging.",
+              "intro":"Majen supplies Filled Honed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. The stone is sliced parallel to the bedding layers to reveal elegant, continuous veins; pores are professionally filled to achieve a dense, smooth structure. A precise honed finish delivers a refined matte surface with excellent flatness, color harmony, and slip comfort—ideal for upscale interiors, long corridors, wall cladding, and large-format floors. FOB/CIF worldwide export with reinforced packaging.",
+              "title2":"What Are Filled Honed Vein Cut Travertine Tiles?",
+              "intro2":"This travertine type is crafted by filling natural pores with high-quality resin or cement to achieve a dense surface, then honing for a refined matte texture. The process maintains the stone’s elegant linear pattern while enhancing durability and resistance. Filled honed vein cut travertine combines beauty and functionality, making it ideal for luxury interiors, hospitality spaces, and large architectural installations.",
+              
+              "detailsHeadings": {
+      "title1":"Smooth, Matte Finish",
+      "title2": "Sealed Strength & Durability",
+      "title3": "Global Size Options",
+      "title4": "Sustainable & Responsible Production",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+        "variants":{
+            "title":"Surface Characteristics and Texture",
+            "text":"The honed finish gives the stone a soft, satin touch while reducing glare, perfect for contemporary designs seeking a calm aesthetic. The filled process eliminates natural cavities, providing smoother texture and easier maintenance. Majen ensures each slab is processed with precision calibration, resulting in consistent tone, thickness, and seamless installation for high-end international projects."
+          },
+
+      "description": [
+        " The honed finish delivers a luxurious matte texture that feels soft underfoot. It reflects minimal light, creating a calm and sophisticated atmosphere perfect for contemporary interiors and minimalist architectural styles.",
+        "Filling the stone’s native pores improves its density and resistance to wear. This process increases structural performance, ensuring long-lasting beauty and strength even in demanding applications.",
+        "Majen provides a variety of sizes, from compact 8″x8″ tiles to extra-large 48″x110″ slabs. Each dimension is calibrated to perfection, ensuring seamless installation and design flexibility across all project scales.",
+        "Majen practices eco-conscious quarrying with water recycling and low-emission processing. Every step, from extraction to export, meets international environmental and safety standards."
+      ],
+
+      "TextSection": {
+            "header1": "Applications and Design Use-Cases",
+            "text1": "Filled honed vein cut travertine is ideal for interior flooring, wall cladding, bathrooms, lobbies, and countertops. Its linear vein structure complements both modern and classical architecture. Designers appreciate its balance of warmth, texture, and durability — making it suitable for luxury villas, commercial buildings, and hospitality projects that require both visual harmony and practical resilience.",
+            "header2": "Available Sizes and Custom Dimensions",
+            "text2": "Majen offers a complete range of filled honed vein cut travertine tile sizes, including: 8″×8″, 12″×12″, 12″×24″, 16″×16″, 18″×18″, 24″×24″, 24″×48″, 48″×110″, and Versailles Set. These standardized formats ensure flexibility for flooring patterns and wall applications. Large-size slabs are ideal for achieving continuity in expansive spaces, while smaller cuts offer refined detailing for compact areas. Custom dimensions are available upon request.",
+            "header3": "Color Options and Natural Appeal",
+            "text3": "Majen’s filled honed vein cut travertine tiles feature light beige, ivory, and cream tones, enhanced by the directional movement of vein patterns. The filled surface preserves the stone’s natural essence while creating a uniform, modern appearance. Subtle color variations across slabs add depth and sophistication, making every installation unique and naturally harmonious.",
+            "header4": "Maintenance & Performance",
+            "text4": "Filled honed travertine requires minimal maintenance. Regular cleaning with pH-neutral stone cleaner keeps the surface pristine, while periodic resealing enhances protection. The filled surface minimizes water absorption, making it ideal for high-moisture areas. With proper care, Majen’s tiles retain their smooth finish and refined tone for decades in both residential and commercial spaces.",
+            "header5":"Why Choose Majen as Your Trusted Export Partner?",
+            "text5":"Majen operates as a direct quarry supplier, providing total control over extraction, cutting, and finishing. Each tile is inspected for vein consistency, color tone, and surface density. With FOB and CIF export options, reinforced packaging, and global logistics expertise, Majen ensures safe and efficient worldwide delivery — trusted by architects, importers, and developers across continents."
+          },
+
+      "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What does “filled honed” mean in travertine tiles?",
+            "aboutpage_s4_faq1_text": " It refers to filling natural pores with resin or cement for a smooth surface, then honing for a matte finish. This enhances strength and delivers a sleek appearance.",
+            "aboutpage_s4_faq2_header": "Are filled honed travertine tiles good for bathrooms?",
+            "aboutpage_s4_faq2_text": "Yes, the filled process reduces water absorption, making them ideal for bathrooms, spas, and kitchens where moisture resistance is essential.",
+            "aboutpage_s4_faq3_header":"Can I order custom sizes?",
+            "aboutpage_s4_faq3_text":"Absolutely. Majen offers standard sizes and custom dimensions tailored to your project’s needs for both residential and commercial applications.",
+            "aboutpage_s4_faq4_header":"How should I clean and maintain filled travertine?",
+            "aboutpage_s4_faq4_text":"Clean regularly with a neutral pH stone cleaner and reseal every few years. Avoid acidic or abrasive chemicals that can dull the finish.",
+            "aboutpage_s4_faq5_header":"What makes Majen’s tiles suitable for global export?",
+            "aboutpage_s4_faq5_text":"Each tile is precisely calibrated, securely packed, and accompanied by complete export documentation under FOB or CIF terms for global delivery.",
+             "aboutpage_s4_faq6_header":"What’s the difference between filled honed and unfilled finishes?",
+            "aboutpage_s4_faq6_text":"Filled honed tiles have sealed pores and a matte texture, while unfilled ones preserve the stone’s natural holes for a rustic, textured look."
+          },
           "colors": {
             "ivory":  {
               "metaTitle": "Ivory · Polished Vein-Cut tiles",
@@ -9994,9 +10058,73 @@
         },
 
         "filled-polished": {
-           "h1": "Travertine tiles · Vein-Cut · Filled · Polished",
-              "title": "Filled · Polished (Vein-Cut)",
-              "lead": "High-gloss luxury with dense, filled surface.",
+           "youtubeByColor": {
+                "ivory": "https://youtu.be/Fhn1dAK2joE",
+                "light": "https://youtu.be/Fhn1dAK2joE",
+                "antico": "https://youtu.be/Fhn1dAK2joE"
+              },
+             "seo": {
+            "title": "Filled Polished Vein Cut Travertine Tiles | Premium Glossy Finish – Majen",
+            "description": "Majen’s filled polished vein cut travertine tiles deliver glossy, elegant surfaces with linear patterns. Perfect for luxury interiors, precisely cut, and globally exported with top-tier quality.",
+            "image": "/images/og/vein-custom.webp"
+          },
+                  "h1": "Filled Honed Vein Cut Travertine Slabs",
+              "title": "Filled Honed Vein Cut Travertine Slabs",
+              "lead": "Filled Polished Vein Cut Travertine Tiles by Majen embody luxury and timeless sophistication. Each slab is filled to create a dense, seamless surface, then polished to achieve a brilliant, mirror-like finish. The linear veins flow elegantly across the stone, enhancing spatial continuity and light reflection. Ideal for grand interiors and premium projects, these tiles combine natural stone strength with refined architectural beauty.",
+              "intro":"Filled Polished Vein Cut Travertine Tiles by Majen embody luxury and timeless sophistication. Each slab is filled to create a dense, seamless surface, then polished to achieve a brilliant, mirror-like finish. The linear veins flow elegantly across the stone, enhancing spatial continuity and light reflection. Ideal for grand interiors and premium projects, these tiles combine natural stone strength with refined architectural beauty.",
+              "title2":"What Are Filled Polished Vein Cut Travertine Tiles?",
+              "intro2":"This variety of travertine is produced by filling natural pores with durable resin or cement, followed by mechanical polishing to a glossy finish. The result is a dense, smooth surface that reflects light beautifully. The linear vein pattern emphasizes motion and texture, making it a preferred choice for architects seeking balance between natural elegance and modern luxury in high-end environments.",
+              
+              "detailsHeadings": {
+      "title1":"Glossy Luxury Finish",
+      "title2": "Filled for Perfect Smoothness",
+      "title3": "Wide Range of Tile Sizes",
+      "title4": "Global Export Reliability",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+        "variants":{
+            "title":"Surface Features and Texture Quality",
+            "text":"Polished surfaces highlight the natural coloration of travertine while creating a smooth and reflective finish. The filled structure ensures durability and minimizes porosity, reducing maintenance needs. Majen’s advanced polishing process enhances color depth, ensuring consistent tone and elegant shine. Each tile undergoes precision calibration to guarantee flawless surface quality and perfect alignment during installation."
+          },
+
+      "description": [
+        "The polished surface provides a luminous reflection, enhancing both natural and artificial light. Perfect for luxury interiors, it delivers unmatched brightness and a sophisticated, elegant visual appeal.",
+        "By filling natural pores, the stone achieves a denser, more resilient surface. This process ensures even polishing and minimizes maintenance, creating a flawless look that stands the test of time.",
+        "Majen offers multiple tile dimensions to fit diverse design needs—from 8″x8″ accents to expansive 48″x110″ slabs. Each size is precision-calibrated for seamless installation in modern projects.",
+        "Majen guarantees safe, timely global delivery. All tiles are securely packed in reinforced wooden crates with moisture protection, ensuring quality preservation during long-distance transport."
+      ],
+
+      "TextSection": {
+            "header1": "Applications and Use-Cases",
+            "text1": "Filled polished vein cut travertine is the perfect material for luxury flooring, wall panels, countertops, and hotel lobbies. Its bright, reflective surface adds depth and luminosity to interiors, making spaces appear larger and more sophisticated. The directional veins provide visual flow and harmony, ideal for both modern and classic architectural projects requiring elegant aesthetics with durable functionality.",
+            "header2": "Available Sizes and Design Flexibility",
+            "text2": "Majen’s filled polished vein cut travertine tiles come in multiple size options: 8″x8″, 12″x12″, 12″x24″, 16″x16″, 18″x18″, 24″x24″, 24″x48″, 48″x110″, and Versailles Set. These dimensions offer versatility for creative layouts — from geometric flooring to seamless wall cladding. Large tiles deliver continuous patterns with fewer joints, while smaller formats enhance design detail and precision. Custom sizes are available for bespoke architectural needs.",
+            "header3": "Color Range and Visual Appeal",
+            "text3": "Available in luxurious tones of ivory, beige, cream, and light walnut, Majen’s filled polished travertine enhances interiors with warmth and depth. The polished surface amplifies light, while filled pores preserve the stone’s natural structure. Subtle tonal movement across the veins creates a dynamic yet cohesive aesthetic — ideal for elegant, high-end interiors worldwide.",
+            "header4": "MMaintenance & Care Tips",
+            "text4": "To maintain its brilliance, clean polished travertine with a soft cloth and neutral pH stone cleaner. Regular resealing helps retain its glossy finish and protect against staining. Avoid acidic cleaners or abrasive pads. With proper care, Majen’s filled polished tiles preserve their radiant appearance and structural integrity for decades, even in high-traffic environments.",
+            "header5":"Why Choose Majen as Your Global Travertine Partner?",
+            "text5":"Majen controls every production stage, from quarry extraction to final polishing, ensuring consistency, quality, and reliability. Each tile is hand-inspected for clarity, color tone, and surface perfection. With global FOB and CIF export options, reinforced packaging, and responsive customer service, Majen is a trusted partner for architects, builders, and importers worldwide."
+          },
+
+      "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What makes filled polished travertine unique?",
+            "aboutpage_s4_faq1_text": " It combines filled density with a polished surface, offering a smooth, reflective finish that highlights natural vein movement and enhances spatial brightness.",
+            "aboutpage_s4_faq2_header": "Is polished travertine slippery?",
+            "aboutpage_s4_faq2_text": "Polished finishes are glossy, so they’re best used for dry indoor areas. For outdoor or wet zones, a honed or brushed finish is recommended for slip resistance.",
+            "aboutpage_s4_faq3_header":"What sizes are available for filled polished travertine tiles?",
+            "aboutpage_s4_faq3_text":"Majen offers 8″x8″ up to 48″x110″ tiles, plus Versailles Sets and custom sizes upon request to suit different architectural layouts.",
+            "aboutpage_s4_faq4_header":"How do you clean polished travertine surfaces?",
+            "aboutpage_s4_faq4_text":"Use a soft cloth and neutral pH cleaner. Avoid acidic or abrasive products. Regular resealing will maintain its high-gloss finish and protect from moisture.",
+            "aboutpage_s4_faq5_header":"Can polished travertine be used on walls?",
+            "aboutpage_s4_faq5_text":"Yes, it’s ideal for wall cladding in lobbies, bathrooms, and decorative accent walls, adding depth and luxury to vertical surfaces.",
+             "aboutpage_s4_faq6_header":"Does Majen provide international export services?",
+            "aboutpage_s4_faq6_text":"Absolutely. Majen exports worldwide with full documentation and reliable logistics using FOB and CIF terms to ensure safe delivery."
+          },
           "colors": {
             "ivory":  {
               "metaTitle": "Ivory · Polished Vein-Cut tiles",
@@ -10154,63 +10282,67 @@
                 "antico": "https://youtu.be/Fhn1dAK2joE"
               },
            "seo": {
-            "title": "Unfilled Brushed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
-            "description": "Discover Unfilled Brushed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
+            "title": "Filled Brushed Vein Cut Travertine Tiles | Natural Texture & Strength – Majen",
+            "description": "Majen’s filled brushed vein cut travertine tiles combine natural warmth with durability. Perfect for interior and exterior designs — eco-sourced, filled, brushed, and globally exported.",
             "image": "/images/og/vein-custom.webp"
           },
 
            "h1": "Unfilled Brushed Vein Cut Travertine Slabs",
-              "title": "Unfilled Brushed Vein Cut Travertine Slabs",
-              "lead": "Majen supplies Unfilled Brushed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Cut parallel to the stone’s natural layers, each slab showcases continuous linear veins while maintaining open pores for authentic texture. The brushed finish enhances surface tactility with a soft matte feel, adding warmth and slip resistance without sacrificing elegance. Ideal for calm interiors, terraces, and wellness areas, these slabs embody natural charm with refined craftsmanship.",
-              "intro": "Majen supplies Unfilled Brushed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Cut parallel to the stone’s natural layers, each slab showcases continuous linear veins while maintaining open pores for authentic texture. The brushed finish enhances surface tactility with a soft matte feel, adding warmth and slip resistance without sacrificing elegance. Ideal for calm interiors, terraces, and wellness areas, these slabs embody natural charm with refined craftsmanship.",
-              "title2":"What Is Unfilled Brushed Vein Cut Travertine?",
-               "intro2":"“Vein Cut” highlights the linear flow of the stone’s natural formation. “Unfilled” means the pores remain open, preserving the authentic travertine texture. The “Brushed” process softens the surface with controlled abrasion, creating a naturally aged, low-gloss look. This combination balances rustic character with subtle refinement, making it perfect for contemporary organic design.",
+              "title": "Filled Brushed Vein Cut Travertine Tiles",
+              "lead": "Filled Brushed Vein Cut Travertine Tiles by Majen blend natural character with refined craftsmanship. Each slab is filled for strength and smoothness, then brushed to enhance its organic texture and subtle depth. The linear vein pattern creates a natural flow, while the brushed finish offers a tactile surface perfect for interiors seeking warmth and authenticity. Ideal for modern rustic, luxury, and timeless architectural designs.",
+              "intro": "Filled Brushed Vein Cut Travertine Tiles by Majen blend natural character with refined craftsmanship. Each slab is filled for strength and smoothness, then brushed to enhance its organic texture and subtle depth. The linear vein pattern creates a natural flow, while the brushed finish offers a tactile surface perfect for interiors seeking warmth and authenticity. Ideal for modern rustic, luxury, and timeless architectural designs.",
+              "title2":"What Are Filled Brushed Vein Cut Travertine Tiles?",
+               "intro2":"This stone type combines a filled structure for density with a brushed finish that highlights natural surface variations. The brushing process softens the stone’s texture, giving it a naturally aged appearance while preserving its vein direction. Filled brushed travertine provides both comfort underfoot and superior resilience, making it suitable for projects balancing contemporary design with organic charm.",
 
                 "detailsHeadings": {
-      "title1":"Why Our Unfilled Brushed Vein Cut?",
-      "title2": "Color Options",
-      "title3": "Sizes & Thickness",
-      "title4": "Finishes & Packaging",
+      "title1":"Natural Texture & Feel",
+      "title2": "Filled for Strength",
+      "title3": "Wide Range of Sizes",
+      "title4": "Sustainable Production",
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
     },
         "variants":{
-            "title":"Color Options: Ivory, Light, and Antico",
+            "title":"Texture and Surface Characteristics",
             "text":"Majen offers Ivory, Light, and Antico tones to suit diverse design visions. Ivory provides classic cream elegance; Light delivers calm, neutral beige; and Antico adds earthy contrast with timeless warmth. All colors are sourced from the same quarry layer, ensuring hue consistency and vein continuity across floors and walls. These natural shades create balanced, harmonious spaces that age gracefully over time."
           },
 
       "description": [
-        " Natural linear veins, open pores, and soft-brushed texture for elegant tactile comfort. Durable, slip-resistant, and visually warm—crafted for authentic architecture.",
-        "Available in Ivory, Light, and Antico tones. Each tone brings unique charm while maintaining hue and vein continuity across surfaces.",
-        " Standard production in 2 cm, 3 cm, and 5 cm thicknesses. Large-format slabs ensure consistent vein flow and seamless installation.",
-        "Primary finish: Brushed with unfilled pores. Slabs are moisture-protected and packed in reinforced wooden crates for safe global export."
+        "The brushed surface enhances the stone’s natural touch, offering a warm, tactile experience underfoot. Its soft matte tone brings organic depth and texture to interiors and outdoor living areas.",
+        "By sealing natural pores, filled travertine provides increased durability and water resistance. The result is a denser, more stable tile ideal for long-term architectural use across multiple environments.",
+        "Available in a complete range of sizes, from compact formats to expansive slabs. This flexibility allows designers to craft creative layouts that balance movement, pattern, and continuity.",
+        "Majen implements eco-conscious quarrying and finishing processes. Each slab is responsibly sourced, with water recycling systems and optimized logistics ensuring environmental sustainability."
       ],
 
       "TextSection": {
-            "header1": "Advantages of the Unfilled Brushed Finish on Vein Cut Slabs",
+            "header1": "Applications and Use-Cases",
             "text1": " The unfilled brushed finish enhances natural texture while maintaining tactile comfort and grip. Open pores express the stone’s authenticity, and the brushed treatment creates gentle relief ideal for barefoot comfort. The matte surface reduces glare and diffuses light softly, making it perfect for bright, serene spaces. Majen’s precision brushing ensures even texture depth and controlled roughness across every slab.",
-            "header2": "Recommended Applications & Design Pairings",
-            "text2": "Unfilled Brushed Vein Cut Travertine Slabs are perfect for outdoor patios, pool decks, interior feature walls, and spa environments. Their natural grip makes them safe for wet zones, while the subtle linear veins add rhythm and direction to the design. Pair with honed or polished travertine for visual contrast, or combine with wood and metal for organic modern interiors. Majen provides cut-to-size coordination for seamless design flow throughout large-scale architectural projects.",
-            "header3": "Sizes, Thickness & Fabrication",
-            "text3": " Produced in 2 cm, 3 cm, and 5 cm, with large-format slabs available for walls and floors. Each slab is brushed under controlled pressure to create consistent depth and tactile softness. Edges can be straight or eased according to design needs. Fabrication tips: use breathable sealers to maintain natural texture, align veins with visual direction, and avoid high-gloss coatings.",
-            "header4": "Why Choose Majen for Unfilled Brushed Vein Cut Travertine?",
-            "text4": "Majen operates as a quarry-direct supplier controlling extraction, cutting, and finishing from start to export. Each slab is inspected for structural soundness, color grouping, and consistent brushing depth. We provide FOB and CIF shipping options, detailed documentation, and secure wooden crate packaging. With global distribution and dependable logistics, Majen ensures professional service and consistent quality for every order.",
-            "header5":"Global Export & Maintenance Guidelines",
-            "text5":" Majen exports Unfilled Brushed Vein Cut Travertine Slabs worldwide to meet architectural and design requirements. Each shipment adheres to ISO standards for surface uniformity, roughness, and dimensional accuracy. For maintenance, clean with mild pH-neutral products and apply breathable sealers as needed. The open-pore surface naturally develops a patina, enhancing its timeless and authentic appeal over time."
+            "header2": "Available Sizes and Versatility",
+            "text2": "Majen offers filled brushed vein cut travertine tiles in various dimensions: ....., and Versailles Set. These options allow flexible layout design — smaller tiles for intricate detailing, larger slabs for visual continuity. Custom sizes can be produced upon request to match architectural specifications for global projects.",
+            "header3": "Color Range and Natural Aesthetics",
+            "text3": "Filled brushed travertine tiles feature elegant tones of light beige, cream, and silver. The brushing process softens color contrast while enhancing the natural linear movement of veins. Each slab presents unique shading and texture, resulting in a naturally cohesive design. This balanced palette makes it ideal for spaces aiming to blend warmth, modernity, and authenticity.",
+            "header4": "Maintenance & Surface Care",
+            "text4": "Brushed travertine is easy to maintain. Regular cleaning with a neutral stone cleaner preserves its matte texture and soft sheen. The filled surface reduces dirt absorption, while sealing enhances protection against moisture. With proper care, these tiles maintain their natural look and strength for years, even in areas with heavy daily use or exposure to changing temperatures.",
+            "header5":"Why Choose Majen as Your Global Travertine Supplier?",
+            "text5":"Majen sources its travertine directly from the Uşak–Ulubey quarry in Turkey, ensuring premium quality, consistency, and reliable export logistics. Every tile is selected for color uniformity, vein precision, and surface finish. With FOB and CIF shipping options, reinforced wooden packaging, and meticulous documentation, Majen guarantees seamless delivery and long-term satisfaction for global clients."
           },
 
                "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
             "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
-            "aboutpage_s4_faq1_header": "Why choose a brushed finish?",
-            "aboutpage_s4_faq1_text": " It provides a natural matte texture that enhances tactile comfort and slip resistance while keeping the veins visually soft and elegant.",
-            "aboutpage_s4_faq2_header": " Which colors are available?",
-            "aboutpage_s4_faq2_text": "Ivory, Light, and Antico — all cut and finished from the same quarry layer for consistent tone and pattern harmony.",
-            "aboutpage_s4_faq3_header":"Is it suitable for outdoor use?",
-            "aboutpage_s4_faq3_text":"Yes, the brushed finish offers gentle traction, making it perfect for terraces, spa zones, and pool surroundings.",
-            "aboutpage_s4_faq4_header":"How should it be maintained?",
-            "aboutpage_s4_faq4_text":"Clean with mild pH-neutral solutions, avoid acidic chemicals, and reseal lightly every 1–2 years to maintain performance and natural look."
+            "aboutpage_s4_faq1_header": "What makes filled brushed travertine unique?",
+            "aboutpage_s4_faq1_text": "It combines a brushed texture with filled pores, creating a dense yet naturally aged appearance — durable, slip-resistant, and ideal for rustic luxury designs.",
+            "aboutpage_s4_faq2_header": "Is brushed travertine suitable for outdoor spaces?",
+            "aboutpage_s4_faq2_text": "Yes. The textured surface offers natural slip resistance, making it perfect for terraces, pool decks, and garden paths exposed to varying weather conditions.",
+            "aboutpage_s4_faq3_header":"How is brushed travertine maintained?",
+            "aboutpage_s4_faq3_text":"Clean with a mild pH-neutral solution, reseal occasionally, and avoid harsh chemicals. Regular care keeps its natural surface looking elegant and smooth.",
+            "aboutpage_s4_faq4_header":"What sizes can I order?",
+            "aboutpage_s4_faq4_text":"Majen offers tiles from 8'x8' up to 48'x110', including Versailles Sets. Custom dimensions are available for bespoke architectural needs.",
+            "aboutpage_s4_faq5_header":"What’s the benefit of the filled process?",
+            "aboutpage_s4_faq5_text":"Filling the stone’s natural pores increases strength, reduces moisture absorption, and provides a smoother texture while preserving natural aesthetics.",
+            "aboutpage_s4_faq6_header":"Does Majen provide global delivery?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports worldwide under FOB and CIF terms, with reinforced packaging and full export documentation for seamless international shipment."
           },
 
                "sizes": {
@@ -11029,9 +11161,75 @@
         },
 
         "filled-tumbled": {
-           "h1": "Travertine tiles · Vein-Cut · Filled · Polished",
-              "title": "Filled · Polished (Vein-Cut)",
-              "lead": "High-gloss luxury with dense, filled surface.",
+              "youtubeByColor": {
+                "ivory": "https://youtu.be/Fhn1dAK2joE",
+                "light": "https://youtu.be/Fhn1dAK2joE",
+                "antico": "https://youtu.be/Fhn1dAK2joE"
+              },
+           "seo": {
+            "title": "Filled Brushed Vein Cut Travertine Tiles | Natural Texture & Strength – Majen",
+            "description": "Majen’s filled brushed vein cut travertine tiles combine natural warmth with durability. Perfect for interior and exterior designs — eco-sourced, filled, brushed, and globally exported.",
+            "image": "/images/og/vein-custom.webp"
+          },
+
+           "h1": "Unfilled Brushed Vein Cut Travertine Slabs",
+              "title": "Filled Tumbled Vein Cut Travertine Tiles",
+              "lead": "Filled Brushed Vein Cut Travertine Tiles by Majen blend natural character with refined craftsmanship. Each slab is filled for strength and smoothness, then brushed to enhance its organic texture and subtle depth. The linear vein pattern creates a natural flow, while the brushed finish offers a tactile surface perfect for interiors seeking warmth and authenticity. Ideal for modern rustic, luxury, and timeless architectural designs.",
+              "intro": "Filled Tumbled Vein Cut Travertine Tiles by Majen combine old-world charm with modern craftsmanship. Each slab is filled for structural density, then tumbled to achieve a soft, weathered texture. The result is a naturally aged, tactile surface that highlights the linear vein pattern while offering a timeless, rustic appearance. Perfect for interior and exterior projects that value authenticity and elegance.",
+              "title2":"What Are Filled Tumbled Vein Cut Travertine Tiles?",
+               "intro2":"This travertine variety is produced by filling the stone’s natural cavities with resin or cement for strength, followed by tumbling — a process that rounds edges and softens textures. The combination enhances durability and delivers a naturally antiqued aesthetic. Filled tumbled vein cut travertine tiles offer a refined balance between rustic character and long-lasting performance, ideal for global architectural projects.",
+
+                "detailsHeadings": {
+      "title1":"Natural Rustic Finish",
+      "title2": "Filled for Strength",
+      "title3": "Wide Range of Sizes",
+      "title4": "Sustainable Production",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+        "variants":{
+            "title":"Surface Texture and Finish Quality",
+            "text":"The tumbled finish creates a gentle, aged look with subtly distressed edges, giving spaces a sense of depth and history. Filled pores ensure smoothness and stability while retaining organic charm. Majen’s precision production guarantees consistent tone, calibrated thickness, and a harmonious linear pattern. These tiles are durable, visually warm, and perfect for both traditional and modern rustic interiors."
+          },
+
+      "description": [
+        "The brushed surface enhances the stone’s natural touch, offering a warm, tactile experience underfoot. Its soft matte tone brings organic depth and texture to interiors and outdoor living areas.",
+        "By sealing natural pores, filled travertine provides increased durability and water resistance. The result is a denser, more stable tile ideal for long-term architectural use across multiple environments.",
+        "Available in a complete range of sizes, from compact formats to expansive slabs. This flexibility allows designers to craft creative layouts that balance movement, pattern, and continuity.",
+        "Majen implements eco-conscious quarrying and finishing processes. Each slab is responsibly sourced, with water recycling systems and optimized logistics ensuring environmental sustainability."
+      ],
+
+      "TextSection": {
+            "header1": "Applications and Use-Cases",
+            "text1": " The unfilled brushed finish enhances natural texture while maintaining tactile comfort and grip. Open pores express the stone’s authenticity, and the brushed treatment creates gentle relief ideal for barefoot comfort. The matte surface reduces glare and diffuses light softly, making it perfect for bright, serene spaces. Majen’s precision brushing ensures even texture depth and controlled roughness across every slab.",
+            "header2": "Available Sizes and Custom Dimensions",
+            "text2": "Majen offers filled tumbled vein cut travertine tiles in the following standard sizes: .....,and Versailles Set. These formats accommodate diverse installation patterns, from classical Versailles layouts to sleek linear arrangements. Custom cuts are also available, allowing designers to adapt sizes for unique global design concepts.",
+            "header3": "Color Range and Natural Aesthetic Appeal",
+            "text3": "Filled tumbled vein cut travertine features warm neutral hues — ivory, beige, cream, and light walnut. The tumbled process slightly mutes tones, enhancing depth and natural variation across veins. The subtle blend of smoothness and irregularity gives each slab a handcrafted charm, making it an ideal surface for rustic luxury interiors and Mediterranean-style architecture.",
+            "header4": "Maintenance & Longevity",
+            "text4": "These tiles are designed for easy care and long-term durability. Clean with a soft cloth and pH-neutral cleaner to maintain their natural beauty. The filled surface resists moisture absorption, while tumbling minimizes edge chipping. With periodic sealing, Majen’s filled tumbled travertine remains structurally strong and visually appealing even after years of use in indoor or outdoor conditions.",
+            "header5":"Why Choose Majen as Your Trusted Travertine Exporter?",
+            "text5":"Majen is a globally recognized Turkish supplier offering quarry-direct sourcing, precision finishing, and reliable export logistics. Each tile is inspected for color balance, vein direction, and finishing quality. With FOB and CIF shipping, reinforced packaging, and transparent documentation, Majen ensures fast, secure, and consistent delivery to international distributors and project developers."
+          },
+
+               "QuestionsItems": {
+            "aboutpage_s4_faq_header1": "FAQ",
+            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
+            "aboutpage_s4_faq1_header": "What makes filled brushed travertine unique?",
+            "aboutpage_s4_faq1_text": "It combines a brushed texture with filled pores, creating a dense yet naturally aged appearance — durable, slip-resistant, and ideal for rustic luxury designs.",
+            "aboutpage_s4_faq2_header": "Is brushed travertine suitable for outdoor spaces?",
+            "aboutpage_s4_faq2_text": "Yes. The textured surface offers natural slip resistance, making it perfect for terraces, pool decks, and garden paths exposed to varying weather conditions.",
+            "aboutpage_s4_faq3_header":"How is brushed travertine maintained?",
+            "aboutpage_s4_faq3_text":"Clean with a mild pH-neutral solution, reseal occasionally, and avoid harsh chemicals. Regular care keeps its natural surface looking elegant and smooth.",
+            "aboutpage_s4_faq4_header":"What sizes can I order?",
+            "aboutpage_s4_faq4_text":"Majen offers tiles from 8'x8' up to 48'x110', including Versailles Sets. Custom dimensions are available for bespoke architectural needs.",
+            "aboutpage_s4_faq5_header":"Why Choose Majen as Your Trusted Travertine Exporter?",
+            "aboutpage_s4_faq5_text":"Filling the stone’s natural pores increases strength, reduces moisture absorption, and provides a smoother texture while preserving natural aesthetics.",
+            "aboutpage_s4_faq6_header":"Does Majen provide global delivery?",
+            "aboutpage_s4_faq6_text":"Yes. Majen exports worldwide under FOB and CIF terms, with reinforced packaging and full export documentation for seamless international shipment."
+          },
+
           "colors": {
             "ivory":  {
               "metaTitle": "Ivory · Polished Vein-Cut tiles",
