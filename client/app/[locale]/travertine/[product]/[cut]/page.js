@@ -5,7 +5,7 @@ import React from "react";
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
-import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor} from "@/lib/travertine";
+import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor, cutKeyFromExternalSlug} from "@/lib/travertine";
 import { IMAGE_BY_PRODUCT, PROCESS_THUMB_BY_COMBINED } from "@/app/[locale]/(catalog)/_images";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
@@ -116,9 +116,20 @@ export default function CutPage() {
   }
 
   // cut key + kanonik slug
-  const cutKey =
-    Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlugSegment) || "vein-cut" ;
-  const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || String(cutSlugSegment);
+// cut key + kanonik slug (sağlamlaştırılmış)
+ const rawCutSlug = String(cutSlugSegment || "");
+ // 1) lib helper
+ let cutKey = cutKeyFromExternalSlug(locale, rawCutSlug);
+ // 2) zayıf tahmin (slug içindeki kelimelere bak)
+ if (!cutKey) {
+   if (/cross|enine/i.test(rawCutSlug))      cutKey = "cross-cut";
+   else if (/vein|damar/i.test(rawCutSlug))  cutKey = "vein-cut";
+ }
+ // 3) son emniyet
+ if (!cutKey) cutKey = "vein-cut";
+
+ const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || rawCutSlug;
+
 
   // ProductIntroSection içerikleri
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
@@ -188,11 +199,11 @@ const optRaw = (key, fallback = null) => {
   const heroAlt = heroAltOver || cutTitle;
 
   // Process grupları
-  const processNode = safe(() => t.raw(`slabs.cuts.${cutKey}.processes`), {});
+  const processNode = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes`), {});
   const groups = processNode?.groups || {};
   const meta   = processNode?.meta   || {};
 
-  const ytCombined  = safe(() => t.raw(`slabs.cuts.${cutKey}.processes.youtube.combined`), {}) || {};
+  const ytCombined  = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.youtube.combined`), {}) || {};
 
   // i18n’de filled-natural var mı?
  const hasFilledNatural =
@@ -306,7 +317,7 @@ const makeGroupCards = (groupName) => {
 
   // FAQ: önce CUT altında, yoksa ürün kökü
   const qCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.QuestionsItems`), null);
-  const qTop = safe(() => t.raw(`${productKey}.cuts.${cutKey}.QuestionsItems`), {});
+  const qTop = safe(() => t.raw(`${productKey}.QuestionsItems`), {});
   const qSrc = qCut || qTop;
   const faqItems = [];
   if (qSrc) {
