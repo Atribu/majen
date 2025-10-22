@@ -141,7 +141,7 @@ export default function ProcessPage() {
   const productKey = productKeyFromSlug(locale, String(productSlug)) || "slabs";
 
   // cutSlug (SEO) → cutKey ("vein-cut" | "cross-cut")
-  const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "vein-cut";
+  const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "cross-cut";
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), cutKey);
 
   // process anahtarı: birleşik (filled-polished / unfilled-honed / natural ...)
@@ -389,41 +389,41 @@ function wordsOrHyphenRegex(s) {
 }
 
 // TR “doğal” yazımı da olabileceği için küçük bir ek desenle destekleyelim
-const NATURAL_TR_REGEX = /\bdoğal\b/i;
+// const NATURAL_TR_REGEX = /\bdoğal\b/i;
+// sadece "dolgulu/dolgusuz doğal" ve "filled/unfilled natural" yakalansın
+ const NATURAL_EN_COMBO_REGEX = /\b(?:unfilled|filled)[ -]natural\b/i;
+ const NATURAL_TR_COMBO_REGEX = /\b(?:dolgulu|dolgusuz)[ -]doğal\b/i;
+
 
 // EN ve TR process anahtarlarından pattern → href objeleri üret
 const processPatterns = []
+   .concat(
+     PROCESS_EN.flatMap((k) => {
+       const href = {
+         pathname: "/travertine/[product]/[cut]/[process]",
+         params: { product: productSlug, cut: cutSlug, process: procSlugForLocale(locale, k) },
+       };
+       if (k === "natural") {
+         // yalnızca "filled/unfilled natural" eşleşsin
+         return [{ pattern: NATURAL_EN_COMBO_REGEX, href }];
+       }
+       // diğerleri eski mantıkla
+       const rx = wordsOrHyphenRegex(k); // "filled[ -]honed" vb.
+       return [{ pattern: rx, href }];
+     })
+   )
   .concat(
-    PROCESS_EN.flatMap((k) => {
-      const rx = wordsOrHyphenRegex(k);                 // "filled[ -]honed" vb.
-      const href = {
-        pathname: "/travertine/[product]/[cut]/[process]",
-        params: {
-          product: productSlug,                          // zaten localized segment
-          cut: cutSlug,                                  // bulunduğun cut SEO segmenti
-          process: procSlugForLocale(locale, k),         // hedef process slug'ı (locale)
-        },
-      };
-      const arr = [{ pattern: rx, href }];
-      if (k === "natural") {
-        // TR yazımı "doğal" için ek desen
-        arr.push({ pattern: NATURAL_TR_REGEX, href });
-      }
-      return arr;
-    })
-  )
-  .concat(
-    PROCESS_TR.map((kTr) => ({
-      pattern: wordsOrHyphenRegex(kTr),
-      href: {
-        pathname: "/travertine/[product]/[cut]/[process]",
-        params: {
-          product: productSlug,
-          cut: cutSlug,
-          process: procSlugForLocale(locale, kTr),
-        },
-      },
-    }))
+      PROCESS_TR.flatMap((kTr) => {
+       const href = {
+         pathname: "/travertine/[product]/[cut]/[process]",
+         params: { product: productSlug, cut: cutSlug, process: procSlugForLocale(locale, kTr) },
+       };
+       if (kTr === "dogal") {
+         // yalnızca "dolgulu/dolgusuz doğal" eşleşsin
+         return [{ pattern: NATURAL_TR_COMBO_REGEX, href }];
+       }
+       return [{ pattern: wordsOrHyphenRegex(kTr), href }];
+     })
   );
   // Son olarak kesim (vein/cross) pattern’lerine process pattern’lerini ekle
 linkPatterns.push(...processPatterns);
