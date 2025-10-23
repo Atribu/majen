@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -77,7 +78,7 @@ function friendlyProcessLabelForLocale(procKey, locale) {
 function normalizeTileSizeSlug(raw) {
   if (!raw) return null;
   let s = String(raw).trim().toLowerCase();
-  s = s.replace(/["“”]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
+  s = s.replace(/["""]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
   const MAP = new Map([
     ["8x8","8x8"],["12x12","12x12"],["12x24","12x24"],["16x16","16x16"],
     ["18x18","18x18"],["24x24","24x24"],["24x48","24x48"],["48x110","48x110"],
@@ -99,7 +100,7 @@ function combinedKeyFromProc(proc = "", locale = "en") {
   const [fillRaw, procRaw] = s.split("-");
   const fill = fillMap[fillRaw] || fillRaw;
   const p    = procMap[procRaw] || procRaw;
-  return `${fill}:${p}`; // PROCESS_THUMB_BY_COMBINED’de ":" ile indexleniyor
+  return `${fill}:${p}`; // PROCESS_THUMB_BY_COMBINED'de ":" ile indexleniyor
 }
 const TOPOLOGICAL_ORDER = [
   "unfilled-natural", "filled-natural",
@@ -144,6 +145,7 @@ export default function ColorDetailPage() {
   const COLOR_CHOICES = ["ivory", "light", "antico"];
   const [selectedColor, setSelectedColor] = React.useState("ivory");
 
+  // Hash değişikliği için effect
   React.useEffect(() => {
     const onHashChange = () => {
       const v = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -162,16 +164,12 @@ export default function ColorDetailPage() {
   const colorKey = !isTiles ? (COLOR_KEY_BY_SLUG?.[leafSlugRaw] || leafSlugRaw) : null;
   const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
 
-  /* 🔹 Guard tek yerden */
+  /* 🔹 Guard kontrolü hazırlığı */
   const guardMessage =
     (!productKey || (!procKeyFull && !isBlocks)) ? "Loading..." :
     (isTiles && !sizeKey) ? "Invalid size" :
     (!isTiles && !colorKey && !isBlocks) ? "Invalid color" :
     null;
-
-  if (guardMessage) {
-    return <main className="p-10 text-center text-neutral-500">{guardMessage}</main>;
-  }
 
   /* ---- JSON / labels ---- */
   const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKeyFull) : procKeyFull;
@@ -257,10 +255,11 @@ export default function ColorDetailPage() {
   React.useEffect(() => {
     if (!isTiles) return;
     setSelectedColor((prev) => {
-      if (COLOR_CHOICES.includes(prev) && (colorImagesMap[prev]?.length)) return prev;
+      const hasImages = colorImagesMap[prev]?.length > 0;
+      if (COLOR_CHOICES.includes(prev) && hasImages) return prev;
       return firstAvailableColor;
     });
-  }, [isTiles, firstAvailableColor, /* maps değişirse */ JSON.stringify(colorImagesMap)]);
+  }, [isTiles, firstAvailableColor, colorImagesMap, COLOR_CHOICES]);
 
   const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) : gallery;
 
@@ -357,7 +356,7 @@ export default function ColorDetailPage() {
             product: productSlug,
             cut:     cutSlug,
             process: processSlugLocalized,
-            color:   leafSlugRaw, // tiles’ta size; slabs’ta color
+            color:   leafSlugRaw, // tiles'ta size; slabs'ta color
           },
         },
       });
@@ -382,7 +381,12 @@ export default function ColorDetailPage() {
     !isBlocks ? { label: cutLabel, href: `/${locale}/${baseFor(locale)}/${productSlug}/${cutSlug}` } : null,
     !isBlocks ? { label: processLabelLocalized, href: `/${locale}/${baseFor(locale)}/${productSlug}/${cutSlug}/${processSlug}` } : null,
     { label: LEAF_LABEL, href: `/${locale}/${baseFor(locale)}/${productSlug}${!isBlocks ? `/${cutSlug}/${processSlug}` : ""}/${leafSlugRaw}` },
-  ].filter(Boolean) ;
+  ].filter(Boolean);
+
+  /* Guard kontrolü - tüm hooklar çağrıldıktan sonra */
+  if (guardMessage) {
+    return <main className="p-10 text-center text-neutral-500">{guardMessage}</main>;
+  }
 
   /* ---- Render ---- */
   return (
