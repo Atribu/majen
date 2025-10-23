@@ -42,10 +42,9 @@ import SocialBlock from "@/app/[locale]/travertine/blocks/[color]/SocialBlock";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import Image from "next/image";
 
-// ---------- utils ----------
+/* ---------------- utils ---------------- */
 const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
 
-// TR birleşik → EN birleşik
 function trCombinedToEn(procKey = "") {
   const s = String(procKey).toLowerCase().trim();
   if (!s) return s;
@@ -75,7 +74,6 @@ function friendlyProcessLabelForLocale(procKey, locale) {
   const fillEN = fill.charAt(0).toUpperCase() + fill.slice(1);
   return locale.startsWith("tr") ? `${fillTR} · ${procTR}` : `${fillEN} · ${procEN}`;
 }
-// tiles size slug normalize (örn. 12"×24" → 12x24)
 function normalizeTileSizeSlug(raw) {
   if (!raw) return null;
   let s = String(raw).trim().toLowerCase();
@@ -103,8 +101,6 @@ function combinedKeyFromProc(proc = "", locale = "en") {
   const p    = procMap[procRaw] || procRaw;
   return `${fill}:${p}`; // PROCESS_THUMB_BY_COMBINED’de ":" ile indexleniyor
 }
-
-// OtherOptions yardımcıları
 const TOPOLOGICAL_ORDER = [
   "unfilled-natural", "filled-natural",
   "unfilled-honed",   "filled-honed",
@@ -120,19 +116,11 @@ const VALID_PROCS_EN = new Set([
   "filled-tumbled","unfilled-tumbled",
   "filled-natural","unfilled-natural",
 ]);
-function toDisplayKey(procEn) {
-  const s = normalizeProcEn(procEn);
-  return s === "natural" ? "unfilled-natural" : s;
-}
+const toDisplayKey = (procEn) => (normalizeProcEn(procEn) === "natural" ? "unfilled-natural" : normalizeProcEn(procEn));
 const toArray = (v) => (Array.isArray(v) ? v : v ? [v] : []);
-function dedup(arr) {
-  const seen = new Set();
-  const out = [];
-  for (const x of arr) { if (x && !seen.has(x)) { seen.add(x); out.push(x); } }
-  return out;
-}
+const dedup = (arr) => { const s = new Set(); const out=[]; for (const x of arr) if (x && !s.has(x)) { s.add(x); out.push(x); } return out; };
 
-// ---------- PAGE ----------
+/* ---------------- PAGE ---------------- */
 export default function ColorDetailPage() {
   const { product: productSlug, cut: cutSlug, process: processSlug, color: leafSlugFromRoute } = useParams();
   const router = useRouter();
@@ -146,30 +134,16 @@ export default function ColorDetailPage() {
   const isTiles  = productKey === "tiles";
   const isBlocks = productKey === "blocks";
 
-  // array ise ilk dolu elemanı al; değilse aynen döndür
-const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
-
-
-  const cutKey = isBlocks ? null
-    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === String(cutSlug)) || "vein-cut");
-
-  const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
-
-  // ---- LEAF (color | size)
-  const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
-  const colorKey = !isTiles
-    ? (COLOR_KEY_BY_SLUG && (COLOR_KEY_BY_SLUG )[leafSlugRaw]) || leafSlugRaw
-    : null;
-  const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
-
-  const LEAF_KEY   = isTiles ? sizeKey : colorKey;
-  const LEAF_LABEL = isTiles ? sizeLabelFromSlug(sizeKey || "") : colorLabelFor(locale, colorKey || "");
-
-  // ---- Hash → selected (kalınlık/size filtresi vs.)
+  /* 🔹 HOOKLAR — daima en üstte */
   const sizeSlugs = sizeSlugListForProduct(productKey, t);
   const hashValue = typeof window !== "undefined" ? decodeURIComponent(window.location.hash.replace(/^#/, "")) : "";
   const initialFromHash = hashValue && sizeSlugs.includes(hashValue) ? hashValue : (sizeSlugs[0] || "");
   const [selected, setSelected] = React.useState(initialFromHash);
+
+  // tiles renk seçimi
+  const COLOR_CHOICES = ["ivory", "light", "antico"];
+  const [selectedColor, setSelectedColor] = React.useState("ivory");
+
   React.useEffect(() => {
     const onHashChange = () => {
       const v = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -179,18 +153,27 @@ const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [sizeSlugs]);
 
-  // ---- Guards
-  if (!productKey || (!procKeyFull && !isBlocks)) {
-    return <main className="p-10 text-center text-neutral-500">Loading...</main>;
-  }
-  if (isTiles && !sizeKey) {
-    return <main className="p-10 text-center text-neutral-500">Invalid size</main>;
-  }
-  if (!isTiles && !colorKey && !isBlocks) {
-    return <main className="p-10 text-center text-neutral-500">Invalid color</main>;
+  /* 🔹 Ana anahtarlar */
+  const cutKey = isBlocks ? null
+    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === String(cutSlug)) || "vein-cut");
+
+  const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
+  const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
+  const colorKey = !isTiles ? (COLOR_KEY_BY_SLUG?.[leafSlugRaw] || leafSlugRaw) : null;
+  const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
+
+  /* 🔹 Guard tek yerden */
+  const guardMessage =
+    (!productKey || (!procKeyFull && !isBlocks)) ? "Loading..." :
+    (isTiles && !sizeKey) ? "Invalid size" :
+    (!isTiles && !colorKey && !isBlocks) ? "Invalid color" :
+    null;
+
+  if (guardMessage) {
+    return <main className="p-10 text-center text-neutral-500">{guardMessage}</main>;
   }
 
-  // ---- JSON’dan sayfa düğümü
+  /* ---- JSON / labels ---- */
   const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKeyFull) : procKeyFull;
 
   let page = null;
@@ -198,20 +181,12 @@ const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
     page = messages?.ProductPage?.[productKey]?.colors?.[colorKey || ""] || null;
   } else {
     const LEAF_NODE = isTiles ? "sizes" : "colors";
-    page = messages?.ProductPage?.[productKey]
-            ?.cuts?.[cutKey ]
-            ?.processes?.[procKeyFull]
-            ?.[LEAF_NODE]?.[LEAF_KEY ] || null;
-
+    page = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[procKeyFull]?.[LEAF_NODE]?.[isTiles ? sizeKey : colorKey] || null;
     if (!page && locale.startsWith("tr")) {
-      page = messages?.ProductPage?.[productKey]
-              ?.cuts?.[cutKey ]
-              ?.processes?.[lookupProcKey]
-              ?.[LEAF_NODE]?.[LEAF_KEY ] || null;
+      page = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[lookupProcKey]?.[LEAF_NODE]?.[isTiles ? sizeKey : colorKey] || null;
     }
   }
 
-  // ---- UI metinleri
   const chooseThicknessLabel = page?.ui?.chooseThickness || (locale.startsWith("tr") ? "Kalınlık Seç" : "Choose Thickness");
   const specsLabel           = page?.ui?.specsLabel || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");
 
@@ -225,6 +200,9 @@ const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
       || procKeyFull.replace(/-/g, " ");
   }
 
+  const LEAF_KEY   = isTiles ? sizeKey : colorKey;
+  const LEAF_LABEL = isTiles ? sizeLabelFromSlug(sizeKey || "") : colorLabelFor(locale, colorKey || "");
+
   const H1        = page?.h1 || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
   const H2        = page?.title || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
   const intro     = page?.intro || "";
@@ -232,87 +210,71 @@ const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
   const metaTitle = page?.metaTitle || H1;
   const metaDesc  = page?.metaDesc  || intro;
 
-  // ---- Görseller / Galeri: PRIMARY → sadece colorThumbs[] varsa onu kullan
-const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
+  /* ---- Görseller ---- */
+  const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
+  const galleryPrimaryValue =
+    (!isBlocks && combinedKey)
+      ? IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[LEAF_KEY]
+      : null;
 
-const galleryPrimaryValue =
-  (!isBlocks && combinedKey)
-    ? IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[LEAF_KEY]
-    : null;
+  const galleryPrimary = toArray(galleryPrimaryValue);
 
-    const galleryPrimary = toArray(galleryPrimaryValue);
-
-  // Fallback listesi (yalnızca primary yoksa devreye girsin)
-const fallbackList = dedup([
-  ...toArray(!isTiles ? (IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[leafSlugRaw]
-                         ?? IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey]) : null),
-  ...toArray((!isBlocks && combinedKey) ? PROCESS_THUMB_BY_COMBINED?.[combinedKey] : null),
-  ...toArray(!isBlocks ? IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] : null),
-  ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
-  "/images/homepage/antikoarkplan.webp",
-]);
-
-const gallery = galleryPrimary.length ? galleryPrimary : fallbackList;
-const heroSrc = (page?.hero?.src) || gallery[0];
-
-
-// --- TILES: 3 renk balonu (ivory, light, antico) için görsel map'i ve state ---
-const COLOR_CHOICES = ["ivory", "light", "antico"];
-
-// Seçili process + cut + product'a göre renk → görsel listesi
-function imagesForColor(colorKeyEn) {
-  if (!isTiles || !combinedKey) return [];
-
-  // 1) colorThumbs (process/cut bazlı asıl kaynak)
-  const fromColorByProcess =
-    IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
-
-  // 2) genel renk galerisi (fallback)
-  const fromVariant =
-    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
-    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
-
-  // 3) global process thumb ve diğer fallback’ler
-  const fallbacks = dedup([
-    ...toArray(fromVariant),
-    ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
-    ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
+  const fallbackList = dedup([
+    ...toArray(!isTiles ? (IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[leafSlugRaw]
+                           ?? IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey]) : null),
+    ...toArray((!isBlocks && combinedKey) ? PROCESS_THUMB_BY_COMBINED?.[combinedKey] : null),
+    ...toArray(!isBlocks ? IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] : null),
     ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
-    heroSrc,
+    "/images/homepage/antikoarkplan.webp",
   ]);
 
-  const primary = toArray(fromColorByProcess);
-  return primary.length ? primary : fallbacks;
-}
+  const gallery = galleryPrimary.length ? galleryPrimary : fallbackList;
+  const heroSrc = (page?.hero?.src) || gallery[0];
 
-// 3 renk için map
-const colorImagesMap = Object.fromEntries(
-  COLOR_CHOICES.map((k) => [k, imagesForColor(k)])
-);
+  // tiles renk → görsel listesi
+  function imagesForColor(colorKeyEn) {
+    if (!isTiles || !combinedKey) return [];
+    const fromColorByProcess =
+      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
+    const fromVariant =
+      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
+      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
+    const fallbacks = dedup([
+      ...toArray(fromVariant),
+      ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
+      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
+      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
+      heroSrc,
+    ]);
+    const primary = toArray(fromColorByProcess);
+    return primary.length ? primary : fallbacks;
+  }
 
-// İlk mevcut renk
-const firstAvailableColor =
-  COLOR_CHOICES.find((k) => (colorImagesMap[k] || []).length > 0) || COLOR_CHOICES[0];
+  const colorImagesMap = Object.fromEntries(COLOR_CHOICES.map((k) => [k, imagesForColor(k)]));
+  const firstAvailableColor = COLOR_CHOICES.find((k) => (colorImagesMap[k] || []).length > 0) || COLOR_CHOICES[0];
 
-// tiles’a özel seçili renk state’i
-const [selectedColor, setSelectedColor] = React.useState(firstAvailableColor);
+  // tiles sayfası ilk yüklemede geçerli bir renge ayarlansın
+  React.useEffect(() => {
+    if (!isTiles) return;
+    setSelectedColor((prev) => {
+      if (COLOR_CHOICES.includes(prev) && (colorImagesMap[prev]?.length)) return prev;
+      return firstAvailableColor;
+    });
+  }, [isTiles, firstAvailableColor, /* maps değişirse */ JSON.stringify(colorImagesMap)]);
 
-// Carousel’in gerçek image array’i (tiles'ta renge bağlı)
-const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) : gallery;
+  const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) : gallery;
 
-
-  // ---- Canonical
+  /* ---- Canonical ---- */
   const baseSegment = baseFor(locale);
   const canonical = isBlocks
     ? `https://www.majen.com.tr/${locale}/${leafSlugRaw}-${(locale.startsWith("tr") ? "traverten-bloklar" : "travertine-blocks")}`
     : `https://www.majen.com.tr/${locale}/${leafSlugRaw}-${processSlug}-${cutSlug}`;
 
-  // ---- Sections
+  /* ---- Sections / FAQ ---- */
   const sections = page?.sections || {};
   const apps  = sections.applications;
   const specs = sections.specs;
 
-  // ---- FAQ çıkar
   const { items: faqItems, span: faqSpan } = (function extractFaqFromPage(pageNode) {
     if (!pageNode || typeof pageNode !== "object") return { items: [], span: "" };
     const qObj = pageNode?.QuestionsItems;
@@ -324,30 +286,24 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
       m = k.match(/^aboutpage_s4_faq_(header|text)(\d+)$/i);
       if (m) { idxSet.add(Number(m[2])); }
     }
-    const items = Array.from(idxSet)
-      .sort((a,b)=>a-b)
-      .map((n) => {
-        const q =
-          (typeof qObj[`aboutpage_s4_faq${n}_header`] === "string" && qObj[`aboutpage_s4_faq${n}_header`].trim()) ||
-          (typeof qObj[`aboutpage_s4_faq_header${n}`] === "string" && qObj[`aboutpage_s4_faq_header${n}`].trim()) || "";
-        const a =
-          (typeof qObj[`aboutpage_s4_faq${n}_text`] === "string" && qObj[`aboutpage_s4_faq${n}_text`].trim()) ||
-          (typeof qObj[`aboutpage_s4_faq_text${n}`] === "string" && qObj[`aboutpage_s4_faq_text${n}`].trim()) || "";
-        return q && a ? { q, a } : null;
-      })
-      .filter(Boolean) ;
+    const items = Array.from(idxSet).sort((a,b)=>a-b).map((n) => {
+      const q =
+        (typeof qObj[`aboutpage_s4_faq${n}_header`] === "string" && qObj[`aboutpage_s4_faq${n}_header`].trim()) ||
+        (typeof qObj[`aboutpage_s4_faq_header${n}`] === "string" && qObj[`aboutpage_s4_faq_header${n}`].trim()) || "";
+      const a =
+        (typeof qObj[`aboutpage_s4_faq${n}_text`] === "string" && qObj[`aboutpage_s4_faq${n}_text`].trim()) ||
+        (typeof qObj[`aboutpage_s4_faq_text${n}`] === "string" && qObj[`aboutpage_s4_faq_text${n}`].trim()) || "";
+      return q && a ? { q, a } : null;
+    }).filter(Boolean);
     const span =
       (typeof qObj.aboutpage_s4_faq_span1 === "string" && qObj.aboutpage_s4_faq_span1.trim()) || "";
     return { items, span };
   })(page);
 
-  // ---- OtherOptions (aynı leaf ile process değiştir)
+  /* ---- OtherOptions ---- */
   function colorsForProcess(procKeyEn) {
-    const node = messages?.ProductPage?.[productKey]
-      ?.cuts?.[cutKey]?.processes?.[procKeyEn];
-    return node?.colors && typeof node.colors === "object"
-      ? Object.keys(node.colors)
-      : [];
+    const node = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[procKeyEn];
+    return node?.colors && typeof node.colors === "object" ? Object.keys(node.colors) : [];
   }
   function buildOtherProcessItems() {
     if (isBlocks || !productKey || !cutKey || !LEAF_KEY) return [];
@@ -409,7 +365,7 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
     return items;
   }
 
-  // ---- Breadcrumbs
+  /* ---- Breadcrumbs ---- */
   const prefix = `/${locale}`;
   const baseHref = `${prefix}/${baseFor(locale)}`;
   const pathnameBreadcrumbs = typeof pathname === "string" ? pathname : "";
@@ -428,18 +384,7 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
     { label: LEAF_LABEL, href: `/${locale}/${baseFor(locale)}/${productSlug}${!isBlocks ? `/${cutSlug}/${processSlug}` : ""}/${leafSlugRaw}` },
   ].filter(Boolean) ;
 
-  // ---- Finishes / Export
-  const finishesNode = page?.finishes || {};
-  const exportNode   = page?.export  || {};
-  const finishesItems = [finishesNode.list1, finishesNode.list2, finishesNode.list3, finishesNode.list4].filter(Boolean);
-  const exportItems   = [exportNode.list1,   exportNode.list2,   exportNode.list3,   exportNode.list4].filter(Boolean);
-  const finishesTitle = finishesNode.title || (locale.startsWith("tr") ? "Yüzey İşlemleri" : "Finishes & Processing Options");
-  const exportTitle   = exportNode.title   || (locale.startsWith("tr") ? "İhracat & Paketleme" : "Export, Packaging & Shipping");
-
-  const title3 = page?.h3, text3 = page?.text3;
-  const title4 = page?.h4, text4 = page?.text4;
-  const title5 = page?.h5, text5 = page?.text5;
-
+  /* ---- Render ---- */
   return (
     <main className="px-5 md:px-8 lg:px-0 py-10 mt-2 lg:mt-4">
       <Head>
@@ -484,57 +429,59 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
       {/* Carousel + Sağ panel */}
       <section className="mx-auto text-center flex flex-col items-center justify-center max-w-[1400px] w-[95%] mt-6">
         <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start w-full">
-          <div className="w-[90%] lg:w-[45%] items-center justify-start flex">
-             {isTiles && (
-    <div className="flex flex-col z-10 gap-2">
-      {COLOR_CHOICES.map((ck) => {
-        const label = colorLabelFor(locale, ck);
-        const sampleSrc = (colorImagesMap[ck] && colorImagesMap[ck][0]) || heroSrc;
-        const isActive = selectedColor === ck;
-        return (
-          <button
-            key={ck}
-            type="button"
-            onClick={() => setSelectedColor(ck)}
-            title={label}
-            aria-label={label}
-            className={[
-              "relative h-10 w-10 rounded-full overflow-hidden ring-2 transition",
-              isActive ? "ring-teal-700" : "ring-white/80 hover:ring-teal-500",
-              "bg-white/40 backdrop-blur-sm"
-            ].join(" ")}
-          >
-            <Image
-              src={sampleSrc}
-              alt={`${label} sample`}
-              fill
-              className="object-cover"
-              sizes="40px"
-            />
-          </button>
-        );
-      })}
-    </div>
-  )}
+          {/* Carousel tarafı */}
+          <div className="w-[90%] lg:w-[45%] items-center justify-start flex relative">
+            {/* Renk baloncukları (sadece tiles) */}
+            {isTiles && (
+              <div className="absolute left-3 top-3 z-10 flex gap-2">
+                {["ivory","light","antico"].map((ck) => {
+                  const label = colorLabelFor(locale, ck);
+                  const sampleSrc = (colorImagesMap[ck] && colorImagesMap[ck][0]) || heroSrc;
+                  const isActive = selectedColor === ck;
+                  return (
+                    <button
+                      key={ck}
+                      type="button"
+                      onClick={() => setSelectedColor(ck)}
+                      title={label}
+                      aria-label={label}
+                      className={[
+                        "relative h-10 w-10 rounded-full overflow-hidden ring-2 transition",
+                        isActive ? "ring-teal-700" : "ring-white/80 hover:ring-teal-500",
+                        "bg-white/40 backdrop-blur-sm"
+                      ].join(" ")}
+                    >
+                      <Image
+                        src={sampleSrc}
+                        alt={`${label} sample`}
+                        fill
+                        className="object-cover"
+                        sizes="40px"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
             <EmblaCarousel
-    key={isTiles ? `tiles-${selectedColor}` : "default"}
-    images={imagesForCarousel}
-    altPrefix={H1}
-  />
+              key={isTiles ? `tiles-${selectedColor}` : "default"}
+              images={imagesForCarousel}
+              altPrefix={H1}
+            />
           </div>
+
+          {/* Sağ panel */}
           <div className="flex flex-col w-[90%] lg:w-[45%] gap-5">
             {specs?.rows?.length ? (
-              <div className="space-y-2 text-start bg-white rounded-xl p-4 shadow-md">
-                <SpecTable
-                  rows={specs.rows}
-                  title={specs.h2 || specsLabel}
-                />
-                 {isTiles && (
-  <div className="text-sm text-neutral-600">
-    {locale.startsWith("tr") ? "Seçili renk: " : "Selected color: "}
-    <strong>{colorLabelFor(locale, selectedColor)}</strong>
-  </div>
-)}
+              <div className="space-y-4 text-start bg-white rounded-xl p-6 shadow-md">
+                <SpecTable rows={specs.rows} title={specs.h2 || specsLabel} />
+                {isTiles && (
+                  <div className="text-sm text-neutral-600">
+                    {locale.startsWith("tr") ? "Seçili renk: " : "Selected color: "}
+                    <strong>{colorLabelFor(locale, selectedColor)}</strong>
+                  </div>
+                )}
               </div>
             ) : null}
             <SocialBlock />
@@ -543,21 +490,29 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
       </section>
 
       {/* Finishes & Export */}
-      {(finishesItems.length || exportItems.length) ? (
+      {(page?.finishes || page?.export) && (
         <section className="max-w-[1400px] w-[95%] mx-auto mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {finishesItems.length ? <InfoListCard title={finishesTitle} items={finishesItems} prefix={`/${locale}`} /> : null}
-            {exportItems.length   ? <InfoListCard title={exportTitle}   items={exportItems}   prefix={`/${locale}`} /> : null}
+            {(() => {
+              const node = page?.finishes || {};
+              const items = [node.list1, node.list2, node.list3, node.list4].filter(Boolean);
+              return items.length ? <InfoListCard title={node.title || (locale.startsWith("tr") ? "Yüzey İşlemleri" : "Finishes & Processing Options")} items={items} prefix={`/${locale}`} /> : null;
+            })()}
+            {(() => {
+              const node = page?.export || {};
+              const items = [node.list1, node.list2, node.list3, node.list4].filter(Boolean);
+              return items.length ? <InfoListCard title={node.title || (locale.startsWith("tr") ? "İhracat & Paketleme" : "Export, Packaging & Shipping")} items={items} prefix={`/${locale}`} /> : null;
+            })()}
           </div>
         </section>
-      ) : null}
+      )}
 
       {/* Uzun metin bölümleri */}
-      {(title3 || title4 || title5) && (
+      {(page?.h3 || page?.h4 || page?.h5) && (
         <section className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
-          {title3 ? (<><h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{title3}</h3>{text3 ? <p className="text-[12px] lg:text-[14px]">{text3}</p> : null}</>) : null}
-          {title4 ? (<><h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{title4}</h4>{text4 ? <p className="text-[12px] lg:text-[14px]">{text4}</p> : null}</>) : null}
-          {title5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{title5}</h5>{text5 ? <p className="text-[12px] lg:text-[14px]">{text5}</p> : null}</>) : null}
+          {page?.h3 ? (<><h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{page.h3}</h3>{page?.text3 ? <p className="text-[12px] lg:text-[14px]">{page.text3}</p> : null}</>) : null}
+          {page?.h4 ? (<><h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h4}</h4>{page?.text4 ? <p className="text-[12px] lg:text-[14px]">{page.text4}</p> : null}</>) : null}
+          {page?.h5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>{page?.text5 ? <p className="text-[12px] lg:text-[14px]">{page.text5}</p> : null}</>) : null}
         </section>
       )}
 
@@ -572,7 +527,11 @@ const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) :
       <ContactFrom />
 
       {/* Other processes */}
-      <OtherOptions locale={locale} heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"} customItems={buildOtherProcessItems()} />
+      <OtherOptions
+        locale={locale}
+        heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"}
+        customItems={buildOtherProcessItems()}
+      />
     </main>
   );
 }
