@@ -1,4 +1,3 @@
-// app/[locale]/travertine/[product]/[cut]/[process]/page.js
 "use client";
 //resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve variant kısmının resimleri colorThumbs dan (_images)
 import { useParams, usePathname } from "next/navigation";
@@ -140,8 +139,34 @@ export default function ProcessPage() {
 
   const productKey = productKeyFromSlug(locale, String(productSlug)) || "slabs";
 
+  function resolveCutKey(locale, productKey, cutSlug) {
+  const target = String(cutSlug || "").toLowerCase().trim();
+  const lang = getLang(locale);
+  const cuts = CUTS[lang] || {};
+
+  // 1) Ürün tipine göre gerçek slug'ı üretip birebir karşılaştır
+  for (const k of Object.keys(cuts)) {
+    const candidate = String(
+      cutSlugForProduct(locale, k, productKey) // ⬅️ zaten dosyada tanımlı
+    ).toLowerCase();
+    if (candidate === target) return k;
+  }
+
+  // 2) Eski "slabs" tabanlı kayda karşılaştır (geriye dönük güvence)
+  for (const k of Object.keys(cuts)) {
+    const base = String(cuts[k] || "").toLowerCase();
+    if (base === target) return k;
+  }
+
+  // 3) Heuristik (son çare)
+  if (/vein|damar/.test(target)) return "vein-cut";
+  if (/cross|yatay/.test(target)) return "cross-cut";
+  return "vein-cut";
+}
+
+
   // cutSlug (SEO) → cutKey ("vein-cut" | "cross-cut")
-  const cutKey = Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === cutSlug) || "cross-cut";
+ const cutKey = resolveCutKey(locale, productKey, cutSlug);
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), cutKey);
 
   // process anahtarı: birleşik (filled-polished / unfilled-honed / natural ...)

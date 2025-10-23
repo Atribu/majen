@@ -40,6 +40,7 @@ import SpecTable from "@/app/[locale]/travertine/blocks/[color]/SpecTable";
 import InfoListCard from "@/app/[locale]/travertine/blocks/[color]/InfoListCard";
 import SocialBlock from "@/app/[locale]/travertine/blocks/[color]/SocialBlock";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
+import Image from "next/image";
 
 // ---------- utils ----------
 const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
@@ -254,6 +255,52 @@ const fallbackList = dedup([
 const gallery = galleryPrimary.length ? galleryPrimary : fallbackList;
 const heroSrc = (page?.hero?.src) || gallery[0];
 
+
+// --- TILES: 3 renk balonu (ivory, light, antico) için görsel map'i ve state ---
+const COLOR_CHOICES = ["ivory", "light", "antico"];
+
+// Seçili process + cut + product'a göre renk → görsel listesi
+function imagesForColor(colorKeyEn) {
+  if (!isTiles || !combinedKey) return [];
+
+  // 1) colorThumbs (process/cut bazlı asıl kaynak)
+  const fromColorByProcess =
+    IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
+
+  // 2) genel renk galerisi (fallback)
+  const fromVariant =
+    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
+    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
+
+  // 3) global process thumb ve diğer fallback’ler
+  const fallbacks = dedup([
+    ...toArray(fromVariant),
+    ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
+    ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
+    ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
+    heroSrc,
+  ]);
+
+  const primary = toArray(fromColorByProcess);
+  return primary.length ? primary : fallbacks;
+}
+
+// 3 renk için map
+const colorImagesMap = Object.fromEntries(
+  COLOR_CHOICES.map((k) => [k, imagesForColor(k)])
+);
+
+// İlk mevcut renk
+const firstAvailableColor =
+  COLOR_CHOICES.find((k) => (colorImagesMap[k] || []).length > 0) || COLOR_CHOICES[0];
+
+// tiles’a özel seçili renk state’i
+const [selectedColor, setSelectedColor] = React.useState(firstAvailableColor);
+
+// Carousel’in gerçek image array’i (tiles'ta renge bağlı)
+const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) : gallery;
+
+
   // ---- Canonical
   const baseSegment = baseFor(locale);
   const canonical = isBlocks
@@ -438,15 +485,56 @@ const heroSrc = (page?.hero?.src) || gallery[0];
       <section className="mx-auto text-center flex flex-col items-center justify-center max-w-[1400px] w-[95%] mt-6">
         <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start w-full">
           <div className="w-[90%] lg:w-[45%] items-center justify-start flex">
-            <EmblaCarousel images={gallery} altPrefix={H1} />
+             {isTiles && (
+    <div className="flex flex-col z-10 gap-2">
+      {COLOR_CHOICES.map((ck) => {
+        const label = colorLabelFor(locale, ck);
+        const sampleSrc = (colorImagesMap[ck] && colorImagesMap[ck][0]) || heroSrc;
+        const isActive = selectedColor === ck;
+        return (
+          <button
+            key={ck}
+            type="button"
+            onClick={() => setSelectedColor(ck)}
+            title={label}
+            aria-label={label}
+            className={[
+              "relative h-10 w-10 rounded-full overflow-hidden ring-2 transition",
+              isActive ? "ring-teal-700" : "ring-white/80 hover:ring-teal-500",
+              "bg-white/40 backdrop-blur-sm"
+            ].join(" ")}
+          >
+            <Image
+              src={sampleSrc}
+              alt={`${label} sample`}
+              fill
+              className="object-cover"
+              sizes="40px"
+            />
+          </button>
+        );
+      })}
+    </div>
+  )}
+            <EmblaCarousel
+    key={isTiles ? `tiles-${selectedColor}` : "default"}
+    images={imagesForCarousel}
+    altPrefix={H1}
+  />
           </div>
           <div className="flex flex-col w-[90%] lg:w-[45%] gap-5">
             {specs?.rows?.length ? (
-              <div className="space-y-4 text-start bg-white rounded-xl p-6 shadow-md">
+              <div className="space-y-2 text-start bg-white rounded-xl p-4 shadow-md">
                 <SpecTable
                   rows={specs.rows}
                   title={specs.h2 || specsLabel}
                 />
+                 {isTiles && (
+  <div className="text-sm text-neutral-600">
+    {locale.startsWith("tr") ? "Seçili renk: " : "Selected color: "}
+    <strong>{colorLabelFor(locale, selectedColor)}</strong>
+  </div>
+)}
               </div>
             ) : null}
             <SocialBlock />
@@ -484,11 +572,7 @@ const heroSrc = (page?.hero?.src) || gallery[0];
       <ContactFrom />
 
       {/* Other processes */}
-      <OtherOptions
-        locale={locale}
-        heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"}
-        customItems={buildOtherProcessItems()}
-      />
+      <OtherOptions locale={locale} heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"} customItems={buildOtherProcessItems()} />
     </main>
   );
 }

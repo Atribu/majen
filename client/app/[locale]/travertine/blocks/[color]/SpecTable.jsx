@@ -12,7 +12,7 @@ export default function SpecTable({ rows = [], title }) {
 
   return (
     <div className="w-full">
-      {title ? <h5 className="text-base lg:text-[18px] font-semibold mb-3">{title}</h5> : null}
+      {title ? <h5 className="text-base lg:text-[18px] font-semibold mb-[10px]">{title}</h5> : null}
       <div className="overflow-x-auto rounded-xl border border-neutral-200">
         <table className="min-w-full text-sm">
           <thead className="bg-neutral-100">
@@ -28,8 +28,8 @@ export default function SpecTable({ rows = [], title }) {
           <tbody className="divide-y divide-neutral-200">
             {data.map((r, idx) => (
               <tr key={idx} className="hover:bg-neutral-50/60">
-                <td className="px-4 py-[10px] font-medium text-neutral-800">{r.prop}</td>
-                <td className="px-4 py-[10px] text-neutral-700">{r.value}</td>
+                <td className="px-4 py-[9px] font-medium text-neutral-800">{r.prop}</td>
+                <td className="px-4 py-[9px] text-neutral-700">{r.value}</td>
               </tr>
             ))}
           </tbody>
