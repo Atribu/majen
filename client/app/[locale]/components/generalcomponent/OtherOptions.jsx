@@ -110,7 +110,7 @@ const resolveHref = (hrefLike) => {
     blocks: t("variantSentence.blocks.start"),
     slabs: t("variantSentence.slabs.start"),
     tiles: t("variantSentence.tiles.start"),
-    special: t("variantSentence.special.start"),
+    pavers: t("variantSentence.pavers.start"),
   };
   const endCommon = t("variantSentence.end");
 

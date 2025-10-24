@@ -29,10 +29,10 @@ const META_BY_PRODUCT = {
       description:
         "Majen supplies Wholesale Travertine Tiles From Turkey – Blaundos Antiko, Light, Ivory. Sizes: 30×60, 60×60, 40×80 cm. Finishes: polished, honed, brushed, tumbled. FOB/CIF worldwide export.",
     },
-    special: {
-      title: "Custom Travertine Designs From Turkey | Steps, Mosaics, Copings – Majen",
+    pavers: {
+      title: "Wholesale Travertine Pavers | Global Supplier of Natural Stone for Outdoor Projects",
       description:
-        "Majen supplies Custom Travertine Designs From Turkey: steps, stair treads, mosaics, borders, pool copings, sills, columns, and cut-to-size pieces in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide export.",
+        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export, competitive prices, and consistent stone quality.",
     },
   },
   tr: {
@@ -51,10 +51,10 @@ const META_BY_PRODUCT = {
       description:
         "30×60, 60×60, 40×80 cm ebatlarında Türkiye’den Toptan Traverten Karolar. Cilalı, honlu, fırçalı ve tamburlu yüzeyler. FOB/CIF sevkiyat.",
     },
-    special: {
-      title: "Özel Traverten Tasarımları | Majen",
+    pavers: {
+      title: "Wholesale Travertine Pavers | Global Supplier of Natural Stone for Outdoor Projects",
       description:
-        "Basamak, mozaik, bordür ve özel mimari parçalar. Türkiye’den ihracata hazır, güçlendirilmiş paketleme, FOB/CIF sevkiyat.",
+        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export, competitive prices, and consistent stone quality.",
     },
   },
 };
@@ -62,7 +62,7 @@ const META_BY_PRODUCT = {
 export async function generateMetadata({ params }) {
   const { locale, product } = await params;
 
-  // i18n üzerinden override etmek isterseniz: Seo.product.{block|slabs|tiles|special}.title/description
+  // i18n üzerinden override etmek isterseniz: Seo.product.{block|slabs|tiles|pavers}.title/description
   const tSeo = await getTranslations({ locale, namespace: "Seo.product" });
 
   // URL ve productKey
@@ -142,13 +142,13 @@ export default async function ProductLayout({ children, params }) {
       block:  "Travertine Blocks",
       slabs:  "Travertine Slabs",
       tiles:  "Travertine Tiles",
-      special:"Custom Travertine Designs",
+      pavers:"Custom Travertine Designs",
     },
     tr: {
       block:  "Traverten Bloklar",
       slabs:  "Traverten Plakalar",
       tiles:  "Traverten Karolar",
-      special:"Özel Traverten Tasarımları",
+      pavers:"Özel Traverten Tasarımları",
     },
   };
   const prodName = productNames[locale]?.[productKey] ?? product;

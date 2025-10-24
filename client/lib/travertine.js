@@ -21,7 +21,7 @@ export const PRODUCT_SLUGS = {
     blocks: "bloklar",
     slabs: "plakalar",
     tiles: "karolar",
-    pavers: "pavers"
+    pavers: "dosemeler"
   },
 };
 

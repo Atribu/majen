@@ -32,6 +32,7 @@ export const TILE_SIZE_SLUGS_PAVERS = [
   "16x24",
   "18x36",
   "24x24",
+  "24x36",
   "versailles-set"
 ];
 

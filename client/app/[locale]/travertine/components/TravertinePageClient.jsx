@@ -46,7 +46,7 @@ export default function TravertinePageClient() {
     { pattern: /blocks?/i,           href: hrefForProduct("block")   },
     { pattern: /slabs?/i,                            href: hrefForProduct("slabs")   },
     { pattern: /tiles?/i,                            href: hrefForProduct("tiles")   },
-    { pattern: /custom/i, href: hrefForProduct("special") },
+    { pattern: /custom/i, href: hrefForProduct("pavers") },
   ];
   
 
@@ -120,12 +120,12 @@ export default function TravertinePageClient() {
       {/* 4 ürün + altlarında tüm renkler (chip) */}
 <VariantCircleSection2
   heading={t("variantsHeading")}
-  productOrder={["blocks", "slabs", "tiles", "special-designs"]}
+  productOrder={["blocks", "slabs", "tiles", "pavers"]}
   variantSlugs={["antiko", "light", "ivory"]}
 
   productSegments={PRODUCT_SLUGS[locale]}
   locale={locale}
-  productImages={{  blocks: block, slabs, tiles, "special-designs": special  }}
+  productImages={{  blocks: block, slabs, tiles, pavers: special  }}
 />
 
      <TextSection title={t2("header1")} title2={t2("subheader1")} text2={t2("subtext1")} paragraphs={[

@@ -9,7 +9,7 @@ import { productSlugFor } from "@/lib/travertine";
 export default function VariantCircleSection2(props) {
   const {
     heading,
-    productOrder = ["blocks", "slabs", "tiles", "special-designs"],
+    productOrder = ["blocks", "slabs", "tiles", "pavers"],
     variantSlugs = [],
     locale = "tr",
     labels = {},
@@ -19,13 +19,13 @@ export default function VariantCircleSection2(props) {
     defaultCombos = {
       slabs: [{ filled: "filled", finish: "brushed", cut: "vein-cut" }, { filled: "filled", finish: "brushed", cut: "cross-cut" }],
       tiles: [{ filled: "filled", finish: "tumbled", cut: "vein-cut" }],
-      "special-designs": [{ filled: "filled", finish: "polished", cut: "vein-cut" }],
+      pavers: [{ filled: "filled", finish: "polished", cut: "vein-cut" }],
     },
   } = props;
 
   const t = useTranslations("TravertinePage");
 
-  const CANON = { block: "blocks", blocks: "blocks", special: "special-designs", "special-designs": "special-designs", slabs: "slabs", tiles: "tiles" };
+  const CANON = { block: "blocks", blocks: "blocks", pavers: "pavers", slabs: "slabs", tiles: "tiles" };
 
   // ——— Renk SEO slugu (TR için Türkçe kullanmak istersen burada map’le) ———
   const COLOR_SEO_MAP_EN = { ivory: "ivory", light: "light", antico: "antico" };
@@ -46,8 +46,8 @@ export default function VariantCircleSection2(props) {
 
   // ——— TR/EN son kuyruklar ———
   const PRODUCT_TAIL = locale.startsWith("tr")
-    ? { blocks: "traverten-bloklar", slabs: "traverten-plakalar", tiles: "traverten-karolar", "special-designs": "traverten-ozel-tasarim" }
-    : { blocks: "travertine-blocks", slabs: "travertine-slabs", tiles: "travertine-tiles", "special-designs": "travertine-special" };
+    ? { blocks: "traverten-bloklar", slabs: "traverten-plakalar", tiles: "traverten-karolar", pavers: "traverten-dosemeler" }
+    : { blocks: "travertine-blocks", slabs: "travertine-slabs", tiles: "travertine-tiles", pavers: "travertine-pavers" };
 
   // ——— Process çevirileri (slug parçası) ———
   const FILL = locale.startsWith("tr") ? { filled: "dolgulu", unfilled: "dolgusuz" } : { filled: "filled", unfilled: "unfilled" };
@@ -79,14 +79,14 @@ export default function VariantCircleSection2(props) {
   };
 
   // ——— Liste sayfası href’i (locale-aware kuyruk) ———
-  const productListPath = (pkey) => `/${PRODUCT_TAIL[pkey === "special-designs" ? "special-designs" : pkey]}`;
+  const productListPath = (pkey) => `/${PRODUCT_TAIL[pkey === "pavers" ? "pavers" : pkey]}`;
 
   // Ürün başlıkları
   const defaultProductLabels = {
     blocks: t("variantsubtitle1"),
     slabs: t("variantsubtitle2"),
     tiles: t("variantsubtitle3"),
-    "special-designs": t("variantsubtitle4"),
+    pavers: t("variantsubtitle4"),
   };
   const productLabels = { ...defaultProductLabels, ...(labels.product || {}) };
 
@@ -97,8 +97,7 @@ export default function VariantCircleSection2(props) {
     blocks: t("variantSentence.blocks.start"),
     slabs: t("variantSentence.slabs.start"),
     tiles: t("variantSentence.tiles.start"),
-    special: t("variantSentence.special.start"),
-    "special-designs": t("variantSentence.special.start"),
+    pavers: t("variantSentence.pavers.start"),
   };
   const endCommon = t("variantSentence.end");
 
@@ -108,7 +107,7 @@ export default function VariantCircleSection2(props) {
     if (p === "blocks") {
       return buildSeoProductPathLocalized({ product: p, color: colorSlug });
     }
-    const combos = defaultCombos[p] || defaultCombos["special-designs"] || [];
+    const combos = defaultCombos[p] || defaultCombos["pavers"] || [];
     const use = combos[0] || { filled: "filled", finish: "polished", cut: "vein-cut" };
     return buildSeoProductPathLocalized({ product: p, color: colorSlug, ...use });
   };
@@ -123,7 +122,7 @@ export default function VariantCircleSection2(props) {
             const pkey = CANON[raw] || raw;
             const startText = startByProduct[pkey] || "";
 
-            const IMG_KEY = { blocks: "block", "special-designs": "special", slabs: "slabs", tiles: "tiles" };
+            const IMG_KEY = { blocks: "block", pavers: "pavers", slabs: "slabs", tiles: "tiles" };
             const imgKey = IMG_KEY[pkey] || pkey;
 
             const listHref = productListPath(pkey); // locale’siz; i18n Link prefixler

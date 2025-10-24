@@ -256,9 +256,10 @@ const descArr = Array.isArray(processNode.description)
   const hSizes    = safe(() => t(`${productKey}.detailsHeadings.sizes`), "Sizes / Thickness");
   const hFeatures = safe(() => t(`${productKey}.detailsHeadings.features`), "Finishes & Features");
 
-    const qCut = safe(() => t.raw(`slabs.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`), null);
-  const qTop = safe(() => t.raw(`slabs.QuestionsItems`), {});
+    const qCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`), null);
+  const qTop = safe(() => t.raw(`${productKey}.QuestionsItems`), {});
   const qSrc = qCut || qTop;
+  
   const faqItems = [];
   if (qSrc) {
     let j = 1;
@@ -535,7 +536,9 @@ const ALL_PROCS_EN = [
   "filled-polished","filled-honed","filled-brushed","filled-tumbled",
   "unfilled-honed","unfilled-brushed","unfilled-tumbled","unfilled-natural",
 ];
-const otherProcKeysEN = ALL_PROCS_EN.filter((p) => p !== lookupProcKey).slice(0, 3);
+const otherProcKeysEN = ALL_PROCS_EN
+  .filter((p) => p !== lookupProcKey)
+  .slice(0, 3);
 
 // 2) Kart başına 3 renk (öncelik sırası)
 const COLOR_PRIORITY = ["ivory", "light", "antico"]; // istersen farklı sıraya al

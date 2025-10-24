@@ -10081,7 +10081,7 @@
       "block": "Available color options: <links/>. Each reflects the quarry’s character and adds a strong, authentic presence to your project.",
       "slabs": "This slab series offers: <links/>. With consistent surfaces and curated veining, it delivers a flawless look in large areas.",
       "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
-      "special": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
+      "pavers": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
     },
      "variantSentence": {
       "blocks": {
@@ -10093,7 +10093,7 @@
       "tiles": {
         "start": "As Majen, we provide Travertine Tiles in elegant varieties such as"
       },
-      "special": {
+      "pavers": {
         "start": "As Majen, we craft Custom Travertine Designs using"
       },
       "end": "to suit diverse projects and performance needs."
@@ -10103,7 +10103,7 @@
       "block": "Travertine Blocks for Export",
       "slabs": "Travertine Slabs Supplier",
       "tiles": "Wholesale Travertine Tiles",
-      "special": "Custom Travertine Designs",
+      "pavers": "Custom Travertine Designs",
         "blocks": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
        "special-designs": "Custom travertine designs – steps, mosaics, borders packed for sea freight"
     },

@@ -68,14 +68,14 @@ export default async function Page({ params }) {
     block:  locale === "tr" ? "Traverten Bloklar"   : "Travertine Blocks",
     slabs:  locale === "tr" ? "Traverten Plakalar"  : "Travertine Slabs",
     tiles:  locale === "tr" ? "Traverten Karolar"   : "Travertine Tiles",
-    special:locale === "tr" ? "Özel Tasarımlar"     : "Special Designs",
+    pavers:locale === "tr" ? "Özel Tasarımlar"     : "Travertine Pavers",
   };
 
   const urls = {
     block:  `${catUrl}/block`,
     slabs:  `${catUrl}/slabs`,
     tiles:  `${catUrl}/tiles`,
-    special:`${catUrl}/special`,
+    pavers:`${catUrl}/pavers`,
   };
 
   const breadcrumbJSONLD = {
@@ -94,7 +94,7 @@ export default async function Page({ params }) {
       { "@type": "ListItem", position: 1, name: names.block,  url: urls.block  },
       { "@type": "ListItem", position: 2, name: names.slabs,  url: urls.slabs  },
       { "@type": "ListItem", position: 3, name: names.tiles,  url: urls.tiles  },
-      { "@type": "ListItem", position: 4, name: names.special,url: urls.special},
+      { "@type": "ListItem", position: 4, name: names.pavers,url: urls.pavers},
     ],
   };
 
