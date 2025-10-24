@@ -96,7 +96,7 @@ export default function CutPage() {
     const selectedSegments = segments.slice(-1);
 
 
-  // Ürüne göre cut slug'ını normalize et (slabs→tiles/blocks/special)
+  // Ürüne göre cut slug'ını normalize et (slabs→tiles/blocks/pavers)
   function cutSlugForProduct(locale, cutKey, productKey) {
     const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
     if (typeof base !== "string") return cutKey;
@@ -104,14 +104,14 @@ export default function CutPage() {
         if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
       if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
       if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
-      if (productKey === "special")  return base.replace(/-travertine-slabs$/i, "-travertine-special");
+      if (productKey === "pavers")  return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
       return base; // slabs
     }
     // TR dönüşümleri
     if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
     if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
     if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-    if (productKey === "special")  return base.replace(/-traverten-plakalar$/i, "-traverten-ozel-tasarim");
+    if (productKey === "pavers")  return base.replace(/-traverten-plakalar$/i, "-traverten-pavers");
     return base; // plakalar (slabs)
   }
 
@@ -357,8 +357,8 @@ const hrefForCut = (pkey, ckey) => ({
   },
 });
 
-// 🔸 yalnızca slabs/tiles/special-designs göster
-const CUT_PRODUCTS = ["slabs", "tiles", "special-designs"];
+// 🔸 yalnızca slabs/tiles/pavers göster
+const CUT_PRODUCTS = ["slabs", "tiles", "pavers"];
 
 
 
@@ -530,15 +530,15 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
   heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
   customItems={otherOptionsItems}         // ← sadece bunu ekledik
   excludeProduct={productKey}
-  productOrder={["slabs", "tiles", "special-designs"]}
+  productOrder={["slabs", "tiles", "pavers"]}
   baseHref={`${prefix}/${baseSegment}`}
   productSegments={{
     slabs: productSlugFor(locale, "slabs"),
     tiles: productSlugFor(locale, "tiles"),
-    "special-designs": productSlugFor(locale, "special-designs"),
+    "pavers": productSlugFor(locale, "pavers"),
   }}
   locale={locale}
-  productImages={{ slabs, tiles, "special-designs": special }}
+  productImages={{ slabs, tiles, "pavers": special }}
   productHrefFor={(pkey) => ({
     pathname: "/travertine/[product]",
     params: { product: productSlugFor(locale, pkey) }

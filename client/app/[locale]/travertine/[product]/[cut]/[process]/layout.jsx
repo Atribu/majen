@@ -9,14 +9,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const BASE_BY_LOCALE = { en: "travertine", tr: "traverten", de: "travertin", ru: "travertin" };
 
 /** Process layout’u olan ürünler (blocks hariç) */
-const PROCESS_PRODUCTS = new Set(["slabs", "tiles", "special", "special-designs"]);
+const PROCESS_PRODUCTS = new Set(["slabs", "tiles", "pavers"]);
 
 /** UI label’ları (breadcrumb için) */
 const PRODUCT_LABEL = {
   slabs: { en: "Travertine Slabs", tr: "Traverten Plakalar" },
   tiles: { en: "Travertine Tiles", tr: "Traverten Karolar" },
-  "special-designs": { en: "Custom Designs", tr: "Özel Tasarım" },
-  special: { en: "Custom Designs", tr: "Özel Tasarım" }, // alias
+  "pavers": { en: "Travertine Pavers", tr: "Traverten Dosemeler" },
+  pavers: { en: "Travertine Pavers", tr: "Traverten Dosemeler" }, // alias
 };
 
 /** Kesim kısa anahtarını üret ("vein-cut" | "cross-cut") */
@@ -30,17 +30,17 @@ function shortCutKey(full) {
 /** EN/TR ürün adını cut slug'ında doğru son ekle normalize et */
 function ensureProductInCutSlug(locale, cut, product) {
   const isTR = locale === "tr";
-  const p = product === "special" ? "special" : product;
+  const p = product === "pavers" ? "pavers" : product;
   if (isTR) {
     return String(cut)
       .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "ozel-tasarim"}`)
       .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "ozel-tasarim"}`)
-      .replace(/-traverten-ozel-tasarim$/i, `-traverten-${p === "special" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
+      .replace(/-traverten-dosemeler$/i, `-traverten-${p === "pavers" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
   }
   return String(cut)
-    .replace(/-travertine-slabs$/i,   `-travertine-${p === "slabs" ? "slabs" : p === "tiles" ? "tiles" : "special"}`)
-    .replace(/-travertine-tiles$/i,   `-travertine-${p === "tiles" ? "tiles" : p === "slabs" ? "slabs" : "special"}`)
-    .replace(/-travertine-special$/i, `-travertine-${p === "special" ? "special" : p === "slabs" ? "slabs" : "tiles"}`);
+    .replace(/-travertine-slabs$/i,   `-travertine-${p === "slabs" ? "slabs" : p === "tiles" ? "tiles" : "pavers"}`)
+    .replace(/-travertine-tiles$/i,   `-travertine-${p === "tiles" ? "tiles" : p === "slabs" ? "slabs" : "pavers"}`)
+    .replace(/-travertine-pavers$/i, `-travertine-${p === "pavers" ? "pavers" : p === "slabs" ? "slabs" : "tiles"}`);
 }
 
 /** Process slug’ını i18n lookup için normalize et ("dolgulu-cilali"→EN anahtar "filled-polished") */
@@ -90,7 +90,7 @@ const OG_BY_PRODUCT_AND_CUT = {
     vein:  { en: "/images/og/vein-cut-travertine-tiles-cover.webp",  tr: "/images/og/tr-vein-cut-traverten-karo.webp" },
     cross: { en: "/images/og/cross-cut-travertine-tiles-cover.webp", tr: "/images/og/tr-cross-cut-traverten-karo.webp" }
   },
-  "special-designs": {
+  pavers: {
     vein:  { en: "/images/og/vein-cut-travertine-special-cover.webp",  tr: "/images/og/tr-vein-cut-traverten-ozel.webp" },
     cross: { en: "/images/og/cross-cut-travertine-special-cover.webp", tr: "/images/og/tr-cross-cut-traverten-ozel.webp" }
   }

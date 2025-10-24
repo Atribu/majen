@@ -7,9 +7,19 @@ const handleI18nRouting = createMiddleware(routing, { localeDetection: false });
 
 const FS_BASE = 'travertine';
 
-const EN_PRODUCTS = new Set(['travertine-blocks','travertine-slabs','travertine-tiles','travertine-special']);
-const TR_PRODUCTS = new Set(['traverten-bloklar','traverten-plakalar','traverten-karolar','traverten-ozel-tasarim']);
+const EN_PRODUCTS = new Set([
+  'travertine-blocks',
+  'travertine-slabs',
+  'travertine-tiles',
+  'travertine-pavers'
+]);
 
+const TR_PRODUCTS = new Set([
+  'traverten-bloklar',
+  'traverten-plakalar',
+  'traverten-karolar',
+  'traverten-dosemeler'
+]);
 const EXEMPT_TOP_LEVEL = new Set([
   'travertine-guide',
   'gallery',  // en
@@ -31,14 +41,16 @@ function normalizeColorSlugForLocale(locale, raw) {
 
 }
 
-const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
-const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
+const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
+const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
+
 
 const PROC_CUT_WITH_PRODUCT_EN =
-  /^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|special)$/i;
+  /^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
 
 const PROC_CUT_WITH_PRODUCT_TR =
-  /^((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|ozel-tasarim)$/i;
+  /^((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
+
 
 const PROC_ONLY_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
 const PROC_ONLY_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
@@ -47,30 +59,32 @@ const BLOCKS_COLOR_EN = /^([a-z0-9-]+)-travertine-blocks$/i;
 const BLOCKS_COLOR_TR = /^([a-z0-9-]+)-traverten-bloklar$/i;
 
 function localizedProductFromCut(locale, cutSlug) {
-  // İç route için DAIMA İNGİLİZCE key döndür (slabs, tiles, blocks, special)
-  // Çünkü dosya yapınız app/[locale]/travertine/[product]/... şeklinde
-  
   if (locale === 'tr') {
-    if (/-traverten-plakalar$/i.test(cutSlug))     return 'slabs';      // ✅ değişti
-    if (/-traverten-karolar$/i.test(cutSlug))      return 'tiles';      // ✅ değişti
-    if (/-traverten-bloklar$/i.test(cutSlug))      return 'blocks';     // ✅ değişti
-    if (/-traverten-ozel-tasarim$/i.test(cutSlug)) return 'special';    // ✅ değişti
+    if (/-traverten-plakalar$/i.test(cutSlug))     return 'slabs';
+    if (/-traverten-karolar$/i.test(cutSlug))      return 'tiles';
+    if (/-traverten-bloklar$/i.test(cutSlug))      return 'blocks';
+    if (/-traverten-dosemeler$/i.test(cutSlug))       return 'pavers'; // yeni
   } else {
     if (/-travertine-slabs$/i.test(cutSlug))   return 'slabs';
     if (/-travertine-tiles$/i.test(cutSlug))   return 'tiles';
     if (/-travertine-blocks$/i.test(cutSlug))  return 'blocks';
-    if (/-travertine-special$/i.test(cutSlug)) return 'special';
+    if (/-travertine-pavers$/i.test(cutSlug))  return 'pavers'; // yeni
   }
-  return 'slabs'; // default
+  return 'slabs';
 }
 
+
   const TILE_SIZE_CANON = new Map([
+  ['6x12', '6x12'],
   ['8x8', '8x8'],
   ['12x12', '12x12'],
   ['12x24', '12x24'],
   ['16x16', '16x16'],
+  ['16x24', '16x24'],
   ['18x18', '18x18'],
+  ['18x36', '18x36'],
   ['24x24', '24x24'],
+  ['24x36', '24x36'],
   ['24x48', '24x48'],
   ['48x110', '48x110'],
   ['versailles-set', 'versailles-set'],
@@ -127,11 +141,13 @@ export default function middleware(req) {
     if (CUT_EN.test(seg2)) {
       const productEn = localizedProductFromCut('en', seg2);
       const productSeg = (locale === 'tr')
-        ? (productEn === 'slabs' ? 'plakalar'
-          : productEn === 'tiles' ? 'karolar'
-          : productEn === 'blocks' ? 'bloklar'
-          : 'ozel-tasarim')
-        : productEn;
+  ? (productEn === 'slabs'  ? 'plakalar'
+    : productEn === 'tiles' ? 'karolar'
+    : productEn === 'blocks'? 'bloklar'
+    : productEn === 'pavers'? 'dosemeler'
+    : productEn)
+  : productEn;
+
 
       url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${seg2}`;
       return NextResponse.rewrite(url);
@@ -154,12 +170,13 @@ export default function middleware(req) {
     const processSlug = m[1];
     const cutType     = m[2];
     const productEn   = m[3].toLowerCase();
-    const productSeg  = locale === 'tr'
-      ? (productEn === 'slabs' ? 'slabs'  // ✅ EN key kullan
-        : productEn === 'tiles' ? 'tiles'
-        : productEn === 'blocks' ? 'blocks'
-        : 'special')
-      : productEn;
+const productSeg  = locale === 'tr'
+  ? (productEn === 'slabs'  ? 'slabs'
+    : productEn === 'tiles' ? 'tiles'
+    : productEn === 'blocks'? 'blocks'
+    : productEn === 'pavers'? 'pavers'
+    : productEn)
+  : productEn;
     const cutSlugFull = `${cutType}-travertine-${productEn}`;
     const tail = parts.slice(2).join('/');
     url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
@@ -184,10 +201,12 @@ export default function middleware(req) {
     const tail = parts.slice(2).join('/');
     
     // ✅ İç route için EN key kullan
-    const productSeg = 
-      productTr === 'plakalar' ? 'slabs' :
-      productTr === 'karolar' ? 'tiles' :
-      productTr === 'bloklar' ? 'blocks' : 'special';
+   const productSeg = 
+  productTr === 'plakalar' ? 'slabs' :
+  productTr === 'karolar'  ? 'tiles' :
+  productTr === 'bloklar'  ? 'blocks' :
+  productTr === 'dosemeler'   ? 'pavers' :
+  'slabs';
     
     url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
     return NextResponse.rewrite(url);
@@ -202,8 +221,9 @@ if (parts.length >= 2) {
   if (tokens.length >= 6) {
     const maybeLast5 = tokens.slice(-5).join('-');
     const last4      = tokens.slice(-4).join('-');
-    const cutCandidate =
-      (locale === 'tr' && /-traverten-ozel-tasarim$/i.test(maybeLast5)) ? maybeLast5 : last4;
+const cutCandidate =
+  (locale === 'tr' && /-traverten-pavers$/i.test(maybeLast5)) ? maybeLast5 : last4;
+
 
     const isCutEN = CUT_EN.test(cutCandidate);
     const isCutTR = CUT_TR.test(cutCandidate);
@@ -222,7 +242,7 @@ if (parts.length >= 2) {
       const colorSlug = normalizeColorSlugForLocale(locale, firstToken);
 
       // ② tiles ise ve renk bulunamadıysa, size normalizasyonu dene
-      const sizeSlug = (!colorSlug && productSeg === 'tiles')
+      const sizeSlug = (!colorSlug && (productSeg === 'tiles' || productSeg === 'pavers'))
         ? normalizeTileSizeSlug(firstToken)
         : null;
 

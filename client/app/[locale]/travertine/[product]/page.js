@@ -156,7 +156,7 @@ const pretty = locale.startsWith("tr")
   });
 }
 
-    // Ürüne göre cut slug'ını düzelt (slabs→tiles/blocks/special-designs)
+    // Ürüne göre cut slug'ını düzelt (slabs→tiles/blocks/pavers)
    function cutSlugForProduct(locale, cutKey, productKey) {
     const lang = getLang(locale);
     const base = (CUTS[lang] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
@@ -166,15 +166,15 @@ const pretty = locale.startsWith("tr")
       if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
      if (productKey === "tiles")             return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
       if (productKey === "blocks")            return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
-      if (productKey === "special" || productKey === "special-designs")
-                                              return base.replace(/-travertine-slabs$/i, "-travertine-special");
+      if (productKey === "pavers" )
+                                              return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
     }
     // TR dönüşümleri
     if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
      if (productKey === "tiles")             return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
     if (productKey === "blocks")            return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-    if (productKey === "special" || productKey === "special-designs")
-                                              return base.replace(/-traverten-plakalar$/i, "-traverten-ozel-tasarim");
+    if (productKey === "pavers" )
+                                              return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
   }
 
   const cutCards = showCutSelection
@@ -267,7 +267,7 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
     blocks: "Blocks",
     slabs: "Slabs",
     tiles: "Tiles",
-    "special-designs": "Custom Designs",
+    "pavers": "Pavers",
   };
 
   return (
@@ -339,7 +339,7 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
    />
  ) : null}
 
-      {/* Blocks / Special-Designs → burada artık renk varyantı YOK. 
+      {/* Blocks / pavers → burada artık renk varyantı YOK. 
           İstersen bu blok yerine direkt teknik bölümleri, CTA, görseller vs. göster. */}
 
       {/* Serbest metin bölümleri */}
@@ -393,16 +393,16 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
       <OtherOptions
         heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
         excludeProduct={productKey}
-        productOrder={["blocks", "slabs", "tiles", "special"]} //blocks olmalı burası
+        productOrder={["blocks", "slabs", "tiles", "pavers"]} //blocks olmalı burası
         baseHref={`${prefix}/${baseSegment}`}
         productSegments={{
           blocks: productSlugFor(locale, "blocks"),
           slabs: productSlugFor(locale, "slabs"),
           tiles: productSlugFor(locale, "tiles"),
-          "special": productSlugFor(locale, "special"),
+          "pavers": productSlugFor(locale, "pavers"),
         }}
         locale={locale}
-        productImages={{ blocks: blocks, slabs, tiles, "special": special }}
+        productImages={{ blocks: blocks, slabs, tiles, "pavers": special }}
         productHrefFor={(pkey) => productUrl(locale, pkey)}
       />
     </main>

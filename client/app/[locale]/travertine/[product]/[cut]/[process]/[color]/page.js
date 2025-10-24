@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -78,7 +77,7 @@ function friendlyProcessLabelForLocale(procKey, locale) {
 function normalizeTileSizeSlug(raw) {
   if (!raw) return null;
   let s = String(raw).trim().toLowerCase();
-  s = s.replace(/["""]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
+  s = s.replace(/["“”]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
   const MAP = new Map([
     ["8x8","8x8"],["12x12","12x12"],["12x24","12x24"],["16x16","16x16"],
     ["18x18","18x18"],["24x24","24x24"],["24x48","24x48"],["48x110","48x110"],
@@ -100,7 +99,7 @@ function combinedKeyFromProc(proc = "", locale = "en") {
   const [fillRaw, procRaw] = s.split("-");
   const fill = fillMap[fillRaw] || fillRaw;
   const p    = procMap[procRaw] || procRaw;
-  return `${fill}:${p}`; // PROCESS_THUMB_BY_COMBINED'de ":" ile indexleniyor
+  return `${fill}:${p}`; // PROCESS_THUMB_BY_COMBINED’de ":" ile indexleniyor
 }
 const TOPOLOGICAL_ORDER = [
   "unfilled-natural", "filled-natural",
@@ -132,10 +131,23 @@ export default function ColorDetailPage() {
   const messages = useMessages();
 
   const productKey = productKeyFromSlug(locale, String(productSlug));
-  const isTiles  = productKey === "tiles";
-  const isBlocks = productKey === "blocks";
+    const isBlocks = productKey === "blocks";
+    const isSlabs  = productKey === "slabs";
+    const isTiles  = productKey === "tiles";
+    const isPavers  = productKey === "pavers";
 
-  /* 🔹 HOOKLAR — daima en üstte */
+
+  // Anahtarlar
+  const cutKey = isBlocks ? null
+    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === String(cutSlug)) || "vein-cut");
+
+  const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
+  const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
+  const colorKey = !isTiles ? (COLOR_KEY_BY_SLUG?.[leafSlugRaw] || leafSlugRaw) : null;
+  const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
+  const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
+
+  /* 🔹 HOOKLAR — daima en üstte ve koşulsuz (Hata Çözümü: Koşullu Hook Çağrımı) */
   const sizeSlugs = sizeSlugListForProduct(productKey, t);
   const hashValue = typeof window !== "undefined" ? decodeURIComponent(window.location.hash.replace(/^#/, "")) : "";
   const initialFromHash = hashValue && sizeSlugs.includes(hashValue) ? hashValue : (sizeSlugs[0] || "");
@@ -145,7 +157,35 @@ export default function ColorDetailPage() {
   const COLOR_CHOICES = ["ivory", "light", "antico"];
   const [selectedColor, setSelectedColor] = React.useState("ivory");
 
-  // Hash değişikliği için effect
+  // tiles renk → görsel listesi (React.useCallback ile sarıldı)
+  const imagesForColor = React.useCallback((colorKeyEn) => {
+    if (!isTiles || !combinedKey) return [];
+    const fromColorByProcess =
+      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
+    const fromVariant =
+      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
+      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
+    // Not: heroSrc henüz tanımlı değil, buradaki görsel listesi hesaplamasını etkilemez.
+    const fallbacks = dedup([
+      ...toArray(fromVariant),
+      ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
+      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
+      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
+    ]);
+    const primary = toArray(fromColorByProcess);
+    return primary.length ? primary : fallbacks;
+  }, [isTiles, combinedKey, productKey, cutKey, locale]); 
+
+  // colorImagesMap ve firstAvailableColor'ı useMemo ile hesaplayın (Uyarı Çözümü: Karmaşık İfade)
+  const colorImagesMap = React.useMemo(() => 
+    Object.fromEntries(COLOR_CHOICES.map((k) => [k, imagesForColor(k)]))
+  , [COLOR_CHOICES, imagesForColor]);
+
+  const firstAvailableColor = React.useMemo(() => 
+    COLOR_CHOICES.find((k) => (colorImagesMap[k] || []).length > 0) || COLOR_CHOICES[0]
+  , [COLOR_CHOICES, colorImagesMap]);
+
+  // Hash değişimi için useEffect
   React.useEffect(() => {
     const onHashChange = () => {
       const v = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -155,21 +195,32 @@ export default function ColorDetailPage() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [sizeSlugs]);
 
-  /* 🔹 Ana anahtarlar */
-  const cutKey = isBlocks ? null
-    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === String(cutSlug)) || "vein-cut");
+  // Renk seçimi için useEffect (Hata ve Uyarı Çözümü: Eksik Bağımlılıklar)
+  React.useEffect(() => {
+    if (!isTiles) return;
+    
+    // Yalnızca ilk yüklemede, mevcut seçili renk geçersizse güncelle
+    setSelectedColor((prev) => {
+      // Eğer prev rengi COLOR_CHOICES içinde değilse VEYA o renk için görsel yoksa
+      if (!COLOR_CHOICES.includes(prev) || !(colorImagesMap[prev]?.length)) {
+        return firstAvailableColor;
+      }
+      return prev;
+    });
 
-  const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
-  const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
-  const colorKey = !isTiles ? (COLOR_KEY_BY_SLUG?.[leafSlugRaw] || leafSlugRaw) : null;
-  const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
+  }, [isTiles, firstAvailableColor, COLOR_CHOICES, colorImagesMap]);
+  /* ---------------- HOOKLAR BİTTİ ---------------- */
 
-  /* 🔹 Guard kontrolü hazırlığı */
+  /* 🔹 Guard tek yerden */
   const guardMessage =
     (!productKey || (!procKeyFull && !isBlocks)) ? "Loading..." :
     (isTiles && !sizeKey) ? "Invalid size" :
     (!isTiles && !colorKey && !isBlocks) ? "Invalid color" :
     null;
+
+  if (guardMessage) {
+    return <main className="p-10 text-center text-neutral-500">{guardMessage}</main>;
+  }
 
   /* ---- JSON / labels ---- */
   const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKeyFull) : procKeyFull;
@@ -201,15 +252,16 @@ export default function ColorDetailPage() {
   const LEAF_KEY   = isTiles ? sizeKey : colorKey;
   const LEAF_LABEL = isTiles ? sizeLabelFromSlug(sizeKey || "") : colorLabelFor(locale, colorKey || "");
 
-  const H1        = page?.h1 || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
-  const H2        = page?.title || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
-  const intro     = page?.intro || "";
-  const intro2    = page?.intro2 || "";
+  const H1         = page?.h1 || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
+  const H2         = page?.title || (isBlocks ? `${LEAF_LABEL}` : `${LEAF_LABEL} · ${processLabel}`);
+  const intro      = page?.intro || "";
+  const intro2     = page?.intro2 || "";
   const metaTitle = page?.metaTitle || H1;
   const metaDesc  = page?.metaDesc  || intro;
 
   /* ---- Görseller ---- */
-  const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
+  // combinedKey zaten yukarıda hesaplandı
+  
   const galleryPrimaryValue =
     (!isBlocks && combinedKey)
       ? IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[LEAF_KEY]
@@ -219,7 +271,7 @@ export default function ColorDetailPage() {
 
   const fallbackList = dedup([
     ...toArray(!isTiles ? (IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[leafSlugRaw]
-                           ?? IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey]) : null),
+                       ?? IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKey]) : null),
     ...toArray((!isBlocks && combinedKey) ? PROCESS_THUMB_BY_COMBINED?.[combinedKey] : null),
     ...toArray(!isBlocks ? IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] : null),
     ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
@@ -229,38 +281,7 @@ export default function ColorDetailPage() {
   const gallery = galleryPrimary.length ? galleryPrimary : fallbackList;
   const heroSrc = (page?.hero?.src) || gallery[0];
 
-  // tiles renk → görsel listesi
-  function imagesForColor(colorKeyEn) {
-    if (!isTiles || !combinedKey) return [];
-    const fromColorByProcess =
-      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
-    const fromVariant =
-      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
-      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
-    const fallbacks = dedup([
-      ...toArray(fromVariant),
-      ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
-      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
-      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
-      heroSrc,
-    ]);
-    const primary = toArray(fromColorByProcess);
-    return primary.length ? primary : fallbacks;
-  }
-
-  const colorImagesMap = Object.fromEntries(COLOR_CHOICES.map((k) => [k, imagesForColor(k)]));
-  const firstAvailableColor = COLOR_CHOICES.find((k) => (colorImagesMap[k] || []).length > 0) || COLOR_CHOICES[0];
-
-  // tiles sayfası ilk yüklemede geçerli bir renge ayarlansın
-  React.useEffect(() => {
-    if (!isTiles) return;
-    setSelectedColor((prev) => {
-      const hasImages = colorImagesMap[prev]?.length > 0;
-      if (COLOR_CHOICES.includes(prev) && hasImages) return prev;
-      return firstAvailableColor;
-    });
-  }, [isTiles, firstAvailableColor, colorImagesMap, COLOR_CHOICES]);
-
+  // imagesForColor, useMemo ve useCallback ile yukarı taşındı.
   const imagesForCarousel = isTiles ? (colorImagesMap[selectedColor] || gallery) : gallery;
 
   /* ---- Canonical ---- */
@@ -356,7 +377,7 @@ export default function ColorDetailPage() {
             product: productSlug,
             cut:     cutSlug,
             process: processSlugLocalized,
-            color:   leafSlugRaw, // tiles'ta size; slabs'ta color
+            color:   leafSlugRaw, // tiles’ta size; slabs’ta color
           },
         },
       });
@@ -381,12 +402,7 @@ export default function ColorDetailPage() {
     !isBlocks ? { label: cutLabel, href: `/${locale}/${baseFor(locale)}/${productSlug}/${cutSlug}` } : null,
     !isBlocks ? { label: processLabelLocalized, href: `/${locale}/${baseFor(locale)}/${productSlug}/${cutSlug}/${processSlug}` } : null,
     { label: LEAF_LABEL, href: `/${locale}/${baseFor(locale)}/${productSlug}${!isBlocks ? `/${cutSlug}/${processSlug}` : ""}/${leafSlugRaw}` },
-  ].filter(Boolean);
-
-  /* Guard kontrolü - tüm hooklar çağrıldıktan sonra */
-  if (guardMessage) {
-    return <main className="p-10 text-center text-neutral-500">{guardMessage}</main>;
-  }
+  ].filter(Boolean) ;
 
   /* ---- Render ---- */
   return (
@@ -430,6 +446,13 @@ export default function ColorDetailPage() {
         items={items}
       />
 
+           {( isTiles || isPavers && page?.h5) && (
+        <div className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
+          
+          {page?.h5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>{page?.text5 ? <p className="text-[12px] lg:text-[14px]">{page.text5}</p> : null}</>) : null}
+        </div>
+      )}
+
       {/* Carousel + Sağ panel */}
       <section className="mx-auto text-center flex flex-col items-center justify-center max-w-[1400px] w-[95%] mt-6">
         <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start w-full">
@@ -440,7 +463,8 @@ export default function ColorDetailPage() {
               <div className="absolute left-3 top-3 z-10 flex gap-2">
                 {["ivory","light","antico"].map((ck) => {
                   const label = colorLabelFor(locale, ck);
-                  const sampleSrc = (colorImagesMap[ck] && colorImagesMap[ck][0]) || heroSrc;
+                  // colorImagesMap artık kullanılabilir ve günceldir
+                  const sampleSrc = (colorImagesMap[ck] && colorImagesMap[ck][0]) || heroSrc; 
                   const isActive = selectedColor === ck;
                   return (
                     <button
@@ -512,13 +536,20 @@ export default function ColorDetailPage() {
       )}
 
       {/* Uzun metin bölümleri */}
-      {(page?.h3 || page?.h4 || page?.h5) && (
+      {( page?.h3 || page?.h4 || page?.h5) && (
         <section className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
           {page?.h3 ? (<><h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{page.h3}</h3>{page?.text3 ? <p className="text-[12px] lg:text-[14px]">{page.text3}</p> : null}</>) : null}
           {page?.h4 ? (<><h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h4}</h4>{page?.text4 ? <p className="text-[12px] lg:text-[14px]">{page.text4}</p> : null}</>) : null}
-          {page?.h5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>{page?.text5 ? <p className="text-[12px] lg:text-[14px]">{page.text5}</p> : null}</>) : null}
+         {(isSlabs && page?.h5) && 
+         (
+          <section>
+             {page?.h5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>{page?.text5 ? <p className="text-[12px] lg:text-[14px]">{page.text5}</p> : null}</>) : null}
+          </section>
+         )}
         </section>
       )}
+
+         
 
       {/* FAQ */}
       {faqItems.length > 0 && (

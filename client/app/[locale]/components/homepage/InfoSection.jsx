@@ -59,7 +59,7 @@ export default function InfoSection() {
      { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "blocks")}`},
     { key: "product2", img: slabs,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "slabs")}` },
     { key: "product3", img: tiles,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "tiles")}`  },
-    { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "special")}` },
+    { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "pavers")}` },
   ];
 
   // t("__contactPath") hilesi: Card içinde contactPath'e erişmek için geçici key

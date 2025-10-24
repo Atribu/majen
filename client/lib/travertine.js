@@ -6,13 +6,23 @@ export const BASE_BY_LOCALE = {
   tr: "traverten"
 };
 
-export const PRODUCT_KEYS = ["blocks", "slabs", "tiles", "special"];
+export const PRODUCT_KEYS = ["blocks", "slabs", "tiles", "pavers"];
 
-// İçte [product] paramını “slabs|tiles|blocks|special” yapıyoruz.
+// İçte [product] paramını “slabs|tiles|blocks|pavers” yapıyoruz.
 // routing.js path template "travertine-[product]" ile birleşince SEO URL çıkacak.
 export const PRODUCT_SLUGS = {
-  en: { blocks: "blocks", slabs: "slabs", tiles: "tiles", "special": "special" },
-  tr: { blocks: "bloklar", slabs: "plakalar", tiles: "karolar", "special": "ozel-tasarim" },
+  en: {
+    blocks: "blocks",
+    slabs: "slabs",
+    tiles: "tiles",
+    pavers: "pavers"
+  },
+  tr: {
+    blocks: "bloklar",
+    slabs: "plakalar",
+    tiles: "karolar",
+    pavers: "pavers"
+  },
 };
 
 // Sayfa içi gösterebilirsin
@@ -71,7 +81,7 @@ export function productKeyFromSlug(locale, slug) {
   const inLang = Object.keys(table).find((k) => table[k] === s);
   if (inLang) return inLang;
 
-  // 2) Slug zaten iç anahtar olabilir (tiles/slabs/blocks/special)
+  // 2) Slug zaten iç anahtar olabilir (tiles/slabs/blocks/pavers)
   if (PRODUCT_KEYS.includes(s)) return s;
 
   // 3) EN haritasında da dene (middleware iç rotayı EN key ile kurabiliyor)
@@ -111,7 +121,7 @@ export function buildProcessSlug(locale, process, filling) {
 
 
 // Bu ürünler derinleşir (cut/process)
-export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles", "blocks", "special"];
+export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles", "blocks", "pavers"];
 export const PRODUCTS_NO_DEEP_LEVELS = [];
 
 export function hasDeepLevels(productKey) {
@@ -260,19 +270,68 @@ export function colorLabelFor(locale, key) {
 
 // --- SIZE helpers (renk sayfasındaki "Choose Thickness / Size" için) ---
 export function sizeSlugListForProduct(productKey, t) {
-  if (productKey === "slabs") return ["2cm", "3cm", "5cm"];
+  if (productKey === "slabs") {
+    return ["2cm", "3cm", "5cm"];
+  }
+
   if (productKey === "tiles") {
-    const sizes = (t?.raw && t.raw("tiles.sizes")) || ["30x60", "60x60", "60x120"];
+    const sizes = (t?.raw && t.raw("tiles.sizes")) 
+      || ["30x60", "60x60", "60x120"];
     return sizes.map((s) =>
-      String(s).toLowerCase().replace(/[×*]/g, "x").replace(/\s+/g, "")
+      String(s)
+        .toLowerCase()
+        .replace(/["“”]/g, "")   // inç işaretlerini kaldır
+        .replace(/[×x]/g, "x")   // × → x
+        .replace(/\s+/g, "")     // boşlukları kaldır
     );
   }
+
+  if (productKey === "pavers") {
+    // senin verdiğin ölçüler
+    const sizes = [
+      `6x12`,
+      `8x8`,
+      `12x12`,
+      `12x24`,
+      `16x24`,
+      `18x36`,
+      `24x24`,
+      `24x36`,
+      `versailles-set`,
+    ];
+
+    return sizes.map((s) =>
+      String(s)
+        .toLowerCase()
+        .replace(/["“”]/g, "")   // güvenlik için yine aynı normalize
+        .replace(/[×x]/g, "x")
+        .replace(/\s+/g, "")
+    );
+  }
+
   return ["custom"];
 }
+
+
+
 export function sizeLabelFromSlug(slug) {
   if (slug === "custom") return "Custom / Project-based";
-  return String(slug).replace(/x/g, "×").replace(/([0-9])cm$/, "$1 cm");
+  if (slug === "versailles-set") return "Versailles Set";
+
+  // pavers/tile boyutu gibi görünüyor mu? örn "18x36"
+  const m = String(slug).match(/^(\d{1,3})x(\d{1,3})$/);
+  if (m) {
+    const w = m[1];
+    const h = m[2];
+    return `${w}" × ${h}"`;
+  }
+
+  // slab kalınlık gibi ise (2cm)
+  return String(slug)
+    .replace(/x/g, "×")
+    .replace(/([0-9])cm$/, "$1 cm");
 }
+
 
 
 // export function buildSeoColorPath(locale, productKey, cutSlugOrKey, processSlug, colorKey) {

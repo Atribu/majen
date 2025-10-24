@@ -19,7 +19,7 @@ export const config = {
     },
 
     // Product level → /en/travertine-slabs  (template: travertine-[product])
-    // [product] param'ı lib/travertine.js'te "slabs|tiles|blocks|special" olacak.
+    // [product] param'ı lib/travertine.js'te "slabs|tiles|blocks|pavers" olacak.
     '/travertine/[product]': {
       en: '/travertine-[product]',
       tr: '/traverten-[product]'
@@ -75,13 +75,23 @@ export const routing = defineRouting(config);
 
 // --- Aşağıdakiler link üretimine yardım eder; component'lerde import ediyorsan kalsın ---
 
-export const PRODUCT_KEYS = ["blocks", "slabs", "tiles", "special-designs"];
+export const PRODUCT_KEYS = ["blocks", "slabs", "tiles", "pavers"];
 
 // Dış görünen product segmentleri (path template "travertine-[product]" ile birleşecek)
 // Örn: "slabs" → "/en/travertine-slabs"
 export const PRODUCT_SLUGS = {
-  en: { blocks: "blocks", slabs: "slabs", tiles: "tiles", "special-designs": "special" },
-  tr: { blocks: "bloklar", slabs: "plakalar", tiles: "karolar", "special-designs": "ozel-tasarim" },
+  en: {
+    blocks: "blocks",
+    slabs: "slabs",
+    tiles: "tiles",
+    pavers: "pavers"
+  },
+  tr: {
+    blocks: "bloklar",
+    slabs: "plakalar",
+    tiles: "karolar",
+    pavers: "dosemeler"
+  }
 };
 
 // Renk varyantları (artık sayfa içi)
@@ -129,10 +139,6 @@ export function getLang(locale) {
   return String(locale || "en").toLowerCase().split("-")[0];
 }
 
-
-
-
-
 export function baseFor(locale) {
   const lang = getLang(locale);
   return BASE_BY_LOCALE[lang] || BASE_BY_LOCALE.en;
@@ -167,8 +173,8 @@ export function buildProcessSlug(locale, process, filling) {
 }
 
 // Ürün derin seviye destekliyor mu?
-export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles"];
-export const PRODUCTS_NO_DEEP_LEVELS = ["blocks", "special-designs"];
+export const PRODUCTS_WITH_DEEP_LEVELS = ["slabs", "tiles", "pavers"];
+export const PRODUCTS_NO_DEEP_LEVELS = ["blocks"];
 
 export function hasDeepLevels(productKey) {
   return PRODUCTS_WITH_DEEP_LEVELS.includes(productKey);

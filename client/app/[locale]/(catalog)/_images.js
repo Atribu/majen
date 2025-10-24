@@ -188,7 +188,7 @@ export const PRODUCT_IMG = {
     light: tilesLight,
     antiko: tilesAntik,
   },
-  special: {
+  pavers: {
     cover: specialIvory ?? phSpecial,
     ivory: specialIvory,
     light: specialLight,
@@ -666,7 +666,7 @@ export const IMAGE_BY_PRODUCT = {
     
   },
 
-   special: {
+   pavers: {
     cover: "/images/slabs/cover.webp",
     "vein-cut": "/images/slabs/vein-hero.webp",
     "cross-cut": "/images/slabs/cross-hero.webp",
@@ -932,7 +932,7 @@ export const IMAGE_BY_PRODUCT_AND_VARIANT = {
     "blaundos-light": tilesLight,
     "blaundos-antiko": tilesAntik,
   },
-  special: {
+  pavers: {
     "blaundos-ivory": specialIvory,
     "blaundos-light": specialLight,
     "blaundos-antiko": specialAntik,

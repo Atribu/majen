@@ -1,7 +1,7 @@
 // lib/labels.js
 export const PRODUCT_LABEL = {
-  en: { blocks: "Blocks", slabs: "Slabs", tiles: "Tiles", special: "Custom Designs" },
-  tr: { blocks: "bloklar", slabs: "plakalar", tiles: "karolar", special: "özel tasarım" },
+  en: { blocks: "Blocks", slabs: "Slabs", tiles: "Tiles", pavers: "Pavers" },
+  tr: { blocks: "bloklar", slabs: "plakalar", tiles: "karolar", pavers: "dosemeler" },
 };
 
 export const CUT_LABEL = {
@@ -10,36 +10,65 @@ export const CUT_LABEL = {
 };
 
 // ✅ TILE size slug listesi (route’ta kullanılacak)
-export const TILE_SIZE_SLUGS = [
-  "8x8","12x12","12x24","16x16","18x18","24x24","24x48","48x110","versailles"
+// Tiles için geçerli ölçüler
+export const TILE_SIZE_SLUGS_TILES = [
+  "8x8",
+  "12x12",
+  "12x24",
+  "16x16",
+  "18x18",
+  "24x24",
+  "24x48",
+  "48x110",
+  "versailles-set"
 ];
 
-// ✅ TILE size etiketleri (UI’de gösterilecek)
+// Pavers için geçerli ölçüler
+export const TILE_SIZE_SLUGS_PAVERS = [
+  "6x12",
+  "8x8",
+  "12x12",
+  "12x24",
+  "16x24",
+  "18x36",
+  "24x24",
+  "versailles-set"
+];
+
+// Ortak olarak tüm possible slug'lara label veriyoruz.
+// (ikisi de buradan okuyacak)
 export const TILE_SIZE_LABEL = {
   en: {
+    "6x12": `6"×12"`,
     "8x8": `8"×8"`,
     "12x12": `12"×12"`,
     "12x24": `12"×24"`,
     "16x16": `16"×16"`,
+    "16x24": `16"×24"`,
     "18x18": `18"×18"`,
+    "18x36": `18"×36"`,
     "24x24": `24"×24"`,
+    "24x36": `24"×36"`,
     "24x48": `24"×48"`,
     "48x110": `48"×110"`,
-    "versailles": "versailles",
+    "versailles-set": "Versailles Set",
   },
   tr: {
+    "6x12": `6"×12"`,
     "8x8": `8"×8"`,
     "12x12": `12"×12"`,
     "12x24": `12"×24"`,
     "16x16": `16"×16"`,
+    "16x24": `16"×24"`,
     "18x18": `18"×18"`,
+    "18x36": `18"×36"`,
     "24x24": `24"×24"`,
+    "24x36": `24"×36"`,
     "24x48": `24"×48"`,
     "48x110": `48"×110"`,
-    "versailles": "versailles",
+    "versailles-set": "Versailles Set",
   },
 };
-
 
 export const COLOR_LABEL = {
   en: { ivory: "Ivory", antico: "Antico", light: "Light" },

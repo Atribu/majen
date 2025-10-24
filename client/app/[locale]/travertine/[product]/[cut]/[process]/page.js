@@ -29,7 +29,13 @@ import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks"
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
-import { PRODUCT_LABEL, CUT_LABEL, TILE_SIZE_SLUGS, tileSizeLabelForLocale } from "@/lib/labels";
+import {
+  PRODUCT_LABEL,
+  CUT_LABEL,
+  TILE_SIZE_SLUGS_TILES,
+  TILE_SIZE_SLUGS_PAVERS,
+  tileSizeLabelForLocale
+} from "@/lib/labels";
 import { Link } from "@/i18n/navigation";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
@@ -357,14 +363,14 @@ const colorCards = cKeys.map((key) => {
           if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
         if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
         if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
-        if (productKey === "special")  return base.replace(/-travertine-slabs$/i, "-travertine-special");
+        if (productKey === "pavers")  return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
         return base; // slabs
       }
       // TR dönüşümleri
       if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
       if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
       if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-      if (productKey === "special")  return base.replace(/-traverten-plakalar$/i, "-traverten-ozel-tasarim");
+      if (productKey === "pavers")  return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
       return base; // plakalar (slabs)
     }
 
@@ -610,26 +616,30 @@ const otherProcessCards = otherProcKeysEN.map((enCombo) => {
   };
 });
 
-const isTiles = productKey === "tiles";
+const isSizeDriven = productKey === "tiles" || productKey === "pavers";
 
-// === TILES: renk yerine ölçü kartları ===
-const sizeCards = isTiles
-  ? TILE_SIZE_SLUGS.map((sizeSlug) => {
+// tiles için kendi ölçüleri, pavers için kendi ölçüleri
+const sizeSlugListForThisProduct = productKey === "tiles"
+  ? TILE_SIZE_SLUGS_TILES
+  : productKey === "pavers"
+    ? TILE_SIZE_SLUGS_PAVERS
+    : [];
+
+const sizeCards = isSizeDriven
+  ? sizeSlugListForThisProduct.map((sizeSlug) => {
       const title = tileSizeLabelForLocale(locale, sizeSlug);
 
-      // Kart linki → /travertine/[product]/[cut]/[process]/[color]
-      // Tiles'ta [color] = sizeSlug olacak
       const href = {
         pathname: "/travertine/[product]/[cut]/[process]/[color]",
         params: {
-          product: productSlug,   // "tiles"
-          cut: cutSlug,           // örn. "vein-cut-travertine-tiles"
-          process: process,       // URL’deki process segmenti
-          color: sizeSlug,        // 👈 tiles'ta son segment ölçü
+          product: productSlug,   // "tiles" veya "pavers"
+          cut: cutSlug,           // örn "vein-cut-travertine-pavers"
+          process: process,       // "filled-polished"
+          color: sizeSlug,        // <-- param adı [color] ama aslında ölçü
         },
       };
 
-      // Görsel: ilgili process thumb ya da hero
+      // görsel fallback
       const img = processThumbFor(lookupProcKey) || heroSrc;
 
       return {
@@ -641,6 +651,7 @@ const sizeCards = isTiles
       };
     })
   : [];
+
 
 
 
@@ -694,21 +705,19 @@ const sizeCards = isTiles
 <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2"> {variantText}</p>
 
       {/* COLOR SEÇİMİ */}
-      <VariantCircleSection
+<VariantCircleSection
   heading={
-    isTiles
+    isSizeDriven
       ? (locale.startsWith("tr") ? "Mevcut Ölçüler" : "Available Sizes")
       : `${processTitle} ${locale.startsWith("tr") ? "Renkleri" : "Colors"}`
   }
-  variantCards={isTiles ? sizeCards : colorCards}
-  // Tiles’ta özel bir imgMap’e ihtiyaç yok; hero yeterli
-  imgMap={isTiles ? { cover: heroSrc } : colorImgMap}
+  variantCards={isSizeDriven ? sizeCards : colorCards}
+  imgMap={isSizeDriven ? { cover: heroSrc } : colorImgMap}
   heroSrc={heroSrc}
   IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
-  // VariantCircleSection productKey’i yalnızca iç görsel fallback için kullanıyor;
-  // burada önemli değil ama ayırt etmek adına farklı veriyoruz:
-  productKey={isTiles ? "tiles-sizes" : "color"}
+  productKey={isSizeDriven ? `${productKey}-sizes` : "color"}
 />
+
 
 
       {/* Metin / CTA */}

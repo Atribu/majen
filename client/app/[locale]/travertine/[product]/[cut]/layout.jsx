@@ -8,14 +8,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const BASE_BY_LOCALE = { en: "travertine", tr: "traverten", de: "travertin", ru: "travertin" };
 
 /** Ürün whitelist (blocks hariç) */
-const CUT_PRODUCTS = new Set(["slabs", "tiles", "special", "special-designs"]);
+const CUT_PRODUCTS = new Set(["slabs", "tiles", "pavers"]);
 
 /** UI label’ları (breadcrumb için) */
 const PRODUCT_LABEL = {
   slabs: { en: "Travertine Slabs", tr: "Traverten Plakalar" },
   tiles: { en: "Travertine Tiles", tr: "Traverten Karolar" },
-  "special-designs": { en: "Custom Designs", tr: "Özel Tasarım" },
-  special: { en: "Custom Designs", tr: "Özel Tasarım" }, // alias
+  "pavers": { en: "Travertine Pavers", tr: "Traverten Dosemeler" },
+  pavers: { en: "Travertine Pavers", tr: "Traverten Dosemeler" }, // alias
 };
 
 /** Kesim adlarını normalize eden yardımcı (breadcrumb, isimlendirme) */
@@ -31,22 +31,22 @@ function cutHumanName(cut, locale, product) {
   return cut.replace(/-/g, " ");
 }
 
-/** Canonical cut slug ürününe göre doğru mu? (slabs|tiles|special) */
+/** Canonical cut slug ürününe göre doğru mu? (slabs|tiles|pavers) */
 function ensureProductInCutSlug(locale, cut, product) {
   const isTR = locale === "tr";
-  const p = product === "special" ? "special" : product; // alias düzelt
+  const p = product === "pavers" ? "pavers" : product; // alias düzelt
   if (isTR) {
     // ...-traverten-(plakalar|karolar|ozel-tasarim)
     return cut
       .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "ozel-tasarim"}`)
       .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "ozel-tasarim"}`)
-      .replace(/-traverten-ozel-tasarim$/i, `-traverten-${p === "special" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
+      .replace(/-traverten-ozel-tasarim$/i, `-traverten-${p === "pavers" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
   }
-  // EN: ...-travertine-(slabs|tiles|special)
+  // EN: ...-travertine-(slabs|tiles|pavers)
   return cut
-    .replace(/-travertine-slabs$/i,   `-travertine-${p === "slabs" ? "slabs" : p === "tiles" ? "tiles" : "special"}`)
-    .replace(/-travertine-tiles$/i,   `-travertine-${p === "tiles" ? "tiles" : p === "slabs" ? "slabs" : "special"}`)
-    .replace(/-travertine-special$/i, `-travertine-${p === "special" ? "special" : p === "slabs" ? "slabs" : "tiles"}`);
+    .replace(/-travertine-slabs$/i,   `-travertine-${p === "slabs" ? "slabs" : p === "tiles" ? "tiles" : "pavers"}`)
+    .replace(/-travertine-tiles$/i,   `-travertine-${p === "tiles" ? "tiles" : p === "slabs" ? "slabs" : "pavers"}`)
+    .replace(/-travertine-pavers$/i, `-travertine-${p === "pavers" ? "pavers" : p === "slabs" ? "slabs" : "tiles"}`);
 }
 
 /** Alternates helper */
@@ -67,7 +67,7 @@ const OG_BY_PRODUCT_AND_CUT = {
     "vein": { en: "/images/og/vein-cut-travertine-tiles-cover.webp", tr: "/images/og/tr-vein-cut-traverten-karo.webp" },
     "cross": { en: "/images/og/cross-cut-travertine-tiles-cover.webp", tr: "/images/og/tr-cross-cut-traverten-karo.webp" }
   },
-  "special-designs": {
+  pavers: {
     "vein": { en: "/images/og/vein-cut-travertine-special-cover.webp", tr: "/images/og/tr-vein-cut-traverten-ozel.webp" },
     "cross": { en: "/images/og/cross-cut-travertine-special-cover.webp", tr: "/images/og/tr-cross-cut-traverten-ozel.webp" }
   }
@@ -86,7 +86,7 @@ export async function generateMetadata({ params }) {
     return { robots: { index: false, follow: false } };
   }
 
-  // cut slug’ı ürününe uydur (…-travertine-slabs|tiles|special / …-traverten-…)
+  // cut slug’ı ürününe uydur (…-travertine-slabs|tiles|pavers / …-traverten-…)
   const normalizedCut = ensureProductInCutSlug(locale, cut, product);
 
   // canonical: kısa public URL
@@ -174,7 +174,7 @@ export default async function CutLayout({ children, params }) {
   // URL’ler
   const homeUrl = `${SITE_URL}/${locale}`;
 const catUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}`;
-  const productUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}-${product === "special" ? "special" : product}`;
+  const productUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}-${product === "pavers" ? "pavers" : product}`;
   const pageUrl = `${homeUrl}/${normalizedCut}`;
 
   // İsimler

@@ -114,7 +114,7 @@
         "cta": "Explore"
       },
       "product4": {
-        "title": "Travertine Special Designs",
+        "title": "Travertine Pavers",
         "description": "Custom waterjet cuts, mosaic combinations, CNC carving and 3D panels; tailored to project details and delivered turnkey.",
         "alt": "Wholesale Travertine Special Designs",
         "cta": "Explore"
@@ -9556,7 +9556,7 @@
       "span":"Direct Quarry Supplier",
       "alt": "Tile product image",
       "intro": "Majen is a leading supplier of Wholesale Travertine Tiles , offering Blaundos Antiko, Light, and Ivory varieties. Tiles are available in popular sizes such as 30×60, 60×60, and 40×80 cm, making them suitable for bathrooms, kitchens, patios, and pool areas. With finishes including polished, honed, brushed, and tumbled, our quarry-direct tiles are trusted by importers worldwide. Majen ensures reliable logistics, FOB/CIF shipping, and certified A-grade quality.",
-        "title2": "Why Choose Wholesale Travertine Tiles ?",
+      "title2": "Why Choose Wholesale Travertine Tiles ?",
       "alt2": "Tile product image",
       "intro2": "Wholesale Travertine Tiles combine durability, natural slip resistance, and timeless aesthetics. Directly sourced from our Uşak–Ulubey quarry, these tiles are reinforced with consistent grading and inspected for international standards. Architects and wholesalers prefer Majen for reliable supply, transparent pricing, and diverse color selections. Whether for luxury hotels, villas, or residential projects, our travertine tiles deliver long-term performance and beauty.",
       "sizes": ["30×60", "60×60", "60×120"],
@@ -10876,8 +10876,8 @@
             "description": "Majen’s filled polished vein cut travertine tiles deliver glossy, elegant surfaces with linear patterns. Perfect for luxury interiors, precisely cut, and globally exported with top-tier quality.",
             "image": "/images/og/vein-custom.webp"
           },
-                  "h1": "Filled Honed Vein Cut Travertine Slabs",
-              "title": "Filled Honed Vein Cut Travertine Slabs",
+                  "h1": "Filled Polished Vein Cut Travertine Tiles",
+              "title": "Filled Polished Vein Cut Travertine Tiles",
               "lead": "Filled Polished Vein Cut Travertine Tiles by Majen embody luxury and timeless sophistication. Each slab is filled to create a dense, seamless surface, then polished to achieve a brilliant, mirror-like finish. The linear veins flow elegantly across the stone, enhancing spatial continuity and light reflection. Ideal for grand interiors and premium projects, these tiles combine natural stone strength with refined architectural beauty.",
               "intro":"Filled Polished Vein Cut Travertine Tiles by Majen embody luxury and timeless sophistication. Each slab is filled to create a dense, seamless surface, then polished to achieve a brilliant, mirror-like finish. The linear veins flow elegantly across the stone, enhancing spatial continuity and light reflection. Ideal for grand interiors and premium projects, these tiles combine natural stone strength with refined architectural beauty.",
               "title2":"What Are Filled Polished Vein Cut Travertine Tiles?",
@@ -16801,7 +16801,7 @@
 
     },
 
-    "special": {
+    "pavers": {
       "title": "Wholesale Travertine Special Designs",
       "span":"Direct Quarry Supplier",
       "alt": "Custom design product image",
