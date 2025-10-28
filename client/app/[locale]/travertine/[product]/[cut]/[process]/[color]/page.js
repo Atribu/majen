@@ -137,9 +137,51 @@ export default function ColorDetailPage() {
     const isPavers  = productKey === "pavers";
 
 
+          function cutSlugForProduct(locale, cutKey, productKey) {
+          const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
+          if (typeof base !== "string") return cutKey;
+          if (locale.startsWith("en")) {
+              if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
+            if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
+            if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
+            if (productKey === "pavers")  return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
+            return base; // slabs
+          }
+          // TR dönüşümleri
+          if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
+          if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
+          if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
+          if (productKey === "pavers")  return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
+          return base; // plakalar (slabs)
+        }
+
+      function resolveCutKey(locale, productKey, cutSlug) {
+      const target = String(cutSlug || "").toLowerCase().trim();
+      const lang = getLang(locale);
+      const cuts = CUTS[lang] || {};
+    
+      // 1) Ürün tipine göre gerçek slug'ı üretip birebir karşılaştır
+      for (const k of Object.keys(cuts)) {
+        const candidate = String(
+          cutSlugForProduct(locale, k, productKey) // ⬅️ zaten dosyada tanımlı
+        ).toLowerCase();
+        if (candidate === target) return k;
+      }
+    
+      // 2) Eski "slabs" tabanlı kayda karşılaştır (geriye dönük güvence)
+      for (const k of Object.keys(cuts)) {
+        const base = String(cuts[k] || "").toLowerCase();
+        if (base === target) return k;
+      }
+    
+      // 3) Heuristik (son çare)
+      if (/vein|damar/.test(target)) return "vein-cut";
+      if (/cross|yatay/.test(target)) return "cross-cut";
+      return "vein-cut";
+    }
+
   // Anahtarlar
-  const cutKey = isBlocks ? null
-    : (Object.keys(CUTS[lang] || {}).find((k) => CUTS[lang][k] === String(cutSlug)) || "vein-cut");
+ const cutKey = resolveCutKey(locale, productKey, cutSlug);
 
   const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
   const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
@@ -165,7 +207,7 @@ export default function ColorDetailPage() {
     const fromVariant =
       IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
       IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
-    // Not: heroSrc henüz tanımlı değil, buradaki görsel listesi hesaplamasını etkilemez.
+
     const fallbacks = dedup([
       ...toArray(fromVariant),
       ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
@@ -406,7 +448,7 @@ export default function ColorDetailPage() {
 
   /* ---- Render ---- */
   return (
-    <main className="px-5 md:px-8 lg:px-0 py-10 mt-2 lg:mt-4">
+    <main className="px-1 md:px-5 lg:px-0 py-10 mt-2 lg:mt-4">
       <Head>
         <title>{metaTitle}</title>
         {metaDesc ? <meta name="description" content={metaDesc} /> : null}
@@ -427,7 +469,7 @@ export default function ColorDetailPage() {
         intro={intro}
         title2={H2}
         intro2={intro2}
-        heroSrc={heroSrc}
+        heroSrc={imagesForCarousel[0]}
         alt={H1}
         prefix={`/${locale}`}
         baseHref={`/${locale}/${baseFor(locale)}`}
@@ -457,7 +499,7 @@ export default function ColorDetailPage() {
       <section className="mx-auto text-center flex flex-col items-center justify-center max-w-[1400px] w-[95%] mt-6">
         <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start w-full">
           {/* Carousel tarafı */}
-          <div className="w-[90%] lg:w-[45%] items-center justify-start flex relative">
+          <div className="w-[97%] md:w-[90%] lg:w-[45%] items-center justify-start flex relative">
             {/* Renk baloncukları (sadece tiles) */}
             {isTiles && (
               <div className="absolute left-3 top-3 z-10 flex gap-2">
@@ -500,9 +542,9 @@ export default function ColorDetailPage() {
           </div>
 
           {/* Sağ panel */}
-          <div className="flex flex-col w-[90%] lg:w-[45%] gap-5">
+          <div className="flex flex-col w-[98%] md:w-[90%] lg:w-[45%] gap-3 md:gap-5">
             {specs?.rows?.length ? (
-              <div className="space-y-4 text-start bg-white rounded-xl p-6 shadow-md">
+              <div className="space-y-4 text-start bg-white rounded-xl p-3 md:p-6 shadow-md">
                 <SpecTable rows={specs.rows} title={specs.h2 || specsLabel} />
                 {isTiles && (
                   <div className="text-sm text-neutral-600">

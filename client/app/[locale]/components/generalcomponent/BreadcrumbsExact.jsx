@@ -44,7 +44,7 @@ export default function BreadcrumbsExact({
           <div className="rounded-xl border border-neutral-200 bg-white/80 backdrop-blur shadow-sm ring-1 ring-black/5 px-3 py-2 md:px-4 md:py-2">
             <ol className="flex flex-wrap items-center gap-1 text-xs md:text-sm text-neutral-700">
               {/* Home */}
-              <li className="flex items-center">
+              <li className="flex items-center ">
                 <svg viewBox="0 0 20 20" aria-hidden="true" className="mr-1 h-4 w-4 text-neutral-500">
                   <path d="M10 3.2 3 8.3v8.5h5.2v-4.2h3.6v4.2H17V8.3L10 3.2z" fill="currentColor" />
                 </svg>
