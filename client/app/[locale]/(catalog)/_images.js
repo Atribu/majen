@@ -306,8 +306,61 @@ import galleryIvoryVeincutUnfilledTumbled1 from "@/public/images/new/slab/ivory/
 import galleryIvoryVeincutUnfilledTumbled2 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledTumbled2.webp"
 import galleryIvoryVeincutUnfilledTumbled3 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledTumbled3.webp"
 
+import galleryLightCrosscutFilledTumbled1 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledTumbled.webp"
+import galleryLightCrosscutFilledTumbled2 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledTumbled2.webp"
+import galleryLightCrosscutFilledTumbled3 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledTumbled3.webp"
+import galleryLightCrosscutUnfilledTumbled1 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledTumbled.webp"
+import galleryLightCrosscutUnfilledTumbled2 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledTumbled2.webp"
+import galleryLightCrosscutUnfilledTumbled3 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledTumbled3.webp"
+import galleryLightVeincutFilledTumbled1 from "@/public/images/new/slab/light/gallery/lightVeincutFilledTumbled.webp"
+import galleryLightVeincutFilledTumbled2 from "@/public/images/new/slab/light/gallery/lightVeincutFilledTumbled2.webp"
+import galleryLightVeincutFilledTumbled3 from "@/public/images/new/slab/light/gallery/lightVeincutFilledTumbled3.webp"
+import galleryLightVeincutUnfilledTumbled1 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledTumbled.webp"
+import galleryLightVeincutUnfilledTumbled2 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledTumbled2.webp"
+import galleryLightVeincutUnfilledTumbled3 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledTumbled3.webp"
 
-//metinlerde 122- kaldım
+
+//------------ NATURAL GALLERY -----------
+import galleryAnticoCrosscutFilledNatural1 from "@/public/images/new/slab/antico/gallery/anticoCrosscutFilledNatural.webp"
+import galleryAnticoCrosscutFilledNatural2 from "@/public/images/new/slab/antico/gallery/anticoCrosscutFilledNatural2.webp"
+import galleryAnticoCrosscutFilledNatural3 from "@/public/images/new/slab/antico/gallery/anticoCrosscutFilledNatural3.webp"
+import galleryAnticoCrosscutUnfilledNatural1 from "@/public/images/new/slab/antico/gallery/anticoCrosscutUnfilledNatural.webp"
+import galleryAnticoCrosscutUnfilledNatural2 from "@/public/images/new/slab/antico/gallery/anticoCrosscutUnfilledNatural2.webp"
+import galleryAnticoCrosscutUnfilledNatural3 from "@/public/images/new/slab/antico/gallery/anticoCrosscutUnfilledNatural3.webp"
+import galleryAnticoVeincutFilledNatural1 from "@/public/images/new/slab/antico/gallery/anticoVeincutFilledNatural.webp"
+import galleryAnticoVeincutFilledNatural2 from "@/public/images/new/slab/antico/gallery/anticoVeincutFilledNatural2.webp"
+import galleryAnticoVeincutFilledNatural3 from "@/public/images/new/slab/antico/gallery/anticoVeincutFilledNatural3.webp"
+import galleryAnticoVeincutUnfilledNatural1 from "@/public/images/new/slab/antico/gallery/anticoVeincutUnfilledNatural.webp"
+import galleryAnticoVeincutUnfilledNatural2 from "@/public/images/new/slab/antico/gallery/anticoVeincutUnfilledNatural2.webp"
+import galleryAnticoVeincutUnfilledNatural3 from "@/public/images/new/slab/antico/gallery/anticoVeincutUnfilledNatural3.webp"
+
+import galleryLightCrosscutFilledNatural1 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledNatural.webp"
+import galleryLightCrosscutFilledNatural2 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledNatural2.webp"
+import galleryLightCrosscutFilledNatural3 from "@/public/images/new/slab/light/gallery/lightCrosscutFilledNatural3.webp"
+import galleryLightCrosscutUnfilledNatural1 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledNatural.webp"
+import galleryLightCrosscutUnfilledNatural2 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledNatural2.webp"
+import galleryLightCrosscutUnfilledNatural3 from "@/public/images/new/slab/light/gallery/lightCrosscutUnfilledNatural3.webp"
+import galleryLightVeincutFilledNatural1 from "@/public/images/new/slab/light/gallery/lightVeincutFilledNatural.webp"
+import galleryLightVeincutFilledNatural2 from "@/public/images/new/slab/light/gallery/lightVeincutFilledNatural2.webp"
+import galleryLightVeincutFilledNatural3 from "@/public/images/new/slab/light/gallery/lightVeincutFilledNatural3.webp"
+import galleryLightVeincutUnfilledNatural1 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledNatural.webp"
+import galleryLightVeincutUnfilledNatural2 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledNatural2.webp"
+import galleryLightVeincutUnfilledNatural3 from "@/public/images/new/slab/light/gallery/lightVeincutUnfilledNatural3.webp"
+
+import galleryIvoryCrosscutFilledNatural1 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutFilledNatural.webp"
+import galleryIvoryCrosscutFilledNatural2 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutFilledNatural2.webp"
+import galleryIvoryCrosscutFilledNatural3 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutFilledNatural3.webp"
+import galleryIvoryCrosscutUnfilledNatural1 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutUnfilledNatural.webp"
+import galleryIvoryCrosscutUnfilledNatural2 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutUnfilledNatural2.webp"
+import galleryIvoryCrosscutUnfilledNatural3 from "@/public/images/new/slab/ivory/gallery/ivoryCrosscutUnfilledNatural3.webp"
+import galleryIvoryVeincutFilledNatural1 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutFilledNatural.webp"
+import galleryIvoryVeincutFilledNatural2 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutFilledNatural2.webp"
+import galleryIvoryVeincutFilledNatural3 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutFilledNatural3.webp"
+import galleryIvoryVeincutUnfilledNatural1 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledNatural.webp"
+import galleryIvoryVeincutUnfilledNatural2 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledNatural2.webp"
+import galleryIvoryVeincutUnfilledNatural3 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledNatural3.webp"
+
+
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
@@ -317,6 +370,7 @@ export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   }
 };
 
+// 140. sayfada
 export const PROCESS_THUMB_BY_CUT = {
   "vein-cut": {
     honed:    "/images/travertine/thumbs/process/honed.webp",
@@ -527,30 +581,30 @@ export const IMAGE_BY_PRODUCT = {
     // cut’a göre process thumb’ları
     processThumbs: {
       "vein-cut": {
-        "filled:honed":    slabLightVeincutHonedFilled,
-        "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-        "filled:brushed":  slabAnticoVeincutBrushedFilled,
-        "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
-        "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
-        "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-        "unfilled:brushed":  slabAnticoVeincutBrushedUnfilled,
-        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
-        natural: "/images/cut/antico/Slab/Antikveincut.webp",
-        "unfilled:natural":    "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:honed":"/images/new/slab/antico/antikoveinhonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished.webp",
+                "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished.webp",
+                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled.webp",
+                "unfilled:tumbled":  "/images/new/slab/antico/tumbledveincutunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikveincut.webp", 
+                "filled-natural": "/images/new/slab/antico/Antikveincut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikveincut.webp"
       },
       "cross-cut": {
-        "filled:honed":    slabLightCrosscutHonedFilled,
-        "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "filled:brushed": slabLightCrosscutBrushedFilled,
-        "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:brushed":  slabLightCrosscutBrushedUnfilled,
-        "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
-        natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:natural":    "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:honed":"/images/new/slab/antico/antikocrosshonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikocrosshonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/antikocrosspolishedunfilled.webp",
+                "filled:polished": "/images/new/slab/antico/antikocrosspolishedfilled.webp",
+                "filled:brushed":"/images/new/slab/antico/Antiquecrosscutbrushedfilled.webp",
+                "unfilled:brushed":"/images/new/slab/antico/Antiquecrosscutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled.webp",
+                "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "filled-natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikcrosscut.webp"
       }
     },
 
@@ -573,12 +627,12 @@ export const IMAGE_BY_PRODUCT = {
         },
        "filled:tumbled": {
              ivory:  [slabIvoryVeincutTumbledFilled, galleryIvoryVeincutFilledTumbled1, galleryIvoryVeincutFilledTumbled2, galleryIvoryVeincutFilledTumbled3],
-          light:  [slabLightVeincutTumbledFilled, slabLightVeincutTumbledFilled, slabLightVeincutTumbledFilled],
+          light:  [slabLightVeincutTumbledFilled, galleryLightVeincutFilledTumbled1, galleryLightVeincutFilledTumbled2, galleryLightVeincutFilledTumbled3],
           antico: [slabAnticoVeincutTumbledFilled, galleryAnticoVeincutFilledTumbled1, galleryAnticoVeincutFilledTumbled2, galleryAnticoVeincutFilledTumbled3],
         },
         "unfilled:tumbled": {
             ivory:  [slabIvoryVeincutTumbledUnfilled, galleryIvoryVeincutUnfilledTumbled1, galleryIvoryVeincutUnfilledTumbled2, galleryIvoryVeincutUnfilledTumbled3],
-          light:  [slabLightVeincutTumbledUnfilled, slabLightVeincutTumbledUnfilled, slabLightVeincutTumbledUnfilled],
+          light:  [slabLightVeincutTumbledUnfilled, galleryLightVeincutUnfilledTumbled1, galleryLightVeincutUnfilledTumbled2, galleryLightVeincutUnfilledTumbled3],
           antico: [slabAnticoVeincutTumbledUnfilled, galleryAnticoVeincutUnfilledTumbled1, galleryAnticoVeincutUnfilledTumbled2, galleryAnticoVeincutUnfilledTumbled3],
         },
         "filled:brushed": {
@@ -603,14 +657,14 @@ export const IMAGE_BY_PRODUCT = {
         },
 
          "filled:natural": {
-          ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
-          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
-          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
+          ivory:  [galleryIvoryVeincutFilledNatural1, galleryIvoryVeincutFilledNatural2, galleryIvoryVeincutFilledNatural3],
+          light:  [galleryLightVeincutFilledNatural1, galleryLightVeincutFilledNatural2, galleryLightVeincutFilledNatural3],
+          antico: [galleryAnticoVeincutFilledNatural1, galleryAnticoVeincutFilledNatural2, galleryAnticoVeincutFilledNatural3],
         },
         "unfilled:natural": {
-             ivory:  [slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled, slabIvoryVeincutBrushedFilled],
-          light:  [slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled, slabLightVeincutBrushedFilled],
-          antico: [slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled, slabAnticoVeincutBrushedFilled],
+             ivory:  [galleryIvoryVeincutUnfilledNatural1, galleryIvoryVeincutUnfilledNatural2, galleryIvoryVeincutUnfilledNatural3],
+          light:  [galleryLightVeincutUnfilledNatural1, galleryLightVeincutUnfilledNatural2, galleryLightVeincutUnfilledNatural3],
+          antico: [galleryAnticoVeincutUnfilledNatural1, galleryAnticoVeincutUnfilledNatural2, galleryAnticoVeincutUnfilledNatural3],
         },
       },
 
@@ -632,12 +686,12 @@ export const IMAGE_BY_PRODUCT = {
         },
        "filled:tumbled": {
            ivory:  [slabIvoryCrossTumbledFilled,galleryIvoryCrosscutFilledTumbled1,galleryIvoryCrosscutFilledTumbled2, galleryIvoryCrosscutFilledTumbled3],
-          light:  [slabLightCrosscutTumbledFilled,slabLightCrosscutTumbledFilled,slabLightCrosscutTumbledFilled],
+          light:  [slabLightCrosscutTumbledFilled,galleryLightCrosscutFilledTumbled1,galleryLightCrosscutFilledTumbled2, galleryLightCrosscutFilledTumbled3],
           antico: [slabAnticoCrossTumbledFilled,galleryAnticoCrosscutFilledTumbled1,galleryAnticoCrosscutFilledTumbled2, galleryAnticoCrosscutFilledTumbled3],
         },
         "unfilled:tumbled": {
            ivory:  [slabIvoryCrossTumbledUnfilled,galleryIvoryCrosscutUnfilledTumbled1,galleryIvoryCrosscutUnfilledTumbled2, galleryIvoryCrosscutUnfilledTumbled3],
-          light:  [slabLightCrosscutTumbledUnfilled,slabLightCrosscutTumbledUnfilled,slabLightCrosscutTumbledUnfilled],
+          light:  [slabLightCrosscutTumbledUnfilled,galleryLightCrosscutUnfilledTumbled1,galleryLightCrosscutUnfilledTumbled2, galleryLightCrosscutUnfilledTumbled3],
           antico: [slabAnticoCrossTumbledUnfilled,galleryAnticoCrosscutUnfilledTumbled1,galleryAnticoCrosscutUnfilledTumbled2, galleryAnticoCrosscutUnfilledTumbled3],
         },
         "filled:brushed": {
@@ -662,14 +716,14 @@ export const IMAGE_BY_PRODUCT = {
         },
 
          "filled:natural": {
-         ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+         ivory:  ["/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",galleryIvoryCrosscutFilledNatural1, galleryIvoryCrosscutFilledNatural2, galleryIvoryCrosscutFilledNatural3],
+          light:  ["/images/cut/light/Slab/lightveincut.webp", galleryLightCrosscutFilledNatural1, galleryLightCrosscutFilledNatural2, galleryLightCrosscutFilledNatural3],
+          antico: ["/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp", galleryAnticoCrosscutFilledNatural1, galleryAnticoCrosscutFilledNatural2, galleryAnticoCrosscutFilledNatural3],
         },
         "unfilled:natural": {
-          ivory:  "/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp",
-          light:  "/images/cut/light/Slab/lightveincut.webp",
-          antico: "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+          ivory:  ["/images/cut/ivory/epoxy/vein/Iveryveinepoxypolished.webp", galleryIvoryCrosscutUnfilledNatural1, galleryIvoryCrosscutUnfilledNatural2, galleryIvoryCrosscutUnfilledNatural3],
+          light:  ["/images/cut/light/Slab/lightveincut.webp", galleryLightCrosscutUnfilledNatural1, galleryLightCrosscutUnfilledNatural2, galleryLightCrosscutUnfilledNatural3],
+          antico: ["/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp", galleryAnticoCrosscutUnfilledNatural1, galleryAnticoCrosscutUnfilledNatural2, galleryAnticoCrosscutUnfilledNatural3],
         },
       
       }
