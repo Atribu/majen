@@ -135,6 +135,17 @@ export default function ColorDetailPage() {
     const isSlabs  = productKey === "slabs";
     const isTiles  = productKey === "tiles";
     const isPavers  = productKey === "pavers";
+    const isSizedProduct = isTiles || isPavers;
+
+
+function normalizePaverSizeSlug(raw) {
+  if (!raw) return null;
+  let s = String(raw).trim().toLowerCase();
+  s = s.replace(/["“”]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
+  if (s === "versailles") return "versailles-set";
+  return s;
+}
+
 
 
           function cutSlugForProduct(locale, cutKey, productKey) {
@@ -186,7 +197,12 @@ export default function ColorDetailPage() {
   const procKeyFull = isBlocks ? "" : String(processSlug || "").toLowerCase();
   const leafSlugRaw = String(leafSlugFromRoute || "").toLowerCase();
   const colorKey = !isTiles ? (COLOR_KEY_BY_SLUG?.[leafSlugRaw] || leafSlugRaw) : null;
-  const sizeKey  = isTiles ? normalizeTileSizeSlug(leafSlugRaw) : null;
+  const sizeKey =
+  isTiles
+    ? normalizeTileSizeSlug(leafSlugRaw)
+    : isPavers
+      ? normalizePaverSizeSlug(leafSlugRaw)
+      : null;
   const combinedKey = isBlocks ? null : combinedKeyFromProc(procKeyFull, locale);
 
   /* 🔹 HOOKLAR — daima en üstte ve koşulsuz (Hata Çözümü: Koşullu Hook Çağrımı) */
@@ -267,16 +283,33 @@ export default function ColorDetailPage() {
   /* ---- JSON / labels ---- */
   const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKeyFull) : procKeyFull;
 
-  let page = null;
-  if (isBlocks) {
-    page = messages?.ProductPage?.[productKey]?.colors?.[colorKey || ""] || null;
-  } else {
-    const LEAF_NODE = isTiles ? "sizes" : "colors";
-    page = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[procKeyFull]?.[LEAF_NODE]?.[isTiles ? sizeKey : colorKey] || null;
-    if (!page && locale.startsWith("tr")) {
-      page = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[lookupProcKey]?.[LEAF_NODE]?.[isTiles ? sizeKey : colorKey] || null;
-    }
+let page = null;
+
+if (isBlocks) {
+  page = messages?.ProductPage?.[productKey]?.colors?.[colorKey || ""] || null;
+} else {
+  const LEAF_NODE = isSizedProduct ? "sizes" : "colors";
+  // tiles → sizeKey, pavers → sizeKey (normalizePaverSizeSlug), slabs → colorKey
+  const leafId = isSizedProduct ? sizeKey : colorKey;
+
+  page =
+    messages?.ProductPage?.[productKey]
+      ?.cuts?.[cutKey]
+      ?.processes?.[procKeyFull]
+      ?.[LEAF_NODE]
+      ?.[leafId] || null;
+
+  // TR process adıyla yazdıysan fallback
+  if (!page && locale.startsWith("tr")) {
+    page =
+      messages?.ProductPage?.[productKey]
+        ?.cuts?.[cutKey]
+        ?.processes?.[lookupProcKey]
+        ?.[LEAF_NODE]
+        ?.[leafId] || null;
   }
+}
+
 
   const chooseThicknessLabel = page?.ui?.chooseThickness || (locale.startsWith("tr") ? "Kalınlık Seç" : "Choose Thickness");
   const specsLabel           = page?.ui?.specsLabel || (locale.startsWith("tr") ? "Teknik Özellikler" : "Specifications");

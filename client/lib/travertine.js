@@ -332,6 +332,32 @@ export function sizeLabelFromSlug(slug) {
     .replace(/([0-9])cm$/, "$1 cm");
 }
 
+function normalizePaverSizeSlug(raw) {
+  if (!raw) return null;
+  let s = String(raw).trim().toLowerCase();
+  s = s.replace(/["“”]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
+  // pavers ölçü setin:
+  const ALLOWED = new Set([
+    "6x12",
+    "8x8",
+    "12x12",
+    "12x24",
+    "16x24",
+    "18x36",
+    "24x24",
+    "24x36",
+    "versailles-set",
+    "versailles"
+  ]);
+  if (ALLOWED.has(s)) {
+    // "versailles" -> "versailles-set"
+    return s === "versailles" ? "versailles-set" : s;
+  }
+  // son çare: tiles normalizer gibi davran
+  return s;
+}
+
+
 
 
 // export function buildSeoColorPath(locale, productKey, cutSlugOrKey, processSlug, colorKey) {

@@ -360,6 +360,22 @@ import galleryIvoryVeincutUnfilledNatural1 from "@/public/images/new/slab/ivory/
 import galleryIvoryVeincutUnfilledNatural2 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledNatural2.webp"
 import galleryIvoryVeincutUnfilledNatural3 from "@/public/images/new/slab/ivory/gallery/ivoryVeincutUnfilledNatural3.webp"
 
+// -------------- TILES ---------------
+import AnticoCrossBrushedFilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossBrushedFilled8x8.webp"
+import AnticoCrossBrushedUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossBrushedUnfilled8x8.webp"
+import AnticoVeinBrushedFilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinBrushedFilled8x8.webp"
+import AnticoVeinBrushedUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinBrushedUnfilled8x8.webp"
+
+import IvoryCrossBrushedFilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossBrushedFilled8x8.webp"
+import IvoryCrossBrushedUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossBrushedUnfilled8x8.webp"
+import IvoryVeinBrushedFilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinBrushedFilled8x8.webp"
+import IvoryVeinBrushedUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinBrushedUnfilled8x8.webp"
+
+import LightCrossBrushedFilled8x8 from "@/public/images/new/tiles/light/LightCrossBrushedFilled8x8.webp"
+import LightCrossBrushedUnfilled8x8 from "@/public/images/new/tiles/light/LightCrossBrushedUnfilled8x8.webp"
+import LightVeinBrushedFilled8x8 from "@/public/images/new/tiles/light/LightVeinBrushedFilled8x8.webp"
+import LightVeinBrushedUnfilled8x8 from "@/public/images/new/tiles/light/LightVeinBrushedUnfilled8x8.webp"
+
 
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
@@ -741,22 +757,22 @@ export const IMAGE_BY_PRODUCT = {
       "vein-cut": {
         "filled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
         "filled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-        "filled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "filled:brushed":  AnticoVeinBrushedFilled8x8,
         "filled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
         "unfilled:honed":    "/images/cut/antico/Slab/Antikveincut.webp",
         "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-        "unfilled:brushed":  "/images/cut/antico/Slab/Antikveincut.webp",
+        "unfilled:brushed":  AnticoVeinBrushedUnfilled8x8,
         "unfilled:tumbled":  "/images/cut/antico/Slab/Antikveincut.webp",
         natural: "/images/cut/antico/Slab/Antikveincut.webp"
       },
       "cross-cut": {
         "filled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
         "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "filled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "filled:brushed":  AnticoCrossBrushedFilled8x8,
         "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
         "unfilled:honed":    "/images/cut/antico/Slab/Antikcrosscut.webp",
         "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
-        "unfilled:brushed":  "/images/cut/antico/Slab/Antikcrosscut.webp",
+        "unfilled:brushed":  AnticoCrossBrushedUnfilled8x8,
         "unfilled:tumbled":  "/images/cut/antico/Slab/Antikcrosscut.webp",
         natural: "/images/cut/antico/Slab/Antikcrosscut.webp",
       }
@@ -790,14 +806,19 @@ export const IMAGE_BY_PRODUCT = {
           antico: tilesAntik,
         },
         "filled:brushed": {
-          ivory:  tilesIvory,
-          light:  tilesLight,
-          antico: tilesAntik,
+          ivory:  IvoryVeinBrushedFilled8x8,
+          light:  LightVeinBrushedFilled8x8,
+          antico: AnticoVeinBrushedFilled8x8,
+          "8x8":{
+            ivory:  IvoryVeinBrushedFilled8x8,
+            light:  LightVeinBrushedFilled8x8,
+            antico: AnticoVeinBrushedFilled8x8,
+          }
         },
         "unfilled:brushed": {
-          ivory:  tilesIvory,
-          light:  tilesLight,
-          antico: tilesAntik,
+          ivory:  IvoryVeinBrushedUnfilled8x8,
+          light:  LightVeinBrushedUnfilled8x8,
+          antico: AnticoVeinBrushedUnfilled8x8,
         },
            "filled:polished": {
           ivory:  tilesIvory,
@@ -849,14 +870,14 @@ export const IMAGE_BY_PRODUCT = {
           antico: tilesAntik,
         },
         "filled:brushed": {
-          ivory:  tilesIvory,
-          light:  tilesLight,
-          antico: tilesAntik,
+          ivory:  IvoryCrossBrushedFilled8x8,
+          light:  LightCrossBrushedFilled8x8,
+          antico: AnticoCrossBrushedFilled8x8,
         },
         "unfilled:brushed": {
-          ivory:  tilesIvory,
-          light:  tilesLight,
-          antico: tilesAntik,
+          ivory:  IvoryCrossBrushedUnfilled8x8,
+          light:  LightCrossBrushedUnfilled8x8,
+          antico: AnticoCrossBrushedUnfilled8x8,
         },
            "filled:polished": {
           ivory:  tilesIvory,
