@@ -16,7 +16,7 @@ import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks"
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
-import special from "@/public/images/deneme/masa2.webp";
+import special from "@/public/images/homepage/Pavers2.webp";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
 import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
@@ -194,8 +194,7 @@ const optRaw = (key, fallback = null) => {
   const heroSrc =
     heroOverride ||
     IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] ||
-    IMAGE_BY_PRODUCT?.[productKey]?.cover ||
-    "/images/homepage/antikoarkplan.webp";
+    IMAGE_BY_PRODUCT?.[productKey]?.cover;
   const heroAlt = heroAltOver || cutTitle;
 
   // Process grupları
@@ -249,23 +248,37 @@ const makeGroupCards = (groupName) => {
    const youtubeUrl = ytCombined[combinedKey] || null;
 
     // görseli 3 kaynaktan dene: i18n → _images → fallback
+    // görseli 3 kaynaktan dene: i18n → _images → fallback
+        // görseli 3 kaynaktan dene: i18n → _images → fallback
     const imagesCombined =
       safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.images.combined`), null);
-    const imgI18n = imagesCombined?.[combinedKey] ?? null;
+    const imgI18n =
+      imagesCombined?.[combinedKey] ?? null;
+
     const imgByProduct =
       IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || null;
-    const image =
-       imgI18n
-     || imgByProduct
-     || PROCESS_THUMB_BY_COMBINED?.[combinedKey]
-     || (isNatural
-           ? (PROCESS_THUMB_BY_COMBINED?.[`unfilled:natural`]
-               || PROCESS_THUMB_BY_COMBINED?.[`filled:natural`])
-           : null)
-     || heroSrc;
+
+    //  ÖNEMLİ: tiles'ta sadece IMAGE_BY_PRODUCT kullanıyoruz
+    let image;
+    if (productKey === "tiles") {
+      // tiles için: otherOptions ile birebir aynı kaynak
+      image = imgByProduct || heroSrc;
+    } else {
+      // slabs / pavers / blocks eskisi gibi kalsın
+      image =
+        imgI18n
+        || imgByProduct
+        || PROCESS_THUMB_BY_COMBINED?.[combinedKey]
+        || (isNatural
+              ? (PROCESS_THUMB_BY_COMBINED?.["unfilled:natural"]
+                  || PROCESS_THUMB_BY_COMBINED?.["filled:natural"])
+              : null)
+        || heroSrc;
+    }
 
     // ❗ imgMap, karttaki *slug* ile eşleşiyor → slug'ı combinedKey yapıyoruz
     groupImgMap[combinedKey] = image;
+
 
     const href = {
       pathname: "/travertine/[product]/[cut]/[process]",

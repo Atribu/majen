@@ -17,7 +17,7 @@ import {
 import blocks from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
-import special from "@/public/images/deneme/masa2.webp";
+import special from "@/public/images/homepage/Pavers3.webp";
 import { PRODUCT_IMG, IMAGE_BY_PRODUCT_AND_VARIANT } from "@/app/[locale]/(catalog)/_images";
 import { DetailBlock } from "@/app/[locale]/(catalog)/_ui";
 import ProductIntroSection from "../../components/products1/ProductIntroSection";

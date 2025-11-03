@@ -1,4 +1,3 @@
-// app/components/VariantCircleSection.jsx
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -101,11 +100,12 @@ export default function VariantCircleSection({
             const byVariant =
               IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug];
 
-            const fromMap =
-              typeof imgMap === "object"
-                ? imgMap?.[vKey ?? "cover"] ?? imgMap?.cover ?? null
-                : imgMap ?? null;
+            const keyInMap = vKey || slug; 
 
+    const fromMap =
+  typeof imgMap === "object"
+    ? imgMap?.[keyInMap] ?? imgMap?.cover ?? null
+    : imgMap ?? null;
             const cardSrc = img ?? byCut ?? byVariant ?? fromMap ?? heroSrc;
 
            // string href geldiyse locale ön-ekini ekle; object geldiyse olduğu gibi bırak

@@ -229,22 +229,34 @@ const cutCandidate =
     const isCutTR = CUT_TR.test(cutCandidate);
 
     if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
-      const firstToken  = tokens[0];
-      const processSlug = tokens.slice(1, tokens.length - cutCandidate.split('-').length).join('-');
+         // Ürün: slabs | tiles | blocks | pavers
+       const productSeg = localizedProductFromCut(locale, cutCandidate); 
 
-      // ürün tipi (iç rota için İngilizce key)
-      const productSeg = localizedProductFromCut(locale, cutCandidate); // 'slabs' | 'tiles' | ...
+       // HEAD (color/size) belirleme: versailles-set iki token!
+      let headConsumed = 1;
+      let headRaw = tokens[0];                    // 'ivory' | '8x8' | 'versailles' ...
+      if (tokens.length >= 2 && `${tokens[0]}-${tokens[1]}`.toLowerCase() === 'versailles-set') {
+        headRaw = 'versailles-set';
+        headConsumed = 2;
+      }
+      // ① renk dene
+      const colorSlug = normalizeColorSlugForLocale(locale, headRaw);
+      // ② tiles/pavers ise size dene
+      const sizeSlug = (!colorSlug && (productSeg === 'tiles' || productSeg === 'pavers'))
+        ? normalizeTileSizeSlug(headRaw) // versailles | versailles-set -> versailles-set
+        : null;
 
-      // process doğrulaması (mevcut)
+      // process, head’i tükettikten sonra kalan kısımdan çıkarılmalı
+      const cutLen = cutCandidate.split('-').length;
+      const processTokens = tokens.slice(headConsumed, tokens.length - cutLen);
+      const processSlug = processTokens.join('-');
+
+      // process doğrulaması (EN/TR)
       const procOk = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
 
-      // ① önce renk normalizasyonunu dene (slabs vb. için)
-      const colorSlug = normalizeColorSlugForLocale(locale, firstToken);
 
-      // ② tiles ise ve renk bulunamadıysa, size normalizasyonu dene
-      const sizeSlug = (!colorSlug && (productSeg === 'tiles' || productSeg === 'pavers'))
-        ? normalizeTileSizeSlug(firstToken)
-        : null;
+      // ürün tipi (iç rota için İngilizce key)
+     
 
       if (procOk && (colorSlug || sizeSlug)) {
         const leaf = colorSlug || sizeSlug; // tiles→size, diğerleri→color

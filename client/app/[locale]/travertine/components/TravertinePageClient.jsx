@@ -10,7 +10,7 @@ import VariantCircleSection2 from "../../components/products1/VariantCircleSecti
 import block from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
-import special from "@/public/images/deneme/masa2.webp";
+import special from "@/public/images/homepage/Pavers3.webp";
 import InfoCard from "../../components/products1/InfoCard"
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
 import TextSection from "../../components/products1/TextSection";

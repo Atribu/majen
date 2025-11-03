@@ -10,7 +10,7 @@ import antik from "@/public/images/slabs/antik.webp"
 import block from "@/public/images/homepage/Ivoryblok.webp";
 import slabs from "@/public/images/homepage/slabler2.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
-import special from "@/public/images/homepage/masa.webp";
+import special from "@/public/images/homepage/Pavers3.webp";
 
 import { baseFor, productSlugFor, getLang } from "@/lib/travertine";
 
