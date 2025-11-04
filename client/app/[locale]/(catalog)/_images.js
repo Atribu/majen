@@ -409,6 +409,11 @@ import IvoryCrossPolishedUnfilled8x8 from "@/public/images/new/tiles/ivory/Ivory
 import IvoryVeinPolishedFilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinPolishedFilled8x8.webp"
 import IvoryVeinPolishedUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinPolishedUnfilled8x8.webp"
 
+// --------- NATURAL -------
+import IvoryCrossNaturalFilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossNaturalFilled8x8.webp"
+import IvoryCrossNaturalUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossNaturalUnfilled8x8.webp"
+import IvoryVeinNaturalFilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinNaturalFilled8x8.webp"
+import IvoryVeinNaturalUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinNaturalUnfilled8x8.webp"
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
