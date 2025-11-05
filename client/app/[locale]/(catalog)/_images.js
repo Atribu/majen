@@ -425,7 +425,21 @@ import LightCrossNaturalUnfilled8x8 from "@/public/images/new/tiles/light/LightC
 import LightVeinNaturalFilled8x8 from "@/public/images/new/tiles/light/LightVeinNaturalFilled8x8.webp"
 import LightVeinNaturalUnfilled8x8 from "@/public/images/new/tiles/light/LightVeinNaturalUnfilled8x8.webp"
 
-// --------- THUMBED -------
+// --------- TUMDLED -------
+import IvoryCrossTumbledFilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossTumbledFilled8x8.webp"
+import IvoryCrossTumbledUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryCrossTumbledUnfilled8x8.webp"
+import IvoryVeinTumbledFilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinTumbledFilled8x8.webp"
+import IvoryVeinTumbledUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinTumbledUnfilled8x8.webp"
+
+import AnticoCrossTumbledFilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossTumbledFilled8x8.webp"
+import AnticoCrossTumbledUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossTumbledUnfilled8x8.webp"
+import AnticoVeinTumbledFilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinTumbledFilled8x8.webp"
+import AnticoVeinTumbledUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinTumbledUnfilled8x8.webp"
+
+import LightCrossTumbledFilled8x8 from "@/public/images/new/tiles/light/LightCrossTumbledFilled8x8.webp"
+import LightCrossTumbledUnfilled8x8 from "@/public/images/new/tiles/light/LightCrossTumbledUnfilled8x8.webp"
+import LightVeinTumbledFilled8x8 from "@/public/images/new/tiles/light/LightVeinTumbledFilled8x8.webp"
+import LightVeinTumbledUnfilled8x8 from "@/public/images/new/tiles/light/LightVeinTumbledUnfilled8x8.webp"
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
@@ -894,11 +908,21 @@ export const IMAGE_BY_PRODUCT = {
           ivory:  tilesIvory,
           light: tilesLight,
           antico: tilesAntik,
+           "8x8":{
+           ivory:  IvoryVeinTumbledFilled8x8,
+          light:  LightVeinTumbledFilled8x8,
+          antico: AnticoVeinTumbledFilled8x8,
+         }
         },
         "unfilled:tumbled": {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+           "8x8":{
+           ivory:  IvoryVeinTumbledUnfilled8x8,
+          light:  LightVeinTumbledUnfilled8x8,
+          antico: AnticoVeinTumbledUnfilled8x8,
+         }
         },
         "filled:brushed": {
           ivory:  IvoryVeinBrushedFilled8x8,
@@ -930,11 +954,21 @@ export const IMAGE_BY_PRODUCT = {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+           "8x8":{
+           ivory:  IvoryVeinNaturalFilled8x8,
+          light:  LightVeinNaturalFilled8x8,
+          antico: AnticoVeinNaturalFilled8x8,
+         }
         },
         "unfilled:natural": {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+           "8x8":{
+           ivory:  IvoryVeinNaturalUnfilled8x8,
+          light:  LightVeinNaturalUnfilled8x8,
+          antico: AnticoVeinNaturalUnfilled8x8,
+         }
         },
       },
 
@@ -958,11 +992,21 @@ export const IMAGE_BY_PRODUCT = {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+          "8x8":{
+           ivory:  IvoryCrossTumbledFilled8x8,
+          light:  LightCrossTumbledFilled8x8,
+          antico: AnticoCrossTumbledFilled8x8,
+         }
         },
         "unfilled:tumbled": {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+          "8x8":{
+           ivory:  IvoryCrossTumbledUnfilled8x8,
+          light:  LightCrossTumbledUnfilled8x8,
+          antico: AnticoCrossTumbledUnfilled8x8,
+         }
         },
         "filled:brushed": {
           ivory:  IvoryCrossBrushedFilled8x8,
@@ -989,11 +1033,21 @@ export const IMAGE_BY_PRODUCT = {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+          "8x8":{
+           ivory:  IvoryCrossNaturalFilled8x8,
+          light:  LightCrossNaturalFilled8x8,
+          antico: AnticoCrossNaturalFilled8x8,
+         }
         },
         "unfilled:natural": {
           ivory:  tilesIvory,
           light:  tilesLight,
           antico: tilesAntik,
+          "8x8":{
+           ivory:  IvoryCrossNaturalUnfilled8x8,
+          light:  LightCrossNaturalUnfilled8x8,
+          antico: AnticoCrossNaturalUnfilled8x8,
+         }
         },
         // ... diğer combinedKey'ler
       }
