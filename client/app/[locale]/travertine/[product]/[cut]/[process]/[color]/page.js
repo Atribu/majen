@@ -216,23 +216,36 @@ function normalizePaverSizeSlug(raw) {
   const [selectedColor, setSelectedColor] = React.useState("ivory");
 
   // tiles renk → görsel listesi (React.useCallback ile sarıldı)
-  const imagesForColor = React.useCallback((colorKeyEn) => {
-    if (!isTiles || !combinedKey) return [];
-    const fromColorByProcess =
-      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[colorKeyEn];
-    const fromVariant =
-      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
-      IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()];
+const imagesForColor = React.useCallback((colorKeyEn) => {
+  // Sadece tiles + geçerli process + size varsa çalışsın
+  if (!isTiles || !combinedKey || !sizeKey) return [];
 
-    const fallbacks = dedup([
-      ...toArray(fromVariant),
-      ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
-      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
-      ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
-    ]);
-    const primary = toArray(fromColorByProcess);
-    return primary.length ? primary : fallbacks;
-  }, [isTiles, combinedKey, productKey, cutKey, locale]); 
+  // 🔴 tiles için asıl kaynak: cut + process + size + color
+  const fromColorByProcess =
+    IMAGE_BY_PRODUCT?.[productKey]
+      ?.colorThumbs?.[cutKey]
+      ?. [combinedKey]
+      ?. [sizeKey]
+      ?. [colorKeyEn];
+
+  // fallback’ler (renk/ürün genel görselleri)
+  const fromVariant =
+    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorKeyEn] ??
+    IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[
+      colorLabelFor(locale, colorKeyEn)?.toLowerCase?.()
+    ];
+
+  const fallbacks = dedup([
+    ...toArray(fromVariant),
+    ...toArray(PROCESS_THUMB_BY_COMBINED?.[combinedKey]),
+    ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.[cutKey]),
+    ...toArray(IMAGE_BY_PRODUCT?.[productKey]?.cover),
+  ]);
+
+  const primary = toArray(fromColorByProcess);
+  return primary.length ? primary : fallbacks;
+}, [isTiles, combinedKey, productKey, cutKey, sizeKey, locale]);
+
 
   // colorImagesMap ve firstAvailableColor'ı useMemo ile hesaplayın (Uyarı Çözümü: Karmaşık İfade)
   const colorImagesMap = React.useMemo(() => 
@@ -337,12 +350,29 @@ if (isBlocks) {
   /* ---- Görseller ---- */
   // combinedKey zaten yukarıda hesaplandı
   
-  const galleryPrimaryValue =
-    (!isBlocks && combinedKey)
-      ? IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[LEAF_KEY]
-      : null;
+let galleryPrimaryValue = null;
 
-  const galleryPrimary = toArray(galleryPrimaryValue);
+if (!isBlocks && combinedKey) {
+  if (isTiles && sizeKey && selectedColor) {
+    // 🔴 Tiles: size + color
+    galleryPrimaryValue =
+      IMAGE_BY_PRODUCT?.[productKey]
+        ?.colorThumbs?.[cutKey]
+        ?. [combinedKey]
+        ?. [sizeKey]
+        ?. [selectedColor] || null;
+  } else {
+    // Slabs / pavers / blocks: eski davranış
+    galleryPrimaryValue =
+      IMAGE_BY_PRODUCT?.[productKey]
+        ?.colorThumbs?.[cutKey]
+        ?. [combinedKey]
+        ?. [LEAF_KEY] || null;
+  }
+}
+
+const galleryPrimary = toArray(galleryPrimaryValue);
+
 
   const fallbackList = dedup([
     ...toArray(!isTiles ? (IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[leafSlugRaw]
