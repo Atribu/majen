@@ -415,6 +415,18 @@ import IvoryCrossNaturalUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryC
 import IvoryVeinNaturalFilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinNaturalFilled8x8.webp"
 import IvoryVeinNaturalUnfilled8x8 from "@/public/images/new/tiles/ivory/IvoryVeinNaturalUnfilled8x8.webp"
 
+import AnticoCrossNaturalFilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossNaturalFilled8x8.webp"
+import AnticoCrossNaturalUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoCrossNaturalUnfilled8x8.webp"
+import AnticoVeinNaturalFilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinNaturalFilled8x8.webp"
+import AnticoVeinNaturalUnfilled8x8 from "@/public/images/new/tiles/antico/AnticoVeinNaturalUnfilled8x8.webp"
+
+import LightCrossNaturalFilled8x8 from "@/public/images/new/tiles/light/LightCrossNaturalFilled8x8.webp"
+import LightCrossNaturalUnfilled8x8 from "@/public/images/new/tiles/light/LightCrossNaturalUnfilled8x8.webp"
+import LightVeinNaturalFilled8x8 from "@/public/images/new/tiles/light/LightVeinNaturalFilled8x8.webp"
+import LightVeinNaturalUnfilled8x8 from "@/public/images/new/tiles/light/LightVeinNaturalUnfilled8x8.webp"
+
+// --------- THUMBED -------
+
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
     ivory:  [blockIvory,blockvariantIvory1,blockvariantIvory2,blockvariantIvory3],
