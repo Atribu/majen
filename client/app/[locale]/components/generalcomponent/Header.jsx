@@ -2,12 +2,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import LangSwitcher from "@/LangSwitcher";
 import {Link} from '@/i18n/navigation';
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi"; 
 import Image from "next/image";
 import logoBlack from "@/public/images/majenlogo.webp";
 import logoWhite from "@/public/images/logobeyaz.webp";
@@ -19,8 +19,17 @@ import {
   FaWhatsapp,
   FaWikipediaW
 } from "react-icons/fa";
+import { productSlugFor, getLang } from "@/lib/travertine";
 
 export default function Header() {
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
+
+  const locale = useLocale();
+    const lang = getLang(locale);
+    const prefix = `/${locale}`;
+    const base = locale === "tr" ? "travertenler" : "travertines"; 
+    const shortBase = locale === "tr" ? "traverten" : "travertine"; 
+
   const t = useTranslations("Header");
   const t2 = useTranslations("Footer");
   const pathname = usePathname();
@@ -183,9 +192,72 @@ export default function Header() {
           >
             {t("home")}
           </Link>
-          <Link href="/travertine" className={linkClasses} onClick={() => setMenuOpen(false)}>
+          {/* <Link href="/travertine" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("product")}
-          </Link>
+          </Link> */}
+
+          <div className="flex flex-col">
+            <button
+              onClick={() => setProductMenuOpen(!productMenuOpen)}
+              className={`${linkClasses} flex items-center justify-between w-full text-left`}
+            >
+              <span>{t("product")}</span>
+              <FiChevronDown 
+                className={`transition-transform duration-300 ${
+                  productMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            
+            {/* Alt Menü */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                productMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="flex flex-col gap-2 mt-3 ml-4 pl-4 border-l-2 border-white/30">
+              <Link
+                  href="/travertine"
+                  className="text-sm md:text-base hover:text-white/80 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("travertines")}
+                </Link>
+
+                <Link
+                  href={`/${shortBase}-${productSlugFor(locale, "blocks")}`}
+                  className="text-sm md:text-base hover:text-white/80 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("blocks")}
+                </Link>
+                <Link
+                  href={`/${shortBase}-${productSlugFor(locale, "slabs")}`}
+                  className="text-sm md:text-base hover:text-white/80 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("slabs")}
+                </Link>
+                <Link
+                  href={`/${shortBase}-${productSlugFor(locale, "tiles")}`}
+                  className="text-sm md:text-base hover:text-white/80 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("tiles")}
+                </Link>
+                <Link
+                  href={`/${shortBase}-${productSlugFor(locale, "pavers")}`}
+                  className="text-sm md:text-base hover:text-white/80 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t("pavers")}
+                </Link>
+              </div>
+            </div>
+          </div>
+
+
+
           <Link href="/howweexport" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("shop")}
           </Link>

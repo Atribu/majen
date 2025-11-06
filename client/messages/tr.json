@@ -13,7 +13,12 @@
     "contactUs": "İletişim",
     "callUs": "Bizi ara: +90 533 556 10 92",
     "gallery":"Galeri",
-    "aboutus":"Hakkımızda"
+    "aboutus":"Hakkımızda",
+      "blocks":"Bloklar",
+     "slabs":"Plakalar",
+     "tiles":"Karolar",
+     "pavers":"Döşemeler",
+     "travertines":"Travertenler"
   },
 
   "Footer": {
@@ -93,7 +98,7 @@
     "explore": "İncele",
     "contact": "İletişime Geç",
     "products": {
-      "product1": { "title": "Traverten BlokLar", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Wholesale Travertine Blocks", "cta": "İncele" },
+      "product1": { "title": "Traverten Bloklar", "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.", "alt": "Wholesale Travertine Blocks", "cta": "İncele" },
       "product2": { "title": "Traverten Plakalar", "description": "2 cm ve 3 cm kalınlık seçenekleriyle cilalı, honlu veya fırçalı yüzeyler; hassas kalibrasyon ve güçlendirme işlemleriyle bookmatch uygulamalarına uygundur.", "alt": "Wholesale Travertine Slabs", "cta": "İncele" },
       "product3": { "title": "Traverten Karolar", "description": "30×60, 60×60, 60×120 gibi standart ebatlarda; iç/dış mekâna uygun, düzgün kenarlı ve yüksek ölçü hassasiyetine sahip karolarla hızlı ve temiz uygulama.", "alt": "Wholesale Travertine Tiles", "cta": "İncele" },
       "product4": { "title": "Traverten Döşemeler", "description": "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi kişiye özel çözümler; proje detaylarınıza göre ölçülendirilip anahtar teslim hazırlanır.", "alt": "Wholesale Travertine Special Design", "cta": "İncele" }

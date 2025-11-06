@@ -573,6 +573,36 @@ function processThumbFor(enCombo) {
   );
 }
 
+function sizeThumbForSize(sizeSlug) {
+  // Bu sayfa tiles/pavers değilse zaten gerek yok
+  const isSizeDrivenLocal = productKey === "tiles" || productKey === "pavers";
+  if (!isSizeDrivenLocal) return null;
+
+  // lookupProcKey: "filled-honed" gibi EN key
+  const cKey = combinedKeyFromEn(lookupProcKey); // "filled:honed" vb.
+
+  // tiles colorThumbs yapısı:
+  // IMAGE_BY_PRODUCT.tiles.colorThumbs[cutKey][cKey][sizeSlug][colorKey]
+  const cutNode =
+    IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[cKey];
+  if (!cutNode) return null;
+
+  const sizeNode = cutNode[sizeSlug]; // örn "8x8", "12x12"
+  if (!sizeNode || typeof sizeNode !== "object") return null;
+
+  // Öncelik: ivory → light → antico
+  const COLOR_PRIORITY = ["ivory", "light", "antico"];
+  for (const ck of COLOR_PRIORITY) {
+    const v = sizeNode[ck];
+    if (v) return pickFirst(v); // array ise ilk eleman, değilse direkt
+  }
+
+  // Hiçbiri yoksa, herhangi bir key'i kullan
+  const firstKey = Object.keys(sizeNode)[0];
+  return firstKey ? pickFirst(sizeNode[firstKey]) : null;
+}
+
+
 // 4) Kartların link ve metinlerini üret
 const otherProcessCards = otherProcKeysEN.map((enCombo) => {
   // başlık (locale'e uygun “Filled · Honed” biçimi)
@@ -636,14 +666,17 @@ const sizeCards = isSizeDriven
         pathname: "/travertine/[product]/[cut]/[process]/[color]",
         params: {
           product: productSlug,   // "tiles" veya "pavers"
-          cut: cutSlug,           // örn "vein-cut-travertine-pavers"
-          process: process,       // "filled-polished"
-          color: sizeSlug,        // <-- param adı [color] ama aslında ölçü
+          cut: cutSlug,           // örn "vein-cut-travertine-tiles"
+          process: process,       // URL’deki segment ("filled-honed" vs)
+          color: sizeSlug,        // burada sizeSlug route paramı
         },
       };
 
-      // görsel fallback
-      const img = processThumbFor(lookupProcKey) || heroSrc;
+      // 🔹 Her ölçü için önce colorThumbs içinden bir preview resmi dene
+      const imgFromColorThumbs = sizeThumbForSize(sizeSlug);
+
+      // 🔹 Bulunamazsa process genel thumb’ına, o da yoksa hero’ya düş
+      const img = imgFromColorThumbs || processThumbFor(lookupProcKey) || heroSrc;
 
       return {
         slug: sizeSlug,
@@ -654,6 +687,7 @@ const sizeCards = isSizeDriven
       };
     })
   : [];
+
 
 
 

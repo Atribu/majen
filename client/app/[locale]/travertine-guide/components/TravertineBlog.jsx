@@ -456,35 +456,35 @@ const handleClick = (e, id) => {
         Turkish travertine comes in multiple product formats to match design
         intent and installation scale.{" "}
         <a
-          href="/en/blog/travertines/travertine-tiles"
+          href="/travertine-tiles-guide"
           className="text-teal-700 hover:underline"
         >
           Travertine tiles
         </a>{" "}
         suit floors and walls, while{" "}
         <a
-          href="/en/blog/travertines/travertine-slabs"
+          href="/travertine-slabs-guide"
           className="text-teal-700 hover:underline"
         >
           large-format slabs
         </a>{" "}
         deliver seamless surfaces for kitchens and facades. Raw{" "}
         <a
-          href="/en/blog/travertines/travertine-blocks"
+          href="/travertine-blocks-guide"
           className="text-teal-700 hover:underline"
         >
           travertine blocks
         </a>{" "}
         feed manufacturing lines;{" "}
         <a
-          href="/en/blog/travertines/travertine-pavers"
+          href="/travertine-pavers-guide"
           className="text-teal-700 hover:underline"
         >
           pavers
         </a>{" "}
         and{" "}
         <a
-          href="/en/blog/travertines/travertine-mosaics"
+          href="/travertine-mosaics-guide"
           className="text-teal-700 hover:underline"
         >
           mosaics

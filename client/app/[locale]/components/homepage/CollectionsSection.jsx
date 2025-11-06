@@ -17,10 +17,10 @@ export default function CollectionsSection() {
 
   // UI etiketleri
   const labels = {
-    block: locale === "tr" ? "Blok" : "Block",
-    slabs: locale === "tr" ? "Plaka" : "Slabs",
-    tiles: locale === "tr" ? "Karo" : "Tiles",
-    special: locale === "tr" ? "Özel Tasarım" : "Special Design",
+    block: locale === "tr" ? "Bloklar" : "Blocks",
+    slabs: locale === "tr" ? "Plakalar" : "Slabs",
+    tiles: locale === "tr" ? "Karolar" : "Tiles",
+    special: locale === "tr" ? "Döşemeler" : "Pavers",
   };
 
   // koleksiyonlar (her renk için slug ekledik)

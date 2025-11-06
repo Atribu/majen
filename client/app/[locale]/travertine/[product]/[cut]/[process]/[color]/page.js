@@ -137,6 +137,8 @@ export default function ColorDetailPage() {
     const isPavers  = productKey === "pavers";
     const isSizedProduct = isTiles || isPavers;
 
+    const pickFirst = (v) => (Array.isArray(v) ? v[0] : v ?? null);
+
 
 function normalizePaverSizeSlug(raw) {
   if (!raw) return null;
@@ -430,65 +432,108 @@ const galleryPrimary = toArray(galleryPrimaryValue);
     const node = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes?.[procKeyEn];
     return node?.colors && typeof node.colors === "object" ? Object.keys(node.colors) : [];
   }
-  function buildOtherProcessItems() {
-    if (isBlocks || !productKey || !cutKey || !LEAF_KEY) return [];
-    const procDict = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes || {};
-    const currentDisplay = toDisplayKey(procKeyFull);
+function buildOtherProcessItems() {
+  if (isBlocks || !productKey || !cutKey || !LEAF_KEY) return [];
 
-    const candidates= [];
-    const seenDisplay = new Set();
-    for (const rawKey of Object.keys(procDict)) {
-      const en = normalizeProcEn(rawKey);
-      if (!VALID_PROCS_EN.has(en)) continue;
-      const displayKey = toDisplayKey(en);
-      if (displayKey === currentDisplay) continue;
-      if (seenDisplay.has(displayKey)) continue;
-      seenDisplay.add(displayKey);
-      candidates.push({ rawKey, en, displayKey });
-    }
-    candidates.sort((a,b) =>
-      (TOPOLOGICAL_ORDER.indexOf(a.displayKey) >>> 0) -
-      (TOPOLOGICAL_ORDER.indexOf(b.displayKey) >>> 0)
-    );
+  const procDict = messages?.ProductPage?.[productKey]?.cuts?.[cutKey]?.processes || {};
+  const currentDisplay = toDisplayKey(procKeyFull);
 
-    const items=[];
-    for (const { rawKey, en, displayKey } of candidates) {
-      if (items.length >= 3) break;
-      const node = procDict[rawKey] || procDict[en] || {};
-      const procLabel = friendlyProcessLabelForLocale(displayKey, locale);
-      const title = `${LEAF_LABEL} · ${procLabel}`;
-      const ck = combinedKeyFromProc(displayKey, locale);
+  const candidates = [];
+  const seenDisplay = new Set();
 
-      const colorForCard = !isTiles
-        ? (colorsForProcess(en).includes("ivory") ? "ivory" : (colorsForProcess(en)[0] || "ivory"))
-        : null;
+  for (const rawKey of Object.keys(procDict)) {
+    const en = normalizeProcEn(rawKey);
+    if (!VALID_PROCS_EN.has(en)) continue;
 
-      const img = isTiles
-        ? (PROCESS_THUMB_BY_COMBINED?.[ck ] || heroSrc)
-        : (IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey ]?.[ck ]?.[colorForCard ]
-            || IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorForCard ]
-            || PROCESS_THUMB_BY_COMBINED?.[ck ]
-            || heroSrc);
+    const displayKey = toDisplayKey(en);
+    if (displayKey === currentDisplay) continue;
+    if (seenDisplay.has(displayKey)) continue;
 
-      const processSlugLocalized = procSlugForLocale(locale, displayKey);
-
-      items.push({
-        title,
-        text: (node.lead || node.intro || (locale.startsWith("tr") ? "Bu yüzey için detayları görüntüleyin." : "View details for this finish/process.")),
-        img,
-        href: {
-          pathname: "/travertine/[product]/[cut]/[process]/[color]",
-          params: {
-            product: productSlug,
-            cut:     cutSlug,
-            process: processSlugLocalized,
-            color:   leafSlugRaw, // tiles’ta size; slabs’ta color
-          },
-        },
-      });
-    }
-    return items;
+    seenDisplay.add(displayKey);
+    candidates.push({ rawKey, en, displayKey });
   }
+
+  candidates.sort((a, b) =>
+    (TOPOLOGICAL_ORDER.indexOf(a.displayKey) >>> 0) -
+    (TOPOLOGICAL_ORDER.indexOf(b.displayKey) >>> 0)
+  );
+
+  const items = [];
+
+  for (const { rawKey, en, displayKey } of candidates) {
+    if (items.length >= 3) break;
+
+    const node = procDict[rawKey] || procDict[en] || {};
+    const procLabel = friendlyProcessLabelForLocale(displayKey, locale);
+    const title = `${LEAF_LABEL} · ${procLabel}`;
+    const ck = combinedKeyFromProc(displayKey, locale); // "filled:honed" vb.
+
+    const colorForCard = !isTiles
+      ? (colorsForProcess(en).includes("ivory") ? "ivory" : (colorsForProcess(en)[0] || "ivory"))
+      : null;
+
+let imgCandidate;
+
+    if (isTiles) {
+      // tiles: önce product.processThumbs, sonra global process thumb
+      const fromProcessThumb =
+        IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[ck] ??
+        PROCESS_THUMB_BY_COMBINED?.[ck];
+
+      imgCandidate = pickFirst(fromProcessThumb);
+    } else {
+      // slabs/pavers: colorThumbs → colorVariant → processThumb → global
+      const fromColorThumbs =
+        IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[ck]?.[colorForCard];
+
+      const fromColorVariant =
+        IMAGE_BY_PRODUCT_AND_COLOR?.[productKey]?.[colorForCard];
+
+      const fromProcessThumb =
+        IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[ck] ??
+        PROCESS_THUMB_BY_COMBINED?.[ck];
+
+      imgCandidate =
+        pickFirst(fromColorThumbs) ||
+        pickFirst(fromColorVariant) ||
+        pickFirst(fromProcessThumb);
+    }
+
+    // Eğer string ise ve sadece whitespace ise, çöpe at
+    if (typeof imgCandidate === "string" && imgCandidate.trim() === "") {
+      imgCandidate = null;
+    }
+
+    // Son fallbackler
+    const img = imgCandidate || heroSrc || "/images/homepage/antikoarkplan.webp";
+
+    const processSlugLocalized = procSlugForLocale(locale, displayKey);
+
+    items.push({
+      title,
+      text:
+        node.lead ||
+        node.intro ||
+        (locale.startsWith("tr")
+          ? "Bu yüzey için detayları görüntüleyin."
+          : "View details for this finish/process."),
+      img,
+      href: {
+        pathname: "/travertine/[product]/[cut]/[process]/[color]",
+        params: {
+          product: productSlug,
+          cut: cutSlug,
+          process: processSlugLocalized,
+          color: leafSlugRaw, // tiles’ta size; slabs’ta color
+        },
+      },
+    });
+  }
+
+  return items;
+}
+
+
 
   /* ---- Breadcrumbs ---- */
   const prefix = `/${locale}`;

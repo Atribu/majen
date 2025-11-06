@@ -158,7 +158,7 @@ export default async function Page({ params }) {
         <div className="mx-auto w-[92%] max-w-[1160px]">
           <nav className="flex flex-wrap gap-3">
             {[
-              ["/en/travertine/tiles", "Travertine Tiles"],
+              ["/travertine-tiles-guide", "Travertine Tiles"],
               ["/en/travertine/slabs", "Travertine Slabs"],
               ["/en/travertine/blocks", "Travertine Blocks"],
               ["/en/travertine/pavers", "Travertine Pavers"],
