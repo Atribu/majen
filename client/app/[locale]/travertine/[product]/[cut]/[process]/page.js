@@ -340,22 +340,25 @@ const colorCards = cKeys.map((key) => {
 
  const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
-      const linkPatterns = [
-    {
-      pattern: /vein[- ]cut/i,
-      href: {
-        pathname: "/travertine/[product]/[cut]",
-        params: { product: productSlug, cut: cutSlugForProduct(locale, "vein-cut", productKey) }
-      }
-    },
-    {
-      pattern: /cross[- ]cut/i,
-      href: {
-        pathname: "/travertine/[product]/[cut]",
-        params: { product: productSlug, cut: cutSlugForProduct(locale, "cross-cut", productKey) }
-      }
-    },
-  ];
+     const linkPatterns = [
+  {
+    pattern: /vein[- ]cut/i,
+    href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
+      locale,
+      "vein-cut",
+      productKey
+    )}`,
+  },
+  {
+    pattern: /cross[- ]cut/i,
+    href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
+      locale,
+      "cross-cut",
+      productKey
+    )}`,
+  },
+];
+
 
       function cutSlugForProduct(locale, cutKey, productKey) {
       const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
@@ -429,34 +432,34 @@ function wordsOrHyphenRegex(s) {
 
 // EN ve TR process anahtarlarından pattern → href objeleri üret
 const processPatterns = []
-   .concat(
-     PROCESS_EN.flatMap((k) => {
-       const href = {
-         pathname: "/travertine/[product]/[cut]/[process]",
-         params: { product: productSlug, cut: cutSlug, process: procSlugForLocale(locale, k) },
-       };
-       if (k === "natural") {
-         // yalnızca "filled/unfilled natural" eşleşsin
-         return [{ pattern: NATURAL_EN_COMBO_REGEX, href }];
-       }
-       // diğerleri eski mantıkla
-       const rx = wordsOrHyphenRegex(k); // "filled[ -]honed" vb.
-       return [{ pattern: rx, href }];
-     })
-   )
   .concat(
-      PROCESS_TR.flatMap((kTr) => {
-       const href = {
-         pathname: "/travertine/[product]/[cut]/[process]",
-         params: { product: productSlug, cut: cutSlug, process: procSlugForLocale(locale, kTr) },
-       };
-       if (kTr === "dogal") {
-         // yalnızca "dolgulu/dolgusuz doğal" eşleşsin
-         return [{ pattern: NATURAL_TR_COMBO_REGEX, href }];
-       }
-       return [{ pattern: wordsOrHyphenRegex(kTr), href }];
-     })
+    PROCESS_EN.flatMap((k) => {
+      const processSlugLocalized = procSlugForLocale(locale, k);
+      const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLocalized}`;
+
+      if (k === "natural") {
+        // yalnızca "filled/unfilled natural" eşleşsin
+        return [{ pattern: NATURAL_EN_COMBO_REGEX, href }];
+      }
+
+      const rx = wordsOrHyphenRegex(k); // "filled[ -]honed" vb.
+      return [{ pattern: rx, href }];
+    })
+  )
+  .concat(
+    PROCESS_TR.flatMap((kTr) => {
+      const processSlugLocalized = procSlugForLocale(locale, kTr);
+      const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLocalized}`;
+
+      if (kTr === "dogal") {
+        // yalnızca "dolgulu/dolgusuz doğal" eşleşsin
+        return [{ pattern: NATURAL_TR_COMBO_REGEX, href }];
+      }
+
+      return [{ pattern: wordsOrHyphenRegex(kTr), href }];
+    })
   );
+
   // Son olarak kesim (vein/cross) pattern’lerine process pattern’lerini ekle
 linkPatterns.push(...processPatterns);
 
@@ -658,6 +661,40 @@ const sizeSlugListForThisProduct = productKey === "tiles"
     ? TILE_SIZE_SLUGS_PAVERS
     : [];
 
+   // regex için escape helper (bunu zaten yukarıda tanımlamışsın)
+// regex için escape helper – her zaman stringe çevir
+const escapeRegExp = (s) =>
+  String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+
+const sizeLinkPatterns = isSizeDriven
+  ? sizeSlugListForThisProduct
+      .filter(Boolean)                            // undefined / null varsa at
+      .map((sizeSlug) => {
+        const [w, h] = String(sizeSlug).split("x"); // "8x8" → ["8","8"]
+
+        // 8x8 formatı bozuksa bu slug'ı at
+        if (!w || !h) return null;
+
+        return {
+          // "8x8", 8"x8", 8″x8″, 8 x 8, 8" x 8" vb. hepsini yakalar
+          pattern: new RegExp(
+            `${escapeRegExp(w)}["″']?\\s*x\\s*${escapeRegExp(h)}["″']?`,
+            "gi"
+          ),
+          // SEO URL: /en/8x8-filled-polished-vein-cut-travertine-pavers
+          href: `/${locale}/${sizeSlug}-${process}-${cutSlug}`,
+        };
+      })
+      .filter(Boolean)                              // null dönenleri at
+  : [];
+
+
+
+
+
+
+
 const sizeCards = isSizeDriven
   ? sizeSlugListForThisProduct.map((sizeSlug) => {
       const title = tileSizeLabelForLocale(locale, sizeSlug);
@@ -721,22 +758,39 @@ const sizeCards = isSizeDriven
             />
 
       {/* INFO CARDS */}
-      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
-                   {cards.map((c, i) => {
-                     const plain =
-                       typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
-           
-                     return (
-                       <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
-                         {i === 1 ? (
-                           <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
-                         ) : (
-                           <span className={cardTextClass}>{plain}</span>
-                         )}
-                       </InfoCard>
-                     );
-                   })}
-       </section>
+     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+  {cards.map((c, i) => {
+    const plain =
+      typeof c.content === "string"
+        ? c.content
+        : Array.isArray(c.content)
+        ? c.content.join(", ")
+        : "";
+
+    return (
+      <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+        {/* 2. kart: cut / process linkleri */}
+        {i === 1 ? (
+          <InlineLinks
+            text={plain}
+            patterns={linkPatterns}
+            textClassName={cardTextClass}
+          />
+        ) : i === 2 && isSizeDriven ? (
+          // 3. kart: tiles / pavers ise ölçüleri linke çevir
+          <InlineLinks
+            text={plain}
+            patterns={sizeLinkPatterns}
+            textClassName={cardTextClass}
+          />
+        ) : (
+          <span className={cardTextClass}>{plain}</span>
+        )}
+      </InfoCard>
+    );
+  })}
+</section>
+
 
        <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
 <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2"> {variantText}</p>

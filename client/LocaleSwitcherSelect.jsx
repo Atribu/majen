@@ -47,140 +47,253 @@ export default function LocaleSwitcherSelect({
   // --- Path'i hedef dile göre yeniden kur
   // app/components/LocaleSwitcherSelect.jsx
 // ...
+// app/components/LocaleSwitcherSelect.jsx
+// ...
+// app/components/LocaleSwitcherSelect.jsx içi
 function buildLocalizedPath(path, targetLocale) {
-  const segs = (path || "/").split("/").filter(Boolean); // ["tr", "vein-cut-travertine-slabs"] gibi
+  const segs = (path || "/").split("/").filter(Boolean); // ["en","vein-cut-travertine-tiles"] gibi
   if (segs.length === 0) return `/${targetLocale}`;
 
   const currentLocale = segs[0] || "en";
-  const afterLocale   = segs[1]; // kısa SEO formu genelde burada
-  const tail          = segs.slice(2); // (kalınlık vs. pek yok; anchor'a dönüştürmüştük)
+  const afterLocale   = segs[1];   // SEO kısa slug burada
+  const tail          = segs.slice(2); // (çoğu zaman boş)
 
-  // 0) Locale yalnızsa
+  // 0) Sadece locale → /tr, /en
   if (!afterLocale) return `/${targetLocale}`;
 
-  // 0.5) ÖZEL SAYFA: travertine-guide → aynı slug iki dilde de sabit
+  // 0.5) ÖZEL SAYFA: travertine-guide sabit
   if (afterLocale === "travertine-guide") {
     return `/${targetLocale}/travertine-guide`;
   }
 
+  // --- ÜRÜN ROOT (travertine-slabs / traverten-plakalar) ---
   const mShort = afterLocale.match(/^(travertine|traverten)-(.+)$/i);
   if (mShort) {
-    const part = mShort[2].toLowerCase(); // "slabs" | "plakalar" | ...
-    // ürün key'ini EN/TR tablolarında ara
+    const part = mShort[2].toLowerCase(); // "slabs" | "plakalar" | "pavers" | ...
     let key = null;
+
+    // EN tablosunda ara
     for (const k of Object.keys(PRODUCT_SLUGS.en || {})) {
-      if (String(PRODUCT_SLUGS.en[k]).toLowerCase() === part) { key = k; break; }
-    }
-    if (!key) {
-      for (const k of Object.keys(PRODUCT_SLUGS.tr || {})) {
-        if (String(PRODUCT_SLUGS.tr[k]).toLowerCase() === part) { key = k; break; }
+      if (String(PRODUCT_SLUGS.en[k]).toLowerCase() === part) {
+        key = k;
+        break;
       }
     }
-    // bulunduysa hedef dile göre kısa slug üret
+    // TR tablosunda ara
+    if (!key) {
+      for (const k of Object.keys(PRODUCT_SLUGS.tr || {})) {
+        if (String(PRODUCT_SLUGS.tr[k]).toLowerCase() === part) {
+          key = k;
+          break;
+        }
+      }
+    }
+
     if (key) {
-      const prefix = targetLocale.startsWith("tr") ? "traverten" : "travertine";
+      const prefix = targetLocale === "tr" ? "traverten" : "travertine";
       const pslug  = PRODUCT_SLUGS[targetLocale]?.[key] ?? key;
       return `/${targetLocale}/${prefix}-${pslug}`;
     }
-    // bulunamazsa sadece locale değiştir
+
+    // Bulamazsak sadece locale değiştir
     return `/${[targetLocale, ...segs.slice(1)].join("/")}`;
   }
 
-  // Yardımcılar
-  const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles)$/i;
-  const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar)$/i;
-  const PROC_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled))$/i;
+  // --- Travertine CUT / PROCESS / COLOR / SIZE mapping ---
+
+  // Aynı regexler (slabs + tiles + blocks + pavers)
+  const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
+  const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
+
+  const PROC_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
   const PROC_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
 
-  const isCutSlug = (loc, slug) =>
-    loc === "tr" ? CUT_TR.test(slug) : CUT_EN.test(slug);
+  // ✅ Kesimi slug’dan parse eden helper
+  function parseCutSlug(slug) {
+    const s = String(slug);
 
-  const cutKeyFromExternalSlug = (loc, cutSlug) => {
-    const table = CUTS[loc] || {};
-    return Object.keys(table).find((k) => table[k] === String(cutSlug)) || null;
-  };
-  const externalCutSlugFor = (loc, cutKey) => {
-    const table = CUTS[loc] || {};
-    return table[cutKey] || cutKey;
-  };
+    let m = s.match(CUT_EN);
+    if (m) {
+      const cutType   = m[1].toLowerCase(); // vein-cut | cross-cut
+      const productEn = m[2].toLowerCase(); // slabs | tiles | blocks | pavers
+      return {
+        cutKey: cutType === "vein-cut" ? "vein-cut" : "cross-cut",
+        product: productEn, // slabs|tiles|blocks|pavers
+      };
+    }
+
+    m = s.match(CUT_TR);
+    if (m) {
+      const cutTypeTr = m[1].toLowerCase();     // damar-kesim | enine-kesim
+      const prodTr    = m[2].toLowerCase();     // plakalar | karolar | bloklar | dosemeler
+      const cutKey    = cutTypeTr === "damar-kesim" ? "vein-cut" : "cross-cut";
+      const product =
+        prodTr === "plakalar" ? "slabs" :
+        prodTr === "karolar"  ? "tiles" :
+        prodTr === "bloklar"  ? "blocks" :
+        prodTr === "dosemeler" ? "pavers" :
+        "slabs";
+
+      return { cutKey, product };
+    }
+
+    return null;
+  }
+
+  // ✅ Hedef locale’e göre tam cut slug üret
+  function buildExternalCutSlug(loc, cutKey, product) {
+    if (loc === "tr") {
+      const cutSeg =
+        cutKey === "vein-cut" ? "damar-kesim" : "enine-kesim";
+      const prodSeg =
+        product === "slabs" ? "plakalar" :
+        product === "tiles" ? "karolar"  :
+        product === "blocks" ? "bloklar" :
+        product === "pavers" ? "dosemeler" :
+        "plakalar";
+
+      return `${cutSeg}-traverten-${prodSeg}`;
+    }
+
+    // en
+    return `${cutKey}-travertine-${product}`;
+  }
+
+  const isCutSlug = (slug) => !!parseCutSlug(slug);
+
+  // process’i ortak “filled:honed” formatına çevir
   const toCombined = (loc, procSlug) => {
     const s = String(procSlug).toLowerCase();
     if (s === "natural" || s === "dogal") return "natural";
-    const fillMap = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" };
-    const procMap = {
-      honlanmis: "honed", cilali: "polished", fircalanmis: "brushed", eskitilmis: "tumbled",
-      honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+
+    const fillMap = {
+      dolgulu: "filled",
+      dolgusuz: "unfilled",
+      filled: "filled",
+      unfilled: "unfilled",
     };
+    const procMap = {
+      honlanmis: "honed",
+      cilali: "polished",
+      fircalanmis: "brushed",
+      eskitilmis: "tumbled",
+      honed: "honed",
+      polished: "polished",
+      brushed: "brushed",
+      tumbled: "tumbled",
+      natural: "natural",
+    };
+
     const [f, p] = s.split("-");
-    return `${fillMap[f] || f}:${procMap[p] || p}`; // "filled:polished"
+    return `${fillMap[f] || f}:${procMap[p] || p}`;
   };
+
+  // common → locale slug
   const fromCombined = (loc, combined) => {
     if (combined === "natural") return loc === "tr" ? "dogal" : "natural";
     const [f, p] = combined.split(":");
-   if (loc === "tr") {
+
+    if (loc === "tr") {
       const fMap = { filled: "dolgulu", unfilled: "dolgusuz" };
-      const pMap = { honed: "honlanmis", polished: "cilali", brushed: "fircalanmis", tumbled: "eskitilmis" };
+      const pMap = {
+        honed: "honlanmis",
+        polished: "cilali",
+        brushed: "fircalanmis",
+        tumbled: "eskitilmis",
+      };
       return `${fMap[f] || f}-${pMap[p] || p}`;
     }
     return `${f}-${p}`;
   };
+
+  // color/size slug → hedef dil renk slug’ı (size ise olduğu gibi kalır)
   const colorToTarget = (curLoc, tgtLoc, colorSlug) => {
-    // COLOR_VARIANTS: { en:{ivory:'ivory',...}, tr:{ivory:'fildisi',...} }
-    // önce color key’i bul
     const curMap = COLOR_VARIANTS[curLoc] || {};
-   const key = Object.keys(curMap).find((k) => curMap[k] === colorSlug) || colorSlug;
+    const key =
+      Object.keys(curMap).find((k) => curMap[k] === colorSlug) || null;
+
+    if (!key) return colorSlug; // 6x12 vs → aynı kalsın
+
     return (COLOR_VARIANTS[tgtLoc] || {})[key] || colorSlug;
   };
 
-  // 1) CUT sayfası (/{locale}/{cut})
-  if (isCutSlug(currentLocale, afterLocale)) {
-    const cutKey = cutKeyFromExternalSlug(currentLocale, afterLocale);
-    const targetCut = externalCutSlugFor(targetLocale, cutKey);
+  const tokens = afterLocale.split("-");
+
+  // 1) SADECE CUT SAYFASI:
+  //    /en/vein-cut-travertine-tiles → /tr/damar-kesim-traverten-karolar
+  if (isCutSlug(afterLocale)) {
+    const parsed = parseCutSlug(afterLocale);
+    if (!parsed) {
+      const raw = [targetLocale, ...segs.slice(1)].join("/");
+      return `/${raw}`;
+    }
+    const { cutKey, product } = parsed;
+    const targetCut = buildExternalCutSlug(targetLocale, cutKey, product);
     return `/${targetLocale}/${targetCut}`;
   }
 
-  // 2) PROCESS + CUT (/{locale}/{process}-{cut})
-  //    last 4 token cut; baştaki kısım process
-  const tokens = afterLocale.split("-");
-  if (tokens.length >= 4) {
+  // 2) PROCESS + CUT:
+  //    /en/filled-polished-vein-cut-travertine-tiles
+  if (tokens.length >= 5) {
     const cutCandidate = tokens.slice(-4).join("-");
-    if (isCutSlug(currentLocale, cutCandidate)) {
+    if (isCutSlug(cutCandidate)) {
       const procSlug = tokens.slice(0, tokens.length - 4).join("-");
-      const cutKey   = cutKeyFromExternalSlug(currentLocale, cutCandidate);
-      const targetCut = externalCutSlugFor(targetLocale, cutKey);
+      const isProcOk =
+        currentLocale === "tr" ? PROC_TR.test(procSlug) : PROC_EN.test(procSlug);
 
-      // proc map
-      const isProcOk = currentLocale === "tr" ? PROC_TR.test(procSlug) : PROC_EN.test(procSlug);
       if (isProcOk) {
-        const combined = toCombined(currentLocale, procSlug);
+        const parsed = parseCutSlug(cutCandidate);
+        if (!parsed) {
+          const raw = [targetLocale, ...segs.slice(1)].join("/");
+          return `/${raw}`;
+        }
+        const { cutKey, product } = parsed;
+        const combined   = toCombined(currentLocale, procSlug);
         const targetProc = fromCombined(targetLocale, combined);
+        const targetCut  = buildExternalCutSlug(targetLocale, cutKey, product);
+
         return `/${targetLocale}/${targetProc}-${targetCut}`;
       }
     }
   }
 
-  // 3) COLOR + PROCESS + CUT (/{locale}/{color}-{process}-{cut})
-  //    color ilk token, son 4 token cut, arası process
+  // 3) COLOR/SIZE + PROCESS + CUT:
+  //    /en/ivory-filled-polished-vein-cut-travertine-tiles
+  //    /en/6x12-filled-polished-vein-cut-travertine-pavers
   if (tokens.length >= 6) {
-    const colorSlug = tokens[0];
-    const cutCandidate = tokens.slice(-4).join("-");
-    const procSlug = tokens.slice(1, tokens.length - 4).join("-");
-    if (isCutSlug(currentLocale, cutCandidate)) {
-      const cutKey    = cutKeyFromExternalSlug(currentLocale, cutCandidate);
-      const targetCut = externalCutSlugFor(targetLocale, cutKey);
-      const combined  = toCombined(currentLocale, procSlug);
+    const colorSlug    = tokens[0];                         // ivory | 6x12
+    const cutCandidate = tokens.slice(-4).join("-");        // vein-cut-travertine-tiles
+    const procSlug     = tokens.slice(1, tokens.length - 4).join("-");
+
+    if (isCutSlug(cutCandidate)) {
+      const isProcOk =
+        currentLocale === "tr" ? PROC_TR.test(procSlug) : PROC_EN.test(procSlug);
+      if (!isProcOk) {
+        const raw = [targetLocale, ...segs.slice(1)].join("/");
+        return `/${raw}`;
+      }
+
+      const parsed = parseCutSlug(cutCandidate);
+      if (!parsed) {
+        const raw = [targetLocale, ...segs.slice(1)].join("/");
+        return `/${raw}`;
+      }
+      const { cutKey, product } = parsed;
+
+      const combined    = toCombined(currentLocale, procSlug);
       const targetProc  = fromCombined(targetLocale, combined);
+      const targetCut   = buildExternalCutSlug(targetLocale, cutKey, product);
       const targetColor = colorToTarget(currentLocale, targetLocale, colorSlug);
-      // (Kalınlık parametresi varsa middleware’iniz zaten anchor’a çevrildi; tail’i korumuyoruz)
+
       return `/${targetLocale}/${targetColor}-${targetProc}-${targetCut}`;
     }
   }
 
-  // 4) Diğer tüm yollar: sadece locale’i değiştir (mevcut davranış)
+  // 4) Diğer tüm URL'lerde: sadece locale’i değiştir
   const raw = [targetLocale, ...segs.slice(1)].join("/");
   return `/${raw}`;
-
 }
+
 
 
   function handleLangChange(lang) {

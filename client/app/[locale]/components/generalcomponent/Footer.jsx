@@ -27,7 +27,7 @@ export default function Footer() {
   const navPrimary = [
     { label: t("nav.primary.home"), href: `${prefix}` },
     { label: t("nav.primary.blog"), href: `${prefix}${L("/blog", "/blog")}` },
-    { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/aboutus")}` },
+    { label: t("nav.primary.about"), href: `${prefix}${L("/hakkimizda", "/about-us")}` },
     { label: t("nav.primary.contact"), href: `${prefix}${L("/iletisim", "/contactus")}` },
   ];
 
