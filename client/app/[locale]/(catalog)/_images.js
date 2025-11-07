@@ -475,6 +475,54 @@ import LightCrossTumbledUnfilled12x12 from "@/public/images/new/tiles/light/12x1
 import LightVeinTumbledFilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinTumbledFilled12x12.webp"
 import LightVeinTumbledUnfilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinTumbledUnfilled12x12.webp"
 
+// -------- BRUSHED  --------
+import AnticoCrossBrushedFilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoCrossBrushedFilled12x12.webp"
+import AnticoCrossBrushedUnfilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoCrossBrushedUnfilled12x12.webp"
+import AnticoVeinBrushedFilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoVeinBrushedFilled12x12.webp"
+import AnticoVeinBrushedUnfilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoVeinBrushedUnfilled12x12.webp"
+
+import IvoryCrossBrushedFilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryCrossBrushedFilled12x12.webp"
+import IvoryCrossBrushedUnfilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryCrossBrushedUnfilled12x12.webp"
+import IvoryVeinBrushedFilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryVeinBrushedFilled12x12.webp"
+import IvoryVeinBrushedUnfilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryVeinBrushedUnfilled12x12.webp"
+
+import LightCrossBrushedFilled12x12 from "@/public/images/new/tiles/light/12x12/LightCrossBrushedFilled12x12.webp"
+import LightCrossBrushedUnfilled812x12 from "@/public/images/new/tiles/light/12x12/LightCrossBrushedUnfilled12x12.webp"
+import LightVeinBrushedFilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinBrushedFilled12x12.webp"
+import LightVeinBrushedUnfilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinBrushedUnfilled12x12.webp"
+
+// --------- NATURAL -------
+import IvoryCrossNaturalFilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryCrossNaturalFilled12x12.webp"
+import IvoryCrossNaturalUnfilled12x12  from "@/public/images/new/tiles/ivory/12x12/IvoryCrossNaturalUnfilled12x12.webp"
+import IvoryVeinNaturalFilled12x12  from "@/public/images/new/tiles/ivory/12x12/IvoryVeinNaturalFilled12x12.webp"
+import IvoryVeinNaturalUnfilled12x12  from "@/public/images/new/tiles/ivory/12x12/IvoryVeinNaturalUnfilled12x12.webp"
+
+import AnticoCrossNaturalFilled12x12  from "@/public/images/new/tiles/antico/12x12/AnticoCrossNaturalFilled12x12.webp"
+import AnticoCrossNaturalUnfilled12x12  from "@/public/images/new/tiles/antico/12x12/AnticoCrossNaturalUnfilled12x12.webp"
+import AnticoVeinNaturalFilled12x12  from "@/public/images/new/tiles/antico/12x12/AnticoVeinNaturalFilled12x12.webp"
+import AnticoVeinNaturalUnfilled12x12  from "@/public/images/new/tiles/antico/12x12/AnticoVeinNaturalUnfilled12x12.webp"
+
+import LightCrossNaturalFilled12x12  from "@/public/images/new/tiles/light/12x12/LightCrossNaturalFilled12x12.webp"
+import LightCrossNaturalUnfilled12x12  from "@/public/images/new/tiles/light/12x12/LightCrossNaturalUnfilled12x12.webp"
+import LightVeinNaturalFilled12x12  from "@/public/images/new/tiles/light/12x12/LightVeinNaturalFilled12x12.webp"
+import LightVeinNaturalUnfilled12x12  from "@/public/images/new/tiles/light/12x12/LightVeinNaturalUnfilled12x12.webp"
+
+// --------- POLISHED -------
+import AnticoCrossPolishedFilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoCrossPolishedFilled12x12.webp"
+import AnticoCrossPolishedUnfilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoCrossPolishedUnfilled12x12.webp"
+import AnticoVeinPolishedFilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoVeinPolishedFilled12x12.webp"
+import AnticoVeinPolishedUnfilled12x12 from "@/public/images/new/tiles/antico/12x12/AnticoVeinPolishedUnfilled12x12.webp"
+
+import LightCrossPolishedFilled12x12 from "@/public/images/new/tiles/light/12x12/LightCrossPolishedFilled12x12.webp"
+import LightCrossPolishedUnfilled12x12 from "@/public/images/new/tiles/light/12x12/LightCrossPolishedUnfilled12x12.webp"
+import LightVeinPolishedUnfilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinPolishedUnfilled12x12.webp"
+import LightVeinPolishedFilled12x12 from "@/public/images/new/tiles/light/12x12/LightVeinPolishedFilled12x12.webp"
+
+import IvoryCrossPolishedFilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryCrossPolishedFilled12x12.webp"
+import IvoryCrossPolishedUnfilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryCrossPolishedUnfilled12x12.webp"
+import IvoryVeinPolishedFilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryVeinPolishedFilled12x12.webp"
+import IvoryVeinPolishedUnfilled12x12 from "@/public/images/new/tiles/ivory/12x12/IvoryVeinPolishedUnfilled12x12.webp"
+
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {
@@ -1088,9 +1136,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinBrushedFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinBrushedFilled12x12,
+          light:  LightVeinBrushedFilled12x12,
+          antico: AnticoVeinBrushedFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1137,9 +1185,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinBrushedUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinBrushedUnfilled12x12,
+          light:  LightVeinBrushedUnfilled12x12,
+          antico: AnticoVeinBrushedUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1186,9 +1234,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinPolishedFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinPolishedFilled12x12,
+          light:  LightVeinPolishedFilled12x12,
+          antico: AnticoVeinPolishedFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1235,9 +1283,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinPolishedUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinPolishedUnfilled12x12,
+          light:  LightVeinPolishedUnfilled12x12,
+          antico: AnticoVeinPolishedUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1283,9 +1331,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinNaturalFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinNaturalFilled12x12,
+          light:  LightVeinNaturalFilled12x12,
+          antico: AnticoVeinNaturalFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1332,9 +1380,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinNaturalUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryVeinNaturalUnfilled12x12,
+          light:  LightVeinNaturalUnfilled12x12,
+          antico: AnticoVeinNaturalUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1583,9 +1631,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossBrushedFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossBrushedFilled12x12,
+          light:  LightCrossBrushedFilled12x12,
+          antico: AnticoCrossBrushedFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1632,9 +1680,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossBrushedUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossBrushedUnfilled12x12,
+          light:  LightCrossBrushedUnfilled812x12,
+          antico: AnticoCrossBrushedUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1680,9 +1728,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossPolishedFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossPolishedFilled12x12,
+          light:  LightCrossPolishedFilled12x12,
+          antico: AnticoCrossPolishedFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1728,9 +1776,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossPolishedUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossPolishedUnfilled12x12,
+          light:  LightCrossPolishedUnfilled12x12,
+          antico: AnticoCrossPolishedUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1776,9 +1824,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossNaturalFilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossNaturalFilled12x12,
+          light:  LightCrossNaturalFilled12x12,
+          antico: AnticoCrossNaturalFilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1825,9 +1873,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossNaturalUnfilled8x8,
          },
            "12x12":{
-           ivory:  IvoryVeinHonedFilled12x12,
-          light:  LightVeinHonedFilled12x12,
-          antico: AnticoVeinHonedFilled12x12,
+           ivory:  IvoryCrossNaturalUnfilled12x12,
+          light:  LightCrossNaturalUnfilled12x12,
+          antico: AnticoCrossNaturalUnfilled12x12,
          },
            "12x24":{
            ivory:  IvoryVeinHonedFilled8x8,

@@ -9,10 +9,10 @@ export const metadata = {
   title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
   description:
     "Discover Turkish travertines: blocks, slabs, tiles & special designs. Learn types, colors & export details. Supplier guide for global buyers.",
-  alternates: { canonical: "https://www.majen.com.tr/en/blog/travertines" },
+  alternates: { canonical: "https://majen.com.tr/en/blog/travertines" },
   openGraph: {
     type: "website",
-    url: "https://www.majen.com.tr/en/blog/travertines",
+    url: "https://majen.com.tr/en/blog/travertines",
     title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
     description:
       "Turkish travertine types, colors, finishes, applications and export (FOB/CIF/EXW).",
@@ -22,7 +22,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Travertine from Turkey | Complete Guide",
     description: "Types, finishes, applications and export methods.",
-    images: ["https://www.majen.com.tr/media/travertine-hero.webp"],
+    images: ["https://majen.com.tr/media/travertine-hero.webp"],
     creator: "@majenstone" // varsa Twitter handle burada ekleyebilirsin
   },
   robots: {
@@ -54,7 +54,7 @@ export default async function Page({ params }) {
       ];
 
 
-        const baseUrl = "https://www.majen.com.tr";
+        const baseUrl = "https://majen.com.tr";
   const path = `/${locale}/blog/travertines`; // bu sayfanın kanonik yolu
   const canonicalUrl = `${baseUrl}${path}`;
 

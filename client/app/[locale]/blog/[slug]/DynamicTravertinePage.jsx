@@ -127,7 +127,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             "@type": "ListItem",
             position: idx + 1,
             name: b.name,
-            item: `https://www.majen.com.tr${b.href}`,
+            item: `https://majen.com.tr${b.href}`,
           })),
         }
       : null;
@@ -255,8 +255,8 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
         <link rel="canonical" href={canonical} />
 
         {/* Alternates */}
-        <link rel="alternate" href={`https://www.majen.com.tr/en/blog/${routeSlug}`} hrefLang="en" />
-        <link rel="alternate" href={`https://www.majen.com.tr/tr/blog/${routeSlug}`} hrefLang="tr" />
+        <link rel="alternate" href={`https://majen.com.tr/en/blog/${routeSlug}`} hrefLang="en" />
+        <link rel="alternate" href={`https://majen.com.tr/tr/blog/${routeSlug}`} hrefLang="tr" />
         <link rel="alternate" href={canonical} hrefLang="x-default" />
 
         {/* OG/Twitter */}

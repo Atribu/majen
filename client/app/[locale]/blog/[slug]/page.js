@@ -9,8 +9,8 @@ export async function generateMetadata({ params }) {
   let metaTitle = "Travertine Guide";
   let metaDesc =
     "Explore travertine products: tiles, slabs, finishes, specs and care. Quarry-backed supplier.";
-  let ogImage = "https://www.majen.com.tr/media/travertine-tiles-hero.webp";
-  const canonical = `https://www.majen.com.tr/${loc}/blog/travertines/${slug}`;
+  let ogImage = "https://majen.com.tr/media/travertine-tiles-hero.webp";
+  const canonical = `https://majen.com.tr/${loc}/blog/travertines/${slug}`;
 
   try {
     const t = await getTranslations({ locale: loc, namespace: "blog" });

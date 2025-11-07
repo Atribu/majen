@@ -89,7 +89,7 @@ export default function CollectionsSection() {
                 {coll.title}
               </h5>
 
-              {/* Ürün tipleri (Blocks / Slabs / Tiles / Special Design) */}
+              {/* Ürün tipleri (Blocks / Slabs / Tiles / Pavers) */}
               <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
                 {(["block", "slabs", "tiles", "special"]).map((pkey) => (
                   <Link

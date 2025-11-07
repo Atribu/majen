@@ -394,8 +394,8 @@ const galleryPrimary = toArray(galleryPrimaryValue);
   /* ---- Canonical ---- */
   const baseSegment = baseFor(locale);
   const canonical = isBlocks
-    ? `https://www.majen.com.tr/${locale}/${leafSlugRaw}-${(locale.startsWith("tr") ? "traverten-bloklar" : "travertine-blocks")}`
-    : `https://www.majen.com.tr/${locale}/${leafSlugRaw}-${processSlug}-${cutSlug}`;
+    ? `https://majen.com.tr/${locale}/${leafSlugRaw}-${(locale.startsWith("tr") ? "traverten-bloklar" : "travertine-blocks")}`
+    : `https://majen.com.tr/${locale}/${leafSlugRaw}-${processSlug}-${cutSlug}`;
 
   /* ---- Sections / FAQ ---- */
   const sections = page?.sections || {};

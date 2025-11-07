@@ -95,8 +95,8 @@ export default async function HomePage({ params }) {
       {
         "@type": "ListItem",
         position: 4,
-        name: locale === "tr" ? "Özel Tasarımlar" : "Special Designs",
-        url: `${SITE_URL}/${locale}/${baseSeg}/special`,
+        name: locale === "tr" ? "Traverten Döşemeler" : "Travertine Pavers",
+        url: `${SITE_URL}/${locale}/${baseSeg}/pavers`,
       },
     ],
   };
