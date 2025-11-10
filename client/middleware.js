@@ -87,7 +87,8 @@ function localizedProductFromCut(locale, cutSlug) {
   ['24x36', '24x36'],
   ['24x48', '24x48'],
   ['48x110', '48x110'],
-  ['versailles-set', 'versailles-set'],
+  ['versailles-set', 'versailles-set'],        
+  ['versailles-pattern', 'versailles-pattern'],
   ['versailles', 'versailles-set'],
 ]);
 
@@ -214,6 +215,7 @@ const productSeg  = locale === 'tr'
 }
 
   // 3) COLOR-FIRST / SIZE-FIRST kısa URL
+// 3) COLOR-FIRST / SIZE-FIRST kısa URL
 if (parts.length >= 2) {
   const seg2 = parts[1];
   const tokens = seg2.split('-');
@@ -221,29 +223,39 @@ if (parts.length >= 2) {
   if (tokens.length >= 6) {
     const maybeLast5 = tokens.slice(-5).join('-');
     const last4      = tokens.slice(-4).join('-');
-const cutCandidate =
-  (locale === 'tr' && /-traverten-pavers$/i.test(maybeLast5)) ? maybeLast5 : last4;
 
+    // EN & TR için cut segmenti: ...-travertine-tiles/pavers vs ...-traverten-karolar/dosemeler
+    const cutCandidate =
+      (locale === 'tr' && /-traverten-pavers$/i.test(maybeLast5))
+        ? maybeLast5
+        : last4;
 
     const isCutEN = CUT_EN.test(cutCandidate);
     const isCutTR = CUT_TR.test(cutCandidate);
 
     if ((locale === 'en' && isCutEN) || (locale === 'tr' && isCutTR)) {
-         // Ürün: slabs | tiles | blocks | pavers
-       const productSeg = localizedProductFromCut(locale, cutCandidate); 
+      // Ürün: slabs | tiles | blocks | pavers
+      const productSeg = localizedProductFromCut(locale, cutCandidate);
 
-       // HEAD (color/size) belirleme: versailles-set iki token!
+      // HEAD (color/size) belirleme
       let headConsumed = 1;
-      let headRaw = tokens[0];                    // 'ivory' | '8x8' | 'versailles' ...
-      if (tokens.length >= 2 && `${tokens[0]}-${tokens[1]}`.toLowerCase() === 'versailles-set') {
-        headRaw = 'versailles-set';
-        headConsumed = 2;
+      let headRaw = tokens[0]; // 'ivory' | '8x8' | 'versailles' ...
+
+      // versailles-set / versailles-pattern iki token
+      if (tokens.length >= 2) {
+        const firstTwo = `${tokens[0]}-${tokens[1]}`.toLowerCase();
+        if (firstTwo === 'versailles-set' || firstTwo === 'versailles-pattern') {
+          headRaw = firstTwo;
+          headConsumed = 2;
+        }
       }
+
       // ① renk dene
       const colorSlug = normalizeColorSlugForLocale(locale, headRaw);
+
       // ② tiles/pavers ise size dene
-      const sizeSlug = (!colorSlug && (productSeg === 'tiles' || productSeg === 'pavers'))
-        ? normalizeTileSizeSlug(headRaw) // versailles | versailles-set -> versailles-set
+      let sizeSlug = (!colorSlug && (productSeg === 'tiles' || productSeg === 'pavers'))
+        ? normalizeTileSizeSlug(headRaw)
         : null;
 
       // process, head’i tükettikten sonra kalan kısımdan çıkarılmalı
@@ -254,12 +266,13 @@ const cutCandidate =
       // process doğrulaması (EN/TR)
       const procOk = (locale === 'tr' ? PROC_ONLY_TR : PROC_ONLY_EN).test(processSlug);
 
-
-      // ürün tipi (iç rota için İngilizce key)
-     
-
       if (procOk && (colorSlug || sizeSlug)) {
-        const leaf = colorSlug || sizeSlug; // tiles→size, diğerleri→color
+     
+        if (productSeg === 'pavers' && sizeSlug === 'versailles-set') {
+          sizeSlug = 'versailles-pattern';
+        }
+
+        const leaf = colorSlug || sizeSlug; // tiles/pavers: size, diğerleri: color
 
         if (parts.length === 3) {
           // opsiyonel kalınlık segmenti varsa
@@ -273,6 +286,7 @@ const cutCandidate =
     }
   }
 }
+
 
 
   // 4) BLOCKS: COLOR-ONLY kısa URL’ler  ✅ (fonksiyonun İÇİNDE!)

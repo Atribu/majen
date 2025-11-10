@@ -22,6 +22,21 @@ import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact
 const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
 
+  const PRODUCT = {
+  tr: {
+    blocks: ["antiko", "light", "ivory"],
+    slabs: ["antiko", "light", "ivory"],
+    tiles: ["processes", "size", "color"],
+    pavers: ["processes", "size", "color"],
+  },
+  en: {
+    blocks: ["antico", "light", "ivory"],
+    slabs: ["antico", "light", "ivory"],
+    tiles: ["processes", "size", "color"],
+    pavers: ["processes", "size", "color"],
+  },
+};
+
 export default function TravertinePageClient() {
     const locale = useLocale();
   const t = useTranslations("TravertinePage");
@@ -121,11 +136,9 @@ export default function TravertinePageClient() {
 <VariantCircleSection2
   heading={t("variantsHeading")}
   productOrder={["blocks", "slabs", "tiles", "pavers"]}
-  variantSlugs={["antiko", "light", "ivory"]}
-
-  productSegments={PRODUCT_SLUGS[locale]}
+  productSegments={PRODUCT[locale]}   // 🔹 artık buradan geliyor
   locale={locale}
-  productImages={{  blocks: block, slabs, tiles, pavers: special  }}
+  productImages={{ blocks: block, slabs, tiles, pavers: special }}
 />
 
      <TextSection title={t2("header1")} title2={t2("subheader1")} text2={t2("subtext1")} paragraphs={[

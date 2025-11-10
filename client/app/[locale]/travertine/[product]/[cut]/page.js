@@ -1,11 +1,19 @@
 // app/[locale]/travertine/[product]/[cut]/page.jsx
 "use client";
-//resimler en.json'dan geliyor process image kısmı
+
 import React from "react";
+import Head from "next/head";                      // ⬅️ YENİ
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
-import { getLang, baseFor, productKeyFromSlug, CUTS, productSlugFor, cutKeyFromExternalSlug} from "@/lib/travertine";
+import {
+  getLang,
+  baseFor,
+  productKeyFromSlug,
+  CUTS,
+  productSlugFor,
+  cutKeyFromExternalSlug
+} from "@/lib/travertine";
 import { IMAGE_BY_PRODUCT, PROCESS_THUMB_BY_COMBINED } from "@/app/[locale]/(catalog)/_images";
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
@@ -83,53 +91,50 @@ export default function CutPage() {
   const locale  = useLocale();
   const lang    = getLang(locale);
   const t       = useTranslations("ProductPage");
-    const prefix = `/${locale}`;
+  const prefix  = `/${locale}`;
 
-  const productKey  = productKeyFromSlug(locale, String(productSlug)) ;
+  const productKey  = productKeyFromSlug(locale, String(productSlug));
   const baseSegment = baseFor(locale);
-  const baseHref = `/${locale}/${baseSegment}`; 
+  const baseHref    = `/${locale}/${baseSegment}`;
 
-    // ---- Breadcrumb
-    const rawPath = usePathname();
-    const pathname = typeof rawPath === "string" ? rawPath : "";
-    const segments = pathname.split("/").filter(Boolean);
-    const selectedSegments = segments.slice(-1);
-
+  // ---- Breadcrumb
+  const rawPath = usePathname();
+  const pathname = typeof rawPath === "string" ? rawPath : "";
+  const segments = pathname.split("/").filter(Boolean);
+  const selectedSegments = segments.slice(-1);
 
   // Ürüne göre cut slug'ını normalize et (slabs→tiles/blocks/pavers)
   function cutSlugForProduct(locale, cutKey, productKey) {
     const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
     if (typeof base !== "string") return cutKey;
     if (locale.startsWith("en")) {
-        if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
-      if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
-      if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
-      if (productKey === "pavers")  return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
+      if (productKey === "slabs")  return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
+      if (productKey === "tiles")  return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
+      if (productKey === "blocks") return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
+      if (productKey === "pavers") return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
       return base; // slabs
     }
     // TR dönüşümleri
-    if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
-    if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
-    if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-    if (productKey === "pavers")  return base.replace(/-traverten-plakalar$/i, "-traverten-pavers");
+    if (productKey === "slabs")  return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
+    if (productKey === "tiles")  return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
+    if (productKey === "blocks") return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
+    if (productKey === "pavers") return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler"); // ⬅️ düzeltme
     return base; // plakalar (slabs)
   }
 
-  // cut key + kanonik slug
-// cut key + kanonik slug (sağlamlaştırılmış)
- const rawCutSlug = String(cutSlugSegment || "");
- // 1) lib helper
- let cutKey = cutKeyFromExternalSlug(locale, rawCutSlug);
- // 2) zayıf tahmin (slug içindeki kelimelere bak)
- if (!cutKey) {
-   if (/cross|enine/i.test(rawCutSlug))      cutKey = "cross-cut";
-   else if (/vein|damar/i.test(rawCutSlug))  cutKey = "vein-cut";
- }
- // 3) son emniyet
- if (!cutKey) cutKey = "vein-cut";
+  // cut key + kanonik slug (sağlamlaştırılmış)
+  const rawCutSlug = String(cutSlugSegment || "");
+  // 1) lib helper
+  let cutKey = cutKeyFromExternalSlug(locale, rawCutSlug);
+  // 2) zayıf tahmin (slug içindeki kelimelere bak)
+  if (!cutKey) {
+    if (/cross|enine/i.test(rawCutSlug))      cutKey = "cross-cut";
+    else if (/vein|damar/i.test(rawCutSlug))  cutKey = "vein-cut";
+  }
+  // 3) son emniyet
+  if (!cutKey) cutKey = "vein-cut";
 
- const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || rawCutSlug;
-
+  const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || rawCutSlug;
 
   // ProductIntroSection içerikleri
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
@@ -141,16 +146,16 @@ export default function CutPage() {
   const intro2   = safe(() => t(`${productKey}.cuts.${cutKey}.intro2`),  safe(() => t(`slabs.intro2`),  null));
   const span     = safe(() => t(`${productKey}.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`),null));
 
-   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
+  const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
   const opt = (key, fallback = "") => {
-  try {
-    const v = t(key);
-    return v && v !== key ? v : fallback; // key aynen dönerse bulunamamıştır
-  } catch {
-    return fallback;
-  }
-};
+    try {
+      const v = t(key);
+      return v && v !== key ? v : fallback;
+    } catch {
+      return fallback;
+    }
+  };
 
   const linkPatterns = [
     {
@@ -169,24 +174,23 @@ export default function CutPage() {
     },
   ];
 
-const optRaw = (key, fallback = null) => {
-  try {
-    const v = t.raw(key);
-    return v ?? fallback;
-  } catch {
-    return fallback;
-  }
-};
+  const optRaw = (key, fallback = null) => {
+    try {
+      const v = t.raw(key);
+      return v ?? fallback;
+    } catch {
+      return fallback;
+    }
+  };
 
-   const cardTitle1 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title1`, "");
- const cardTitle2 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title2`, "");
- const cardTitle3 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title3`, "");
- const cardTitle4 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title4`, "");
- const description = optRaw(`${productKey}.cuts.${cutKey}.description`, "");
+  const cardTitle1 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title1`, "");
+  const cardTitle2 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title2`, "");
+  const cardTitle3 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title3`, "");
+  const cardTitle4 = opt(`${productKey}.cuts.${cutKey}.detailsHeadings.title4`, "");
+  const description = optRaw(`${productKey}.cuts.${cutKey}.description`, "");
 
   const variantHeader = optRaw(`${productKey}.cuts.${cutKey}.variants.title`, "");
-
-  const variantText = optRaw(`${productKey}.cuts.${cutKey}.variants.text`, "");
+  const variantText   = optRaw(`${productKey}.cuts.${cutKey}.variants.text`, "");
 
   // Hero görsel (ürün+cut → cover → fallback)
   const heroOverride = safe(() => t.raw(`${productKey}.cuts.${cutKey}.hero.src`), null);
@@ -205,107 +209,91 @@ const optRaw = (key, fallback = null) => {
   const ytCombined  = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.youtube.combined`), {}) || {};
 
   // i18n’de filled-natural var mı?
- const hasFilledNatural =
-   safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.title`), false) ||
-   safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.h1`), false);
+  const hasFilledNatural =
+    safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.title`), false) ||
+    safe(() => t.has(`${productKey}.cuts.${cutKey}.processes.filled-natural.h1`), false);
 
- // filled grubunun item’larına natural/dogal’ı gerektiğinde en sona ekle
- if (hasFilledNatural) {
-   const arr = Array.isArray(groups?.filled?.items) ? [...groups.filled.items] : [];
-   if (!arr.includes("natural") && !arr.includes("dogal")) {
-     arr.push("natural"); // TR’de de çalışır; aşağıda pKey normalizasyonu yapıyoruz
-   }
-   groups.filled = { ...(groups.filled || {}), items: arr };
- }
-
-  // ... imports arasında IMAGE_BY_PRODUCT ve PROCESS_THUMB_BY_COMBINED var
-
-const makeGroupCards = (groupName) => {
-  const items   = groups[groupName]?.items || [];
-  const heading = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.heading`), groupName);
-  const text    = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.text`), "");
-
-  // bu grubun görsel haritasını burada topluyoruz
-  const groupImgMap = {};
-
-  const variantCards = items.map((pKey) => {
-    const isNatural = (pKey === "natural" || pKey === "dogal");
-    const titleKey  = isNatural
-      ? `${productKey}.cuts.${cutKey}.processes.meta.natural.title`
-      : `${productKey}.cuts.${cutKey}.processes.meta.${pKey}.title`;
-    const title = safe(() => t(titleKey), pKey);
-
-// natural artık *gruba göre* slug alıyor (filled → filled-natural / unfilled → unfilled-natural)
-   const processSlug = isNatural
-     ? procSlugFor(locale, groupName, "natural")
-     : procSlugFor(locale, groupName, pKey);
-
-
- // combinedKey de gruba göre: "filled:natural" | "unfilled:natural"
-   const normalizedKey = isNatural ? "natural" : pKey;
-   const combinedKey   = `${groupName}:${normalizedKey}`;
-
-   const youtubeUrl = ytCombined[combinedKey] || null;
-
-    // görseli 3 kaynaktan dene: i18n → _images → fallback
-    // görseli 3 kaynaktan dene: i18n → _images → fallback
-        // görseli 3 kaynaktan dene: i18n → _images → fallback
-    const imagesCombined =
-      safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.images.combined`), null);
-    const imgI18n =
-      imagesCombined?.[combinedKey] ?? null;
-
-    const imgByProduct =
-      IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || null;
-
-    //  ÖNEMLİ: tiles'ta sadece IMAGE_BY_PRODUCT kullanıyoruz
-    let image;
-    if (productKey === "tiles") {
-      // tiles için: otherOptions ile birebir aynı kaynak
-      image = imgByProduct || heroSrc;
-    } else {
-      // slabs / pavers / blocks eskisi gibi kalsın
-      image =
-        imgI18n
-        || imgByProduct
-        || PROCESS_THUMB_BY_COMBINED?.[combinedKey]
-        || (isNatural
-              ? (PROCESS_THUMB_BY_COMBINED?.["unfilled:natural"]
-                  || PROCESS_THUMB_BY_COMBINED?.["filled:natural"])
-              : null)
-        || heroSrc;
+  // filled grubunun item’larına natural/dogal’ı gerektiğinde en sona ekle
+  if (hasFilledNatural) {
+    const arr = Array.isArray(groups?.filled?.items) ? [...groups.filled.items] : [];
+    if (!arr.includes("natural") && !arr.includes("dogal")) {
+      arr.push("natural");
     }
+    groups.filled = { ...(groups.filled || {}), items: arr };
+  }
 
-    // ❗ imgMap, karttaki *slug* ile eşleşiyor → slug'ı combinedKey yapıyoruz
-    groupImgMap[combinedKey] = image;
+  const makeGroupCards = (groupName) => {
+    const items   = groups[groupName]?.items || [];
+    const heading = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.heading`), groupName);
+    const text    = safe(() => t(`${productKey}.cuts.${cutKey}.processes.groups.${groupName}.text`), "");
 
+    const groupImgMap = {};
 
-    const href = {
-      pathname: "/travertine/[product]/[cut]/[process]",
-       params: { product: String(productSlug), cut: canonicalCutSlug, process: processSlug }
-    };
+    const variantCards = items.map((pKey) => {
+      const isNatural = (pKey === "natural" || pKey === "dogal");
+      const titleKey  = isNatural
+        ? `${productKey}.cuts.${cutKey}.processes.meta.natural.title`
+        : `${productKey}.cuts.${cutKey}.processes.meta.${pKey}.title`;
+      const title = safe(() => t(titleKey), pKey);
 
-    return {
-      slug: combinedKey,     // ⬅️ önemli: "filled:honed" gibi
-      vKey: combinedKey,     // (komponent vKey kullanıyorsa)
-      title,
-      href,
-      alt: title,
-      youtubeUrl  
-    };
-  });
+      const processSlug = isNatural
+        ? procSlugFor(locale, groupName, "natural")
+        : procSlugFor(locale, groupName, pKey);
 
-  return { heading, text, variantCards, imgMap: groupImgMap };
-};
+      const normalizedKey = isNatural ? "natural" : pKey;
+      const combinedKey   = `${groupName}:${normalizedKey}`;
 
+      const youtubeUrl = ytCombined[combinedKey] || null;
 
+      const imagesCombined =
+        safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.images.combined`), null);
+      const imgI18n =
+        imagesCombined?.[combinedKey] ?? null;
+
+      const imgByProduct =
+        IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || null;
+
+      let image;
+      if (productKey === "tiles") {
+        image = imgByProduct || heroSrc;
+      } else {
+        image =
+          imgI18n ||
+          imgByProduct ||
+          PROCESS_THUMB_BY_COMBINED?.[combinedKey] ||
+          (isNatural
+            ? (PROCESS_THUMB_BY_COMBINED?.["unfilled:natural"] ||
+               PROCESS_THUMB_BY_COMBINED?.["filled:natural"])
+            : null) ||
+          heroSrc;
+      }
+
+      groupImgMap[combinedKey] = image;
+
+      const href = {
+        pathname: "/travertine/[product]/[cut]/[process]",
+        params: { product: String(productSlug), cut: canonicalCutSlug, process: processSlug }
+      };
+
+      return {
+        slug: combinedKey,
+        vKey: combinedKey,
+        title,
+        href,
+        alt: title,
+        youtubeUrl
+      };
+    });
+
+    return { heading, text, variantCards, imgMap: groupImgMap };
+  };
 
   const filledBlock   = makeGroupCards("filled");
   const unfilledBlock = makeGroupCards("unfilled");
 
   const variantImgMapAll = { ...(filledBlock.imgMap || {}), ...(unfilledBlock.imgMap || {}) };
 
-  // TextSection: önce CUT altında, yoksa ürün kökü
+  // TextSection
   const textSectionCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.TextSection`), null);
   const textSectionTop = safe(() => t.raw(`${productKey}.TextSection`), {});
   const textSectionObj = textSectionCut || textSectionTop;
@@ -328,7 +316,7 @@ const makeGroupCards = (groupName) => {
     i++;
   }
 
-  // FAQ: önce CUT altında, yoksa ürün kökü
+  // FAQ
   const qCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.QuestionsItems`), null);
   const qTop = safe(() => t.raw(`${productKey}.QuestionsItems`), {});
   const qSrc = qCut || qTop;
@@ -341,7 +329,7 @@ const makeGroupCards = (groupName) => {
     }
   }
 
-    // ---- Info cards içeriği
+  // ---- Info cards içeriği
   const cards = [
     {
       title: cardTitle1,
@@ -349,7 +337,7 @@ const makeGroupCards = (groupName) => {
     },
     {
       title: cardTitle2,
-      content: Array.isArray(description) ? description[1] :"",
+      content: Array.isArray(description) ? description[1] : "",
     },
     {
       title: cardTitle3,
@@ -361,83 +349,110 @@ const makeGroupCards = (groupName) => {
     },
   ];
 
+  const hrefForCut = (pkey, ckey) => ({
+    pathname: "/travertine/[product]/[cut]",
+    params: {
+      product: productSlugFor(locale, pkey),
+      cut:     cutSlugForProduct(locale, ckey, pkey),
+    },
+  });
 
-const hrefForCut = (pkey, ckey) => ({
-  pathname: "/travertine/[product]/[cut]",
-  params: {
-    product: productSlugFor(locale, pkey),
-    cut:     cutSlugForProduct(locale, ckey, pkey),
-  },
-});
+  const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug;
+  const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;
 
-// 🔸 yalnızca slabs/tiles/pavers göster
-const CUT_PRODUCTS = ["slabs", "tiles", "pavers"];
+  const items = [
+    { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
+    { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
+    { label: cutLabel,     href: `/${locale}/${canonicalCutSlug}` },
+  ];
 
+  //otherOptions için
+  const otherCutKey = cutKey === "vein-cut" ? "cross-cut" : "vein-cut";
 
+  const SHOWCASE_COMBOS = [
+    { group: "filled",   proc: "polished" },
+    { group: "filled",   proc: "honed"    },
+    { group: "unfilled", proc: "honed"    },
+  ];
 
-const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug; // tr→ "plakalar"
-const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;      // tr→ "damar kesim"
-
-const items = [
-  { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
-  { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
-  { label: cutLabel,     href: `/${locale}/${canonicalCutSlug}` }, // kısa cut URL
-];
-
-//otherOptions için
-const otherCutKey = cutKey === "vein-cut" ? "cross-cut" : "vein-cut";
-
-// vitrin için 3 kombinasyon (istersen değiştirebilirsin)
-const SHOWCASE_COMBOS = [
-  { group: "filled",   proc: "polished" },
-  { group: "filled",   proc: "honed"    },
-  { group: "unfilled", proc: "honed"    },
-];
-
-const processTitleFor = (group, proc) => {
-  const tr = locale.startsWith("tr");
-  const fillText = tr
-    ? (group === "filled" ? "Dolgulu" : "Dolgusuz")
-    : (group === "filled" ? "Filled"  : "Unfilled");
-  const procMap = tr
-    ? { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş", natural:"Doğal" }
-    : { honed:"Honed",     polished:"Polished", brushed:"Brushed",   tumbled:"Tumbled",    natural:"Natural" };
-  return `${fillText}  ${procMap[proc] || proc}`;
-};
-
-const otherCutLabel =
-  (typeof CUT_LABEL !== "undefined" && CUT_LABEL[lang]?.[otherCutKey]) ||
-  otherCutKey.replace("", " ");
-
-const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
-  const combinedKey = `${group}:${proc}`;
-  const img =
-    IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[otherCutKey]?.[combinedKey] ||
-    IMAGE_BY_PRODUCT?.[productKey]?.[otherCutKey] ||
-    IMAGE_BY_PRODUCT?.[productKey]?.cover ||
-    heroSrc;
-
-  // zaten bu dosyada var: procSlugFor(locale, group, key)
-  const processSlug = procSlugFor(locale, group, proc);
-
-  return {
-    title: `${processTitleFor(group, proc)} ${otherCutLabel}  `,
-    img,
-    href: {
-      pathname: "/travertine/[product]/[cut]/[process]",
-      params: {
-        product: String(productSlug),
-        cut:     cutSlugForProduct(locale, otherCutKey, productKey),
-        process: processSlug
-      }
-    }
+  const processTitleFor = (group, proc) => {
+    const tr = locale.startsWith("tr");
+    const fillText = tr
+      ? (group === "filled" ? "Dolgulu" : "Dolgusuz")
+      : (group === "filled" ? "Filled"  : "Unfilled");
+    const procMap = tr
+      ? { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş", natural:"Doğal" }
+      : { honed:"Honed",     polished:"Polished", brushed:"Brushed",   tumbled:"Tumbled",    natural:"Natural" };
+    return `${fillText}  ${procMap[proc] || proc}`;
   };
-});
 
+  const otherCutLabel =
+    (typeof CUT_LABEL !== "undefined" && CUT_LABEL[lang]?.[otherCutKey]) ||
+    otherCutKey.replace("", " ");
+
+  const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
+    const combinedKey = `${group}:${proc}`;
+    const img =
+      IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[otherCutKey]?.[combinedKey] ||
+      IMAGE_BY_PRODUCT?.[productKey]?.[otherCutKey] ||
+      IMAGE_BY_PRODUCT?.[productKey]?.cover ||
+      heroSrc;
+
+    const processSlug = procSlugFor(locale, group, proc);
+
+    return {
+      title: `${processTitleFor(group, proc)} ${otherCutLabel}  `,
+      img,
+      href: {
+        pathname: "/travertine/[product]/[cut]/[process]",
+        params: {
+          product: String(productSlug),
+          cut:     cutSlugForProduct(locale, otherCutKey, productKey),
+          process: processSlug
+        }
+      }
+    };
+  });
+
+  // 🔹 META & CANONICAL
+// 🔹 META & CANONICAL (t() sadece key varsa çağrılıyor)
+const metaTitleKey = `${productKey}.cuts.${cutKey}.metaTitle`;
+const metaDescKey  = `${productKey}.cuts.${cutKey}.metaDesc`;
+
+const metaTitle = safe(() => {
+  if (typeof t.has === "function" && t.has(metaTitleKey)) {
+    return t(metaTitleKey);
+  }
+  return cutTitle;
+}, cutTitle);
+
+const metaDesc = safe(() => {
+  if (typeof t.has === "function" && t.has(metaDescKey)) {
+    return t(metaDescKey);
+  }
+  return cutIntro;
+}, cutIntro);
+
+const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
 
 
   return (
     <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
+      <Head>
+        <title>{metaTitle}</title>
+        {metaDesc ? <meta name="description" content={metaDesc} /> : null}
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDesc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={heroSrc} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDesc} />
+        <meta name="twitter:image" content={heroSrc} />
+      </Head>
+
       <ProductIntroSection
         title={cutTitle}
         intro={cutIntro}
@@ -453,36 +468,37 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
       />
 
       <BreadcrumbsExact
-              prefix={prefix}
-              baseHref={baseHref}
-              crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
-              crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
-              selectedSegments={selectedSegments}
-              className="mt-6"
-              items={items}
-            />
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+        selectedSegments={selectedSegments}
+        className="mt-6"
+        items={items}
+      />
       
-
+      {/* Info Cards */}
       <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
-              {cards.map((c, i) => {
-                const plain =
-                  typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
-      
-                return (
-                  <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
-                    {i === 1 ? (
-                      <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
-                    ) : (
-                      <span className={cardTextClass}>{plain}</span>
-                    )}
-                  </InfoCard>
-                );
-              })}
-            </section>
+        {cards.map((c, i) => {
+          const plain =
+            typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
 
+          return (
+            <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+              {i === 1 ? (
+                <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
+              ) : (
+                <span className={cardTextClass}>{plain}</span>
+              )}
+            </InfoCard>
+          );
+        })}
+      </section>
 
-<h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
-<p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2"> {variantText}</p>
+      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
+      <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2">
+        {variantText}
+      </p>
 
       {/* Filled */}
       {filledBlock.variantCards.length > 0 && (
@@ -490,7 +506,7 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
           heading={filledBlock.heading}
           text={filledBlock.text}
           variantCards={filledBlock.variantCards}
-         imgMap={variantImgMapAll} 
+          imgMap={variantImgMapAll}
           heroSrc={heroSrc}
           IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
           productKey={productKey}
@@ -504,7 +520,7 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
           heading={unfilledBlock.heading}
           text={unfilledBlock.text}
           variantCards={unfilledBlock.variantCards}
-           imgMap={variantImgMapAll} 
+          imgMap={variantImgMapAll}
           heroSrc={heroSrc}
           IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
           productKey={productKey}
@@ -535,31 +551,27 @@ const otherOptionsItems = SHOWCASE_COMBOS.map(({ group, proc }) => {
         </div>
       )}
 
-      <SocialMediaSection/>
-
+      <SocialMediaSection />
       <ContactFrom />
 
-<OtherOptions
-  heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
-  customItems={otherOptionsItems}         // ← sadece bunu ekledik
-  excludeProduct={productKey}
-  productOrder={["slabs", "tiles", "pavers"]}
-  baseHref={`${prefix}/${baseSegment}`}
-  productSegments={{
-    slabs: productSlugFor(locale, "slabs"),
-    tiles: productSlugFor(locale, "tiles"),
-    "pavers": productSlugFor(locale, "pavers"),
-  }}
-  locale={locale}
-  productImages={{ slabs, tiles, "pavers": special }}
-  productHrefFor={(pkey) => ({
-    pathname: "/travertine/[product]",
-    params: { product: productSlugFor(locale, pkey) }
-  })}
-/>
-
-
-      
+      <OtherOptions
+        heading={locale === "tr" ? "Diğer Seçenekler" : "Other Options"}
+        customItems={otherOptionsItems}
+        excludeProduct={productKey}
+        productOrder={["slabs", "tiles", "pavers"]}
+        baseHref={`${prefix}/${baseSegment}`}
+        productSegments={{
+          slabs: productSlugFor(locale, "slabs"),
+          tiles: productSlugFor(locale, "tiles"),
+          pavers: productSlugFor(locale, "pavers"),
+        }}
+        locale={locale}
+        productImages={{ slabs, tiles, pavers: special }}
+        productHrefFor={(pkey) => ({
+          pathname: "/travertine/[product]",
+          params: { product: productSlugFor(locale, pkey) }
+        })}
+      />
     </main>
   );
 }

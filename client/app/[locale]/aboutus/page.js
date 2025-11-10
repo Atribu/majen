@@ -6,15 +6,17 @@ import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
 import QuestionsSection from "../components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "../components/products1/SocialMediaSection";
 
-// ---- Metadata (hreflang + canonical + OG/Twitter)
+/* -------------------------------------------------------------------------- */
+/*                           🔹 SEO / METADATA BLOKU 🔹                       */
+/* -------------------------------------------------------------------------- */
 export async function generateMetadata({ params }) {
-  const { locale } = await params; // Next'in "params'ı await et" uyarısını çözer
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "AboutPage" });
 
-  // TR slugu istersen /tr/hakkimizda yapıp route'u da öyle açabilirsin.
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
   const urls = {
-    en: "/en/about",
-    tr: "/tr/about",
+    en: `${SITE_URL}/en/about`,
+    tr: `${SITE_URL}/tr/about`,
   };
 
   return {
@@ -29,54 +31,65 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
+      url: urls[locale],
+      type: "article",
       title: t("seo.title"),
       description: t("seo.description"),
-      url: urls[locale],
       siteName: "Majen",
-      type: "website",
-      images: [{ url: "/og/about.jpg" }],
+      images: [{ url: `${SITE_URL}/og/about.jpg` }],
+      locale,
     },
     twitter: {
       card: "summary_large_image",
       title: t("seo.title"),
       description: t("seo.description"),
-      images: ["/og/about.jpg"],
+      images: [`${SITE_URL}/og/about.jpg`],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
 
+/* -------------------------------------------------------------------------- */
+/*                            🔹 ABOUT PAGE MAIN 🔹                           */
+/* -------------------------------------------------------------------------- */
 export default async function AboutPage({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "AboutPage" });
+  const t2 = await getTranslations({ locale, namespace: "AboutPage.Questions" });
 
-  const t2  = await getTranslations({ locale, namespace: "AboutPage.Questions" });
+  const items = [
+    { q: t2("q1"), a: t2("a1") },
+    { q: t2("q2"), a: t2("a2") },
+    { q: t2("q3"), a: t2("a3") },
+  ];
 
-           const items = [
-        { q: t2("q1"), a: t2("a1") },
-        { q: t2("q2"), a: t2("a2") },
-        { q: t2("q3"), a: t2("a3") }
-      ];
-
-  const base = BASE_BY_LOCALE[locale]; // "travertine" | "traverten"
+  const base = BASE_BY_LOCALE[locale];
   const hrefFor = (key) => `/${locale}/${base}/${PRODUCT_SLUGS[locale][key]}`;
 
-  // ---- JSON-LD (Organization + Breadcrumb + (varsa) FAQPage)
-  const site = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  /* -------------------------------------------------------------------------- */
+  /*                              🔹 JSON-LD BLOKU 🔹                           */
+  /* -------------------------------------------------------------------------- */
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+  const pageUrl = `${SITE_URL}/${locale}/about`;
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Majen",
-      url: `${site}/${locale}/about`,
-      logo: `${site}/images/logo.svg`,
+      name: "Majen Quarry",
+      url: pageUrl,
+      logo: `${SITE_URL}/images/logo.svg`,
       sameAs: [
-        "https://www.linkedin.com/company/majen", // varsa güncelle
-        "https://www.instagram.com/majen",        // varsa güncelle
+        "https://www.linkedin.com/company/majen",
+        "https://www.instagram.com/majen",
       ],
       contactPoint: [
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
+          contactType: "Customer Support",
           email: "info@majen.com",
           telephone: "+90-533-000-0000",
           areaServed: ["TR", "US", "EU"],
@@ -91,13 +104,13 @@ export default async function AboutPage({ params }) {
           "@type": "ListItem",
           position: 1,
           name: t("breadcrumbs.home"),
-          item: `${site}/${locale}`,
+          item: `${SITE_URL}/${locale}`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: t("breadcrumbs.about"),
-          item: `${site}/${locale}/about`,
+          item: pageUrl,
         },
       ],
     },
@@ -114,6 +127,9 @@ export default async function AboutPage({ params }) {
       : null,
   ].filter(Boolean);
 
+  /* -------------------------------------------------------------------------- */
+  /*                                🔹 RENDER 🔹                                */
+  /* -------------------------------------------------------------------------- */
   return (
     <main className="min-h-[60vh]">
       {/* HERO */}
@@ -140,50 +156,34 @@ export default async function AboutPage({ params }) {
       {/* HAKKIMIZDA BLOKLARI */}
       <section className="max-w-[1100px] mx-auto px-5 md:px-8 py-10 md:py-14">
         <div className="grid md:grid-cols-3 gap-6">
-          <article className="rounded-xl border border-neutral-200 p-5 bg-white">
-            <h2 className="text-lg font-semibold">{t("blocks.mission.title")}</h2>
-            <p className="mt-2 text-sm leading-7 text-neutral-700">
-              {t("blocks.mission.text")}
-            </p>
-          </article>
-
-          <article className="rounded-xl border border-neutral-200 p-5 bg-white">
-            <h2 className="text-lg font-semibold">{t("blocks.quality.title")}</h2>
-            <p className="mt-2 text-sm leading-7 text-neutral-700">
-              {t("blocks.quality.text")}
-            </p>
-          </article>
-
-          <article className="rounded-xl border border-neutral-200 p-5 bg-white">
-            <h2 className="text-lg font-semibold">{t("blocks.logistics.title")}</h2>
-            <p className="mt-2 text-sm leading-7 text-neutral-700">
-              {t("blocks.logistics.text")}
-            </p>
-          </article>
+          {["mission", "quality", "logistics"].map((key) => (
+            <article
+              key={key}
+              className="rounded-xl border border-neutral-200 p-5 bg-white"
+            >
+              <h2 className="text-lg font-semibold">
+                {t(`blocks.${key}.title`)}
+              </h2>
+              <p className="mt-2 text-sm leading-7 text-neutral-700">
+                {t(`blocks.${key}.text`)}
+              </p>
+            </article>
+          ))}
         </div>
 
         {/* İç linkleme (SEO) */}
         <div className="mt-10">
           <h2 className="text-lg font-semibold">{t("explore.title")}</h2>
           <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <Link
-              href={hrefFor("block")}
-              className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
-            >
-              {t("explore.blocks")}
-            </Link>
-            <Link
-              href={hrefFor("slabs")}
-              className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
-            >
-              {t("explore.slabs")}
-            </Link>
-            <Link
-              href={hrefFor("tiles")}
-              className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
-            >
-              {t("explore.tiles")}
-            </Link>
+            {["block", "slabs", "tiles"].map((key) => (
+              <Link
+                key={key}
+                href={hrefFor(key)}
+                className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
+              >
+                {t(`explore.${key}`)}
+              </Link>
+            ))}
             <Link
               href={`/${locale}/howweexport`}
               className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
@@ -206,10 +206,9 @@ export default async function AboutPage({ params }) {
             <li>{t("trust.items.docs")}</li>
           </ul>
         </div>
-        
-        <SocialMediaSection/>
 
-        {/* FAQ — client JS olmadan (<details>) */}
+        {/* Sosyal medya & FAQ */}
+        <SocialMediaSection />
         <QuestionsSection items={items} span="About" />
       </section>
 

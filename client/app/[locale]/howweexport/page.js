@@ -20,17 +20,21 @@ const OG_IMAGE = `${SITE_URL}/images/export/export-hero.webp`;
 export async function generateMetadata({ params }) {
   const { locale } = await params;
 
-  const title = locale === "tr"
-    ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
-    : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
+  const title =
+    locale === "tr"
+      ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
+      : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
 
-  const description = locale === "tr"
-    ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
-    : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
+  const description =
+    locale === "tr"
+      ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
+      : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
 
-  const canonical = locale === "tr"
-    ? `${SITE_URL}/tr/howweexport`
-    : `${SITE_URL}/en/howweexport`;
+  // ✅ Canonical tam domainle (diğer sayfalarla tutarlı)
+  const canonical =
+    locale === "tr"
+      ? "https://majen.com.tr/tr/howweexport"
+      : "https://majen.com.tr/en/howweexport";
 
   return {
     title,
@@ -38,8 +42,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: {
-        en: `${SITE_URL}/en/howweexport`,
-        tr: `${SITE_URL}/tr/howweexport`,
+        en: "https://majen.com.tr/en/howweexport",
+        tr: "https://majen.com.tr/tr/howweexport",
+        "x-default": "https://majen.com.tr/en/howweexport",
       },
     },
     openGraph: {
@@ -48,17 +53,18 @@ export async function generateMetadata({ params }) {
       url: canonical,
       type: "article",
       locale,
-      images: [{ url: OG_IMAGE }],
+      images: [{ url: "https://majen.com.tr/images/export/export-hero.webp" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE],
+      images: ["https://majen.com.tr/images/export/export-hero.webp"],
     },
     robots: { index: true, follow: true },
   };
 }
+
 
 export default async function Page({ params }) {
   const { locale } = await params;
