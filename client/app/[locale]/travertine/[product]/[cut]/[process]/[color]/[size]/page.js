@@ -206,7 +206,7 @@ export default function SizePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+      <TextSection title="Wholesale Travertine Pavers From Turkey"  paragraphs={[
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
             ]}
             schema={schema}
@@ -214,7 +214,7 @@ export default function SizePage() {
             clampMobile={3}
             as="section"/>
 
-      <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+      <TextSection title="Wholesale Travertine Pavers From Turkey"  paragraphs={[
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
             ]}
             schema={schema}
@@ -222,7 +222,7 @@ export default function SizePage() {
             clampMobile={3}
             as="section"/>
 
-     <TextSection title="Wholesale Travertine Special Designs From Turkey"  paragraphs={[
+     <TextSection title="Wholesale Travertine Pavers From Turkey"  paragraphs={[
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ut distinctio perferendis adipisci aliquam nam omnis ea labore fugiat quas voluptatum voluptate id atque, quasi corporis eveniet nihil ratione sapiente voluptas tempora sed veritatis assumenda rerum? Dignissimos illo atque quas repellat ullam accusamus labore perferendis dolorem minus quia maxime, tempore quisquam magni fugiat praesentium laborum molestias commodi"
             ]}
             schema={schema}

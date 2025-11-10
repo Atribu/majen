@@ -36,7 +36,7 @@ export default function CollectionsGrid({
     block: locale === "tr" ? "Blok" : "Block",
     slabs: locale === "tr" ? "Plaka" : "Slabs",
     tiles: locale === "tr" ? "Karo" : "Tiles",
-    special: locale === "tr" ? "Özel Tasarım" : "Special Design",
+    special: locale === "tr" ? "Döşemeler" : "Pavers",
   };
   const labels = { ...defaultLabels, ...(labelsOverride || {}) };
 

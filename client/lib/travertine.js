@@ -297,7 +297,7 @@ export function sizeSlugListForProduct(productKey, t) {
       `18x36`,
       `24x24`,
       `24x36`,
-      `versailles-set`,
+      `versailles-pattern`,
     ];
 
     return sizes.map((s) =>
@@ -316,7 +316,11 @@ export function sizeSlugListForProduct(productKey, t) {
 
 export function sizeLabelFromSlug(slug) {
   if (slug === "custom") return "Custom / Project-based";
-  if (slug === "versailles-set") return "Versailles Set";
+
+  // 🔴 Eski ve yeni slug'ları aynı label'a yönlendiriyoruz
+  if (slug === "versailles-pattern" || slug === "versailles-set") {
+    return "Versailles Pattern";
+  }
 
   // pavers/tile boyutu gibi görünüyor mu? örn "18x36"
   const m = String(slug).match(/^(\d{1,3})x(\d{1,3})$/);
@@ -332,11 +336,13 @@ export function sizeLabelFromSlug(slug) {
     .replace(/([0-9])cm$/, "$1 cm");
 }
 
+
 function normalizePaverSizeSlug(raw) {
   if (!raw) return null;
   let s = String(raw).trim().toLowerCase();
   s = s.replace(/["“”]/g, "").replace(/[×x]/g, "x").replace(/\s+/g, "");
-  // pavers ölçü setin:
+
+  // 🔴 Allowed set'i yeni slug ile güncelliyoruz
   const ALLOWED = new Set([
     "6x12",
     "8x8",
@@ -346,16 +352,23 @@ function normalizePaverSizeSlug(raw) {
     "18x36",
     "24x24",
     "24x36",
-    "versailles-set",
-    "versailles"
+    "versailles-pattern",
+    "versailles",
+    "versailles-set", // eski slug'ı da kabul edelim
   ]);
+
   if (ALLOWED.has(s)) {
-    // "versailles" -> "versailles-set"
-    return s === "versailles" ? "versailles-set" : s;
+    // tüm eski pattern'ları tek tipe normalize et
+    if (s === "versailles" || s === "versailles-set") {
+      return "versailles-pattern";
+    }
+    return s;
   }
+
   // son çare: tiles normalizer gibi davran
   return s;
 }
+
 
 
 

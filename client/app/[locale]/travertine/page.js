@@ -16,42 +16,46 @@ export async function generateMetadata({ params }) {
   const description = (
     t("metaDescription", {
       default:
-        "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping",
+        "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping.",
     }) || ""
   ).slice(0, 160);
 
-  const canonicalLocalized =
+  // ✅ Canonical tam domainle ve x-default eklenmiş hâlde
+  const canonical =
     locale === "tr"
-      ? `${SITE_URL}/tr/traverten`
-      : `${SITE_URL}/en/travertine`;
+      ? "https://majen.com.tr/tr/traverten"
+      : "https://majen.com.tr/en/travertine";
 
   return {
     title,
     description,
     alternates: {
-      canonical: canonicalLocalized,
+      canonical,
       languages: {
-        en: `${SITE_URL}/en/travertine`,
-        tr: `${SITE_URL}/tr/traverten`,
+        en: "https://majen.com.tr/en/travertine",
+        tr: "https://majen.com.tr/tr/traverten",
+        "x-default": "https://majen.com.tr/en/travertine",
       },
     },
     openGraph: {
       title,
       description,
-      url: canonicalLocalized,
+      url: canonical,
       type: "website",
+      siteName: "Majen",
       locale,
-      images: [{ url: OG_IMAGE }],
+      images: [{ url: "https://majen.com.tr/images/og-travertine.jpg" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE],
+      images: ["https://majen.com.tr/images/og-travertine.jpg"],
     },
     robots: { index: true, follow: true },
   };
 }
+
 
 export default async function Page({ params }) {
   const { locale } = await params;

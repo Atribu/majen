@@ -23,32 +23,57 @@ export default function CollectionsSection() {
     special: locale === "tr" ? "Döşemeler" : "Pavers",
   };
 
-  // koleksiyonlar (her renk için slug ekledik)
+  // Tiles & Pavers için ortak linkler
+  const TILES_HREF = `${prefix}/travertine-tiles`;     // -> /en/travertine-tiles, /tr/travertine-tiles
+  const PAVERS_HREF = `${prefix}/travertine-pavers`;   // -> /en/travertine-pavers, /tr/travertine-pavers
+
+  // koleksiyonlar (renge göre block + slabs slug'ları)
   const collections = [
     {
       key: "antiko",
       title: t("titleAntiko"),
       alt: t("altAntiko"),
-      slug: "blaundos-antiko",
+      // Blocks
+      blockHref: `${prefix}/antico-travertine-blocks`,
+      // Slabs
+      slabsHref: `${prefix}/antico-filled-honed-vein-cut-travertine-slabs`,
       src: antik,
     },
     {
       key: "light",
       title: t("titleLight"),
       alt: t("altLight"),
-      slug: "blaundos-light",
+      blockHref: `${prefix}/light-travertine-blocks`,
+      slabsHref: `${prefix}/light-filled-honed-vein-cut-travertine-slabs`,
       src: light,
     },
     {
       key: "ivory",
       title: t("titleIvory"),
       alt: t("altIvory"),
-      slug: "blaundos-ivory",
+      blockHref: `${prefix}/ivory-travertine-blocks`,
+      slabsHref: `${prefix}/ivory-filled-honed-vein-cut-travertine-slabs`,
       src: ivory,
     },
   ];
 
-  // tek yerden link üretici
+  // hangi buton hangi linke gidecek?
+  const hrefForType = (type, coll) => {
+    switch (type) {
+      case "block":
+        return coll.blockHref;
+      case "slabs":
+        return coll.slabsHref;
+      case "tiles":
+        return TILES_HREF;
+      case "special":
+        return PAVERS_HREF;
+      default:
+        return "#";
+    }
+  };
+
+  // (şimdilik kullanılmıyor ama dursun)
   const hrefFor = (productKey, variantSlug) =>
     `${prefix}/${base}/${productSlugFor(locale, productKey)}/${variantSlug}`;
 
@@ -60,7 +85,7 @@ export default function CollectionsSection() {
           {t("span")}
         </span>
         <h3 className="text-[24px] md:text-[26px] font-bold lg:text-[30px] md:leading-[57.6px]  font-marcellus leading-normal">
-       {t("header")}
+          {t("header")}
         </h3>
         <p className="text-[12px] md:text-[14px]">{t("text")}</p>
       </div>
@@ -70,9 +95,9 @@ export default function CollectionsSection() {
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 justify-items-center">
           {collections.map((coll) => (
             <div key={coll.key} className="group flex flex-col items-center text-center">
-              {/* Yuvarlak görsel */}
+              {/* Yuvarlak görsel -> her zaman BLOCK sayfası */}
               <Link
-                href={hrefFor("block", coll.slug)} // Görsel tıklanınca default block’a gitsin
+                href={coll.blockHref}
                 className="relative h-40 w-40 sm:h-44 sm:w-44 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
               >
                 <Image
@@ -91,10 +116,10 @@ export default function CollectionsSection() {
 
               {/* Ürün tipleri (Blocks / Slabs / Tiles / Pavers) */}
               <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
-                {(["block", "slabs", "tiles", "special"]).map((pkey) => (
+                {["block", "slabs", "tiles", "special"].map((pkey) => (
                   <Link
                     key={pkey}
-                    href={hrefFor(pkey, coll.slug)}
+                    href={hrefForType(pkey, coll)}
                     className="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium
                                text-neutral-800 ring-1 ring-neutral-200 bg-white/80
                                hover:bg-neutral-900 hover:text-white transition"

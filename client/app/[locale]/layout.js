@@ -1,42 +1,47 @@
 // app/[locale]/layout.js
-
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import Script from "next/script";
 import { Suspense } from "react";
 
 import Header from "./components/generalcomponent/Header";
 import Footer from "./components/generalcomponent/Footer";
 import BookSection from "./components/generalcomponent/BookSection";
+import GaPageView from "./components/GaPageView";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
-// GA: SPA pageview helper
-import GaPageView from "./components/GaPageView";
-
+// Fontlar
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
-// ✅ JS uyumlu generateMetadata
+/* -------------------------------------------------------------------------- */
+/*                          🔹 METADATA / SEO AYARI 🔹                        */
+/* -------------------------------------------------------------------------- */
 export async function generateMetadata({ params }) {
   const { locale } = await params;
 
-  const title =
-    locale === "en"
-      ? "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen Quarry"
-      : "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen Quarry";
+  const isEN = locale === "en";
+  const title = isEN
+    ? "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen Quarry"
+    : "Toptan Traverten Türkiye'den | Bloklar, Plakalar, Karolar – Majen Quarry";
 
-  const description =
-    locale === "en"
-      ? "Majen supplies Wholesale Travertine From Turkey directly from our Uşak–Ulubey quarry. Export-ready travertine blocks, slabs, tiles, and custom designs in Blaundos Antiko, Light & Ivory with FOB/CIF worldwide shipping."
-      : "Majen supplies Wholesale Travertine From Turkey directly from our Uşak–Ulubey quarry. Export-ready travertine blocks, slabs, tiles, and custom designs in Blaundos Antiko, Light & Ivory with FOB/CIF worldwide shipping.";
+  const description = isEN
+    ? "Majen supplies Wholesale Travertine From Turkey directly from our Uşak–Ulubey quarry. Export-ready travertine blocks, slabs, tiles, and custom designs in Blaundos Antiko, Light & Ivory with FOB/CIF worldwide shipping."
+    : "Majen, Türkiye Uşak–Ulubey ocağından doğrudan toptan traverten tedarik eder. Blaundos Antiko, Light ve Ivory seçeneklerinde blok, plaka, karo ve özel tasarımlar dünya çapında FOB/CIF sevkiyatla sunulur.";
 
   const url = `${SITE_URL}/${locale}`;
+
+  // routing.locales listesini kullanarak diller arası alternates üret
+  const languages = routing.locales.reduce((acc, loc) => {
+    acc[loc] = `${SITE_URL}/${loc}`;
+    return acc;
+  }, {});
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -44,7 +49,7 @@ export async function generateMetadata({ params }) {
     description,
     alternates: {
       canonical: url,
-      languages: { en: `${SITE_URL}/en`, tr: `${SITE_URL}/tr` },
+      languages,
     },
     openGraph: {
       url,
@@ -60,23 +65,29 @@ export async function generateMetadata({ params }) {
       description,
       images: [`${SITE_URL}/og/cover-${locale}.jpg`],
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+    },
     icons: {
-      icon: '/majen.ico',
-      shortcut: '/majen.ico',
-      apple: '/majen.ico',
+      icon: "/majen.ico",
+      shortcut: "/majen.ico",
+      apple: "/majen.ico",
     },
   };
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             🔹 STATIC PARAMS 🔹                             */
+/* -------------------------------------------------------------------------- */
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              🔹 ROOT LAYOUT 🔹                              */
+/* -------------------------------------------------------------------------- */
 export default async function RootLayout({ children, params }) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-  const isProd = process.env.NODE_ENV === "production";
-
   const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
@@ -85,33 +96,21 @@ export default async function RootLayout({ children, params }) {
 
   setRequestLocale(locale);
 
-  // const messages = await getMessages();
-    const messages = (await import(`../../messages/${locale}.json`)).default;
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+  const isProd = process.env.NODE_ENV === "production";
+  const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
-        {/* GA4: yalnızca prod + id varsa yükle */}
+        {/* ✅ Google Analytics yalnızca production ortamında yüklenir */}
         {isProd && GA_ID && (
           <>
-            {/* (Opsiyonel) Consent Mode örneği
-            <Script id="ga-consent" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'granted' });
-              `}
-            </Script>
-            */}
-
-            {/* gtag.js dosyası */}
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
             />
-
-            {/* Başlatma + ilk pageview */}
-            <Script id="ga-gtag" strategy="afterInteractive">
+            <Script id="ga-init" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -122,11 +121,14 @@ export default async function RootLayout({ children, params }) {
                 });
               `}
             </Script>
-    <Suspense fallback={null}>
-    <GaPageView />
-    </Suspense>
+
+            {/* SPA route tracking */}
+            <Suspense fallback={null}>
+              <GaPageView />
+            </Suspense>
           </>
         )}
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <BookSection />

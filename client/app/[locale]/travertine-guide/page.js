@@ -8,7 +8,7 @@ import TravertineBlog from "./components/TravertineBlog";
 export const metadata = {
   title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
   description:
-    "Discover Turkish travertines: blocks, slabs, tiles & special designs. Learn types, colors & export details. Supplier guide for global buyers.",
+    "Discover Turkish travertines: blocks, slabs, tiles & pavers. Learn types, colors & export details. Supplier guide for global buyers.",
   alternates: { canonical: "https://majen.com.tr/en/blog/travertines" },
   openGraph: {
     type: "website",

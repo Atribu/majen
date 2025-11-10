@@ -1,8 +1,12 @@
+// app/[locale]/travertine/[product]/[cut]/[process]/page.jsx
 "use client";
-//resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve variant kısmının resimleri colorThumbs dan (_images)
+
+// resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve
+// variant kısmının resimleri colorThumbs dan (_images)
+import React from "react";
+import Head from "next/head";
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import React from "react";
 
 import {
   baseFor,
@@ -16,11 +20,12 @@ import {
   productSlugFor
 } from "@/lib/travertine";
 
- import {
-   IMAGE_BY_PRODUCT,               // product/cut/process bazlı hero & thumb kaynakları
-   IMAGE_BY_PRODUCT_AND_VARIANT,   // renk görselleri (color)
-   PROCESS_THUMB_BY_COMBINED       // global fallback (filled:honed vb.)
- } from "@/app/[locale]/(catalog)/_images";
+import {
+  IMAGE_BY_PRODUCT,               // product/cut/process bazlı hero & thumb kaynakları
+  IMAGE_BY_PRODUCT_AND_VARIANT,   // renk görselleri (color)
+  PROCESS_THUMB_BY_COMBINED       // global fallback (filled:honed vb.)
+} from "@/app/[locale]/(catalog)/_images";
+
 import ProductIntroSection from "@/app/[locale]/components/products1/ProductIntroSection";
 import VariantCircleSection from "@/app/[locale]/components/products1/VariantCircleSection";
 import TextSection from "@/app/[locale]/components/products1/TextSection";
@@ -39,35 +44,44 @@ import {
 import { Link } from "@/i18n/navigation";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
 
-function InfoCard({ title, children }) {
+/* ---------- küçük yardımcılar ---------- */
+
+function InfoCard({
+  title,
+  children,
+  contentClassName = "text-sm text-neutral-600 leading-[1.7] text-center",
+}) {
   return (
     <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
       <h4 className="font-semibold text-neutral-800 mb-2 text-center">{title}</h4>
-      <div className="text-sm text-neutral-600 leading-[1.7] text-center">{children}</div>
+      <div className={contentClassName}>{children}</div>
     </div>
   );
 }
 
-// URL'deki process segmentini i18n anahtarı olarak normalize et (EN: filled-polished, TR: dolgulu-cilali, natural/dogal)
+// güvenli okuyucu
+const safe = (fn, fallback) => {
+  try { const v = fn(); return v ?? fallback; } catch { return fallback; }
+};
+
+const pickFirst = (v) => (Array.isArray(v) ? v.find(Boolean) : v);
+
+// URL'deki process segmentini i18n anahtarı olarak normalize et (EN: filled-polished,
+// TR: dolgulu-cilali, natural/dogal)
 function normalizeProcKey(procSlug = "", locale = "en") {
   const s = String(procSlug).toLowerCase().trim();
 
-  // natural/dogal direkt döner
-  // if (s === "natural" || s === "dogal") return s;
-    if (s === "natural" || s === "dogal") {
+  // natural/dogal → unfilled-natural/dolgusuz-dogal (kanonik)
+  if (s === "natural" || s === "dogal") {
     return locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural";
   }
 
-  // EN ise beklenen "filled-xxx" / "unfilled-xxx"
   if (locale.startsWith("en")) {
-    // eski tek anahtar geldi ise (örn. "polished"), varsayılanı filled say:
     if (!s.includes("-")) return `filled-${s}`;
     return s;
   }
 
-  // TR: dolgulu-/dolgusuz- önek dönüşümü
   if (locale.startsWith("tr")) {
-    // tek anahtar (örn. "cilali") gelirse doldur: "dolgulu-cilali"
     if (!s.includes("-")) return `dolgulu-${s}`;
     return s;
   }
@@ -83,10 +97,11 @@ function friendlyProcessLabel(procKey, locale) {
       .replace(/\b\w/g, (m) => m.toUpperCase());
 
   if (!procKey) return locale.startsWith("tr") ? "İşlem" : "Process";
-  if (procKey === "natural")  return "Natural";
-  if (procKey === "dogal")    return "Doğal";
+  if (procKey === "natural") return "Natural";
+  if (procKey === "dogal") return "Doğal";
 
-  const [fill, proc] = procKey.split("-");
+  const [fill, proc] = String(procKey).split("-");
+
   if (locale.startsWith("tr")) {
     const mapFill = { dolgulu: "Dolgulu", dolgusuz: "Dolgusuz" };
     const mapProc = {
@@ -102,30 +117,70 @@ function friendlyProcessLabel(procKey, locale) {
   return `${mapFillEn[fill] || titleCase(fill)} · ${titleCase(proc)}`;
 }
 
-// güvenli okuyucu
-const safe = (fn, fallback) => {
-  try { const v = fn(); return v ?? fallback; } catch { return fallback; }
-};
-
-const pickFirst = (v) => Array.isArray(v) ? v.find(Boolean) : v;
-
 // TR birleşik → EN birleşik ("dolgulu-cilali" → "filled-polished")
 function trCombinedToEn(procKey = "") {
   const s = String(procKey).toLowerCase().trim();
   if (!s) return s;
   if (s === "dogal") return "natural";
   const [fillRaw, procRaw] = s.split("-");
-  const fill = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" }[fillRaw] || fillRaw;
+  const fill = {
+    dolgulu: "filled",
+    dolgusuz: "unfilled",
+    filled: "filled",
+    unfilled: "unfilled"
+  }[fillRaw] || fillRaw;
   const proc = {
     honlanmis: "honed",
     cilali: "polished",
     fircalanmis: "brushed",
     eskitilmis: "tumbled",
-    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+    honed: "honed",
+    polished: "polished",
+    brushed: "brushed",
+    tumbled: "tumbled"
   }[procRaw] || procRaw;
   return `${fill}-${proc}`;
 }
 
+// "filled-polished" | "unfilled-honed" | "natural"/TR karşılıkları → combined key (EN sabit): "filled:polished"
+function combinedKeyFromProc(procKey = "", locale = "en") {
+  const s = String(procKey).toLowerCase().trim();
+  if (!s) return null;
+
+  if (s === "natural" || s === "dogal") return "unfilled:natural";
+
+  const fillMap = {
+    dolgulu: "filled",
+    dolgusuz: "unfilled",
+    filled: "filled",
+    unfilled: "unfilled"
+  };
+  const procMap = {
+    honlanmis: "honed",
+    cilali: "polished",
+    fircalanmis: "brushed",
+    eskitilmis: "tumbled",
+    honed: "honed",
+    polished: "polished",
+    brushed: "brushed",
+    tumbled: "tumbled",
+    natural: "natural",
+    dogal: "natural"
+  };
+
+  const [fillRaw, procRaw] = s.split("-");
+  const fill = fillMap[fillRaw] || fillRaw;
+  const proc = procMap[procRaw] || procRaw;
+  return `${fill}:${proc}`;
+}
+
+// regex escape helper
+const escapeRegExp = (s) =>
+  String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
+
+/* -------------------------------- PAGE -------------------------------- */
 
 export default function ProcessPage() {
   const { product: productSlug, cut: cutSlug, process } = useParams();
@@ -137,709 +192,808 @@ export default function ProcessPage() {
   const baseSegment = baseFor(locale);
   const baseHref = `${prefix}/${baseSegment}`;
 
-    // ---- Breadcrumb
-    const rawPath = usePathname();
-    const pathname = typeof rawPath === "string" ? rawPath : "";
-    const segments = pathname.split("/").filter(Boolean);
-    const selectedSegments = segments.slice(-1);
+  // ---- Breadcrumb için path
+  const rawPath = usePathname();
+  const pathname = typeof rawPath === "string" ? rawPath : "";
+  const segments = pathname.split("/").filter(Boolean);
+  const selectedSegments = segments.slice(-1);
 
   const productKey = productKeyFromSlug(locale, String(productSlug)) || "slabs";
 
-  function resolveCutKey(locale, productKey, cutSlug) {
-  const target = String(cutSlug || "").toLowerCase().trim();
-  const lang = getLang(locale);
-  const cuts = CUTS[lang] || {};
+  /* ---------- cut key çözümü ---------- */
 
-  // 1) Ürün tipine göre gerçek slug'ı üretip birebir karşılaştır
-  for (const k of Object.keys(cuts)) {
-    const candidate = String(
-      cutSlugForProduct(locale, k, productKey) // ⬅️ zaten dosyada tanımlı
-    ).toLowerCase();
-    if (candidate === target) return k;
+  function cutSlugForProduct(locale, cutKey, productKey) {
+    const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey;
+    if (typeof base !== "string") return cutKey;
+
+    if (locale.startsWith("en")) {
+      if (productKey === "slabs")  return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
+      if (productKey === "tiles")  return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
+      if (productKey === "blocks") return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
+      if (productKey === "pavers") return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
+      return base;
+    }
+
+    if (productKey === "slabs")  return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
+    if (productKey === "tiles")  return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
+    if (productKey === "blocks") return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
+    if (productKey === "pavers") return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
+    return base;
   }
 
-  // 2) Eski "slabs" tabanlı kayda karşılaştır (geriye dönük güvence)
-  for (const k of Object.keys(cuts)) {
-    const base = String(cuts[k] || "").toLowerCase();
-    if (base === target) return k;
+  function resolveCutKey(locale, productKey, cutSlugParam) {
+    const target = String(cutSlugParam || "").toLowerCase().trim();
+    const lang = getLang(locale);
+    const cuts = CUTS[lang] || {};
+
+    // 1) ürün tipine göre slug üretip birebir karşılaştır
+    for (const k of Object.keys(cuts)) {
+      const candidate = String(
+        cutSlugForProduct(locale, k, productKey)
+      ).toLowerCase();
+      if (candidate === target) return k;
+    }
+
+    // 2) eski slabs tabanlı slug’a bak
+    for (const k of Object.keys(cuts)) {
+      const base = String(cuts[k] || "").toLowerCase();
+      if (base === target) return k;
+    }
+
+    // 3) heuristik
+    if (/vein|damar/.test(target)) return "vein-cut";
+    if (/cross|yatay/.test(target)) return "cross-cut";
+    return "vein-cut";
   }
 
-  // 3) Heuristik (son çare)
-  if (/vein|damar/.test(target)) return "vein-cut";
-  if (/cross|yatay/.test(target)) return "cross-cut";
-  return "vein-cut";
-}
-
-
-  // cutSlug (SEO) → cutKey ("vein-cut" | "cross-cut")
- const cutKey = resolveCutKey(locale, productKey, cutSlug);
+  const cutKey = resolveCutKey(locale, productKey, cutSlug);
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), cutKey);
 
-  // process anahtarı: birleşik (filled-polished / unfilled-honed / natural ...)
+  /* ---------- process anahtarları ---------- */
+
+  // URL’deki process → normalized (filled-polished/unfilled-honed/unfilled-natural vs.)
   const procKey = normalizeProcKey(process, locale);
   const procLabel = friendlyProcessLabel(procKey, locale);
 
-  // TR'de "dolgulu-..." anahtarını EN'e çevirip lookup'ı tek kanaldan yapalım
-const lookupProcKey =
-  locale.startsWith("tr") ? trCombinedToEn(procKey) : procKey;
+  // TR ise EN’e çevirip tek kanaldan lookup yap
+  const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKey) : procKey;
+
+  // canonical cut + process slug
+  const canonicalCutSlug = cutSlugForProduct(locale, cutKey, productKey) || cutSlug;
+
+  function procSlugForLocaleFn(locale, procKeyAny) {
+    const norm = String(procKeyAny).toLowerCase();
+    if (norm === "natural" || norm === "dogal" || norm === "unfilled-natural") {
+      return locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural";
+    }
+
+    const enCombo = trCombinedToEn(norm);
+    if (locale.startsWith("tr")) {
+      const [fillEn, pEn] = enCombo.split("-");
+      const fillTr = fillEn === "filled" ? "dolgulu" : "dolgusuz";
+      const procTr = {
+        honed: "honlanmis",
+        polished: "cilali",
+        brushed: "fircalanmis",
+        tumbled: "eskitilmis",
+        natural: "dogal"
+      }[pEn] || pEn;
+      return `${fillTr}-${procTr}`;
+    }
+    return enCombo;
+  }
+
+  const canonicalProcessSlug = procSlugForLocaleFn(locale, lookupProcKey);
+  const processSlugLocalized = procSlugForLocaleFn(locale, process);
 
   const youtubeByColor =
-   (safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.youtubeByColor`), {}) || {});
+    safe(
+      () =>
+        t.raw(
+          `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.youtubeByColor`
+        ),
+      {}
+    ) || {};
 
-  // === ÜRÜN GENEL ===
+  /* ---------- ürün genel ---------- */
+
   const productTitle = safe(() => t(`${productKey}.title`), "Product");
   const productIntro = safe(() => t(`${productKey}.intro`), "");
-  const sizes    = safe(() => t.raw(`${productKey}.sizes`), []) || [];
+  const sizes = safe(() => t.raw(`${productKey}.sizes`), []) || [];
   const finishes = safe(() => t.raw(`${productKey}.finishes`), []) || [];
   const features = safe(() => t.raw(`${productKey}.features`), []) || [];
-  const description = safe(() => t.raw(`${productKey}.description`), productIntro) || productIntro;
+  const description =
+    safe(() => t.raw(`${productKey}.description`), productIntro) || productIntro;
 
-// === PROCESS DÜĞÜMÜ === (tek anahtarla; TR ise EN'e çevrilmiş hali)
-const processNode =
-  safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`), {}) || {};
+  /* ---------- process node ---------- */
 
-// Başlık
-const processTitle = processNode.title || procLabel;
-  const processIntro = processNode.lead || processNode.intro || safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.subtext`), "");
+  const processNode =
+    safe(
+      () =>
+        t.raw(
+          `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`
+        ),
+      {}
+    ) || {};
 
- // Görsel / alt başlıklar / span (process → combined key)
- const combinedKey = combinedKeyFromProc(procKey, locale); // "filled:honed" | "unfilled:polished" | "natural"
+  const processTitle = processNode.title || procLabel;
+  const processIntro =
+    processNode.lead ||
+    processNode.intro ||
+    safe(
+      () => t.raw(`${productKey}.cuts.${cutKey}.processes.subtext`),
+      ""
+    );
 
- // 1) i18n override (varsa)
- const heroI18n = processNode?.hero?.src || null;
+  // hero
+  const combinedKey = combinedKeyFromProc(procKey, locale);
 
- // 2) _images → product/cut/processHero → combined key
- const heroByImages =
-   IMAGE_BY_PRODUCT?.[productKey]?.processHero?.[cutKey]?.[combinedKey] ||
-   IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] || // thumb’ı da hero fallback olarak kullan
-   IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] ||                               // cut cover
-   IMAGE_BY_PRODUCT?.[productKey]?.cover ||
-   PROCESS_THUMB_BY_COMBINED?.[combinedKey] ||                               // global fallback
-   "/images/homepage/antikoarkplan.webp";
+  const heroI18n = processNode?.hero?.src || null;
+  const heroByImages =
+    IMAGE_BY_PRODUCT?.[productKey]?.processHero?.[cutKey]?.[combinedKey] ||
+    IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[combinedKey] ||
+    IMAGE_BY_PRODUCT?.[productKey]?.[cutKey] ||
+    IMAGE_BY_PRODUCT?.[productKey]?.cover ||
+    PROCESS_THUMB_BY_COMBINED?.[combinedKey] ||
+    "/images/homepage/antikoarkplan.webp";
 
- const heroSrc = heroI18n || heroByImages;
- const heroAlt = processNode?.hero?.alt || `${productTitle} ${processTitle}`;
-  const span    = processNode.span || safe(() => t(`${productKey}.span`), undefined);
+  const heroSrc = heroI18n || heroByImages;
+  const heroAlt =
+    processNode?.hero?.alt || `${productTitle} ${processTitle}`;
+  const span =
+    processNode.span || safe(() => t(`${productKey}.span`), undefined);
 
-   // "filled-polished" | "unfilled-honed" | "natural" | TR karşılıkları → combined key (EN sabit): "filled:polished" | "natural"
-function combinedKeyFromProc(procKey = "", locale = "en") {
-  const s = String(procKey).toLowerCase().trim();
-  if (!s) return null;
+  const dh =
+    processNode.detailsHeadings ||
+    safe(
+      () => t.raw(`${productKey}.cuts.${cutKey}.detailsHeadings`),
+      {}
+    ) ||
+    {};
 
-  // 🔴 tek doğal → unfilled:natural
-  if (s === "natural" || s === "dogal") return "unfilled:natural";
+  const descArr = Array.isArray(processNode.description)
+    ? processNode.description
+    : safe(
+        () => t.raw(`${productKey}.cuts.${cutKey}.description`),
+        []
+      ) || [];
 
-  const fillMap = { dolgulu:"filled", dolgusuz:"unfilled", filled:"filled", unfilled:"unfilled" };
-  const procMap = {
-    honlanmis:"honed", cilali:"polished", fircalanmis:"brushed", eskitilmis:"tumbled",
-    honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled",
-    natural:"natural", dogal:"natural"
-  };
-  const [fillRaw, procRaw] = s.split("-");
-  const fill = fillMap[fillRaw] || fillRaw;
-  const proc = procMap[procRaw] || procRaw;
-  return `${fill}:${proc}`;
-}
+  const hSizes = safe(
+    () => t(`${productKey}.detailsHeadings.sizes`),
+    "Sizes / Thickness"
+  );
+  const hFeatures = safe(
+    () => t(`${productKey}.detailsHeadings.features`),
+    "Finishes & Features"
+  );
 
+  /* ---------- FAQ ---------- */
 
-
- const dh =
-  processNode.detailsHeadings ||
-  safe(() => t.raw(`${productKey}.cuts.${cutKey}.detailsHeadings`), {}) ||
-  {};
-
-const descArr = Array.isArray(processNode.description)
-  ? processNode.description
-  : (safe(() => t.raw(`${productKey}.cuts.${cutKey}.description`), []) || []);
-
-  // INFO KARTLARI
-  const hSizes    = safe(() => t(`${productKey}.detailsHeadings.sizes`), "Sizes / Thickness");
-  const hFeatures = safe(() => t(`${productKey}.detailsHeadings.features`), "Finishes & Features");
-
-    const qCut = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`), null);
+  const qCut = safe(
+    () =>
+      t.raw(
+        `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`
+      ),
+    null
+  );
   const qTop = safe(() => t.raw(`${productKey}.QuestionsItems`), {});
   const qSrc = qCut || qTop;
-  
+
   const faqItems = [];
   if (qSrc) {
     let j = 1;
-    while (qSrc[`aboutpage_s4_faq${j}_header`] && qSrc[`aboutpage_s4_faq${j}_text`]) {
-      faqItems.push({ q: qSrc[`aboutpage_s4_faq${j}_header`], a: qSrc[`aboutpage_s4_faq${j}_text`] });
+    while (
+      qSrc[`aboutpage_s4_faq${j}_header`] &&
+      qSrc[`aboutpage_s4_faq${j}_text`]
+    ) {
+      faqItems.push({
+        q: qSrc[`aboutpage_s4_faq${j}_header`],
+        a: qSrc[`aboutpage_s4_faq${j}_text`]
+      });
       j++;
     }
   }
 
+  /* ---------- Info cards ---------- */
 
-  // INFO KARTLARI — tamamen processNode’dan (fallback cut → product)
-const cards = [
-  {
-    title: dh.title1 || `${productTitle} · ${cutTitle} · ${processTitle}`,
-    content: descArr[0] || (Array.isArray(description) ? description[1] : "")
-  },
-  {
-    title: dh.title2 || (locale.startsWith("tr") ? "Renkler" : "Colors"),
-    content: descArr[1] || (Array.isArray(description) ? description[1] : "")
-  },
-  {
-    title: dh.title3 || hSizes,
-    content: descArr[2] || (sizes.length ? sizes.join(", ") : (locale.startsWith("tr") ? "Kalınlık seçeneklerini renk sayfasında görün." : "See size options on the color page."))
-  },
-  {
-    title: dh.title4 || hFeatures,
-    content: descArr[3] || [...(finishes || []), ...(features || [])].slice(0, 12).join(", ")
-  }
-];
+  const cards = [
+    {
+      title: dh.title1 || `${productTitle} · ${cutTitle} · ${processTitle}`,
+      content: descArr[0] || (Array.isArray(description) ? description[0] : "")
+    },
+    {
+      title: dh.title2 || (locale.startsWith("tr") ? "Renkler" : "Colors"),
+      content: descArr[1] || (Array.isArray(description) ? description[1] : "")
+    },
+    {
+      title: dh.title3 || hSizes,
+      content:
+        descArr[2] ||
+        (sizes.length
+          ? sizes.join(", ")
+          : locale.startsWith("tr")
+          ? "Kalınlık seçeneklerini renk sayfasında görün."
+          : "See size options on the color page.")
+    },
+    {
+      title: dh.title4 || hFeatures,
+      content:
+        descArr[3] ||
+        [...(finishes || []), ...(features || [])]
+          .slice(0, 12)
+          .join(", ")
+    }
+  ];
 
+  /* ---------- renk & görseller ---------- */
 
-  // === RENK SEÇİMİ ===
   const cKeys = colorKeys();
 
+  const colorImgMap = Object.fromEntries(
+    cKeys.map((key) => {
+      const slug = colorSlugFor(locale, key);
 
-const colorImgMap = Object.fromEntries(
-  cKeys.map((key) => {
-    const slug = colorSlugFor(locale, key);
+      const fromColorByProcess =
+        IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[
+          key
+        ];
 
-    // 1) _images → colorThumbs (artık dizi olabilir)
-    const fromColorByProcess =
-      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[combinedKey]?.[key];
+      const fromVariant =
+        IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ??
+        IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[key];
 
-    // 2) ürün-variant (tekil ya da bazen dizi olabilir)
-    const fromVariant =
-      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[slug] ??
-      IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey]?.[key];
+      const fromProcessThumb = PROCESS_THUMB_BY_COMBINED?.[combinedKey];
 
-    // 3) global process thumb (tekil)
-    const fromProcessThumb = PROCESS_THUMB_BY_COMBINED?.[combinedKey];
+      const src =
+        pickFirst(fromColorByProcess) ||
+        pickFirst(fromVariant) ||
+        pickFirst(fromProcessThumb) ||
+        heroSrc;
 
-    // ✅ dizi ise ilkini al, değilse doğrudan kullan
-    const src =
-      pickFirst(fromColorByProcess) ||
-      pickFirst(fromVariant) ||
-      pickFirst(fromProcessThumb) ||
-      heroSrc;
-
-    return [slug, src];
-  })
-);
-
-
-const colorCards = cKeys.map((key) => {
-  const label = colorLabelFor(locale, key);
-  const slug  = colorSlugFor(locale, key);
- const youtubeUrl = youtubeByColor && typeof youtubeByColor === "object" ? youtubeByColor[key] : null;
-
-  return {
-    slug,
-    vKey: slug,       
-    title: label,
-    alt: label,
-    href: buildSeoColorPath(locale, productKey, cutSlug, process, key),
-    youtubeUrl: youtubeUrl || undefined,  // ⬅️ eklenen alan
-  };
-});
-
- const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
-
-     const linkPatterns = [
-  {
-    pattern: /vein[- ]cut/i,
-    href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
-      locale,
-      "vein-cut",
-      productKey
-    )}`,
-  },
-  {
-    pattern: /cross[- ]cut/i,
-    href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
-      locale,
-      "cross-cut",
-      productKey
-    )}`,
-  },
-];
-
-
-      function cutSlugForProduct(locale, cutKey, productKey) {
-      const base = (CUTS[getLang(locale)] || {})[cutKey] || cutKey; // örn: 'vein-cut-travertine-slabs'
-      if (typeof base !== "string") return cutKey;
-      if (locale.startsWith("en")) {
-          if (productKey === "slabs")             return base.replace(/-travertine-slabs$/i, "-travertine-slabs");
-        if (productKey === "tiles")            return base.replace(/-travertine-slabs$/i, "-travertine-tiles");
-        if (productKey === "blocks")           return base.replace(/-travertine-slabs$/i, "-travertine-blocks");
-        if (productKey === "pavers")  return base.replace(/-travertine-slabs$/i, "-travertine-pavers");
-        return base; // slabs
-      }
-      // TR dönüşümleri
-      if (productKey === "slabs")             return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
-      if (productKey === "tiles")            return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
-      if (productKey === "blocks")           return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-      if (productKey === "pavers")  return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
-      return base; // plakalar (slabs)
-    }
-
- function procSlugForLocale(locale, procKey) {
-  const norm = String(procKey).toLowerCase();
-
-  // 🔴 “natural” görünce hedef slug hep unfilled-natural (TR: dolgusuz-dogal)
-  if (norm === "natural" || norm === "dogal") {
-    return locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural";
-  }
-
-  // mevcut EN↔TR çeviri mantığın:
-  const enCombo = trCombinedToEn(norm);
-  if (locale.startsWith("tr")) {
-    const [fillEn, pEn] = enCombo.split("-");
-    const fillTr = fillEn === "filled" ? "dolgulu" : "dolgusuz";
-    const procTr = { honed:"honlanmis", polished:"cilali", brushed:"fircalanmis", tumbled:"eskitilmis", natural:"dogal" }[pEn] || pEn;
-    return `${fillTr}-${procTr}`;
-  }
-  return enCombo; // EN
-}
-
-
-const PROCESS_EN = [
-  "natural",
-  "filled-honed","unfilled-honed",
-  "filled-polished","unfilled-polished",
-  "filled-brushed","unfilled-brushed",
-  "filled-tumbled","unfilled-tumbled",
-  "filled-natural","unfilled-natural",
-];
-
-// TR metinlerde de yakalamak istersen (opsiyonel ama faydalı)
-const PROCESS_TR = [
-  "dogal",
-  "dolgulu-honlanmis","dolgusuz-honlanmis",
-  "dolgulu-cilali","dolgusuz-cilali",
-  "dolgulu-fircalanmis","dolgusuz-fircalanmis",
-  "dolgulu-eskitilmis","dolgusuz-eskitilmis",
-  "dolgulu-dogal","dolgusuz-dogal",
-];
-
-// Bu helper, "filled-honed" gibi bir anahtar için hem "filled honed" hem "filled-honed" yazımını yakalayan regex üretir
-function wordsOrHyphenRegex(s) {
-  const safe = s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");     // escape
-  return new RegExp(`\\b${safe.replace("-", "[ -]")}\\b`, "i");
-}
-
-// TR “doğal” yazımı da olabileceği için küçük bir ek desenle destekleyelim
-// const NATURAL_TR_REGEX = /\bdoğal\b/i;
-// sadece "dolgulu/dolgusuz doğal" ve "filled/unfilled natural" yakalansın
- const NATURAL_EN_COMBO_REGEX = /\b(?:unfilled|filled)[ -]natural\b/i;
- const NATURAL_TR_COMBO_REGEX = /\b(?:dolgulu|dolgusuz)[ -]doğal\b/i;
-
-
-// EN ve TR process anahtarlarından pattern → href objeleri üret
-const processPatterns = []
-  .concat(
-    PROCESS_EN.flatMap((k) => {
-      const processSlugLocalized = procSlugForLocale(locale, k);
-      const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLocalized}`;
-
-      if (k === "natural") {
-        // yalnızca "filled/unfilled natural" eşleşsin
-        return [{ pattern: NATURAL_EN_COMBO_REGEX, href }];
-      }
-
-      const rx = wordsOrHyphenRegex(k); // "filled[ -]honed" vb.
-      return [{ pattern: rx, href }];
-    })
-  )
-  .concat(
-    PROCESS_TR.flatMap((kTr) => {
-      const processSlugLocalized = procSlugForLocale(locale, kTr);
-      const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLocalized}`;
-
-      if (kTr === "dogal") {
-        // yalnızca "dolgulu/dolgusuz doğal" eşleşsin
-        return [{ pattern: NATURAL_TR_COMBO_REGEX, href }];
-      }
-
-      return [{ pattern: wordsOrHyphenRegex(kTr), href }];
+      return [slug, src];
     })
   );
 
-  // Son olarak kesim (vein/cross) pattern’lerine process pattern’lerini ekle
-linkPatterns.push(...processPatterns);
+  const colorCards = cKeys.map((key) => {
+    const label = colorLabelFor(locale, key);
+    const slug = colorSlugFor(locale, key);
+    const youtubeUrl =
+      youtubeByColor && typeof youtubeByColor === "object"
+        ? youtubeByColor[key]
+        : null;
 
-// helper: bu objede gerçekten TS alanları var mı?
-function hasTS(obj) {
-  if (!obj || typeof obj !== "object") return false;
-  return Object.keys(obj).some((k) => /^(header|text|subheader|subtext)\d+$/i.test(k));
-}
+    return {
+      slug,
+      vKey: slug,
+      title: label,
+      alt: label,
+      href: buildSeoColorPath(locale, productKey, cutSlug, process, key),
+      youtubeUrl: youtubeUrl || undefined
+    };
+  });
 
-// 1) process-level (doğru yer)
-const textSectionProcRaw = safe(() =>
-  t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.TextSection`)
-, null);
+  /* ---------- link pattern’leri ---------- */
 
-// 2) cut-level (fallback)
-const textSectionCutRaw = hasTS(textSectionProcRaw) ? null : safe(() =>
-  t.raw(`${productKey}.cuts.${cutKey}.TextSection`)
-, null);
+  const linkPatterns = [
+    {
+      pattern: /vein[- ]cut/i,
+      href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
+        locale,
+        "vein-cut",
+        productKey
+      )}`
+    },
+    {
+      pattern: /cross[- ]cut/i,
+      href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(
+        locale,
+        "cross-cut",
+        productKey
+      )}`
+    }
+  ];
 
-// 3) product-level (son fallback)
-const textSectionProdRaw = (hasTS(textSectionProcRaw) || hasTS(textSectionCutRaw)) ? null : safe(() =>
-  t.raw(`${productKey}.TextSection`)
-, null);
+  const PROCESS_EN = [
+    "natural",
+    "filled-honed",
+    "unfilled-honed",
+    "filled-polished",
+    "unfilled-polished",
+    "filled-brushed",
+    "unfilled-brushed",
+    "filled-tumbled",
+    "unfilled-tumbled",
+    "filled-natural",
+    "unfilled-natural"
+  ];
 
-// en uygun kaynak
-const textSectionObj =
-  (hasTS(textSectionProcRaw) && textSectionProcRaw) ||
-  (hasTS(textSectionCutRaw) && textSectionCutRaw) ||
-  (hasTS(textSectionProdRaw) && textSectionProdRaw) ||
-  null;
+  const PROCESS_TR = [
+    "dogal",
+    "dolgulu-honlanmis",
+    "dolgusuz-honlanmis",
+    "dolgulu-cilali",
+    "dolgusuz-cilali",
+    "dolgulu-fircalanmis",
+    "dolgusuz-fircalanmis",
+    "dolgulu-eskitilmis",
+    "dolgusuz-eskitilmis",
+    "dolgulu-dogal",
+    "dolgusuz-dogal"
+  ];
 
-// Map’le
-const textSections = [];
-if (textSectionObj) {
-  let i = 1;
-  while (
-    textSectionObj[`header${i}`] ||
-    textSectionObj[`text${i}`] ||
-    textSectionObj[`subheader${i}`] ||
-    textSectionObj[`subtext${i}`]
-  ) {
-    const title = textSectionObj[`header${i}`]
-      || textSectionObj[`subheader${i}`]
-      || `${processTitle} — Section ${i}`;
-    const paragraphs = [textSectionObj[`text${i}`], textSectionObj[`subtext${i}`]].filter(Boolean);
-    textSections.push({ id: i, title, paragraphs });
-    i++;
+  const wordsOrHyphenRegex = (s) => {
+    const safeS = String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`\\b${safeS.replace("-", "[ -]")}\\b`, "i");
+  };
+
+  const NATURAL_EN_COMBO_REGEX =
+    /\b(?:unfilled|filled)[ -]natural\b/i;
+  const NATURAL_TR_COMBO_REGEX =
+    /\b(?:dolgulu|dolgusuz)[ -]doğal\b/i;
+
+  const processPatterns = []
+    .concat(
+      PROCESS_EN.flatMap((k) => {
+        const processSlugLoc = procSlugForLocaleFn(locale, k);
+        const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLoc}`;
+
+        if (k === "natural") {
+          return [{ pattern: NATURAL_EN_COMBO_REGEX, href }];
+        }
+        return [{ pattern: wordsOrHyphenRegex(k), href }];
+      })
+    )
+    .concat(
+      PROCESS_TR.flatMap((kTr) => {
+        const processSlugLoc = procSlugForLocaleFn(locale, kTr);
+        const href = `/${locale}/${baseSegment}/${productSlug}/${cutSlug}/${processSlugLoc}`;
+
+        if (kTr === "dogal") {
+          return [{ pattern: NATURAL_TR_COMBO_REGEX, href }];
+        }
+        return [{ pattern: wordsOrHyphenRegex(kTr), href }];
+      })
+    );
+
+  linkPatterns.push(...processPatterns);
+
+  /* ---------- TextSections (process → cut → product fallback) ---------- */
+
+  function hasTS(obj) {
+    if (!obj || typeof obj !== "object") return false;
+    return Object.keys(obj).some((k) =>
+      /^(header|text|subheader|subtext)\d+$/i.test(k)
+    );
   }
-}
 
-const optRaw = (key, fallback = null) => {
-  try {
-    const v = t.raw(key);
-    return v ?? fallback;
-  } catch {
-    return fallback;
+  const textSectionProcRaw = safe(
+    () =>
+      t.raw(
+        `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.TextSection`
+      ),
+    null
+  );
+
+  const textSectionCutRaw = hasTS(textSectionProcRaw)
+    ? null
+    : safe(
+        () => t.raw(`${productKey}.cuts.${cutKey}.TextSection`),
+        null
+      );
+
+  const textSectionProdRaw =
+    hasTS(textSectionProcRaw) || hasTS(textSectionCutRaw)
+      ? null
+      : safe(() => t.raw(`${productKey}.TextSection`), null);
+
+  const textSectionObj =
+    (hasTS(textSectionProcRaw) && textSectionProcRaw) ||
+    (hasTS(textSectionCutRaw) && textSectionCutRaw) ||
+    (hasTS(textSectionProdRaw) && textSectionProdRaw) ||
+    null;
+
+  const textSections = [];
+  if (textSectionObj) {
+    let i = 1;
+    while (
+      textSectionObj[`header${i}`] ||
+      textSectionObj[`text${i}`] ||
+      textSectionObj[`subheader${i}`] ||
+      textSectionObj[`subtext${i}`]
+    ) {
+      const title =
+        textSectionObj[`header${i}`] ||
+        textSectionObj[`subheader${i}`] ||
+        `${processTitle} — Section ${i}`;
+      const paragraphs = [
+        textSectionObj[`text${i}`],
+        textSectionObj[`subtext${i}`]
+      ].filter(Boolean);
+      textSections.push({ id: i, title, paragraphs });
+      i++;
+    }
   }
-};
 
-  const variantHeader = optRaw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.title`, "");
-  const variantText = optRaw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.text`, "");
+  const optRaw = (key, fallback = null) => {
+    try {
+      const v = t.raw(key);
+      return v ?? fallback;
+    } catch {
+      return fallback;
+    }
+  };
 
-const productLabel = PRODUCT_LABEL[lang]?.[productKey] || productSlug;
-const cutLabel     = CUT_LABEL[lang]?.[cutKey]         || cutKey;
+  const variantHeader = optRaw(
+    `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.title`,
+    ""
+  );
+  const variantText = optRaw(
+    `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.variants.text`,
+    ""
+  );
 
-// process slug’ını göster (TR’de “dolgulu-cilali”)
-const processSlugLocalized = procSlugForLocale(locale, process);
+  /* ---------- breadcrumbs ---------- */
 
-const items = [
-  { label: locale.startsWith("tr") ? "Traverten" : "Travertine", href: `/${locale}/${baseSegment}` },
-  { label: productLabel, href: `/${locale}/${baseSegment}/${productSlug}` },
-  { label: cutLabel,     href: `/${locale}/${cutSlug}` },               // kısa cut sayfası
-  { label: processSlugLocalized, href: `/${locale}/${process}-${cutSlug}` }, // current
-];
+  const productLabel =
+    PRODUCT_LABEL[lang]?.[productKey] || productSlug;
+  const cutLabel =
+    CUT_LABEL[lang]?.[cutKey] || cutKey;
 
-const ALL_PROCS_EN = [
-  "filled-polished","filled-honed","filled-brushed","filled-tumbled",
-  "unfilled-honed","unfilled-brushed","unfilled-tumbled","unfilled-natural",
-];
-const otherProcKeysEN = ALL_PROCS_EN
-  .filter((p) => p !== lookupProcKey)
-  .slice(0, 3);
+  const items = [
+    {
+      label: locale.startsWith("tr") ? "Traverten" : "Travertine",
+      href: `/${locale}/${baseSegment}`
+    },
+    {
+      label: productLabel,
+      href: `/${locale}/${baseSegment}/${productSlug}`
+    },
+    {
+      label: cutLabel,
+      href: `/${locale}/${canonicalCutSlug}`
+    },
+    {
+      label: processSlugLocalized,
+      href: `/${locale}/${canonicalProcessSlug}-${canonicalCutSlug}`
+    }
+  ];
 
-// 2) Kart başına 3 renk (öncelik sırası)
-const COLOR_PRIORITY = ["ivory", "light", "antico"]; // istersen farklı sıraya al
-const colorKeyList = colorKeys();                     // i18n key ailesi
-// color slug ve label'ları hazırla (locale'e göre)
-const colorTriplet = COLOR_PRIORITY
-  .map((enKey) => {
-    // projende renk key ↔ slug farklı olabilir; hem key hem slug deneyelim
+  /* ---------- OtherOptions için diğer process kartları ---------- */
+
+  const ALL_PROCS_EN = [
+    "filled-polished",
+    "filled-honed",
+    "filled-brushed",
+    "filled-tumbled",
+    "unfilled-honed",
+    "unfilled-brushed",
+    "unfilled-tumbled",
+    "unfilled-natural"
+  ];
+
+  const otherProcKeysEN = ALL_PROCS_EN
+    .filter((p) => p !== lookupProcKey)
+    .slice(0, 3);
+
+  const COLOR_PRIORITY = ["ivory", "light", "antico"];
+  const colorKeyList = colorKeys();
+
+  const colorTriplet = COLOR_PRIORITY.map((enKey) => {
     const slug = colorSlugFor(locale, enKey);
     const label = colorLabelFor(locale, enKey);
-    // gerçekte varsa kullan; yoksa colorKeys() listesinden sıradakiyle doldur
     return { key: enKey, slug, label };
-  })
-  .slice(0, 3);
+  }).slice(0, 3);
 
-// 3) Her process için görsel (thumb) bul (product/cut/process → combined key)
-function combinedKeyFromEn(enCombo) {
-  // "filled-polished" → "filled:polished"
-  if (!enCombo) return null;
-  const s = String(enCombo).trim();
-  if (s === "natural" || s === "unfilled-natural") return "unfilled:natural";
-  const [fi, pr] = s.split("-");
-  return `${fi}:${pr}`;
-}
-
-function processThumbFor(enCombo) {
-  const cKey = combinedKeyFromEn(enCombo);
-  return (
-    IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[cKey] ||
-    PROCESS_THUMB_BY_COMBINED?.[cKey] ||
-    heroSrc
-  );
-}
-
-function sizeThumbForSize(sizeSlug) {
-  // Bu sayfa tiles/pavers değilse zaten gerek yok
-  const isSizeDrivenLocal = productKey === "tiles" || productKey === "pavers";
-  if (!isSizeDrivenLocal) return null;
-
-  // lookupProcKey: "filled-honed" gibi EN key
-  const cKey = combinedKeyFromEn(lookupProcKey); // "filled:honed" vb.
-
-  // tiles colorThumbs yapısı:
-  // IMAGE_BY_PRODUCT.tiles.colorThumbs[cutKey][cKey][sizeSlug][colorKey]
-  const cutNode =
-    IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[cKey];
-  if (!cutNode) return null;
-
-  const sizeNode = cutNode[sizeSlug]; // örn "8x8", "12x12"
-  if (!sizeNode || typeof sizeNode !== "object") return null;
-
-  // Öncelik: ivory → light → antico
-  const COLOR_PRIORITY = ["ivory", "light", "antico"];
-  for (const ck of COLOR_PRIORITY) {
-    const v = sizeNode[ck];
-    if (v) return pickFirst(v); // array ise ilk eleman, değilse direkt
+  function combinedKeyFromEn(enCombo) {
+    if (!enCombo) return null;
+    const s = String(enCombo).trim();
+    if (s === "natural" || s === "unfilled-natural")
+      return "unfilled:natural";
+    const [fi, pr] = s.split("-");
+    return `${fi}:${pr}`;
   }
 
-  // Hiçbiri yoksa, herhangi bir key'i kullan
-  const firstKey = Object.keys(sizeNode)[0];
-  return firstKey ? pickFirst(sizeNode[firstKey]) : null;
-}
+  function processThumbFor(enCombo) {
+    const cKey = combinedKeyFromEn(enCombo);
+    return (
+      IMAGE_BY_PRODUCT?.[productKey]?.processThumbs?.[cutKey]?.[cKey] ||
+      PROCESS_THUMB_BY_COMBINED?.[cKey] ||
+      heroSrc
+    );
+  }
 
+  function sizeThumbForSize(sizeSlug) {
+    const isSizeDrivenLocal =
+      productKey === "tiles" || productKey === "pavers";
+    if (!isSizeDrivenLocal) return null;
 
-// 4) Kartların link ve metinlerini üret
-const otherProcessCards = otherProcKeysEN.map((enCombo) => {
-  // başlık (locale'e uygun “Filled · Honed” biçimi)
-  const procTitle = friendlyProcessLabel(enCombo, locale);
-  const targetProcessSlug = procSlugForLocale(locale, enCombo); // hedef URL process segmenti (locale'li)
-  const img = processThumbFor(enCombo);
+    const cKey = combinedKeyFromEn(lookupProcKey);
+    const cutNode =
+      IMAGE_BY_PRODUCT?.[productKey]?.colorThumbs?.[cutKey]?.[cKey];
+    if (!cutNode) return null;
 
-  // buton, ilk renge gitsin
-  const firstColor = colorTriplet[0];
-  const buttonHref = buildSeoColorPath(
-    locale,
-    productKey,
-    cutSlug,               // bulunduğun cut SEO segmenti
-    targetProcessSlug,     // hedef process segmenti
-    firstColor.key         // renk key (EN family), buildSeoColorPath içinde doğru çözümleniyor
-  );
+    const sizeNode = cutNode[sizeSlug];
+    if (!sizeNode || typeof sizeNode !== "object") return null;
 
-  // kart gövdesinde 3 renk linki
-  const textJsx = (
-    <>
-      {(locale.startsWith("tr") ? "Renkler: " : "Colors: ")}
-      {colorTriplet.map((c, idx) => {
-        const href = buildSeoColorPath(locale, productKey, cutSlug, targetProcessSlug, c.key);
-        return (
-          <React.Fragment key={`${enCombo}-${c.key}`}>
-            <Link href={href} className="text-teal-700 hover:underline">
-              {c.label}
-            </Link>
-            {idx < colorTriplet.length - 1 ? " · " : ""}
-          </React.Fragment>
-        );
-      })}
-    </>
-  );
+    const P = ["ivory", "light", "antico"];
+    for (const ck of P) {
+      const v = sizeNode[ck];
+      if (v) return pickFirst(v);
+    }
 
-  return {
-    title: procTitle,
-    textJsx,
-    img,
-    href: {
-      // buton (Go to page) için ilk renge deep link veriyoruz
-      pathname: buttonHref, // i18n Link locale’i ekleyecek, path locale’siz olmalı
-    },
-  };
-});
+    const firstKey = Object.keys(sizeNode)[0];
+    return firstKey ? pickFirst(sizeNode[firstKey]) : null;
+  }
 
-const isSizeDriven = productKey === "tiles" || productKey === "pavers";
+  const otherProcessCards = otherProcKeysEN.map((enCombo) => {
+    const procTitle = friendlyProcessLabel(enCombo, locale);
+    const targetProcessSlug = procSlugForLocaleFn(locale, enCombo);
+    const img = processThumbFor(enCombo);
 
-// tiles için kendi ölçüleri, pavers için kendi ölçüleri
-const sizeSlugListForThisProduct = productKey === "tiles"
-  ? TILE_SIZE_SLUGS_TILES
-  : productKey === "pavers"
-    ? TILE_SIZE_SLUGS_PAVERS
+    const firstColor = colorTriplet[0];
+    const buttonHref = buildSeoColorPath(
+      locale,
+      productKey,
+      cutSlug,
+      targetProcessSlug,
+      firstColor.key
+    );
+
+    const textJsx = (
+      <>
+        {locale.startsWith("tr") ? "Renkler: " : "Colors: "}
+        {colorTriplet.map((c, idx) => {
+          const href = buildSeoColorPath(
+            locale,
+            productKey,
+            cutSlug,
+            targetProcessSlug,
+            c.key
+          );
+          return (
+            <React.Fragment key={`${enCombo}-${c.key}`}>
+              <Link
+                href={href}
+                className="text-teal-700 hover:underline"
+              >
+                {c.label}
+              </Link>
+              {idx < colorTriplet.length - 1 ? " · " : ""}
+            </React.Fragment>
+          );
+        })}
+      </>
+    );
+
+    return {
+      title: procTitle,
+      textJsx,
+      img,
+      href: {
+        pathname: buttonHref
+      }
+    };
+  });
+
+  /* ---------- ölçü (tiles/pavers) ---------- */
+
+  const isSizeDriven =
+    productKey === "tiles" || productKey === "pavers";
+
+  const sizeSlugListForThisProduct =
+    productKey === "tiles"
+      ? TILE_SIZE_SLUGS_TILES
+      : productKey === "pavers"
+      ? TILE_SIZE_SLUGS_PAVERS
+      : [];
+
+  const sizeLinkPatterns = isSizeDriven
+    ? sizeSlugListForThisProduct
+        .filter(Boolean)
+        .map((sizeSlug) => {
+          const [w, h] = String(sizeSlug).split("x");
+          if (!w || !h) return null;
+          return {
+            pattern: new RegExp(
+              `${escapeRegExp(w)}["″']?\\s*x\\s*${escapeRegExp(
+                h
+              )}["″']?`,
+              "gi"
+            ),
+            href: `/${locale}/${sizeSlug}-${canonicalProcessSlug}-${canonicalCutSlug}`
+          };
+        })
+        .filter(Boolean)
     : [];
 
-   // regex için escape helper (bunu zaten yukarıda tanımlamışsın)
-// regex için escape helper – her zaman stringe çevir
-const escapeRegExp = (s) =>
-  String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-
-const sizeLinkPatterns = isSizeDriven
-  ? sizeSlugListForThisProduct
-      .filter(Boolean)                            // undefined / null varsa at
-      .map((sizeSlug) => {
-        const [w, h] = String(sizeSlug).split("x"); // "8x8" → ["8","8"]
-
-        // 8x8 formatı bozuksa bu slug'ı at
-        if (!w || !h) return null;
+  const sizeCards = isSizeDriven
+    ? sizeSlugListForThisProduct.map((sizeSlug) => {
+        const title = tileSizeLabelForLocale(locale, sizeSlug);
+        const seoPath = `/${sizeSlug}-${canonicalProcessSlug}-${canonicalCutSlug}`;
+        const href = seoPath;
+        const imgFromColorThumbs = sizeThumbForSize(sizeSlug);
+        const img =
+          imgFromColorThumbs ||
+          processThumbFor(lookupProcKey) ||
+          heroSrc;
 
         return {
-          // "8x8", 8"x8", 8″x8″, 8 x 8, 8" x 8" vb. hepsini yakalar
-          pattern: new RegExp(
-            `${escapeRegExp(w)}["″']?\\s*x\\s*${escapeRegExp(h)}["″']?`,
-            "gi"
-          ),
-          // SEO URL: /en/8x8-filled-polished-vein-cut-travertine-pavers
-          href: `/${locale}/${sizeSlug}-${process}-${cutSlug}`,
+          slug: sizeSlug,
+          vKey: sizeSlug,
+          title,
+          href,
+          img
         };
       })
-      .filter(Boolean)                              // null dönenleri at
-  : [];
+    : [];
 
+  /* ---------- META & CANONICAL ---------- */
 
+  const metaTitleKey = `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.metaTitle`;
+  const metaDescKey = `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.metaDesc`;
 
+  const metaTitle = safe(() => {
+    if (typeof t.has === "function" && t.has(metaTitleKey)) {
+      return t(metaTitleKey);
+    }
+    return `${processTitle} · ${cutTitle} · ${productTitle}`;
+  }, `${processTitle} · ${cutTitle} · ${productTitle}`);
 
+  const metaDesc = safe(() => {
+    if (typeof t.has === "function" && t.has(metaDescKey)) {
+      return t(metaDescKey);
+    }
+    return processIntro || productIntro;
+  }, processIntro || productIntro);
 
+  const canonical = `https://majen.com.tr/${locale}/${canonicalProcessSlug}-${canonicalCutSlug}`;
 
-
-const sizeCards = isSizeDriven
-  ? sizeSlugListForThisProduct.map((sizeSlug) => {
-      const title = tileSizeLabelForLocale(locale, sizeSlug);
-
-      const href = {
-        pathname: "/travertine/[product]/[cut]/[process]/[color]",
-        params: {
-          product: productSlug,   // "tiles" veya "pavers"
-          cut: cutSlug,           // örn "vein-cut-travertine-tiles"
-          process: process,       // URL’deki segment ("filled-honed" vs)
-          color: sizeSlug,        // burada sizeSlug route paramı
-        },
-      };
-
-      // 🔹 Her ölçü için önce colorThumbs içinden bir preview resmi dene
-      const imgFromColorThumbs = sizeThumbForSize(sizeSlug);
-
-      // 🔹 Bulunamazsa process genel thumb’ına, o da yoksa hero’ya düş
-      const img = imgFromColorThumbs || processThumbFor(lookupProcKey) || heroSrc;
-
-      return {
-        slug: sizeSlug,
-        vKey: sizeSlug,
-        title,
-        href,
-        img,
-      };
-    })
-  : [];
-
-
-
-
+  /* ---------- render ---------- */
 
   return (
     <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
+      <Head>
+        <title>{metaTitle}</title>
+        {metaDesc ? (
+          <meta name="description" content={metaDesc} />
+        ) : null}
+        <link rel="canonical" href={canonical} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDesc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={heroSrc} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDesc} />
+        <meta name="twitter:image" content={heroSrc} />
+      </Head>
+
       {/* INTRO */}
       <ProductIntroSection
-        title={processNode.h1 || `${productTitle} · ${cutTitle} · ${processTitle}`}
+        title={
+          processNode.h1 ||
+          `${productTitle} · ${cutTitle} · ${processTitle}`
+        }
         intro={processIntro}
         title2={processNode.title2 || undefined}
         intro2={processNode.intro2 || undefined}
-        span=""
+        span={span || ""}
         heroSrc={heroSrc}
         alt={heroAlt}
         prefix={prefix}
         baseHref={`${prefix}/${baseSegment}`}
         crumbHome={locale.startsWith("tr") ? "Ana Sayfa" : "Home"}
-        crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
+        crumbProducts={
+          locale.startsWith("tr") ? "Traverten" : "Travertine"
+        }
         depth={3}
       />
 
-        <BreadcrumbsExact
-              prefix={prefix}
-              baseHref={baseHref}
-              crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
-              crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
-              selectedSegments={selectedSegments}
-              className="mt-6"
-               items={items}
-            />
+      <BreadcrumbsExact
+        prefix={prefix}
+        baseHref={baseHref}
+        crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
+        crumbProducts={locale === "tr" ? "Traverten" : "Travertine"}
+        selectedSegments={selectedSegments}
+        className="mt-6"
+        items={items}
+      />
 
       {/* INFO CARDS */}
-     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
-  {cards.map((c, i) => {
-    const plain =
-      typeof c.content === "string"
-        ? c.content
-        : Array.isArray(c.content)
-        ? c.content.join(", ")
-        : "";
+      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+        {cards.map((c, i) => {
+          const plain =
+            typeof c.content === "string"
+              ? c.content
+              : Array.isArray(c.content)
+              ? c.content.join(", ")
+              : "";
 
-    return (
-      <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
-        {/* 2. kart: cut / process linkleri */}
-        {i === 1 ? (
-          <InlineLinks
-            text={plain}
-            patterns={linkPatterns}
-            textClassName={cardTextClass}
+          return (
+            <InfoCard
+              key={i}
+              title={c.title}
+              contentClassName={cardTextClass}
+            >
+              {i === 1 ? (
+                <InlineLinks
+                  text={plain}
+                  patterns={linkPatterns}
+                  textClassName={cardTextClass}
+                  linkClassName="font-semibold"
+                />
+              ) : i === 2 && isSizeDriven ? (
+                <InlineLinks
+                  text={plain}
+                  patterns={sizeLinkPatterns}
+                  textClassName={cardTextClass}
+                  linkClassName="font-semibold"
+                />
+              ) : (
+                <span className={cardTextClass}>{plain}</span>
+              )}
+            </InfoCard>
+          );
+        })}
+      </section>
+
+      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">
+        {variantHeader}
+      </h2>
+      <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2">
+        {variantText}
+      </p>
+
+      {/* COLOR / SIZE SEÇİMİ */}
+      <VariantCircleSection
+        heading={
+          isSizeDriven
+            ? locale.startsWith("tr")
+              ? "Mevcut Ölçüler"
+              : "Available Sizes"
+            : `${processTitle} ${
+                locale.startsWith("tr") ? "Renkleri" : "Colors"
+              }`
+        }
+        variantCards={isSizeDriven ? sizeCards : colorCards}
+        imgMap={isSizeDriven ? { cover: heroSrc } : colorImgMap}
+        heroSrc={heroSrc}
+        IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
+        productKey={isSizeDriven ? `${productKey}-sizes` : "color"}
+      />
+
+      {/* METİN BLOKLARI */}
+      {textSections.length > 0 &&
+        textSections.map(({ id, title, paragraphs }) => (
+          <TextSection
+            key={id}
+            title={title}
+            paragraphs={paragraphs}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"
           />
-        ) : i === 2 && isSizeDriven ? (
-          // 3. kart: tiles / pavers ise ölçüleri linke çevir
-          <InlineLinks
-            text={plain}
-            patterns={sizeLinkPatterns}
-            textClassName={cardTextClass}
-          />
-        ) : (
-          <span className={cardTextClass}>{plain}</span>
-        )}
-      </InfoCard>
-    );
-  })}
-</section>
+        ))}
 
-
-       <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
-<p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2"> {variantText}</p>
-
-      {/* COLOR SEÇİMİ */}
-<VariantCircleSection
-  heading={
-    isSizeDriven
-      ? (locale.startsWith("tr") ? "Mevcut Ölçüler" : "Available Sizes")
-      : `${processTitle} ${locale.startsWith("tr") ? "Renkleri" : "Colors"}`
-  }
-  variantCards={isSizeDriven ? sizeCards : colorCards}
-  imgMap={isSizeDriven ? { cover: heroSrc } : colorImgMap}
-  heroSrc={heroSrc}
-  IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
-  productKey={isSizeDriven ? `${productKey}-sizes` : "color"}
-/>
-
-
-
-      {/* Metin / CTA */}
-{textSections.length > 0 && textSections.map(({ id, title, paragraphs }) => (
-  <TextSection
-    key={id}
-    title={title}
-    paragraphs={paragraphs}
-    className="max-w-5xl mx-auto mt-12"
-    clampMobile={3}
-    as="section"
-  />
-))}
-
-         {faqItems.length > 0 && (
+      {/* FAQ */}
+      {faqItems.length > 0 && (
         <div id="faq" className="max-w-5xl mx-auto mt-12">
           <QuestionsSection items={faqItems} span={cutTitle} />
         </div>
       )}
-      
-      <SocialMediaSection/>
-  
+
+      <SocialMediaSection />
       <ContactFrom />
-      
+
       <OtherOptions
-  locale={locale}
-  heading={locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"}
-  customItems={otherProcessCards}
-  // İstersen 3 kart tek satır
-  gridClassName="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center"
-/>
+        locale={locale}
+        heading={
+          locale.startsWith("tr") ? "Diğer İşlemler" : "Other Processes"
+        }
+        customItems={otherProcessCards}
+        gridClassName="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center"
+      />
     </main>
   );
 }

@@ -752,8 +752,8 @@ export const IMAGE_BY_PRODUCT = {
                 "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled.webp",
                 "unfilled:tumbled":  "/images/new/slab/antico/tumbledveincutunfilled.webp",
                 "natural": "/images/new/slab/antico/Antikveincut.webp", 
-                "filled-natural": "/images/new/slab/antico/Antikveincut.webp",
-                "unfillednatural": "/images/new/slab/antico/Antikveincut.webp"
+                "filled:natural": "/images/new/slab/antico/Antikveincut.webp",
+                "unfilled:natural": "/images/new/slab/antico/Antikveincut.webp"
       },
       "cross-cut": {
                 "filled:honed":"/images/new/slab/antico/antikocrosshonedfilled.webp",
@@ -765,8 +765,8 @@ export const IMAGE_BY_PRODUCT = {
                 "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled.webp",
                 "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled.webp",
                 "natural": "/images/new/slab/antico/Antikcrosscut.webp",
-                "filled-natural": "/images/new/slab/antico/Antikcrosscut.webp",
-                "unfillednatural": "/images/new/slab/antico/Antikcrosscut.webp"
+                "filled:natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "unfilled:natural": "/images/new/slab/antico/Antikcrosscut.webp"
       }
     },
 
@@ -819,14 +819,14 @@ export const IMAGE_BY_PRODUCT = {
         },
 
          "filled:natural": {
-          ivory:  [galleryIvoryVeincutFilledNatural1, galleryIvoryVeincutFilledNatural2, galleryIvoryVeincutFilledNatural3],
-          light:  [galleryLightVeincutFilledNatural1, galleryLightVeincutFilledNatural2, galleryLightVeincutFilledNatural3],
-          antico: [galleryAnticoVeincutFilledNatural1, galleryAnticoVeincutFilledNatural2, galleryAnticoVeincutFilledNatural3],
+          ivory:  ["/images/slabs/newIvory.webp", galleryIvoryVeincutFilledNatural1, galleryIvoryVeincutFilledNatural2, galleryIvoryVeincutFilledNatural3],
+          light:  ["/images/slabs/newLight.webp", galleryLightVeincutFilledNatural1, galleryLightVeincutFilledNatural2, galleryLightVeincutFilledNatural3],
+          antico: ["/images/slabs/newAntiko.webp", galleryAnticoVeincutFilledNatural1, galleryAnticoVeincutFilledNatural2, galleryAnticoVeincutFilledNatural3],
         },
         "unfilled:natural": {
-             ivory:  [galleryIvoryVeincutUnfilledNatural1, galleryIvoryVeincutUnfilledNatural2, galleryIvoryVeincutUnfilledNatural3],
-          light:  [galleryLightVeincutUnfilledNatural1, galleryLightVeincutUnfilledNatural2, galleryLightVeincutUnfilledNatural3],
-          antico: [galleryAnticoVeincutUnfilledNatural1, galleryAnticoVeincutUnfilledNatural2, galleryAnticoVeincutUnfilledNatural3],
+             ivory:  ["/images/slabs/newIvory.webp", galleryIvoryVeincutUnfilledNatural1, galleryIvoryVeincutUnfilledNatural2, galleryIvoryVeincutUnfilledNatural3],
+          light:  ["/images/slabs/newLight.webp", galleryLightVeincutUnfilledNatural1, galleryLightVeincutUnfilledNatural2, galleryLightVeincutUnfilledNatural3],
+          antico: ["/images/slabs/newAntiko.webp", galleryAnticoVeincutUnfilledNatural1, galleryAnticoVeincutUnfilledNatural2, galleryAnticoVeincutUnfilledNatural3],
         },
       },
 

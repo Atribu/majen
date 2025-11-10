@@ -103,26 +103,46 @@ function buildBlogHref(locale, raw = "") {
 }
 
 
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "BlogIndex" });
-  const title = t("title", { default: "Travertine Blog" });
-  const description = t("intro", { default: "Guides and insights…" }).slice(0, 160);
-  const canonical = `${SITE_URL}/${locale}/blog`;
-  
+
+  const title = t("title", { default: "Travertine Blog – Majen Quarry" });
+  const description = t("intro", { default: "Guides and insights on travertine and stone design." }).slice(0, 160);
+
+  // ✅ Canonical ve alternates tam URL ile (yapı bozulmadan)
+  const canonical = `https://majen.com.tr/${locale}/blog`;
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: { en: `${SITE_URL}/en/blog`, tr: `${SITE_URL}/tr/blog` },
+      languages: {
+        en: "https://majen.com.tr/en/blog",
+        tr: "https://majen.com.tr/tr/blog",
+        "x-default": "https://majen.com.tr/en/blog",
+      },
     },
-    openGraph: { title, description, url: canonical, type: "website", locale },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+      siteName: "Majen",
+      images: ["https://majen.com.tr/og/blog.jpg"],
+      locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://majen.com.tr/og/blog.jpg"],
+    },
     robots: { index: true, follow: true },
   };
 }
+
 
 // Pagination Component
 function Pagination({ currentPage, totalPages, locale }) {

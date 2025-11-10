@@ -109,7 +109,7 @@ function makeSeoMeta(srcModule, category /* "blocks" | "slabs" | ... */) {
 
   const defaults = {
     tiles:   "Travertine Tiles",
-    special: "Travertine Special Designs",
+    special: "Travertine Pavers",
     export:  "Travertine Export & Logistics",
     general: "Travertine Gallery",
   };

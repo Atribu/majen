@@ -10088,6 +10088,11 @@
       "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
       "pavers": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
     },
+    "variants": {
+    "processes": "İşlemler",
+    "size": "Ebat",
+    "color": "Renk"
+  },
      "variantSentence": {
       "blocks": {
         "start": "As Majen, we offer Travertine Blocks in varieties such as"
@@ -13317,6 +13322,7 @@
     "explore": {
       "title": "Ürünler & İhracat",
       "blocks": "Traverten Blok",
+      "block": "Traverten Blok",
       "slabs": "Traverten Plaka",
       "tiles": "Traverten Karo",
       "export": "Nasıl İhraç Ediyoruz"
@@ -13340,7 +13346,14 @@
       "q3": "Do you offer cut-to-size production?",
       "a3": "Yes, we supply slabs, tiles and custom cut-to-size elements upon request."
     }
-  }
+  },
+
+    "ContactPage": {
+    "seo": {
+      "title": "Majen Traverten ile İletişime Geçin | Türkiye Traverten Tedarikçisi",
+      "description": "Traverten blok, plaka veya karo talepleriniz için Majen ile iletişime geçin. Fiyat, stok, FOB/CIF/EXW ihracat seçenekleri hakkında bilgi alın."
+    }
+     }
   
 
   
