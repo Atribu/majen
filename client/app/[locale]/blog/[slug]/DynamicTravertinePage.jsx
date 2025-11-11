@@ -14,6 +14,7 @@ import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaS
    HELPERS: route slug → pages key
 -------------------------------------------- */
 // URL'den gelen slug'ı sadeleştir (locale/blog/travertines öneklerini at)
+// URL'den gelen slug'ı sadeleştir (locale/blog/travertines öneklerini at)
 function normalizeRouteSlug(raw = "") {
   return String(raw)
     .trim()
@@ -23,10 +24,134 @@ function normalizeRouteSlug(raw = "") {
     .replace(/^travertines?\//i, "")
     .toLowerCase();
 }
-// blog.pages anahtarları -guide içermez → travertine-tiles-guide → travertine-tiles
+
+// Eski: sadece -guide'ı kesiyordu
 function pageKeyFromSlug(routeSlug = "") {
   return String(routeSlug).replace(/-guide$/, "");
 }
+
+// ✅ Yeni: locale + routeSlug → içerik key (blog.pages içindeki anahtar)
+function resolvePageKey(locale, slug) {
+  const lang = String(locale || "en").toLowerCase().split("-")[0];
+
+  // 1) route slug'ı normalize et + '-guide' kuyruğunu at
+  const base = pageKeyFromSlug(normalizeRouteSlug(slug));
+
+  // 2) Locale'e göre özel eşleştirme tablosu
+   const MAP = {
+    en: {
+      // Guide tarzı URL'ler
+      "travertine-guide": "travertine-guide",
+
+      "travertine-tiles": "travertine-tiles",
+      "travertine-slabs": "travertine-slabs",
+      "travertine-blocks": "travertine-blocks",
+      "travertine-pavers": "travertine-pavers",
+      "travertine-mosaics": "travertine-mosaics",
+
+      "polished-travertine": "polished-travertine",
+      "honed-travertine": "honed-travertine",
+      "tumbled-travertine": "tumbled-travertine",
+      "brushed-travertine": "brushed-travertine",
+      "filled-travertine": "filled-travertine",
+      "unfilled-travertine": "unfilled-travertine",
+
+      "ivory-travertine": "ivory-travertine",
+      "light-travertine": "light-travertine",
+      "antico-travertine": "antico-travertine",
+
+      "travertine-flooring": "travertine-flooring",
+      "travertine-cladding": "travertine-cladding",
+      "travertine-facade": "travertine-facade",
+      "travertine-bathroom": "travertine-bathroom",
+      "travertine-kitchen": "travertine-kitchen",
+      "travertine-pool": "travertine-pool",
+
+      "travertine-turkey": "travertine-turkey",
+      "turkish-travertine": "turkish-travertine",
+      "travertine-quarry": "travertine-quarry",
+      "travertine-supplier": "travertine-supplier",
+      "travertine-exporter": "travertine-exporter",
+      "travertine-manufacturer": "travertine-manufacturer",
+      "travertine-distributor": "travertine-distributor",
+    },
+
+    tr: {
+      // /tr/traverten-rehberi  → travertine-guide
+      "traverten-rehberi": "travertine-guide",
+
+      // Ürün rehberleri
+      // /tr/karo-traverten-rehberi             → travertine-tiles
+      "karo-traverten-rehberi": "travertine-tiles",
+      // /tr/traverten-plakalar-rehberi         → travertine-slabs
+      "traverten-plakalar-rehberi": "travertine-slabs",
+      // /tr/traverten-bloklar-rehberi          → travertine-blocks
+      "traverten-bloklar-rehberi": "travertine-blocks",
+      // /tr/traverten-dosemeler-rehberi        → travertine-pavers
+      "traverten-dosemeler-rehberi": "travertine-pavers",
+      // /tr/traverten-mozaik-rehberi           → travertine-mosaics
+      "traverten-mozaik-rehberi": "travertine-mosaics",
+
+      // Yüzey işlemleri
+      // /tr/parlak-traverten-rehberi           → polished-travertine
+      "parlak-traverten-rehberi": "polished-travertine",
+      // /tr/honlanmis-traverten                → honed-travertine
+      "honlanmis-traverten": "honed-travertine",
+      // /tr/eskitilmis-traverten               → tumbled-travertine
+      "eskitilmis-traverten": "tumbled-travertine",
+      // /tr/fircalanmis-traverten              → brushed-travertine
+      "fircalanmis-traverten": "brushed-travertine",
+      // /tr/dolgulu-traverten                  → filled-travertine
+      "dolgulu-traverten": "filled-travertine",
+      // /tr/dolgusuz-traverten                 → unfilled-travertine
+      "dolgusuz-traverten": "unfilled-travertine",
+
+      // Renkler
+      // /tr/fildisi-traverten                  → ivory-travertine
+      "fildisi-traverten": "ivory-travertine",
+      // /tr/acik-traverten                     → light-travertine
+      "acik-traverten": "light-travertine",
+      // /tr/antiko-traverten                   → antico-travertine
+      "antiko-traverten": "antico-travertine",
+
+      // Uygulamalar
+      // /tr/traverten-zemin-kaplama            → travertine-flooring
+      "traverten-zemin-kaplama": "travertine-flooring",
+      // /tr/traverten-kaplama                  → travertine-cladding
+      "traverten-kaplama": "travertine-cladding",
+      // /tr/traverten-cephe                    → travertine-facade
+      "traverten-cephe": "travertine-facade",
+      // /tr/traverten-banyo                    → travertine-bathroom
+      "traverten-banyo": "travertine-bathroom",
+      // /tr/traverten-mutfak                   → travertine-kitchen
+      "traverten-mutfak": "travertine-kitchen",
+      // /tr/traverten-havuz                    → travertine-pool
+      "traverten-havuz": "travertine-pool",
+
+      // Ülke / tedarik / üretim zinciri
+      // /tr/turkiye-traverteni                 → travertine-turkey
+      "turkiye-traverteni": "travertine-turkey",
+      // /tr/turk-traverteni                    → turkish-travertine
+      "turk-traverteni": "turkish-travertine",
+      // /tr/traverten-ocagi                    → travertine-quarry
+      "traverten-ocagi": "travertine-quarry",
+      // /tr/traverten-tedarikcisi              → travertine-supplier
+      "traverten-tedarikcisi": "travertine-supplier",
+      // /tr/traverten-ihracatcisi              → travertine-exporter
+      "traverten-ihracatcisi": "travertine-exporter",
+      // /tr/traverten-ureticisi                → travertine-manufacturer
+      "traverten-ureticisi": "travertine-manufacturer",
+      // /tr/traverten-dagiticisi               → travertine-distributor
+      "traverten-dagiticisi": "travertine-distributor",
+    },
+  };
+
+  const table = MAP[lang] || {};
+
+  // 3) Map'te varsa onu kullan, yoksa base'i doğrudan key olarak kullan
+  return table[base] || base;
+}
+
 
 /* -------------------------------------------
    UI helpers
@@ -82,10 +207,12 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   const t = useTranslations("blog"); // blog.common.* ve blog.pages.* için
 
   // 1) Route slug normalize → pages key üret
-  const routeSlug = normalizeRouteSlug(slug || "travertine-tiles-guide");
-  const pageKey = pageKeyFromSlug(routeSlug);
+  const routeSlug = slug || "travertine-tiles-guide";
 
-  // 2) İçerik kaynağı: blog.pages[pageKey]
+  // 2) Locale + slug → içerik key'i
+  const pageKey = resolvePageKey(locale, routeSlug);
+
+  // 3) İçerik kaynağı: blog.pages[pageKey]
   const pagesObj = t.raw?.("pages") || {};
   const pageRaw = pagesObj[pageKey];
 

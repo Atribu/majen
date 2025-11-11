@@ -8,24 +8,59 @@ import Image from "next/image";
 import Link from "next/link";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/export/fob.jpg`;
 
-export const metadata = {
-  title: "CIF Travertine Export From Turkey | Majen Quarry Supplier",
-  description:
-    "Majen exports travertine with CIF terms from Turkey. Learn how Cost, Insurance & Freight works for blocks, slabs and tiles: process, documents, packaging, ports and timelines.",
-  alternates: { canonical: "https://majen.com.tr/en/export/cif-travertine" },
-  openGraph: {
-    title: "CIF Travertine Export From Turkey | Majen",
-    description:
-      "CIF shipping for travertine: we manage freight, insurance and documentation to your destination port.",
-    url: "https://majen.com.tr/en/export/cif-travertine",
-    type: "article",
-    images: ["/images/export/CIF.webp"],
-  },
-  twitter: { card: "summary_large_image" },
-};
+// app/[locale]/howweexport/cif/page.jsx
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const isTR = locale === "tr";
+
+  // URL slug'ları locale'e göre
+  const slugPath = isTR
+    ? "nasil-ihracat-yapiyoruz/cif"
+    : "how-we-export/cif";
+
+  const canonicalUrl = `${SITE_URL}/${locale}/${slugPath}`;
+
+  const title = isTR
+    ? "Türkiye'den CIF Traverten İhracatı | Majen Ocak Tedarikçisi"
+    : "CIF Travertine Export From Turkey | Majen Quarry Supplier";
+
+  const description = isTR
+    ? "Majen, Türkiye'den CIF şartlarıyla traverten blok, plaka ve karo ihraç eder. Cost, Insurance & Freight süreci, dokümanlar, paketleme, limanlar ve teslim süreleri hakkında bilgi alın."
+    : "Majen exports travertine with CIF terms from Turkey. Learn how Cost, Insurance & Freight works for blocks, slabs and tiles: process, documents, packaging, ports and timelines.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${SITE_URL}/en/how-we-export/cif`,
+        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz/cif`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      locale,
+      images: [{ url: `${SITE_URL}/images/export/CIF.webp` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE_URL}/images/export/CIF.webp`],
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
 
 export default async function Page({ params }) {
      const { locale } = await params;

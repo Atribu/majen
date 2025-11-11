@@ -11,21 +11,52 @@ import ContactFrom from '../../components/generalcomponent/ContactFrom';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/export/fob.jpg`;
 
-export const metadata = {
-  title: "EXW Travertine Export From Turkey | Ex Works Pickup – Majen",
-  description:
-    "EXW (Ex Works) Travertine from Turkey: buyers pick up directly from Majen quarry/warehouse. Process, documents, packaging, pickup locations, lead times, and FAQs.",
-  alternates: { canonical: "https://majen.com.tr/en/export/exw-travertine" },
-  openGraph: {
-    title: "EXW Travertine Export From Turkey | Majen",
-    description:
-      "Ex Works pickup for travertine blocks, slabs and tiles. How EXW works, documentation, packaging, pickup points and timelines.",
-    url: "https://majen.com.tr/en/export/exw-travertine",
-    type: "article",
-    images: ["/images/export/EXW.webp"],
-  },
-  twitter: { card: "summary_large_image" },
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const isTR = locale === "tr";
+
+  // URL slug'ları locale'e göre
+  const slugPath = isTR
+    ? "nasil-ihracat-yapiyoruz/exw"
+    : "how-we-export/exw";
+
+  const canonicalUrl = `${SITE_URL}/${locale}/${slugPath}`;
+
+  const title = isTR
+    ? "EXW Traverten İhracatı | Ocaktan Teslim – Majen"
+    : "EXW Travertine Export From Turkey | Ex Works Pickup – Majen";
+
+  const description = isTR
+    ? "EXW (Ex Works) traverten: Alıcılar ürünü doğrudan Majen ocağından/deposundan teslim alır. Süreç, dokümanlar, paketleme, teslim noktaları ve terminler hakkında bilgi alın."
+    : "EXW (Ex Works) travertine from Turkey: buyers pick up directly from Majen quarry/warehouse. Process, documents, packaging, pickup locations, lead times, and FAQs.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${SITE_URL}/en/how-we-export/exw`,
+        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz/exw`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      locale,
+      images: [{ url: `${SITE_URL}/images/export/EXW.webp` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE_URL}/images/export/EXW.webp`],
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function Page({ params }) {
      const { locale } = await params;

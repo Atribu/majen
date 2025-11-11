@@ -10,23 +10,57 @@ import QuestionsSection from "../../components/generalcomponent/QuestionsSection
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
-const OG_IMAGE = `${SITE_URL}/images/export/fob.jpg`;
 
-export const metadata = {
-  title: "FOB Travertine Export From Turkey | Majen Quarry Supplier",
-  description:
-    "Majen exports travertine blocks, slabs and tiles with FOB shipping from Turkey. Learn how Free On Board works, container loading, documents, ports and why importers choose FOB.",
-  alternates: { canonical: "https://majen.com.tr/en/export/fob-travertine" },
-  openGraph: {
-    title: "FOB Travertine Export From Turkey | Majen",
-    description:
-      "FOB shipping for travertine from Turkey: process, documents, packaging, ports and lead times.",
-    url: "https://majen.com.tr/en/export/fob-travertine",
-    type: "article",
-    images: ["/images/export/FOB.webp"],
-  },
-  twitter: { card: "summary_large_image" },
-};
+// ❌ BU SATIRI SİLİN - Static metadata kullanmayın!
+// export const metadata = { ... }
+
+// ✅ YENİ: Dynamic generateMetadata ekleyin
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const isTR = locale === "tr";
+
+  // URL slug'ları locale'e göre
+  const slugPath = isTR 
+    ? "nasil-ihracat-yapiyoruz/fob" 
+    : "how-we-export/fob";
+
+  const canonicalUrl = `${SITE_URL}/${locale}/${slugPath}`;
+
+  const title = isTR
+    ? "Türkiye'den FOB Traverten İhracatı | Majen Ocak Tedarikçisi"
+    : "FOB Travertine Export From Turkey | Majen Quarry Supplier";
+
+  const description = isTR
+    ? "Majen, Türkiye'den FOB şartlarıyla traverten blok, plaka ve karo ihraç eder. Free On Board süreci, dokümanlar, paketleme ve limanlar."
+    : "Majen exports travertine blocks, slabs and tiles with FOB shipping from Turkey. Learn how Free On Board works, container loading, documents, ports and why importers choose FOB.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${SITE_URL}/en/how-we-export/fob`,
+        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz/fob`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      locale,
+      images: [{ url: `${SITE_URL}/images/export/FOB.webp` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE_URL}/images/export/FOB.webp`],
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function Page({ params }) {
   const { locale } = await params;

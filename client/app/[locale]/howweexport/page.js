@@ -15,68 +15,64 @@ import ExportMethodsShowcase from "./ExportMethodsShowcase";
 import Link from "next/link";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
-const OG_IMAGE = `${SITE_URL}/images/export/export-hero.webp`;
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
+  const isTR = locale === "tr";
 
-  const title =
-    locale === "tr"
-      ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
-      : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
+  const title = isTR
+    ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
+    : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
 
-  const description =
-    locale === "tr"
-      ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
-      : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
+  const description = isTR
+    ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
+    : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
 
-  // ✅ Canonical tam domainle (diğer sayfalarla tutarlı)
-  const canonical =
-    locale === "tr"
-      ? "https://majen.com.tr/tr/howweexport"
-      : "https://majen.com.tr/en/howweexport";
+  // ✅ DÜZELTME: Doğru URL'ler
+  const slugPath = isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export";
+  const canonical = `${SITE_URL}/${locale}/${slugPath}`;
 
   return {
     title,
     description,
     alternates: {
-      canonical,
+      canonical, // ✅ Artık doğru URL'e işaret ediyor
       languages: {
-        en: "https://majen.com.tr/en/howweexport",
-        tr: "https://majen.com.tr/tr/howweexport",
-        "x-default": "https://majen.com.tr/en/howweexport",
+        en: `${SITE_URL}/en/how-we-export`,
+        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz`,
+        "x-default": `${SITE_URL}/en/how-we-export`,
       },
     },
     openGraph: {
       title,
       description,
-      url: canonical,
+      url: canonical, // ✅ Burada da düzeltildi
       type: "article",
       locale,
-      images: [{ url: "https://majen.com.tr/images/export/export-hero.webp" }],
+      images: [{ url: `${SITE_URL}/images/export/export-hero.webp` }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["https://majen.com.tr/images/export/export-hero.webp"],
+      images: [`${SITE_URL}/images/export/export-hero.webp`],
     },
     robots: { index: true, follow: true },
   };
 }
 
-
 export default async function Page({ params }) {
   const { locale } = await params;
+  const isTR = locale === "tr";
 
-  const t  = await getTranslations({ locale, namespace: "HowWeExportPage" });
+  const t = await getTranslations({ locale, namespace: "HowWeExportPage" });
   const tQ = await getTranslations({ locale, namespace: "HowWeExportPage.Questions" });
   const tS = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection1" });
   const tS2 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection2" });
   const tS3 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection3" });
   const tS4 = await getTranslations({ locale, namespace: "HowWeExportPage.TextSection4" });
   const tS5 = await getTranslations({ locale, namespace: "HowWeExportPage.ThreeUpShowcase" });
-   const tS6 = await getTranslations({ locale, namespace: "HowWeExportPage.Links" });
+  const tS6 = await getTranslations({ locale, namespace: "HowWeExportPage.Links" });
 
   const items = [
     { q: tQ("q1"), a: tQ("answer1") },
@@ -86,17 +82,10 @@ export default async function Page({ params }) {
     { q: tQ("q5"), a: tQ("answer5") },
   ];
 
-  const schemaArticle = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Travertine from Turkey",
-    author: { "@type": "Organization", name: "Majen" },
-    publisher: { "@type": "Organization", name: "Majen" },
-  };
-
-  const isTR = locale === "tr";
-  const homeUrl = isTR ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
-  const pageUrl = isTR ? `${SITE_URL}/tr/howweexport` : `${SITE_URL}/en/howweexport`;
+  // ✅ DÜZELTME: URL'ler
+  const slugPath = isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export";
+  const homeUrl = `${SITE_URL}/${locale}`;
+  const pageUrl = `${SITE_URL}/${locale}/${slugPath}`;
 
   // Breadcrumb JSON-LD
   const breadcrumbJSONLD = {
@@ -107,15 +96,15 @@ export default async function Page({ params }) {
         "@type": "ListItem",
         position: 1,
         name: isTR ? "Ana Sayfa" : "Home",
-        item: homeUrl
+        item: homeUrl,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: isTR ? "İhracat Yöntemlerimiz" : "How We Export",
-        item: pageUrl
-      }
-    ]
+        name: isTR ? "Nasıl İhracat Yapıyoruz" : "How We Export",
+        item: pageUrl,
+      },
+    ],
   };
 
   // WebPage JSON-LD
@@ -127,7 +116,7 @@ export default async function Page({ params }) {
       ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, dokümantasyon, paketleme ve güvenilir teslimat."
       : "Learn how Majen exports travertine worldwide. FOB/CIF shipping, documentation, packaging, and reliable delivery.",
     publisher: { "@type": "Organization", name: "Majen", url: SITE_URL },
-    mainEntityOfPage: pageUrl
+    mainEntityOfPage: pageUrl,
   };
 
   // FAQ JSON-LD
@@ -137,15 +126,13 @@ export default async function Page({ params }) {
     mainEntity: items.map(({ q, a }) => ({
       "@type": "Question",
       name: q,
-      acceptedAnswer: { "@type": "Answer", text: a }
-    }))
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
   };
 
-
-
   return (
-   <section className="flex flex-col w-screen items-center justify-center overflow-hidden">
-     <IntroSection
+    <section className="flex flex-col w-screen items-center justify-center overflow-hidden">
+      <IntroSection
         title={t("title")}
         intro={t("intro")}
         title2={t("title2")}
@@ -156,111 +143,90 @@ export default async function Page({ params }) {
         bgPanel="/images/homepage/antikarkaplan4.webp"
         imageAlt={isTR ? "Traverten ihracat yöntemleri" : "Travertine export methods"}
         crumbHomeLabel={isTR ? "Ana Sayfa" : "Home"}
-        crumbHomeHref={isTR ? "/tr" : "/en"}
-        crumbSectionLabel={isTR ? "İhracat Yöntemlerimiz" : "Export Methods"}
-        crumbSectionHref={isTR ? "/tr/howweexport" : "/en/howweexport"}
+        crumbHomeHref={`/${locale}`}
+        crumbSectionLabel={isTR ? "Nasıl İhracat Yapıyoruz" : "How We Export"}
+        crumbSectionHref={`/${locale}/${slugPath}`}
         showBreadcrumb={true}
       />
 
- 
       <CardsSection />
 
       <ThreeUpShowcase
-      heading={tS5("title")}
-      description={tS5("text")}
-      items={[
-        {
-          img: img1,
-          alt: "Container loading at port (alt: FOB shipping for travertine from Turkey)",
-          title: tS5("list1"),
-          href: "/howweexport/fob",
-          cta: tS5("buttonText1"),
-        },
-        {
-          img: img2,
-          alt: "Ship at sea (alt: CIF shipment with insurance & freight included)",
-          title: tS5("list2"),
-          href: "/howweexport/cif",
-          cta: tS5("buttonText2"),
-        },
-        {
-          img: img3,
-          alt: "Export docs (alt: Export documents: invoice, packing list, certificate of origin)",
-          title: tS5("list3"),
-          href: "/howweexport/exw",
-          cta: tS5("buttonText3"),
-        }
-      ]}
-    />
+        heading={tS5("title")}
+        description={tS5("text")}
+        items={[
+          {
+            img: img1,
+            alt: "Container loading at port",
+            title: tS5("list1"),
+            href: `/${locale}/${slugPath}/fob`, // ✅ Locale'e göre
+            cta: tS5("buttonText1"),
+          },
+          {
+            img: img2,
+            alt: "Ship at sea",
+            title: tS5("list2"),
+            href: `/${locale}/${slugPath}/cif`, // ✅ Locale'e göre
+            cta: tS5("buttonText2"),
+          },
+          {
+            img: img3,
+            alt: "Export documents",
+            title: tS5("list3"),
+            href: `/${locale}/${slugPath}/exw`, // ✅ Locale'e göre
+            cta: tS5("buttonText3"),
+          },
+        ]}
+      />
 
-      {/* <div className="max-w-[1100px] w-[95%] md:w-[80%] grid grid-cols-1 sm:grid-cols-2 items-center justify-center"> */}
-        <TextSection
+      <TextSection
         title={tS("title")}
-        paragraphs={[tS("text"), tS("list1"), tS("list2"), tS("list3"), tS("list4"),tS("list5")]}
-        schema={schemaArticle}
-        className="flex flex-col w-1/2 "
+        paragraphs={[tS("text"), tS("list1"), tS("list2"), tS("list3"), tS("list4"), tS("list5")]}
+        className="flex flex-col w-1/2"
         clampMobile={5}
-        as="section"/>
+        as="section"
+      />
 
       <TextSection
         title={tS2("title")}
-        paragraphs={[tS2("text"), tS2("list1"), tS2("list2"), tS2("list3"), tS2("list4"),tS2("list5")]}
-        schema={schemaArticle}
-         className="w-1/2"
+        paragraphs={[tS2("text"), tS2("list1"), tS2("list2"), tS2("list3"), tS2("list4"), tS2("list5")]}
+        className="w-1/2"
         clampMobile={5}
-        as="section"/>
+        as="section"
+      />
 
-         <TextSection
+      <TextSection
         title={tS3("title")}
-        paragraphs={[tS3("text"), tS3("list1"), tS3("list2"), tS3("list3"), tS3("list4"),tS3("list5"),tS3("list6")]}
-        schema={schemaArticle}
+        paragraphs={[tS3("text"), tS3("list1"), tS3("list2"), tS3("list3"), tS3("list4"), tS3("list5"), tS3("list6")]}
         className="max-w-5xl mx-auto mt-12"
         clampMobile={5}
         as="section"
       />
 
-        <TextSection
+      <TextSection
         title={tS4("title")}
         paragraphs={[tS4("text"), tS4("list1"), tS4("list2"), tS4("list3"), tS4("list4")]}
-        schema={schemaArticle}
         className="max-w-5xl mx-auto mt-12"
         clampMobile={5}
         as="section"
       />
-   
 
       <QuestionsSection items={items} span={isTR ? "İhracat" : "How We Export"} />
       <ContactFrom />
 
+      {/* ✅ DÜZELTME: Internal linkler locale'e göre */}
       <nav aria-label="Related links" className="text-sm text-neutral-600 my-8 text-center flex gap-3 items-center justify-center">
-  <Link href="/en/travertine/blocks">{tS6("link1")}</Link> •
-  <Link href="/en/travertine/slabs">{tS6("link2")}</Link> •
-  <Link href="/en/travertine/tiles">{tS6("link3")}</Link> •
-  <Link href="/en/travertine/special-designs">{tS6("link4")}</Link> •
-  <Link href="/en/how-we-export">{tS6("link5")}</Link>
-</nav>
+        <Link href={`/${locale}/${isTR ? "traverten" : "travertine"}/blocks`}>{tS6("link1")}</Link> •
+        <Link href={`/${locale}/${isTR ? "traverten" : "travertine"}/slabs`}>{tS6("link2")}</Link> •
+        <Link href={`/${locale}/${isTR ? "traverten" : "travertine"}/tiles`}>{tS6("link3")}</Link> •
+        <Link href={`/${locale}/${isTR ? "traverten" : "travertine"}/special-designs`}>{tS6("link4")}</Link> •
+        <Link href={`/${locale}/${slugPath}`}>{tS6("link5")}</Link>
+      </nav>
 
-
-      {/* JSON-LD: Breadcrumb */}
-      <Script
-        id="jsonld-how-breadcrumb"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJSONLD) }}
-      />
-
-      {/* JSON-LD: WebPage */}
-      <Script
-        id="jsonld-how-we-export"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJSONLD) }}
-      />
-
-      {/* JSON-LD: FAQ */}
-      <Script
-        id="jsonld-how-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJSONLD) }}
-      />
-   </section>
+      {/* JSON-LD Scripts */}
+      <Script id="jsonld-how-breadcrumb" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJSONLD) }} />
+      <Script id="jsonld-how-we-export" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJSONLD) }} />
+      <Script id="jsonld-how-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJSONLD) }} />
+    </section>
   );
 }

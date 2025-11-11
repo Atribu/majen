@@ -2,56 +2,53 @@
 import DynamicTravertinePage from "./DynamicTravertinePage";
 import { getTranslations } from "next-intl/server";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+const OG_IMAGE = `${SITE_URL}/images/export/export-hero.webp`;
+
 export async function generateMetadata({ params }) {
-  const { slug, locale } = await params;
-  const loc = locale || "en";
-  // JSON’daki başlık/açıklamayı okumaya çalış (başarısızsa fallback)
-  let metaTitle = "Travertine Guide";
-  let metaDesc =
-    "Explore travertine products: tiles, slabs, finishes, specs and care. Quarry-backed supplier.";
-  let ogImage = "https://majen.com.tr/media/travertine-tiles-hero.webp";
-  const canonical = `https://majen.com.tr/${loc}/blog/travertines/${slug}`;
+  const { locale } = await params;
+  const isTR = locale === "tr";
 
-  try {
-    const t = await getTranslations({ locale: loc, namespace: "blog" });
-    const pages = t.raw("pages");
-    const page = pages?.[slug];
-    if (page?.metaTitle) metaTitle = page.metaTitle;
-    if (page?.metaDesc) metaDesc = page.metaDesc;
-    if (page?.socialImage) ogImage = page.socialImage;
-  } catch {}
+  const title = isTR
+    ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
+    : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
 
-  // TR muadili yoksa sadece en + x-default
-  const alternates =
-    loc === "en"
-      ? {
-          canonical,
-          languages: {
-            en: canonical,
-            "x-default": canonical,
-          },
-        }
-      : {
-          canonical,
-        };
+  const description = isTR
+    ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
+    : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
+
+  // Bu URL’yi sadece OG/twitter için kullanıyoruz; canonical TAG YOK
+  const pagePath = isTR
+    ? "/tr/nasil-ihracat-yapiyoruz"
+    : "/en/how-we-export";
+  const pageUrl = `${SITE_URL}${pagePath}`;
 
   return {
-    title: metaTitle,
-    description: metaDesc,
-    alternates,
+    title,
+    description,
+    // 🔹 canonical YOK, sadece hreflang istersen bırakabilirsin:
+    alternates: {
+      languages: {
+        en: `${SITE_URL}/en/how-we-export`,
+        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz`,
+        "x-default": `${SITE_URL}/en/how-we-export`,
+      },
+    },
     openGraph: {
+      title,
+      description,
+      url: pageUrl,
       type: "article",
-      title: metaTitle,
-      description: metaDesc,
-      url: canonical,
-      images: [{ url: ogImage }],
+      locale,
+      images: [{ url: OG_IMAGE }],
     },
     twitter: {
       card: "summary_large_image",
-      title: metaTitle,
-      description: metaDesc,
-      images: [ogImage],
+      title,
+      description,
+      images: [OG_IMAGE],
     },
+    robots: { index: true, follow: true },
   };
 }
 

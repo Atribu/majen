@@ -91,16 +91,19 @@ function normalizePostSlug(raw = "") {
 
 
 function buildBlogHref(locale, raw = "") {
-  // Dış link ise dokunma
   if (/^https?:\/\//i.test(raw)) return raw;
 
   const slug = normalizePostSlug(raw);
-  if (slug === "travertine-guide") {
-   return `/${locale}/travertine-guide`;
+
+  // Özel rehber sayfası
+  if (slug === "travertine-guide" || slug === "traverten-rehberi") {
+    const seg = locale === "tr" ? "traverten-rehberi" : "travertine-guide";
+    return `/${locale}/${seg}`;
   }
+
   return `/${locale}/blog/${slug}`;
-  // return slug ? `/${locale}/blog/${slug}` : `/${locale}/blog`;
 }
+
 
 
 export async function generateMetadata({ params }) {

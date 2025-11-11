@@ -61,9 +61,10 @@ function buildLocalizedPath(path, targetLocale) {
   // 0) Sadece locale → /tr, /en
   if (!afterLocale) return `/${targetLocale}`;
 
-  // 0.5) ÖZEL SAYFA: travertine-guide sabit
-  if (afterLocale === "travertine-guide") {
-    return `/${targetLocale}/travertine-guide`;
+   // 0.5) ÖZEL SAYFA: travertine guide sayfası (EN & TR)
+  if (afterLocale === "travertine-guide" || afterLocale === "traverten-rehberi") {
+    const seg = targetLocale === "tr" ? "traverten-rehberi" : "travertine-guide";
+    return `/${targetLocale}/${seg}`;
   }
 
   // --- ÜRÜN ROOT (travertine-slabs / traverten-plakalar) ---

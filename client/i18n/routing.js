@@ -30,7 +30,10 @@ export const config = {
    '/blog/[slug]': { en: '/[slug]', tr: '/[slug]' },
 
    // ÖZEL SAYFA: dosya yapısı app/[locale]/travertine-guide/page.js
-   '/travertine-guide': { en: '/travertine-guide', tr: '/travertine-guide' },
+  '/travertine-guide': {
+  en: '/travertine-guide',
+  tr: '/traverten-rehberi',   // ✅ TR’de tam Türkçe slug
+},
 
     // Process(+fill) level → /en/filled-honed-vein-cut-travertine-slabs
     // [process] param'ı "filled-honed" veya "natural" gibi birleşik gelir (lib'te buildProcessSlug).

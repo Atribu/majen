@@ -20,10 +20,12 @@ const TR_PRODUCTS = new Set([
   'traverten-karolar',
   'traverten-dosemeler'
 ]);
+
 const EXEMPT_TOP_LEVEL = new Set([
-  'travertine-guide',
-  'gallery',  // en
-  'galeri',   // tr
+  'travertine-guide',    // en
+  'traverten-rehberi',   // tr ✅
+  'gallery',
+  'galeri',
 ]);
 
 const COLOR_KEY_FROM_ANY = new Map([

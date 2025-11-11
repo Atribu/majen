@@ -71,7 +71,7 @@ export async function generateMetadata({ params }) {
 
   const baseSegment = BASE_BY_LOCALE[locale]; // "travertine" | "traverten"
   const productSlug = PRODUCT_SLUGS[locale]?.[productKey] ?? product;
-  const canonicalPath = `/${locale}/${baseSegment}/${productSlug}`;
+    const canonicalPath = `/${locale}/${baseSegment}-${productSlug}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   // Başlık & açıklama: önce i18n → yoksa META_BY_PRODUCT fallback
