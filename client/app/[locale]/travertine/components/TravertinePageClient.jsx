@@ -173,7 +173,7 @@ export default function TravertinePageClient() {
       clampMobile={3}
       as="section"/>
 
-<ContactFrom />
+      <ContactFrom />
       <SocialMediaSection/>
       <QuestionsSection span="Export & Specs" items={items}/>
     

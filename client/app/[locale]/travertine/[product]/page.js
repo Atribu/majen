@@ -1,6 +1,7 @@
 // app/[locale]/(catalog)/product/page.jsx
 "use client";
 import { useParams, usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import React from "react";
 import { colorKeys, colorSlugFor, colorLabelFor } from "@/lib/travertine";
@@ -13,6 +14,7 @@ import {
   getLang,
   productUrl,
   cutSlugFor,
+  PRODUCT_SLUGS
 } from "@/lib/travertine";
 import blocks from "@/public/images/deneme/ivoryblok.webp";
 import slabs from "@/public/images/deneme/slabson.webp";
@@ -30,6 +32,46 @@ import VariantCircleSection2 from "../../components/products1/VariantCircleSecti
 import OtherOptions from "../../components/generalcomponent/OtherOptions";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
 
+// Ölçü yakalayıcı (hem "x" hem "×"; opsiyonel boşluklar; opsiyonel birim)
+const SIZE_RX = /(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)(?:\s*(?:cm|mm|in|["″]))?/gi;
+
+// metindeki ölçülerden (tekrar etmeyen) link pattern'ları üret
+// ölçü yakalayıcı yardımcı
+function buildSizePatternsFromText(text, { locale, productKey, cutSlugForProduct }) {
+  if (!text) return [];
+  const found = new Set();
+  const out = [];
+
+  const defaultProcSlug = locale.startsWith("tr") ? "dolgulu-honlanmis" : "filled-honed";
+  const defaultCutSlug  = cutSlugForProduct(locale, "vein-cut", productKey);
+
+  const safe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  // metindeki tüm "WxH" örneklerini kaba bir aramayla bul
+  const ROUGH = /(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)/gi;
+  let m;
+  while ((m = ROUGH.exec(text))) {
+    const w = m[1], h = m[2];
+    const sizeSlug = `${w}x${h}`;
+    if (found.has(sizeSlug)) continue;
+    found.add(sizeSlug);
+
+    // akıllı tırnakları her sayının hemen sonuna opsiyonel ekle
+    const variantRx = new RegExp(
+      `\\b${safe(w)}(?:["″”])?\\s*[x×]\\s*${safe(h)}(?:["″”])?(?:\\s*(?:cm|mm|in))?\\b`,
+      "gi"
+    );
+
+    out.push({
+      pattern: variantRx,
+      href: `/${locale}/${sizeSlug}-${defaultProcSlug}-${defaultCutSlug}`,
+    });
+  }
+  return out;
+}
+
+
+
 function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
     <div className="rounded-2xl bg-white shadow-[0_6px_24px_-10px_rgba(0,0,0,0.25)] ring-1 ring-neutral-200 p-5">
@@ -43,7 +85,14 @@ export default function ProductPage() {
   const { product } = useParams(); // bu, URL'deki product SLUG'ı (yerelleştirilmiş)
   const locale = useLocale();
   const lang = getLang(locale);
+
+  // 1) Sadece geçerli ürün slug’ları izinli:
+ const allowed = new Set(Object.values(PRODUCT_SLUGS[lang] || {})); // örn. {"blocks","slabs","tiles","pavers"}'ın localized halleri
+ const seg = String(product || "").toLowerCase();
+ if (!allowed.has(seg)) notFound();
+
   const t = useTranslations("ProductPage");
+  const validProducts = new Set(Object.values(PRODUCT_SLUGS[lang] || {})); 
 
 const opt = (key, fallback = "") => {
   try {
@@ -131,22 +180,28 @@ if (isBlocks) {
     const slug  = colorSlugFor(locale, ckey);             // "ivory" → "ivory" | "fildisi"
     const label = colorLabelFor(locale, ckey);  
      // Kısa SEO URL: /{locale}/{color}-travertine-blocks  (TR: /{locale}/{color}-traverten-bloklar)
-const pretty = locale.startsWith("tr")
-  ? `/${slug}-traverten-bloklar`
-  : `/${slug}-travertine-blocks`;
+ const pretty = locale.startsWith("tr")
+   ? `/${slug}-traverten-bloklar`
+   : `/${slug}-travertine-blocks`;
 
   // Görsel & YouTube (i18n → image map → fallback)
       const byVariantMap = (IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey] || {});
       const i18nImg = blockImages?.[ckey] || blockImages?.[slug];
       const mapImg  = byVariantMap?.[ckey] || byVariantMap?.[slug];
-      const image   = i18nImg || mapImg || (typeof imgMap === "object" ? imgMap?.[ckey] : undefined) || `/images/blocks/${slug}.jpg`;
+      const image   = i18nImg || mapImg ||
+   (typeof imgMap === "object" ? imgMap?.[ckey] : undefined) ||
+   `/images/blocks/${slug}.webp`;
       const youtubeUrl = blockYoutube?.[ckey] || blockYoutube?.[slug] || "";
 
     return {
       slug,
       vKey: ckey,
-      title: `Travertine Blocks Blaundos ${label}`,
-      description:`Travertine Blocks Blaundos ${label}`,
+      title: locale.startsWith("tr")
+   ? `Blaundos ${label} Traverten Blok`
+   : `Blaundos ${label} Travertine Blocks`,
+ description: locale.startsWith("tr")
+   ? `Blaundos ${label} traverten blok tedariki.`
+   : `Supply of Blaundos ${label} travertine blocks.`,
       // Yeni rota: /travertine/[product]/[color]
       // Yeni: kısa SEO link (string). Middleware bunu FS rotasına REWRITE edecek.
      href: pretty,
@@ -227,24 +282,51 @@ const pretty = locale.startsWith("tr")
   ];
 
   // ---- Inline link patternleri (metin içi “vein/cross” tıklanabilir)
-  const linkPatterns = [
-    {
-      pattern: /vein[- ]cut/i,
-      href: {
-        pathname: "/travertine/[product]/[cut]",
-        params: { product: productSlug, cut: cutSlugForProduct(locale, "vein-cut", productKey) }
-      }
-    },
-    {
-      pattern: /cross[- ]cut/i,
-      href: {
-        pathname: "/travertine/[product]/[cut]",
-        params: { product: productSlug, cut: cutSlugForProduct(locale, "cross-cut", productKey) }
-      }
-    },
-  ];
+const linkPatterns = locale.startsWith("tr")
+   ? [
+           {
+       pattern: /damar[- ]kesim/i,
+       href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(locale, "vein-cut", productKey)}`
+     },
+     {
+       pattern: /enine[- ]kesim/i,
+       href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(locale, "cross-cut", productKey)}`
+     },
+     ]
+   : [
+         {
+       pattern: /vein[- ]cut/i,
+       href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(locale, "vein-cut", productKey)}`
+     },
+     {
+       pattern: /cross[- ]cut/i,
+       href: `/${locale}/${baseSegment}/${productSlug}/${cutSlugForProduct(locale, "cross-cut", productKey)}`
+     }
+     ];
 
-  const heroAlt = `Wholesale Travertine ${productKey} from Turkey`;
+     // Ölçü bağlantı desenleri (tiles / pavers için)
+const TILE_SIZE_SLUGS_TILES = ["8″x8″", "10x20", "30x60", "40x80"];
+const TILE_SIZE_SLUGS_PAVERS = ["10x10", "20x20", "20x40"];
+const escapeRegExp = (s) => String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const defaultCutSlug = cutSlugForProduct(locale, "vein-cut", productKey);
+const defaultProcSlug = locale.startsWith("tr") ? "dolgulu-honlanmis" : "filled-honed";
+
+
+const isSizeDriven = productKey === "tiles" || productKey === "pavers";
+const sizeSlugListForThisProduct =
+  productKey === "tiles"
+    ? TILE_SIZE_SLUGS_TILES
+    : productKey === "pavers"
+    ? TILE_SIZE_SLUGS_PAVERS
+    : [];
+
+
+
+
+ const heroAlt = locale.startsWith("tr")
+   ? `Türkiye'den toptan traverten ${opt(`${productKey}.name`, productKey)}`
+   : `Wholesale travertine ${opt(`${productKey}.name`, productKey)} from Turkey`;
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
   // ---- Breadcrumb
@@ -256,11 +338,7 @@ const lastSeg   = segments.at(-1) ?? "";                    // örn: "vein-cut"
 const words     = lastSeg.split(/[-\s]+/).filter(Boolean);  // ["vein","cut"]
 
 // Sadece iki kelimeyse sonuncuyu al; değilse segmenti aynen bırak
-const lastWord  = (words.length === 2) ? words[1] : lastSeg;
-
-// Eğer breadcrumb’da son öğe olarak bunu göstereceksen:
-const selectedSegments = [...segments.slice(-1)];
-if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = lastWord;
+const selectedSegments = [...segments.slice(-1)]; // olduğu gibi kalsın
 
   // ---- Diğer seçenekler (çoğul anahtarlar!)
   const productAltMap = {
@@ -297,22 +375,44 @@ if (selectedSegments.length) selectedSegments[selectedSegments.length - 1] = las
       />
 
       {/* 4 BİLGİ KARTI */}
-      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
-        {cards.map((c, i) => {
-          const plain =
-            typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
+     <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+  {cards.map((c, i) => {
+    const plain =
+      typeof c.content === "string"
+        ? c.content
+        : Array.isArray(c.content)
+        ? c.content.join(", ")
+        : "";
 
-          return (
-            <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
-              {i === 1 ? (
-                <InlineLinks text={plain || ""} patterns={linkPatterns} textClassName={cardTextClass} />
-              ) : (
-                <span className={cardTextClass}>{plain}</span>
-              )}
-            </InfoCard>
-          );
-        })}
-      </section>
+    // 🔗 3. kart için (index 2): tiles/pavers ise ölçüleri linke çevir
+    const sizePatternsForThisText =
+      (productKey === "tiles" || productKey === "pavers")
+        ? buildSizePatternsFromText(plain, { locale, productKey, cutSlugForProduct })
+        : [];
+
+    return (
+      <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+        {i === 1 ? (
+          <InlineLinks
+            text={plain || ""}
+            patterns={linkPatterns}
+            textClassName={cardTextClass}
+          />
+        ) : i === 2 && sizePatternsForThisText.length > 0 ? (
+          <InlineLinks
+            text={plain || ""}
+            patterns={sizePatternsForThisText}
+            textClassName={cardTextClass}
+            linkClassName="font-semibold"
+          />
+        ) : (
+          <span className={cardTextClass}>{plain}</span>
+        )}
+      </InfoCard>
+    );
+  })}
+</section>
+
 
       {/* SLABS / TILES → Kesim seçimi */}
  {showCutSelection ? (

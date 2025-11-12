@@ -938,7 +938,8 @@ export default function ProcessPage() {
         })}
       </section>
 
-      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">
+     <section id="product-intro">
+       <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">
         {variantHeader}
       </h2>
       <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2">
@@ -962,6 +963,7 @@ export default function ProcessPage() {
         IMAGE_BY_PRODUCT_AND_VARIANT={undefined}
         productKey={isSizeDriven ? `${productKey}-sizes` : "color"}
       />
+     </section>
 
       {/* METİN BLOKLARI */}
       {textSections.length > 0 &&

@@ -11,10 +11,12 @@ import block from "@/public/images/homepage/Ivoryblok.webp";
 import slabs from "@/public/images/homepage/slabler2.webp";
 import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/homepage/Pavers3.webp";
+import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
 
 import { baseFor, productSlugFor, getLang } from "@/lib/travertine";
 
-function Card({ t, img, href, tKey }) {
+function Card({ t, img, href, tKey, linkPatterns }) {
+  
   return (
     <div className="group rounded-md bg-white z-[999]">
       <Link href={href} className="block relative aspect-[4/3] overflow-hidden">
@@ -30,9 +32,13 @@ function Card({ t, img, href, tKey }) {
         <h5 className="text-[16px] md:text-[20px] font-semibold text-[#0C1A13]">
           {t(`products.${tKey}.title`)}
         </h5>
-        <p className="mt-2 text-[12px] md:text-[14px] text-[#2a2a2a]">
-          {t(`products.${tKey}.description`)}
-        </p>
+                <InlineLinks
+          text={t(`products.${tKey}.description`) || ""}
+          patterns={linkPatterns || []}
+          textClassName="mt-2 text-[12px] md:text-[14px] text-[#2a2a2a]"
+          linkClassName="text-teal-700 font-semibold hover:underline"
+        />
+
         <div className="mt-4 flex gap-2 items-center justify-center">
           <Link
             href={href}
@@ -55,12 +61,93 @@ export default function InfoSection() {
   const shortBase = locale === "tr" ? "traverten" : "travertine"; 
   const contactPath = `${prefix}/${lang === "tr" ? "iletisim" : "contact"}`;
 
-  const items = [
-     { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "blocks")}`},
-    { key: "product2", img: slabs,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "slabs")}` },
-    { key: "product3", img: tiles,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "tiles")}`  },
-    { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "pavers")}` },
+  // ---- SEO kuyrukları ve renk map'leri (VC2 ile aynı mantık)
+  const PRODUCT_TAIL = locale.startsWith("tr")
+    ? { blocks:"traverten-bloklar", slabs:"traverten-plakalar", tiles:"traverten-karolar", pavers:"traverten-dosemeler" }
+    : { blocks:"travertine-blocks", slabs:"travertine-slabs",  tiles:"travertine-tiles",  pavers:"travertine-pavers" };
+  const COLOR_EN = { ivory:"ivory", light:"light", antico:"antico" };
+  const COLOR_TR = { ivory:"fildisi", light:"acik",  antico:"antiko" };
+  const colorSeo = (c) => (locale.startsWith("tr") ? COLOR_TR[c] : COLOR_EN[c]) || c;
+  const FILL = locale.startsWith("tr") ? { filled:"dolgulu" } : { filled:"filled" };
+  const FIN  = locale.startsWith("tr") ? { brushed:"fircalanmis" } : { brushed:"brushed" };
+  const CUT  = locale.startsWith("tr") ? { "vein-cut":"damar-kesim" } : { "vein-cut":"vein-cut" };
+
+  // slabs için VC2'deki default combo (filled + brushed + vein-cut)
+  const slabsDefaultHref = (color) => {
+    const c = colorSeo(color);
+    return `/${c}-${FILL.filled}-${FIN.brushed}-${CUT["vein-cut"]}-${PRODUCT_TAIL.slabs}`;
+  };
+  const blocksHref = (color) => `/${colorSeo(color)}-${PRODUCT_TAIL.blocks}`;
+
+  // VC2 ile birebir: anchor'lı variant linkleri
+  const TILES_VARIANT_LINKS = [
+    "/vein-cut-travertine-tiles#product-intro",
+    "/filled-honed-vein-cut-travertine-tiles#product-intro",
+    "/8x8-filled-honed-vein-cut-travertine-tiles#product-intro",
   ];
+  const PAVERS_VARIANT_LINKS = [
+    "/vein-cut-travertine-pavers#product-intro",
+    "/filled-honed-vein-cut-travertine-pavers#product-intro",
+    "/6x12-filled-honed-vein-cut-travertine-pavers#product-intro",
+  ];
+
+  // Ürün bazlı pattern üreticileri (EN/TR)
+  const makeColorPatterns = (product) => {
+    const H = product === "blocks" ? blocksHref : slabsDefaultHref;
+    return locale.startsWith("tr")
+      ? [
+          { pattern: /\bfild[iı]si\b/i, href: H("ivory") },
+          { pattern: /\bac[ıi]k\b/i,    href: H("light") },
+          { pattern: /\bantik[oö]\b/i,  href: H("antico") },
+        ]
+      : [
+          { pattern: /\bivory\b/i,   href: H("ivory") },
+          { pattern: /\blight\b/i,   href: H("light") },
+          { pattern: /\bantico\b/i,  href: H("antico") },
+        ];
+  };
+
+const makeTilesPatterns = () =>
+   locale.startsWith("tr")
+     ? [
+         { pattern: /\bi[iı]şlemler\b/i, href: TILES_VARIANT_LINKS[0] }, // processes
+         { pattern: /\brenk(ler)?\b/i,   href: TILES_VARIANT_LINKS[2] }, // color  -> SWAPPED
+         { pattern: /\b(öl[cç][üu]|ebat|format)(lar)?\b/i, href: TILES_VARIANT_LINKS[1] }, // size -> SWAPPED
+       ]
+     : [
+         { pattern: /\bprocess(es)?\b/i, href: TILES_VARIANT_LINKS[0] },
+         { pattern: /\bcolou?r(s)?\b/i,  href: TILES_VARIANT_LINKS[2] }, // color  -> SWAPPED
+         { pattern: /\bsize(s)?\b/i,     href: TILES_VARIANT_LINKS[1] }, // size -> SWAPPED
+       ];
+
+  const makePaversPatterns = () =>
+   locale.startsWith("tr")
+     ? [
+         { pattern: /\bi[iı]şlemler\b/i, href: PAVERS_VARIANT_LINKS[0] },
+         { pattern: /\brenk(ler)?\b/i,   href: PAVERS_VARIANT_LINKS[2] }, // color  -> SWAPPED
+         { pattern: /\b(öl[cç][üu]|ebat|format)(lar)?\b/i, href: PAVERS_VARIANT_LINKS[1] }, // size -> SWAPPED
+       ]
+     : [
+         { pattern: /\bprocess(es)?\b/i, href: PAVERS_VARIANT_LINKS[0] },
+         { pattern: /\bcolou?r(s)?\b/i,  href: PAVERS_VARIANT_LINKS[2] }, // color  -> SWAPPED
+         { pattern: /\bsize(s)?\b/i,     href: PAVERS_VARIANT_LINKS[1] }, // size -> SWAPPED
+       ];
+
+  const items = [
+   { key: "product1", img: block,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "blocks")}`, linkPatterns: makeColorPatterns("blocks") },
+    { key: "product2", img: slabs,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "slabs")}`,  linkPatterns: makeColorPatterns("slabs") },
+    { key: "product3", img: tiles,   href: `${prefix}/${shortBase}-${productSlugFor(locale, "tiles")}`,  linkPatterns: makeTilesPatterns() },
+    { key: "product4", img: special, href: `${prefix}/${shortBase}-${productSlugFor(locale, "pavers")}`, linkPatterns: makePaversPatterns() },
+  ];
+
+  // metin-içi link desenleri (EN/TR) — kart açıklamalarında geçecek olası ifadeler
+  const P = {
+    blocks: items[0]?.href,
+    slabs:  items[1]?.href,
+    tiles:  items[2]?.href,
+    pavers: items[3]?.href,
+  };
+ 
 
   // t("__contactPath") hilesi: Card içinde contactPath'e erişmek için geçici key
   const tProxy = (k) => (k === "__contactPath" ? contactPath : t(k));
@@ -96,12 +183,12 @@ export default function InfoSection() {
 <div className="mt-8 block md:hidden">
   <div ref={emblaRef} className="overflow-hidden w-full">
     <div className="flex">
-      {items.map(({ key, img, href }) => (
+       {items.map(({ key, img, href, linkPatterns }) => (
         <div
           key={key}
           className="flex-[0_0_80%] shrink-0 items-center justify-center" 
         >
-          <Card t={tProxy} img={img} href={href} tKey={key} />
+          <Card t={tProxy} img={img} href={href} tKey={key} linkPatterns={linkPatterns} />
         </div>
       ))}
     </div>
@@ -110,8 +197,8 @@ export default function InfoSection() {
 
         {/* Tablet & Desktop: Grid */}
         <div className="mt-8 hidden md:grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map(({ key, img, href, alt }) => (
-            <Card key={key} t={tProxy} img={img} href={href} tKey={key}  alt={alt}/>
+          {items.map(({ key, img, href, alt, linkPatterns }) => (
+     <Card key={key} t={tProxy} img={img} href={href} tKey={key} alt={alt} linkPatterns={linkPatterns}/>
           ))}
         </div>
       </div>

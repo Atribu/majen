@@ -43,6 +43,30 @@ function normalizeColorSlugForLocale(locale, raw) {
 
 }
 
+//---neww
+const EN_TOKENS = /(travertine|slabs?|tiles?|blocks?|pavers?|vein-cut|cross-cut|filled|unfilled|honed|polished|brushed|tumbled|natural)(?:$|[-/])/i;
+
+function enCutToTr(cut, product) {
+  // vein-cut → damar-kesim; cross-cut → enine-kesim
+  const cutTr = cut === 'vein-cut' ? 'damar-kesim' : 'enine-kesim';
+  const prodTr = product === 'slabs' ? 'plakalar'
+    : product === 'tiles' ? 'karolar'
+    : product === 'blocks' ? 'bloklar'
+    : product === 'pavers' ? 'dosemeler'
+    : product;
+  return `${cutTr}-traverten-${prodTr}`;
+}
+
+function enProcToTr(proc) {
+  if (!proc) return null;
+  const s = proc.toLowerCase();
+  if (s === 'natural') return 'dogal';
+  const [fill, p] = s.split('-'); // filled-honed
+  const fillTr = fill === 'filled' ? 'dolgulu' : 'dolgusuz';
+  const pTr = {honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis'}[p] || p;
+  return `${fillTr}-${pTr}`;
+}
+
 const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
 const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
 
@@ -300,11 +324,43 @@ if (parts.length >= 2) {
       url.pathname = `/${locale}/${FS_BASE}/blocks/${color}`;
       return NextResponse.rewrite(url);
     }
-    if (locale === 'tr' && (m = seg2.match(BLOCKS_COLOR_TR))) {
-      const color = m[1]; // antiko|fildisi|acik
-      url.pathname = `/${locale}/${FS_BASE}/blocks/${color}`;
-      return NextResponse.rewrite(url);
-    }
+   if (locale === 'tr' && EN_TOKENS.test(url.pathname.slice(4))) {
+  const seg2 = parts[1];       // örn: vein-cut-travertine-tiles veya filled-honed-vein-cut-travertine-tiles
+  const tail = parts.slice(2); // renk/ölçü/kalınlık vb.
+
+  // 1) sadece CUT ise: /tr/vein-cut-travertine-tiles
+  let m = seg2.match(/^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
+  if (m) {
+    const cutTrFull = enCutToTr(m[1], m[2]);
+    return NextResponse.redirect(new URL(`/tr/${cutTrFull}${tail.length ? '/'+tail.join('/') : ''}`, req.url), 301);
+  }
+
+  // 2) PROC + CUT: /tr/filled-honed-vein-cut-travertine-tiles
+  m = seg2.match(/^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
+  if (m) {
+    const procTr = enProcToTr(m[1]);
+    const cutTrFull = enCutToTr(m[2], m[3]);
+    return NextResponse.redirect(new URL(`/tr/${procTr}-${cutTrFull}${tail.length ? '/'+tail.join('/') : ''}`, req.url), 301);
+  }
+
+  // 3) COLOR/SIZE + PROC + CUT: /tr/ivory-filled-honed-vein-cut-travertine-tiles
+  m = seg2.match(/^([a-z0-9-]+)-((?:filled|unfilled)-(?:honed|polished|brushed|tumbled)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
+  if (m) {
+    const colorOrSize = m[1];
+    const procTr = enProcToTr(m[2]);
+    const cutTrFull = enCutToTr(m[3], m[4]);
+    // renkleri TR karşılığına çevir (ivory→fildisi, light→acik, antico→antiko). değilse (ölçü) aynen bırak.
+    const colorKey = COLOR_KEY_FROM_ANY.get(colorOrSize);
+    const headTr = colorKey ? COLOR_SLUG_BY_LOCALE.tr[colorKey] : normalizeTileSizeSlug(colorOrSize) || colorOrSize;
+    return NextResponse.redirect(new URL(`/tr/${headTr}-${procTr}-${cutTrFull}${tail.length ? '/'+tail.join('/') : ''}`, req.url), 301);
+  }
+
+  // 4) /tr/travertine/... gibi tüm İngilizce kökleri tamamen yasakla → 404
+  if (parts[1] === 'travertine') {
+    url.pathname = '/tr/not-found';
+    return NextResponse.rewrite(url);
+  }
+}
   }
 
   // 5) Ürün görünümlü ama whitelist dışı tekil slug’ı blog’a yolla

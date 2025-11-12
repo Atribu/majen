@@ -161,15 +161,15 @@ export default function VariantCircleSection2(props) {
 
   // 🔴 TILES & PAVERS özel link dizileri
   const TILES_VARIANT_LINKS = [
-    "/filled-honed-vein-cut-travertine-tiles",
-    "/8x8-filled-honed-vein-cut-travertine-tiles",
-    "/8x8-filled-honed-vein-cut-travertine-tiles",
+    "/vein-cut-travertine-tiles#product-intro",
+    "/filled-honed-vein-cut-travertine-tiles#product-intro",
+    "/8x8-filled-honed-vein-cut-travertine-tiles#product-intro",
   ];
 
   const PAVERS_VARIANT_LINKS = [
-    "/filled-honed-vein-cut-travertine-pavers",
-    "/6x12-filled-honed-vein-cut-travertine-pavers",
-    "/6x12-filled-honed-vein-cut-travertine-pavers",
+    "/vein-cut-travertine-pavers#product-intro",
+    "/filled-honed-vein-cut-travertine-pavers#product-intro",
+    "/6x12-filled-honed-vein-cut-travertine-pavers#product-intro",
   ];
 
   const variantHref = (productKey, colorSlug, index) => {

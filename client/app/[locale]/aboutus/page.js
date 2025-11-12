@@ -13,42 +13,39 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "AboutPage" });
 
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
-  const urls = {
-    en: `${SITE_URL}/en/about`,
-    tr: `${SITE_URL}/tr/about`,
+ const pathByLocale = {
+    en: "/en/about",
+    tr: "/tr/hakkimizda",
   };
+  const canonicalPath = pathByLocale[locale] || pathByLocale.en;
 
   return {
     title: t("seo.title"),
     description: t("seo.description"),
     alternates: {
-      canonical: urls[locale],
+      canonical: canonicalPath,
       languages: {
-        en: urls.en,
-        tr: urls.tr,
-        "x-default": urls.en,
+        en: pathByLocale.en,
+        tr: pathByLocale.tr,
+        "x-default": pathByLocale.en,
       },
     },
     openGraph: {
-      url: urls[locale],
+      url: canonicalPath,
       type: "article",
       title: t("seo.title"),
       description: t("seo.description"),
       siteName: "Majen",
-      images: [{ url: `${SITE_URL}/og/about.jpg` }],
+      images: [{ url: "/og/about.jpg" }],
       locale,
     },
     twitter: {
       card: "summary_large_image",
       title: t("seo.title"),
       description: t("seo.description"),
-      images: [`${SITE_URL}/og/about.jpg`],
+      images: ["/og/about.jpg"],
     },
-    robots: {
-      index: true,
-      follow: true,
-    },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -72,16 +69,13 @@ export default async function AboutPage({ params }) {
   /* -------------------------------------------------------------------------- */
   /*                              🔹 JSON-LD BLOKU 🔹                           */
   /* -------------------------------------------------------------------------- */
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
-  const pageUrl = `${SITE_URL}/${locale}/about`;
-
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Majen Quarry",
-      url: pageUrl,
-      logo: `${SITE_URL}/images/logo.svg`,
+      url: `https://majen.com.tr${locale === "tr" ? "/tr/hakkimizda" : "/en/about"}`,
+      logo: "/images/logo.svg",
       sameAs: [
         "https://www.linkedin.com/company/majen",
         "https://www.instagram.com/majen",
@@ -96,36 +90,7 @@ export default async function AboutPage({ params }) {
         },
       ],
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: t("breadcrumbs.home"),
-          item: `${SITE_URL}/${locale}`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: t("breadcrumbs.about"),
-          item: pageUrl,
-        },
-      ],
-    },
-    items.length
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: items.map(({ q, a }) => ({
-            "@type": "Question",
-            name: q,
-            acceptedAnswer: { "@type": "Answer", text: a },
-          })),
-        }
-      : null,
-  ].filter(Boolean);
+  ];
 
   /* -------------------------------------------------------------------------- */
   /*                                🔹 RENDER 🔹                                */

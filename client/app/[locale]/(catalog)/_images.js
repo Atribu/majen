@@ -605,6 +605,86 @@ import IvoryCrossPolishedUnfilled12x24 from "@/public/images/new/tiles/ivory/12x
 import IvoryVeinPolishedFilled12x24 from "@/public/images/new/tiles/ivory/12x24/IvoryVeinPolishedFilled12x24.webp"
 import IvoryVeinPolishedUnfilled12x24 from "@/public/images/new/tiles/ivory/12x24/IvoryVeinPolishedUnfilled12x24.webp"
 
+// ---------------- 16x16 -------------
+//-------- HONED--------
+import AnticoCrossHonedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossHonedFilled16x16.webp"
+import AnticoCrossHonedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossHonedUnfilled16x16.webp"
+import AnticoVeinHonedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinHonedFilled16x16.webp"
+import AnticoVeinHonedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinHonedUnfilled16x16.webp"
+
+import LightCrossHonedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossHonedFilled16x16.webp"
+import LightCrossHonedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossHonedUnfilled16x16.webp"
+import LightVeinHonedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinHonedUnfilled16x16.webp"
+import LightVeinHonedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinHonedFilled16x16.webp"
+
+import IvoryCrossHonedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossHonedFilled16x16.webp"
+import IvoryCrossHonedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossHonedUnfilled16x16.webp"
+import IvoryVeinHonedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinHonedFilled16x16.webp"
+import IvoryVeinHonedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinHonedUnfilled16x16.webp"
+
+// --------- TUMDLED -------
+import IvoryCrossTumbledFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossTumbledFilled16x16.webp"
+import IvoryCrossTumbledUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossTumbledUnfilled16x16.webp"
+import IvoryVeinTumbledFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinTumbledFilled16x16.webp"
+import IvoryVeinTumbledUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinTumbledUnfilled16x16.webp"
+
+import AnticoCrossTumbledFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossTumbledFilled16x16.webp"
+import AnticoCrossTumbledUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossTumbledUnfilled16x16.webp"
+import AnticoVeinTumbledFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinTumbledFilled16x16.webp"
+import AnticoVeinTumbledUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinTumbledUnfilled16x16.webp"
+
+import LightCrossTumbledFilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossTumbledFilled16x16.webp"
+import LightCrossTumbledUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossTumbledUnfilled16x16.webp"
+import LightVeinTumbledFilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinTumbledFilled16x16.webp"
+import LightVeinTumbledUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinTumbledUnfilled16x16.webp"
+
+// -------- BRUSHED  --------
+import AnticoCrossBrushedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossBrushedFilled16x16.webp"
+import AnticoCrossBrushedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossBrushedUnfilled16x16.webp"
+import AnticoVeinBrushedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinBrushedFilled16x16.webp"
+import AnticoVeinBrushedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinBrushedUnfilled16x16.webp"
+
+import IvoryCrossBrushedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossBrushedFilled16x16.webp"
+import IvoryCrossBrushedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossBrushedUnfilled16x16.webp"
+import IvoryVeinBrushedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinBrushedFilled16x16.webp"
+import IvoryVeinBrushedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinBrushedUnfilled16x16.webp"
+
+import LightCrossBrushedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossBrushedFilled16x16.webp"
+import LightCrossBrushedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossBrushedUnfilled16x16.webp"
+import LightVeinBrushedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinBrushedFilled16x16.webp"
+import LightVeinBrushedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinBrushedUnfilled16x16.webp"
+
+// --------- NATURAL -------
+import IvoryCrossNaturalFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossNaturalFilled16x16.webp"
+import IvoryCrossNaturalUnfilled16x16  from "@/public/images/new/tiles/ivory/16x16/IvoryCrossNaturalUnfilled16x16.webp"
+import IvoryVeinNaturalFilled16x16  from "@/public/images/new/tiles/ivory/16x16/IvoryVeinNaturalFilled16x16.webp"
+import IvoryVeinNaturalUnfilled16x16  from "@/public/images/new/tiles/ivory/16x16/IvoryVeinNaturalUnfilled16x16.webp"
+
+import AnticoCrossNaturalFilled16x16  from "@/public/images/new/tiles/antico/16x16/AnticoCrossNaturalFilled16x16.webp"
+import AnticoCrossNaturalUnfilled16x16  from "@/public/images/new/tiles/antico/16x16/AnticoCrossNaturalUnfilled16x16.webp"
+import AnticoVeinNaturalFilled16x16  from "@/public/images/new/tiles/antico/16x16/AnticoVeinNaturalFilled16x16.webp"
+import AnticoVeinNaturalUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinNaturalUnfilled16x16.webp"
+
+import LightCrossNaturalFilled16x16  from "@/public/images/new/tiles/light/16x16/LightCrossNaturalFilled16x16.webp"
+import LightCrossNaturalUnfilled16x16  from "@/public/images/new/tiles/light/16x16/LightCrossNaturalUnfilled16x16.webp"
+import LightVeinNaturalFilled16x16  from "@/public/images/new/tiles/light/16x16/LightVeinNaturalFilled16x16.webp"
+import LightVeinNaturalUnfilled16x16  from "@/public/images/new/tiles/light/16x16/LightVeinNaturalUnfilled16x16.webp"
+
+// --------- POLISHED -------
+import AnticoCrossPolishedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossPolishedFilled16x16.webp"
+import AnticoCrossPolishedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoCrossPolishedUnfilled16x16.webp"
+import AnticoVeinPolishedFilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinPolishedFilled16x16.webp"
+import AnticoVeinPolishedUnfilled16x16 from "@/public/images/new/tiles/antico/16x16/AnticoVeinPolishedUnfilled16x16.webp"
+
+import LightCrossPolishedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossPolishedFilled16x16.webp"
+import LightCrossPolishedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightCrossPolishedUnfilled16x16.webp"
+import LightVeinPolishedUnfilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinPolishedUnfilled16x16.webp"
+import LightVeinPolishedFilled16x16 from "@/public/images/new/tiles/light/16x16/LightVeinPolishedFilled16x16.webp"
+
+import IvoryCrossPolishedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossPolishedFilled16x16.webp"
+import IvoryCrossPolishedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryCrossPolishedUnfilled16x16.webp"
+import IvoryVeinPolishedFilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinPolishedFilled16x16.webp"
+import IvoryVeinPolishedUnfilled16x16 from "@/public/images/new/tiles/ivory/16x16/IvoryVeinPolishedUnfilled16x16.webp"
 
 export const GALLERY_BY_PRODUCT_AND_VARIANT = {
   blocks: {

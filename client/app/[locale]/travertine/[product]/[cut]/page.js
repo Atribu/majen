@@ -453,6 +453,7 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
         <meta name="twitter:image" content={heroSrc} />
       </Head>
 
+  
       <ProductIntroSection
         title={cutTitle}
         intro={cutIntro}
@@ -466,6 +467,7 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
         crumbProducts={locale.startsWith("tr") ? "Traverten" : "Travertine"}
         span={span}
       />
+   
 
       <BreadcrumbsExact
         prefix={prefix}
@@ -495,11 +497,12 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
         })}
       </section>
 
-      <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
+    <section id="product-intro">
+        <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
       <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%] w-[90%] max-w-[1200px] mx-auto -mb-2">
         {variantText}
       </p>
-
+ 
       {/* Filled */}
       {filledBlock.variantCards.length > 0 && (
         <VariantCircleSection
@@ -526,6 +529,7 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
           productKey={productKey}
         />
       )}
+    </section>
 
       {textSections.map(({ id, title, paragraphs }) => (
         <TextSection

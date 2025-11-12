@@ -596,7 +596,8 @@ let imgCandidate;
         span=""
       />
 
-      <BreadcrumbsExact
+     <section id="product-intro">
+       <BreadcrumbsExact
         prefix={prefix}
         baseHref={baseHref}
         crumbHome={locale === "tr" ? "Ana Sayfa" : "Home"}
@@ -605,6 +606,8 @@ let imgCandidate;
         className="mt-6"
         items={items}
       />
+     </section>
+
 
            {( isTiles || isPavers && page?.h5) && (
         <div className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
