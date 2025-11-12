@@ -1108,9 +1108,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinHonedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinHonedFilled16x16,
+          light:  LightVeinHonedFilled16x16,
+          antico: AnticoVeinHonedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1157,9 +1157,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinHonedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinHonedUnfilled16x16,
+          light:  LightVeinHonedUnfilled16x16,
+          antico: AnticoVeinHonedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1210,9 +1210,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinTumbledFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinTumbledFilled16x16,
+          light:  LightVeinTumbledFilled16x16,
+          antico: AnticoVeinTumbledFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1259,9 +1259,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinTumbledUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinTumbledUnfilled16x16,
+          light:  LightVeinTumbledUnfilled16x16,
+          antico: AnticoVeinTumbledUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1308,9 +1308,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinBrushedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinBrushedFilled16x16,
+          light:  LightVeinBrushedFilled16x16,
+          antico: AnticoVeinBrushedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1357,9 +1357,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinBrushedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinBrushedUnfilled16x16,
+          light:  LightVeinBrushedUnfilled16x16,
+          antico: AnticoVeinBrushedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1406,9 +1406,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinPolishedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinPolishedFilled16x16,
+          light:  LightVeinPolishedFilled16x16,
+          antico: AnticoVeinPolishedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1455,9 +1455,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinPolishedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinPolishedUnfilled16x16,
+          light:  LightVeinPolishedUnfilled16x16,
+          antico: AnticoVeinPolishedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1503,9 +1503,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinNaturalFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinNaturalFilled16x16,
+          light:  LightVeinNaturalFilled16x16,
+          antico: AnticoVeinNaturalFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1552,9 +1552,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoVeinNaturalUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryVeinNaturalUnfilled16x16,
+          light:  LightVeinNaturalUnfilled16x16,
+          antico: AnticoVeinNaturalUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1602,9 +1602,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossHonedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossHonedFilled16x16,
+          light:  LightCrossHonedFilled16x16,
+          antico: AnticoCrossHonedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1651,9 +1651,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossHonedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossHonedUnfilled16x16,
+          light:  LightCrossHonedUnfilled16x16,
+          antico: AnticoCrossHonedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1706,9 +1706,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossTumbledFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossTumbledFilled16x16,
+          light:  LightCrossTumbledFilled16x16,
+          antico: AnticoCrossTumbledFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1754,9 +1754,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossTumbledUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossTumbledUnfilled16x16,
+          light:  LightCrossTumbledUnfilled16x16,
+          antico: AnticoCrossTumbledUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1803,9 +1803,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossBrushedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossBrushedFilled16x16,
+          light:  LightCrossBrushedFilled16x16,
+          antico: AnticoCrossBrushedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1852,9 +1852,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossBrushedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossBrushedUnfilled16x16,
+          light:  LightCrossBrushedUnfilled16x16,
+          antico: AnticoCrossBrushedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1900,9 +1900,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossPolishedFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossPolishedFilled16x16,
+          light:  LightCrossPolishedFilled16x16,
+          antico: AnticoCrossPolishedFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1948,9 +1948,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossPolishedUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossPolishedUnfilled16x16,
+          light:  LightCrossPolishedUnfilled16x16,
+          antico: AnticoCrossPolishedUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -1996,9 +1996,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossNaturalFilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossNaturalFilled16x16,
+          light:  LightCrossNaturalFilled16x16,
+          antico: AnticoCrossNaturalFilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,
@@ -2045,9 +2045,9 @@ export const IMAGE_BY_PRODUCT = {
           antico: AnticoCrossNaturalUnfilled12x24,
          },
            "16x16":{
-           ivory:  IvoryVeinHonedFilled8x8,
-          light:  LightVeinHonedFilled8x8,
-          antico: AnticoVeinHonedFilled8x8,
+           ivory:  IvoryCrossNaturalUnfilled16x16,
+          light:  LightCrossNaturalUnfilled16x16,
+          antico: AnticoCrossNaturalUnfilled16x16,
          },
            "18x18":{
            ivory:  IvoryVeinHonedFilled8x8,

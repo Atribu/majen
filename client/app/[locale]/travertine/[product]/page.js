@@ -32,8 +32,32 @@ import VariantCircleSection2 from "../../components/products1/VariantCircleSecti
 import OtherOptions from "../../components/generalcomponent/OtherOptions";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
 
-// Ölçü yakalayıcı (hem "x" hem "×"; opsiyonel boşluklar; opsiyonel birim)
-const SIZE_RX = /(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)(?:\s*(?:cm|mm|in|["″]))?/gi;
+import {
+  TILE_SIZE_SLUGS_TILES as TILE_SIZES_TILES,
+  TILE_SIZE_SLUGS_PAVERS as TILE_SIZES_PAVERS,
+} from "@/lib/labels";
+
+// güvenli kaçış
+const esc = (s) => String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// "8x8" gibi slug → metinde şu varyasyonları yakala: 8x8, 8×8, 8" x 8", 8″×8″, 8 x 8 vb.
+function sizeRegexForSlug(sizeSlug) {
+  if (sizeSlug === "versailles-set" || sizeSlug === "versailles-pattern") {
+    // yazı içinde "Versailles set", "Versailles pattern", "Versailles-Set" vb.
+    const word = sizeSlug === "versailles-set" ? "set" : "pattern";
+    return new RegExp(`\\bversailles\\s*[-–—]?\\s*${word}\\b`, "i");
+  }
+  const [w, h] = String(sizeSlug).split("x");
+  return new RegExp(
+    `${esc(w)}\\s*["″']?\\s*[x×]\\s*${esc(h)}\\s*["″']?`,
+    "i"
+  );
+}
+
+// tiles/pavers için default cut & process (metin içinde bulduğumuzu linke çevireceğiz)
+function defaultProc(locale) {
+  return locale.startsWith("tr") ? "dolgulu-honlanmis" : "filled-honed";
+}
 
 // metindeki ölçülerden (tekrar etmeyen) link pattern'ları üret
 // ölçü yakalayıcı yardımcı
@@ -304,21 +328,30 @@ const linkPatterns = locale.startsWith("tr")
      }
      ];
 
-     // Ölçü bağlantı desenleri (tiles / pavers için)
-const TILE_SIZE_SLUGS_TILES = ["8″x8″", "10x20", "30x60", "40x80"];
-const TILE_SIZE_SLUGS_PAVERS = ["10x10", "20x20", "20x40"];
-const escapeRegExp = (s) => String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Ölçü bağlantı desenleri (tiles/pavers için) – lib/labels listesini kullan
+  const isSizeDriven = productKey === "tiles" || productKey === "pavers";
+  const sizeSlugs =
+    productKey === "tiles"  ? TILE_SIZES_TILES
+    : productKey === "pavers" ? TILE_SIZES_PAVERS
+    : [];
 
-const defaultCutSlug = cutSlugForProduct(locale, "vein-cut", productKey);
-const defaultProcSlug = locale.startsWith("tr") ? "dolgulu-honlanmis" : "filled-honed";
+  const defaultCutSlug = cutSlugForProduct(locale, "vein-cut", productKey);
+  const defaultProcSlug = defaultProc(locale);
 
-
-const isSizeDriven = productKey === "tiles" || productKey === "pavers";
-const sizeSlugListForThisProduct =
-  productKey === "tiles"
-    ? TILE_SIZE_SLUGS_TILES
-    : productKey === "pavers"
-    ? TILE_SIZE_SLUGS_PAVERS
+  // 3. kart metni içindeki ölçüleri → SEO kısa URL’ye çevir
+  const sizeLinkPatterns = isSizeDriven
+    ? sizeSlugs.map((s) => {
+        const rx = sizeRegexForSlug(s);
+        // tiles: versailles-set, pavers: versailles-pattern (URL başında size geliyor)
+        const sizeForUrl =
+          productKey === "tiles"  && s === "versailles-pattern" ? "versailles-set" :
+          productKey === "pavers" && s === "versailles-set"     ? "versailles-pattern" :
+          s;
+        return {
+          pattern: rx,
+          href: `/${locale}/${sizeForUrl}-${defaultProcSlug}-${defaultCutSlug}`,
+        };
+      })
     : [];
 
 
@@ -384,11 +417,8 @@ const selectedSegments = [...segments.slice(-1)]; // olduğu gibi kalsın
         ? c.content.join(", ")
         : "";
 
-    // 🔗 3. kart için (index 2): tiles/pavers ise ölçüleri linke çevir
-    const sizePatternsForThisText =
-      (productKey === "tiles" || productKey === "pavers")
-        ? buildSizePatternsFromText(plain, { locale, productKey, cutSlugForProduct })
-        : [];
+        // 🔗 3. kart (index 2): tiles/pavers ise ölçüleri linke çevir (bold)
+
 
     return (
       <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
@@ -398,10 +428,10 @@ const selectedSegments = [...segments.slice(-1)]; // olduğu gibi kalsın
             patterns={linkPatterns}
             textClassName={cardTextClass}
           />
-        ) : i === 2 && sizePatternsForThisText.length > 0 ? (
+        ) : i === 2 && sizeLinkPatterns.length > 0 ? (
           <InlineLinks
             text={plain || ""}
-            patterns={sizePatternsForThisText}
+           patterns={sizeLinkPatterns}
             textClassName={cardTextClass}
             linkClassName="font-semibold"
           />
