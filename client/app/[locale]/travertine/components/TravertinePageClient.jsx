@@ -18,6 +18,7 @@ import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
+import { Link } from "@/i18n/navigation";
 
 const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
@@ -42,6 +43,101 @@ export default function TravertinePageClient() {
   const t = useTranslations("TravertinePage");
   const t2 = useTranslations("TravertinePage.TextSection");
   const t3=useTranslations("TravertinePage.QuestionsItems");
+
+  const blogLinkClass =
+  "underline underline-offset-4 text-teal-700 font-semibold";
+
+const richText = (key) =>
+  t2.rich(key, {
+    // BLOCKS / QUARRY / COLORS
+    quarry: (chunks) => (
+      <Link href="/travertine-quarry" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    blocksGuide: (chunks) => (
+      <Link href="/travertine-blocks-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    antico: (chunks) => (
+      <Link href="/antico-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    light: (chunks) => (
+      <Link href="/light-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    ivory: (chunks) => (
+      <Link href="/ivory-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+
+    // SLABS & FINISHES
+    slabsGuide: (chunks) => (
+      <Link href="/travertine-slabs-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    polished: (chunks) => (
+      <Link href="/polished-travertine-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    honed: (chunks) => (
+      <Link href="/honed-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    brushed: (chunks) => (
+      <Link href="/brushed-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    tumbled: (chunks) => (
+      <Link href="/tumbled-travertine" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+
+    // TILES & APPLICATIONS
+    tilesGuide: (chunks) => (
+      <Link href="/travertine-tiles-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    bathroom: (chunks) => (
+      <Link href="/travertine-bathroom" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    kitchen: (chunks) => (
+      <Link href="/travertine-kitchen" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    pool: (chunks) => (
+      <Link href="/travertine-pool" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+
+    // PAVERS / MOSAICS
+    paversGuide: (chunks) => (
+      <Link href="/travertine-pavers-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+    mosaicsGuide: (chunks) => (
+      <Link href="/travertine-mosaics-guide" className={blogLinkClass}>
+        {chunks}
+      </Link>
+    ),
+  });
+
 
      const items = [
       { q: t3("aboutpage_s4_faq1_header"), a: t3("aboutpage_s4_faq1_text") },
@@ -141,37 +237,49 @@ export default function TravertinePageClient() {
   productImages={{ blocks: block, slabs, tiles, pavers: special }}
 />
 
-     <TextSection title={t2("header1")} title2={t2("subheader1")} text2={t2("subtext1")} paragraphs={[
-     t2("text1")
-      ]}
-      schema={schema}
-      className="max-w-5xl mx-auto mt-12"
-      clampMobile={3}
-      as="section"/>
+     <TextSection
+  title={t2("header1")}
+  title2={t2("subheader1")}
+  text2={t2("subtext1")}
+  paragraphs={[richText("text1")]}
+  schema={schema}
+  className="max-w-5xl mx-auto mt-12"
+  clampMobile={3}
+  as="section"
+/>
 
-      <TextSection title={t2("header2")} title2={t2("subheader2")} text2={t2("subtext2")} paragraphs={[
-     t2("text2")
-      ]}
-      schema={schema}
-      className="max-w-5xl mx-auto mt-12"
-      clampMobile={3}
-      as="section"/>
+<TextSection
+  title={t2("header2")}
+  title2={t2("subheader2")}
+  text2={t2("subtext2")}
+  paragraphs={[richText("text2")]}
+  schema={schema}
+  className="max-w-5xl mx-auto mt-12"
+  clampMobile={3}
+  as="section"
+/>
 
-     <TextSection title={t2("header3")} title2={t2("subheader3")} text2={t2("subtext3")} paragraphs={[
-     t2("text3")
-      ]}
-      schema={schema}
-      className="max-w-5xl mx-auto mt-12"
-      clampMobile={3}
-      as="section"/>
+<TextSection
+  title={t2("header3")}
+  title2={t2("subheader3")}
+  text2={t2("subtext3")}
+  paragraphs={[richText("text3")]}
+  schema={schema}
+  className="max-w-5xl mx-auto mt-12"
+  clampMobile={3}
+  as="section"
+/>
 
-      <TextSection title={t2("header4")} title2={t2("subheader4")} text2={t2("subtext4")} paragraphs={[
-     t2("text4")
-      ]}
-      schema={schema}
-      className="max-w-5xl mx-auto mt-12"
-      clampMobile={3}
-      as="section"/>
+<TextSection
+  title={t2("header4")}
+  title2={t2("subheader4")}
+  text2={t2("subtext4")}
+  paragraphs={[richText("text4")]}
+  schema={schema}
+  className="max-w-5xl mx-auto mt-12"
+  clampMobile={3}
+  as="section"
+/>
 
       <ContactFrom />
       <SocialMediaSection/>

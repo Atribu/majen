@@ -147,6 +147,81 @@ const makeTilesPatterns = () =>
     tiles:  items[2]?.href,
     pavers: items[3]?.href,
   };
+
+// Canonical blog href helper
+const blogHref = (slug) => `/${String(slug).replace(/^\/+/, "")}`;
+
+// EN: blocks / slabs / tiles + bathrooms / kitchens / pools / outdoor spaces
+const mainLinkPatternsEn = [
+  // Ürün grupları
+  {
+    pattern: /\btravertine blocks\b/i,
+    href: blogHref("travertine-blocks-guide"),
+  },
+  {
+    pattern: /\btravertine slabs\b/i,
+    href: blogHref("travertine-slabs-guide"),
+  },
+  {
+    pattern: /\btravertine tiles\b/i,
+    href: blogHref("travertine-tiles-guide"),
+  },
+
+  // Kullanım alanları
+  {
+    pattern: /\bbathrooms?\b/i,
+    href: blogHref("/travertine-bathroom"),
+  },
+  {
+    pattern: /\bkitchens?\b/i,
+    href: blogHref("/travertine-kitchen"),
+  },
+  {
+    pattern: /\bpools?\b/i,
+    href: blogHref("/travertine-pool"),
+  },
+  {
+    pattern: /\boutdoor spaces?\b/i,
+    href: blogHref("/travertine-flooring"),
+  },
+];
+
+// TR: “traverten bloklar/plakalar/karolar” + “banyolar, mutfaklar, havuzlar, dış mekanlar”
+const mainLinkPatternsTr = [
+  // Ürün grupları
+  {
+    pattern: /\btraverten blok(lar)?\b/i,
+    href: blogHref("travertine-blocks-guide"),
+  },
+  {
+    pattern: /\btraverten plaka(lar)?\b/i,
+    href: blogHref("travertine-slabs-guide"),
+  },
+  {
+    pattern: /\btraverten karo(lar)?\b/i,
+    href: blogHref("travertine-tiles-guide"),
+  },
+
+  // Kullanım alanları
+  {
+    pattern: /\bbanyo(lar)?\b/i,
+    href: blogHref("/travertine-bathroom"),
+  },
+  {
+    pattern: /\bmutfak(lar)?\b/i,
+    href: blogHref("/travertine-kitchen"),
+  },
+  {
+    pattern: /\bhavuz(lar)?\b/i,
+    href: blogHref("/travertine-pool"),
+  },
+  {
+    pattern: /\bd[ıi]ş mekan(lar)?\b/i,
+    href: blogHref("/travertine-flooring"),
+  },
+];
+
+
  
 
   // t("__contactPath") hilesi: Card içinde contactPath'e erişmek için geçici key
@@ -174,9 +249,15 @@ const makeTilesPatterns = () =>
           <h2 className="mt-2 lg:mt-5 text-[24px] font-bold md:text-[32px] lg:text-[36px] text-[#0C1A13] leading-[110%]">
             {t("heading")}
           </h2>
-          <p className="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]">
-            {t("description")}
-          </p>
+          <InlineLinks
+  text={t("description") || ""}
+  patterns={
+    locale.startsWith("tr") ? mainLinkPatternsTr : mainLinkPatternsEn
+  }
+  textClassName="mt-3 text-black text-[12px] md:text-[14px] lg:text-[16px]"
+  linkClassName="text-teal-700 font-semibold hover:underline"
+/>
+
         </div>
 
         {/* Mobil: Embla Carousel */}

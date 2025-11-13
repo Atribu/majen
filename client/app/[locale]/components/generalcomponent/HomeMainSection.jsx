@@ -16,13 +16,40 @@ const HomeMainSection = () => {
 
         <p className="text-[12px] md:text-[14px] lg:text-[18px] w-[97%] lg:w-[70%]">
           {t.rich("text", {
+            // FOB / CIF zaten vardı
             fob: (chunks) => (
-              <Link href="/how-we-export/fob" className="underline underline-offset-4">
+              <Link
+                href="/how-we-export/fob"
+                className="underline underline-offset-4"
+              >
                 {chunks}
               </Link>
             ),
             cif: (chunks) => (
-              <Link href="/how-we-export/cif" className="underline underline-offset-4 cursor-pointer">
+              <Link
+                href="/how-we-export/cif"
+                className="underline underline-offset-4 cursor-pointer"
+              >
+                {chunks}
+              </Link>
+            ),
+
+            // 🆕 travertine supplier from Turkey
+            supplier: (chunks) => (
+              <Link
+                href="/travertine-supplier"
+                className="underline underline-offset-4 font-semibold"
+              >
+                {chunks}
+              </Link>
+            ),
+
+            // 🆕 wholesale travertine from Turkey
+            wholesale: (chunks) => (
+              <Link
+                href="/travertine-turkey"
+                className="underline underline-offset-4 font-semibold"
+              >
                 {chunks}
               </Link>
             ),

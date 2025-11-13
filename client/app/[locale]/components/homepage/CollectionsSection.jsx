@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { baseFor, productSlugFor } from "@/lib/travertine"; // ✅ travertine helper
+import { baseFor, productSlugFor } from "@/lib/travertine";
 import antik from "@/public/images/slabs/antik.webp";
 import ivory from "@/public/images/slabs/Ivory.webp";
 import light from "@/public/images/slabs/light.webp";
@@ -13,9 +13,8 @@ export default function CollectionsSection() {
   const t = useTranslations("CollectionsSection");
   const locale = useLocale();
   const prefix = `/${locale}`;
-  const base = baseFor(locale); // örn: tr -> traverten, en -> travertine
+  const base = baseFor(locale);
 
-  // UI etiketleri
   const labels = {
     block: locale === "tr" ? "Bloklar" : "Blocks",
     slabs: locale === "tr" ? "Plakalar" : "Slabs",
@@ -23,19 +22,15 @@ export default function CollectionsSection() {
     special: locale === "tr" ? "Döşemeler" : "Pavers",
   };
 
-  // Tiles & Pavers için ortak linkler
-  const TILES_HREF = `${prefix}/travertine-tiles`;     // -> /en/travertine-tiles, /tr/travertine-tiles
-  const PAVERS_HREF = `${prefix}/travertine-pavers`;   // -> /en/travertine-pavers, /tr/travertine-pavers
+  const TILES_HREF = `${prefix}/travertine-tiles`;
+  const PAVERS_HREF = `${prefix}/travertine-pavers`;
 
-  // koleksiyonlar (renge göre block + slabs slug'ları)
   const collections = [
     {
       key: "antiko",
       title: t("titleAntiko"),
       alt: t("altAntiko"),
-      // Blocks
       blockHref: `${prefix}/antico-travertine-blocks`,
-      // Slabs
       slabsHref: `${prefix}/antico-filled-honed-vein-cut-travertine-slabs`,
       src: antik,
     },
@@ -57,7 +52,6 @@ export default function CollectionsSection() {
     },
   ];
 
-  // hangi buton hangi linke gidecek?
   const hrefForType = (type, coll) => {
     switch (type) {
       case "block":
@@ -73,10 +67,6 @@ export default function CollectionsSection() {
     }
   };
 
-  // (şimdilik kullanılmıyor ama dursun)
-  const hrefFor = (productKey, variantSlug) =>
-    `${prefix}/${base}/${productSlugFor(locale, productKey)}/${variantSlug}`;
-
   return (
     <div className="flex flex-col max-w-[1400px] gap-[20px] lg:gap-[10px] items-center justify-center mt-2 md:mt-12 lg:mt-32 xl:mt-52 2xl:mt-[10%] lg:mb-20">
       {/* Başlık */}
@@ -84,18 +74,54 @@ export default function CollectionsSection() {
         <span className="text-[12px] leading-[14px] uppercase tracking-[0.48px] font-medium font-jost">
           {t("span")}
         </span>
-        <h3 className="text-[24px] md:text-[26px] font-bold lg:text-[30px] md:leading-[57.6px]  font-marcellus leading-normal">
+        <h3 className="text-[24px] md:text-[26px] font-bold lg:text-[30px] md:leading-[57.6px] font-marcellus leading-normal">
           {t("header")}
         </h3>
-        <p className="text-[12px] md:text-[14px]">{t("text")}</p>
+
+        {/* 🔗 Rich text + internal blog links */}
+        <p className="text-[12px] md:text-[14px]">
+          {t.rich("text", {
+            antiko: (chunks) => (
+              <Link
+                href={`${prefix}/antico-travertine`}
+                className=" text-teal-700 font-semibold"
+              >
+                {chunks}
+              </Link>
+            ),
+            light: (chunks) => (
+              <Link
+                href={`${prefix}/light-travertine`}
+                className=" text-teal-700 font-semibold"
+              >
+                {chunks}
+              </Link>
+            ),
+            ivory: (chunks) => (
+              <Link
+                href={`${prefix}/ivory-travertine`}
+                className=" text-teal-700 font-semibold"
+              >
+                {chunks}
+              </Link>
+            ),
+            supplier: (chunks) => (
+              <Link
+                href={`${prefix}/travertine-supplier`}
+                className=" text-teal-700 font-semibold"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
       </div>
 
       {/* Yuvarlak kartlar */}
-      <section className=" w-full max-w-[1200px]">
+      <section className="w-full max-w-[1200px]">
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 justify-items-center">
           {collections.map((coll) => (
             <div key={coll.key} className="group flex flex-col items-center text-center">
-              {/* Yuvarlak görsel -> her zaman BLOCK sayfası */}
               <Link
                 href={coll.blockHref}
                 className="relative h-40 w-40 sm:h-44 sm:w-44 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-1 ring-neutral-200 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)]"
@@ -109,12 +135,10 @@ export default function CollectionsSection() {
                 />
               </Link>
 
-              {/* Başlık */}
               <h5 className="mt-4 text-[20px] font-semibold text-neutral-900">
                 {coll.title}
               </h5>
 
-              {/* Ürün tipleri (Blocks / Slabs / Tiles / Pavers) */}
               <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
                 {["block", "slabs", "tiles", "special"].map((pkey) => (
                   <Link

@@ -13,67 +13,70 @@ export default function InlineLinks({
   text,
   patterns = [],
   textClassName = "text-[14px] leading-[110%] text-gray-700",
-  linkClassName = "text-blue-600 hover:underline",
+  linkClassName = "text-teal-700 hover:underline",
 }) {
-  if (!text || !patterns.length) {
-    return <span className={textClassName}>{text}</span>;
+  const source = text || "";
+
+  if (!source || !patterns.length) {
+    return <span className={textClassName}>{source}</span>;
   }
 
-  // Tüm pattern'ları tek bir RegExp'te birleştir
-  const big = new RegExp(
-    patterns.map((p) => `(${p.pattern.source})`).join("|"),
-    "gi"
-  );
+  const parts = [];
+  let index = 0;
 
-  const nodes = [];
-  let lastIndex = 0;
-  let match;
+  // Her seferinde global kopya üret (orijinal regex’i bozmamak için)
+  const makeGlobal = (rx) =>
+    new RegExp(rx.source, rx.flags.includes("g") ? rx.flags : rx.flags + "g");
 
-  while ((match = big.exec(text)) !== null) {
-    const start = match.index;
-    const end = big.lastIndex;
+  while (index < source.length) {
+    let earliestMatch = null;
+    let earliestPattern = null;
 
-    // Eşleşmeden önceki düz metin
-    if (start > lastIndex) {
-      nodes.push(
-        <span key={`text-${start}`} className={textClassName}>
-          {text.slice(lastIndex, start)}
-        </span>
-      );
+    // En erken başlayan match'i bul
+    for (const p of patterns) {
+      const rx = makeGlobal(p.pattern);
+      rx.lastIndex = index;
+      const m = rx.exec(source);
+      if (!m) continue;
+
+      if (!earliestMatch || m.index < earliestMatch.index) {
+        earliestMatch = m;
+        earliestPattern = p;
+      }
     }
 
-    // Hangi pattern eşleşti?
-    const matchedText = match[0];
-    const matchedPat =
-      patterns.find((pat) =>
-        new RegExp(`^${pat.pattern.source}$`, "i").test(matchedText)
-      ) || patterns[0];
+    // Hiç eşleşme yoksa kalan metni ekleyip bitir
+    if (!earliestMatch) {
+      parts.push(source.slice(index));
+      break;
+    }
 
-    // Link: metin stilini (font/leading) koru + link stilini ekle
-    const linkCls = `${textClassName} ${matchedPat.className || linkClassName}`;
+    const start = earliestMatch.index;
+    const matchedText = earliestMatch[0];
 
-    nodes.push(
+    // Match’ten önceki düz metin
+    if (start > index) {
+      parts.push(source.slice(index, start));
+    }
+
+    // Link (inline)
+    parts.push(
       <Link
-        key={`link-${start}-${end}`}
-        href={matchedPat.href}
-        aria-label={matchedPat.ariaLabel || matchedText}
-        className={linkCls}
+        key={`${start}-${matchedText}`}
+        href={earliestPattern.href}
+        aria-label={earliestPattern.ariaLabel || matchedText}
+        className={
+          (earliestPattern.className || linkClassName) +
+          "" // parent span tipografiyi verecek
+        }
       >
         {matchedText}
       </Link>
     );
 
-    lastIndex = end;
+    index = start + matchedText.length;
   }
 
-  // Son kalan düz metin
-  if (lastIndex < text.length) {
-    nodes.push(
-      <span key={`text-last`} className={textClassName}>
-        {text.slice(lastIndex)}
-      </span>
-    );
-  }
-
-  return <>{nodes}</>;
+  // 🔹 Tek bir span içinde, aynı paragraf akışında
+  return <span className={textClassName}>{parts}</span>;
 }

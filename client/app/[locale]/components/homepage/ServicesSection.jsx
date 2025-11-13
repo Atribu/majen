@@ -126,13 +126,24 @@ export default function KeyFeatures() {
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
                {t.rich("items.export2.description", {
-                                cif: (chunks) => (
-                                  <Link href="/how-we-export/cif" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
-                               
-                              })}
+  cif: (chunks) => (
+    <Link
+      href="/how-we-export/cif"
+      className="underline underline-offset-4"
+    >
+      {chunks}
+    </Link>
+  ),
+  turkey: (chunks) => (
+    <Link
+      href="/travertine-turkey"
+      className="underline underline-offset-4 text-teal-700 font-semibold"
+    >
+      {chunks}
+    </Link>
+  ),
+})}
+
               </div>
               <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
                 <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
