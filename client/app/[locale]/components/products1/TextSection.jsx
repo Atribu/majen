@@ -18,40 +18,55 @@ export default function TextSection({
   const [isMobile, setIsMobile] = useState(false);
   const locale = useLocale();
 
-  // locale'e göre doğru base
   const prefix = `/${locale}`;
   const exportBase = locale === "tr" ? "nasıl-ihracat-yapıyoruz" : "how-we-export";
 
-  // Metindeki FOB/CIF/EXW'yi linke çevir
-  const renderWithIncotermLinks = useCallback((text = "") => {
-    const pattern = /\b(FOB|CIF|EXW)\b/g; // büyük/küçük duyarsızlık için 'i' de ekleyebilirsin
-    const nodes = [];
-    let last = 0;
-    let m;
-    let k = 0;
+  // Sadece düz stringlerde FOB/CIF/EXW'yi linke çevir
+  const renderWithIncotermLinks = useCallback(
+    (text) => {
+      if (typeof text !== "string" || !text) return text; // React node ise dokunma
 
-    while ((m = pattern.exec(text)) !== null) {
-      if (m.index > last) nodes.push(text.slice(last, m.index));
-      const token = m[1].toUpperCase();
-      const href = `${prefix}/${exportBase}/${token.toLowerCase()}`;
-      nodes.push(
-        <Link
-          key={`incoterm-${k++}-${m.index}`}
-          href={href}
-          className="text-teal-700 underline underline-offset-4 hover:no-underline"
-        >
-          {token}
-        </Link>
-      );
-      last = m.index + token.length;
-    }
-    if (last < text.length) nodes.push(text.slice(last));
-    return nodes;
-  }, [prefix, exportBase]);
+      const pattern = /\b(FOB|CIF|EXW)\b/gi;
+      const nodes = [];
+      let last = 0;
+      let m;
+      let k = 0;
 
-  // Yalnızca istemcide ölç: md breakpoint ~768px
+      while ((m = pattern.exec(text)) !== null) {
+        if (m.index > last) nodes.push(text.slice(last, m.index));
+
+        const token = m[1].toUpperCase();
+        const href = `${prefix}/${exportBase}/${token.toLowerCase()}`;
+
+        nodes.push(
+          <Link
+            key={`incoterm-${k++}-${m.index}`}
+            href={href}
+            className="text-teal-700 underline underline-offset-4 hover:no-underline"
+          >
+            {token}
+          </Link>
+        );
+
+        last = m.index + token.length;
+      }
+
+      if (last < text.length) nodes.push(text.slice(last));
+      return nodes;
+    },
+    [prefix, exportBase]
+  );
+
+  // paragraphs her yerde bazen string, bazen React node olabiliyor → normalize
+  const normalizedParagraphs = useMemo(() => {
+    if (Array.isArray(paragraphs)) return paragraphs;
+    if (paragraphs == null) return [];
+    return [paragraphs];
+  }, [paragraphs]);
+
   useEffect(() => {
-    const check = () => setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    const check = () =>
+      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -59,12 +74,21 @@ export default function TextSection({
 
   const visibleParagraphs = useMemo(() => {
     if (isMobile && !expanded && clampMobile > 0) {
-      return paragraphs.slice(0, clampMobile);
+      return normalizedParagraphs.slice(0, clampMobile);
     }
-    return paragraphs;
-  }, [isMobile, expanded, paragraphs, clampMobile]);
+    return normalizedParagraphs;
+  }, [isMobile, expanded, normalizedParagraphs, clampMobile]);
 
-  const hasMore = isMobile && clampMobile > 0 && paragraphs.length > clampMobile;
+  const hasMore =
+    isMobile &&
+    clampMobile > 0 &&
+    normalizedParagraphs.length > clampMobile;
+
+  // JSON-LD için sadece string paragrafları birleştir (node'ları boş geç)
+  const articleBody = normalizedParagraphs
+    .map((p) => (typeof p === "string" ? p : ""))
+    .filter(Boolean)
+    .join("\n\n");
 
   const jsonLd =
     schema && (schema.type === "Article" || schema.type === "WebPage")
@@ -74,7 +98,7 @@ export default function TextSection({
           headline: title,
           inLanguage: schema.lang || locale,
           url: schema.url,
-          articleBody: paragraphs.join("\n\n"),
+          articleBody,
         }
       : null;
 
@@ -98,19 +122,28 @@ export default function TextSection({
       ) : null}
 
       <div className="mt-0 text-neutral-800 lg:leading-[1.85] text-[12px] md:text-[14px] leading-tight">
+        {/* Ana paragraflar */}
         {visibleParagraphs.map((p, i) => (
-          <p key={i}>{renderWithIncotermLinks(String(p))}</p>
+          <p key={i}>
+            {typeof p === "string"
+              ? renderWithIncotermLinks(p)
+              : p}
+          </p>
         ))}
 
+        {/* Alt başlık */}
         {title2 ? (
           <h4 className="text-[16px] md:text-[18px] lg:text-[18px] font-semibold tracking-tight text-black mt-2">
             {title2}
           </h4>
         ) : null}
 
+        {/* Alt metin */}
         {text2 ? (
           <p className="mt-1 lg:mt-2 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
-            {renderWithIncotermLinks(String(text2))}
+            {typeof text2 === "string"
+              ? renderWithIncotermLinks(text2)
+              : text2}
           </p>
         ) : null}
 

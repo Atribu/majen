@@ -13,7 +13,7 @@ export default function InlineLinks({
   text,
   patterns = [],
   textClassName = "text-[14px] leading-[110%] text-gray-700",
-  linkClassName = "text-blue-600 hover:underline",
+  linkClassName = "text-teal-700 hover:underline",
 }) {
   const source = text || "";
 

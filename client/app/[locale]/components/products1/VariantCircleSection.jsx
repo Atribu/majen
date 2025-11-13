@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import InlineLinks from "../generalcomponent/InlineLinks";
 
 /**
  * Dairesel kart grid (variant / cut / process için ortak)
@@ -58,6 +59,7 @@ export default function VariantCircleSection({
   IMAGE_BY_PRODUCT_AND_VARIANT,
   IMAGE_BY_PRODUCT_VARIANT_AND_CUT,
   variantSlug, // opsiyonel
+  
 }) {
   const locale = useLocale();
   // Tailwind’in compile-time sınırlaması için grid kolonlarını basit tutalım
@@ -73,6 +75,97 @@ export default function VariantCircleSection({
         : variantCards.length === 9
       ? "flex flex-wrap justify-center gap-8"
       : "flex flex-wrap justify-center gap-8";
+
+        const colorBlogPatterns = React.useMemo(() => {
+    if (!locale || productKey !== "blocks") return []; // 🔹 sadece blocks için
+
+    const base = (slug) => `/${locale}/${slug}`;
+
+    if (locale.startsWith("tr")) {
+      return [
+        {
+          // Blaundos Antiko, Antiko traverten vs.
+          pattern: /\b(Blaundos\s+Antiko|Antiko traverten|Antico travertine)\b/i,
+          href: base("antico-travertine"),
+        },
+        {
+          pattern: /\b(Blaundos\s+Light|Light traverten|Light travertine)\b/i,
+          href: base("light-travertine"),
+        },
+        {
+          pattern: /\b(Blaundos\s+Ivory|Ivory traverten|Ivory travertine)\b/i,
+          href: base("ivory-travertine"),
+        },
+      ];
+    }
+
+    // EN (ve diğer diller) için
+    return [
+      {
+        pattern: /\b(Blaundos\s+Antiko|Blaundos\s+Antico|Antico travertine)\b/i,
+        href: base("antico-travertine-blocks"),
+      },
+      {
+        pattern: /\b(Blaundos\s+Light|Light travertine)\b/i,
+        href: base("light-travertine-blocks"),
+      },
+      {
+        pattern: /\b(Blaundos\s+Ivory|Ivory travertine)\b/i,
+        href: base("ivory-travertine-blocks"),
+      },
+    ];
+  }, [locale, productKey]);
+
+
+        const processBlogPatterns = React.useMemo(() => {
+    if (!locale || productKey == "blocks") return []; // 🔹 sadece blocks için
+
+    const base = (slug) => `/${locale}/${slug}`;
+
+    if (locale.startsWith("tr")) {
+      return [
+        {
+          // Blaundos Antiko, Antiko traverten vs.
+          pattern: /\bhoned\b/i,
+          href: base(`/filled-honed-vein-cut-travertine-${productKey}`),
+        },
+        {
+          pattern: /\bbrushed\b/i,
+          href: base(`/filled-brushed-vein-cut-travertine-${productKey}`),
+        },
+        {
+          pattern: /\btumbled\b/i,
+          href: base(`/filled-tumbled-vein-cut-travertine-${productKey}`),
+        },
+          {
+          pattern: /\band polished\b/i,
+          href: base(`/filled-polished-vein-cut-travertine-${productKey}`),
+        },
+      ];
+    }
+
+    // EN (ve diğer diller) için
+    return [
+          {
+          // Blaundos Antiko, Antiko traverten vs.
+          pattern: /\bhoned\b/i,
+          href: base(`/filled-honed-vein-cut-travertine-${productKey}`),
+        },
+        {
+          pattern: /\bbrushed\b/i,
+          href: base(`/filled-brushed-vein-cut-travertine-${productKey}`),
+        },
+        {
+          pattern: /\btumbled\b/i,
+          href: base(`/filled-tumbled-vein-cut-travertine-${productKey}`),
+        },
+          {
+          pattern: /\band polished\b/i,
+          href: base(`/filled-polished-vein-cut-travertine-${productKey}`),
+        },
+    ];
+  }, [locale, productKey]);
+
       
 
   return (
@@ -82,7 +175,23 @@ export default function VariantCircleSection({
           <h3 className="text-[20px] lg:text-[22px] font-semibold">{heading}</h3>
         )}
         {text && (
-          <p className="text-[12px] lg:text-[14px] mt-2 w-[90%] items-center">{text}</p>
+          <p className="text-[12px] lg:text-[14px] mt-2 w-[90%] items-center">
+  {productKey === "blocks" && colorBlogPatterns.length > 0 ? (
+    <InlineLinks
+      text={text || ""}
+      patterns={colorBlogPatterns}
+      textClassName="text-[12px] md:text-[12px] lg:text-[14px] text-neutral-800"
+      linkClassName="text-teal-700 font-semibold "
+    />
+  ) : (
+     <InlineLinks
+      text={text || ""}
+      patterns={processBlogPatterns}
+      textClassName="text-[12px] md:text-[12px] lg:text-[14px] text-neutral-800"
+      linkClassName="text-teal-700 font-semibold "
+    />
+  )}
+</p>
         )}
 
         <div className={`mt-6  gap-8 ${colBase} ${colSm} ${colLg}`}>

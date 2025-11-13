@@ -97,6 +97,234 @@ export default function CutPage() {
   const baseSegment = baseFor(locale);
   const baseHref    = `/${locale}/${baseSegment}`;
 
+  function getIncotermPatterns(locale) {
+  const exportBase = locale.startsWith("tr")
+    ? "nasıl-ihracat-yapıyoruz"
+    : "how-we-export";
+
+  return [
+    {
+      pattern: /\bFOB\b/i,
+      href: `/${locale}/${exportBase}/fob`,
+    },
+    {
+      pattern: /\bCIF\b/i,
+      href: `/${locale}/${exportBase}/cif`,
+    },
+    {
+      pattern: /\bEXW\b/i,
+      href: `/${locale}/${exportBase}/exw`,
+    },
+  ];
+}
+
+/**
+ * productKey: "blocks" | "slabs" | "tiles" | "pavers"
+ * sectionIndex: 1..5 (header1/text1, header2/text2,...)
+ */
+function getBlogPatterns(productKey, sectionIndex, locale) {
+  const base = (slug) => `/${locale}/${slug}`;
+
+  if (productKey === "blocks") {
+    switch (sectionIndex) {
+      case 1:
+        return [
+          {
+            pattern: /\btravertine blocks?\b/i,
+            href: base("travertine-blocks-guide"),
+          },
+          {
+            pattern: /\bquarry extraction\b/i,
+            href: base("travertine-quarry"),
+          },
+        ];
+      case 3:
+        return [
+          {
+            pattern: /\btravertine blocks?\b/i,
+            href: base("travertine-blocks-guide"),
+          },
+           {
+            pattern: /\bwholesalers\b/i,
+            href: base("travertine-distributor"),
+          },
+        ];
+      case 4:
+        return [
+          {
+            pattern: /\bexport partner\b/i,
+            href: base("travertine-exporter"),
+          },
+        ];
+      default:
+        return [];
+    }
+  }
+
+  if (productKey === "slabs") {
+    switch (sectionIndex) {
+      case 1:
+      case 3:
+         return [
+          {
+            pattern: /\btravertine slabs?\b/i,
+            href: base("travertine-slabs-guide"),
+          },
+          {
+            // wall cladding
+            pattern: /\bwall cladding\b/i,
+            href: base("travertine-cladding"),
+          },
+          {
+            // flooring
+            pattern: /\bflooring\b/i,
+            href: base("travertine-flooring"),
+          },
+          {
+            // facades / façades
+            pattern: /\b(exterior\s+)?fa(?:ç|c)ades?\b/i,
+            href: base("travertine-facade"),
+          },
+
+           {
+            pattern: /\bwholesalers\b/i,
+            href: base("travertine-distributor"),
+          },
+        ];
+        // genel slabs guide
+        return [
+          {
+            pattern: /\btravertine slabs?\b/i,
+            href: base("travertine-slabs-guide"),
+          },
+        ];
+
+      case 2:
+        // Applications of slabs: cladding, flooring, façades
+        return [
+          {
+            pattern: /\btravertine slabs?\b/i,
+            href: base("travertine-slabs-guide"),
+          },
+          {
+            // wall cladding
+            pattern: /\bwall cladding\b/i,
+            href: base("travertine-cladding"),
+          },
+          {
+            // flooring
+            pattern: /\bflooring\b/i,
+            href: base("travertine-flooring"),
+          },
+          {
+            // facades / façades
+            pattern: /\b(exterior\s+)?fa(?:ç|c)ades?\b/i,
+            href: base("travertine-facade"),
+          },
+        ];
+      default:
+        return [];
+    }
+  }
+
+  if (productKey === "tiles") {
+    switch (sectionIndex) {
+      case 1:
+        return [
+          {
+            pattern: /\btravertine tiles?\b/i,
+            href: base("travertine-tiles-guide"),
+          },
+        ];
+      case 2:
+        return [
+          {
+            pattern: /\bwholesalers\b/i,
+            href: base("travertine-distributor"),
+          },
+        ]
+      case 3:
+        // flooring, bathrooms, pool decks
+        return [
+          {
+            pattern: /\bflooring\b/i,
+            href: base("travertine-flooring"),
+          },
+          {
+            pattern: /\bwall cladding\b/i,
+            href: base("travertine-cladding"),
+          },
+          {
+            pattern: /\bpool decks?\b/i,
+            href: base("travertine-pool"),
+          },
+        ];
+        case 4:
+          return [
+            {
+            pattern: /\bquarry-direct exporter?\b/i,
+            href: base("travertine-exporter"),
+          },
+          ]
+      default:
+        return [];
+    }
+  }
+
+  if (productKey === "pavers") {
+    switch (sectionIndex) {
+      case 1:
+        return [
+          {
+            pattern: /\btravertine pavers?\b/i,
+            href: base("travertine-pavers-guide"),
+          },
+       
+        ];
+
+        case 2:
+          return [
+                 {
+            pattern: /\bhoned?\b/i,
+            href: base("honed-travertine"),
+          },
+              {
+            pattern: /\bbrushed?\b/i,
+            href: base("brushed-travertine"),
+          },
+          
+            {
+            pattern: /\btumbled?\b/i,
+            href: base("tumbled-travertine"),
+          },
+          ]
+      case 3:
+        return [
+          {
+            pattern: /\bpool decks?\b/i,
+            href: base("travertine-pool"),
+          },
+        ];
+      case 5:
+        return [
+          {
+            pattern: /\btravertine supplier\b/i,
+            href: base("travertine-supplier"),
+          },
+          {
+            pattern: /\bwholesalers\b/i,
+            href: base("travertine-distributor"),
+          },
+        ];
+      default:
+        return [];
+    }
+  }
+
+  return [];
+}
+
+
   // ---- Breadcrumb
   const rawPath = usePathname();
   const pathname = typeof rawPath === "string" ? rawPath : "";
@@ -435,6 +663,12 @@ const metaDesc = safe(() => {
 
 const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
 
+const productAltMap = {
+    blocks: "Blocks",
+    slabs: "Slabs",
+    tiles: "Tiles",
+    "pavers": "Pavers",
+  };
 
   return (
     <main className="py-6 mt-[22px] lg:mt-7 overflow-x-hidden text-center w-full">
@@ -531,6 +765,73 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
       )}
     </section>
 
+    
+      {(() => {
+      const textSectionRaw = optRaw(`${productKey}.TextSection`, {}) || {};
+      const sections = [];
+      let i = 1;
+    
+      while (
+        textSectionRaw[`header${i}`] ||
+        textSectionRaw[`text${i}`] ||
+        textSectionRaw[`subheader${i}`] ||
+        textSectionRaw[`subtext${i}`]
+      ) {
+        const header = textSectionRaw[`header${i}`];
+        const text = textSectionRaw[`text${i}`];
+    
+        const titleForSection = header || `${title} — Section ${i}`;
+    
+        // 🔗 Bu section için blog + incoterm pattern'ları
+        const blogPatterns = getBlogPatterns(productKey, i, locale);
+        const incotermPatterns = getIncotermPatterns(locale);
+        const patterns = [...blogPatterns, ...incotermPatterns];
+    
+        const paragraphsForSection = [];
+        if (text) {
+          paragraphsForSection.push(
+            <InlineLinks
+              key={`p-${productKey}-${i}`}
+              text={text}
+              patterns={patterns}
+              textClassName="" // stil p'den gelsin
+              linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+            />
+          );
+        }
+    
+        if (titleForSection || paragraphsForSection.length) {
+          sections.push({
+            id: i,
+            title: titleForSection,
+            paragraphs: paragraphsForSection,
+          });
+        }
+        i++;
+      }
+    
+      return sections.map(({ id, title: secTitle, paragraphs }) => (
+        <TextSection
+          key={id}
+          title={secTitle}
+          paragraphs={paragraphs}
+          schema={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `Wholesale Travertine ${productAltMap[productKey]} from Turkey`,
+            author: { "@type": "Organization", name: "Majen" },
+            publisher: { "@type": "Organization", name: "Majen" },
+          }}
+          className="max-w-5xl mx-auto mt-12"
+          clampMobile={3}
+          as="section"
+          title2=""
+          text2=""
+        />
+      ));
+    })()}
+    
+{/* 
       {textSections.map(({ id, title, paragraphs }) => (
         <TextSection
           key={id}
@@ -547,7 +848,7 @@ const canonical = `https://majen.com.tr/${locale}/${canonicalCutSlug}`;
           clampMobile={3}
           as="section"
         />
-      ))}
+      ))} */}
 
       {faqItems.length > 0 && (
         <div id="faq" className="max-w-5xl mx-auto mt-12">

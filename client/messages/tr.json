@@ -88,7 +88,7 @@
   },
   "LogisticSection": {
     "header": "İhracat & Lojistik",
-    "text": "Majen, Türkiye’den toptan traverten ihracatında uzmandır. <fob>FOB</fob> (Free On Board) ile konteynerleri Türk limanlarında yükler, <cif>CIF</cif> (Cost, Insurance & Freight) ile ise varış limanınıza kadar taşımayı üstleniriz. İhracat ekibimiz ticari faturalar, çeki listeleri, menşe şahadetnameleri ve muayene raporları dâhil tüm evrakları hazırlar. Her blok, plaka ve karo; ahşap karkaslarla güçlendirilmiş, naylon ambalaj ve metal çemberleme ile paketlenir ve deniz taşımacılığı için özenle konteynerlere yüklenir. Kanıtlanmış lojistik ağımız, dünya genelinde güvenli ve zamanında teslimatı sağlar."
+    "text": "Majen, <exp>Türkiye'den toptan traverten ihracatında</exp> uzmanlaşmıştır. Türk limanlarında konteynerleri yüklediğimiz <fob>FOB (Free On Board)</fob> ve varış limanına kadar taşımayı üstlendiğimiz <cif>CIF (Cost, Insurance & Freight)</cif> gönderim seçenekleri sunuyoruz. İhracat ekibimiz, ticari fatura, koli listesi, menşe şahadetnamesi ve ekspertiz raporlarını içeren <docs>tam ihracat dokümantasyonunu</docs> hazırlar. Her bir <manu>blok, plaka ve karo; güçlendirilmiş ahşap kasalar, naylon sarım ve çelik kuşaklarla</manu> paketlenerek deniz taşımacılığında kırılma riski en aza indirilir. Kanıtlanmış lojistik ağımız, <dist>dünya çapında toptan traverten sevkiyatlarını</dist> güvenli ve zamanında teslim eder. Majen, <sup>Türkiye'den güvenilir bir traverten tedarikçisi</sup> olarak tanınmaktadır."
   },
 
   "InfoSection": {
@@ -108,7 +108,7 @@
   "CollectionsSection": {
     "span": "Blaundos Traverten Renkleri",
     "header": "Traverten Renkleri ve Yüzey İşlemleri",
-"text": "Blaundos Antiko: Lüks cepheler için gri-bej antik tonlar. Blaundos Light: Modern iç ve dış mekânlar için açık bej. Blaundos Ivory: Oteller, villalar ve kamusal alanlar için fildişi-krem. Mevcut yüzey işlemleri arasında cilalı, honlanmış, fırçalanmış ve eskitilmiş seçenekler bulunur. Talep üzerine özel yüzey işlemleri uygulanabilir, böylece mimarlara ve toptancılara farklı proje ihtiyaçları için esneklik sağlanır.",
+"text": "<antiko>Blaundos Antiko</antiko>: Gri-bej antik tonlar, lüks cephe uygulamaları için idealdir. <light>Blaundos Light</light>: Modern iç ve dış mekânlar için açık bej tonlar sunar. <ivory>Blaundos Ivory</ivory>: Oteller, villalar ve kamusal alanlar için fildişi-krem görünüm sağlar. Yüzey seçenekleri arasında cilalı, honlanmış, fırçalanmış ve eskitilmiş işlemler bulunur. Talebe göre özel yüzey işlemleri uygulanarak mimarlar ve toptancılar için geniş tasarım esnekliği sağlanır. Majen, <supplier>Türkiye’den güvenilir bir traverten tedarikçisi</supplier> olarak doğal taş tedariki sunar.",
     "titleAntiko": "Blaundos Antiko",
     "altAntiko": "Blaundos Antiko traverten koleksiyonu",
     "titleLight": "Blaundos Light",
@@ -130,7 +130,7 @@
 },
 "export2": {
   "title": "<cif>CIF</cif> (Cost, Insurance & Freight) – Sorunsuz Nakliye",
-  "description": "<cif>CIF</cif> ile Majen, nakliye, sigorta ve navlunu alıcının varış limanına kadar üstlenir. İthalatçılar, Türkiye’den toptan traverten tedarik ederken kolaylık sağladığı için bu yöntemi tercih eder."
+  "description": "<cif>CIF</cif> ile Majen, nakliye, sigorta ve navlunu alıcının varış limanına kadar üstlenir. İthalatçılar,<turkey> Türkiye’den toptan traverten tedarik ederken </turkey> kolaylık sağladığı için bu yöntemi tercih eder."
 },
 "export3": {
   "title": "<exw>EXW</exw> (Ex Works) – Esnek Fabrika Teslimi",
