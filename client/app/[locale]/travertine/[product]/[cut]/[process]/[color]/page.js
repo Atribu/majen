@@ -41,6 +41,7 @@ import InfoListCard from "@/app/[locale]/travertine/blocks/[color]/InfoListCard"
 import SocialBlock from "@/app/[locale]/travertine/blocks/[color]/SocialBlock";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import Image from "next/image";
+import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
 
 /* ---------------- utils ---------------- */
 const safe = (fn, fb = null) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
@@ -543,6 +544,214 @@ let imgCandidate;
   return items;
 }
 
+//------------blog links---------
+const BLOG_SLUG_MAP = {
+  en: {
+    "travertine-blocks-guide": "travertine-blocks-guide",
+    "travertine-slabs-guide": "travertine-slabs-guide",
+    "travertine-tiles-guide": "travertine-tiles-guide",
+    "travertine-pavers-guide": "travertine-pavers-guide",
+    "travertine-cladding": "travertine-cladding",
+    "travertine-flooring": "travertine-flooring",
+    "travertine-facade": "travertine-facade",
+    "travertine-quarry": "travertine-quarry",
+    "travertine-exporter": "travertine-exporter",
+    "travertine-distributor": "travertine-distributor",
+    "travertine-supplier": "travertine-supplier",
+    "travertine-pool": "travertine-pool",
+    "polished-travertine": "polished-travertine",
+    "honed-travertine": "honed-travertine",
+    "brushed-travertine": "brushed-travertine",
+    "tumbled-travertine": "tumbled-travertine",
+     "ivory-travertine": "ivory-travertine",
+    "light-travertine": "light-travertine",
+    "antico-travertine": "antico-travertine",
+    "travertine-bathroom":  "travertine-bathroom",
+    "travertine-kitchen":  "travertine-kitchen",
+    "filled-travertine":"filled-travertine",
+    "unfilled-travertine":"unfilled-travertine",
+  },
+  tr: {
+    "travertine-blocks-guide": "traverten-bloklari",
+    "travertine-slabs-guide": "traverten-plakalar",
+    "travertine-tiles-guide": "traverten-karolar",
+    "travertine-pavers-guide": "traverten-dosemeler",
+    "travertine-cladding": "traverten-kaplama",
+    "travertine-flooring": "traverten-zemin-kaplama",
+    "travertine-facade": "traverten-cephe-kaplama",
+    "travertine-quarry": "traverten-ocagi",
+    "travertine-exporter": "traverten-ihracatcisi",
+    "travertine-distributor": "traverten-toptancisi",
+    "travertine-supplier": "traverten-tedarikcisi",
+    "travertine-pool": "traverten-havuz-kaplama",
+    "polished-travertine": "cilali-traverten",
+    "honed-travertine": "honlanmis-traverten",
+    "brushed-travertine": "fircalanmis-traverten",
+    "tumbled-travertine": "eskitilmis-traverten",
+    "ivory-travertine": "fildisi-traverten",
+    "light-travertine": "acik-traverten",
+    "antico-travertine": "antiko-traverten",
+    "travertine-bathroom":  "traverten-banyo",
+    "filled-travertine":"dolgulu-traverten",
+    "unfilled-travertine":"dolgusuz-traverten",
+    "travertine-kitchen":  "traverten-mutfak",
+  },
+};
+
+function resolveBlogSlug(locale, slug) {
+  const lang = locale.startsWith("tr") ? "tr" : "en";
+  const clean = String(slug)
+    .replace(/^travertines\//, "")
+    .replace(/^\//, "");
+  const map = BLOG_SLUG_MAP[lang] || {};
+  return map[clean] || clean;
+}
+
+function blogPath(locale, slug) {
+  const finalSlug = resolveBlogSlug(locale, slug);
+  return `/${locale}/${finalSlug}`;
+}
+
+// FOB / CIF / EXW + shipment / delivery → how-we-export
+function getIncotermPatterns(locale) {
+  const exportBase = locale.startsWith("tr")
+    ? "nasıl-ihracat-yapıyoruz"
+    : "how-we-export";
+
+  const rootHref = `/${locale}/${exportBase}`;
+
+  return [
+    { pattern: /\bFOB\b/i, href: `/${locale}/${exportBase}/fob` },
+    { pattern: /\bCIF\b/i, href: `/${locale}/${exportBase}/cif` },
+    { pattern: /\bEXW\b/i, href: `/${locale}/${exportBase}/exw` },
+
+    // shipment / shipping / delivery → ana ihracat sayfası
+    { pattern: /\bshipments?\b/i, href: rootHref },
+    { pattern: /\bshipping\b/i, href: rootHref },
+    { pattern: /\bdelivery\b/i, href: rootHref },
+  ];
+}
+
+// Ürüne göre genel blog pattern’ları (guide, flooring, cladding, pool vs.)
+function makeBlogPatterns(locale, productKey) {
+  const patterns = [];
+
+  if (locale.startsWith("tr")) {
+    patterns.push(
+      {
+        pattern: /\btraverten blok(lar)?\b/gi,
+        href: blogPath(locale, "travertine-blocks-guide"),
+      },
+      {
+        pattern: /\btraverten plakalar?\b/gi,
+        href: blogPath(locale, "travertine-slabs-guide"),
+      },
+      {
+        pattern: /\btraverten karo(lar)?\b/gi,
+        href: blogPath(locale, "travertine-tiles-guide"),
+      },
+      {
+        pattern: /\btraverten d(ö|o)şemeler?\b/gi,
+        href: blogPath(locale, "travertine-pavers-guide"),
+      },
+    );
+  } else {
+    patterns.push(
+      {
+        pattern: /\btravertine blocks?\b/gi,
+        href: blogPath(locale, "travertine-blocks-guide"),
+      },
+      {
+        pattern: /\btravertine slabs?\b/gi,
+        href: blogPath(locale, "travertine-slabs-guide"),
+      },
+      {
+        pattern: /\btravertine tiles?\b/gi,
+        href: blogPath(locale, "travertine-tiles-guide"),
+      },
+      {
+        pattern: /\btravertine pavers?\b/gi,
+        href: blogPath(locale, "travertine-pavers-guide"),
+      },
+    );
+  }
+
+  // kullanım alanları ortak
+  patterns.push(
+    {
+      pattern: /\bwall cladding\b/i,
+      href: blogPath(locale, "travertine-cladding"),
+    },
+    {
+      pattern: /\bfloor(ing)?\b/i,
+      href: blogPath(locale, "travertine-flooring"),
+    },
+    {
+      pattern: /\b(exterior\s+)?fa(?:ç|c)ades?\b/i,
+      href: blogPath(locale, "travertine-facade"),
+    },
+    {
+      pattern: /\bpool decks?\b/i,
+      href: blogPath(locale, "travertine-pool"),
+    },
+    {
+      pattern: /\bbathrooms?\b/i,
+      href: blogPath(locale, "travertine-bathroom"),
+    },
+    {
+      pattern: /\bkitchens?\b/i,
+      href: blogPath(locale, "travertine-kitchen"),
+    },
+     {
+      pattern: /\bfilled?\b/i,
+      href: blogPath(locale, "filled-travertine"),
+    },
+     {
+      pattern: /\bunfilled?\b/i,
+      href: blogPath(locale, "unfilled-travertine"),
+    },
+    {
+      pattern: /\btravertine supplier\b/i,
+      href: blogPath(locale, "travertine-supplier"),
+    },
+    {
+      pattern: /\bwholesalers\b/i,
+      href: blogPath(locale, "travertine-distributor"),
+    },
+    {
+      pattern: /\bquarry\b/i,
+      href: blogPath(locale, "travertine-quarry"),
+    },
+    {
+      pattern: /\bexport(er)?\b/i,
+      href: blogPath(locale, "travertine-exporter"),
+    },
+  );
+
+  // yüzey bitişleri (global blog yazıları)
+  patterns.push(
+    {
+      pattern: /\bpolished?\b/gi,
+      href: blogPath(locale, "polished-travertine"),
+    },
+    {
+      pattern: /\bhoned?\b/gi,
+      href: blogPath(locale, "honed-travertine"),
+    },
+    {
+      pattern: /\bbrushed?\b/gi,
+      href: blogPath(locale, "brushed-travertine"),
+    },
+    {
+      pattern: /\btumbled?\b/gi,
+      href: blogPath(locale, "tumbled-travertine"),
+    },
+    
+  );
+
+  return patterns;
+}
+
 
 
   /* ---- Breadcrumbs ---- */
@@ -699,18 +908,65 @@ let imgCandidate;
       )}
 
       {/* Uzun metin bölümleri */}
-      {( page?.h3 || page?.h4 || page?.h5) && (
+           {/* Uzun metin bölümleri + inline linkleme */}
+      {(page?.h3 || page?.h4 || page?.h5) && (
         <section className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center">
-          {page?.h3 ? (<><h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{page.h3}</h3>{page?.text3 ? <p className="text-[12px] lg:text-[14px]">{page.text3}</p> : null}</>) : null}
-          {page?.h4 ? (<><h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h4}</h4>{page?.text4 ? <p className="text-[12px] lg:text-[14px]">{page.text4}</p> : null}</>) : null}
-         {(isSlabs && page?.h5) && 
-         (
-          <section>
-             {page?.h5 ? (<><h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>{page?.text5 ? <p className="text-[12px] lg:text-[14px]">{page.text5}</p> : null}</>) : null}
-          </section>
-         )}
+          {/* h3 + text3 */}
+          {page?.h3 ? (
+            <>
+              <h3 className="text-[20px] lg:text-[22px] font-bold mt-6">{page.h3}</h3>
+              {page?.text3 ? (
+                <InlineLinks
+                  text={page.text3}
+                  patterns={[
+                    ...makeBlogPatterns(locale, productKey),
+                    ...getIncotermPatterns(locale),
+                  ]}
+                  textClassName="text-[12px] lg:text-[14px]"
+                  linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+                />
+              ) : null}
+            </>
+          ) : null}
+
+          {/* h4 + text4 */}
+          {page?.h4 ? (
+            <>
+              <h4 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h4}</h4>
+              {page?.text4 ? (
+                <InlineLinks
+                  text={page.text4}
+                  patterns={[
+                    ...makeBlogPatterns(locale, productKey),
+                    ...getIncotermPatterns(locale),
+                  ]}
+                  textClassName="text-[12px] lg:text-[14px]"
+                  linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+                />
+              ) : null}
+            </>
+          ) : null}
+
+          {/* h5 + text5 (sadece slabs için) */}
+          {isSlabs && page?.h5 && (
+            <section>
+              <h5 className="text-[20px] lg:text-[22px] font-bold mt-5">{page.h5}</h5>
+              {page?.text5 ? (
+                <InlineLinks
+                  text={page.text5}
+                  patterns={[
+                    ...makeBlogPatterns(locale, productKey),
+                    ...getIncotermPatterns(locale),
+                  ]}
+                  textClassName="text-[12px] lg:text-[14px]"
+                  linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+                />
+              ) : null}
+            </section>
+          )}
         </section>
       )}
+
 
          
 

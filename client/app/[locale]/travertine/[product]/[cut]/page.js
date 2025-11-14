@@ -27,7 +27,8 @@ import tiles from "@/public/images/homepage/kesim.webp";
 import special from "@/public/images/homepage/Pavers2.webp";
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 import BreadcrumbsExact from "@/app/[locale]/components/generalcomponent/BreadcrumbsExact";
-import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale } from "@/lib/labels";
+import { PRODUCT_LABEL, CUT_LABEL, procSlugForLocale, TILE_SIZE_SLUGS_TILES as TILE_SIZES_TILES,
+  TILE_SIZE_SLUGS_PAVERS as TILE_SIZES_PAVERS, } from "@/lib/labels";
 
 function InfoCard({ title, children, contentClassName = "text-sm text-neutral-600 leading-tight text-center" }) {
   return (
@@ -118,12 +119,28 @@ export default function CutPage() {
   ];
 }
 
+// güvenli kaçış
+const esc = (s) => String(s ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+function sizeRegexForSlug(sizeSlug) {
+  if (sizeSlug === "versailles-set" || sizeSlug === "versailles-pattern") {
+    // yazı içinde "Versailles set", "Versailles pattern", "Versailles-Set" vb.
+    const word = sizeSlug === "versailles-set" ? "set" : "pattern";
+    return new RegExp(`\\bversailles\\s*[-–—]?\\s*${word}\\b`, "i");
+  }
+  const [w, h] = String(sizeSlug).split("x");
+  return new RegExp(
+    `${esc(w)}\\s*["″']?\\s*[x×]\\s*${esc(h)}\\s*["″']?`,
+    "i"
+  );
+}
+
 /**
  * productKey: "blocks" | "slabs" | "tiles" | "pavers"
  * sectionIndex: 1..5 (header1/text1, header2/text2,...)
  */
 function getBlogPatterns(productKey, sectionIndex, locale) {
-  const base = (slug) => `/${locale}/${slug}`;
+    const base = (slug) => blogPath(locale, slug);  // ✅ TR/EN’e göre doğru slug
 
   if (productKey === "blocks") {
     switch (sectionIndex) {
@@ -164,6 +181,24 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
   if (productKey === "slabs") {
     switch (sectionIndex) {
       case 1:
+        return [
+          {
+            pattern: /\bhoned?\b/i,
+            href: base("honed-travertine"),
+          },
+             {
+            pattern: /\bpolished?\b/i,
+            href: base("polished-travertine"),
+          },
+            {
+            pattern: /\bbrushed?\b/i,
+            href: base("brushed-travertine"),
+          },
+             {
+            pattern: /\btumbled?\b/i,
+            href: base("tumbled-travertine"),
+          },
+        ]
       case 3:
          return [
           {
@@ -174,6 +209,11 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             // wall cladding
             pattern: /\bwall cladding\b/i,
             href: base("travertine-cladding"),
+          },
+           {
+            // flooring
+            pattern: /\bfloors\b/i,
+            href: base("travertine-flooring"),
           },
           {
             // flooring
@@ -190,6 +230,19 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             pattern: /\bwholesalers\b/i,
             href: base("travertine-distributor"),
           },
+        ];
+
+         case 5:
+         return [
+          {
+            pattern: /\bwholesalers?\b/i,
+            href: base("travertine-distributor"),
+          },
+           {
+            pattern: /\bexports?\b/i,
+            href: base("travertine-exporter"),
+          },
+    
         ];
         // genel slabs guide
         return [
@@ -235,12 +288,40 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             pattern: /\btravertine tiles?\b/i,
             href: base("travertine-tiles-guide"),
           },
+          {
+            pattern: /\bwall cladding?\b/i,
+            href: base("travertine-cladding"),
+          },
+          {
+            pattern: /\bflooring?\b/i,
+            href: base("travertine-flooring"),
+          },
+          {
+            pattern: /\bfacades?\b/i,
+            href: base("travertine-facades"),
+          },
+          {
+            pattern: /\bbathroom?\b/i,
+            href: base("travertine-bathroom"),
+          },
         ];
       case 2:
         return [
           {
             pattern: /\bwholesalers\b/i,
             href: base("travertine-distributor"),
+          },
+          {
+            pattern: /\bivory\b/i,
+            href: base("ivory-travertine"),
+          },
+          {
+            pattern: /\blight\b/i,
+            href: base("light-travertine"),
+          },
+          {
+            pattern: /\bantico\b/i,
+            href: base("antico-travertine"),
           },
         ]
       case 3:
@@ -262,8 +343,12 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
         case 4:
           return [
             {
-            pattern: /\bquarry-direct exporter?\b/i,
-            href: base("travertine-exporter"),
+            pattern: /\bdistributors?\b/i,
+            href: base("travertine-distributor"),
+          },
+             {
+            pattern: /\bquarrying?\b/i,
+            href: base("travertine-quarry"),
           },
           ]
       default:
@@ -279,6 +364,10 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             pattern: /\btravertine pavers?\b/i,
             href: base("travertine-pavers-guide"),
           },
+            {
+            pattern: /\bquarry-direct supplier,?\b/i,
+            href: base("travertine-quarry"),
+          },
        
         ];
 
@@ -287,6 +376,10 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
                  {
             pattern: /\bhoned?\b/i,
             href: base("honed-travertine"),
+          },
+                {
+            pattern: /\bpolished?\b/i,
+            href: base("polished-travertine"),
           },
               {
             pattern: /\bbrushed?\b/i,
@@ -297,11 +390,27 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             pattern: /\btumbled?\b/i,
             href: base("tumbled-travertine"),
           },
+             {
+            pattern: /\bfilled?\b/i,
+            href: base("filled-travertine"),
+          },
+          {
+            pattern: /\bunfilled?\b/i,
+            href: base("unfilled-travertine"),
+          },
           ]
       case 3:
         return [
+  
           {
-            pattern: /\bpool decks?\b/i,
+            pattern: /\bUnfilled?\b/i,
+            href: base("unfilled-travertine"),
+          },
+        ];
+            case 4:
+        return [
+          {
+            pattern: /\bpool?\b/i,
             href: base("travertine-pool"),
           },
         ];
@@ -312,8 +421,8 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
             href: base("travertine-supplier"),
           },
           {
-            pattern: /\bwholesalers\b/i,
-            href: base("travertine-distributor"),
+            pattern: /\bexport\b/i,
+            href: base("travertine-exporter"),
           },
         ];
       default:
@@ -323,6 +432,75 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
 
   return [];
 }
+
+function defaultProc(locale) {
+  return locale.startsWith("tr") ? "dolgulu-honlanmis" : "filled-honed";
+}
+
+// İngilizce "anahtar slug" → her dil için gerçek slug
+const BLOG_SLUG_MAP = {
+  en: {
+    "travertine-blocks-guide": "travertine-blocks-guide",
+    "travertine-slabs-guide": "travertine-slabs-guide",
+    "travertine-tiles-guide": "travertine-tiles-guide",
+    "travertine-pavers-guide": "travertine-pavers-guide",
+    "travertine-cladding": "travertine-cladding",
+    "travertine-flooring": "travertine-flooring",
+    "travertine-facade": "travertine-facade",
+    "travertine-quarry": "travertine-quarry",
+    "travertine-exporter": "travertine-exporter",
+    "travertine-distributor": "travertine-distributor",
+    "travertine-supplier": "travertine-supplier",
+    "travertine-pool": "travertine-pool",
+    "polished-travertine": "polished-travertine",
+    "honed-travertine": "honed-travertine",
+    "brushed-travertine": "brushed-travertine",
+    "tumbled-travertine": "tumbled-travertine",
+    "ivory-travertine": "ivory-travertine",
+    "light-travertine": "light-travertine",
+    "antico-travertine": "antico-travertine",
+    "travertine-bathroom":  "travertine-bathroom",
+    "filled-travertine":"filled-travertine",
+    "unfilled-travertine":"unfilled-travertine",
+  },
+  tr: {
+    // 🔻 Bunları sen kendi gerçek TR URL’lerine göre ayarla
+    "travertine-blocks-guide": "traverten-bloklari",
+    "travertine-slabs-guide": "traverten-plakalar",
+    "travertine-tiles-guide": "traverten-karolar",
+    "travertine-pavers-guide": "traverten-dosemeler",
+    "travertine-cladding": "traverten-kaplama",
+    "travertine-flooring": "traverten-zemin-kaplama",
+    "travertine-facade": "traverten-cephe-kaplama",
+    "travertine-quarry": "traverten-ocagi",
+    "travertine-exporter": "traverten-ihracatcisi",
+    "travertine-distributor": "traverten-toptancisi",
+    "travertine-supplier": "traverten-tedarikcisi",
+    "travertine-pool": "traverten-havuz-kaplama",
+    "polished-travertine": "cilali-traverten",
+    "honed-travertine": "honlanmis-traverten",
+    "brushed-travertine": "fircalanmis-traverten",
+    "tumbled-travertine": "eskitilmis-traverten",
+     "ivory-travertine": "fildisi-traverten",
+    "light-travertine": "acik-traverten",
+    "antico-travertine": "antiko-traverten",
+    "travertine-bathroom":  "traverten-banyo",
+    "filled-travertine":"dolgulu-traverten",
+    "unfilled-travertine":"dolgusuz-traverten",
+  },
+};
+
+function resolveBlogSlug(locale, slug) {
+  const lang = locale.startsWith("tr") ? "tr" : "en";
+  const clean = String(slug)
+    .replace(/^travertines\//, "")  // eski prefix’leri temizle
+    .replace(/^\//, "");            // baştaki /'ı kaldır
+
+  const map = BLOG_SLUG_MAP[lang] || {};
+  return map[clean] || clean;       // map’te yoksa olduğu gibi bırak
+}
+
+
 
 
   // ---- Breadcrumb
@@ -346,7 +524,7 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
     if (productKey === "slabs")  return base.replace(/-traverten-plakalar$/i, "-traverten-plakalar");
     if (productKey === "tiles")  return base.replace(/-traverten-plakalar$/i, "-traverten-karolar");
     if (productKey === "blocks") return base.replace(/-traverten-plakalar$/i, "-traverten-bloklar");
-    if (productKey === "pavers") return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler"); // ⬅️ düzeltme
+    if (productKey === "pavers") return base.replace(/-traverten-plakalar$/i, "-traverten-dosemeler");
     return base; // plakalar (slabs)
   }
 
@@ -642,6 +820,226 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
     };
   });
 
+
+  //sayfa içi linkleme
+
+function blogPath(locale, slug) {
+  const finalSlug = resolveBlogSlug(locale, slug);
+  return `/${locale}/${finalSlug}`;
+}
+
+function productKeyTr(locale, productKey) {
+  if (!locale.startsWith("tr")) return productKey; // İngilizce -> orijinal productKey
+
+  switch (productKey) {
+    case "slabs":  return "plakalar";
+    case "tiles":  return "karolar";
+    case "blocks": return "bloklar";
+    case "pavers": return "dosemeler";
+    default:       return productKey;
+  }
+}
+
+  function makeBlogPatterns(locale, productKey) {
+  const patterns = [];
+
+  // travertine blocks / slabs / tiles / pavers
+  if (locale.startsWith("tr")) {
+    patterns.push(
+        {
+        pattern: /\bFOB?\b/gi,
+        href: blogPath(locale, "nasil-ihracat-yapiyoruz/fob"),
+      },
+            {
+        pattern: /\bCIF?\b/gi,
+        href: blogPath(locale, "nasil-ihracat-yapiyoruz/cif"),
+      },
+      {
+        pattern: /\btraverten blok(lar)?\b/gi,
+        href: blogPath(locale, "traverten-bloklar"),
+      },
+      {
+        pattern: /\btraverten plakalar?\b/gi,
+        href: blogPath(locale, "traverten-plakalar"),
+      },
+      {
+        pattern: /\btraverten karo(lar)?\b/gi,
+        href: blogPath(locale, "traverten-karolar"),
+      },
+      {
+        pattern: /\btraverten d(ö|o)şemeler?\b/gi,
+        href: blogPath(locale, "traverten-dosemeler"),
+      },
+           {
+        pattern: /\bpolished?\b/gi,
+        href: blogPath(locale, `/dolgulu-cilali-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
+      },
+       {
+        pattern: /\bhoned?\b/gi,
+        href: blogPath(locale, `/dolgulu-honlanmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
+      },
+           {
+        pattern: /\bbrushed?\b/gi,
+        href: blogPath(locale,  `/dolgulu-fircalanmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
+      },
+            {
+        pattern: /\btumbled?\b/gi,
+        href: blogPath(locale,  `/dolgulu-eskitilmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
+      }
+    );
+  } else {
+    patterns.push(
+        {
+        pattern: /\bFOB?\b/gi,
+        href: blogPath(locale, "how-we-export/fob"),
+      },
+            {
+        pattern: /\bCIF?\b/gi,
+        href: blogPath(locale, "how-we-export/cif"),
+      },
+      {
+        pattern: /\btravertine blocks?\b/gi,
+        href: blogPath(locale, "travertine-blocks"),
+      },
+      {
+        pattern: /\btravertine slabs?\b/gi,
+        href: blogPath(locale, "travertine-slabs"),
+      },
+      {
+        pattern: /\btravertine tiles?\b/gi,
+        href: blogPath(locale, "travertine-tiles"),
+      },
+      {
+        pattern: /\btravertine pavers?\b/gi,
+        href: blogPath(locale, "travertine-pavers"),
+      },
+           {
+        pattern: /\bpolished?\b/gi,
+        href: blogPath(locale, `/filled-polished-vein-cut-travertine-${productKey}`),
+      },
+       {
+        pattern: /\bhoned?\b/gi,
+        href: blogPath(locale, `/filled-honed-vein-cut-travertine-${productKey}`),
+      },
+           {
+        pattern: /\bbrushed?\b/gi,
+        href: blogPath(locale,  `/filled-brushed-vein-cut-travertine-${productKey}`),
+      },
+            {
+        pattern: /\btumbled?\b/gi,
+        href: blogPath(locale,  `/filled-tumbled-vein-cut-travertine-${productKey}`),
+      }
+    );
+  }
+
+  // Renk blogları (Blaundos Antiko / Light / Ivory)
+   // ---- BLOK SAYFASI
+  if (productKey === "blocks") {
+    patterns.push(
+      {
+        pattern: /\bAntiko\b/gi,
+        href: blogPath(locale, "antico-travertine-blocks"),
+      },
+      {
+        pattern: /\bLight\b/gi,
+        href: blogPath(locale, "light-travertine-blocks"),
+      },
+      {
+        pattern: /\bIvory\b/gi,
+        href: blogPath(locale, "ivory-travertine-blocks"),
+      }
+    );
+  }
+  // ---- SLABS SAYFASI
+  else if (productKey === "slabs") {
+    patterns.push(
+      {
+        pattern: /\bAntiko\b/gi,
+        href: blogPath(
+          locale,
+          "antico-filled-honed-vein-cut-travertine-slabs"
+        ),
+      },
+      {
+        pattern: /\bLight\b/gi,
+        href: blogPath(
+          locale,
+          "light-filled-honed-vein-cut-travertine-slabs"
+        ),
+      },
+      {
+        pattern: /\bIvory\b/gi,
+        href: blogPath(
+          locale,
+          "ivory-filled-honed-vein-cut-travertine-slabs"
+        ),
+      }
+    );
+  }
+  // ---- TILES / PAVERS vb. DİĞER ÜRÜNLER
+  else {
+    patterns.push(
+      {
+        pattern: /\bAntiko\b/gi,
+        href: blogPath(
+          locale,
+          `8x8-filled-honed-vein-cut-travertine-${productKey}#product-intro`
+        ),
+      },
+      {
+        pattern: /\bLight\b/gi,
+        href: blogPath(
+          locale,
+          `8x8-filled-honed-vein-cut-travertine-${productKey}#product-intro`
+        ),
+      },
+      {
+        pattern: /\bIvory\b/gi,
+        href: blogPath(
+          locale,
+          `8x8-filled-honed-vein-cut-travertine-${productKey}#product-intro`
+        ),
+      }
+    );
+  }
+
+  // Quarry → travertine quarry
+  patterns.push({
+    pattern: /\bquarry\b/gi,
+    href: blogPath(locale, "travertine-quarry"),
+  });
+
+  return patterns;
+}
+
+const blogLinkPatterns = makeBlogPatterns(locale, productKey);
+
+  const isSizeDriven = productKey === "tiles" || productKey === "pavers";
+  const sizeSlugs =
+    productKey === "tiles"  ? TILE_SIZES_TILES
+    : productKey === "pavers" ? TILE_SIZES_PAVERS
+    : [];
+
+  const defaultCutSlug = cutSlugForProduct(locale, "vein-cut", productKey);
+  const defaultProcSlug = defaultProc(locale);
+
+  const sizeLinkPatterns = isSizeDriven
+    ? sizeSlugs.map((s) => {
+        const rx = sizeRegexForSlug(s);
+        // tiles: versailles-set, pavers: versailles-pattern (URL başında size geliyor)
+        const sizeForUrl =
+          productKey === "tiles"  && s === "versailles-pattern" ? "versailles-set" :
+          productKey === "pavers" && s === "versailles-set"     ? "versailles-pattern" :
+          s;
+        return {
+          pattern: rx,
+          href: `/${locale}/${sizeForUrl}-${defaultProcSlug}-${defaultCutSlug}`,
+        };
+      })
+    : [];
+
+ // linkleme son   
+
   // 🔹 META & CANONICAL
 // 🔹 META & CANONICAL (t() sadece key varsa çağrılıyor)
 const metaTitleKey = `${productKey}.cuts.${cutKey}.metaTitle`;
@@ -714,7 +1112,7 @@ const productAltMap = {
       />
       
       {/* Info Cards */}
-      <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+      {/* <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
         {cards.map((c, i) => {
           const plain =
             typeof c.content === "string" ? c.content : Array.isArray(c.content) ? c.content.join(", ") : null;
@@ -729,7 +1127,44 @@ const productAltMap = {
             </InfoCard>
           );
         })}
+      </section> */}
+
+         {/* 4 BİLGİ KARTI */}
+           <section className="mt-8 md:mt-10 lg:mt-20 xl:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-[1200px] mx-auto w-[95%]">
+        {cards.map((c, i) => {
+          const plain =
+            typeof c.content === "string"
+              ? c.content
+              : Array.isArray(c.content)
+              ? c.content.join(", ")
+              : "";
+      
+              // 🔗 3. kart (index 2): tiles/pavers ise ölçüleri linke çevir (bold)
+                  const patternsForCard =
+            i === 1 && sizeLinkPatterns.length > 0
+              ? sizeLinkPatterns
+              : i === 1
+              ? [...linkPatterns, ...blogLinkPatterns]
+              : blogLinkPatterns;
+      
+      
+          return (
+             <InfoCard key={i} title={c.title} contentClassName={cardTextClass}>
+              {patternsForCard.length ? (
+                <InlineLinks
+                  text={plain || ""}
+                  patterns={patternsForCard}
+                  textClassName={cardTextClass}
+                />
+              ) : (
+                <span className={cardTextClass}>{plain}</span>
+              )}
+            </InfoCard>
+          );
+        })}
       </section>
+
+      
 
     <section id="product-intro">
         <h2 className="text-[22px] lg:text-[24px] font-semibold mt-12">{variantHeader}</h2>
@@ -765,90 +1200,48 @@ const productAltMap = {
       )}
     </section>
 
-    
-      {(() => {
-      const textSectionRaw = optRaw(`${productKey}.TextSection`, {}) || {};
-      const sections = [];
-      let i = 1;
-    
-      while (
-        textSectionRaw[`header${i}`] ||
-        textSectionRaw[`text${i}`] ||
-        textSectionRaw[`subheader${i}`] ||
-        textSectionRaw[`subtext${i}`]
-      ) {
-        const header = textSectionRaw[`header${i}`];
-        const text = textSectionRaw[`text${i}`];
-    
-        const titleForSection = header || `${title} — Section ${i}`;
-    
-        // 🔗 Bu section için blog + incoterm pattern'ları
-        const blogPatterns = getBlogPatterns(productKey, i, locale);
+      {/* TEXT SECTIONS – eski data + yeni link yapısı */}
+      {textSections.map(({ id, title, paragraphs }, index) => {
+        // Eski versiyonda i = 1..N idi, burada index 0’dan başlıyor:
+        const sectionIndex = index + 1;
+
+        // Bu section için blog + incoterm pattern’ları
+        const blogPatterns = getBlogPatterns(productKey, sectionIndex, locale);
         const incotermPatterns = getIncotermPatterns(locale);
         const patterns = [...blogPatterns, ...incotermPatterns];
-    
-        const paragraphsForSection = [];
-        if (text) {
-          paragraphsForSection.push(
-            <InlineLinks
-              key={`p-${productKey}-${i}`}
-              text={text}
-              patterns={patterns}
-              textClassName="" // stil p'den gelsin
-              linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
-            />
-          );
-        }
-    
-        if (titleForSection || paragraphsForSection.length) {
-          sections.push({
-            id: i,
-            title: titleForSection,
-            paragraphs: paragraphsForSection,
-          });
-        }
-        i++;
-      }
-    
-      return sections.map(({ id, title: secTitle, paragraphs }) => (
-        <TextSection
-          key={id}
-          title={secTitle}
-          paragraphs={paragraphs}
-          schema={{
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: `Wholesale Travertine ${productAltMap[productKey]} from Turkey`,
-            author: { "@type": "Organization", name: "Majen" },
-            publisher: { "@type": "Organization", name: "Majen" },
-          }}
-          className="max-w-5xl mx-auto mt-12"
-          clampMobile={3}
-          as="section"
-          title2=""
-          text2=""
-        />
-      ));
-    })()}
-    
-{/* 
-      {textSections.map(({ id, title, paragraphs }) => (
-        <TextSection
-          key={id}
-          title={title}
-          paragraphs={paragraphs}
-          schema={{
-            "@context": "https://schema.org",
-            "@type": "Article",
-            headline: cutTitle,
-            author: { "@type": "Organization", name: "Majen" },
-            publisher: { "@type": "Organization", name: "Majen" }
-          }}
-          className="max-w-5xl mx-auto mt-12"
-          clampMobile={3}
-          as="section"
-        />
-      ))} */}
+
+        // Eski versiyondaki paragraphs string’lerini InlineLinks ile sarmalıyoruz
+        const enhancedParagraphs = (paragraphs || []).map((p, i) => (
+          <InlineLinks
+            key={`p-${id}-${i}`}
+            text={p}
+            patterns={patterns}
+            textClassName="" // stil TextSection içindeki <p>’den gelsin
+            linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+          />
+        ));
+
+        return (
+          <TextSection
+            key={id}
+            title={title}
+            paragraphs={enhancedParagraphs}
+            schema={{
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: `Wholesale Travertine ${productAltMap[productKey]} from Turkey`,
+              author: { "@type": "Organization", name: "Majen" },
+              publisher: { "@type": "Organization", name: "Majen" },
+            }}
+            className="max-w-5xl mx-auto mt-12"
+            clampMobile={3}
+            as="section"
+            title2=""
+            text2=""
+          />
+        );
+      })}
+
 
       {faqItems.length > 0 && (
         <div id="faq" className="max-w-5xl mx-auto mt-12">

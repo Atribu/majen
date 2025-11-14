@@ -59,12 +59,18 @@ function getIncotermPatterns(locale) {
   ];
 }
 
+function blogPath(locale, slug) {
+  const finalSlug = resolveBlogSlug(locale, slug);
+  return `/${locale}/${finalSlug}`;
+}
+
+
 /**
  * productKey: "blocks" | "slabs" | "tiles" | "pavers"
  * sectionIndex: 1..5 (header1/text1, header2/text2,...)
  */
 function getBlogPatterns(productKey, sectionIndex, locale) {
-  const base = (slug) => `/${locale}/${slug}`;
+   const base = (slug) => blogPath(locale, slug);  // ✅ TR/EN’e göre doğru slug
 
   if (productKey === "blocks") {
     switch (sectionIndex) {
@@ -264,6 +270,58 @@ function getBlogPatterns(productKey, sectionIndex, locale) {
 
   return [];
 }
+
+// İngilizce "anahtar slug" → her dil için gerçek slug
+const BLOG_SLUG_MAP = {
+  en: {
+    "travertine-blocks-guide": "travertine-blocks-guide",
+    "travertine-slabs-guide": "travertine-slabs-guide",
+    "travertine-tiles-guide": "travertine-tiles-guide",
+    "travertine-pavers-guide": "travertine-pavers-guide",
+    "travertine-cladding": "travertine-cladding",
+    "travertine-flooring": "travertine-flooring",
+    "travertine-facade": "travertine-facade",
+    "travertine-quarry": "travertine-quarry",
+    "travertine-exporter": "travertine-exporter",
+    "travertine-distributor": "travertine-distributor",
+    "travertine-supplier": "travertine-supplier",
+    "travertine-pool": "travertine-pool",
+    "polished-travertine": "polished-travertine",
+    "honed-travertine": "honed-travertine",
+    "brushed-travertine": "brushed-travertine",
+    "tumbled-travertine": "tumbled-travertine",
+  },
+  tr: {
+    // 🔻 Bunları sen kendi gerçek TR URL’lerine göre ayarla
+    "travertine-blocks-guide": "traverten-bloklari",
+    "travertine-slabs-guide": "traverten-plakalar",
+    "travertine-tiles-guide": "traverten-karolar",
+    "travertine-pavers-guide": "traverten-dosemeler",
+    "travertine-cladding": "traverten-kaplama",
+    "travertine-flooring": "traverten-zemin-kaplama",
+    "travertine-facade": "traverten-cephe-kaplama",
+    "travertine-quarry": "traverten-ocagi",
+    "travertine-exporter": "traverten-ihracatcisi",
+    "travertine-distributor": "traverten-toptancisi",
+    "travertine-supplier": "traverten-tedarikcisi",
+    "travertine-pool": "traverten-havuz-kaplama",
+    "polished-travertine": "cilali-traverten",
+    "honed-travertine": "honlanmis-traverten",
+    "brushed-travertine": "fircalanmis-traverten",
+    "tumbled-travertine": "eskitilmis-traverten",
+  },
+};
+
+function resolveBlogSlug(locale, slug) {
+  const lang = locale.startsWith("tr") ? "tr" : "en";
+  const clean = String(slug)
+    .replace(/^travertines\//, "")  // eski prefix’leri temizle
+    .replace(/^\//, "");            // baştaki /'ı kaldır
+
+  const map = BLOG_SLUG_MAP[lang] || {};
+  return map[clean] || clean;       // map’te yoksa olduğu gibi bırak
+}
+
 
 
 
@@ -558,10 +616,17 @@ const linkPatterns = locale.startsWith("tr")
      }
      ];
 
-     function blogPath(locale, slug) {
-  // JSON'daki "travertines/..." öneklerini kaldırıp kısa URL kullanıyoruz
-  const clean = slug.replace(/^travertines\//, "");
-  return `/${locale}/${clean}`;
+
+function productKeyTr(locale, productKey) {
+  if (!locale.startsWith("tr")) return productKey; // İngilizce -> orijinal productKey
+
+  switch (productKey) {
+    case "slabs":  return "plakalar";
+    case "tiles":  return "karolar";
+    case "blocks": return "bloklar";
+    case "pavers": return "dosemeler";
+    default:       return productKey;
+  }
 }
 
 function makeBlogPatterns(locale, productKey) {
@@ -572,35 +637,35 @@ function makeBlogPatterns(locale, productKey) {
     patterns.push(
       {
         pattern: /\btraverten blok(lar)?\b/gi,
-        href: blogPath(locale, "travertine-blocks-guide"),
+        href: blogPath(locale, "traverten-bloklar-rehberi"),
       },
       {
         pattern: /\btraverten plakalar?\b/gi,
-        href: blogPath(locale, "travertine-slabs-guide"),
+        href: blogPath(locale, "traverten-plakalar-rehberi"),
       },
       {
         pattern: /\btraverten karo(lar)?\b/gi,
-        href: blogPath(locale, "travertine-tiles-guide"),
+        href: blogPath(locale, "karo-traverten-rehberi"),
       },
       {
         pattern: /\btraverten d(ö|o)şemeler?\b/gi,
-        href: blogPath(locale, "travertine-pavers-guide"),
+        href: blogPath(locale, "traverten-dosemeler-rehberi"),
       },
            {
         pattern: /\bpolished?\b/gi,
-        href: blogPath(locale, `/filled-polished-vein-cut-travertine-${productKey}`),
+         href: blogPath(locale, `/dolgulu-cilali-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
       },
        {
         pattern: /\bhoned?\b/gi,
-        href: blogPath(locale, `/filled-honed-vein-cut-travertine-${productKey}`),
+        href: blogPath(locale, `/dolgulu-honlanmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
       },
            {
         pattern: /\bbrushed?\b/gi,
-        href: blogPath(locale,  `/filled-brushed-vein-cut-travertine-${productKey}`),
+         href: blogPath(locale,  `/dolgulu-fircalanmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
       },
             {
         pattern: /\btumbled?\b/gi,
-        href: blogPath(locale,  `/filled-tumbled-vein-cut-travertine-${productKey}`),
+         href: blogPath(locale,  `/dolgulu-eskitilmis-damar-kesim-traverten-${productKeyTr(locale, productKey)}`),
       }
     );
   } else {

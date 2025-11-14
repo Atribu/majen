@@ -28,6 +28,7 @@ import QuestionsSection from "@/app/[locale]/components/generalcomponent/Questio
 import InfoListCard from "./InfoListCard";
 import SocialBlock from "./SocialBlock";
 import OtherOptions from "@/app/[locale]/components/generalcomponent/OtherOptions";
+import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
 
 export default function BlockColorClient({ locale, color }) {
   const t = useTranslations("ProductPage");
@@ -247,6 +248,182 @@ function extractFaqFromColor(colorNode) {
     .map(p => ({ q: p.header, a: p.text }));
 }
 
+const BLOG_SLUG_MAP = {
+  en: {
+    "travertine-blocks-guide": "travertine-blocks-guide",
+    "travertine-slabs-guide": "travertine-slabs-guide",
+    "travertine-tiles-guide": "travertine-tiles-guide",
+    "travertine-pavers-guide": "travertine-pavers-guide",
+    "travertine-cladding": "travertine-cladding",
+    "travertine-flooring": "travertine-flooring",
+    "travertine-facade": "travertine-facade",
+    "travertine-quarry": "travertine-quarry",
+    "travertine-exporter": "travertine-exporter",
+    "travertine-distributor": "travertine-distributor",
+    "travertine-supplier": "travertine-supplier",
+    "travertine-pool": "travertine-pool",
+    "polished-travertine": "polished-travertine",
+    "honed-travertine": "honed-travertine",
+    "brushed-travertine": "brushed-travertine",
+    "tumbled-travertine": "tumbled-travertine",
+  },
+  tr: {
+    "travertine-blocks-guide": "traverten-bloklari",
+    "travertine-slabs-guide": "traverten-plakalar",
+    "travertine-tiles-guide": "traverten-karolar",
+    "travertine-pavers-guide": "traverten-dosemeler",
+    "travertine-cladding": "traverten-kaplama",
+    "travertine-flooring": "traverten-zemin-kaplama",
+    "travertine-facade": "traverten-cephe-kaplama",
+    "travertine-quarry": "traverten-ocagi",
+    "travertine-exporter": "traverten-ihracatcisi",
+    "travertine-distributor": "traverten-toptancisi",
+    "travertine-supplier": "traverten-tedarikcisi",
+    "travertine-pool": "traverten-havuz-kaplama",
+    "polished-travertine": "cilali-traverten",
+    "honed-travertine": "honlanmis-traverten",
+    "brushed-travertine": "fircalanmis-traverten",
+    "tumbled-travertine": "eskitilmis-traverten",
+  },
+};
+
+function resolveBlogSlug(locale, slug) {
+  const lang = locale.startsWith("tr") ? "tr" : "en";
+  const clean = String(slug)
+    .replace(/^travertines\//, "")
+    .replace(/^\//, "");
+  const map = BLOG_SLUG_MAP[lang] || {};
+  return map[clean] || clean;
+}
+
+function blogPath(locale, slug) {
+  const finalSlug = resolveBlogSlug(locale, slug);
+  return `/${locale}/${finalSlug}`;
+}
+
+// FOB / CIF / EXW + shipment / delivery → how-we-export
+function getIncotermPatterns(locale) {
+  const exportBase = locale.startsWith("tr")
+    ? "nasıl-ihracat-yapıyoruz"
+    : "how-we-export";
+
+  const rootHref = `/${locale}/${exportBase}`;
+
+  return [
+    { pattern: /\bFOB\b/i, href: `/${locale}/${exportBase}/fob` },
+    { pattern: /\bCIF\b/i, href: `/${locale}/${exportBase}/cif` },
+    { pattern: /\bEXW\b/i, href: `/${locale}/${exportBase}/exw` },
+
+    // shipment / shipping / delivery → ana ihracat sayfası
+    { pattern: /\bshipments?\b/i, href: rootHref },
+    { pattern: /\bshipping\b/i, href: rootHref },
+    { pattern: /\bdelivery\b/i, href: rootHref },
+  ];
+}
+
+// Blocks sayfasındaki uzun paragraflar için blog pattern’ları
+function makeBlogPatterns(locale) {
+  const patterns = [];
+
+  if (locale.startsWith("tr")) {
+    patterns.push(
+      {
+        pattern: /\btraverten blok(lar)?\b/gi,
+        href: blogPath(locale, "travertine-blocks-guide"),
+      },
+      {
+        pattern: /\btraverten plakalar?\b/gi,
+        href: blogPath(locale, "travertine-slabs-guide"),
+      },
+      {
+        pattern: /\btraverten karo(lar)?\b/gi,
+        href: blogPath(locale, "travertine-tiles-guide"),
+      },
+      {
+        pattern: /\btraverten d(ö|o)şemeler?\b/gi,
+        href: blogPath(locale, "travertine-pavers-guide"),
+      },
+    );
+  } else {
+    patterns.push(
+      {
+        pattern: /\btravertine blocks?\b/gi,
+        href: blogPath(locale, "travertine-blocks-guide"),
+      },
+      {
+        pattern: /\btravertine slabs?\b/gi,
+        href: blogPath(locale, "travertine-slabs-guide"),
+      },
+      {
+        pattern: /\btravertine tiles?\b/gi,
+        href: blogPath(locale, "travertine-tiles-guide"),
+      },
+      {
+        pattern: /\btravertine pavers?\b/gi,
+        href: blogPath(locale, "travertine-pavers-guide"),
+      },
+    );
+  }
+
+  // kullanım alanları / tedarik / ocak
+  patterns.push(
+    {
+      pattern: /\bwall cladding\b/i,
+      href: blogPath(locale, "travertine-cladding"),
+    },
+    {
+      pattern: /\bfloor(ing)?\b/i,
+      href: blogPath(locale, "travertine-flooring"),
+    },
+    {
+      pattern: /\b(exterior\s+)?fa(?:ç|c)ades?\b/i,
+      href: blogPath(locale, "travertine-facade"),
+    },
+    {
+      pattern: /\bpool decks?\b/i,
+      href: blogPath(locale, "travertine-pool"),
+    },
+    {
+      pattern: /\btravertine supplier\b/i,
+      href: blogPath(locale, "travertine-supplier"),
+    },
+    {
+      pattern: /\bwholesalers\b/i,
+      href: blogPath(locale, "travertine-distributor"),
+    },
+    {
+      pattern: /\bquarry\b/i,
+      href: blogPath(locale, "travertine-quarry"),
+    },
+    {
+      pattern: /\bexport(er)?\b/i,
+      href: blogPath(locale, "travertine-exporter"),
+    },
+  );
+
+  // yüzey bitişleri (global blog yazıları)
+  patterns.push(
+    {
+      pattern: /\bpolished?\b/gi,
+      href: blogPath(locale, "polished-travertine"),
+    },
+    {
+      pattern: /\bhoned?\b/gi,
+      href: blogPath(locale, "honed-travertine"),
+    },
+    {
+      pattern: /\bbrushed?\b/gi,
+      href: blogPath(locale, "brushed-travertine"),
+    },
+    {
+      pattern: /\btumbled?\b/gi,
+      href: blogPath(locale, "tumbled-travertine"),
+    },
+  );
+
+  return patterns;
+}
+
 
 
   return (
@@ -305,21 +482,55 @@ function extractFaqFromColor(colorNode) {
   </div>
 </div>
 
+            {/* Uzun metinler (blocks text section) + inline linkleme */}
       <div className="w-[90%] md:w-[80%] max-w-[1400px] mx-auto text-center justify-center items-center">
+        {/* H3 + text3 */}
         <h3 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900">
-         {title3}
+          {title3}
         </h3>
-        <p className="text-[12px] lg:text-[14px]">{text3}</p>
+        {text3 && (
+          <InlineLinks
+            text={text3}
+            patterns={[
+              ...makeBlogPatterns(locale),
+              ...getIncotermPatterns(locale),
+            ]}
+            textClassName="text-[12px] lg:text-[14px]"
+            linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+          />
+        )}
 
-         <h4 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900 mt-5">
-         {title4}
+        {/* H4 + text4 */}
+        <h4 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900 mt-5">
+          {title4}
         </h4>
-        <p className="text-[12px] lg:text-[14px]">{text4}</p>
+        {text4 && (
+          <InlineLinks
+            text={text4}
+            patterns={[
+              ...makeBlogPatterns(locale),
+              ...getIncotermPatterns(locale),
+            ]}
+            textClassName="text-[12px] lg:text-[14px]"
+            linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+          />
+        )}
 
-         <h5 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900 mt-5">
-         {title5}
+        {/* H5 + text5 */}
+        <h5 className="text-[20px] lg:text-[22px] font-bold tracking-tight text-neutral-900 mt-5">
+          {title5}
         </h5>
-        <p className="text-[12px] lg:text-[14px]">{text5}</p>
+        {text5 && (
+          <InlineLinks
+            text={text5}
+            patterns={[
+              ...makeBlogPatterns(locale),
+              ...getIncotermPatterns(locale),
+            ]}
+            textClassName="text-[12px] lg:text-[14px]"
+            linkClassName="text-teal-700 underline underline-offset-4 hover:no-underline"
+          />
+        )}
       </div>
 
       <QuestionsSection items={faqItems} span={`Common Questions About  ${label} Travertine Blocks`}/>
