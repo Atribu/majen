@@ -493,7 +493,7 @@ if (isBlocks) {
     const label = colorLabelFor(locale, ckey);  
      // Kısa SEO URL: /{locale}/{color}-travertine-blocks  (TR: /{locale}/{color}-traverten-bloklar)
  const pretty = locale.startsWith("tr")
-   ? `/${slug}-traverten-bloklar`
+   ? `/fildisi-traverten-bloklar`
    : `/${slug}-travertine-blocks`;
 
   // Görsel & YouTube (i18n → image map → fallback)

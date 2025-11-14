@@ -21,75 +21,75 @@
      "travertines":"Travertenler"
   },
 
-  "Footer": {
-    "brand": "Majen",
-    "company": "MAJEN MADENCİLİK ENERJİ SAN. VE TİC. A.Ş.",
-    "address": {
-      "title": "Adres",
-      "lines": [
-        "Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi",
-        "No:110 F/5 Muratpaşa / Antalya",
-        "Antalya Kurumlar V.D. 6101419027"
-      ]
+"Footer": {
+  "brand": "Majen",
+  "company": "MAJEN MADENCİLİK ENERJİ SAN. VE TİC. A.Ş.",
+  "address": {
+    "title": "Adres",
+    "lines": [
+      "Fener Mah. Lara Cad. F Blok, Muhsin Adıyaman Sitesi",
+      "No:110 F/5 Muratpaşa / Antalya",
+      "Antalya Kurumlar V.D. 6101419027"
+    ]
+  },
+  "nav": {
+    "title": "Navigasyon",
+    "more": "Diğer",
+    "primary": {
+      "home": "Anasayfa",
+      "blog": "Blog",
+      "about": "Hakkımızda",
+      "contact": "İletişim"
     },
-    "nav": {
-      "title": "Navigasyon",
-      "more": "Diğer",
-      "primary": {
-        "home": "Anasayfa",
-        "blog": "Blog",
-        "about": "Hakkımızda",
-        "contact": "İletişim"
-      },
-      "secondary": {
-        "product": "Ürünler",
-    "shop": "Nasıl İhracat Yapıyoruz",
-        "pages": "Sayfalar",
-        "privacy": "KVKK / Gizlilik"
-      }
-    },
-    "social": {
-      "youtube": "YouTube",
-      "twitter": "Twitter",
-      "facebook": "Facebook",
-      "linkedin": "LinkedIn",
-      "whatsapp": "WhatsApp",
-       "instagram": "Instagram"
-    },
-    "whatsappText": "Merhaba Majen ekibi!",
-    "poweredBy": "Altyapı:",
-    "provider": "DGTLFACE",
-    "rights": "Tüm hakları saklıdır."
+    "secondary": {
+      "product": "Ürünler",
+      "shop": "Nasıl İhracat Yapıyoruz",
+      "pages": "Sayfalar",
+      "privacy": "KVKK / Gizlilik"
+    }
   },
+  "social": {
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "whatsappText": "Merhaba Majen ekibi!",
+  "poweredBy": "Altyapı:",
+  "provider": "DGTLFACE",
+  "rights": "Tüm hakları saklıdır."
+},
 
-  "HomePage":{
-    "title":"Travertine Supplier from Turkey | Wholesale Blocks, Slabs & Tiles – Majen",
-    "description":"Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping with full documentation."
-  },
+"HomePage": {
+  "title": "Majen | Türkiye’den Toptan Traverten — Blok, Plaka ve Karo",
+  "description": "Majen, Uşak–Ulubey’den toptan traverten tedarik eder: Blaundos Antiko, Light ve Ivory renklerinde blok, plaka ve karo seçenekleri. FOB/CIF dünya geneline sevkiyat, güçlendirilmiş paketleme ve A-sınıfı kalite garantisi."
+},
 
-  "MainBanner": {
-    "alt1": "Afiş 1",
-    "title1": "Mekanları Dönüştürmek\nEşsiz Doğal Taş ile.",
-    "description1": "Marbléo Doğal Taş, olağanüstü kalitesi ve benzersiz tasarımlarıyla öne çıkan yenilikçi bir mermer tedarikçisidir. 40’tan fazla üründen oluşan geniş portföyümüzde, 500’ün üzerinde malzeme referansımız bulunuyor.",
-    "buttonText1": "İletişime Geç →",
-    "buttonLink1": "#contact",
+"MainBanner": {
+  "alt1": "Afiş 1",
+  "title1": "Mekanları Dönüştürün\nSeçkin Doğal Taşlarla.",
+  "description1": "Marbléo Doğal Taş, üstün kalitesi ve özgün tasarımlarıyla öne çıkan yenilikçi bir tedarikçidir. 40’tan fazla ürün grubundan ve 500’ün üzerinde malzeme referansından oluşan geniş bir portföy sunuyoruz.",
+  "buttonText1": "İletişime Geç →",
+  "buttonLink1": "#contact",
 
-    "alt2": "Afiş 2",
-    "title2": "Projenizi Yükseltin\nZamansız Şıklık ile.",
-    "description2": "Klasikten moderne, özenle seçilmiş doğal taş koleksiyonumuz her tasarıma eşsiz güzellik ve dayanıklılık katıyor. Katalogumuzu keşfedin ve vizyonunuza en uygun taşı bulun.",
-    "buttonText2": "Portföyü Görüntüle →",
-    "buttonLink2": "#portfolio"
-  },
+  "alt2": "Afiş 2",
+  "title2": "Projenizi Yükseltin\nZamansız Şıklık ile.",
+  "description2": "Klasikten moderne, özenle seçilmiş doğal taş koleksiyonumuz her tasarıma benzersiz güzellik ve dayanıklılık katar. Kataloğumuzu keşfedin ve vizyonunuza en uygun taşı bulun.",
+  "buttonText2": "Portföyü Görüntüle →",
+  "buttonLink2": "#portfolio"
+},
 
-  "HomeMainSection": {
-    "header": "Türkiye’den Traverten Tedarikçisi",
-    "span":" Majen Ocak İhracatçısı",
-     "text": "Majen, Türkiye’den –Uşak/Ulubey– doğrudan ocaktan tedarikle premium blok, plaka, karo ve döşemeler sunan lider bir traverten tedarikçisidir. On yıllara dayanan tecrübemizle ABD, Avrupa ve Orta Doğu’ya toptan traverten ihraç ediyoruz. Ocaktan-doğrudan tedarik modelimiz; tutarlı A sınıfı kaliteyi, rekabetçi <fob>FOB</fob>/<cif>CIF</cif> fiyatlamayı ve sürdürülebilir üretim yöntemlerini garanti eder. Majen’i tercih eden ithalatçı ve toptancılar; şeffaflık, güçlü lojistik destek ve zamanında teslimata odaklanan güvenilir bir iş ortağı kazanır."
-  },
-  "LogisticSection": {
-    "header": "İhracat & Lojistik",
-    "text": "Majen, <exp>Türkiye'den toptan traverten ihracatında</exp> uzmanlaşmıştır. Türk limanlarında konteynerleri yüklediğimiz <fob>FOB (Free On Board)</fob> ve varış limanına kadar taşımayı üstlendiğimiz <cif>CIF (Cost, Insurance & Freight)</cif> gönderim seçenekleri sunuyoruz. İhracat ekibimiz, ticari fatura, koli listesi, menşe şahadetnamesi ve ekspertiz raporlarını içeren <docs>tam ihracat dokümantasyonunu</docs> hazırlar. Her bir <manu>blok, plaka ve karo; güçlendirilmiş ahşap kasalar, naylon sarım ve çelik kuşaklarla</manu> paketlenerek deniz taşımacılığında kırılma riski en aza indirilir. Kanıtlanmış lojistik ağımız, <dist>dünya çapında toptan traverten sevkiyatlarını</dist> güvenli ve zamanında teslim eder. Majen, <sup>Türkiye'den güvenilir bir traverten tedarikçisi</sup> olarak tanınmaktadır."
-  },
+"HomeMainSection": {
+  "header": "Türkiye’den Traverten Tedarikçisi",
+  "span": "Majen — Ocak Çıkışlı Toptan Traverten",
+  "text": "Majen, Uşak–Ulubey’deki ocaklardan doğrudan tedarik modeliyle premium traverten blok, plaka, karo ve döşemeler sunan lider bir ihracatçıdır. On yıllara dayanan uzmanlığımızla ABD, Avrupa ve Orta Doğu’ya yüksek hacimli toptan traverten sevkiyatı gerçekleştiriyoruz. Ocaktan-doğrudan üretim modelimiz; tutarlı A-sınıfı kaliteyi, rekabetçi <fob>FOB</fob>/<cif>CIF</cif> fiyatlamayı ve sürdürülebilir üretim yöntemlerini garanti eder. Majen’i tercih eden ithalatçı ve toptancılar; şeffaf süreç yönetimi, güçlü lojistik destek ve zamanında teslimat odaklı güvenilir bir iş ortağı kazanır."
+},
+"LogisticSection": {
+  "header": "İhracat & Lojistik",
+  "text": "Majen, <exp>Türkiye’den toptan traverten ihracatında</exp> uzmanlaşmıştır. Her sipariş; kesim, yüzey işlemleri, kalite kontrol, paketleme, dokümantasyon ve yükleme süreci boyunca titizlikle takip edilir. Güçlendirilmiş kasalar, nem korumalı ambalajlama ve fotoğraf destekli yükleme raporları ile şeffaf bir lojistik deneyimi sunar."
+},
 
   "InfoSection": {
     "subtitle": "ÜRÜN GRUPLARI",
@@ -148,600 +148,749 @@
   },
 
   "HighlightSection": {
-    "items": {
-      "item1": {
-        "title": "Blaundos Antico Travertine – Warm Tones, Natural Veining",
-        "description": "Quarry-selected Antico travertine from Uşak–Ulubey, ideal for blocks, slabs (2–3–5 cm), and tiles. Perfect for hotel lobbies, villas, and façades with warm beige-brown hues and expressive veins.",
-        "alts": [
-        "Wholesale Blaundos Antiko Travertine facade design",
-        "Wholesale Blaundos Antiko Travertine interior cladding",
-        "Wholesale Blaundos Antiko Travertine flooring",
-        "Wholesale Blaundos Antiko Travertine luxury project"
+  "items": {
+    "item1": {
+      "title": "Blaundos Antico Traverten – Sıcak Tonlar, Doğal Damar Yapısı",
+      "description": "Uşak–Ulubey’den özenle seçilen Antico traverten; blok, plaka (2–3–5 cm) ve karo üretimi için idealdir. Sıcak bej-kahve tonları ve belirgin damar hareketiyle otel lobileri, villalar ve cephe uygulamalarında doğal bir zarafet sunar.",
+      "alts": [
+        "Toptan Blaundos Antiko Traverten cephe tasarımı",
+        "Toptan Blaundos Antiko Traverten iç duvar kaplama",
+        "Toptan Blaundos Antiko Traverten zemin döşeme",
+        "Toptan Blaundos Antiko Traverten lüks proje uygulaması"
       ]
+    },
+    "item2": {
+      "title": "Blaundos Light Traverten – Aydınlık, Minimal Dokular",
+      "description": "Light traverten; açık bej tonları ve ince damar yapısıyla iç ve dış mekânlarda modern, sade bir görünüm oluşturur. Ton bütünlüğü gerektiren geniş alanlar için mükemmel bir tercih sunar.",
+      "alts": [
+        "Toptan Blaundos Light Traverten duvar kaplama",
+        "Toptan Blaundos Light Traverten iç mekân tasarımı",
+        "Toptan Blaundos Light Traverten zemin döşeme",
+        "Toptan Blaundos Light Traverten otel projesi"
+      ]
+    },
+    "item3": {
+      "title": "Blaundos Ivory Traverten – Şık Krem Paleti",
+      "description": "Ivory traverten; krem tonları ve dengeli damar yapısıyla tezgâh üstleri, duvar kaplamaları, ıslak hacimler ve bookmatch tasarımlar için ideal bir malzemedir.",
+      "alts": [
+        "Toptan Blaundos Ivory Traverten villa cephesi",
+        "Toptan Blaundos Ivory Traverten havuz kenarı döşeme",
+        "Toptan Blaundos Ivory Traverten merdiven uygulaması",
+        "Toptan Blaundos Ivory Traverten lüks iç mekân tasarımı"
+      ]
+    }
+  }
+},
+
+  "ProductDetail": {
+  "breadcrumbs": "Gezinme",
+  "home": "Ana Sayfa",
+  "collections": "Koleksiyonlar",
+
+  "openFullscreen": "Tam ekran aç",
+  "fullscreen": "Tam Ekran",
+  "previousImage": "Önceki görsel",
+  "nextImage": "Sonraki görsel",
+  "selectImage": "{index}. görseli seç",
+
+  "finish": "Yüzey",
+  "thickness": "Kalınlık",
+  "category": "Kategori",
+  "color": "Renk",
+  "origin": "Menşei",
+  "size": "Boyut",
+
+  "stock": {
+    "in": "Stokta",
+    "limited": "Sınırlı Stok",
+    "out": "Tükendi"
+  },
+
+  "requestQuote": "Teklif İste",
+  "downloadFirst": "İndir",
+
+  "tabs": {
+    "overview": "Genel Bilgi",
+    "specs": "Teknik Özellikler",
+    "applications": "Kullanım Alanları",
+    "downloads": "Belgeler"
+  },
+
+  "noSpecs": "Teknik özellik bulunmamaktadır.",
+  "noDownloads": "Herhangi bir belge mevcut değil.",
+  "close": "Kapat"
+},
+
+ "ProductPage": {
+  "breadcrumbs": "Gezinme",
+  "home": "Anasayfa",
+  "products": "Ürün",
+  "details": "Detay",
+
+  "detailsHeadings": {
+    "title1": "Neden Traverten Bloklarımız?",
+    "title2": "Traverten Blok Kullanım Alanları",
+    "title3": "Blok Ebatları & Ağırlık",
+    "title4": "Blok Yüzeyi & Paketleme",
+    "sizes": "Ebatlar",
+    "finishes": "Yüzeyler",
+    "features": "Öne Çıkanlar"
+  },
+
+  "descriptions": {
+    "heading": "Ürün Açıklaması"
+  },
+
+  "cuts": {
+    "heading": "Traverten Plaka Kesim Seçenekleri",
+    "text": "Plakalar için vein-cut, cross-cut ve proje bazlı özel kesim seçenekleri sunuyoruz."
+  },
+
+  "blocks": {
+    "title": "Toptan Traverten Bloklar",
+    "span": "Doğrudan Ocak Tedarikçisi",
+    "alt": "Blok ürün görseli",
+
+    "intro": "Majen, Blaundos Antiko, Light ve Ivory çeşitlerinde yüksek kaliteli Toptan Traverten Bloklar sunan güvenilir bir tedarikçidir. Uşak–Ulubey’deki ocağımızdan çıkarılan bloklar ortalama 280×220×200 cm ebatlarında olup 30–35 ton ağırlığındadır. Güçlendirilmiş paketleme ve konteyner yüklemeye hazır hazırlık sayesinde bu bloklar, dünya genelindeki fabrikalar ve toptancılar için ihracata hazırdır. İthalatçılar, Majen’in ocaktan-doğrudan tedarik modeline, tutarlı kalitesine ve güvenilir FOB/CIF sevkiyat seçeneklerine uzun vadeli projeler için güven duyar.",
+
+    "title2": "Neden Toptan Traverten Bloklarımız?",
+    "alt2": "Blok ürün görseli",
+
+    "intro2": "Toptan Traverten Bloklarımız, dayanıklılığı, ebat çeşitliliği ve çok yönlülüğü sayesinde global ithalatçılar tarafından tercih edilir. Doğrudan ocak kaynağı, homojen doku ve A-sınıfı kalite sağlarken sertifikalı kontroller güvenilirliği artırır. Plaka kesimi, karo işleme veya özel tasarım projeleri için hedeflenen tüm üretimlerde Majen, şeffaf lojistik ve istikrarlı tedarik ile güçlü bir çözüm ortağı sunar. Mimarlar ve toptancılar, doğal güzellik ile maliyet etkin üretimi bir arada sunan bloklarımızın uluslararası standartları karşıladığına güvenir.",
+
+    "sizes": [
+      "Serbest ebat bloklar"
+    ],
+
+    "finishes": [
+      "Ham blok"
+    ],
+
+    "features": [
+      "Yüksek verim",
+      "Renk/doku tutarlılığı",
+      "İhracat sınıfı paketleme"
+    ],
+
+    "detailsHeadings": {
+      "title1": "Neden Traverten Bloklarımız?",
+      "title2": "Traverten Blok Kullanım Alanları",
+      "title3": "Blok Ebatları & Ağırlık",
+      "title4": "Blok Yüzeyi & Paketleme",
+      "sizes": "Ebatlar",
+      "finishes": "Yüzeyler",
+      "features": "Öne Çıkanlar"
+    },
+
+    "description": [
+      "Yüksek dayanıklılık, doğal güzellik ve Uşak–Ulubey’den ocaktan-doğrudan tedarik sayesinde Majen blokları, uluslararası projelerde güvenilir bir tercih hâline gelir. Traverten bloklarımız tutarlı doku, A-sınıfı kalite ve güvenli paketleme ile istikrarlı uluslararası tedarik sağlar.",
+      "Traverten bloklar; plaka üretimi, karo işleme, toptan ihracat dağıtımı ve büyük ölçekli mimari projeler için öncelikli olarak kullanılır. Blaundos Antiko, Light ve Ivory seçenekleriyle bloklarımız, dünya genelindeki ithalatçıların ve inşaat firmalarının farklı ihtiyaçlarını karşılar.",
+      "Standart traverten blok boyutu yaklaşık 280×220×200 cm’dir; doğal ocak yüzeylerine sahiptir ve ortalama ağırlığı 30–35 tondur. Toplu siparişler, konteyner yüklemeye uygun şekilde güçlendirilmiş olarak hazırlanır; bu da uluslararası sevkiyat sırasında güvenli taşımaya imkân tanır.",
+      "Bloklar ocaktan doğal/ham yüzeyli (tel kesim) olarak tedarik edilir. İhracat süreçlerinde güçlendirilmiş ahşap kasalar, naylon kaplama ve çelik çemberleme kullanılır; böylece traverten bloklar, deniz taşımacılığı boyunca minimum riskle dünya genelindeki alıcılara güvenle ulaştırılır."
+    ],
+
+    "images": {
+      "antico": "/images/homepage/Blokantiko.webp",
+      "light": "/images/homepage/lightblok3.webp",
+      "ivory": "/images/homepage/Ivoryblok.webp"
+    },
+
+    "youtube": {
+      "antico": "https://youtu.be/R-Egyq7BjL4",
+      "light": "https://youtu.be/95DfWUBq6UY",
+      "ivory": "https://youtu.be/7YoOIsMVUkw"
+    },
+
+  "variants": {
+    "heading": "Traverten Blok Çeşitleri",
+    "text": "Toptan Traverten Bloklarımız üç özel renkte sunulur: Blaundos Antiko (gri–bej antik tonlar), Blaundos Light (açık bej) ve Blaundos Ivory (fildişi–krem). Bloklar çoğunlukla doğal ocak yüzeyiyle, plaka kesimi veya özel işlemeye hazır şekilde teslim edilir. Her renk; lüks cepheler, iç mekân kaplamaları ve büyük ölçekli ticari projeler için farklı ton karakterleri sunar. Talebe göre esnek yüzey işlemleri uygulanabildiği için Majen, farklı mimari ihtiyaçlara kolayca uyum sağlar.",
+    "variant1": { "title": "Blaundos Antiko Traverten Blok", "alt": "Blaundos Antiko blok", "href": "/tr/traverten/blok/blaundos-antiko" },
+    "variant2": { "title": "Blaundos Light Traverten Blok", "alt": "Blaundos Light blok", "href": "/tr/traverten/blok/blaundos-light" },
+    "variant3": { "title": "Blaundos Ivory Traverten Blok", "alt": "Blaundos Ivory blok", "href": "/tr/traverten/blok/blaundos-ivory" }
+  },
+  "TextSection": {
+    "header1": "Traverten Blok İhracat Süreci",
+    "text1": "Majen, traverten bloklarda ocaktan çıkarma aşamasından uluslararası teslimata kadar kesintisiz bir ihracat süreci sunar. Her blok sevkiyattan önce kontrol edilir, güçlendirilir ve ticari fatura, çeki listesi ve menşe şahadetnamesi gibi belgelerle dokümante edilir. FOB ve CIF teslim şartlarıyla, dünya genelindeki alıcılar traverten blok siparişlerinde şeffaf, verimli ve güvenli bir tedarik zincirine güvenebilir.",
+    "header2": "Kalite Kontrol & Sınıflandırma",
+    "text2": "Her traverten blok, uluslararası standartlara uygun olacak şekilde dikkatle sınıflandırılır. Renk tutarlılığı, yüzey kalitesi ve blok bütünlüğü gibi kriterler sevkiyat öncesinde kontrol edilir. Majen’in sıkı kalite kontrol süreci sayesinde yalnızca üst sınıf traverten bloklar ihraç edilir; bu da işleme sırasında fireyi azaltır ve büyük ölçekli projelerde öngörülebilir sonuçlar sağlar.",
+    "header3": "Global Pazarlar & Kullanım Alanları",
+    "text3": "Traverten bloklara Avrupa, ABD ve Orta Doğu pazarlarında yoğun talep vardır. Bu bloklar; plaka ve karo üretimi için fabrika işlemlerinde, ayrıca doğal taş gerektiren prestijli mimari projelerde yaygın olarak kullanılır. Majen’in istikrarlı blok tedariği, bizi ithalatçılar, toptancılar ve inşaat firmaları için tercih edilen bir çözüm ortağı yapar.",
+    "header4": "Traverten Bloklarda Neden Majen ile Çalışmalısınız?",
+    "text4": "Majen yalnızca bir ocak değil, aynı zamanda uluslararası alıcılar için deneyimli bir ihracat partneridir. Uşak–Ulubey’den doğrudan tedarik ile ithalatçılar, istikrarlı üretim, rekabetçi fiyatlandırma ve hızlı müşteri desteğinden faydalanır. Güçlendirilmiş paketleme, güvenilir dokümantasyon ve uzun vadeli iş ilişkileri ile Majen, traverten blok alan küresel alıcılar tarafından güvenilir bir tedarikçi olarak görülür.",
+
+    "subheader1": "Standart Blok Ölçüleri",
+    "subtext1": "Ortalama blok ölçüsü 280×220×200 cm olup doğal yüzeylere sahiptir. İhracata hazırdır, toplu siparişler için uygundur ve konteyner yüklemeye elverişli güçlendirilmiş paketleme ile sevk edilir.",
+    "subheader2": "Plaka Uygulama Alanları",
+    "subtext2": "Tezgâhlar, duvar kaplamaları, zeminler ve dış cephelerde; dayanıklılık ve doğal şıklığın gerektiği tüm alanlar.",
+    "subheader3": "Karo Yüzey İşlemleri",
+    "subtext3": "Cilalı, honlu, eskitilmiş ve fırçalanmış yüzeyler; farklı tasarım gereksinimlerine ve performans ihtiyaçlarına uygun çözümler sunar.",
+    "subheader4": "Katma Değerli Üretim",
+    "subtext4": "Özel tasarımlar; travertenin doğal dayanıklılığını ve dokusunu korurken, projelere özgünlük ve estetik değer katar."
+  },
+
+  "QuestionsItems": {
+    "aboutpage_s4_faq_header1": "FAQ",
+    "aboutpage_s4_faq_span1": "Türkiye’den",
+    "aboutpage_s4_faq1_header": "Traverten bloklarda hangi ölçüler mevcut?",
+    "aboutpage_s4_faq1_text": "Standart blok ölçüsü yaklaşık 280×220×200 cm olup 30–35 ton ağırlığındadır. Bu traverten bloklar ihracata hazırdır ve konteyner yükleme için güçlendirilmiş paketleme ile hazırlanır.",
+    "aboutpage_s4_faq2_header": "Hangi traverten blok renklerini tedarik ediyorsunuz?",
+    "aboutpage_s4_faq2_text": "Blaundos Antiko, Blaundos Light ve Blaundos Ivory traverten bloklar tedarik ediyoruz. Her biri kendine özgü tonlara sahiptir ve ihracat için tutarlı A-sınıf kalite sunar.",
+    "aboutpage_s4_faq3_header": "Traverten bloklar sevkiyat için nasıl paketleniyor?",
+    "aboutpage_s4_faq3_text": "Traverten bloklar, deniz taşımacılığı sırasında hareketi ve olası hasarı en aza indirmek için ahşap karkaslar, naylon kaplama ve metal çemberleme ile güçlendirilir.",
+    "aboutpage_s4_faq4_header": "Traverten blokları dünya geneline ihraç ediyor musunuz?",
+    "aboutpage_s4_faq4_text": "Evet. Majen, FOB ve CIF teslim şartlarıyla traverten blokları dünya geneline ihraç eder; fatura, çeki listesi ve menşe şahadetnamesi de dâhil olmak üzere tüm dokümantasyonu sağlar.",
+    "aboutpage_s4_faq5_header": "Traverten bloklarda neden Majen’i tercih etmeliyim?",
+    "aboutpage_s4_faq5_text": "Majen, Uşak–Ulubey’den ocak çıkışlı traverten blok tedarik eden bir firmadır. Küresel ithalatçılar tarafından güvenilir tedarik, sıkı kalite kontrol ve rekabetçi fiyatlandırma sayesinde tercih edilmektedir."
+  },
+
+  "gallery": {
+    "ivory": [
+      "/images/blocks/ivory/1.webp",
+      "/images/blocks/ivory/2.webp",
+      "/images/blocks/ivory/3.webp"
+    ],
+    "light": [ "/images/blocks/light/1.webp" ],
+    "antico": [ "/images/blocks/antico/1.webp" ]
+  },
+
+  "otherOptions": {
+    "heading": "Diğer Seçenekler",
+    "": ""
+  },
+
+  "colors": {
+    "ivory": {
+      "desc": "",
+      "metaTitle": "Ivory Traverten Bloklar · Cilalı Vein-Cut",
+      "metaDesc": "Parlak, yüksek yansımaya sahip fildişi tonlu lüks traverten bloklar.",
+      "h1": "Ivory Traverten Bloklar",
+      "title": "Ivory Traverten Bloklar",
+      "title2": "Uygulama Alanları ve İdeal Kullanım Senaryoları",
+      "lead": "Ayna etkili parlak yüzey, modern iç mekânları öne çıkarır.",
+      "intro": "Ivory Traverten Bloklar, Türkiye’nin seçkin ocaklarından çıkarılır ve sıcak bej rengi ile homojen yapısıyla tanınır. Bu doğal taş bloklar, dünya genelinde üst segment mimari ve inşaat projeleri için ideal ham malzemedir. İster plaka, ister karo, ister proje bazlı özel ölçü paneller üretin; Majen’in premium traverteni dayanıklılık, estetik ve renk tutarlılığını bir arada sunar. Doğrudan ocak erişimi ve küresel ihracat lojistiği ile her siparişte yüksek kaliteyi ve rekabetçi fiyatlandırmayı garanti ederiz.",
+      "intro2": "Ivory Traverten Bloklar; zamansız tonu ve dengeli damar yapısı sayesinde lüks villalar, otel cepheleri, alışveriş merkezleri ve kamu binalarında yaygın olarak kullanılır. İç mekânda; zeminler, duvar kaplamaları, merdivenler ve vurgu duvarlarında tercih edilir; sıcaklık ve ışık yansımalarını artırır. Dış mekânda ise havuz kenarları, yürüyüş yolları, cephe kaplamaları ve peyzaj uygulamalarını doğal kaymaz yapısı ve hava koşullarına dayanımıyla zenginleştirir. Farklı yüzey işlemlerine (honlu, cilalı, fırçalı, eskitilmiş) uygun bloklarımız, her tasarım ve teknik gereksinime uyum sağlayacak şekilde optimize edilir.",
+
+      "h3": "Traverten Blok Fiyatları ve Maliyeti Etkileyen Faktörler",
+      "text3": "Ivory Traverten Blokların fiyatı; blok ölçüsü, renk sınıfı, çıkarma kalitesi ve sipariş hacmine göre değişir. Tipik fiyat aralığı *m³ başına 190–320 USD*’dir; özelleştirilmiş ölçüler ton başına fiyatı etkileyebilir. Navlun şartları (FOB/CIF), paketleme tipi ve talep edilen sertifikalar da nihai teklifi belirleyen unsurlar arasındadır. Majen, detaylandırılmış kalemlerle şeffaf fiyatlandırma politikası izler; böylece ocak sınıfı, tonaj ve lojistik bileşenlerini her zaman net olarak görürsünüz. Proje detaylarınızı paylaşarak ihtiyacınıza özel fiyat teklifi alabilirsiniz.",
+      "h4": "Traverten Blok Ölçüleri & Standart Ebatlar",
+      "text4": "Standart ocak blokları, saha koşullarına bağlı olarak genellikle *3,2 m × 2,0 m × 1,6 m*’ye kadar üretilebilir. Her blok, sevkiyat öncesinde ölçülür, kodlanır ve kontrol edilir; bu sayede plaka üretimi sırasında en iyi verim ve ölçü doğruluğu sağlanır. Tutarlı ebatlar, imalat sürecinde yerleşim planlamasını kolaylaştırır ve israfı azaltır. İster büyük cephe panelleri, ister daha küçük mimari detaylar üretin; Majen, ton ve damar uyumunu koruyarak projelerinizde estetik bütünlüğü destekler.",
+      "h5": "Traverten Bloklar mı, Plakalar mı? Hangisi Sizin İçin Doğru?",
+      "text5": "Maksimum esneklik, daha yüksek verim kontrolü ve büyük hacimlerde m² başına maliyet avantajı arıyorsanız blok tercih edin; bu yaklaşım, ocaklar, işleyiciler ve distribütörler için idealdir. Daha hızlı montaj ve hazır ebatlı ürünler istiyorsanız *plaka* seçimi küçük ve orta ölçekli projeler için daha uygundur. Bloklar, geniş üretim hatlarında maliyetleri optimize ederken; plakalar sahada iş yükünü azaltır. Majen her iki tedarik modunu da sunarak bütçe, termin ve özelleştirme dengesini proje yapınıza göre kurmanıza yardımcı olur.",
+
+      "finishes": {
+        "title": "Yüzey & İşleme Seçenekleri",
+        "list1": "Honed: Mat görünüm, iç mekânlarda düşük yansıma için idealdir.",
+        "list2": "Polished: Otel lobileri ve duvar kaplamaları gibi prestijli alanlar için yüksek parlaklık sağlar.",
+        "list3": "Brushed/Tumbled: Dış mekânlar ve rustik konseptler için doğal dokulu, kaymaz yüzeyler sunar.",
+        "list4": "Filled/Unfilled: Kaymazlık ve hijyen gereksinimlerine göre gözenek yönetimi sağlar."
       },
-      "item2": {
-        "title": "Blaundos Light Travertine – Bright, Minimal Textures",
-        "description": "Light travertine offers light beige color and subtle veining—a clean, modern look for interiors and exteriors. Great for large areas requiring consistent tone.",
-         "alts": [
-        "Wholesale Blaundos Light Travertine wall cladding",
-        "Wholesale Blaundos Light Travertine interior design",
-        "Wholesale Blaundos Light Travertine flooring",
-        "Wholesale Blaundos Light Travertine hotel project"
-      ]
+
+      "export": {
+        "title": "İhracat, Paketleme & Global Sevkiyat",
+        "list1": "Paketleme: Çelik çemberli ahşap takozlama, kodlanmış bloklar ve nem kontrolleri ile güvenli yükleme.",
+        "list2": "Lojistik: FOB/CIF teslim, liman operasyonları, sigorta ve tam ihracat dokümantasyonu (fatura, çeki listesi, menşe şahadetnamesi, GTİP kodu).",
+        "list3": "İzlenebilirlik: Yükleme boyunca parti ve ton kodlaması korunarak kalite takibi sağlanır."
       },
-      "item3": {
-        "title": "Blaundos Ivory Travertine – Elegant Cream Palette",
-        "description": "Ivory travertine features a creamy palette and balanced veining—ideal for countertops, wall cladding, wet areas, and bookmatched designs.",
-        "alts": [
-        "Wholesale Blaundos Ivory Travertine villa facade",
-        "Wholesale Blaundos Ivory Travertine poolside flooring",
-        "Wholesale Blaundos Ivory Travertine staircase",
-        "Wholesale Blaundos Ivory Travertine luxury interior"
-      ]
+
+      "QuestionsItems": {
+        "aboutpage_s4_faq_header1": "FAQ",
+        "aboutpage_s4_faq_span1": "Ivory Traverten Bloklar Hakkında Sık Sorulan Sorular",
+        "aboutpage_s4_faq1_header": "Ivory Traverten Blokların fiyat aralığı nedir?",
+        "aboutpage_s4_faq1_text": "Fiyat; ölçü ve kaliteye bağlı olarak genellikle *m³ başına 190–320 USD* aralığındadır. Ölçü ve adet bilgilerinizi paylaşarak size özel teklif isteyebilirsiniz.",
+        "aboutpage_s4_faq2_header": "Hangi standart blok ölçüleri mevcut?",
+        "aboutpage_s4_faq2_text": "Standart bloklar *3,2 m × 2,0 m × 1,6 m*’ye kadar üretilebilir; özel ölçüler, ocak katmanı ve sipariş planına göre şekillenir.",
+        "aboutpage_s4_faq3_header": "Global ihracat ve dokümantasyon sağlıyor musunuz?",
+        "aboutpage_s4_faq3_text": "Evet. Dünya geneline sevkiyat yapıyor, fatura, çeki listesi, menşe şahadetnamesi ve GTİP kodu dâhil olmak üzere tüm evrakları, sigorta ve liman operasyonları ile birlikte hazırlıyoruz.",
+        "aboutpage_s4_faq4_header": "Partiler arasında renk tutarlılığı ne kadar sağlanabiliyor?",
+        "aboutpage_s4_faq4_text": "Bloklar ton ve damar yapısına göre sınıflandırılır ve büyük projelerde görsel bütünlük için aynı ton grupları bir arada sevk edilir.",
+        "aboutpage_s4_faq5_header": "Havuz kenarları için hangi yüzeyi önerirsiniz?",
+        "aboutpage_s4_faq5_text": "*Fırçalı veya eskitilmiş, dolgusuz* yüzeyler daha iyi tutunma sağlar; bölgesel iklim ve kullanım yoğunluğuna göre uygun emprenye önerilir.",
+        "aboutpage_s4_faq6_header": "Minimum sipariş miktarı nedir?",
+        "aboutpage_s4_faq6_text": "Asgari sipariş miktarı stok ve ocak programına göre değişir; hedef hacim ve termin bilginizi paylaşarak rezervasyon yapılmasını isteyebilirsiniz.",
+        "aboutpage_s4_faq7_header": "Tipik üretim ve teslim süreleri ne kadardır?",
+        "aboutpage_s4_faq7_text": "Süreler çıkarma ve liman programına göre değişir; hedef teslim tarihinize göre ocak ve gemi planlaması yapılır.",
+        "aboutpage_s4_faq8_header": "Mevcut blok listesini alabilir miyim?",
+        "aboutpage_s4_faq8_text": "Evet. Mevcut stok listesi (ölçü, ton ve ağırlık bilgileriyle) talep edilerek verim planlamanızı rahatça yapabilirsiniz."
+      },
+
+      "ui": {
+        "chooseThickness": "Kalınlık Seçin",
+        "applicationsLabel": "Kullanım Alanları",
+        "specsLabel": "Teknik Özellikler",
+        "faqLabel": "SSS"
+      },
+      "sections": {
+        "applications": { "h2": "Kullanım Alanları", "p": "Öne çıkan zeminler, otel lobileri, üst segment banyo ve ıslak hacimler." },
+        "specs": {
+          "h2": "Teknik Özellikler",
+          "rows": [
+            { "prop": "Malzeme", "value": "Doğal Traverten" },
+            { "prop": "Menşei", "value": "Türkiye" },
+            { "prop": "Yığın Yoğunluğu", "value": "~2.600–2.650 kg/m³" },
+            { "prop": "Su Emme", "value": "≤ %1,4" },
+            { "prop": "Basınç Dayanımı", "value": "~50–55 MPa" },
+            { "prop": "Ton Sınıfları", "value": "A–D (açık kremden hafif damarlı tona kadar)" },
+            { "prop": "Mevcut Blok Ölçüsü", "value": "3,2 m × 2,0 m × 1,6 m’ye kadar" },
+            { "prop": "Yüzey Seçenekleri", "value": "Honlu, Cilalı, Fırçalı, Eskitilmiş, Dolgulu/Dolgusuz" }
+          ]
+        },
+        "faq": {
+          "h2": "SSS",
+          "items": [{ "q": "Kaymazlık durumu nedir?", "a": "Islak alanlarda paspas kullanın veya honlu yüzeyi tercih edin; gerekli durumlarda uygun emprenye uygulayın." }]
+        }
+      }
+    },
+
+    "light": {
+      "desc": "",
+      "metaTitle": "Light Traverten Bloklar · Cilalı Vein-Cut",
+      "metaDesc": "Yumuşak bej tonlu, yüksek parlaklıklı lüks traverten bloklar.",
+      "h1": "Light Traverten Bloklar",
+      "title": "Light Traverten Bloklar",
+      "title2": "Uygulama Alanları ve İdeal Kullanım Senaryoları",
+      "lead": "Işığı yumuşakça yansıtan, prestijli iç mekânlar için zarif bir seçenek.",
+      "intro": "Light Traverten Bloklar, Türkiye’nin önde gelen ocaklarından temin edilir; yumuşak krem tonları, ince damar yapısı ve işlenebilirliği ile öne çıkar. Yüksek kaliteli doğal taş bloklar; üst segment konut ve ticari projeler için plaka, karo ve özel kesim eleman üretiminde ideal ham maddeyi sunar. Aydınlık rengi iç mekânlarda ışık yansımasını artırır, dış mekânlarda ise sıcak ve davetkâr bir atmosfer yaratır. Majen’in doğrudan ocak erişimi ve sıkı seleksiyon süreci sayesinde her blok, tutarlı ton, güvenilir dayanım ve ihracata hazır dokümantasyonla teslim edilir.",
+      "intro2": "Light Traverten; lüks villalar, otel ve spa alanları, alışveriş galerileri ve kamu binalarında zamansız estetik ve dayanıklılık arayan projeler için sıkça tercih edilir. İç mekânda zemin, duvar kaplaması, merdiven ve vurgu duvarlarında doğal bir zarafet sunar ve ahşap ile metal detaylarla uyumlu bir kombinasyon sağlar. Dış mekânda ise cepheler, havuz çevreleri, teraslar ve peyzaj yollarında; uygun yüzey işlemiyle ısıya ve kaymaya karşı dengeli performans sergiler. Majen, honlu, fırçalı, eskitilmiş, cilalı, dolgulu veya dolgusuz uygulamalara uygun blok tedarikiyle tasarım ve teknik ihtiyaçlara göre esnek çözümler sunar.",
+
+      "h3": "Traverten Blok Fiyatları ve Maliyet Faktörleri",
+      "text3": "Light Traverten Blokların fiyatı; blok ölçüsü, ton homojenliği, ocak sınıfı ve sipariş hacmine göre belirlenir. Piyasada tipik aralık m³ başına 180–300 USD civarındadır; özel ölçüler ve üst sınıf ton seçimleri, ton başına fiyatı etkileyebilir. Navlun şartları (FOB/CIF), paketleme şekli ve talep edilen sertifikalar da nihai teklifi etkileyen unsurlardır. Majen, malzeme, lojistik ve dokümantasyon bedellerini ayrı kalemlerde sunan şeffaf teklif modeli kullanır; böylece satın alma ekipleri farklı senaryoları net şekilde karşılaştırabilir. Proje detaylarınızı paylaşarak size özel teklifler oluşturabiliriz.",
+      "h4": "Traverten Blok Ölçüleri & Standart Ebatlar",
+      "text4": "Standart Light Traverten blokları, ocak katmanı ve güvenlik parametrelerine bağlı olarak genellikle 3,2 m × 2,0 m × 1,6 m’ye kadar üretilir. Her blok, sevkiyat öncesinde ölçülür, ton sınıflandırması yapılır ve kodlanır; böylece plaka üretiminde en yüksek verim elde edilir. Tutarlı ebatlar, büyük cephe ve zemin paketlerinde imalat firelerini azaltır ve yerleşim planlamasını kolaylaştırır. Modül sürekliliği gerektiren projeler için Majen, blokları ton ve damar yapısına göre gruplayarak girişten cepheye kadar görsel uyumu korumanıza yardımcı olur.",
+      "h5": "Traverten Bloklar mı, Plakalar mı? Hangi Seçenek Size Uygun?",
+      "text5": "Kalınlık, yüzey ve ebat üzerinde tam kontrol istiyor ve kendi imalat hatlarınızı yönetiyorsanız blok seçimi en doğru çözümdür; bu sayede büyük hacimlerde m² başına maliyeti optimize edersiniz. Küçük ve orta ölçekli projelerde hızlı montaj ve öngörülebilir ölçüler ön plandaysa plaka tercih etmek daha uygundur. Bloklar, birden çok proje ve siparişe yayılmış verim planlaması yapan işleyiciler ve distribütörler için idealdir; plakalar ise hızlı sahaya sevkiyat gerektiren programlarda montaj sürecini kısaltır. Majen her iki seçeneği de sunarak bütçe, termin ve özelleştirme dengesini ekiplerinizle birlikte planlar.",
+
+      "finishes": {
+        "title": "Yüzey & İşleme Seçenekleri",
+        "list1": "Honed: Mat, düşük yansımalı yüzey; sakin iç mekânlar için idealdir.",
+        "list2": "Polished: Prestijli lobiler ve duvar kaplamaları için yüksek parlaklık sunar.",
+        "list3": "Brushed/Tumbled: Dış mekân ve rustik tasarımlar için dokulu, kaymaz yüzeyler.",
+        "list4": "Filled/Unfilled: Kaymazlık ve hijyen gereksinimlerine göre gözenek yönetimi sağlar."
+      },
+
+      "export": {
+        "title": "İhracat, Paketleme & Global Sevkiyat",
+        "list1": "Paketleme: Çelik çemberli ahşap takozlama, nem kontrolü ve kodlama ile güvenli yükleme.",
+        "list2": "Lojistik: FOB/CIF şartları, liman elleçleme, sigorta ve gümrük evrak paketi (fatura, çeki listesi, menşe şahadetnamesi, GTİP kodu).",
+        "list3": "İzlenebilirlik: Parti ve ton kodları, kalite güvencesi için yükleme boyunca korunur."
+      },
+
+      "QuestionsItems": {
+        "aboutpage_s4_faq_header1": "FAQ",
+        "aboutpage_s4_faq_span1": "Light Traverten Bloklar",
+        "aboutpage_s4_faq1_header": "Light Traverten Blokların fiyat aralığı nedir?",
+        "aboutpage_s4_faq1_text": "Genellikle m³ başına 180–300 USD aralığındadır; ölçü, ton sınıfı ve sipariş hacmine göre değişir. Proje detaylarınızı paylaşarak detaylı teklif alabilirsiniz.",
+        "aboutpage_s4_faq2_header": "Hangi standart ebatlar mevcut?",
+        "aboutpage_s4_faq2_text": "Bloklar 3,2 m × 2,0 m × 1,6 m’ye kadar sunulabilir; özel ebatlar ocak katmanı ve programa göre planlanır.",
+        "aboutpage_s4_faq3_header": "Global ölçekte ihracat yapıyor musunuz?",
+        "aboutpage_s4_faq3_text": "Evet. Dünya geneline sevkiyat yapıyor, tam dokümantasyon ve yük sigortası ile süreci yönetiyoruz.",
+        "aboutpage_s4_faq4_header": "Renk tutarlılığını projede nasıl koruyorsunuz?",
+        "aboutpage_s4_faq4_text": "Bloklar ton derecesine göre sınıflandırılır ve geniş yüzeylerde bütünlük sağlamak için aynı ton grupları bir arada sevk edilir.",
+        "aboutpage_s4_faq5_header": "Dış mekân için hangi yüzeyi önerirsiniz?",
+        "aboutpage_s4_faq5_text": "Genellikle fırçalı veya eskitilmiş, dolgusuz yüzeyler tercih edilir; iklim ve kullanım yoğunluğuna göre uygun emprenye uygulanmalıdır.",
+        "aboutpage_s4_faq6_header": "Minimum sipariş miktarı ve teslim süresi nedir?",
+        "aboutpage_s4_faq6_text": "Asgari miktar ve termin, ocak programına göre değişir; hedef hacim ve teslim tarihine göre planlama yapılır."
+      },
+
+      "ui": {
+        "chooseThickness": "Kalınlık Seçin",
+        "applicationsLabel": "Kullanım Alanları",
+        "specsLabel": "Teknik Özellikler",
+        "faqLabel": "SSS"
+      },
+      "sections": {
+        "applications": { "h2": "Kullanım Alanları", "p": "Öne çıkan zeminler, otel lobileri, üst segment banyo ve ıslak hacimler." },
+        "specs": {
+          "h2": "Teknik Özellikler",
+          "rows": [
+            { "prop": "Malzeme", "value": "Doğal Traverten" },
+            { "prop": "Menşei", "value": "Türkiye" },
+            { "prop": "Yığın Yoğunluğu", "value": "~2.650 kg/m³" },
+            { "prop": "Su Emme", "value": "≤ %1,2" },
+            { "prop": "Basınç Dayanımı", "value": "~55 MPa" },
+            { "prop": "Ton Sınıfları", "value": "A–D (homojen bejden hafif damarlı tona kadar)" },
+            { "prop": "Mevcut Blok Ölçüsü", "value": "3,2 m × 2,0 m × 1,6 m’ye kadar" },
+            { "prop": "Yüzey Seçenekleri", "value": "Honlu, Cilalı, Fırçalı, Eskitilmiş, Dolgulu/Dolgusuz" }
+          ]
+        },
+        "faq": {
+          "h2": "SSS",
+          "items": [{ "q": "Kaymazlık durumu nedir?", "a": "Islak alanlarda paspas kullanın veya honlu yüzeyi tercih edin; gerekli durumlarda uygun emprenye uygulayın." }]
+        }
+      }
+    },
+
+    "antico": {
+      "desc": "",
+      "metaTitle": "Antico Traverten Bloklar · Cilalı Vein-Cut",
+      "metaDesc": "Zengin karakterli, parlak yüzeyli klasik Antico traverten bloklar.",
+      "h1": "Antico Traverten Bloklar",
+      "title": "Antico Traverten Bloklar",
+      "title2": "Uygulama Alanları ve İdeal Kullanım Senaryoları",
+      "lead": "Klasik lüksü çağdaş detaylarla buluşturan güçlü bir karakter.",
+      "intro": "Antico Traverten Bloklar, Türkiye’nin seçkin ocaklarından çıkarılır ve bej, antik tonlar ve krem renklerin karakteristik karışımı ile belirgin doğal damarlar sunar. Tarihi görünüme sahip bu traverten, hem rustik hem de klasik bir etki yaratırken modern dayanıklılıktan ödün vermez. Restorasyon projeleri, klasik mimari detaylar ve peyzaj tasarımları için ideal olan Antico Traverten, geleneksel karakteri uzun ömürlü bir dayanıklılıkla birleştirir. Majen’in doğrudan ocak tedariki ve global ihracat tecrübesi sayesinde her blok; dikkatle kontrol edilir, sınıflandırılır ve tam dokümantasyonla sevk edilir.",
+      "intro2": "Antico Traverten Bloklar; restorasyon projeleri, tarihi yapılar ve zamansız estetik arayan lüks mimari tasarımlar için yoğun talep görür. İç mekânda lobiler, merdivenler ve duvar kaplamalarında kullanıldığında, zamanla güzelleşen doğal bir patina oluşturur. Dış mekânda ise cepheler, avlular, havuz kenarları ve bahçe duvarlarında antik dokuyu, dayanıklılık ve kaymazlıkla bir araya getirir. Toprak tonlu paleti; Akdeniz, rustik ve çağdaş mimari stillerle uyumlu çalışarak tasarımcılara geniş bir yorum alanı sunar.",
+
+      "h3": "Traverten Blok Fiyatları ve Maliyet Faktörleri",
+      "text3": "Antico Traverten Bloklar genellikle m³ başına 200–340 USD aralığındadır; blok ölçüsü, ton derinliği ve ocak seçimi gibi etkenlere göre fiyatlanır. Renk yoğunluğu, damar dağılımı ve işleme beklentileri toplam ton maliyetini etkileyebilir. Majen, ocak değeri, lojistik ve sertifikasyon maliyetlerini ayrı kalemlerde sunan şeffaf bir fiyatlandırma yapısı uygular. Majen’in ocak ağı üzerinden doğrudan sipariş vererek, aracı maliyetleri azaltabilir ve hem iç pazar hem de ihracat sevkiyatlarında güvenilir teslim sürelerinden yararlanabilirsiniz.",
+      "h4": "Traverten Blok Ölçüleri & Standart Ebatlar",
+      "text4": "Standard Antico Traverten Bloklar, 3,2 m × 2,0 m × 1,6 m’ye kadar üretilebilir; daha küçük veya proje bazlı özel ölçüler talep üzerine hazırlanır. Her blok, ton sınıflandırması yapılarak ölçü ve kod bilgileriyle kayıt altına alınır; böylece izlenebilirlik ve üretim verimi artar. Tutarlı blok ölçüleri, plaka ve karo üretiminde fireyi azaltır ve kesim planlamasını kolaylaştırır. Majen, iç ve dış mekân uygulamalarında ton ve doku sürekliliği gerektiren projelerde, blokları parti bazlı eşleştirerek tasarımcı ve uygulayıcılara kesintisiz görsel bütünlük sağlar.",
+      "h5": "Traverten Bloklar mı, Plakalar mı? Hangi Akışa Uygun?",
+      "text5": "Traverten bloklar; kalınlık ve yüzey işleminde esneklik arayan işleyiciler, ihracatçılar ve büyük imalat tesisleri için idealdir. Bloklar, m² başına maliyeti optimize eder ve farklı tasarım hedefleri için seçici işleme imkânı tanır. Plakalar ise özellikle hazır montaja yakın, zaman ve ölçü öngörülebilirliği gerektiren projelerde avantaj sağlar. Antico Traverten için bloklar, taşın doğal ham dokusunu ve antik karakterini en iyi şekilde korurken; plakalar aynı tonun rafine ve cilalı yorumunu sunar. Majen, her iki formatı da tedarik ederek proje ölçeği ve yüzey beklentilerine göre esnek çözümler üretir.",
+
+      "finishes": {
+        "title": "Yüzey & İşleme Seçenekleri",
+        "list1": "Antique Finish: Restorasyon ve klasik projeler için yaşlandırılmış doku ve yuvarlatılmış kenarlar.",
+        "list2": "Honed: Sade, mat yüzey; sıcak ve yalın iç mekânlar için.",
+        "list3": "Brushed/Eskitilmiş: Dış mekân uygulamaları için doğal, kaymaz dokulu yüzeyler.",
+        "list4": "Polished: Çağdaş projelerde parlak ve seçkin bir görünüm sunan cilalı yüzey."
+      },
+
+      "export": {
+        "title": "İhracat, Paketleme & Global Sevkiyat",
+        "list1": "Paketleme: Çelik destekli ahşap kasalama, nem koruması ve güvenli yükleme için ek takviye.",
+        "list2": "Lojistik: FOB/CIF teslim, tam ihracat doküman paketi (fatura, çeki listesi, menşe şahadetnamesi, GTİP kodu) ve sigortalı taşıma.",
+        "list3": "İzlenebilirlik: Her sevkiyat için ton parti kodu ve blok numaraları kaydedilerek gönderilir."
+      },
+
+      "QuestionsItems": {
+        "aboutpage_s4_faq_header1": "FAQ",
+        "aboutpage_s4_faq_span1": "Antico Traverten Bloklar",
+        "aboutpage_s4_faq1_header": "Antico Traverten Blokların fiyat aralığı nedir?",
+        "aboutpage_s4_faq1_text": "Genellikle m³ başına 200–340 USD aralığındadır; ocak seçimi ve ton kalitesine göre değişir.",
+        "aboutpage_s4_faq2_header": "Hangi standart boyutlar mevcut?",
+        "aboutpage_s4_faq2_text": "Bloklar 3,2 m × 2,0 m × 1,6 m’ye kadar üretilebilir; proje bazlı özel ebatlar da mümkündür.",
+        "aboutpage_s4_faq3_header": "Global ölçekte ihracat yapıyor musunuz?",
+        "aboutpage_s4_faq3_text": "Evet, Majen dünya geneline sevkiyat yapar; tam dokümantasyon, sigorta ve liman işlemleriyle süreci yönetir.",
+        "aboutpage_s4_faq4_header": "Antico Traverteni benzersiz kılan nedir?",
+        "aboutpage_s4_faq4_text": "Yaşlandırılmış dokusu ve çok tonlu paleti, restorasyon ve zamansız tasarım projeleri için ideal antik bir görünüm sunar.",
+        "aboutpage_s4_faq5_header": "Antik görünümü en iyi hangi yüzey korur?",
+        "aboutpage_s4_faq5_text": "Antique veya fırçalı yüzeyler, doğal dokuyu ve rustik görünümü öne çıkararak antik karakteri en iyi şekilde yansıtır.",
+        "aboutpage_s4_faq6_header": "Siparişlerde tipik teslim süreleri nedir?",
+        "aboutpage_s4_faq6_text": "Teslim süreleri ocak üretim ve sevkiyat programına bağlıdır; Majen, her siparişi proje teslim takviminize göre koordine eder."
+      },
+
+      "ui": {
+        "chooseThickness": "Kalınlık Seçin",
+        "applicationsLabel": "Kullanım Alanları",
+        "specsLabel": "Teknik Özellikler",
+        "faqLabel": "SSS"
+      },
+      "sections": {
+        "applications": { "h2": "Kullanım Alanları", "p": "Öne çıkan zeminler, otel lobileri, üst segment banyo ve ıslak hacimler." },
+        "specs": {
+          "h2": "Teknik Özellikler",
+          "rows": [
+            { "prop": "Malzeme", "value": "Doğal Traverten" },
+            { "prop": "Menşei", "value": "Türkiye" },
+            { "prop": "Yığın Yoğunluğu", "value": "~2.650 kg/m³" },
+            { "prop": "Su Emme", "value": "≤ %1,3" },
+            { "prop": "Basınç Dayanımı", "value": "~55 MPa" },
+            { "prop": "Ton Sınıfları", "value": "A–D (krem–bejden rustik kahverengiye)" },
+            { "prop": "Mevcut Blok Ölçüsü", "value": "3,2 m × 2,0 m × 1,6 m’ye kadar" },
+            { "prop": "Yüzey Seçenekleri", "value": "Honlu, Cilalı, Fırçalı, Eskitilmiş, Dolgulu/Dolgusuz" }
+          ]
+        },
+        "faq": {
+          "h2": "SSS",
+          "items": [{ "q": "Kaymazlık durumu nedir?", "a": "Islak alanlarda paspas kullanın veya honlu yüzeyi tercih edin; gerekli durumlarda uygun emprenye uygulayın." }]
+        }
       }
     }
   },
 
-  "ProductDetail": {
-    "breadcrumbs": "Gezinme",
-    "home": "Ana Sayfa",
-    "collections": "Koleksiyonlar",
-    "openFullscreen": "Tam ekran aç",
-    "fullscreen": "Tam Ekran",
-    "previousImage": "Önceki görsel",
-    "nextImage": "Sonraki görsel",
-    "selectImage": "{index}. görseli seç",
-    "finish": "Yüzey",
-    "thickness": "Kalınlık",
-    "category": "Kategori",
-    "color": "Renk",
-    "origin": "Menşei",
-    "size": "Boyut",
-    "stock": {
-      "in": "Stokta",
-      "limited": "Sınırlı Stok",
-      "out": "Tükendi"
-    },
-    "requestQuote": "Teklif İste",
-    "downloadFirst": "İndir",
-    "tabs": {
-      "overview": "Genel Bilgi",
-      "specs": "Teknik Özellikler",
-      "applications": "Traverten Kullanım Alanları",
-      "downloads": "Belgeler"
-    },
-    "noSpecs": "Teknik özellik bulunmamaktadır.",
-    "noDownloads": "Herhangi bir belge mevcut değil.",
-    "close": "Kapat"
-  },
-
- "ProductPage": {
-     "breadcrumbs": "Breadcrumbs",
-    "home": "Home",
-    "products":"Product",
-    "details":"Detail",
-    "detailsHeadings": {
-      "title1":"Why Our Travertine Blocks?",
-      "title2": "Applications of Travertine Blocks",
-      "title3": "Block Sizes & Weight",
-      "title4": "Block Surface & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
-    "descriptions": {
-      "heading": "Product Description"
-    },
-
-       "cuts": {
-        "heading":"Travertine Slabs Cut Options",
-        "text":"gdfbhjen gher"
-      },
-
-    "blocks": {
-      "title": "Wholesale Travertine Blocks",
-      "span":"Direct Quarry Supplier",
-      "alt": "Block product image",
-      "intro": "Majen is a trusted supplier of Wholesale Travertine Blocks , offering premium quality in Blaundos Antiko, Light, and Ivory varieties. Extracted from our Uşak–Ulubey quarry, blocks average 280×220×200 cm and weigh 30–35 tons. With reinforced packaging and container-ready preparation, these blocks are export-ready for factories and wholesalers worldwide. Importers rely on Majen’s quarry-direct supply, consistent quality, and reliable FOB/CIF shipping options for long-term projects.",
-      "title2": "Why Choose Wholesale Travertine Blocks ?",
-      "alt2": "Block product image",
-      "intro2": "Our Wholesale Travertine Blocks are preferred by global importers for durability, size, and versatility. Direct quarry sourcing ensures uniform texture and A-grade quality, while certified inspections guarantee reliability. Whether destined for slab cutting, tile processing, or custom designs, Majen provides stable supply with transparent logistics. Architects and wholesalers trust our blocks to meet international standards, combining natural beauty with cost-effective production.",
-      "sizes": ["Free-size blocks"],
-      "finishes": ["Raw block"],
-      "features": ["High yield", "Color/texture consistency", "Export-grade packing"],
-      "detailsHeadings": {
-      "title1":"Why Our Travertine Blocks?",
-      "title2": "Applications of Travertine Blocks",
-      "title3": "Block Sizes & Weight",
-      "title4": "Block Surface & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
-      "description": [
-        "High durability, natural beauty, and quarry-direct sourcing from Uşak–Ulubey make Majen blocks a trusted choice. Our travertine blocks provide consistent texture, A-grade quality, and secure packaging for reliable international supply.",
-        "Travertine blocks are primarily used for factory processing into slabs and tiles, bulk export distribution, and large-scale architectural projects. Offered in Blaundos Antiko, Light, and Ivory, our blocks meet the diverse needs of global importers and construction firms.",
-         "Standard block size is approx. 280×220×200 cm, with natural quarry faces and an average weight of 30–35 tons. Bulk orders are export-ready and reinforced for container loading, ensuring safe handling during international shipments.",
-         "Blocks are supplied with natural/raw surfaces (wire-cut) straight from the quarry. For export, reinforced wooden frames, nylon wrapping, and metal strapping are applied, minimizing risk and ensuring that travertine blocks arrive safely worldwide."
-      ],
-
-      "images": {
-          "antico": "/images/homepage/Blokantiko.webp",
-        "light":  "/images/homepage/lightblok3.webp",
-        "ivory":  "/images/homepage/Ivoryblok.webp"
-        },
-
-         "youtube": {
-        "antico": "https://youtu.be/R-Egyq7BjL4",
-        "light":  "https://youtu.be/95DfWUBq6UY",
-        "ivory":  "https://youtu.be/7YoOIsMVUkw"
-      },
-
-      "variants": {
-        "heading": "Travertine Block Varieties",
-        "text":"We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs.",
-        "variant1": { "title": "Travertine Blocks Blaundos Antico", "alt": "Blaundos Antico block", "href": "/en/travertine/block/blaundos-antiko" },
-        "variant2": { "title": "Travertine Blocks Blaundos Light", "alt": "Blaundos Light block", "href": "/en/travertine/block/blaundos-light" },
-        "variant3": { "title": "Travertine Blocks Blaundos Ivory", "alt": "Blaundos Ivory block", "href": "/en/travertine/block/blaundos-ivory" }
-      },
-      "TextSection":{
-      "header1":"Travertine Block Export Process",
-      "text1":"Majen ensures a seamless export process for travertine blocks, from quarry extraction to international delivery. Each block is inspected, reinforced, and documented with commercial invoices, packing lists, and certificates of origin. With FOB and CIF shipping terms, buyers worldwide can rely on a transparent, efficient, and secure supply chain for their travertine block orders.",
-       "header2":"Quality Control & Grading",
-      "text2":"Every travertine block is carefully graded to meet international standards. Factors such as color consistency, surface quality, and block integrity are checked before shipment. Majen’s strict quality control guarantees that only top-grade travertine blocks are exported, reducing waste during processing and ensuring predictable results for large-scale projects.",
-       "header3":"Global Markets & Applications",
-      "text3":"Travertine blocks are in high demand across markets in Europe, the USA, and the Middle East. These blocks are widely used for factory processing into slabs and tiles, as well as landmark architectural projects requiring natural stone. Majen’s consistent block supply makes us a preferred partner for importers, wholesalers, and construction companies worldwide.",
-       "header4":"Why Partner with Majen for Travertine Blocks?",
-      "text4":"Majen is more than a quarry – we are an experienced export partner for international buyers. By sourcing directly from Uşak–Ulubey, importers benefit from stable production, competitive pricing, and responsive customer support. With reinforced packaging, reliable documentation, and long-term relationships, Majen is trusted by global buyers of travertine blocks.",
-
-       "subheader1":"Standard Block Dimensions",
-      "subtext1":"Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-       "subheader2":"Applications of Slabs",
-      "subtext2":"Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
-       "subheader3":"Tile Finishes",
-      "subtext3":"Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-       "subheader4":"Value-Added Production",
-      "subtext4":"Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
-    },
-
-    "QuestionsItems": {
-    "aboutpage_s4_faq_header1": "FAQ",
-    "aboutpage_s4_faq_span1": "From Turkey",
-    "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
-    "aboutpage_s4_faq1_text": "Standard block size is approx. 280×220×200 cm, weighing 30–35 tons. These travertine blocks are export-ready and reinforced for container loading.",
-    "aboutpage_s4_faq2_header": "Which travertine block colors do you supply?",
-    "aboutpage_s4_faq2_text": "We supply Blaundos Antiko, Blaundos Light, and Blaundos Ivory travertine blocks, each offering unique tones and consistent A-grade quality for export.",
-    "aboutpage_s4_faq3_header": "How are travertine blocks packaged for shipping?",
-    "aboutpage_s4_faq3_text": "Travertine blocks are reinforced with wooden frames, nylon wrapping, and metal strapping to minimize movement and damage during sea freight.",
-    "aboutpage_s4_faq4_header": "Do you export travertine blocks worldwide?",
-    "aboutpage_s4_faq4_text": "Yes. Majen exports travertine blocks globally with FOB and CIF terms, providing full documentation including invoices, packing lists, and certificates of origin.",
-    "aboutpage_s4_faq5_header": "Why choose Majen for travertine blocks?",
-    "aboutpage_s4_faq5_text": "Majen is a quarry-direct supplier of travertine blocks from Uşak–Ulubey, trusted by global importers for reliable supply, strict quality control, and competitive pricing."
-  },
-
-    "gallery": {
-        "ivory": [
-          "/images/blocks/ivory/1.webp",
-          "/images/blocks/ivory/2.webp",
-          "/images/blocks/ivory/3.webp"
-        ],
-        "light": [ "/images/blocks/light/1.webp" ],
-        "antico": [ "/images/blocks/antico/1.webp" ]
-      },
-
-            "otherOptions":{
-        "heading":"Diğer Seçenekler",
-        "":""
-      },
-
-
-  "colors": {
-            "ivory":  {
-              "desc": "",
-              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
-              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory Travertine Blocks",
-              "title":        "Ivory Travertine Blocks",
-              "title2":" Applications and Ideal Use Cases",
-              "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Ivory Travertine Blocks are extracted from the finest quarries in Turkey, known for their warm beige color and uniform structure. These natural stone blocks are the ideal raw material for high-end architectural and construction projects worldwide. Whether you’re producing slabs, tiles, or cut‑to‑size panels, Majen’s premium travertine guarantees durability, elegance, and color consistency. With direct quarry access and global export logistics, we ensure top quality and competitive pricing for every order.",
-              "intro2":     "Ivory Travertine Blocks are widely used across luxury villas, hotel façades, shopping centers, and public buildings thanks to their timeless tone and balanced veining. Indoors, they suit floors, wall cladding, staircases, and feature walls where warmth and light reflection are desired. Outdoors, the stone enhances pool decks, garden paths, and exterior cladding with its natural slip resistance and weather tolerance. Its stability across temperature shifts makes it reliable in both hot and continental climates. Majen supplies blocks optimized for multiple finishes — honed, polished, brushed, tumbled — to match every aesthetic and technical requirement.",
-              
-              "h3":"Travertine Block Prices and Cost Factors",
-              "text3":"The price of Ivory Travertine Blocks depends on block size, color grade, extraction quality, and order volume. Typical ranges are *USD 190–320 per m³*, with customized dimensions potentially affecting the price per ton. Freight terms (FOB/CIF), packing type, and required certifications may also influence the final quote. Majen follows a transparent pricing policy with detailed itemization, so you always see quarry grade, tonnage, and logistics components clearly. Share your specifications to receive a tailored quotation for your project.",
-              "h4":" Travertine Block Sizes & Standard Dimensions",
-              "text4":"Standard quarry‑run blocks are typically available up to *3.2 m × 2.0 m × 1.6 m*, subject to bench conditions. Each block is measured, coded, and inspected before loading to ensure dimensional accuracy and optimal yield during slab production. Consistent sizing simplifies nesting and reduces waste in fabrication lines. Whether you need large‑format cladding or smaller architectural details, Majen offers flexible cutting options and batch grouping by tone and vein to maintain aesthetic continuity across projects.",
-              "h5":"H5 — Travertine Blocks vs Slabs: Which Is Right for You?",
-              "text5":"Choose *blocks* when you need maximum flexibility, better material yield control, and cost efficiency at scale — ideal for quarries, processors, and distributors. Choose *slabs* when you require ready‑to‑install surfaces and faster turnaround for small to medium projects. Blocks minimize per‑m² cost in large fabrication workflows, while slabs reduce on‑site complexity. Majen provides both supply modes so you can balance budget, lead time, and customization based on your production setup and project timeline.",
-
-              "finishes":{
-                "title":"Finishes & Processing Options",
-                "list1":"Honed:* matte look, low glare for interiors.",
-                "list2":"Polished:* high reflectance for premium lobbies and walls.",
-                 "list3":"Brushed/Tumbled:* textured surfaces for outdoor and rustic concepts",
-                  "list4":"Filled/Unfilled:* pore management depending on slip resistance and hygiene needs."
-              },
-
-                "export":{
-                "title":"Export, Packaging & Global Shipping",
-                "list1":"Packaging:* steel‑belted, wooden cribbing, coded blocks with moisture checks.",
-                "list2":"Logistics:* FOB/CIF terms, port handling, insurance, full export documentation (invoice, packing list, COO, HS code).",
-                 "list3":"Traceability:* batch and tone codes maintained through loading."
-              },
-
-               "QuestionsItems": {
-            "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Common Questions About Ivory Travertine Blocks",
-            "aboutpage_s4_faq1_header": "How much does an Ivory Travertine Block cost?",
-            "aboutpage_s4_faq1_text": " Pricing varies by size and grade, generally *USD 190–320 per m³*. Request a tailored quote with your dimensions and volume.",
-            "aboutpage_s4_faq2_header": " What are the standard block sizes available?",
-            "aboutpage_s4_faq2_text": " Standard dimensions reach up to *3.2 m × 2.0 m × 1.6 m*; custom sizes depend on quarry bench and order plan.",
-            "aboutpage_s4_faq3_header":"Do you export globally and handle documentation?",
-            "aboutpage_s4_faq3_text":" Yes. We ship worldwide and prepare all documents (invoice, packing list, COO, HS code) along with insurance and port handling.",
-            "aboutpage_s4_faq4_header":" How consistent is the color across batches?",
-            "aboutpage_s4_faq4_text":"Blocks are graded by tone and vein, then grouped into batches to maintain visual continuity across large projects.",
-            "aboutpage_s4_faq5_header":" What finish should I choose for pool decks?",
-            "aboutpage_s4_faq5_text":"Opt for *brushed or tumbled unfilled* for better traction; seal according to local climate and usage.",
-            "aboutpage_s4_faq6_header":"What is the minimum order quantity?",
-            "aboutpage_s4_faq6_text":"MOQ varies by stock and quarry schedule; share your target volume and timeline for allocation.",
-            "aboutpage_s4_faq7_header":"What are typical lead times?",
-            "aboutpage_s4_faq7_text":"Lead times depend on extraction and port schedules; provide your delivery window to align quarry and vessel bookings.",
-            "aboutpage_s4_faq8_header":" Can I receive a current block list?",
-            "aboutpage_s4_faq8_text":"Yes. Request the *available stock list* (with sizes, tones, and weights) to plan your fabrication yield."
-          },
-
-              "ui": {
-                    "chooseThickness": "Choose Thickness",
-                    "applicationsLabel": "Applications",
-                    "specsLabel": "Specifications",
-                    "faqLabel": "FAQ"
-                  },
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
-                "specs": {
-                  "h2": "Specifications",
-                  "rows": [
-                     { "prop": "Material",       "value": "Natural Travertine" },
-                     { "prop": "Origin",       "value": "Turkey" },
-                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
-    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
-    { "prop": "Compressive Strength", "value": "~55 MPa" },
-    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
-    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
-    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
-                }
-              }
-            },
-            "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
-                "specs": {
-                  "h2": "Specifications",
-                 "rows": [
-                     { "prop": "Material",       "value": "Natural Travertine" },
-                     { "prop": "Origin",       "value": "Turkey" },
-                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
-    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
-    { "prop": "Compressive Strength", "value": "~55 MPa" },
-    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
-    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
-    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
-                }
-              }
-            },
-            "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
-                "specs": {
-                  "h2": "Specifications",
-                  "rows": [
-                     { "prop": "Material",       "value": "Natural Travertine" },
-                     { "prop": "Origin",       "value": "Turkey" },
-                   { "prop": "Bulk Density",         "value": "~2,650 kg/m³" },
-    { "prop": "Water Absorption",     "value": "≤ 1.2%" },
-    { "prop": "Compressive Strength", "value": "~55 MPa" },
-    { "prop": "Tone Grades",          "value": "A–D (uniform beige to lightly veined)" },
-    { "prop": "Available Block Size", "value": "up to 3.2 m × 2.0 m × 1.6 m" },
-    { "prop": "Finish Options",       "value": "Honed, Polished, Brushed, Tumbled, Filled/Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
-                }
-              }
-            }
-          },
-
-   "cuts": {
-    "heading": "Travertine Blocks Cut Options",
-    "text": "Choose honed for subtle refinement, brushed or tumbled for traction and texture, and polished for high-end interiors.",
+  "cuts": {
+    "heading": "Traverten Blok Kesim & Yüzey Seçenekleri",
+    "text": "Yumuşak, sakin bir görünüm için honlu; tutuş ve doku için fırçalı veya eskitilmiş; üst segment iç mekânlar için cilalı yüzey seçebilirsiniz.",
     "vein-cut": {
-       "title": "Vein Cut Travertine Blocks ",
-          "alt": "Vein-cut travertine blocks",
-          "span": "",
-          "intro": "Vein-cut blocks reveal linear banding for strong directionality in design.",
-          "title2": "Why Choose Vein-Cut?",
-          "intro2": "Parallel bands create visual continuity across large surfaces.",
-          "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut.webp",
-            "alt": "Vein Cut Travertine Blocks"
-          },
-      "description": "Large-size blocks selected at the quarry with consistent character.",
-          "TextSection": {
-            "header1": "Vein-Cut — Visual Character",
-            "text1": "Parallel bands emphasize direction and rhythm across large surfaces.",
-            "header2": "Best Use-Cases",
-            "text2": "Hotel lobbies, wall cladding and long corridors where continuity is desired."
-          },
-          "QuestionsItems": {
-            "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Vein-Cut",
-            "aboutpage_s4_faq1_header": "Why choose vein-cut slabs?",
-            "aboutpage_s4_faq1_text": "They produce linear continuity ideal for long spans and feature walls.",
-            "aboutpage_s4_faq2_header": "Are there direction rules for fabrication?",
-            "aboutpage_s4_faq2_text": "Keep band orientation consistent across adjacent pieces for best results."
-          },
+      "title": "Vein-Cut Traverten Bloklar",
+      "alt": "Vein-cut traverten bloklar",
+      "span": "",
+      "intro": "Vein-cut bloklar, doğrusal damarları ortaya çıkararak tasarıma güçlü bir yön duygusu kazandırır.",
+      "title2": "Neden Vein-Cut Tercih Etmeli?",
+      "intro2": "Paralel damarlar, geniş yüzeylerde görsel süreklilik yaratarak alanın akışını vurgular.",
+      "hero": {
+        "src": "/images/cut/antico/Slab/Antikveincut.webp",
+        "alt": "Vein-Cut Traverten Bloklar"
+      },
+      "description": "Ocakta itinayla seçilen, karakteri tutarlı büyük ebatlı bloklar.",
+      "TextSection": {
+        "header1": "Vein-Cut — Görsel Karakter",
+        "text1": "Paralel damarlar, büyük yüzeylerde yön ve ritim duygusunu güçlendirir.",
+        "header2": "En Uygun Kullanım Alanları",
+        "text2": "Otel lobileri, duvar kaplamaları ve süreklilik istenen uzun koridorlar için idealdir."
+      },
+      "QuestionsItems": {
+        "aboutpage_s4_faq_header1": "FAQ",
+        "aboutpage_s4_faq_span1": "Vein-Cut",
+        "aboutpage_s4_faq1_header": "Neden vein-cut plakalar tercih edilmeli?",
+        "aboutpage_s4_faq1_text": "Geniş yüzeylerde çizgisel süreklilik sağlayarak uzun alanlar ve vurgu duvarları için ideal bir görünüm sunar.",
+        "aboutpage_s4_faq2_header": "İmalat sırasında damar yönü ile ilgili dikkat edilmesi gerekenler neler?",
+        "aboutpage_s4_faq2_text": "En iyi sonuç için bitişik plakalar arasında damar yönünü tutarlı olacak şekilde hizalamak gerekir."
+      },
 
       "processes": {
         "images": {
-              "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
-              }
-            },
-        "heading": "Choose Your Process",
-        "subtext": "Select the surface treatment.",
+          "combined": {
+            "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+            "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+            "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+            "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+            "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+            "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+            "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+            "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+            "natural": "/images/cut/antico/Slab/Antikveincut.webp"
+          }
+        },
+        "heading": "Yüzey İşleminizi Seçin",
+        "subtext": "Yüzey dokusunu ve işlem tipini seçin.",
         "groups": {
           "filled": {
-            "heading": "Filled Processes",
-            "text": "Filled options suitable for polished looks and dense surfaces.",
+            "heading": "Dolgulu İşlemler",
+            "text": "Cilalı ve yoğun yüzeyler için uygun, dolgulu seçenekler.",
             "items": ["honed", "polished", "brushed", "tumbled"]
           },
           "unfilled": {
-            "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "heading": "Dolgu Yapılmamış İşlemler",
+            "text": "Doğal görünüm ve doku sağlar. “Natural” seçeneğinde gözeneklere dolgu uygulanmaz.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
         "meta": {
-          "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
-          "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
-          "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
-          "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
-          "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+          "natural": { "title": "Doğal", "alt": "Doğal yüzeyli vein-cut traverten plaka" },
+          "honed": { "title": "Honlu", "alt": "Honlu vein-cut traverten plaka" },
+          "polished": { "title": "Cilalı", "alt": "Cilalı vein-cut traverten plaka" },
+          "brushed": { "title": "Fırçalı", "alt": "Fırçalı vein-cut traverten plaka" },
+          "tumbled": { "title": "Eskitilmiş", "alt": "Eskitilmiş vein-cut traverten plaka" }
         },
 
         "natural": {
-           "h1": "Travertine Slabs · Vein-Cut · Filled · Polished",
-              "title": "Filled · Polished (Vein-Cut)",
-              "lead": "High-gloss luxury with dense, filled surface.",
+          "h1": "Traverten Plakalar · Vein-Cut · Dolgulu · Cilalı",
+          "title": "Dolgulu · Cilalı (Vein-Cut)",
+          "lead": "Yoğun, dolgulu yüzey ile parlak, lüks bir görünüm.",
           "colors": {
-            "ivory":  {
-              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
-              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
-              "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
-                    "chooseThickness": "Choose Thickness",
-                    "applicationsLabel": "Applications",
-                    "specsLabel": "Specifications",
-                    "faqLabel": "FAQ"
-                  },
+            "ivory": {
+              "metaTitle": "Ivory · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Parlak fildişi tonlu, yüksek yansımaya sahip lüks dolgulu traverten plakalar.",
+              "h1": "Ivory · Cilalı Vein-Cut Plakalar",
+              "lead": "Ayna etkili parlaklık, modern iç mekânları güçlendirir.",
+              "intro": "Cila, damar hareketini ve ışık yansımalarını vurgular; mekâna derinlik ve zarafet kazandırır.",
+              "ui": {
+                "chooseThickness": "Kalınlık Seçin",
+                "applicationsLabel": "Kullanım Alanları",
+                "specsLabel": "Teknik Özellikler",
+                "faqLabel": "SSS"
+              },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Öne çıkan zeminler, otel lobileri, premium banyo ve ıslak hacimler." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Kaymazlık için ne yapmalıyım?", "a": "Islak alanlarda paspas kullanın veya honlu yüzeyi değerlendirin; uygun sızdırmazlık ürünü ile destekleyin." }]
                 }
               }
             },
-            "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
+            "light": {
+              "metaTitle": "Light · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Sıcak tonlu, zarif parlak yüzeyli vein-cut traverten plakalar.",
+              "h1": "Light · Cilalı Vein-Cut Plakalar",
+              "lead": "Sıcak yansımalı zarif parlaklık, üst segment alanları tamamlar.",
+              "intro": "Cilalı yüzey, bej tonların derinliğini artırırken, damar hareketini daha belirgin hâle getirir.",
               "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Resepsiyon zeminleri, vurgu duvarları, perakende alanları." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Asit lekeleri ve aşınma için ne önerirsiniz?", "a": "pH nötr temizleyiciler kullanın, asidik ürünlerden kaçının ve yüzeyi düzenli olarak uygun bir emprenye ile koruyun." }]
                 }
               }
             },
             "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
+              "metaTitle": "Antico · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Klasik zengin karaktere sahip, parlak yüzeyli vein-cut traverten.",
+              "h1": "Antico · Cilalı Vein-Cut Plakalar",
+              "lead": "Klasik lüksü yeniden yorumlayan derin kontrast ve parlaklık.",
+              "intro": "Koyu–açık geçişler ve cilalı yüzey, taşın karakterini vurgulayan etkileyici bir derinlik sunar.",
               "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Butikler, galeriler, imza niteliğinde iç mekân tasarımları." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Nerelerde kullanmaktan kaçınmalıyım?", "a": "Sürekli ıslak ve kaygan olabilecek alanlarda cilalı yüzey yerine daha mat ve dokulu yüzeyleri tercih edin." }]
                 }
               }
             }
           }
         },
 
-          "unfilled-honed": {
-            "h1": "Unfilled Honed Vein Cut Travertine Slabs",
-              "title": "Unfilled Honed Vein Cut Travertine Slabs",
-              "lead": "Majen supplies Unfilled Honed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Each slab is cut parallel to the natural bedding layers, revealing continuous linear veins while maintaining the natural pores unfilled for authentic texture. The honed finish softens the surface to a smooth, matte appearance that highlights color harmony and natural patterns. Ideal for elegant, organic interiors and outdoor applications where natural breathability and sophistication meet.",
-              "intro":"Majen supplies Unfilled Honed Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Each slab is cut parallel to the natural bedding layers, revealing continuous linear veins while maintaining the natural pores unfilled for authentic texture. The honed finish softens the surface to a smooth, matte appearance that highlights color harmony and natural patterns. Ideal for elegant, organic interiors and outdoor applications where natural breathability and sophistication meet.",
-              "title2":"What Is Unfilled Honed Vein Cut Travertine?",
-              "intro2":"“Vein Cut” exposes the stone’s natural layers, producing linear vein patterns that flow across each slab. “Unfilled” means the pores remain open, preserving texture and breathability. “Honed” refines the surface to a smooth, low-gloss finish without filling the pores—balancing natural roughness with refined aesthetics. This combination provides understated elegance with tactile comfort and timeless authenticity.",
+        "unfilled-honed": {
+          "h1": "Dolgusuz Fırçalı Cross-Cut Traverten Neyi İfade Eder?",
+          "title": "Dolgusuz Fırçalı Cross-Cut Traverten Nedir?",
+          "lead": "Açık gözenekli doğal doku, yumuşak fırçalı yüzey ve bulutlu cross-cut desenleriyle derinlik ve karakter kazandırır.",
+          "intro": "Açık gözenekli doğal doku, yumuşak fırçalı yüzey ve bulutlu cross-cut desenleriyle travertenin doğal derinliğini ve dokusunu öne çıkarır.",
+          "title2": "Dolgusuz Honlu Vein-Cut Traverten Nedir?",
+          "intro2": "“Vein-Cut”, taşın doğal katmanlarını damar yönünde açığa çıkararak plakalar boyunca akan çizgisel desenler oluşturur. “Dolgusuz” ifadesi gözeneklerin açık bırakıldığını, doğal dokunun korunduğunu ifade eder. “Honlu” yüzey ise parlaklığı azaltılmış, pürüzsüz ve düşük yansımaya sahip bir bitiş sunar. Gözenekler kapatılmadan yüzey rafine edilir; böylece doğal hissiyat ile rafine estetik dengelenir. Bu kombinasyon, sakin ve zamansız iç mekânlar için dokunsal konfor ve otantik bir görünüm sağlar.",
 
-               "detailsHeadings": {
-      "title1":"Why Our Unfilled Honed Vein Cut?",
-      "title2": "Color Options",
-      "title3": "Sizes & Thickness",
-      "title4": "Finishes & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
-        "variants":{
-            "title":"Color Options: Ivory, Light, and Antico",
-            "text":"Majen offers Ivory, Light, and Antico color selections to match varied architectural themes. Ivory delivers bright cream warmth; Light offers subtle beige neutrality; Antico adds earthy depth with classic charm. Each tone comes from the same quarry level to ensure consistent hue and vein direction across large spaces. These natural colors emphasize the stone’s organic rhythm and are perfect for balanced, modern environments."
+          "detailsHeadings": {
+            "title1": "Neden Dolgusuz Honlu Vein-Cut?",
+            "title2": "Renk Seçenekleri",
+            "title3": "Ebatlar & Kalınlıklar",
+            "title4": "Yüzeyler & Paketleme",
+            "sizes": "Ebatlar",
+            "finishes": "Yüzeyler",
+            "features": "Öne Çıkanlar"
+          },
+          "variants": {
+            "title": "Renk Seçenekleri: Ivory, Light ve Antico",
+            "text": "Majen, farklı mimari konseptlere uyum sağlayabilmek için Ivory, Light ve Antico renklerini sunar. Ivory, aydınlık krem sıcaklığı; Light, nötr bej sakinliğini; Antico ise toprak tonlu derinlik ve klasik karakteri öne çıkarır. Tüm renkler, büyük alanlarda ton ve damar sürekliliği sağlayabilmek için aynı ocak seviyelerinden gruplanır. Bu doğal renk paleti, taşın organik ritmini vurgular ve dengeli, modern ortamlar için güçlü bir zemin oluşturur."
           },
 
-      "description": [
-        " Linear veins, open-pore texture, and soft matte finish. A perfect balance of authenticity and refinement—crafted directly at the source in Uşak–Ulubey.",
-        "Available in Ivory, Light, and Antico tones. Each tone delivers unique character while maintaining color consistency and vein harmony.",
-        " Available in 2 cm, 3 cm, and 5 cm, with precise calibration for tight joints and easy installation. Large slabs maintain vein flow and reduce layout waste.",
-        "Primary finish: Honed with unfilled natural pores. Slabs are securely strapped and packed in reinforced wooden crates for safe international shipment."
-      ],
+          "description": [
+            "Doğrusal damar yapısı, açık gözenekli doku ve yumuşak mat yüzey… Uşak–Ulubey’de kaynağında işlenen bu kombinasyon, otantik ve rafine travertenin ideal dengesini sunar.",
+            "Ivory, Light ve Antico ton seçenekleri mevcuttur. Her ton, projede farklı bir karakter yaratırken, renk tutarlılığı ve damar uyumu korunur.",
+            "2 cm, 3 cm ve 5 cm kalınlıklarda üretilir; sıkı kalibrasyon sayesinde büyük ebatlı plakalar damar sürekliliğini korur ve yerleşim firelerini azaltır.",
+            "Ana yüzey seçeneği: Dolgusuz honlu, doğal gözenekli traverten. Plakalar, güçlendirilmiş ahşap kasalara bağlanarak nem koruması ile uluslararası sevkiyata hazır hâle getirilir."
+          ],
 
-      "TextSection": {
-            "header1": "Advantages of the Unfilled Honed Finish on Vein Cut Slabs",
-            "text1": " The unfilled honed finish merges natural authenticity with refined smoothness. The open pores express the material’s origin, while the honed surface enhances comfort and easy cleaning. It provides a matte, low-glare aesthetic ideal for serene interiors and softly illuminated spaces. Majen’s precision calibration ensures a consistent surface feel without losing the natural vein definition that defines Vein Cut Travertine.",
-            "header2": "Recommended Applications & Design Pairings",
-            "text2": "Use Unfilled Honed Vein Cut Travertine Slabs for wall cladding, living spaces, spa zones, and indoor-outdoor transitions. Its balanced matte texture pairs beautifully with wood, concrete, and glass elements. Architects prefer this finish for projects seeking natural sophistication without shine. Combine with brushed or polished travertine in connected areas to add subtle contrast while maintaining design continuity.",
-            "header3": "Sizes, Thickness & Fabrication",
-            "text3": " Produced in 2 cm, 3 cm, and 5 cm thicknesses. Large-format slabs enhance vein continuity and visual calm across spaces. Surfaces are precisely calibrated and honed without closing the pores, keeping the natural breathability of travertine intact. Fabrication advice: align veins for directional balance, use breathable sealers, and avoid resin coatings to preserve texture authenticity.",
-            "header4": "Why Choose Majen for Unfilled Honed Vein Cut Travertine?",
-            "text4": "  Majen directly controls quarrying, cutting, and finishing, ensuring unmatched quality consistency. Each slab is hand-inspected for vein alignment, tone grouping, and precise honing. Orders are shipped with full documentation, reinforced wooden crates, and moisture protection under FOB or CIF terms. With a proven export record, Majen provides reliable service and long-term material availability for international projects.",
-            "header5":"Global Export, Maintenance & Standards",
-            "text5":"Majen exports Unfilled Honed Vein Cut Travertine Slabs to Europe, North America, and the Middle East. All slabs meet ISO standards for thickness, flatness, and surface quality. Routine maintenance requires mild, pH-neutral cleaners and optional breathable sealers. The honed surface gently ages over time, enhancing the natural tone variation that defines authentic travertine aesthetics."
+          "TextSection": {
+            "header1": "Dolgusuz Honlu Vein-Cut Yüzeyin Avantajları",
+            "text1": "Dolgusuz honlu yüzey, doğal özgünlüğü rafine pürüzsüzlükle birleştirir. Açık gözenekler taşın doğal kökenini vurgularken, honlu yüzey rahat bir dokunma hissi ve kolay bakım sağlar. Düşük yansımaya sahip mat görünüm, sakin ve dingin iç mekânlar için idealdir. Majen’in hassas kalibrasyonu, yüzey boyunca tutarlı bir dokunma hissi sunarken, Vein-Cut travertenin karakteristik damarlarını korur.",
+            "header2": "Önerilen Kullanım Alanları & Tasarım Kombinasyonları",
+            "text2": "Dolgusuz Honlu Vein-Cut Traverten Plakalar; duvar kaplamaları, oturma alanları, spa bölümleri ve iç–dış geçişlerde önerilir. Dengeli mat dokusu; ahşap, beton ve cam detaylarla uyum içinde çalışır. Mimari projelerde parlaklık yerine doğal bir sofistike görünüm arayan tasarımlar için sıklıkla tercih edilir. Aynı projede fırçalı veya cilalı traverten yüzeylerle kombinlenerek, alanlar arasında ince bir kontrast yaratırken genel tasarım bütünlüğü korunabilir.",
+            "header3": "Ebatlar, Kalınlık & İşleme",
+            "text3": "2 cm, 3 cm ve 5 cm kalınlıklarda üretilen büyük ebatlı plakalar, damar sürekliliğini geniş yüzeylerde korumak için idealdir. Yüzeyler, gözenekler kapatılmadan honlanır ve böylece travertenin doğal nefes alabilirliği korunur. Uygulama tavsiyesi: damar yönünü dengeyi sağlayacak şekilde hizalayın, nefes alabilen emprenye ürünleri kullanın ve reçine bazlı kaplamalardan kaçınarak dokusal otantikliği koruyun.",
+            "header4": "Dolgusuz Honlu Vein-Cut Travertende Neden Majen?",
+            "text4": "Majen, ocaktan çıkarma, kesim ve yüzey işlemlerini doğrudan kontrol eder; bu sayede eşsiz bir kalite sürekliliği sağlar. Her plaka, damar hizası, ton gruplaması ve honing kalitesi açısından tek tek kontrol edilir. Siparişler, FOB veya CIF şartlarında; tam dokümantasyon, güçlendirilmiş ahşap kasalar ve nem koruması ile hazırlanır. Kanıtlanmış ihracat deneyimimiz ile Majen, uluslararası projelerde güvenilir tedarik ve uzun vadeli malzeme sürekliliği sunar.",
+            "header5": "Global İhracat, Bakım & Standartlar",
+            "text5": "Majen, Dolgusuz Honlu Vein-Cut Traverten Plakaları; Avrupa, Kuzey Amerika ve Orta Doğu’ya ihraç eder. Tüm plakalar, kalınlık, düzlemsellik ve yüzey kalitesi için uluslararası standartları karşılayacak şekilde üretilir. Rutin bakım için pH nötr, yumuşak temizleyiciler ve tercihen nefes alabilen emprenyeler önerilir. Honlu yüzey; zaman içinde doğal olarak hafifçe yaşlanarak travertenin özgün ton geçişlerini daha belirgin hâle getirir."
           },
 
-      "QuestionsItems": {
+          "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
-            "aboutpage_s4_faq1_header": "Why choose a polished finish for Vein Cut Travertine?",
-            "aboutpage_s4_faq1_text": " The polished surface intensifies color and reflects light, enhancing the elegance of linear veins for sophisticated interiors.",
-            "aboutpage_s4_faq2_header": " Which colors are available?",
-            "aboutpage_s4_faq2_text": " Ivory, Light, and Antico — each sourced from the same quarry layer for color harmony and vein consistency.",
-            "aboutpage_s4_faq3_header":"Is polished travertine suitable for high-traffic areas?",
-            "aboutpage_s4_faq3_text":"  Yes. Filled and polished surfaces resist staining and wear when sealed properly, making them suitable for both residential and commercial interiors.",
-            "aboutpage_s4_faq4_header":"How should it be maintained?",
-            "aboutpage_s4_faq4_text":"Use mild pH-neutral cleaners, avoid acidic products, and re-seal annually for long-term gloss protection."
+            "aboutpage_s4_faq_span1": "Vein-Cut Traverten Plakalar",
+            "aboutpage_s4_faq1_header": "Vein-Cut Travertende cilalı yüzey neden tercih edilir?",
+            "aboutpage_s4_faq1_text": "Cilalı yüzey, rengi yoğunlaştırır ve ışığı yansıtarak doğrusal damar yapısının zarafetini vurgular; bu da sofistike iç mekânlar için ideal bir etki yaratır.",
+            "aboutpage_s4_faq2_header": "Hangi renk seçenekleri mevcut?",
+            "aboutpage_s4_faq2_text": "Ivory, Light ve Antico — her biri aynı ocak katmanlarından seçilerek ton uyumu ve damar sürekliliği korunur.",
+            "aboutpage_s4_faq3_header": "Cilalı traverten yüksek yaya trafiği için uygun mu?",
+            "aboutpage_s4_faq3_text": "Evet. Doğru şekilde dolgulanıp uygun emprenye ile korunmuş cilalı yüzeyler, hem konut hem de ticari iç mekânlarda leke ve aşınmaya karşı dirençli performans sunar.",
+            "aboutpage_s4_faq4_header": "Bakımda nelere dikkat edilmeli?",
+            "aboutpage_s4_faq4_text": "pH nötr, hafif temizleyiciler kullanın; asidik ürünlerden kaçının ve parlaklığı uzun vadede korumak için yüzeyi düzenli aralıklarla yeniden emprenye edin."
           },
 
-          "colors": {
-            "ivory":  {
-              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
-              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
-              "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
-                    "chooseThickness": "Choose Thickness",
-                    "applicationsLabel": "Applications",
-                    "specsLabel": "Specifications",
-                    "faqLabel": "FAQ"
-                  },
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
-                "specs": {
-                  "h2": "Specifications",
-                  "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
-                }
-              }
-            },
-            "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
-                "specs": {
-                  "h2": "Specifications",
-                  "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
-                }
-              }
-            },
-            "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
-              "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
-                "specs": {
-                  "h2": "Specifications",
-                  "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
-                  ]
-                },
-                "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
-                }
-              }
-            }
+         "colors": {
+  "ivory": {
+    "metaTitle": "Ivory · Cilalı Vein-Cut Plakalar",
+    "metaDesc": "Parlak fildişi tonlu, yüksek yansımaya sahip lüks traverten plakalar.",
+    "h1": "Ivory · Cilalı Vein-Cut Plakalar",
+    "lead": "Ayna etkili parlaklık, modern iç mekânları öne çıkarır.",
+    "intro": "Cila, damar hareketini ve ışık yansımalarını vurgulayarak taşın derinliğini öne çıkarır.",
+    "ui": {
+      "chooseThickness": "Kalınlık Seçin",
+      "applicationsLabel": "Kullanım Alanları",
+      "specsLabel": "Teknik Özellikler",
+      "faqLabel": "SSS"
+    },
+    "sections": {
+      "applications": {
+        "h2": "Kullanım Alanları",
+        "p": "Öne çıkan zeminler, otel lobileri ve üst segment banyo/ıslak hacimler."
+      },
+      "specs": {
+        "h2": "Teknik Özellikler",
+        "rows": [
+          { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+          { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
+        ]
+      },
+      "faq": {
+        "h2": "SSS",
+        "items": [
+          {
+            "q": "Kaymazlık durumu nasıl?",
+            "a": "Islak alanlarda paspas kullanın veya daha iyi tutuş için honlu yüzey tercih edin."
           }
+        ]
+      }
+    }
+  },
+  "light": {
+    "metaTitle": "Light · Cilalı Vein-Cut Plakalar",
+    "metaDesc": "Sıcak tonlu, zarif parlak yüzeye sahip traverten plakalar.",
+    "h1": "Light · Cilalı Vein-Cut Plakalar",
+    "lead": "Üst segment mekânlar için rafine bir ışıltı sunar.",
+    "intro": "Sıcaklığı ve görsel derinliği artırarak mekânlara yumuşak bir parlaklık kazandırır.",
+    "sections": {
+      "applications": {
+        "h2": "Kullanım Alanları",
+        "p": "Resepsiyon zeminleri, vurgu duvarları ve perakende alanları."
+      },
+      "specs": {
+        "h2": "Teknik Özellikler",
+        "rows": [
+          { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+          { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
+        ]
+      },
+      "faq": {
+        "h2": "SSS",
+        "items": [
+          {
+            "q": "Asitle aşınma ve lekelenme için ne yapmalıyım?",
+            "a": "Yüzeyi uygun bir emprenye ile koruyun ve asidik temizleyicilerden kaçının."
+          }
+        ]
+      }
+    }
+  },
+  "antico": {
+    "metaTitle": "Antico · Cilalı Vein-Cut Plakalar",
+    "metaDesc": "Klasik, zengin karakteri parlak derinlikle buluşturan traverten plakalar.",
+    "h1": "Antico · Cilalı Vein-Cut Plakalar",
+    "lead": "Geleneksel lüksü yeniden yorumlayan zarif bir görünüm.",
+    "intro": "Derin kontrastlar ve rafine parlamalar, taşın klasik karakterini güçlü biçimde öne çıkarır.",
+    "sections": {
+      "applications": {
+        "h2": "Kullanım Alanları",
+        "p": "Butikler, galeriler ve imza niteliğinde iç mekân tasarımları."
+      },
+      "specs": {
+        "h2": "Teknik Özellikler",
+        "rows": [
+          { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+          { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
+        ]
+      },
+      "faq": {
+        "h2": "SSS",
+        "items": [
+          {
+            "q": "Hangi alanlarda kullanılmamalı?",
+            "a": "Sürekli ıslak ve kayma riski yüksek alanlarda cilalı yerine daha mat ve dokulu yüzeyleri tercih edin."
+          }
+        ]
+      }
+    }
+  }
+}
         },
 
           "filled-honed": {
@@ -2403,315 +2552,313 @@
 
     },
 
-    "slabs": {
-      "title": "Wholesale Travertine Slabs | Majen",
-      "span":"Direct Quarry Supplier",
-      "name":"",
-      "alt": "Slab product image",
-       "desc": " Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
-      "intro": "Majen is a leading exporter of Wholesale Travertine Slabs , supplying 2cm, 3cm, and 5cm slabs directly from our Uşak–Ulubey quarry. Available in Blaundos Antiko, Light, and Ivory, our travertine slabs are crafted for consistency, durability, and natural elegance. Each slab is carefully cut and inspected to meet A-grade standards, reinforced for international shipment, and trusted by architects and wholesalers worldwide.",
-      "title2": "Why Choose Wholesale Travertine Slabs ?",
-      "alt2": "Slab product image",
-      "intro2": "Turkey is the world’s largest supplier of travertine, and Majen delivers premium selections. Our Wholesale Travertine Slabs offer polished, honed, brushed, and tumbled finishes to suit diverse projects. Quarry-direct sourcing ensures consistent supply and competitive pricing. Importers and designers rely on Majen slabs for residential, commercial, and hospitality projects requiring both strength and timeless beauty.",
-      "sizes": ["2 cm", "3 cm","5cm"],
-      "finishes": ["Polished", "Unpolished"],
-      "features": ["Calibration", "Reinforcement", "High surface quality"],
-      "detailsHeadings": {
-      "title1":"Why Our Travertine Slabs?",
-      "title2": "Applications of Travertine Slabs",
-      "title3": "Slab Sizes & Thickness",
-      "title4": "Slab Finishes & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
+ "slabs": {
+  "title": "Toptan Traverten Plakalar | Majen",
+  "name": "",
+  "span": "Doğrudan Ocak Tedarikçisi",
+  "alt": "Plaka ürün görseli",
+  "desc": "Vein-Cut Traverten Plakalar, taşın doğal doğrusal damarlarını ortaya çıkararak yüzeylerde çarpıcı ve kesintisiz bir akış sağlar. Hareket ve derinliğin ön planda olduğu duvar kaplamaları, zeminler ve büyük ebatlı tasarımlar için idealdir.",
+  "intro": "Majen, Uşak–Ulubey’deki ocağından doğrudan tedarik ettiği Toptan Traverten Plakalar ile 2 cm, 3 cm ve 5 cm kalınlıklarda slab üretimi yapan öncü bir ihracatçıdır. Blaundos Antiko, Light ve Ivory renklerinde sunulan traverten plakalarımız; tutarlılık, dayanıklılık ve doğal şıklık için özel olarak seçilir. Her plaka, A-sınıfı standartları karşılayacak şekilde dikkatle kesilir, kontrol edilir ve uluslararası sevkiyat için güçlendirilir; dünya genelinde mimarlar ve toptancılar tarafından güvenle tercih edilir.",
+  "title2": "Neden Toptan Traverten Plakaları Tercih Etmelisiniz?",
+  "alt2": "Plaka ürün görseli",
+  "intro2": "Türkiye, travertenin dünya çapındaki en büyük tedarikçisidir ve Majen bu pazarda premium seçenekler sunar. Toptan Traverten Plakalarımız; cilalı, honlu, fırçalı ve eskitilmiş yüzey seçenekleriyle farklı projelere uygun çözümler sağlar. Doğrudan ocak tedariki, istikrarlı arz ve rekabetçi fiyatlandırma sunar. İthalatçılar ve tasarımcılar, hem dayanıklılık hem de zamansız estetik gerektiren konut, ticari ve otel projelerinde Majen plakalarına güvenir.",
+  "sizes": ["2 cm", "3 cm", "5 cm"],
+  "finishes": ["Cilalı", "Cilasız"],
+  "features": ["Kalibrasyon", "Güçlendirme", "Yüksek yüzey kalitesi"],
+  "detailsHeadings": {
+    "title1": "Neden Traverten Plakalarımız?",
+    "title2": "Traverten Plakaların Kullanım Alanları",
+    "title3": "Plaka Ölçüleri & Kalınlıkları",
+    "title4": "Plaka Yüzeyleri & Paketleme",
+    "sizes": "Ebatlar",
+    "finishes": "Yüzeyler",
+    "features": "Öne Çıkanlar"
+  },
 
-      "cuts": {
-    "heading": "Travertine Slabs Cut Options",
-    "text": "  Majen offers two distinct cutting methods for Travertine Slabs — Vein Cut and Cross Cut  Each option highlights unique patterns and tones, crafted to meet diverse architectural needs.  Choose honed for smooth elegance, brushed or tumbled for rustic texture, and polished for luxury interiors.",
+  "cuts": {
+    "heading": "Traverten Plaka Kesim Seçenekleri",
+    "text": "Majen, Traverten Plakalar için iki farklı kesim yöntemi sunar — Vein-Cut ve Cross-Cut. Her seçenek, farklı desen ve ton karakterlerini öne çıkararak çeşitli mimari ihtiyaçlara cevap verir. Sakin ve rafine bir görünüm için honlu, rustik doku için fırçalı veya eskitilmiş, lüks iç mekânlar için cilalı yüzeyleri tercih edebilirsiniz.",
     "detailsHeadings": {
-      "title1":"Why Our Vein-Cut Travertine?",
-      "title2": "Applications of Vein-Cut Slabs",
-      "title3": "Slab Sizes & Thickness",
-      "title4": "Finishes & Packaging",
+      "title1": "Neden Vein-Cut Travertenimiz?",
+      "title2": "Vein-Cut Plakaların Kullanım Alanları",
+      "title3": "Plaka Ölçüleri & Kalınlıkları",
+      "title4": "Yüzeyler & Paketleme",
       "sizes": "Ebatlar",
       "finishes": "Yüzeyler",
       "features": "Öne Çıkanlar"
     },
 
-      "description": [
-        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Slabsdeliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
-        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
-        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
-        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
-      ],
+    "description": [
+      "Uşak–Ulubey’deki ocağımızdan doğrudan temin edilen Majen Vein-Cut Traverten Plakalar; belirgin, kesintisiz doğrusal damarlar ve güvenilir renk uyumu sunar. Her blok, el ile seçilir; hassas şekilde kesilir ve ihracat için güçlendirilir; böylece büyük, yönlü tasarımlarda tutarlı A-sınıf kalite ve öngörülebilir sonuçlar elde edilir.",
+      "Akış ve ritmin önemli olduğu iç mekânlar için idealdir: otel lobileri, uzun koridorlar, duvar kaplamaları, zeminler, resepsiyon bankoları ve vurgu duvarları. Paralel damar yapısı; mekânsal sürekliliği ve modern estetiği güçlendirir; uyumlu karolar sayesinde odalar arasında kesintisiz geçişler sağlar.",
+      "Standart üretim kalınlıkları 2 cm, 3 cm ve 5 cm’dir. Panel eşleştirmeyi ve damar sürekliliğini kolaylaştıran büyük ebatlı formatlar mevcuttur. Sıkı kalibrasyon ve kalınlık kontrolü, atığı azaltır; montajı hızlandırır ve geniş yüzeylerde görsel bütünlüğü korur.",
+      "Mevcut yüzeyler: honlu, cilalı, fırçalı, eskitilmiş; dolgulu veya dolgusuz seçeneklerle. Plakalar, nem korumalı ve köşe koruyuculu güçlendirilmiş ahşap kasalara bağlanarak konteyner yüklemesine ve uzun mesafeli deniz taşımacılığına uygun şekilde paketlenir."
+    ],
 
-      "images": {
-          "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
-          "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
-        },
-
+    "images": {
+      "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
+      "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
+    },
 
     "vein-cut": {
-       "seo": {
-            "title": "Vein Cut ... | Majen",
-            "description": "Discover ...",
-            "image": "/images/og/vein-custom.webp"
-          },
+      "seo": {
+        "title": "Vein-Cut Traverten Plakalar | Premium Toptan | Majen",
+        "description": "Türkiye’den doğrudan tedarik edilen premium vein-cut traverten plakalar. Doğrusal damar yapısı, dolgulu veya dolgusuz seçenekler; honlu, cilalı, fırçalı ve eskitilmiş yüzeyler. 2 cm & 3 cm kalınlıklar, özel ebat imkânı ve oçaktan şantiyeye güvenilir ihracat.",
+        "image": "/images/og/vein-custom.webp"
+      },
 
-          "image": "/images/new/slab/antico/Antikveincut.webp",
- 
-       "title": "Vein Cut Travertine Slabs ",
-          "alt": "Vein-cut travertine slabs",
-          "span": "",
-          "intro": " Majen supplies Vein Cut Travertine Slabs sourced directly from our Uşak–Ulubey quarry in Turkey. Each slab showcases elegant linear veins that flow naturally across the surface, creating a refined architectural look ideal for interior walls, flooring, and large commercial projects. With precise cutting, consistent coloration, and global FOB/CIF export options, Majen ensures superior quality and timeless stone aesthetics for international buyers.",
-          "title2": "What Is Vein Cut Travertine?",
-          "intro2": "Vein Cut Travertine is produced by slicing the stone parallel to its natural bedding layers, revealing continuous linear veins. This technique creates a directional pattern that enhances architectural balance and spatial continuity. Ideal for modern interiors, facades, and commercial flooring, these slabs combine elegance and durability with consistent coloration and smooth finishing. Majen’s quarry-direct sourcing ensures reliable quality and sustainable export standards.",
-          "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut.webp",
-            "alt": "Vein Cut Travertine Slabs"
-          },
+      "image": "/images/new/slab/antico/Antikveincut.webp",
 
-          "youtube": "https://youtu.be/GNdnB-TN2uA",
+      "title": "Vein-Cut Traverten Plakalar",
+      "alt": "Vein-Cut traverten plakalar",
+      "span": "",
+      "intro": "Majen, Vein-Cut Traverten Plakaları Türkiye’deki Uşak–Ulubey ocağından doğrudan tedarik eder. Her plaka, yüzey boyunca zarif doğrusal damarlar sergileyerek iç duvar kaplamaları, zeminler ve büyük ölçekli ticari projeler için rafine bir mimari görünüm sunar. Hassas kesim, tutarlı renklenme ve global FOB/CIF ihracat seçenekleriyle Majen, uluslararası alıcılar için üstün kalite ve zamansız taş estetiği sağlar.",
+      "title2": "Vein-Cut Traverten Nedir?",
+      "intro2": "Vein-Cut Traverten, taşın doğal tabakalarına paralel şekilde kesilerek üretilir; bu sayede kesintisiz doğrusal damarlar ortaya çıkar. Bu teknik, mimari dengede ve mekânsal süreklilikte önemli rol oynayan yönlü bir desen oluşturur. Modern iç mekânlar, cepheler ve ticari zeminler için ideal olan bu plakalar; zarafet ve dayanıklılığı, tutarlı renk ve pürüzsüz yüzey bitişleriyle birleştirir. Majen’in doğrudan ocak tedariki, güvenilir kalite ve sürdürülebilir ihracat standartları sunar.",
+      "hero": {
+        "src": "/images/cut/antico/Slab/Antikveincut.webp",
+        "alt": "Vein-Cut Traverten Plakalar"
+      },
 
-           "variants":{
-            "title":"Filled and Unfilled Surface Options",
-            "text":"Majen’s Vein Cut Travertine Slabs are available in filled and unfilled varieties to match different design needs. Filled slabs are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled slabs preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
-          },
+      "youtube": "https://youtu.be/GNdnB-TN2uA",
 
-      "desc": " Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
-          "TextSection": {
-            "header1": "Surface Finishes and Textures",
-            "text1": " Choose from honed polished, brushed, or  tumbled finishes to achieve your project’s design goals. Honed surfaces offer a smooth matte appearance, while polished finishes reflect light for a luxurious feel. Brushed and tumbled options enhance texture, providing natural slip resistance and aged aesthetics. Each finish is produced with Majen’s advanced machinery and strict surface calibration standards.",
-            "header2": "Advantages of Vein Cut Travertine Slabs",
-            "text2": "Vein Cut Travertine highlights continuous linear veins that create a sense of movement and visual depth. This directional flow brings dynamic elegance to hotel lobbies, long corridors, and modern architecture. Beyond aesthetics, the stone provides exceptional structural integrity, consistent patterning, and natural insulation. Majen carefully selects blocks with uniform tones, ensuring reliable color matching across large-scale installations.",
-            "header3": "Applications and Design Use-Cases",
-            "text3": " Vein Cut Travertine Slabs are widely used in wall cladding, floors, countertops, and facades where directionality enhances architectural flow. Their linear pattern makes them ideal for projects emphasizing continuity, symmetry, and spatial harmony. Designers prefer these slabs in both contemporary and classical environments, achieving timeless visual depth with natural stone warmth.",
-            "header4": "Why Choose Majen for Vein Cut Travertine?",
-            "text4": "  Majen operates as a direct quarry supplier, providing full transparency from extraction to delivery. Every block is selected for clarity of vein structure, color consistency, and optimal cutting quality. We provide FOB and CIF shipping terms, complete export documentation, and reinforced wooden crate packaging. With dedicated service and long-term reliability, Majen is trusted by architects, importers, and stone distributors worldwide.",
-            "header5":" Global Markets & Export Reliability",
-            "text5":" Majen exports Vein Cut Travertine Slabs to Europe, North America, and the Middle East. Each slab meets international grading standards for thickness, finish, and strength. With efficient logistics, responsive documentation, and consistent inventory, Majen ensures seamless delivery for wholesalers and project developers worldwide. Every order is verified with packing lists, invoices, and certificates of origin."
-          },
+      "variants": {
+        "title": "Dolgulu ve Dolgusuz Yüzey Seçenekleri",
+        "text": "Majen’in Vein-Cut Traverten Plakaları, farklı tasarım ihtiyaçlarına uyum sağlayabilmek için dolgulu ve dolgusuz çeşitlerde sunulur. Dolgulu plakalar; lüks iç mekânlar için yoğun, cilalı yüzeyler oluşturmak amacıyla reçine veya çimento ile güçlendirilir. Dolgusuz plakalar, doğal gözenekleri koruyarak rustik ve dış mekân uygulamaları için tercih edilen otantik bir doku sunar. Her plaka sevkiyattan önce titizlikle kontrol edilir, güçlendirilir ve dokümante edilir; böylece uluslararası teslimatlarda sorunsuz sonuçlar elde edilir."
+      },
 
-           "detailsHeadings": {
-      "title1":"Why Our Vein-Cut Travertine?",
-      "title2": "Applications of Vein-Cut Slabs",
-      "title3": "Slab Sizes & Thickness",
-      "title4": "Finishes & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
+      "desc": "Vein-Cut Traverten Plakalar, taşın doğal doğrusal damarlarını ortaya çıkararak yüzeylerde çarpıcı ve kesintisiz bir akış oluşturur. Hareket ve derinliğin öne çıktığı duvar kaplamaları, zeminler ve büyük ebatlı tasarımlar için idealdir.",
+      "TextSection": {
+        "header1": "Yüzey Bitişleri ve Dokular",
+        "text1": "Projelerinizin tasarım hedeflerine uygun olarak honlu, cilalı, fırçalı veya eskitilmiş yüzeyler arasından seçim yapabilirsiniz. Honlu yüzeyler, yumuşak mat bir görünüm sağlar; cilalı yüzeyler ışığı yansıtarak lüks bir atmosfer yaratır. Fırçalı ve eskitilmiş yüzeyler ise dokuyu ön plana çıkarır; doğal kaymazlık ve yaşlandırılmış estetik sunar. Tüm yüzey işleme süreçleri, Majen’in ileri teknoloji makineleri ve sıkı yüzey kalibrasyon standartları ile gerçekleştirilir.",
+        "header2": "Vein-Cut Traverten Plakaların Avantajları",
+        "text2": "Vein-Cut Traverten, kesintisiz doğrusal damarlarıyla hareket ve görsel derinliği vurgular. Bu yönlü akış, otel lobileri, uzun koridorlar ve modern mimaride dinamik bir zarafet katar. Estetik avantajların yanı sıra taş; yüksek yapısal bütünlük, tutarlı desen tekrarı ve doğal izolasyon özelliklerine sahiptir. Majen, büyük ölçekli uygulamalarda güvenilir renk ve damar uyumu sağlayabilmek için blokları dikkatle seçer.",
+        "header3": "Kullanım Alanları ve Tasarım Senaryoları",
+        "text3": "Vein-Cut Traverten Plakalar; duvar kaplamaları, zeminler, tezgâhlar ve cephe uygulamalarında, yön hissinin mimari akışı güçlendirdiği projelerde yaygın olarak kullanılır. Doğrusal damar deseni; süreklilik, simetri ve mekânsal uyum vurgulanan tasarımlar için idealdir. Tasarımcılar, hem çağdaş hem de klasik ortamlarda bu plakaları tercih ederek, doğal taş sıcaklığını zamansız bir görsel derinlikle birleştirir.",
+        "header4": "Vein-Cut Traverten İçin Neden Majen?",
+        "text4": "Majen, ocaktan çıkarma aşamasından teslimata kadar tüm süreci doğrudan yöneten bir ocak tedarikçisidir. Her blok; damar yapısının netliği, renk tutarlılığı ve kesim kalitesi açısından seçilir. FOB ve CIF sevkiyat koşulları, tam ihracat dokümantasyonu ve güçlendirilmiş ahşap kasa paketleme ile çalışırız. Uzun vadeli istikrar ve proje odaklı hizmet yaklaşımımız sayesinde, Majen mimarlar, ithalatçılar ve taş distribütörleri tarafından güvenilir bir iş ortağı olarak tercih edilir.",
+        "header5": "Global Pazarlar & İhracat Güvenilirliği",
+        "text5": "Majen, Vein-Cut Traverten Plakaları Avrupa, Kuzey Amerika ve Orta Doğu’ya ihraç eder. Her plaka; kalınlık, yüzey bitişi ve dayanım için uluslararası derecelendirme standartlarını karşılar. Etkin lojistik, hızlı dokümantasyon ve tutarlı stok yönetimi ile toptancılar ve proje geliştiricileri için sorunsuz teslimatlar sağlanır. Her sipariş; çeki listeleri, faturalar ve menşe şahadetnamesi ile doğrulanır."
+      },
+
+      "detailsHeadings": {
+        "title1": "Neden Vein-Cut Travertenimiz?",
+        "title2": "Vein-Cut Plakaların Kullanım Alanları",
+        "title3": "Plaka Ölçüleri & Kalınlıkları",
+        "title4": "Yüzeyler & Paketleme",
+        "sizes": "Ebatlar",
+        "finishes": "Yüzeyler",
+        "features": "Öne Çıkanlar"
+      },
 
       "description": [
-        " Sourced directly from our Uşak–Ulubey quarry, Majen’s Vein Cut Travertine Slabsdeliver clear, continuous linear veins with reliable color harmony. Each blockis hand-selected, precisely cut, and reinforced for export, ensuring consistentA-grade quality and predictable results on large, directional designs.",
-        "Ideal for interiors where flow and rhythm matter: hotel lobbies, long corridors,wall cladding, floors, reception desks, and feature walls. The parallel vein structureenhances spatial continuity and modern aesthetics, while matching tiles allow seamlesstransitions across rooms.",
-        " Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
-        "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options.Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
+        "Uşak–Ulubey’deki ocağımızdan doğrudan tedarik edilen Majen Vein-Cut Traverten Plakalar; net, kesintisiz doğrusal damarlar ve güvenilir renk uyumu sunar. Her blok el ile seçilir, hassas şekilde kesilir ve ihracat için güçlendirilir; böylece büyük, yönlü tasarımlarda tutarlı A-sınıf kalite ve öngörülebilir sonuçlar elde edilir.",
+        "Akış ve ritmin önemli olduğu iç mekânlar için idealdir: otel lobileri, uzun koridorlar, duvar kaplamaları, zeminler, resepsiyon bankoları ve vurgu duvarları. Paralel damar yapısı; mekânsal sürekliliği ve modern estetiği güçlendirir; uyumlu karolar, odalar arasında kesintisiz geçişler sağlar.",
+        "Standart üretim kalınlıkları 2 cm, 3 cm ve 5 cm’dir. Panel eşleştirmeyi ve damar sürekliliğini kolaylaştıran büyük ebatlı formatlar mevcuttur. Sıkı kalibrasyon ve kalınlık kontrolü, atığı azaltır; montajı hızlandırır ve geniş yüzeylerde görsel bütünlüğü korur.",
+        "Mevcut yüzeyler: honlu, cilalı, fırçalı, eskitilmiş; dolgulu veya dolgusuz seçeneklerle. Plakalar, nem korumalı ve köşe koruyuculu güçlendirilmiş ahşap kasalara bağlanarak konteyner yüklemesine ve uzun mesafeli deniz taşımacılığına uygun şekilde paketlenir."
       ],
 
-          "QuestionsItems": {
-            "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
-            "aboutpage_s4_faq1_header": "Why choose Vein Cut Travertine over Cross Cut?",
-            "aboutpage_s4_faq1_text": " Vein Cut Travertine reveals continuous parallel veins, offering dynamic visual movement and elegance. It’s ideal for contemporary interiors seeking direction and flow, whereas Cross Cut provides a more clouded, uniform pattern.",
-            "aboutpage_s4_faq2_header": " What finishes are available for Vein Cut Travertine Slabs?",
-            "aboutpage_s4_faq2_text": "  Majen offers polished, honed, brushed, and tumbled finishes, in both filled and unfilled options. Each finish is processed to meet global export quality standards and client specifications.",
-            "aboutpage_s4_faq3_header":"Are these slabs suitable for outdoor use?",
-            "aboutpage_s4_faq3_text":"  Yes. Unfilled, brushed, or tumbled finishes are perfect for outdoor facades and terraces, combining durability with natural slip resistance.",
-            "aboutpage_s4_faq4_header":" What is the standard thickness of Vein Cut Slabs?",
-            "aboutpage_s4_faq4_text":"  Majen produces Vein Cut Slabs in 2 cm, 3 cm, and 5 cm thicknesses. Custom dimensions can be arranged for special architectural or commercial projects."
-          },
+      "QuestionsItems": {
+        "aboutpage_s4_faq_header1": "FAQ",
+        "aboutpage_s4_faq_span1": "Vein-Cut Traverten Plakalar",
+        "aboutpage_s4_faq1_header": "Vein-Cut Traverteni Cross-Cut’a göre neden tercih etmeliyim?",
+        "aboutpage_s4_faq1_text": "Vein-Cut Traverten, kesintisiz paralel damarları ortaya çıkararak dinamik bir hareket ve zarafet sunar. Yön ve akış hissi aranan çağdaş iç mekânlarda idealdir; Cross-Cut ise daha bulutlu, homojen bir desen sağlar.",
+        "aboutpage_s4_faq2_header": "Vein-Cut Traverten Plakalar için hangi yüzeyler mevcut?",
+        "aboutpage_s4_faq2_text": "Majen, cilalı, honlu, fırçalı ve eskitilmiş yüzeyleri; hem dolgulu hem de dolgusuz seçeneklerle sunar. Tüm yüzeyler, küresel ihracat kalite standartlarına ve müşteri beklentilerine uygun olarak işlenir.",
+        "aboutpage_s4_faq3_header": "Bu plakalar dış mekân kullanımı için uygun mu?",
+        "aboutpage_s4_faq3_text": "Evet. Dolgusuz, fırçalı veya eskitilmiş yüzeyler; dış cepheler ve teraslar için dayanıklılık ve doğal kaymazlık sağlayan ideal seçeneklerdir.",
+        "aboutpage_s4_faq4_header": "Vein-Cut plakaların standart kalınlıkları nelerdir?",
+        "aboutpage_s4_faq4_text": "Majen, Vein-Cut plakaları 2 cm, 3 cm ve 5 cm kalınlıklarda üretir. Özel mimari veya ticari projeler için talebe göre özel ölçüler de planlanabilir."
+      },
 
       "processes": {
         "images": {
-              "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
-                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
-                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut.webp", 
-                "filled-natural": "/images/cut/antico/Slab/Antikcrosscut.webp",
-                "unfillednatural": "/images/cut/antico/Slab/Antikcrosscut.webp"
-              }
-            },
+          "combined": {
+            "filled:honed": "/images/new/slab/antico/antikoveinhonedfilled.webp",
+            "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled.webp",
+            "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished.webp",
+            "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished.webp",
+            "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
+            "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
+            "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled.webp",
+            "unfilled:tumbled": "/images/new/slab/antico/tumbledveincutunfilled.webp",
+            "natural": "/images/new/slab/antico/Antikveincut.webp",
+            "filled-natural": "/images/new/slab/antico/Antikveincut.webp",
+            "unfillednatural": "/images/new/slab/antico/Antikveincut.webp"
+          }
+        },
 
-             "youtube": {
-           "combined": {
-      "filled:honed": "https://youtu.be/z2hHL90nCVg",
-      "unfilled:honed": "https://youtu.be/z2hHL90nCVg",
-      "unfilled:natural": "https://youtu.be/z2hHL90nCVg",
-      "filled:natural": "https://youtu.be/z2hHL90nCVg",
-      "unfilled:brushed": "https://youtu.be/z2hHL90nCVg",
-      "filled:brushed": "https://youtu.be/z2hHL90nCVg",
-      "unfilled:tumbled": "https://youtu.be/z2hHL90nCVg",
-      "filled:tumbled": "https://youtu.be/z2hHL90nCVg",
-      "unfilled:polished": "https://youtu.be/z2hHL90nCVg",
-      "filled:polished": "https://youtu.be/z2hHL90nCVg"
-    }
-  },
+        "youtube": {
+          "combined": {
+            "filled:honed": "https://youtu.be/z2hHL90nCVg",
+            "unfilled:honed": "https://youtu.be/z2hHL90nCVg",
+            "unfilled:natural": "https://youtu.be/z2hHL90nCVg",
+            "filled:natural": "https://youtu.be/z2hHL90nCVg",
+            "unfilled:brushed": "https://youtu.be/z2hHL90nCVg",
+            "filled:brushed": "https://youtu.be/z2hHL90nCVg",
+            "unfilled:tumbled": "https://youtu.be/z2hHL90nCVg",
+            "filled:tumbled": "https://youtu.be/z2hHL90nCVg",
+            "unfilled:polished": "https://youtu.be/z2hHL90nCVg",
+            "filled:polished": "https://youtu.be/z2hHL90nCVg"
+          }
+        },
 
-        "heading": "Choose Your Process",
-        "subtext": "Select the surface treatment.",
+        "heading": "Yüzey İşlemini Seçin",
+        "subtext": "Uygulanacak yüzey işlemini seçin.",
         "groups": {
           "filled": {
-            "heading": "Filled Processes",
-            "text": "Filled options suitable for polished looks and dense surfaces.",
+            "heading": "Dolgulu İşlemler",
+            "text": "Cilalı ve yoğun yüzeyler için uygun dolgulu seçenekler.",
             "items": ["honed", "polished", "brushed", "tumbled"]
           },
           "unfilled": {
-            "heading": "Unfilled Processes",
-            "text": "Natural look & texture. Note: “Natural” has no filling.",
+            "heading": "Dolgusuz İşlemler",
+            "text": "Doğal görünüm ve belirgin doku isteyen uygulamalar için dolgusu yapılmamış seçenekler.",
             "items": ["natural", "honed", "polished", "brushed", "tumbled"]
           }
         },
         "meta": {
-          "natural":  { "title": "Natural",  "alt": "Natural vein-cut travertine slab" },
-          "honed":    { "title": "Honed",    "alt": "Honed vein-cut travertine slab" },
-          "polished": { "title": "Polished", "alt": "Polished vein-cut travertine slab" },
-          "brushed":  { "title": "Brushed",  "alt": "Brushed vein-cut travertine slab" },
-          "tumbled":  { "title": "Tumbled",  "alt": "Tumbled vein-cut travertine slab" }
+          "natural": { "title": "Doğal", "alt": "Doğal yüzeyli Vein-Cut traverten plaka" },
+          "honed": { "title": "Honlu", "alt": "Honlu Vein-Cut traverten plaka" },
+          "polished": { "title": "Cilalı", "alt": "Cilalı Vein-Cut traverten plaka" },
+          "brushed": { "title": "Fırçalı", "alt": "Fırçalı Vein-Cut traverten plaka" },
+          "tumbled": { "title": "Eskitilmiş", "alt": "Eskitilmiş Vein-Cut traverten plaka" }
         },
 
-
         "natural": {
-           "youtubeByColor": {
-                "ivory": "https://youtu.be/Fhn1dAK2joE",
-                "light": "https://youtu.be/Fhn1dAK2joE",
-                "antico": "https://youtu.be/Fhn1dAK2joE"
-              },
-            "seo": {
-            "title": "Unilled Natural Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
-            "description": "Discover Unilled Natural Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
+          "youtubeByColor": {
+            "ivory": "https://youtu.be/Fhn1dAK2joE",
+            "light": "https://youtu.be/Fhn1dAK2joE",
+            "antico": "https://youtu.be/Fhn1dAK2joE"
+          },
+          "seo": {
+            "title": "Dolgusuz Doğal Vein-Cut Traverten Plakalar – Türkiye’den Ocak Tedarikçisi | Majen",
+            "description": "Dolgusuz Doğal Vein-Cut Traverten Plakaları keşfedin: açık gözenekli yapı, doğal mat doku ve kesintisiz doğrusal damarlar. Ivory, Light ve Antico renkleriyle dünya geneline ihracata hazır.",
             "image": "/images/og/vein-custom.webp"
           },
-                  "h1": "Unfilled Natural Vein Cut Travertine Slabs",
-              "title": "Unfilled Natural Vein Cut Travertine Slabs",
-              "lead": "Majen supplies Unfilled Natural Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Cut parallel to the natural bedding layers, each slab reveals elegant continuous veins while preserving the stone’s open pores and authentic texture. This unfilled natural finish highlights the raw beauty of travertine, offering a tactile surface and soft matte tone ideal for rustic interiors, spa zones, and outdoor architecture. Durable, breathable, and visually organic—crafted for timeless design.",
-              "intro":"Majen supplies Unfilled Natural Vein Cut Travertine Slabs directly from our Uşak–Ulubey quarry in Turkey. Cut parallel to the natural bedding layers, each slab reveals elegant continuous veins while preserving the stone’s open pores and authentic texture. This unfilled natural finish highlights the raw beauty of travertine, offering a tactile surface and soft matte tone ideal for rustic interiors, spa zones, and outdoor architecture. Durable, breathable, and visually organic—crafted for timeless design.",
-              "title2":"What Is Unfilled Natural Vein Cut Travertine?",
-              "intro2":"“Vein Cut” exposes the stone’s natural linear veins running through each slab. “Unfilled” leaves the pores open for an authentic look and enhanced texture. This finish maintains natural breathability and a raw aesthetic, making it highly valued in Mediterranean and eco-friendly architecture. Majen hand-selects each block to ensure uniform coloration, accurate calibration, and true natural structure across large projects.",
-              
-              "detailsHeadings": {
-      "title1":"Why Our Unfilled Natural Vein Cut?",
-      "title2": "Color Options",
-      "title3": "Sizes & Thickness",
-      "title4": "Finishes & Packaging",
-      "sizes": "Ebatlar",
-      "finishes": "Yüzeyler",
-      "features": "Öne Çıkanlar"
-    },
-        "variants":{
-            "title":"Color Options: Ivory, Light, and Antico",
-            "text":"Majen offers Ivory, Light, and Antico tones to complement diverse architectural styles. Ivory provides subtle cream warmth perfect for open, bright interiors. Light offers a balanced beige neutrality suited for modern and minimalist design. Antico, with deeper earthy character, adds natural contrast for rustic and historical projects. All colors are sourced from the same quarry bench to ensure perfect hue and vein harmony throughout installations."
+          "h1": "Unfilled Natural Vein-Cut Traverten Plakalar",
+          "title": "Unfilled Natural Vein-Cut Traverten Plakalar",
+          "lead": "Majen, Unfilled Natural Vein-Cut Traverten Plakaları Türkiye’deki Uşak–Ulubey ocağından doğrudan tedarik eder. Doğal tabaka yönlerine paralel kesilen plakalar, zarif doğrusal damarların yanı sıra taşın açık gözenekli yapısını ve otantik dokusunu korur. Dolgusuz doğal bitiş; rustik iç mekânlar, spa alanları ve dış mimaride mat, dokunsal ve organik bir görünüm sunar. Dayanıklı, nefes alabilen ve görsel olarak doğal — zamansız tasarımlar için üretilmiştir.",
+          "intro": "Majen, Unfilled Natural Vein-Cut Traverten Plakaları Türkiye’deki Uşak–Ulubey ocağından doğrudan tedarik eder. Doğal tabaka yönlerine paralel kesilen her plaka, zarif doğrusal damarların devamlılığını korurken taşın açık gözenekli, özgün dokusunu olduğu gibi yansıtır. Bu dolgusu yapılmamış doğal yüzey, travertenin ham güzelliğini ortaya çıkarır; rustik iç mekânlar, spa bölgeleri ve dış mimari için yumuşak mat tonlarla birlikte güçlü bir dokunsal karakter sunar.",
+          "title2": "Unfilled Natural Vein-Cut Traverten Nedir?",
+          "intro2": "“Vein-Cut”, taşın doğal tabakalarına paralel kesim yapılarak damarların doğrusal yönde açığa çıkarılmasını ifade eder. “Unfilled Natural” yani dolgusu yapılmamış doğal bitiş, gözeneklerin açık bırakıldığı ve yüzeyin ham yapısının korunduğu görünümü tanımlar. Bu finisaj, doğal nefes alabilirliği ve ham estetiği koruyarak özellikle Akdeniz tarzı ve çevre dostu mimaride yüksek değer görür. Majen, büyük projelerde ton ve damar sürekliliğini sağlayabilmek için her bloğu renk uyumu, kalibrasyon hassasiyeti ve gerçek doğal yapı açısından tek tek seçer.",
+
+          "detailsHeadings": {
+            "title1": "Neden Unfilled Natural Vein-Cut Plakalarımız?",
+            "title2": "Renk Seçenekleri",
+            "title3": "Ebatlar & Kalınlıklar",
+            "title4": "Yüzeyler & Paketleme",
+            "sizes": "Ebatlar",
+            "finishes": "Yüzeyler",
+            "features": "Öne Çıkanlar"
+          },
+          "variants": {
+            "title": "Renk Seçenekleri: Ivory, Light ve Antico",
+            "text": "Majen, farklı mimari stilleri tamamlamak için Ivory, Light ve Antico tonlarını sunar. Ivory; açık ve aydınlık iç mekânlar için yumuşak krem sıcaklığı sağlar. Light; modern ve minimalist tasarımlar için dengeli, nötr bej ton sunar. Antico ise rustik ve tarihi projelerde doğal kontrast yaratan, daha derin toprak tonlu bir karaktere sahiptir. Tüm renkler, büyük uygulamalarda ton ve damar uyumu yakalamak için aynı ocak katmanlarından seçilir."
           },
 
-      "description": [
-        " Authentic linear veins with natural pores left open for tactile texture and organic appearance. Sustainably sourced, durable, and suitable for both rustic and modern projects.",
-        "Offered in Ivory, Light, and Antico tones ",
-        " Produced in 2 cm, 3 cm, and 5 cm. Large formats available for continuous vein alignment and easy installation.",
-        "Primary finish: Natural (Unfilled) with matte texture. Packed securely in reinforced wooden crates for worldwide export."
-      ],
+          "description": [
+            "Doğal damar yönünü takip eden doğrusal çizgiler ve açık bırakılmış gözenekler, dokunsal doku ve organik bir görünüm kazandırır. Sürdürülebilir şekilde temin edilen bu taş; hem rustik hem de çağdaş projelerde dayanıklılık ve doğallığı bir arada sunar.",
+            "Ivory, Light ve Antico ton seçenekleriyle sunulur.",
+            "2 cm, 3 cm ve 5 cm kalınlıklarda üretilir. Damar hizalamasını ve uygulamada sürekliliği kolaylaştıran büyük ebatlı plakalar mevcuttur.",
+            "Ana yüzey: Doğal (Dolgusuz) mat doku. Dünya geneline ihracata uygun olacak şekilde güçlendirilmiş ahşap kasalarda güvenli biçimde paketlenir."
+          ],
 
-      "TextSection": {
-            "header1": "Advantages of the Unfilled Natural Finish on Vein Cut Slabs",
-            "text1": " Leaving travertine unfilled preserves its natural air pockets and organic texture. This approach provides a more natural slip resistance, enhances tactile depth, and expresses the raw geological origin of the material. Unfilled surfaces also promote better grip underfoot, especially in humid environments. Majen’s precise calibration ensures even thickness and minimal variation without compromising the stone’s authentic character.",
-            "header2": "Recommended Applications & Design Pairings",
-            "text2": "Unfilled Natural Vein Cut Travertine Slabs are ideal for outdoor terraces, facades, spa areas, garden walkways, and rustic interiors. They can be used in both vertical and horizontal applications where natural texture is desired. Pair with filled or brushed surfaces in adjacent spaces for contrast and practical performance. Designers often combine unfilled slabs with natural wood, concrete, and metal to highlight organic authenticity in modern contexts.",
-            "header3": "Sizes, Thickness & Fabrication",
-            "text3": " Available in 2 cm, 3 cm, and 5 cm thicknesses, with large-format slabs that preserve vein direction and continuity. All slabs are dimensionally stable and precisely calibrated for easy installation. Edges can be left raw or eased for a softened touch. For fabrication, use breathable sealers to maintain natural feel; avoid heavy resin coatings. Majen’s careful handling preserves each slab’s natural surface integrity during processing and packaging.",
-            "header4": "Why Choose Majen for Unfilled Natural Vein Cut Travertine?",
-            "text4": "  Majen controls the entire process—from quarry selection to export—ensuring true natural quality and consistency. Each unfilled slab is inspected for surface stability, color harmony, and linear vein clarity. We offer FOB/CIF terms with reinforced wooden crates, certificates of origin, and full export documentation. Our long-standing expertise in natural stone export guarantees reliability, transparency, and sustainable sourcing for global projects.",
-            "header5":"Global Export & Maintenance Guidelines",
-            "text5":" Majen exports Unfilled Natural Vein Cut Travertine Slabs worldwide under ISO-certified processes. Their open-pore texture provides excellent traction and breathability for humid climates. To maintain the surface, use gentle pH-neutral cleaners and seal occasionally to limit dust absorption. The natural patina deepens with age, offering a unique, authentic look that matures beautifully over time."
+          "TextSection": {
+            "header1": "Vein-Cut Plakalarda Dolgusuz Doğal Yüzeyin Avantajları",
+            "text1": "Traverteni dolgusu yapılmadan bırakmak, doğal hava boşluklarını ve organik dokuyu korur. Bu yaklaşım; daha yüksek kaymazlık, belirgin dokunsal derinlik ve malzemenin jeolojik kökenini ifade eden ham bir görünüm sağlar. Dolgusuz yüzeyler özellikle nemli ortamlarda ayak altında daha iyi tutuş sunar. Majen’in hassas kalibrasyonu, taşın otantik karakterinden ödün vermeden kalınlıkta stabilite ve yüzeyde minimum tolerans farkı sağlar.",
+            "header2": "Önerilen Kullanım Alanları & Tasarım Kombinasyonları",
+            "text2": "Unfilled Natural Vein-Cut Traverten Plakalar; dış teraslar, cepheler, spa alanları, bahçe yürüyüş yolları ve rustik iç mekânlar için idealdir. Doğal dokunun ön planda olmasının istendiği dikey ve yatay uygulamalarda kullanılabilir. Fonksiyonel alanlarda dolgulu veya fırçalı yüzeylerle kombinlenerek hem performans hem de estetik açıdan dengeli çözümler sunar. Tasarımcılar, doğal ahşap, beton ve metal elemanlarla birlikte kullanarak modern kurgularda organik bir vurgu elde eder.",
+            "header3": "Ebatlar, Kalınlık & İşleme",
+            "text3": "2 cm, 3 cm ve 5 cm kalınlıklarda sunulan büyük ebatlı plakalar, damar yönünün sürekliliğini koruyarak geniş yüzeylerde dingin bir akış sağlar. Tüm plakalar ölçüsel olarak stabil ve hassas kalibre edilmiş olup montajı kolaylaştırır. Kenarlar ham bırakılabilir veya yumuşatılmış pah ile işlenebilir. Uygulamada, doğal hissi korumak için nefes alabilen emprenyeler önerilir; yoğun reçine kaplamalardan kaçınılmalıdır. Majen, işleme ve paketleme aşamalarında her plakanın doğal yüzey bütünlüğünü titizlikle korur.",
+            "header4": "Unfilled Natural Vein-Cut Travertende Neden Majen?",
+            "text4": "Majen, ocak seçiminden sevkiyata kadar tüm süreci kontrollü şekilde yöneterek gerçek doğal kalite ve tutarlılık sunar. Her dolgusu yapılmamış plaka; yüzey stabilitesi, renk uyumu ve damar netliği açısından tek tek incelenir. FOB/CIF şartları, güçlendirilmiş ahşap kasalar, menşe şahadetnamesi ve tam ihracat dokümantasyonu ile çalışırız. Doğal taş ihracatındaki uzun yıllara dayanan deneyimimiz, dünya genelindeki projeler için güvenilirlik, şeffaflık ve sürdürülebilir tedarik anlamına gelir.",
+            "header5": "Global İhracat & Bakım Önerileri",
+            "text5": "Majen, Unfilled Natural Vein-Cut Traverten Plakaları; ISO sertifikalı süreçler ile dünya geneline ihraç eder. Açık gözenekli doku, özellikle nemli iklimlerde iyi bir tutuş ve nefes alabilirlik sağlar. Bakım için pH nötr, yumuşak temizleyiciler kullanılması ve toz emilimini sınırlamak amacıyla zaman zaman nefes alabilen emprenye uygulanması önerilir. Yüzey, zamanla doğal bir patina kazanarak travertenin özgün karakterini daha da belirgin hâle getirir."
           },
 
-      "QuestionsItems": {
+          "QuestionsItems": {
             "aboutpage_s4_faq_header1": "FAQ",
-            "aboutpage_s4_faq_span1": "Vein Cut Travertine Slabs",
-            "aboutpage_s4_faq1_header": "What makes unfilled travertine unique?",
-            "aboutpage_s4_faq1_text": " It preserves natural pores, giving a raw, organic look and improved grip compared to filled surfaces.",
-            "aboutpage_s4_faq2_header": " Which colors are available?",
-            "aboutpage_s4_faq2_text": " Ivory, Light, and Antico — chosen for consistent hue, texture, and vein continuity across slabs.",
-            "aboutpage_s4_faq3_header":"Is it suitable for outdoor use?",
-            "aboutpage_s4_faq3_text":" Yes. The unfilled surface naturally resists slipping and weathers gracefully in open-air environments.",
-            "aboutpage_s4_faq4_header":"How should it be maintained?",
-            "aboutpage_s4_faq4_text":"Use neutral pH cleaners and breathable sealers to protect against dust and moisture while keeping the natural look intact."
+            "aboutpage_s4_faq_span1": "Vein-Cut Traverten Plakalar",
+            "aboutpage_s4_faq1_header": "Dolgusuz traverteni benzersiz kılan nedir?",
+            "aboutpage_s4_faq1_text": "Doğal gözenekleri koruyarak ham, organik bir görünüm ve dolgulu yüzeylere göre daha iyi tutuş sağlar.",
+            "aboutpage_s4_faq2_header": "Hangi renk seçenekleri mevcut?",
+            "aboutpage_s4_faq2_text": "Ivory, Light ve Antico — her biri ton, doku ve damar sürekliliği açısından uyumlu olacak şekilde seçilir.",
+            "aboutpage_s4_faq3_header": "Dış mekân kullanımı için uygun mu?",
+            "aboutpage_s4_faq3_text": "Evet. Dolgusuz yüzey, açık alanlarda doğal kaymazlık ve zamana yayılan estetik bir yaşlanma sunar.",
+            "aboutpage_s4_faq4_header": "Bakımda nelere dikkat edilmeli?",
+            "aboutpage_s4_faq4_text": "Doğal görünümü korumak için pH nötr temizleyiciler ve nefes alabilen emprenyeler kullanın; aşırı agresif kimyasallardan kaçının."
           },
 
           "colors": {
-            "title":"Color Options: Ivory, Light, and Antico",  
-            "text":"To match different design palettes, Majen offers Ivory, Light, and Antico tones. Ivory delivers warm cream elegance with gentle, continuous veining; Light provides a neutral beige ideal for minimal interiors; Antico offers a slightly deeper, earthy character for richer contrasts. All colors are curated from the same quarry bench to keep hue and pattern continuity across large areas, enabling vein matching and seamless book-look layouts on walls and floors.",
-            "ivory":  {
-              "metaTitle": "Ivory · Polished Vein-Cut Slabs",
-              "metaDesc":  "High-gloss luxury look with bright ivory tone.",
-              "h1":        "Ivory · Polished Vein-Cut Slabs",
-              "lead":      "Mirror-like sheen elevates contemporary interiors.",
-              "intro":     "Polish emphasizes veining and light reflectance.",
-               "ui": {
-                    "chooseThickness": "Choose Thickness",
-                    "applicationsLabel": "Applications",
-                    "specsLabel": "Specifications",
-                    "faqLabel": "FAQ"
-                  },
+            "title": "Renk Seçenekleri: Ivory, Light ve Antico",
+            "text": "Farklı tasarım paletlerini karşılayabilmek için Majen, Ivory, Light ve Antico tonlarını sunar. Ivory; yumuşak, kesintili damarlarla birlikte sıcak krem zarafeti sağlar. Light; minimalist ve modern iç mekânlar için nötr bej bir zemin sunarken, Antico daha derin toprak tonlu karakteriyle rustik ve tarihi projelerde güçlü bir kontrast yaratır. Tüm renkler, geniş yüzeylerde ton ve desen sürekliliğini korumak için aynı ocak katmanlarından seçilir; bu sayede duvar ve zeminlerde damar eşleştirme ve book-match uygulamaları kolaylaşır.",
+            "ivory": {
+              "metaTitle": "Ivory · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Parlak fildişi tonlu, yüksek yansımaya sahip lüks traverten plakalar.",
+              "h1": "Ivory · Cilalı Vein-Cut Plakalar",
+              "lead": "Ayna etkili parlaklık, modern iç mekânları öne çıkarır.",
+              "intro": "Cilalı yüzey, damar hareketini ve ışık yansımalarını vurgular.",
+              "ui": {
+                "chooseThickness": "Kalınlık Seçin",
+                "applicationsLabel": "Kullanım Alanları",
+                "specsLabel": "Teknik Özellikler",
+                "faqLabel": "SSS"
+              },
               "sections": {
-                "applications": { "h2": "Applications", "p": "Feature floors, hotel lobbies, premium bathrooms." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Öne çıkan zeminler, otel lobileri ve üst segment banyo/ıslak hacimler." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Slip resistance?", "a": "Use mats or consider honed for wet areas." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Kaymazlık durumu nasıl?", "a": "Islak alanlarda paspas kullanın veya honlu yüzey tercih edin." }]
                 }
               }
             },
-            "light":  {
-              "metaTitle": "Light · Polished Vein-Cut Slabs",
-              "metaDesc":  "Warm tone with elegant sheen.",
-              "h1":        "Light · Polished Vein-Cut Slabs",
-              "lead":      "Refined glow for upscale spaces.",
-              "intro":     "Enhances warmth and visual depth.",
+            "light": {
+              "metaTitle": "Light · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Sıcak tonlu, zarif parlaklık sunan traverten plakalar.",
+              "h1": "Light · Cilalı Vein-Cut Plakalar",
+              "lead": "Üst segment alanlar için rafine bir ışıltı sağlar.",
+              "intro": "Mekânın sıcaklığını ve görsel derinliğini artırarak yumuşak bir parlama etkisi yaratır.",
               "sections": {
-                "applications": { "h2": "Applications", "p": "Reception floors, statement walls, retail." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Resepsiyon zeminleri, vurgu duvarları ve perakende alanları." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Etching/stains?", "a": "Seal and avoid acidic cleaners." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Asitle aşınma ve lekelenme için ne yapmalıyım?", "a": "Yüzeyi uygun bir emprenye ile koruyun ve asidik temizleyicilerden kaçının." }]
                 }
               }
             },
             "antico": {
-              "metaTitle": "Antico · Polished Vein-Cut Slabs",
-              "metaDesc":  "Classic rich character with glossy depth.",
-              "h1":        "Antico · Polished Vein-Cut Slabs",
-              "lead":      "Traditional luxury reimagined.",
-              "intro":     "Deep contrast and refined highlights.",
+              "metaTitle": "Antico · Cilalı Vein-Cut Plakalar",
+              "metaDesc": "Klasik, zengin karakteri parlak derinlikle buluşturan traverten plakalar.",
+              "h1": "Antico · Cilalı Vein-Cut Plakalar",
+              "lead": "Geleneksel lüksü yeniden yorumlayan zarif bir görünüm.",
+              "intro": "Derin kontrastlar ve rafine yansımalar, taşın klasik karakterini güçlü biçimde öne çıkarır.",
               "sections": {
-                "applications": { "h2": "Applications", "p": "Boutiques, galleries, signature interiors." },
+                "applications": { "h2": "Kullanım Alanları", "p": "Butikler, galeriler ve imza niteliğinde iç mekân tasarımları." },
                 "specs": {
-                  "h2": "Specifications",
+                  "h2": "Teknik Özellikler",
                   "rows": [
-                    { "prop": "Thickness", "value": "2 cm / 3 cm / 5 cm" },
-                    { "prop": "Finish",    "value": "Polished — Filled / Unfilled" }
+                    { "prop": "Kalınlık", "value": "2 cm / 3 cm / 5 cm" },
+                    { "prop": "Yüzey", "value": "Cilalı — Dolgulu / Dolgusuz" }
                   ]
                 },
                 "faq": {
-                  "h2": "FAQ",
-                  "items": [{ "q": "Where to avoid?", "a": "Avoid consistently wet/slippery areas." }]
+                  "h2": "SSS",
+                  "items": [{ "q": "Hangi alanlarda kaçınmak gerekir?", "a": "Sürekli ıslak veya kayma riski yüksek alanlarda cilalı yerine daha mat ve dokulu yüzeyleri tercih edin." }]
                 }
               }
             }
