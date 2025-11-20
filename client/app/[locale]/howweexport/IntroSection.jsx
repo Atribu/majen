@@ -62,7 +62,7 @@ export default function IntroSection({
     ],
   };
 
-  // ====== 🔹 EXPORT VARYANTI (tek hero, ortalanmış içerik) ======
+  // ====== 🔹 EXPORT VARYANTI (tek hero ortalanmış içerik) ======
   if (variant === "export") {
     return (
       <section

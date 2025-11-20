@@ -920,7 +920,7 @@ const selectedSegments = [...segments.slice(-1)]; // olduğu gibi kalsın
      text={
        locale.startsWith("tr")
          ? "Majen, toptan traverten bloklarda üç özel Blaundos çeşidi sunar: Blaundos Antiko (gri-bej antik tonlar), Blaundos Light (açık bej) ve Blaundos Ivory (fildişi–krem). Bu bloklar çoğunlukla plaka kesimi veya özel işleme hazır doğal ocak yüzeyleriyle sevk edilir. Her renk, lüks cepheler, iç mekânlar veya büyük ölçekli ticari projeler için farklı bir karakter sunar. Talep üzerine esnek yüzey işlemleri sağlayarak mimarlar ve toptancılar için uyarlanabilir çözümler üretiriz."
-         : "We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors, or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs."
+         : "We supply three exclusive varieties of Wholesale Travertine Blocks: Blaundos Antiko (grey-beige antique tones), Blaundos Light (light beige), and Blaundos Ivory (ivory-cream). These blocks are primarily delivered with natural quarry surfaces, ready for slab cutting or custom processing. Each variety provides distinct tones for luxury façades, interiors or large-scale commercial projects. With flexible finishes available upon request, Majen ensures adaptability for diverse architectural needs."
      }
      variantCards={colorCards}
      imgMap={IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey] || imgMap}
