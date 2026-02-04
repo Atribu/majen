@@ -1,20 +1,19 @@
-// app/components/MainBanner.jsx
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
+import cornerImage from "@/public/images/solalt.jpg"; // ✅ EKLE
 
 export default function MainBanner() {
   const videoSrc = "/videos/desktop.mp4"; 
   const videomobileSrc = "/videos/mobile.mp4"; 
-  const HIDE_DELAY_MS = 5000; // ⏱️ Logo görünme süresi
+  const HIDE_DELAY_MS = 5000;
 
   const [showLogo, setShowLogo] = useState(true);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
 
-  // Yedek zamanlayıcı (bazı cihazlarda canplay gecikebilir)
   useEffect(() => {
     backupTimerRef.current = setTimeout(() => setShowLogo(false), HIDE_DELAY_MS + 1000);
     return () => {
@@ -32,7 +31,6 @@ export default function MainBanner() {
 
   return (
     <section className="relative w-screen h-screen overflow-hidden">
-      {/* Arka plan video — merkezden kırp */}
       <video
         src={videomobileSrc}
         autoPlay
@@ -45,7 +43,7 @@ export default function MainBanner() {
         className="absolute inset-0 w-full h-full object-cover object-center flex md:hidden"
       />
 
-       <video
+      <video
         src={videoSrc}
         autoPlay
         muted
@@ -57,10 +55,18 @@ export default function MainBanner() {
         className="absolute inset-0 w-full h-full object-cover object-center md:flex hidden"
       />
 
-      {/* Hafif siyah overlay */}
       <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
 
-      {/* Merkezde beyaz logo — 5 sn sonra fade-out */}
+      {/* ✅ Sol alt köşe resim */}
+      <div className="absolute left-4 bottom-4 z-30">
+        <Image
+          src={cornerImage}
+          alt="Corner image"
+          className="w-24 sm:w-32 lg:w-140 h-auto drop-shadow-lg"
+          priority
+        />
+      </div>
+
       <div
         className={`absolute inset-0 z-20 flex items-center justify-center pointer-events-none
         transition-opacity duration-700 ${showLogo ? "opacity-100" : "opacity-0"}`}
