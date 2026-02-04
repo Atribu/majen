@@ -62,7 +62,7 @@ export default function MainBanner() {
         <Image
           src={cornerImage}
           alt="Corner image"
-          className="w-24 sm:w-32 lg:w-140 h-auto drop-shadow-lg"
+          className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
           priority
         />
       </div>
