@@ -3,13 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
 import cornerImage from "@/public/images/solalt.jpg"; // ✅ EKLE
+import fuar2 from "@/public/images/fuar2.jpeg";
+import fuar3 from "@/public/images/fuar3.jpeg";
 
 export default function MainBanner() {
   const videoSrc = "/videos/desktop.mp4"; 
   const videomobileSrc = "/videos/mobile.mp4"; 
   const HIDE_DELAY_MS = 5000;
+  const ROTATE_MS = 3500;
+  const fuarImages = [fuar2, fuar3];
 
   const [showLogo, setShowLogo] = useState(true);
+  const [fuarIndex, setFuarIndex] = useState(0);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
@@ -21,6 +26,13 @@ export default function MainBanner() {
       clearTimeout(timerRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setFuarIndex((i) => (i + 1) % fuarImages.length);
+    }, ROTATE_MS);
+    return () => clearInterval(id);
+  }, [fuarImages.length]);
 
   const startHideTimer = () => {
     if (startedRef.current) return;
@@ -63,6 +75,16 @@ export default function MainBanner() {
           src={cornerImage}
           alt="Corner image"
           className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
+          priority
+        />
+      </div>
+
+      {/* ✅ Sağ alt köşe: fuar2/fuar3 (tek görüntü, otomatik değişir) */}
+      <div className="absolute right-4 bottom-4 z-30">
+        <Image
+          src={fuarImages[fuarIndex]}
+          alt={`Fuar ${fuarIndex + 2}`}
+          className="w-40 sm:w-56 lg:w-72 h-auto drop-shadow-lg"
           priority
         />
       </div>
