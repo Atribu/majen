@@ -15,6 +15,7 @@ export default function MainBanner() {
 
   const [showLogo, setShowLogo] = useState(true);
   const [fuarIndex, setFuarIndex] = useState(0);
+  const [showFuarPopup, setShowFuarPopup] = useState(true);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
@@ -79,8 +80,30 @@ export default function MainBanner() {
         />
       </div>
 
-      {/* ✅ Sağ alt köşe: fuar2/fuar3 (tek görüntü, otomatik değişir) */}
-      <div className="absolute right-4 bottom-4 z-30">
+      {/* ✅ Mobil: merkezde pop-up + kapatma */}
+      {showFuarPopup && (
+        <div className="absolute inset-0 z-40 flex items-center justify-center md:hidden">
+          <div className="relative bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl ring-1 ring-white/40">
+            <button
+              type="button"
+              onClick={() => setShowFuarPopup(false)}
+              aria-label="Kapat"
+              className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-black text-white text-sm leading-none flex items-center justify-center shadow"
+            >
+              ×
+            </button>
+            <Image
+              src={fuarImages[fuarIndex]}
+              alt={`Fuar ${fuarIndex + 2}`}
+              className="w-56 h-auto drop-shadow-lg"
+              priority
+            />
+          </div>
+        </div>
+      )}
+
+      {/* ✅ Desktop: sağ alt köşe */}
+      <div className="absolute right-3 bottom-3 z-30 bg-white/85 backdrop-blur-sm p-1.5 rounded-md shadow-lg ring-1 ring-white/40 hidden md:block">
         <Image
           src={fuarImages[fuarIndex]}
           alt={`Fuar ${fuarIndex + 2}`}
