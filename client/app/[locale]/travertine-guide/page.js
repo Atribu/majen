@@ -116,7 +116,7 @@ export default async function Page({ params }) {
           <div>
             <h2 className="text-2xl font-semibold">Supply & Export from Turkey</h2>
             <p className="mt-2 text-slate-700">
-              We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms <Link href="/howweexport" className="hover:text-teal-700">(FOB, CIF, EXW)</Link> depending on destination.
+              We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms <Link href={`/${locale}/${isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export"}`} className="hover:text-teal-700">(FOB, CIF, EXW)</Link> depending on destination.
             </p>
             <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
               <li>Bulk & wholesale pricing</li>

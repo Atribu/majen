@@ -27,14 +27,14 @@ const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   tr: {
     blocks: ["antiko", "light", "ivory"],
     slabs: ["antiko", "light", "ivory"],
-    tiles: ["processes", "size", "color"],
-    pavers: ["processes", "size", "color"],
+    tiles: ["antiko", "light", "ivory"],
+    pavers: ["antiko", "light", "ivory"],
   },
   en: {
     blocks: ["antico", "light", "ivory"],
     slabs: ["antico", "light", "ivory"],
-    tiles: ["processes", "size", "color"],
-    pavers: ["processes", "size", "color"],
+    tiles: ["antico", "light", "ivory"],
+    pavers: ["antico", "light", "ivory"],
   },
 };
 

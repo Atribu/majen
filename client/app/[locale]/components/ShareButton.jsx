@@ -51,7 +51,7 @@ export default function ShareButton({
       telegram: `https://t.me/share/url?url=${u}&text=${tt}`,
       x:        `https://twitter.com/intent/tweet?url=${u}&text=${tt}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+      // facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
       email:    `mailto:?subject=${t}&body=${tt}%0A${u}`,
     };
   }, [shareUrl, pageTitle, shareText]);
@@ -130,7 +130,7 @@ export default function ShareButton({
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.x} target="_blank" rel="noopener noreferrer">X</a>
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+              {/* <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.facebook} target="_blank" rel="noopener noreferrer">Facebook</a> */}
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.email}>Email</a>
             </div>
           </div>

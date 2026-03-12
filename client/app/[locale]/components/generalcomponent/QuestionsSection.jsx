@@ -13,9 +13,12 @@ const QuestionsSection = ({
 }) => {
   const t = useTranslations("QuestionsSection");
   const locale = useLocale();
+  const safeLocale = locale || "en";
 
   // Varsayılan haritalama (prop verilmezse)
-  const base = locale?.startsWith("tr") ? "/howweexport" : "/howweexport";
+  const isTR = safeLocale.startsWith("tr");
+  const exportSlug = isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export";
+  const base = `/${safeLocale}/${exportSlug}`;
   const defaultMap = {
     FOB: `${base}/fob`,
     CIF: `${base}/cif`,

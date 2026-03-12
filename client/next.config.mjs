@@ -6,6 +6,47 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   async redirects() {
     return [
+      // Legacy export URLs -> canonical localized slugs
+      {
+        source: '/howweexport',
+        destination: '/en/how-we-export',
+        permanent: true,
+      },
+      {
+        source: '/howweexport/:term(fob|cif|exw)',
+        destination: '/en/how-we-export/:term',
+        permanent: true,
+      },
+      {
+        source: '/en/howweexport',
+        destination: '/en/how-we-export',
+        permanent: true,
+      },
+      {
+        source: '/en/howweexport/:term(fob|cif|exw)',
+        destination: '/en/how-we-export/:term',
+        permanent: true,
+      },
+      {
+        source: '/tr/howweexport',
+        destination: '/tr/nasil-ihracat-yapiyoruz',
+        permanent: true,
+      },
+      {
+        source: '/tr/howweexport/:term(fob|cif|exw)',
+        destination: '/tr/nasil-ihracat-yapiyoruz/:term',
+        permanent: true,
+      },
+      {
+        source: '/tr/how-we-export',
+        destination: '/tr/nasil-ihracat-yapiyoruz',
+        permanent: true,
+      },
+      {
+        source: '/tr/how-we-export/:term(fob|cif|exw)',
+        destination: '/tr/nasil-ihracat-yapiyoruz/:term',
+        permanent: true,
+      },
       // TR yanlış base → doğruya yönlendir
       {
         source: '/tr/travertine',

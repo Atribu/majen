@@ -62,7 +62,9 @@ export default async function Page({ params }) {
      const { locale } = await params;
         const isTR = locale === "tr";
       const homeUrl = isTR ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
-      const pageUrl = isTR ? `${SITE_URL}/tr/howweexport` : `${SITE_URL}/en/howweexport`;
+      const pageUrl = isTR
+        ? `${SITE_URL}/tr/nasil-ihracat-yapiyoruz`
+        : `${SITE_URL}/en/how-we-export`;
     
       const t  = await getTranslations({ locale, namespace: "Exw" });
       const t2  = await getTranslations({ locale, namespace: "Exw.Questions" });

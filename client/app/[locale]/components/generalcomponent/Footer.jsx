@@ -7,7 +7,6 @@ import { useTranslations, useLocale } from "next-intl";
 import {
   FaYoutube,
   FaInstagram,
-  FaFacebook,
   FaLinkedin,
   FaWhatsapp,
   FaWikipediaW
@@ -127,7 +126,7 @@ export default function Footer() {
                 >
                   <FaInstagram size={18} />
                 </a>
-                <a
+                {/* <a
                   href="#"
                    target="_blank"
                               rel="noopener noreferrer"
@@ -135,7 +134,7 @@ export default function Footer() {
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaFacebook size={18} />
-                </a>
+                </a> */}
                 <a
                   href="https://en.wikipedia.org/wiki/Travertine"
                    target="_blank"

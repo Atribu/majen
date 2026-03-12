@@ -9,6 +9,11 @@ import Link from "next/link";
  * prefix: string   // örn: "/tr" veya "/en" (opsiyonel). Yoksa "" kullanılır.
  */
 export default function InfoListCard({ title, items = [], prefix = "" }) {
+  const exportSlug = String(prefix).startsWith("/tr")
+    ? "nasil-ihracat-yapiyoruz"
+    : "how-we-export";
+  const exportBase = `${prefix}/${exportSlug}`.replace("//", "/");
+
   const linkifyIncoterms = (text) => {
     if (!text) return null;
     const regex = /\b(FOB|CIF|EXW)\b/gi;  // büyük/küçük duyarsız
@@ -17,21 +22,21 @@ export default function InfoListCard({ title, items = [], prefix = "" }) {
     return parts.map((part, i) => {
       if (/^FOB$/i.test(part)) {
         return (
-          <Link key={i} href={`${prefix}/how-we-export/fob`} className="underline underline-offset-2">
+          <Link key={i} href={`${exportBase}/fob`} className="underline underline-offset-2">
             {part}
           </Link>
         );
       }
       if (/^CIF$/i.test(part)) {
         return (
-          <Link key={i} href={`${prefix}/how-we-export/cif`} className="underline underline-offset-2">
+          <Link key={i} href={`${exportBase}/cif`} className="underline underline-offset-2">
             {part}
           </Link>
         );
       }
       if (/^EXW$/i.test(part)) {
         return (
-          <Link key={i} href={`${prefix}/how-we-export/exw`} className="underline underline-offset-2">
+          <Link key={i} href={`${exportBase}/exw`} className="underline underline-offset-2">
             {part}
           </Link>
         );

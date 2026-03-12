@@ -17,7 +17,7 @@ const LogisticSection = () => {
             // mevcutlar
             fob: (chunks) => (
               <Link
-                href="/how-we-export/fob"
+                href="/howweexport/fob"
                 className="underline underline-offset-4"
               >
                 {chunks}
@@ -25,7 +25,7 @@ const LogisticSection = () => {
             ),
             cif: (chunks) => (
               <Link
-                href="/how-we-export/cif"
+                href="/howweexport/cif"
                 className="underline underline-offset-4"
               >
                 {chunks}

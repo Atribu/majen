@@ -159,37 +159,18 @@ export default function VariantCircleSection2(props) {
   };
   const endCommon = t("variantSentence.end");
 
-  // 🔴 TILES & PAVERS özel link dizileri
-  const TILES_VARIANT_LINKS = [
-    "/vein-cut-travertine-tiles#product-intro",
-    "/filled-honed-vein-cut-travertine-tiles#product-intro",
-    "/8x8-filled-honed-vein-cut-travertine-tiles#product-intro",
-  ];
-
-  const PAVERS_VARIANT_LINKS = [
-    "/vein-cut-travertine-pavers#product-intro",
-    "/filled-honed-vein-cut-travertine-pavers#product-intro",
-    "/6x12-filled-honed-vein-cut-travertine-pavers#product-intro",
-  ];
-
   const variantHref = (productKey, colorSlug, index) => {
     const p = CANON[productKey] || productKey;
-
-    if (p === "tiles") {
-      return TILES_VARIANT_LINKS[index] || TILES_VARIANT_LINKS[0];
-    }
-
-    if (p === "pavers") {
-      return PAVERS_VARIANT_LINKS[index] || PAVERS_VARIANT_LINKS[0];
-    }
 
     if (p === "blocks") {
       return buildSeoProductPathLocalized({ product: p, color: colorSlug });
     }
 
-    const combos = defaultCombos[p] || defaultCombos["pavers"] || [];
+    const combos = defaultCombos[p] || defaultCombos["tiles"] || [];
     const use =
-      combos[0] || { filled: "filled", finish: "polished", cut: "vein-cut" };
+      combos[index % combos.length] ||
+      combos[0] ||
+      { filled: "filled", finish: "honed", cut: "vein-cut" };
 
     return buildSeoProductPathLocalized({
       product: p,

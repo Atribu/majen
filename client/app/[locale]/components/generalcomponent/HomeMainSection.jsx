@@ -19,7 +19,7 @@ const HomeMainSection = () => {
             // FOB / CIF zaten vardı
             fob: (chunks) => (
               <Link
-                href="/how-we-export/fob"
+                href="/howweexport/fob"
                 className="underline underline-offset-4"
               >
                 {chunks}
@@ -27,7 +27,7 @@ const HomeMainSection = () => {
             ),
             cif: (chunks) => (
               <Link
-                href="/how-we-export/cif"
+                href="/howweexport/cif"
                 className="underline underline-offset-4 cursor-pointer"
               >
                 {chunks}

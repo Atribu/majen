@@ -10,10 +10,13 @@ import ContactFrom from '../generalcomponent/ContactFrom';
 import HomeMainSection from '../generalcomponent/HomeMainSection';
 import LogisticSection from '../generalcomponent/LogisticsSection';
 import QuestionsSection from '../generalcomponent/QuestionsSection';
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const HomeClient = () => {
   const t = useTranslations("QuestionsSection");
+  const locale = useLocale();
+  const safeLocale = locale || "en";
+  const exportBase = `/${safeLocale}/${safeLocale === "tr" ? "nasil-ihracat-yapiyoruz" : "how-we-export"}`;
    const items = [
       { q: t("aboutpage_s4_faq1_header"), a: t("aboutpage_s4_faq1_text") },
       { q: t("aboutpage_s4_faq2_header"), a: t("aboutpage_s4_faq2_text") },
@@ -33,9 +36,9 @@ const HomeClient = () => {
       <ServicesSection/>
       <HighlightSection/>
       <QuestionsSection color="#000000" span=" Wholesale Travertine From Turkey" items={items} linkMap={{
-    FOB: "/howweexport/fob",
-    CIF: "/howweexport/cif",
-    EXW: "/howweexport/exw",
+    FOB: `${exportBase}/fob`,
+    CIF: `${exportBase}/cif`,
+    EXW: `${exportBase}/exw`,
   }}/>
       <BackgroundSection2/>
     </div>

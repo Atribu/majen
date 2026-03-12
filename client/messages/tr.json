@@ -248,6 +248,7 @@
 
   "blocks": {
     "title": "Toptan Traverten Bloklar",
+    "name": "bloklar",
     "span": "Doğrudan Ocak Tedarikçisi",
     "alt": "Blok ürün görseli",
 
@@ -2554,7 +2555,7 @@
 
  "slabs": {
   "title": "Toptan Traverten Plakalar | Majen",
-  "name": "",
+  "name": "plakalar",
   "span": "Doğrudan Ocak Tedarikçisi",
   "alt": "Plaka ürün görseli",
   "desc": "Vein-Cut Traverten Plakalar, taşın doğal doğrusal damarlarını ortaya çıkararak yüzeylerde çarpıcı ve kesintisiz bir akış sağlar. Hareket ve derinliğin ön planda olduğu duvar kaplamaları, zeminler ve büyük ebatlı tasarımlar için idealdir.",
@@ -9838,6 +9839,7 @@
 
     "tiles": {
   "title": "Toptan Traverten Karoları",
+  "name": "karolar",
   "span": "Doğrudan Ocak Tedarikçisi",
   "alt": "Karo ürün görseli",
   "intro": "Majen, Blaundos Antiko, Light ve Ivory çeşitleriyle Toptan Traverten Karoları tedarik eden öncü bir tedarikçidir. Karolar; 30×60, 60×60 ve 40×80 cm gibi popüler ebatlarda sunulur ve banyo, mutfak, teras ve havuz kenarı uygulamaları için idealdir. Cilalı, honlanmış, fırçalanmış ve eskitilmiş yüzey seçenekleriyle, doğrudan ocaktan tedarik edilen karolarımız dünya genelinde ithalatçılar tarafından tercih edilir. Majen, güvenilir lojistik, FOB/CIF sevkiyat seçenekleri ve sertifikalı A-grade kalite sunar.",
@@ -12635,6 +12637,7 @@
 
  "pavers": {
       "title": "Wholesale Travertine Special Designs",
+      "name": "dosemeler",
       "span":"Direct Quarry Supplier",
       "alt": "Custom design product image",
       "intro": "Majen designs and manufactures Custom Travertine Designs, including steps, stair treads, risers, pool copings, mosaics, borders, thresholds, sills, columns, and other cut-to-size pieces. Produced in Blaundos Antiko, Light, and Ivory, each item is crafted to project specs with CNC profiling and edge detailing. Reinforced crates and clear labelling make installation faster on site. Importers rely on Majen for Custom Travertine Designs with consistent quality and FOB/CIF export options.",
@@ -14585,18 +14588,18 @@
   },
      "variantSentence": {
       "blocks": {
-        "start": "As Majen, we offer Travertine Blocks in varieties such as"
+        "start": "Majen olarak, Traverten Bloklarda şu çeşitleri sunuyoruz:"
       },
       "slabs": {
-        "start": "As Majen, we supply Travertine Slabs in premium varieties including"
+        "start": "Majen olarak, Traverten Plakalarda öne çıkan çeşitlerimiz:"
       },
       "tiles": {
-        "start": "As Majen, we provide Travertine Tiles in elegant varieties such as"
+        "start": "Majen olarak, Traverten Karolarda zarif çeşitler sunuyoruz:"
       },
       "pavers": {
-        "start": "As Majen, we craft Custom Travertine Designs using"
+        "start": "Majen olarak, Traverten Döşemelerde dayanıklı çeşitler sunuyoruz:"
       },
-      "end": "to suit diverse projects and performance needs."
+      "end": "farklı proje ve performans ihtiyaçlarına uyum sağlar."
     },
 
     "altTexts": {

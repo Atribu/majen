@@ -407,6 +407,7 @@ export default function ProductPage() {
   const validProducts = new Set(Object.values(PRODUCT_SLUGS[lang] || {})); 
 
 const opt = (key, fallback = "") => {
+  if (typeof t.has === "function" && !t.has(key)) return fallback;
   try {
     const v = t(key);
     return v && v !== key ? v : fallback; // key aynen dönerse bulunamamıştır
@@ -415,6 +416,7 @@ const opt = (key, fallback = "") => {
   }
 };
 const optRaw = (key, fallback = null) => {
+  if (typeof t.has === "function" && !t.has(key)) return fallback;
   try {
     const v = t.raw(key);
     return v ?? fallback;
