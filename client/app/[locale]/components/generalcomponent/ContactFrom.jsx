@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -14,19 +14,30 @@ const initialState = {
   botField: "", // honeypot
 };
 
+const createInitialStatus = () => ({
+  loading: false,
+  ok: false,
+  error: "",
+});
+
 const fieldClass =
   "w-full rounded-md border border-neutral-300 bg-white px-3 py-[5px] text-[15px] outline-none focus:border-black focus:ring-1 focus:ring-black transition";
 
 const labelClass = "block text-sm font-medium text-neutral-800 mb-1";
 const errorClass = "mt-1 text-xs text-red-600";
 const helpClass = "mt-1 text-xs text-neutral-500";
+const passwordManagerIgnoreProps = {
+  "data-lpignore": "true",
+  "data-1p-ignore": "true",
+};
 
 export default function ContactFrom() {
   const t = useTranslations("ContactForm");
   const locale = useLocale();
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState({ loading: false, ok: false, error: "" });
+  const [status, setStatus] = useState(createInitialStatus);
+  const isDev = process.env.NODE_ENV !== "production";
 
   const base = locale?.startsWith("tr") ? {
     privacy: "/tr/gizlilik",
@@ -71,15 +82,33 @@ export default function ContactFrom() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || "Request failed");
+        const errorMessage = data?.error === "mail_config_missing" && isDev
+          ? t("errors.mailConfig")
+          : t("errors.submit");
+        throw new Error(errorMessage);
       }
 
       setStatus({ loading: false, ok: true, error: "" });
+      setErrors({});
       setValues(initialState);
     } catch (err) {
-      setStatus({ loading: false, ok: false, error: t("errors.submit") });
+      setStatus({
+        loading: false,
+        ok: false,
+        error: err instanceof Error ? err.message : t("errors.submit"),
+      });
     }
   }
+
+  useEffect(() => {
+    if (!status.ok && !status.error) return undefined;
+
+    const timer = window.setTimeout(() => {
+      setStatus(createInitialStatus());
+    }, 6000);
+
+    return () => window.clearTimeout(timer);
+  }, [status.ok, status.error]);
 
   return (
     <section className="relative mt-7 lg:mt-12 mb-12">
@@ -112,6 +141,7 @@ export default function ContactFrom() {
               <input
                 id="name"
                 type="text"
+                {...passwordManagerIgnoreProps}
                 className={fieldClass}
                 value={values.name}
                 onChange={(e) => setValues((s) => ({ ...s, name: e.target.value }))}
@@ -125,6 +155,7 @@ export default function ContactFrom() {
               <input
                 id="email"
                 type="email"
+                {...passwordManagerIgnoreProps}
                 className={fieldClass}
                 value={values.email}
                 onChange={(e) => setValues((s) => ({ ...s, email: e.target.value }))}
@@ -139,6 +170,7 @@ export default function ContactFrom() {
               <input
                 id="phone"
                 type="tel"
+                {...passwordManagerIgnoreProps}
                 className={fieldClass}
                 value={values.phone}
                 onChange={(e) => setValues((s) => ({ ...s, phone: e.target.value }))}
@@ -153,6 +185,7 @@ export default function ContactFrom() {
               <input
                 id="subject"
                 type="text"
+                {...passwordManagerIgnoreProps}
                 className={fieldClass}
                 value={values.subject}
                 onChange={(e) => setValues((s) => ({ ...s, subject: e.target.value }))}
@@ -166,6 +199,7 @@ export default function ContactFrom() {
     <textarea
       id="message"
       rows={5}
+      {...passwordManagerIgnoreProps}
       className={fieldClass + " lg:min-h-[110px]"}
       value={values.message}
       onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
@@ -211,16 +245,23 @@ export default function ContactFrom() {
             </a>
           </div>
 
-          {/* Durum mesajları */}
-          {status.ok && (
-            <p className="mt-4 text-[12px] lg:text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">
-              {t("status.success")}
-            </p>
-          )}
-          {status.error && (
-            <p className="mt-4 text-[12px] lg:text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2">
-              {status.error}
-            </p>
+          {(status.ok || status.error) && (
+            <div
+              role={status.ok ? "status" : "alert"}
+              aria-live="polite"
+              className={`mt-4 rounded-lg border px-4 py-3 text-left ${
+                status.ok
+                  ? "border-green-200 bg-green-50 text-green-800"
+                  : "border-red-200 bg-red-50 text-red-800"
+              }`}
+            >
+              <p className="text-sm font-semibold">
+                {status.ok ? t("status.successTitle") : t("status.errorTitle")}
+              </p>
+              <p className="mt-1 text-[12px] lg:text-sm">
+                {status.ok ? t("status.success") : status.error}
+              </p>
+            </div>
           )}
         </form>
       </div>

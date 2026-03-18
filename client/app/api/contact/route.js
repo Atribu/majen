@@ -2,11 +2,18 @@
 import nodemailer from "nodemailer";
 
 export const runtime = "nodejs"; // Nodemailer için gerekli
+const isDev = process.env.NODE_ENV !== "production";
 
 function htmlEscape(s = "") {
   return s.replace(/[&<>"']/g, (m) => (
     { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]
   ));
+}
+
+function getMissingMailEnv() {
+  return ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS"].filter(
+    (key) => !process.env[key]?.trim()
+  );
 }
 
 export async function POST(req) {
@@ -18,11 +25,26 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "invalid_payload" }), { status: 400 });
     }
 
+    const missingEnv = getMissingMailEnv();
+    if (missingEnv.length > 0) {
+      console.error("[CONTACT ERROR] Missing SMTP configuration:", missingEnv.join(", "));
+      return new Response(
+        JSON.stringify({
+          error: "mail_config_missing",
+          ...(isDev ? { missing: missingEnv } : {}),
+        }),
+        { status: 500 }
+      );
+    }
+
     // Transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT || 465),
       secure: String(process.env.SMTP_SECURE || "true") === "true",
+      tls: {
+        rejectUnauthorized: String(process.env.SMTP_REJECT_UNAUTHORIZED || "true") === "true",
+      },
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -84,6 +106,12 @@ ${message}
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
   } catch (e) {
     console.error("[CONTACT ERROR]", e);
-    return new Response(JSON.stringify({ error: "mail_failed" }), { status: 500 });
+    return new Response(
+      JSON.stringify({
+        error: "mail_failed",
+        ...(isDev ? { details: e?.message || String(e) } : {}),
+      }),
+      { status: 500 }
+    );
   }
 }

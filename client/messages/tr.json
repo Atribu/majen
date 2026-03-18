@@ -14542,9 +14542,20 @@
       "email": "Geçerli bir e-posta girin.",
       "message": "Mesaj en az 10 karakter olmalı.",
       "consent": "Devam etmek için onay vermelisiniz.",
+      "mailConfig": "Bu ortamda mail ayarları eksik görünüyor. SMTP bilgilerini kontrol edin.",
       "submit": "Gönderimde bir sorun oluştu. Lütfen tekrar deneyin."
     },
-    "status": { "success": "Teşekkürler! Mesajınız bize ulaştı, yakında iletişime geçeceğiz." },
+    "status": {
+      "successTitle": "Mesaj gönderildi",
+      "success": "Teşekkürler! Mesajınız bize ulaştı, yakında iletişime geçeceğiz.",
+      "errorTitle": "Gönderim başarısız"
+    },
+    "map": {
+      "badge": "Ulubey / Uşak",
+      "title": "Ocak Konumu",
+      "description": "Üretim sahamızın Uşak Ulubey konumunu harita üzerinden inceleyebilir, sevkiyat ve ziyaret planınızı daha net oluşturabilirsiniz.",
+      "cta": "Google Maps'te aç"
+    },
     "whatsapp": { "link": "https://wa.me/902120000000" }
   },
 

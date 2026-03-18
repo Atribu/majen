@@ -43,13 +43,14 @@ export default function ProductIntroSection({
     return heroSrc;
   }, [heroSrc]);
   const safeAlt = (alt && String(alt).trim()) || "Travertine";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
   // JSON-LD Schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: crumbHome, item: `${typeof window !== "undefined" ? location.origin : ""}${prefix}` },
-      { "@type": "ListItem", position: 2, name: crumbProducts, item: `${typeof window !== "undefined" ? location.origin : ""}${baseHref}` },
+      { "@type": "ListItem", position: 1, name: crumbHome, item: `${siteUrl}${prefix}` },
+      { "@type": "ListItem", position: 2, name: crumbProducts, item: `${siteUrl}${baseHref}` },
       { "@type": "ListItem", position: 3, name: title },
     ],
   };
