@@ -15,7 +15,6 @@ export default function MainBanner() {
 
   const [showLogo, setShowLogo] = useState(true);
   const [fuarIndex, setFuarIndex] = useState(0);
-  const [showFuarPopup, setShowFuarPopup] = useState(true);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
@@ -70,37 +69,26 @@ export default function MainBanner() {
 
       <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
 
-      {/* ✅ Sol alt köşe resim */}
+      {/* ✅ Sol alt köşe resim + mobil üst bindirme */}
       <div className="absolute left-4 bottom-4 z-30">
-        <Image
-          src={cornerImage}
-          alt="Corner image"
-          className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
-          priority
-        />
-      </div>
+        <div className="relative inline-block">
+          <Image
+            src={cornerImage}
+            alt="Corner image"
+            className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
+            priority
+          />
 
-      {/* ✅ Mobil: merkezde pop-up + kapatma */}
-      {showFuarPopup && (
-        <div className="absolute inset-0 z-40 flex items-center justify-center md:hidden">
-          <div className="relative bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl ring-1 ring-white/40">
-            <button
-              type="button"
-              onClick={() => setShowFuarPopup(false)}
-              aria-label="Kapat"
-              className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-black text-white text-sm leading-none flex items-center justify-center shadow"
-            >
-              ×
-            </button>
+          <div className="absolute left-0 bottom-full mb-3 z-10 rounded-md bg-white/88 p-1.5 shadow-xl ring-1 ring-white/40 backdrop-blur-sm md:hidden">
             <Image
               src={fuarImages[fuarIndex]}
               alt={`Fuar ${fuarIndex + 2}`}
-              className="w-56 h-auto drop-shadow-lg"
+              className="w-32 h-auto drop-shadow-lg xs:w-36 sm:w-40"
               priority
             />
           </div>
         </div>
-      )}
+      </div>
 
       {/* ✅ Desktop: sağ alt köşe */}
       <div className="absolute right-3 bottom-3 z-30 bg-white/85 backdrop-blur-sm p-1.5 rounded-md shadow-lg ring-1 ring-white/40 hidden md:block">
