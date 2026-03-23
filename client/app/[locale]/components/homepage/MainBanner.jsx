@@ -15,6 +15,7 @@ export default function MainBanner() {
 
   const [showLogo, setShowLogo] = useState(true);
   const [fuarIndex, setFuarIndex] = useState(0);
+  const [mobileSlideIndex, setMobileSlideIndex] = useState(0);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
@@ -33,6 +34,13 @@ export default function MainBanner() {
     }, ROTATE_MS);
     return () => clearInterval(id);
   }, [fuarImages.length]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setMobileSlideIndex((i) => (i + 1) % 2);
+    }, ROTATE_MS);
+    return () => clearInterval(id);
+  }, []);
 
   const startHideTimer = () => {
     if (startedRef.current) return;
@@ -69,8 +77,8 @@ export default function MainBanner() {
 
       <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
 
-      {/* ✅ Sol alt köşe resim + mobil üst bindirme */}
-      <div className="absolute left-4 bottom-4 z-30">
+      {/* ✅ Desktop: sol alt görsel */}
+      <div className="absolute left-4 bottom-4 z-30 hidden md:block">
         <div className="relative inline-block">
           <Image
             src={cornerImage}
@@ -78,14 +86,42 @@ export default function MainBanner() {
             className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
             priority
           />
+        </div>
+      </div>
 
-          <div className="absolute left-0 bottom-full mb-3 z-10 rounded-md bg-white/88 p-1.5 shadow-xl ring-1 ring-white/40 backdrop-blur-sm md:hidden">
+      {/* ✅ Mobil: iki görseli slider olarak göster */}
+      <div className="absolute left-4 bottom-4 z-30 md:hidden">
+        <div className="relative h-[170px] w-[210px] overflow-visible">
+          <div
+            className={`absolute inset-0 flex items-end justify-start transition-all duration-500 ${
+              mobileSlideIndex === 0
+                ? "translate-x-0 opacity-100"
+                : "pointer-events-none translate-x-5 opacity-0"
+            }`}
+          >
             <Image
-              src={fuarImages[fuarIndex]}
-              alt={`Fuar ${fuarIndex + 2}`}
-              className="w-32 h-auto drop-shadow-lg xs:w-36 sm:w-40"
+              src={cornerImage}
+              alt="Corner image"
+              className="w-52 h-auto drop-shadow-lg"
               priority
             />
+          </div>
+
+          <div
+            className={`absolute inset-0 flex items-end justify-start transition-all duration-500 ${
+              mobileSlideIndex === 1
+                ? "translate-x-0 opacity-100"
+                : "pointer-events-none translate-x-5 opacity-0"
+            }`}
+          >
+            <div className="rounded-md bg-white/88 p-1.5 shadow-xl ring-1 ring-white/40 backdrop-blur-sm">
+              <Image
+                src={fuarImages[fuarIndex]}
+                alt={`Fuar ${fuarIndex + 2}`}
+                className="w-40 h-auto drop-shadow-lg"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
