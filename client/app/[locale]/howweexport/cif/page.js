@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
+import { redirect } from "next/navigation";
 const OG_IMAGE = `${SITE_URL}/images/export/fob.jpg`;
 
 // app/[locale]/howweexport/cif/page.jsx
@@ -64,6 +65,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
      const { locale } = await params;
+      redirect(`/${locale}`);
         const isTR = locale === "tr";
       const homeUrl = isTR ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
       const pageUrl = isTR

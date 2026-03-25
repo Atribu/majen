@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import ContactFrom from '../../components/generalcomponent/ContactFrom';
+import { redirect } from "next/navigation";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/export/fob.jpg`;
 
@@ -60,6 +61,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
      const { locale } = await params;
+      redirect(`/${locale}`);
         const isTR = locale === "tr";
       const homeUrl = isTR ? `${SITE_URL}/tr` : `${SITE_URL}/en`;
       const pageUrl = isTR

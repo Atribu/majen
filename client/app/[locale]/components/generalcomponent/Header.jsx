@@ -254,13 +254,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-
-
-
-          <Link href="/howweexport" className={linkClasses} onClick={() => setMenuOpen(false)}>
-            {t("shop")}
-          </Link>
-        
           <Link href="/blog" className={linkClasses} onClick={() => setMenuOpen(false)}>
             {t("blog")}
           </Link>
