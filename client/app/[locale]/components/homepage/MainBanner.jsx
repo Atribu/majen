@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
-import cornerImage from "@/public/images/solalt.jpg"; // ✅ EKLE
+import cornerImage from "@/public/images/Majensolalt.webp"; // ✅ EKLE
 import fuar2 from "@/public/images/fuar2.jpeg";
 import fuar3 from "@/public/images/fuar3.jpeg";
 
