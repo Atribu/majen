@@ -32,7 +32,7 @@ const META_BY_PRODUCT = {
     pavers: {
       title: "Wholesale Travertine Pavers | Global Supplier of Natural Stone for Outdoor Projects",
       description:
-        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export, competitive prices, and consistent stone quality.",
+        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export and consistent stone quality.",
     },
   },
   tr: {
@@ -54,7 +54,7 @@ const META_BY_PRODUCT = {
     pavers: {
       title: "Wholesale Travertine Pavers | Global Supplier of Natural Stone for Outdoor Projects",
       description:
-        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export, competitive prices, and consistent stone quality.",
+        "Discover premium wholesale travertine pavers for patios, pools, and landscapes. Global export and consistent stone quality.",
     },
   },
 };
@@ -187,7 +187,6 @@ export default async function ProductLayout({ children, params }) {
     url: productUrl,
     offers: {
       "@type": "Offer",
-      priceCurrency: "USD",
       availability: "http://schema.org/InStock",
     },
   };

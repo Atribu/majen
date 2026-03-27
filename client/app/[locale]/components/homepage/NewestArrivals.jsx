@@ -14,9 +14,6 @@ const products = [
     category: "Black Series",
     imageSrc: img,
     href: "/product/bianco-rhino",
-    isOnSale: true,
-    priceBefore: "$99.00",
-    price: "$89.00",
   },
   {
     id: 2,
@@ -24,8 +21,6 @@ const products = [
     category: "Black Series",
     imageSrc: img2,
     href: "/product/milano-white",
-    isOnSale: false,
-    price: "$240.00 – $265.00",
   },
   {
     id: 3,
@@ -33,9 +28,6 @@ const products = [
     category: "Black Series",
     imageSrc: img3,
     href: "/product/calacatta-gold",
-    isOnSale: true,
-    priceBefore: "$99.00",
-    price: "$89.00",
   },
   {
     id: 5,
@@ -43,9 +35,6 @@ const products = [
     category: "Black Series",
     imageSrc: img3,
     href: "/product/bianco-rhino",
-    isOnSale: true,
-    priceBefore: "$99.00",
-    price: "$89.00",
   },
   {
     id: 6,
@@ -53,8 +42,6 @@ const products = [
     category: "Black Series",
     imageSrc: img,
     href: "/product/milano-white",
-    isOnSale: false,
-    price: "$240.00 – $265.00",
   },
   {
     id: 7,
@@ -62,9 +49,6 @@ const products = [
     category: "Black Series",
     imageSrc: img2,
     href: "/product/calacatta-gold",
-    isOnSale: true,
-    priceBefore: "$99.00",
-    price: "$89.00",
   },
   // …daha fazla ürün
 ];
@@ -108,18 +92,6 @@ export default function NewestArrivals() {
               <div className="mt-4">
                 <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
                 <p className="text-sm text-gray-600">{p.category}</p>
-                <div className="mt-1 text-gray-900">
-                  {p.isOnSale ? (
-                    <>
-                      <span className="line-through text-gray-500 mr-2">
-                        {p.priceBefore}
-                      </span>
-                      <span className="font-bold">{p.price}</span>
-                    </>
-                  ) : (
-                    <span className="font-bold">{p.price}</span>
-                  )}
-                </div>
               </div>
             </div>
           </Link>

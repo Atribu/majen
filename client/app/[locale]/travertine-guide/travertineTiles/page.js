@@ -451,7 +451,7 @@ export default function TravertineTilesPage() {
             {/* CTA */}
             <div className="my-10 rounded-2xl border p-6 md:p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="text-xl md:text-2xl font-semibold">Request Samples or Pricing</h2>
+                <h2 className="text-xl md:text-2xl font-semibold">Request Samples or Details</h2>
                 <p className="mt-2 text-sm text-neutral-700">
                   Tell us color, finish, size and quantity. Our team will confirm availability, lead times and logistics terms for your project.
                 </p>

@@ -31,9 +31,30 @@ const MAP_EMBED_URL =
 const MAP_LINK_URL =
   "https://www.google.com/maps/place/Majen+maden,+k%C3%BCme+evleri+No:102,+64902+S%C3%BCl%C3%BCmenli%2FUlubey%2FU%C5%9Fak";
 
+function FormSkeleton() {
+  return (
+    <div aria-hidden="true" className="space-y-6 animate-pulse">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[0, 1, 2, 3].map((item) => (
+          <div key={item}>
+            <div className="h-4 w-24 rounded bg-gray-200" />
+            <div className="mt-2 h-[42px] rounded-md bg-gray-100" />
+          </div>
+        ))}
+      </div>
+      <div>
+        <div className="h-4 w-28 rounded bg-gray-200" />
+        <div className="mt-2 h-[120px] rounded-md bg-gray-100" />
+      </div>
+      <div className="h-10 w-40 rounded-md bg-gray-100" />
+    </div>
+  );
+}
+
 export default function ContactSection() {
   const t = useTranslations("ContactForm");
   const locale = useLocale();
+  const [mounted, setMounted] = useState(false);
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState(createInitialStatus);
@@ -73,9 +94,10 @@ export default function ContactSection() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        const errorMessage = data?.error === "mail_config_missing" && isDev
-          ? t("errors.mailConfig")
-          : t("errors.submit");
+        const errorMessage =
+          data?.error === "mail_config_missing" && isDev
+            ? t("errors.mailConfig")
+            : t("errors.submit");
         throw new Error(errorMessage);
       }
 
@@ -92,6 +114,10 @@ export default function ContactSection() {
   }
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
     if (!status.ok && !status.error) return undefined;
 
     const timer = window.setTimeout(() => {
@@ -105,12 +131,9 @@ export default function ContactSection() {
     <section className="max-w-7xl mx-auto flex min-h-[88vh] flex-col items-center justify-center gap-5 px-4 py-5 text-center sm:px-6 lg:items-start lg:gap-12 lg:px-8 lg:text-start">
       <h1 className="mt-14 text-[30px] text-6xl font-bold">{t("title")}</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Left Column */}
         <div>
           <h2 className="mt-0 lg:mt-4 text-2xl font-semibold">{t("getintouch")}</h2>
-          <p className="mt-2 text-[14px] lg:text-base text-gray-700">
-            {t("text")}
-          </p>
+          <p className="mt-2 text-[14px] lg:text-base text-gray-700">{t("text")}</p>
 
           <div className="mt-8 space-y-6 flex flex-col items-center justify-center text-center lg:items-start lg:justify-start">
             <div className="flex items-start">
@@ -133,156 +156,170 @@ export default function ContactSection() {
               <FaMapMarkerAlt className="text-2xl text-green-900 mt-1" />
               <div className="ml-4">
                 <h3 className="text-sm font-semibold uppercase"> {t("ouraddress")}</h3>
-                <p className="mt-1 text-gray-700 text-[14px] lg:text-base">Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi No:110 F/5 Muratpaşa/ANTALYA</p>
+                <p className="mt-1 text-gray-700 text-[14px] lg:text-base">
+                  Fener Mah. Lara Cad. F Blok Muhsin Adıyaman Sitesi No:110 F/5 Muratpaşa/ANTALYA
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column - Form */}
         <div>
-          <form onSubmit={onSubmit} noValidate className="space-y-6">
-            <input
-              type="text"
-              name="company"
-              autoComplete="off"
-              tabIndex={-1}
-              aria-hidden="true"
-              className="hidden"
-              value={values.botField}
-              onChange={(e) => setValues((s) => ({ ...s, botField: e.target.value }))}
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  {t("fields.name")}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  {...passwordManagerIgnoreProps}
-                  value={values.name}
-                  onChange={(e) => setValues((s) => ({ ...s, name: e.target.value }))}
-                  placeholder={t("placeholders.name")}
-                  className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
-                />
-                {errors.name && <p className={errorClass}>{errors.name}</p>}
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    {t("fields.phone")}
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  {...passwordManagerIgnoreProps}
-                  value={values.phone}
-                  onChange={(e) => setValues((s) => ({ ...s, phone: e.target.value }))}
-                  placeholder={t("placeholders.phone")}
-                  inputMode="tel"
-                  className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  {t("fields.email")}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  {...passwordManagerIgnoreProps}
-                  value={values.email}
-                  onChange={(e) => setValues((s) => ({ ...s, email: e.target.value }))}
-                  placeholder={t("placeholders.email")}
-                  className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
-                />
-                {errors.email && <p className={errorClass}>{errors.email}</p>}
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                  {t("fields.subject")}
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  {...passwordManagerIgnoreProps}
-                  value={values.subject}
-                  onChange={(e) => setValues((s) => ({ ...s, subject: e.target.value }))}
-                  placeholder={t("placeholders.subject")}
-                  className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                {t("fields.message")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                {...passwordManagerIgnoreProps}
-                value={values.message}
-                onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
-                placeholder={t("placeholders.message")}
-                className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
-              />
-              {errors.message && <p className={errorClass}>{errors.message}</p>}
-            </div>
-
-            <div className="flex items-center">
+          {!mounted ? (
+            <FormSkeleton />
+          ) : (
+            <form onSubmit={onSubmit} noValidate className="space-y-6">
               <input
-                id="consent"
-                name="consent"
-                type="checkbox"
-                checked={values.consent}
-                onChange={(e) => setValues((s) => ({ ...s, consent: e.target.checked }))}
-                className="h-4 w-4 text-green-900 focus:ring-green-700 border-gray-300 rounded"
+                type="text"
+                name="company"
+                autoComplete="off"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="hidden"
+                value={values.botField}
+                onChange={(e) => setValues((s) => ({ ...s, botField: e.target.value }))}
               />
-              <label htmlFor="consent" className="ml-2 text-sm text-gray-700">
-                {t("labelText")}
-              </label>
-            </div>
-            {errors.consent && <p className={errorClass}>{errors.consent}</p>}
 
-            <div>
-              <button
-                type="submit"
-                disabled={status.loading}
-                className="lg:min-w-[150px] inline-flex justify-center bg-green-900 text-white py-2 lg:py-3 px-5 lg:px-6 rounded-md hover:bg-green-800 transition whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {status.loading ? t("buttons.sending") : t("getintouch")}
-              </button>
-            </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    {t("fields.name")}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    {...passwordManagerIgnoreProps}
+                    value={values.name}
+                    onChange={(e) => setValues((s) => ({ ...s, name: e.target.value }))}
+                    placeholder={t("placeholders.name")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                  {errors.name && <p className={errorClass}>{errors.name}</p>}
+                </div>
 
-            {(status.ok || status.error) && (
-              <div
-                role={status.ok ? "status" : "alert"}
-                aria-live="polite"
-                className={`rounded-lg border px-4 py-3 text-left ${
-                  status.ok
-                    ? "border-green-200 bg-green-50 text-green-800"
-                    : "border-red-200 bg-red-50 text-red-800"
-                }`}
-              >
-                <p className="text-sm font-semibold">
-                  {status.ok ? t("status.successTitle") : t("status.errorTitle")}
-                </p>
-                <p className="mt-1 text-sm">
-                  {status.ok ? t("status.success") : status.error}
-                </p>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                    {t("fields.phone")}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    {...passwordManagerIgnoreProps}
+                    value={values.phone}
+                    onChange={(e) => setValues((s) => ({ ...s, phone: e.target.value }))}
+                    placeholder={t("placeholders.phone")}
+                    inputMode="tel"
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                    {t("fields.email")}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    {...passwordManagerIgnoreProps}
+                    value={values.email}
+                    onChange={(e) => setValues((s) => ({ ...s, email: e.target.value }))}
+                    placeholder={t("placeholders.email")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                  {errors.email && <p className={errorClass}>{errors.email}</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                    {t("fields.subject")}
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    {...passwordManagerIgnoreProps}
+                    value={values.subject}
+                    onChange={(e) => setValues((s) => ({ ...s, subject: e.target.value }))}
+                    placeholder={t("placeholders.subject")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                </div>
               </div>
-            )}
-          </form>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                  {t("fields.message")}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  {...passwordManagerIgnoreProps}
+                  value={values.message}
+                  onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
+                  placeholder={t("placeholders.message")}
+                  className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                />
+                {errors.message && <p className={errorClass}>{errors.message}</p>}
+              </div>
+
+              <div className="flex items-center">
+                <input
+                  id="consent"
+                  name="consent"
+                  type="checkbox"
+                  checked={values.consent}
+                  onChange={(e) => setValues((s) => ({ ...s, consent: e.target.checked }))}
+                  className="h-4 w-4 text-green-900 focus:ring-green-700 border-gray-300 rounded"
+                />
+                <label htmlFor="consent" className="ml-2 text-sm text-gray-700">
+                  {t("labelText")}
+                </label>
+              </div>
+              {errors.consent && <p className={errorClass}>{errors.consent}</p>}
+
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  type="submit"
+                  disabled={status.loading}
+                  className="lg:min-w-[150px] inline-flex justify-center bg-green-900 text-white py-2 lg:py-3 px-5 lg:px-6 rounded-md hover:bg-green-800 transition whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {status.loading ? t("buttons.sending") : t("getintouch")}
+                </button>
+
+                <a
+                  href={t("whatsapp.link")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center rounded-md border border-green-900 px-5 py-2 text-center text-sm font-semibold text-green-900 transition hover:bg-green-900 hover:text-white lg:min-w-[230px] lg:py-3"
+                >
+                  {t("buttons.replyWithin24Hours")}
+                </a>
+              </div>
+
+              {(status.ok || status.error) && (
+                <div
+                  role={status.ok ? "status" : "alert"}
+                  aria-live="polite"
+                  className={`rounded-lg border px-4 py-3 text-left ${
+                    status.ok
+                      ? "border-green-200 bg-green-50 text-green-800"
+                      : "border-red-200 bg-red-50 text-red-800"
+                  }`}
+                >
+                  <p className="text-sm font-semibold">
+                    {status.ok ? t("status.successTitle") : t("status.errorTitle")}
+                  </p>
+                  <p className="mt-1 text-sm">
+                    {status.ok ? t("status.success") : status.error}
+                  </p>
+                </div>
+              )}
+            </form>
+          )}
         </div>
       </div>
 

@@ -15,8 +15,7 @@ import {
   FaYoutube,
   FaInstagram,
   FaLinkedin,
-  FaWhatsapp,
-  FaWikipediaW
+  FaWhatsapp
 } from "react-icons/fa";
 import { productSlugFor, getLang } from "@/lib/travertine";
 
@@ -297,15 +296,6 @@ export default function Header() {
                         >
                           <FaFacebook size={18} />
                         </a> */}
-                         <a
-                          href="https://en.wikipedia.org/wiki/Travertine"
-                           target="_blank"
-                              rel="noopener noreferrer"
-                          aria-label={t2("social.facebook")}
-                          className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
-                        >
-                          <FaWikipediaW size={18} />
-                        </a>
                         {/* <a
                           href="#"
                            target="_blank"

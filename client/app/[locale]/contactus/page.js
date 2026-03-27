@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
     title: t("seo.title", { default: "Contact Majen Travertine | Wholesale Supplier From Turkey" }),
     description: t("seo.description", {
       default:
-        "Get in touch with Majen for wholesale travertine blocks, slabs and tiles from Turkey. Ask about pricing, availability and export options (FOB, CIF, EXW).",
+        "Get in touch with Majen for wholesale travertine blocks, slabs and tiles from Turkey. Ask about availability and export options (FOB, CIF, EXW).",
     }),
     alternates: {
       canonical: canonicalPath, // metadataBase sayesinde tam URL'ye döner

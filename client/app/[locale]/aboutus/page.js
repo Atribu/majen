@@ -158,7 +158,7 @@ export default async function AboutPage({ params }) {
           </div>
         </div>
 
-        {/* Sertifikalar / Güven sinyali */}
+        {/* Sertifikalar / Güven sinyali
         <div className="mt-10 rounded-xl border border-neutral-200 p-5 bg-white">
           <h2 className="text-lg font-semibold">{t("trust.title")}</h2>
           <p className="mt-2 text-sm leading-7 text-neutral-700">
@@ -171,6 +171,7 @@ export default async function AboutPage({ params }) {
             <li>{t("trust.items.docs")}</li>
           </ul>
         </div>
+        */}
 
         {/* Sosyal medya & FAQ */}
         <SocialMediaSection />

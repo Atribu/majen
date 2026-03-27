@@ -119,7 +119,7 @@ export default async function Page({ params }) {
               We supply travertine directly from Turkish quarries with strict grading and packaging standards. Our logistics team ships globally with optimized transit times and Incoterms <Link href={`/${locale}/${isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export"}`} className="hover:text-teal-700">(FOB, CIF, EXW)</Link> depending on destination.
             </p>
             <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700">
-              <li>Bulk & wholesale pricing</li>
+              <li>Bulk supply support</li>
               <li>Custom sizes and surface selections</li>
               <li>Crate and palletized packaging for safety</li>
             </ul>
@@ -141,7 +141,7 @@ export default async function Page({ params }) {
           <div className="grid items-center gap-3 rounded-2xl border border-slate-200 bg-indigo-50/40 p-6 md:grid-cols-[1fr_auto_auto]">
            <div className="flex flex-col">
              <h3 className="text-xl font-semibold">Get the Best Turkish Travertine for Your Project</h3>
-            <p className="text-slate-600">Send us your required colors, sizes, finishes and destination. We’ll reply with pricing and lead times.</p>
+            <p className="text-slate-600">Send us your required colors, sizes, finishes and destination. We’ll reply with availability and lead times.</p>
            </div>
 
             <div className="flex flex-wrap gap-3">

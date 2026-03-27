@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import {
-  FaYoutube,
   FaWhatsapp,
-  FaWikipediaW,
-  FaInstagram
 } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 

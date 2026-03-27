@@ -264,7 +264,7 @@ export default async function Page({ params }) {
           </h5>
           <ul className="mt-2 grid gap-2 sm:grid-cols-2 text-neutral-700 text-[12px] md:text-[14px] lg:text-[16px]">
             <li>End-to-end ocean logistics handled by Majen</li>
-            <li>Freight + insurance included in pricing</li>
+            <li>Freight + insurance coordinated within the shipping scope</li>
             <li>Ideal for slabs, tiles and mixed containers</li>
             <li>Importer handles local port charges & customs</li>
           </ul>
