@@ -54,7 +54,14 @@ export default function BlockColorClient({ locale, color }) {
 
   const i18nBlockImages = t.raw("blocks.images", null) || {};
 
+  // Blok hero'ları zaten _images içinde import edildi. Önce bu doğrulanmış
+  // StaticImport'u kullanmak, çeviri dosyasındaki hatalı bir metin yolunun
+  // çalışan görseli ezmesini engeller.
+  const staticHero =
+    GALLERY_BY_PRODUCT_AND_VARIANT?.blocks?.[normalizedSlug]?.[0];
+
   const img =
+    staticHero ||
     i18nBlockImages?.[normalizedSlug] ||
     i18nBlockImages?.[String(color)] ||
     IMAGE_BY_PRODUCT_AND_VARIANT?.blocks?.[normalizedSlug] ||

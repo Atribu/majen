@@ -280,9 +280,9 @@
         "Bloklar ocaktan doğal/ham yüzeyli (tel kesim) olarak tedarik edilir. İhracat süreçlerinde güçlendirilmiş ahşap kasalar, naylon kaplama ve çelik çemberleme kullanılır; böylece traverten bloklar, deniz taşımacılığı boyunca minimum riskle dünya genelindeki alıcılara güvenle ulaştırılır."
       ],
       "images": {
-        "antico": "/images/homepage/Blokantiko. webp",
-        "light": "/images/homepage/lightblok3. webp",
-        "ivory": "/images/homepage/Ivoryblok. webp"
+        "antico": "/images/homepage/Blokantiko.webp",
+        "light": "/images/homepage/lightblok3.webp",
+        "ivory": "/images/homepage/Ivoryblok.webp"
       },
       "youtube": {
         "antico": "https://youtu. be/R-Egyq7BjL4",
@@ -342,15 +342,15 @@
       },
       "gallery": {
         "ivory": [
-          "/images/blocks/ivory/1. webp",
-          "/images/blocks/ivory/2. webp",
-          "/images/blocks/ivory/3. webp"
+          "/images/blocks/ivory/1.webp",
+          "/images/blocks/ivory/2.webp",
+          "/images/blocks/ivory/3.webp"
         ],
         "light": [
-          "/images/blocks/light/1. webp"
+          "/images/blocks/light/1.webp"
         ],
         "antico": [
-          "/images/blocks/antico/1. webp"
+          "/images/blocks/antico/1.webp"
         ]
       },
       "otherOptions": {
@@ -686,7 +686,7 @@
           "title2": "Neden Vein-Cut Tercih Etmeli?",
           "intro2": "Paralel damarlar, geniş yüzeylerde görsel süreklilik yaratarak alanın akışını vurgular.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut. webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein-Cut Traverten Bloklar"
           },
           "description": "Ocakta itinayla seçilen, karakteri tutarlı büyük ebatlı bloklar.",
@@ -707,15 +707,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Yüzey İşleminizi Seçin",
@@ -1929,7 +1929,7 @@
           "title2": "Why Choose Cross-Cut?",
           "intro2": "Soft, non-directional texture for calm, uniform fields.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
           "description": "Large-size blocks selected at the quarry with consistent character.",
@@ -1950,15 +1950,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -3428,16 +3428,16 @@
           "Mevcut yüzeyler: honlu, cilalı, fırçalı, eskitilmiş; dolgulu veya dolgusuz seçeneklerle. Plakalar, nem korumalı ve köşe koruyuculu güçlendirilmiş ahşap kasalara bağlanarak konteyner yüklemesine ve uzun mesafeli deniz taşımacılığına uygun şekilde paketlenir."
         ],
         "images": {
-          "vein-cut": "/images/new/slab/antico/Antikveincut. webp",
-          "cross-cut": "/images/new/slab/antico/Antikcrosscut. webp"
+          "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
+          "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
         },
         "vein-cut": {
           "seo": {
             "title": "Vein-Cut Traverten Plakalar | Premium Toptan | Majen",
             "description": "Türkiye’den doğrudan tedarik edilen premium vein-cut traverten plakalar. Doğrusal damar yapısı, dolgulu veya dolgusuz seçenekler; honlu, cilalı, fırçalı ve eskitilmiş yüzeyler. 2 cm & 3 cm kalınlıklar, özel ebat imkânı ve oçaktan şantiyeye güvenilir ihracat.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/new/slab/antico/Antikveincut. webp",
+          "image": "/images/new/slab/antico/Antikveincut.webp",
           "title": "Vein-Cut Traverten Plakalar",
           "alt": "Vein-Cut traverten plakalar",
           "span": "",
@@ -3445,7 +3445,7 @@
           "title2": "Vein-Cut Traverten Nedir?",
           "intro2": "Vein-Cut Traverten, taşın doğal tabakalarına paralel şekilde kesilerek üretilir; bu sayede kesintisiz doğrusal damarlar ortaya çıkar. Bu teknik, mimari dengede ve mekânsal süreklilikte önemli rol oynayan yönlü bir desen oluşturur. Modern iç mekânlar, cepheler ve ticari zeminler için ideal olan bu plakalar; zarafet ve dayanıklılığı, tutarlı renk ve pürüzsüz yüzey bitişleriyle birleştirir. Majen’in doğrudan ocak tedariki, güvenilir kalite ve sürdürülebilir ihracat standartları sunar.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut. webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein-Cut Traverten Plakalar"
           },
           "youtube": "https://youtu. be/GNdnB-TN2uA",
@@ -3496,17 +3496,17 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/new/slab/antico/antikoveinhonedfilled. webp",
-                "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled. webp",
-                "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished. webp",
-                "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished. webp",
-                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled. webp",
-                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled. webp",
-                "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled. webp",
-                "unfilled:tumbled": "/images/new/slab/antico/tumbledveincutunfilled. webp",
-                "natural": "/images/new/slab/antico/Antikveincut. webp",
-                "filled-natural": "/images/new/slab/antico/Antikveincut. webp",
-                "unfillednatural": "/images/new/slab/antico/Antikveincut. webp"
+                "filled:honed": "/images/new/slab/antico/antikoveinhonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished.webp",
+                "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished.webp",
+                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled.webp",
+                "unfilled:tumbled": "/images/new/slab/antico/tumbledveincutunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikveincut.webp",
+                "filled-natural": "/images/new/slab/antico/Antikveincut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikveincut.webp"
               }
             },
             "youtube": {
@@ -3579,7 +3579,7 @@
               "seo": {
                 "title": "Dolgusuz Doğal Vein-Cut Traverten Plakalar – Türkiye’den Ocak Tedarikçisi | Majen",
                 "description": "Dolgusuz Doğal Vein-Cut Traverten Plakaları keşfedin: açık gözenekli yapı, doğal mat doku ve kesintisiz doğrusal damarlar. Ivory, Light ve Antico renkleriyle dünya geneline ihracata hazır.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein-Cut Traverten Plakalar",
               "title": "Unfilled Natural Vein-Cut Traverten Plakalar",
@@ -3750,7 +3750,7 @@
               "seo": {
                 "title": "Dolgusuz Doğal Vein-Cut Traverten Plakalar – Türkiye’den Ocak Tedarikçisi | Majen",
                 "description": "Dolgusuz Doğal Vein-Cut Traverten Plakaları keşfedin: açık gözenekli yapı, doğal mat doku ve kesintisiz doğrusal damarlar. Ivory, Light ve Antico renkleriyle dünya geneline ihracata hazır.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein-Cut Traverten Plakalar",
               "title": "Unfilled Natural Vein-Cut Traverten Plakalar",
@@ -4132,7 +4132,7 @@
               "seo": {
                 "title": "Dolgulu Doğal Vein-Cut Traverten Plakalar – Türkiye’den Ocak Tedarikçisi | Majen",
                 "description": "Dolgulu Doğal Vein-Cut Traverten Plakaları keşfedin: doğrusal damarlar, dolgulu gözenek yapısı ve doğal yüzey karakteri. Ivory, Light ve Antico tonlarıyla dünya geneline ihracata hazır.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Vein-Cut Traverten Plakalar",
               "title": "Filled Natural Vein-Cut Traverten Plakalar",
@@ -4514,7 +4514,7 @@
               "seo": {
                 "title": "Dolgusuz Honlu Vein Cut Traverten Plakalar – Türkiye Ocak Tedarikçisi | Majen",
                 "description": "Dolgusuz Honlu Vein Cut Traverten Plakalarını keşfedin. Doğal mat doku, açık gözenekler, lineer damar yapısı. Ivory, Light ve Antico renk seçenekleriyle dünya geneline ihracat.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Honlu Vein Cut Traverten Plakalar",
               "title": "Dolgusuz Honlu Vein Cut Traverten Plakalar",
@@ -4871,7 +4871,7 @@
               "seo": {
                 "title": "Dolgulu Honlu Damarlı Traverten Plakalar – Türkiye’den Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Ayna etkisine yakın mat parlaklık, dolgulu yapı ve kesintisiz lineer damar hareketiyle Dolgulu Honlu Damarlı Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleriyle dünya geneline ihracata uygundur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgulu Honlu Damarlı Traverten Plakalar",
               "title": "Dolgulu Honlu Damarlı Traverten Plakalar",
@@ -5244,7 +5244,7 @@
               "seo": {
                 "title": "Dolgulu Parlatılmış Damarlı Traverten Plakalar – Türkiye’den Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Ayna parlaklığında, dolgulu yapı ve kesintisiz lineer damar hareketi sunan Dolgulu Parlatılmış Damarlı Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleriyle dünya geneline ihracata uygundur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgulu Parlatılmış Damarlı Traverten Plakalar",
               "title": "Dolgulu Parlatılmış Damarlı Traverten Plakalar",
@@ -5626,7 +5626,7 @@
               "seo": {
                 "title": "Dolgusuz Parlatılmış Damarlı Traverten Plakalar – Türkiye’den Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Ayna parlaklığı, doğal gözenekli yapı ve kesintisiz lineer damar hareketi sunan Dolgusuz Parlatılmış Damarlı Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleriyle dünya geneline ihracata uygundur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Parlatılmış Damarlı Traverten Plakalar",
               "title": "Dolgusuz Parlatılmış Damarlı Traverten Plakalar",
@@ -6010,7 +6010,7 @@
               "seo": {
                 "title": "Dolgulu Fırçalanmış Damarlı Traverten Plakalar – Türkiye’den Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Dolgulu Fırçalanmış Damarlı Traverten Plakalar ile doğal mat doku, güçlendirilmiş yapı ve kesintisiz lineer damar hareketini keşfedin. Ivory, Light ve Antico renkleriyle dünya geneline ihracata uygundur.",
-                "image": "/images/new/slab/antico/AnticoVeincutbrushedfilled. webp"
+                "image": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp"
               },
               "h1": "Dolgulu Fırçalanmış Damarlı Traverten Plakalar",
               "title": "Dolgulu Fırçalanmış Damarlı Traverten Plakalar",
@@ -6394,7 +6394,7 @@
               "seo": {
                 "title": "Dolgusuz Fırçalı Vein Cut Traverten Plakalar – Türkiye'den Ocak Tedarikçisi | Majen",
                 "description": "Ayna parlaklığı, dolgulu yapı ve kesintisiz doğrusal damarlarla Dolgusuz Fırçalı Vein Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleri dünya çapında ihracata uygundur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Fırçalı Vein Cut Traverten Plakalar",
               "title": "Dolgusuz Fırçalı Vein Cut Traverten Plakalar",
@@ -6778,7 +6778,7 @@
               "seo": {
                 "title": "Dolgulu Tumbled Vein Cut Traverten Plakalar – Türkiye'den Ocak Tedarikçisi | Majen",
                 "description": "Ayna parlaklığı, dolgulu yapı ve kesintisiz doğrusal damarlarla Dolgulu Tumbled Vein Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleri dünya çapında ihracata uygundur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Vein Cut Travertine Slabs",
               "title": "Filled Tumbled Vein Cut Travertine Slabs",
@@ -7160,7 +7160,7 @@
               "seo": {
                 "title": "Unfilled Tumbled Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Tumbled Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Eskitilmiş Vein Cut Traverten Plakalar",
               "title": "Dolgusuz Eskitilmiş Vein Cut Traverten Plakalar",
@@ -7541,9 +7541,9 @@
           "seo": {
             "title": "Cross Cut Traverten Plakalar | Premium Toptan | Majen",
             "description": "Yumuşak, bulutumsu harekete sahip şık cross-cut traverten plakalar. Dolgulu veya dolgusuz; honed, polished, brushed veya tumbled yüzeyler. 2 cm & 3 cm, proje hazır seçki, Türkiye’den direkt ocak tedariki.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/new/slab/antico/Antikcrosscut. webp",
+          "image": "/images/new/slab/antico/Antikcrosscut.webp",
           "title": "Cross Cut Traverten Plakalar",
           "alt": "Cross-cut traverten plakalar",
           "span": "",
@@ -7551,7 +7551,7 @@
           "title2": "Cross Cut Traverten Nedir?",
           "intro2": "Cross Cut Traverten, taşın doğal tabakalarına dik kesilmesiyle üretilir; böylece doğrusal damarlar yerine dairesel ve bulutumsu dokular ortaya çıkar. Bu teknik, görsel sakinlik ve süreklilik gereken alanlar için ideal, dengeli ve yönsüz bir desen oluşturur. Majen’in Uşak–Ulubey ocağından çıkan her plaka, homojen görünüm ve stabilite elde etmek için özenle seçilir ve kalibre edilir.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut plaka hero görseli"
           },
           "variants": {
@@ -7602,17 +7602,17 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/new/slab/antico/antikocrosshonedfilled. webp",
-                "unfilled:honed": "/images/new/slab/antico/antikocrosshonedunfilled. webp",
-                "unfilled:polished": "/images/new/slab/antico/antikocrosspolishedunfilled. webp",
-                "filled:polished": "/images/new/slab/antico/antikocrosspolishedfilled. webp",
-                "filled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedfilled. webp",
-                "unfilled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedunfilled. webp",
-                "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled. webp",
-                "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled. webp",
-                "natural": "/images/new/slab/antico/Antikcrosscut. webp",
-                "filled-natural": "/images/new/slab/antico/Antikcrosscut. webp",
-                "unfillednatural": "/images/new/slab/antico/Antikcrosscut. webp"
+                "filled:honed": "/images/new/slab/antico/antikocrosshonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikocrosshonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/antikocrosspolishedunfilled.webp",
+                "filled:polished": "/images/new/slab/antico/antikocrosspolishedfilled.webp",
+                "filled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled.webp",
+                "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "filled-natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikcrosscut.webp"
               }
             },
             "youtube": {
@@ -7685,7 +7685,7 @@
               "seo": {
                 "title": "Unfilled Natural Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Natural Cross Cut Travertine Slabs with open-pore texture and soft cloud patterns. Ivory, Light, and Antico tones available for worldwide",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Cross Cut Travertine Slabs",
               "title": "Unfilled Brushed Vein Cut Travertine Slabs",
@@ -7859,7 +7859,7 @@
               "seo": {
                 "title": "Dolgulu Doğal Cross Cut Traverten Plakalar – Türkiye’den Ocak Tedarikçisi | Majen",
                 "description": "Yumuşak bulut desenleri ve dengeli doğal tonlara sahip Dolgulu Doğal Cross Cut Traverten Plakaları keşfedin. Fildişi (Ivory), Light ve Antico renkleri dünya geneli ihracat için mevcuttur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgulu Doğal Cross Cut Traverten Plakalar",
               "title": "Dolgulu Doğal Cross Cut Traverten Plakalar",
@@ -8243,7 +8243,7 @@
               "seo": {
                 "title": "Dolgusuz Doğal Cross Cut Traverten Plakalar – Türkiye’de Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Açık gözenekli dokuya ve yumuşak bulut desenlerine sahip Dolgusuz Doğal Cross Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico tonları dünya genelinde mevcuttur.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Doğal Cross Cut Traverten Plakalar",
               "title": "Dolgusuz Fırçalı Vein Cut Traverten Plakalar",
@@ -8627,7 +8627,7 @@
               "seo": {
                 "title": "Dolgusuz Honlanmış Cross Cut Traverten Plakalar – Türkiye’de Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Doğal mat yüzeye ve açık gözenekli dokuya sahip Dolgusuz Honlanmış Cross Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico tonlarıyla dünya geneline ihracat.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgusuz Honlanmış Cross Cut Traverten Plakalar",
               "title": "Dolgusuz Honlanmış Cross Cut Traverten Plakalar",
@@ -9011,7 +9011,7 @@
               "seo": {
                 "title": "Filled Honed Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Honed Cross Cut Travertine Slabs with smooth matte surface, filled structure, and soft cloud-like patterns. Ivory, Light, and Antico tones available for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Filled Honed Cross Cut Travertine Slabs",
               "title": "Filled Honed Cross Cut Travertine Slabs",
@@ -9395,7 +9395,7 @@
               "seo": {
                 "title": "Dolu Cilalı Cross Cut Traverten Plakalar – Türkiye’de Ocaktan Doğrudan Tedarik | Majen",
                 "description": "Ayna parlaklığında yüzeye, dolgu yapısına ve bulutsu desenlere sahip Dolu Cilalı Cross Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico renkleri dünya geneline ihracata uygundur.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolu Cilalı Cross Cut Traverten Plakalar",
               "title": "Dolu Cilalı Cross Cut Traverten Plakalar",
@@ -9779,7 +9779,7 @@
               "seo": {
                 "title": "Dolgusuz Cilalı Cross Cut Traverten Plakalar – Türkiye’de Ocaktan Doğrudan Tedarik | Majen",
                 "description": "Bulutsu desenlere ve parlak zarafete sahip Dolgusuz Cilalı Cross Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico tonları dünya geneline ihracata uygundur.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgusuz Cilalı Cross Cut Traverten Plakalar",
               "title": "Dolgusuz Cilalı Cross Cut Traverten Plakalar",
@@ -10163,7 +10163,7 @@
               "seo": {
                 "title": "Dolgulu Fırçalı Cross Cut Traverten Plakalar – Türkiye’de Ocak Tedarikçisi | Majen",
                 "description": "Mat dokulu yüzey ve yumuşak bulut desenleriyle Dolgulu Fırçalı Cross Cut Traverten Plakaları keşfedin. Fildişi, Light ve Antico tonlarıyla dünya geneline ihracat.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgulu Fırçalı Cross Cut Traverten Plakalar",
               "title": "Dolgulu Fırçalı Cross Cut Traverten Plakalar",
@@ -10547,7 +10547,7 @@
               "seo": {
                 "title": "Dolgusuz Fırçalı Cross Cut Traverten Plakalar – Türkiye Çıkışlı Ocak Tedarikçisi | Majen",
                 "description": "Doğal gözenekli, mat dokulu Dolgusuz Fırçalı Cross Cut Traverten Plakaları keşfedin. Fildişi, Light ve Antico ton seçenekleriyle dünya geneline ihracat.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgusuz Fırçalı Cross Cut Traverten Plakalar",
               "title": "Dolgusuz Fırçalı Cross Cut Traverten Plakalar",
@@ -10931,7 +10931,7 @@
               "seo": {
                 "title": "Dolgulu Eskitilmiş Cross Cut Traverten Plakalar – Türkiye’de Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Yumuşak bulut desenli, dolgulu eskitilmiş (tumbled) Cross Cut traverten plakaları keşfedin. Ivory, Light ve Antico tonlarıyla dünya geneline ihracat.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgulu Eskitilmiş Cross Cut Traverten Plakalar",
               "title": "Dolgulu Eskitilmiş Cross Cut Traverten Plakalar",
@@ -11315,7 +11315,7 @@
               "seo": {
                 "title": "Dolgusuz Eskitilmiş Cross Cut Traverten Plakalar – Türkiye’de Ocak Çıkışlı Tedarikçi | Majen",
                 "description": "Açık gözenekli, eskitilmiş mat dokuya sahip Dolgusuz (Unfilled) Eskitilmiş Cross Cut Traverten Plakaları keşfedin. Ivory, Light ve Antico tonlarıyla dünya geneline ihracat.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Dolgusuz Eskitilmiş Cross Cut Traverten Plakalar",
               "title": "Dolgusuz Eskitilmiş Cross Cut Traverten Plakalar",
@@ -12169,13 +12169,13 @@
         "Mevcut yüzeyler: cilalı (polished), honlanmış (honed), fırçalanmış (brushed) ve eskitilmiş (tumbled). İhracat için karolar, güçlendirilmiş ahşap kasalara yerleştirilir; kayışlanarak ve streçlenerek güvenli konteyner yüklemesi ve uzun mesafeli deniz taşımacılığı için hazırlanır."
       ],
       "images": {
-        "antico": "/images/tiles/antikokesim. webp",
-        "light": "/images/homepage/lightblok3. webp",
-        "ivory": "/images/tiles/Ivorykesim. webp"
+        "antico": "/images/tiles/antikokesim.webp",
+        "light": "/images/homepage/lightblok3.webp",
+        "ivory": "/images/tiles/Ivorykesim.webp"
       },
       "youtube": {
         "antico": "https://youtu. be/R-Egyq7BjL4",
-        "light": "/images/homepage/kesim. webp",
+        "light": "/images/homepage/kesim.webp",
         "ivory": "https://youtu. be/7YoOIsMVUkw"
       },
       "variants": {
@@ -12246,14 +12246,14 @@
           "Mevcut yüzeyler: cilalı (polished), honlanmış (honed), fırçalanmış (brushed) ve eskitilmiş (tumbled). Plakalar; güçlendirilmiş ahşap kasalara yerleştirilir, kayışlanır ve streçlenerek güvenli konteyner yüklemesi ve uzun mesafeli deniz taşımacılığı için hazırlanır."
         ],
         "images": {
-          "vein-cut": "/images/tiles/Ivorykesim. webp",
-          "cross-cut": "/images/homepage/kesim. webp"
+          "vein-cut": "/images/tiles/Ivorykesim.webp",
+          "cross-cut": "/images/homepage/kesim.webp"
         },
         "vein-cut": {
           "seo": {
             "title": "Vein Cut Traverten Karolar | Doğal Taş Tedarikçisi – Majen",
             "description": "Majen’in vein cut traverten karolarını keşfedin – duvar, zemin ve cepheler için birinci sınıf, çizgisel desenli plakalar. Sürdürülebilir şekilde tedarik edilir, hassas kesilir ve benzersiz kaliteyle dünya geneline ihraç edilir.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
           "title": "Vein Cut Traverten Karolar",
           "alt": "Vein-cut traverten karolar",
@@ -12262,7 +12262,7 @@
           "title2": "Vein Cut Traverten Nedir?",
           "intro2": "Vein Cut Traverten, taşın doğal tabakalarına paralel şekilde dilimlenerek üretilir. Bu işlem, yapıyı, ritmi ve hareketi vurgulayan kesintisiz doğrusal damarları ortaya çıkarır. Ortaya çıkan taş, mimari dengeyi ve görsel derinliği güçlendiren rafine bir dokuya sahiptir. Lüks iç mekânlar, prestijli cepheler ve modern ama organik bir görünüm arayan ticari projeler için mükemmel bir seçimdir.",
           "hero": {
-            "src": "/images/new/tiles/antico/AnticoVeinBrushedFilled8x8. webp",
+            "src": "/images/new/tiles/antico/AnticoVeinBrushedFilled8x8.webp",
             "alt": "Vein Cut Traverten Karolar"
           },
           "desc": "Ocakta seçilen, karakteri tutarlı büyük ebat bloklar.",
@@ -12311,7 +12311,7 @@
             "İstediğiniz görünümü elde etmek için honlanmış, cilalı, fırçalanmış, eskitilmiş veya doğal yüzey işlemleri arasından seçim yapabilirsiniz. Her seçenek, taşın doğal derinliğini farklı bir şekilde öne çıkarır ve hem çağdaş hem de klasik tasarım kurgularına uyum sağlar.",
             "Majen’in lojistik ve paketleme süreçleri uluslararası ihracat standartlarını karşılar. Güçlendirilmiş ahşap kasalar, nem koruması ve doğru FOB/CIF dokümantasyonu sayesinde traverten karolarınız, dünya çapındaki projeler için güvenle ve sorunsuz şekilde teslim edilir."
           ],
-          "image": "/images/tiles/antikokesim. webp",
+          "image": "/images/tiles/antikokesim.webp",
           "youtube": "https://youtu. be/GNdnB-TN2uA",
           "processes": {
             "youtube": {
@@ -12330,15 +12330,15 @@
             },
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Yüzey İşleminizi Seçin",
@@ -12515,7 +12515,7 @@
               "seo": {
                 "title": "Dolgusuz Honlanmış Vein Cut Traverten Karolar | Doğal Mat Yüzey – Majen",
                 "description": "Majen’in dolgusuz honlanmış vein cut traverten karolarını keşfedin — doğal gözenekler, yumuşak mat yüzey ve modern rustik tasarımlar için çizgisel damarlar. Doğal güzellik, küresel kalite.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Honlanmış Vein Cut Traverten Karolar",
               "title": "Dolgusuz Honlanmış Vein Cut Traverten Karolar",
@@ -14341,7 +14341,7 @@
           "seo": {
             "title": "Vein Cut. | Majen",
             "description": "Discover.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
           "title": "Cross Cut Travertine Slabs",
           "alt": "Cross-cut travertine slabs",
@@ -14350,7 +14350,7 @@
           "title2": "Why Choose Cross-Cut?",
           "intro2": "Soft, non-directional texture for calm, uniform fields.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
           "desc": "Large-size blocks selected at the quarry with consistent character.",
@@ -14387,20 +14387,20 @@
             "Standard production in 2 cm, 3 cm, and 5 cm. Common large formats are available forefficient fabrication and vein matching across panels. Tight calibration and thicknesscontrol reduce waste, speed installation, and maintain visual continuity in expansivesurfaces.",
             "Available finishes: honed, polished, brushed, tumbled in filled or unfilled options. Slabs are strapped and wrapped in reinforced wooden crates with moisture protectionand corner guards for safe container loading and long-distance sea freight."
           ],
-          "image": "/images/tiles/kesim. webp",
+          "image": "/images/tiles/kesim.webp",
           "youtube": "https://youtu. be/GNdnB-TN2uA",
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -15953,11 +15953,11 @@
           "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
         ],
         "images": {
-          "vein-cut": "/images/new/slab/antico/Antikveincut. webp",
-          "cross-cut": "/images/new/slab/antico/Antikcrosscut. webp"
+          "vein-cut": "/images/new/slab/antico/Antikveincut.webp",
+          "cross-cut": "/images/new/slab/antico/Antikcrosscut.webp"
         },
         "vein-cut": {
-          "image": "/images/new/slab/antico/Antikveincut. webp",
+          "image": "/images/new/slab/antico/Antikveincut.webp",
           "youtube": "https://youtu. be/II8CJhIGhQo",
           "desc": "Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
           "title": "Vein Cut Travertine Special Design",
@@ -15967,7 +15967,7 @@
           "title2": "Why Choose Vein-Cut?",
           "intro2": "Parallel bands create visual continuity across large surfaces.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut. webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein Cut Travertine Special Design"
           },
           "description": "Large-size special design selected at the quarry with consistent character.",
@@ -15988,15 +15988,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -17111,7 +17111,7 @@
           }
         },
         "cross-cut": {
-          "image": "/images/new/slab/antico/Antikveincut. webp",
+          "image": "/images/new/slab/antico/Antikveincut.webp",
           "youtube": "https://youtu. be/II8CJhIGhQo",
           "desc": "Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
           "title": "Cross Cut Travertine Special Designs",
@@ -17121,7 +17121,7 @@
           "title2": "Why Choose Cross-Cut?",
           "intro2": "Soft, non-directional texture for calm, uniform fields.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
           "description": "Large-size special designs selected at the quarry with consistent character.",
@@ -17142,15 +17142,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -19082,7 +19082,7 @@
         "excerpt": "Açık renk ve doğal dokulu travertenlerle sade, çağdaş ve zamansız mekanlar oluşturmanın temel adımları.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/antikoarkplan. webp"
+        "cover": "/images/homepage/antikoarkplan.webp"
       },
       {
         "slug": "travertines/karo-traverten-rehberi",
@@ -19090,7 +19090,7 @@
         "excerpt": "Traverten karolar; zemin ve duvar kaplamalarında doğal estetik ile dayanıklılığı bir araya getirir. Farklı yüzey işlemleri sayesinde hem modern hem de klasik tasarımlara uyum sağlar.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/kesim. webp"
+        "cover": "/images/homepage/kesim.webp"
       },
       {
         "slug": "travertines/traverten-plakalar-rehberi",
@@ -19098,7 +19098,7 @@
         "excerpt": "Traverten plakalar; tezgah, geniş zeminler ve cephe kaplamalarında az derzli, bütünsel yüzeyler için idealdir. Doğal damar yapısını en iyi şekilde göstererek projeye lüks bir görünüm katar.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/slabler2. webp"
+        "cover": "/images/homepage/slabler2.webp"
       },
       {
         "slug": "travertines/traverten-bloklar-rehberi",
@@ -19106,7 +19106,7 @@
         "excerpt": "Traverten bloklar ocaktan çıkarılmış ham formdur; fabrikalarda ebatlanarak karo ve plaka haline getirilir. Büyük ölçekli projeler ve özel üretimler için temel ham maddeyi oluşturur.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/Ivoryblok. webp"
+        "cover": "/images/homepage/Ivoryblok.webp"
       },
       {
         "slug": "travertines/traverten-dosemeler-rehberi",
@@ -19114,7 +19114,7 @@
         "excerpt": "Traverten döşemeler; yürüyüş yolları, teraslar, otoparklar ve havuz çevreleri gibi dış mekanlarda dayanıklı ve şık bir çözüm sunar. Kaymaz dokusu ve hava koşullarına direnci ile öne çıkar.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/newblog/travertinepavers. webp"
+        "cover": "/images/newblog/travertinepavers.webp"
       },
       {
         "slug": "travertines/traverten-mozaik-rehberi",
@@ -19122,7 +19122,7 @@
         "excerpt": "Traverten mozaikler; küçük taş parçalarının bir araya gelmesiyle dekoratif desenler oluşturur. Banyo, mutfak ve vurgu duvarlarında doku ve hareket katarak tasarımı zenginleştirir.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/antikarkaplan4. webp"
+        "cover": "/images/homepage/antikarkaplan4.webp"
       },
       {
         "slug": "travertines/parlak-traverten-rehberi",
@@ -19130,7 +19130,7 @@
         "excerpt": "Parlak (polished) traverten, ayna etkisine yakın parlak bir yüzeye sahiptir. Taşın doğal desenlerini vurgulayarak özellikle lüks iç mekanlarda modern ve gösterişli bir atmosfer oluşturur.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/Polishedtravertine. webp"
+        "cover": "/images/newblog/Polishedtravertine.webp"
       },
       {
         "slug": "travertines/honlanmis-traverten",
@@ -19146,7 +19146,7 @@
         "excerpt": "Eskitilmiş traverten, yuvarlatılmış kenarlar ve eskitilmiş yüzeyiyle rustik bir karakter kazandırır. Akdeniz ve country tarzı tasarımlarda, iç ve dış mekanlarda sıcak bir atmosfer yaratır.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/travertinetumbled. webp"
+        "cover": "/images/newblog/travertinetumbled.webp"
       },
       {
         "slug": "travertines/fircalanmis-traverten",
@@ -19162,7 +19162,7 @@
         "excerpt": "Dolgulu travertende doğal boşluklar reçine veya çimento ile doldurularak daha düz ve kapalı bir yüzey elde edilir. Özellikle parlak yüzeylerle birlikte, modern ve rafine iç mekanlarda tercih edilir.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/Filledtravertine. webp"
+        "cover": "/images/newblog/Filledtravertine.webp"
       },
       {
         "slug": "travertines/dolgusuz-traverten",
@@ -19178,7 +19178,7 @@
         "excerpt": "Fildişi traverten, aydınlık ve zarif tonlarıyla öne çıkar. Banyo, mutfak ve havuz çevrelerinde ferah ve lüks bir atmosfer yaratmak için sıkça tercih edilir.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/ivory. webp"
+        "cover": "/images/homepage/Ivory/ivory.webp"
       },
       {
         "slug": "travertines/acik-traverten",
@@ -19186,7 +19186,7 @@
         "excerpt": "Açık tonlu traverten, sıcak bej renkleriyle hem modern hem klasik dekorasyonlara uyum sağlar. Zemin, duvar ve dış mekan uygulamalarında çok yönlü bir çözümdür.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Light/light. webp"
+        "cover": "/images/homepage/Light/light.webp"
       },
       {
         "slug": "travertines/antiko-traverten",
@@ -19194,7 +19194,7 @@
         "excerpt": "Antiko traverten, koyu ve sıcak tonları ile eskitilmiş bir etki sunar. Akdeniz mimarisi ve rustik tasarımlar için hem iç hem dış mekanlarda güçlü bir karakter kazandırır.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/antik. webp"
+        "cover": "/images/homepage/Antik/antik.webp"
       },
       {
         "slug": "travertines/traverten-zemin-kaplama",
@@ -19202,7 +19202,7 @@
         "excerpt": "Traverten zemin kaplamaları; dayanıklılığı, doğal dokusu ve zamansız görünümü ile öne çıkar. Konut ve ticari projelerde yoğun kullanıma uygun, uzun ömürlü bir döşeme çözümüdür.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Light/lighttasarim3. webp"
+        "cover": "/images/homepage/Light/lighttasarim3.webp"
       },
       {
         "slug": "travertines/traverten-kaplama",
@@ -19210,7 +19210,7 @@
         "excerpt": "Traverten duvar ve cephe kaplamaları; yapılara hem ısı yalıtımı hem de doğal taş estetiği kazandırır. İç mekan vurgu duvarlarında ve dış cephe tasarımlarında zarif bir görünüm sağlar.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Light/lighttasarim4. webp"
+        "cover": "/images/homepage/Light/lighttasarim4.webp"
       },
       {
         "slug": "travertines/traverten-cephe",
@@ -19218,7 +19218,7 @@
         "excerpt": "Traverten cephe kaplamaları, dayanıklı yapısı ve zengin renk geçişleriyle modern yapılarda sıkça kullanılır. Hem yeni projelerde hem de restorasyon çalışmalarında güçlü bir taş karakteri sunar.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/Antiktasarim4. webp"
+        "cover": "/images/homepage/Antik/Antiktasarim4.webp"
       },
       {
         "slug": "travertines/traverten-banyo",
@@ -19226,7 +19226,7 @@
         "excerpt": "Traverten banyolar, spa hissi veren doğal ve sıcak bir atmosfer oluşturur. Zemin, duvar, duş alanı ve tezgahlarda kullanıldığında mekanın bütününde şık bir taş dokusu sağlar.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/Ivorytasarim1. webp"
+        "cover": "/images/homepage/Ivory/Ivorytasarim1.webp"
       },
       {
         "slug": "travertines/traverten-mutfak",
@@ -19234,7 +19234,7 @@
         "excerpt": "Mutfaklarda traverten; tezgah, ada, backsplash ve zeminlerde kullanılarak sıcak, doğal ve zamansız bir stil sunar. Ahşap ve metal detaylarla uyumlu, uzun ömürlü bir taş seçeneğidir.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/Antiktasarim2. webp"
+        "cover": "/images/homepage/Antik/Antiktasarim2.webp"
       },
       {
         "slug": "travertines/traverten-havuz",
@@ -19242,7 +19242,7 @@
         "excerpt": "Traverten havuz çevreleri; sıcak havalarda bile ayağı yakmayan yapısı ve kaymaz yüzeyiyle güvenli ve konforlu kullanım sunar. Otel, villa ve site projelerinde prestijli bir tercihtir.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/Ivorytasarim2. webp"
+        "cover": "/images/homepage/Ivory/Ivorytasarim2.webp"
       },
       {
         "slug": "travertines/turkiye-traverteni",
@@ -19250,7 +19250,7 @@
         "excerpt": "Türkiye traverteni; geniş rezervleri, renk çeşitliliği ve işleme kalitesi ile dünya pazarında güçlü bir konuma sahiptir. Birçok ülkede yapı ve tasarım projelerinin ana doğal taş tercihlerinden biridir.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TravertineTurkey. webp"
+        "cover": "/images/blogs/TravertineTurkey.webp"
       },
       {
         "slug": "travertines/turk-traverteni",
@@ -19258,7 +19258,7 @@
         "excerpt": "Türk traverteni; homojen yapısı, zengin dokusu ve istikrarlı tedarikıyla uluslararası projelerde sıkça kullanılır. İç ve dış mekanlarda farklı bitiş seçenekleriyle çok yönlü bir çözümdür.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TurkishTravertine. webp"
+        "cover": "/images/blogs/TurkishTravertine.webp"
       },
       {
         "slug": "travertines/traverten-ocagi",
@@ -19266,7 +19266,7 @@
         "excerpt": "Traverten ocakları, blokların doğal damar yönüne göre dikkatle çıkarıldığı üretim alanlarıdır. Doğru ocak seçimi; renk tutarlılığı, kalite ve tedarik sürekliliği açısından büyük önem taşır.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TravertineQuarry. webp"
+        "cover": "/images/blogs/TravertineQuarry.webp"
       },
       {
         "slug": "travertines/traverten-tedarikcisi",
@@ -19274,7 +19274,7 @@
         "excerpt": "Güvenilir bir traverten tedarikçisi, projeye uygun renk, ebat ve yüzey işlemini zamanında temin eder. Kalite kontrol, paketleme ve lojistik yönetimi ile sürecin sorunsuz ilerlemesini sağlar.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/Travertinesupplier. webp"
+        "cover": "/images/blogs/Travertinesupplier.webp"
       },
       {
         "slug": "travertines/traverten-ihracatcisi",
@@ -19282,7 +19282,7 @@
         "excerpt": "Traverten ihracatçıları; üretimden yüklemeye kadar tüm süreci yöneterek taşın hedef ülkeye sorunsuz ulaşmasını sağlar. Evrak, gümrük, sigorta ve nakliye adımlarında alıcıya destek olur.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/travertineexporter. webp"
+        "cover": "/images/blogs/travertineexporter.webp"
       },
       {
         "slug": "travertines/traverten-ureticisi",
@@ -19290,7 +19290,7 @@
         "excerpt": "Traverten üreticileri, blokları farklı ebat ve yüzeylerde karo ve plaka haline getirir. Modern makinelerle yapılan kesim, honlama ve cilalama süreçleri projenin teknik beklentilerini karşılar.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/Travertinemanufacturer. webp"
+        "cover": "/images/blogs/Travertinemanufacturer.webp"
       },
       {
         "slug": "travertines/traverten-dagiticisi",
@@ -19298,7 +19298,7 @@
         "excerpt": "Traverten dağıtıcıları; taşın depolanması, stoklanması ve bölgesel müşterilere ulaştırılması süreçlerini yönetir. Bayiler, müteahhitler ve perakende noktaları için süreklilik ve erişilebilirlik sağlar.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/travertinedistributor. webp"
+        "cover": "/images/blogs/travertinedistributor.webp"
       }
     ]
   },
@@ -19322,7 +19322,7 @@
     "light-traverten-ile-modern-ic-mekan": {
       "title": "Light Traverten ile Modern İç Mekan Tasarımı",
       "date": "2025-01-18",
-      "cover": "/images/blog/light-travertine-modern. webp",
+      "cover": "/images/blog/light-travertine-modern.webp",
       "sections": [
         {
           "h2": "Neden Light Traverten?",
@@ -19347,7 +19347,7 @@
     "mimarlar-neden-silver-traverten-tercih-eder": {
       "title": "Mimarlar Neden Silver Traverten Tercih Eder?",
       "date": "2025-01-10",
-      "cover": "/images/blog/silver-travertine. webp",
+      "cover": "/images/blog/silver-travertine.webp",
       "sections": [
         {
           "h2": "Estetik Esneklik",
@@ -19363,7 +19363,7 @@
     "traverten-mi-mermer-mi": {
       "title": "Traverten mi Mermer mi? Hangisi Daha İyi?",
       "date": "2025-01-05",
-      "cover": "/images/blog/travertine-vs-marble. webp",
+      "cover": "/images/blog/travertine-vs-marble.webp",
       "sections": [
         {
           "h2": "Yapı ve Doku",
@@ -19384,7 +19384,7 @@
     "turkiyedeki-en-iyi-traverten-tedarikcileri": {
       "title": "Türkiye’deki En İyi Traverten Tedarikçileri",
       "date": "2024-12-22",
-      "cover": "/images/blog/best-suppliers. webp",
+      "cover": "/images/blog/best-suppliers.webp",
       "sections": [
         {
           "h2": "Neye Bakmalı?",
@@ -19396,7 +19396,7 @@
     "neden-turk-traverteni": {
       "title": "Neden Türk Traverteni?",
       "date": "2024-12-10",
-      "cover": "/images/blog/why-turkish. webp",
+      "cover": "/images/blog/why-turkish.webp",
       "sections": [
         {
           "h2": "Avantajlar",
@@ -19408,7 +19408,7 @@
     "dis-mekan-icin-en-iyi-traverten": {
       "title": "Dış Mekanlar İçin En İyi Traverten",
       "date": "2024-11-30",
-      "cover": "/images/blog/outdoor. webp",
+      "cover": "/images/blog/outdoor.webp",
       "sections": [
         {
           "h2": "Yüzeyler",
