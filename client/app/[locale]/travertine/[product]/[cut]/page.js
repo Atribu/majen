@@ -40,7 +40,17 @@ function InfoCard({ title, children, contentClassName = "text-sm text-neutral-60
 }
 
 // helpers
-const safe = (fn, fb = undefined) => { try { const v = fn(); return v ?? fb; } catch { return fb; } };
+const isUnresolvedTranslation = (value) =>
+  typeof value === "string" && value.startsWith("ProductPage.");
+
+const safe = (fn, fb = undefined) => {
+  try {
+    const v = fn();
+    return v == null || isUnresolvedTranslation(v) ? fb : v;
+  } catch {
+    return fb;
+  }
+};
 
 // === Title formatting helpers (process ve cut yazıları) ===
 
@@ -555,9 +565,10 @@ function resolveBlogSlug(locale, slug) {
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
   const opt = (key, fallback = "") => {
+    if (typeof t.has === "function" && !t.has(key)) return fallback;
     try {
       const v = t(key);
-      return v && v !== key ? v : fallback;
+      return v && v !== key && !isUnresolvedTranslation(v) ? v : fallback;
     } catch {
       return fallback;
     }
@@ -581,9 +592,10 @@ function resolveBlogSlug(locale, slug) {
   ];
 
   const optRaw = (key, fallback = null) => {
+    if (typeof t.has === "function" && !t.has(key)) return fallback;
     try {
       const v = t.raw(key);
-      return v ?? fallback;
+      return v == null || isUnresolvedTranslation(v) ? fallback : v;
     } catch {
       return fallback;
     }

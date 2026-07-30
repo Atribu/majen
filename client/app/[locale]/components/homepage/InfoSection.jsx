@@ -234,6 +234,9 @@ const mainLinkPatternsTr = [
       align: "center",
       dragFree: false,
       slidesToScroll: 1,
+      breakpoints: {
+        "(min-width: 768px)": { active: false },
+      },
 
     },
     [Autoplay({ delay: 3500, stopOnInteraction: true, stopOnMouseEnter: true })]
@@ -260,28 +263,19 @@ const mainLinkPatternsTr = [
 
         </div>
 
-        {/* Mobil: Embla Carousel */}
-<div className="mt-8 block md:hidden">
-  <div ref={emblaRef} className="overflow-hidden w-full">
-    <div className="flex">
+        {/* Mobilde carousel, tablet ve masaüstünde aynı kartlarla grid */}
+<div ref={emblaRef} className="mt-8 overflow-hidden w-full md:overflow-visible">
+    <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-5">
        {items.map(({ key, img, href, linkPatterns }) => (
         <div
           key={key}
-          className="flex-[0_0_80%] shrink-0 items-center justify-center" 
+          className="flex-[0_0_80%] shrink-0 items-center justify-center md:min-w-0 md:flex-auto md:shrink"
         >
           <Card t={tProxy} img={img} href={href} tKey={key} linkPatterns={linkPatterns} />
         </div>
       ))}
     </div>
-  </div>
 </div>
-
-        {/* Tablet & Desktop: Grid */}
-        <div className="mt-8 hidden md:grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {items.map(({ key, img, href, alt, linkPatterns }) => (
-     <Card key={key} t={tProxy} img={img} href={href} tKey={key} alt={alt} linkPatterns={linkPatterns}/>
-          ))}
-        </div>
       </div>
     </section>
   );

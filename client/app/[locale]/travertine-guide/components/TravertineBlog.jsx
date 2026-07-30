@@ -637,10 +637,7 @@ const handleClick = (e, id) => {
       </p>
 
       <p>
-        See how we ship under{" "}
-        <a href="/en/how-we-export" className="text-teal-700 hover:underline">
-          FOB, CIF and EXW
-        </a>{" "}
+        See how we ship under FOB, CIF and EXW{" "}
         terms—including reinforced packaging, seal-number photos and complete
         documentation.
       </p>

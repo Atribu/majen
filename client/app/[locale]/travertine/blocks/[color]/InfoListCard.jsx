@@ -1,50 +1,13 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
 /**
  * title: string
  * items: string[]  // "Label:* description" formatı da desteklenir
  * prefix: string   // örn: "/tr" veya "/en" (opsiyonel). Yoksa "" kullanılır.
  */
-export default function InfoListCard({ title, items = [], prefix = "" }) {
-  const exportSlug = String(prefix).startsWith("/tr")
-    ? "nasil-ihracat-yapiyoruz"
-    : "how-we-export";
-  const exportBase = `${prefix}/${exportSlug}`.replace("//", "/");
-
-  const linkifyIncoterms = (text) => {
-    if (!text) return null;
-    const regex = /\b(FOB|CIF|EXW)\b/gi;  // büyük/küçük duyarsız
-    const parts = String(text).split(regex);
-
-    return parts.map((part, i) => {
-      if (/^FOB$/i.test(part)) {
-        return (
-          <Link key={i} href={`${exportBase}/fob`} className="underline underline-offset-2">
-            {part}
-          </Link>
-        );
-      }
-      if (/^CIF$/i.test(part)) {
-        return (
-          <Link key={i} href={`${exportBase}/cif`} className="underline underline-offset-2">
-            {part}
-          </Link>
-        );
-      }
-      if (/^EXW$/i.test(part)) {
-        return (
-          <Link key={i} href={`${exportBase}/exw`} className="underline underline-offset-2">
-            {part}
-          </Link>
-        );
-      }
-      return <React.Fragment key={i}>{part}</React.Fragment>;
-    });
-  };
-
+export default function InfoListCard({ title, items = [] }) {
   return (
     <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
       {title ? <h3 className="text-base font-semibold mb-3">{title}</h3> : null}
@@ -59,12 +22,12 @@ export default function InfoListCard({ title, items = [], prefix = "" }) {
                 <>
                   <strong className="font-semibold">{label.trim()}:</strong>{" "}
                   <span className="text-neutral-700">
-                    {linkifyIncoterms(rest.trim())}
+                    {rest.trim()}
                   </span>
                 </>
               ) : (
                 <span className="text-neutral-700">
-                  {linkifyIncoterms(raw)}
+                  {raw}
                 </span>
               )}
             </li>

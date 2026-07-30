@@ -1,10 +1,8 @@
 // app/components/products/ProductIntroSection.jsx
 "use client";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
-import { usePathname } from "next/navigation";
 import ShareButton from "../ShareButton";
 
 /**
@@ -55,158 +53,62 @@ export default function ProductIntroSection({
     ],
   };
 
-  const pathname = usePathname() || ""; // boş string fallback
-  const segments = pathname.split("/").filter(Boolean); 
-  const lastSegment = pathname.split("/").filter(Boolean).pop(); 
-  const selectedSegments = segments.slice(-depth);
-
   return (
-    <section className="relative mt-2 overflow-hidden text-center lg:text-start" aria-labelledby="intro-heading">
-      {/* === Mobile & Tablet === */}
-      <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center">
-        {/* Background */}
+    <section className="relative mt-2 h-[520px] overflow-hidden text-center lg:h-[500px] lg:text-start" aria-labelledby="intro-heading">
+      {/* Masaüstü dekoratif arka planı */}
+      <div className="absolute left-0 top-1/2 hidden h-[400px] w-[70%] max-w-[1000px] -translate-y-1/2 overflow-hidden rounded-2xl lg:block">
+        <Image
+          src="/images/homepage/antikarkaplan2.webp"
+          alt=""
+          fill
+          sizes="(max-width: 1023px) 0px, 70vw"
+          quality={68}
+          className="object-cover"
+        />
+      </div>
+
+      {/* Mobilde arka plan, masaüstünde sağ ürün görseli */}
+      <div className="absolute inset-0 lg:inset-y-0 lg:left-[calc(50%+240px)] lg:right-auto lg:z-[3] lg:w-[720px] lg:max-w-[690px] 2xl:left-[calc(75%-190px)]">
         <Image
           src={safeHeroSrc}
           alt={safeAlt}
           fill
           priority
+          sizes="(max-width: 1023px) 100vw, 690px"
+          className="object-cover lg:object-contain"
+        />
+      </div>
+      <div className="absolute inset-0 z-[4] bg-black/40 lg:hidden" />
+
+      {/* Masaüstü içerik paneli */}
+      <div className="absolute left-1/2 top-0 hidden h-[500px] w-[860px] -translate-x-1/2 overflow-hidden rounded-sm shadow-2xl 2xl:h-[520px] 2xl:w-[50%] 2xl:max-w-[1000px] lg:block">
+        <Image
+          src="/images/homepage/antikarkaplan4.webp"
+          alt=""
+          fill
+          sizes="(max-width: 1023px) 0px, 50vw"
+          quality={68}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-y-0 left-0 w-[1000px] bg-gradient-to-r from-white to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white to-transparent" />
+      </div>
 
-        <div className="relative z-10 text-center text-white max-w-[95%]">
-          <h1 id="intro-heading" className="text-[24px] md:text-[24px] lg:text-[26px] font-semibold leading-[120%]">
+      {/* Tek içerik ağacı; yalnızca yerleşim breakpoint ile değişir */}
+      <header className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white lg:left-1/2 lg:right-auto lg:w-[860px] lg:-translate-x-1/2 lg:items-start lg:justify-start lg:px-5 lg:pt-10 lg:text-left lg:text-black 2xl:w-[50%] 2xl:max-w-[1000px]">
+        <div className="w-full max-w-[95%] lg:w-[80%] lg:max-w-none">
+          <h1 id="intro-heading" className="text-[24px] font-semibold leading-[120%] lg:text-[26px]">
             {title} <span>{span}</span>
           </h1>
-          <p className="mt-2 text-[12px] leading-tight lg:leading-relaxed">{intro}</p>
+          <p className="mt-2 text-[12px] leading-tight lg:mb-10 lg:text-[14px] lg:leading-[140%]">{intro}</p>
 
-            <h2 id="intro-heading" className="text-[22px] md:text-[24px] lg:text-[36px] font-semibold leading-[110%] mt-2">
-            {title2}
-          </h2>
-          <p className="mt-2 text-[12px] md:text-[14px] leading-tight lg:leading-relaxed">{intro2}</p>
-          <div className=" mt-3">
-                      <ShareButton label="Share" />
-                    </div>
-
-        </div>
-      </div>
-
-      {/* === Desktop === */}
-      <div className="hidden lg:flex flex-row items-center justify-start h-[500px] relative">
-        {/* Arka plan */}
-       <div className="flex w-[70%] rounded-2xl h-[400px] max-w-[1000px] relative overflow-hidden">
-  <Image
-    src="/images/homepage/antikarkaplan2.webp"
-    alt={alt}                       // dekoratif; erişilebilirlik için boş bırakın
-    fill
-    sizes="(max-width: 1023px) 0px, 70vw"  // lg ve üstünde ~%70 genişlik
-    quality={68}
-    priority={false}
-    className="object-cover"
-  />
-</div>
-
-
-        {/* İçerik kutusu */}
-        <div
-  className="absolute rounded-sm h-[500px] 2xl:h-[520px] w-[860px] 2xl:w-[50%] 2xl:max-w-[1000px] text-black flex flex-col justify-between left-1/2 -translate-x-1/2 "
->
-  {/* Blur katmanı */}
- <div className="absolute inset-0 shadow-2xl overflow-hidden">
-  <Image
-    src="/images/homepage/antikarkaplan4.webp"
-    alt={alt}                      // dekoratif arkaplan
-    fill
-    sizes="(max-width: 1023px) 0px, 50vw"  // bu kutu ~860–1000px; 50vw güvenli
-    quality={68}
-    priority={false}
-    className="object-cover"
-  />
-</div>
-
- <div className="absolute inset-y-0 left-0 w-[1000px] bg-gradient-to-r from-white/100 to-transparent pointer-events-none" />
- <div className="absolute inset-y-0 right-0 w-[500px] bg-gradient-to-l from-white/100 to-transparent pointer-events-none" />
-  {/* İçerik (blur’dan etkilenmez) */}
-  <header className="relative px-5 pt-5 w-[80%]">
-    <h1 className="text-[24px] lg:text-[26px] font-semibold mt-1 lg:mt-5 ">{title} <span>{span}</span></h1>
-    <p className="text-[12px] lg:text-[14px] mb-10 lg:leading-[140%]">{intro}</p>
-    
-     <h2 className="text-[22px] lg:text-[24px] font-semibold mt-3">{title2}</h2>
-    <p className="text-[12px] lg:text-[14px] mt-3 leading-tight lg:leading-[140%]">{intro2}</p>
-  <div className="ml-2 mt-4">
-              <ShareButton label="Share" />
-            </div>
-  </header>
-  
-
-          {/* Alt: Breadcrumbs */}
-  {/* <div className="px-1 sm:px-3  mb-3">
-    <nav aria-label="breadcrumb" className="max-w-6xl mx-auto">
-      <div className="rounded-xl border border-neutral-200 bg-white/80 backdrop-blur shadow-sm ring-1 ring-black/5 px-3 py-2 md:px-4 md:py-2">
-        <ol className="flex flex-wrap items-center gap-1 text-xs md:text-sm text-neutral-700">
-   
-          <li className="flex items-center">
-            
-            <svg viewBox="0 0 20 20" aria-hidden="true" className="mr-1 h-4 w-4 text-neutral-500">
-              <path d="M10 3.2 3 8.3v8.5h5.2v-4.2h3.6v4.2H17V8.3L10 3.2z" fill="currentColor" />
-            </svg>
-            <Link
-              href={prefix}
-              className="px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition">
-              {crumbHome}
-            </Link>
-            <svg viewBox="0 0 20 20" aria-hidden="true" className="mx-1 h-4 w-4 text-neutral-400">
-              <path d="M7.5 3.5 13 10l-5.5 6.5" fill="none" stroke="currentColor" strokeWidth="2" />
-            </svg>
-          </li>
-
-          <li className="flex items-center">
-            <Link
-              href={baseHref}
-              className="px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition"
-            >
-              {crumbProducts}
-            </Link>
-          </li>
-          {selectedSegments.map((seg, i) => (
-                <React.Fragment key={i}>
-                  <li><svg viewBox="0 0 20 20" aria-hidden="true" className="mx-1 h-4 w-4 text-neutral-400">
-              <path d="M7.5 3.5 13 10l-5.5 6.5" fill="none" stroke="currentColor" strokeWidth="2" />
-            </svg></li>
-                  <li className="capitalize px-2.5 py-1 rounded-full bg-white hover:bg-neutral-100 border border-neutral-200 transition">{seg}</li>
-                </React.Fragment>
-              ))}
-        </ol>
-      </div>
-    </nav>
-  </div> */}
-
-           {/* <nav className="mb-3 inline-flex items-center z-[99] px-3  text-xs sm:text-sm">
-            <ol className="flex items-center gap-x-2">
-              <li><Link href={prefix}>{crumbHome}</Link></li>
-              <li>/</li>
-              <li><Link href={baseHref}>{crumbProducts}s</Link></li>
-              {selectedSegments.map((seg, i) => (
-                <React.Fragment key={i}>
-                  <li>/</li>
-                  <li className="capitalize">{seg}</li>
-                </React.Fragment>
-              ))}
-            </ol>
-          </nav> */}
-
-          {/* Sağdaki görsel */}
-          <div className="absolute right-[-500px] top-1/2 -translate-y-1/2 w-[720px] h-[500px] z-[999] max-w-[690px]">
-            <Image
-               src={safeHeroSrc}
-              alt={safeAlt}
-              fill
-              className="object-contain"
-              priority
-            />
+          {title2 ? <h2 className="mt-2 text-[22px] font-semibold leading-[110%] md:text-[24px] lg:mt-3">{title2}</h2> : null}
+          {intro2 ? <p className="mt-2 text-[12px] leading-tight md:text-[14px] lg:mt-3 lg:leading-[140%]">{intro2}</p> : null}
+          <div className="mt-3 lg:ml-2 lg:mt-4">
+            <ShareButton label="Share" />
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Breadcrumb Schema */}
       <Script

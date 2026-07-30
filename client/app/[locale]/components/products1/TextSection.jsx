@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Script from "next/script";
-import Link from "next/link";
 import { useLocale } from "next-intl";
 
 export default function TextSection({
@@ -17,45 +16,6 @@ export default function TextSection({
   const [expanded, setExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const locale = useLocale();
-
-  const prefix = `/${locale}`;
-  const exportBase = locale === "tr" ? "nasıl-ihracat-yapıyoruz" : "how-we-export";
-
-  // Sadece düz stringlerde FOB/CIF/EXW'yi linke çevir
-  const renderWithIncotermLinks = useCallback(
-    (text) => {
-      if (typeof text !== "string" || !text) return text; // React node ise dokunma
-
-      const pattern = /\b(FOB|CIF|EXW)\b/gi;
-      const nodes = [];
-      let last = 0;
-      let m;
-      let k = 0;
-
-      while ((m = pattern.exec(text)) !== null) {
-        if (m.index > last) nodes.push(text.slice(last, m.index));
-
-        const token = m[1].toUpperCase();
-        const href = `${prefix}/${exportBase}/${token.toLowerCase()}`;
-
-        nodes.push(
-          <Link
-            key={`incoterm-${k++}-${m.index}`}
-            href={href}
-            className="text-teal-700 underline underline-offset-4 hover:no-underline"
-          >
-            {token}
-          </Link>
-        );
-
-        last = m.index + token.length;
-      }
-
-      if (last < text.length) nodes.push(text.slice(last));
-      return nodes;
-    },
-    [prefix, exportBase]
-  );
 
   // paragraphs her yerde bazen string, bazen React node olabiliyor → normalize
   const normalizedParagraphs = useMemo(() => {
@@ -125,9 +85,7 @@ export default function TextSection({
         {/* Ana paragraflar */}
         {visibleParagraphs.map((p, i) => (
           <p key={i}>
-            {typeof p === "string"
-              ? renderWithIncotermLinks(p)
-              : p}
+            {p}
           </p>
         ))}
 
@@ -141,9 +99,7 @@ export default function TextSection({
         {/* Alt metin */}
         {text2 ? (
           <p className="mt-1 lg:mt-2 leading-tight lg:leading-normal text-[12px] md:text-[14px]">
-            {typeof text2 === "string"
-              ? renderWithIncotermLinks(text2)
-              : text2}
+            {text2}
           </p>
         ) : null}
 

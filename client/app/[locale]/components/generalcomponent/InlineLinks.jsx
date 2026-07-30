@@ -59,20 +59,24 @@ export default function InlineLinks({
       parts.push(source.slice(index, start));
     }
 
-    // Link (inline)
-    parts.push(
-      <Link
-        key={`${start}-${matchedText}`}
-        href={earliestPattern.href}
-        aria-label={earliestPattern.ariaLabel || matchedText}
-        className={
-          (earliestPattern.className || linkClassName) +
-          "" // parent span tipografiyi verecek
-        }
-      >
-        {matchedText}
-      </Link>
-    );
+    // Incoterm adları bilgi metnidir; yönlendirme bağlantısı oluşturma.
+    if (/^(FOB|CIF|EXW)$/i.test(matchedText.trim())) {
+      parts.push(matchedText);
+    } else {
+      parts.push(
+        <Link
+          key={`${start}-${matchedText}`}
+          href={earliestPattern.href}
+          aria-label={earliestPattern.ariaLabel || matchedText}
+          className={
+            (earliestPattern.className || linkClassName) +
+            "" // parent span tipografiyi verecek
+          }
+        >
+          {matchedText}
+        </Link>
+      );
+    }
 
     index = start + matchedText.length;
   }

@@ -13,7 +13,6 @@ import img3 from "@/public/images/export/EXW.webp"
 import ThreeUpShowcase from "./ThreeUpShowcase";
 import ExportMethodsShowcase from "./ExportMethodsShowcase";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
@@ -64,7 +63,6 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { locale } = await params;
-  redirect(`/${locale}`);
   const isTR = locale === "tr";
 
   const t = await getTranslations({ locale, namespace: "HowWeExportPage" });

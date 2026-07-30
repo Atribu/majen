@@ -14,23 +14,8 @@ const LogisticSection = () => {
 
         <p className="text-[12px] md:text-[11px] lg:text-[14px] w-[76.8%]">
           {t.rich("text", {
-            // mevcutlar
-            fob: (chunks) => (
-              <Link
-                href="/howweexport/fob"
-                className="underline underline-offset-4"
-              >
-                {chunks}
-              </Link>
-            ),
-            cif: (chunks) => (
-              <Link
-                href="/howweexport/cif"
-                className="underline underline-offset-4"
-              >
-                {chunks}
-              </Link>
-            ),
+            fob: (chunks) => chunks,
+            cif: (chunks) => chunks,
 
             // 🔗 yeni blog linkleri
             exp: (chunks) => (

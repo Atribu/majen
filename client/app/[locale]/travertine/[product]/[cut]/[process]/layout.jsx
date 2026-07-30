@@ -1,9 +1,15 @@
 // app/[locale]/travertine/[product]/[cut]/[process]/layout.jsx
 import Script from "next/script";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+
+function getMessageNode(messages, path) {
+  return String(path)
+    .split(".")
+    .reduce((node, key) => node?.[key], messages);
+}
 
 /** Locale → kök segment */
 const BASE_BY_LOCALE = { en: "travertine", tr: "traverten", de: "travertin", ru: "travertin" };
@@ -121,32 +127,29 @@ export async function generateMetadata({ params }) {
   const cutShort  = shortCutKey(normalizedCut);      // "vein-cut" | "cross-cut"
   const procLookup = toLookupProcKey(process);       // "filled-polished" | "natural" ...
 
-  let tSeo;
-  try {
-    tSeo = await getTranslations({
-      locale,
-      namespace: `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}.seo`
-    });
-  } catch {
-    tSeo = { has: () => false };
-  }
+  const messages = await getMessages({ locale });
+  const seo =
+    getMessageNode(
+      messages,
+      `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}.seo`
+    ) || {};
 
   const ogFallback =
     OG_BY_PRODUCT_AND_CUT[product]?.[cutTypeKey(normalizedCut)]?.[isTR ? "tr" : "en"] ||
     OG_BY_PRODUCT_AND_CUT.slabs.vein.en;
 
   const title =
-    (tSeo.has?.("title") && tSeo("title")) ||
+    seo.title ||
     (isTR ? "Traverten | Majen" : "Travertine | Majen");
 
   const description =
-    (tSeo.has?.("description") && tSeo("description")) ||
+    seo.description ||
     (isTR
       ? "Doğrudan ocaktan tedarik, güvenilir ihracat."
       : "Direct quarry supply with reliable export terms.");
 
   const ogImage =
-    (tSeo.has?.("image") && tSeo("image")) ||
+    seo.image ||
     ogFallback;
 
   return {
@@ -202,13 +205,13 @@ export default async function ProcessLayout({ children, params }) {
   let processTitle = humanProcessName(process, locale);
 
   // Process başlığı (i18n’den varsa)
-  try {
-    const tProc = await getTranslations({
-      locale,
-      namespace: `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}`
-    });
-    if (tProc?.has?.("title")) processTitle = tProc("title");
-  } catch {}
+  const messages = await getMessages({ locale });
+  const processMessages =
+    getMessageNode(
+      messages,
+      `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}`
+    ) || {};
+  if (processMessages.title) processTitle = processMessages.title;
 
   // Breadcrumb JSON-LD
   const breadcrumbJSONLD = {
@@ -238,20 +241,17 @@ const productJSONLD = {
   // FAQ JSON-LD — process-level (varsa)
   let faqJSONLD = null;
   try {
-    const tQA = await getTranslations({
-      locale,
-      namespace: `ProductPage.${product}.cuts.${cutShort}.processes.${procLookup}.QuestionsItems`,
-    });
+    const questions = processMessages.QuestionsItems || {};
 
     const list = [];
     for (let i = 1; i <= 20; i++) {
       const qKey = `aboutpage_s4_faq${i}_header`;
       const aKey = `aboutpage_s4_faq${i}_text`;
-      if (tQA.has?.(qKey) && tQA.has?.(aKey)) {
+      if (questions[qKey] && questions[aKey]) {
         list.push({
           "@type": "Question",
-          name: tQA(qKey),
-          acceptedAnswer: { "@type": "Answer", text: tQA(aKey) },
+          name: questions[qKey],
+          acceptedAnswer: { "@type": "Answer", text: questions[aKey] },
         });
       } else {
         break;

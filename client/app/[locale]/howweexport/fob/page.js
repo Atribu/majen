@@ -286,9 +286,9 @@ export default async function Page({ params }) {
         <nav
           aria-label="Related links"
           className="text-[12px] md:text-sm text-neutral-600 text-center gap-1 md:gap-2 lg:gap-3 flex items-center justify-center">
-          <Link href="/en/export/fob-travertine">FOB Export</Link> {" • "}
-          <Link href="/en/export/cif-travertine">CIF Export</Link> {" • "}
-          <Link href="/en/export/exw-travertine">EXW Export</Link> {" • "}
+          <span>FOB Export</span> {" • "}
+          <span>CIF Export</span> {" • "}
+          <span>EXW Export</span> {" • "}
           <Link href="/en/how-we-export">How We Export</Link> {" • "}
           <Link href="/en/travertine">Travertine</Link>
         </nav>
@@ -363,4 +363,3 @@ export default async function Page({ params }) {
     </main>
   );
 }
-

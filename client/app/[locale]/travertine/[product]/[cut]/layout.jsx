@@ -1,8 +1,14 @@
 import Script from "next/script";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
+
+function getMessageNode(messages, path) {
+  return String(path)
+    .split(".")
+    .reduce((node, key) => node?.[key], messages);
+}
 
 /** Locale → kök segment */
 const BASE_BY_LOCALE = { en: "travertine", tr: "traverten", de: "travertin", ru: "travertin" };
@@ -99,16 +105,9 @@ export async function generateMetadata({ params }) {
                   : /^cross-cut|^enine-kesim/i.test(normalizedCut) ? "cross-cut"
                   : "vein-cut";
 
-  let tSeo;
-  try {
-    tSeo = await getTranslations({
-      locale,
-      namespace: `ProductPage.${product}.cuts.${cutShort}.seo`,
-    });
-  } catch {
-    // namespace yoksa tSeo.has undefined olmasın
-    tSeo = { has: () => false };
-  }
+  const messages = await getMessages({ locale });
+  const seo =
+    getMessageNode(messages, `ProductPage.${product}.cuts.${cutShort}.seo`) || {};
 
   const cutKeyType = /^vein-cut|^damar-kesim/.test(normalizedCut) ? "vein" : "cross";
   const ogFallback =
@@ -116,19 +115,19 @@ export async function generateMetadata({ params }) {
     OG_BY_PRODUCT_AND_CUT.slabs.vein.en;
 
   const title =
-    (tSeo.has?.("title") && tSeo("title")) ||
+    seo.title ||
     (isTR
       ? `${cutHumanName(normalizedCut, locale, product)} ${PRODUCT_LABEL[product]?.tr || "Traverten"} | Majen`
       : `${cutHumanName(normalizedCut, locale, product)} ${PRODUCT_LABEL[product]?.en || "Travertine"} | Majen`);
 
   const description =
-    (tSeo.has?.("description") && tSeo("description")) ||
+    seo.description ||
     (isTR
       ? "Yüzey seçenekleriyle (cilalı, honlu, fırçalı, tamburlu) ve güvenilir ihracat süreçleriyle tedarik ediyoruz."
       : "Available in polished, honed, brushed and tumbled finishes with reliable export terms.");
 
   const ogImage =
-    (tSeo.has?.("image") && tSeo("image")) || ogFallback;
+    seo.image || ogFallback;
 
   return {
     title,
@@ -216,21 +215,23 @@ const catUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}`;
 let faqJSONLD = null;
 try {
   const cutShort = shortCutKey(normalizedCut); // "vein-cut" | "cross-cut"
-  const tQA = await getTranslations({
-    locale,
-    namespace: `ProductPage.${product}.cuts.${cutShort}.QuestionsItems`,
-  });
+  const messages = await getMessages({ locale });
+  const questions =
+    getMessageNode(
+      messages,
+      `ProductPage.${product}.cuts.${cutShort}.QuestionsItems`
+    ) || {};
 
   const list = [];
   // en.json’da gördüğümüz kalıba göre: aboutpage_s4_faq1_header, aboutpage_s4_faq1_text, ...
   for (let i = 1; i <= 20; i++) {
     const qKey = `aboutpage_s4_faq${i}_header`;
     const aKey = `aboutpage_s4_faq${i}_text`;
-    if (tQA.has?.(qKey) && tQA.has?.(aKey)) {
+    if (questions[qKey] && questions[aKey]) {
       list.push({
         "@type": "Question",
-        name: tQA(qKey),
-        acceptedAnswer: { "@type": "Answer", text: tQA(aKey) },
+        name: questions[qKey],
+        acceptedAnswer: { "@type": "Answer", text: questions[aKey] },
       });
     } else {
       break;

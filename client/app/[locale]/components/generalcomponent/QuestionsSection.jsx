@@ -1,66 +1,15 @@
 // app/[locale]/components/generalcomponent/QuestionsSection.jsx
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import PlusSvg from "./PlusSvg";
 
 const QuestionsSection = ({
   color = "#0B0B0B",
   span,
   items = [],
-  linkMap, // { FOB: "/...", CIF: "/...", EXW: "/..." } opsiyonel
 }) => {
   const t = useTranslations("QuestionsSection");
-  const locale = useLocale();
-  const safeLocale = locale || "en";
-
-  // Varsayılan haritalama (prop verilmezse)
-  const isTR = safeLocale.startsWith("tr");
-  const exportSlug = isTR ? "nasil-ihracat-yapiyoruz" : "how-we-export";
-  const base = `/${safeLocale}/${exportSlug}`;
-  const defaultMap = {
-    FOB: `${base}/fob`,
-    CIF: `${base}/cif`,
-    EXW: `${base}/exw`,
-  };
-  const map = { ...defaultMap, ...(linkMap || {}) };
-
-  // Metin içindeki terimleri linke çevir
-  const linkify = (text) => {
-    if (!text || typeof text !== "string") return text;
-
-    const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const keys = Object.keys(map);
-    if (!keys.length) return text;
-
-    // Kelime sınırıyla (word boundary) büyük/küçük harf duyarsız eşleşme
-    const re = new RegExp(`\\b(${keys.map(escape).join("|")})\\b`, "gi");
-
-    const out = [];
-    let last = 0;
-
-    text.replace(re, (match, _g, idx) => {
-      if (idx > last) out.push(text.slice(last, idx));
-      // Hangi anahtarla eşleştiğini case-insensitive bul
-      const key = keys.find((k) => k.toLowerCase() === match.toLowerCase());
-      const href = map[key];
-      out.push(
-        <Link
-          key={`${idx}-${match}`}
-          href={href}
-         className="underline text-teal-700 hover:decoration-solid mx-1 inline-block"
-        >
-        {match.toUpperCase()} 
-        </Link>
-      );
-      last = idx + match.length;
-      return match;
-    });
-
-    if (last < text.length) out.push(text.slice(last));
-    return out;
-  };
 
   const [open, setOpen] = useState(null);
   const toggle = (i) => setOpen(open === i ? null : i);
@@ -93,7 +42,7 @@ const QuestionsSection = ({
           >
             <div className="flex w-full justify-between items-start">
               <h5 className="flex whitespace-nowrap text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px]">
-                {linkify(it.q)}
+                {it.q}
               </h5>
               <PlusSvg
                 className={`transition-transform duration-500 ${open === i ? "rotate-180" : "rotate-0"}`}
@@ -104,7 +53,7 @@ const QuestionsSection = ({
 
             <div className="flex items-start text-start justify-center mt-4">
               <p className="w-[98%] text-[12px] lg:text-[14px]">
-                {linkify(it.a)}
+                {it.a}
               </p>
             </div>
           </button>

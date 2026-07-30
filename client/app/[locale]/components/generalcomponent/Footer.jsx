@@ -175,8 +175,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Footer Menu 1 */}
-            <div className="flex flex-row items-center lg:items-start justify-around">
+            {/* Footer menüleri: tek DOM, mobilde yan yana, masaüstünde ayrı kolonlar */}
+            <div className="col-span-full grid grid-cols-2 items-start gap-6 lg:contents">
               <div className="text-center lg:text-left">
               <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.title")}
@@ -195,8 +195,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Footer Menu 2 */}
-            <div className="text-center lg:text-left flex lg:hidden flex-col">
+            <div className="text-center lg:text-left flex flex-col">
               <span className="text-sm font-semibold uppercase tracking-wide">
                 {t("nav.more")}
               </span>
@@ -213,24 +212,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            </div>
-            {/* Footer Menu 2 */}
-            <div className="text-center lg:text-left hidden lg:flex flex-col">
-              <span className="text-sm font-semibold uppercase tracking-wide">
-                {t("nav.more")}
-              </span>
-              <ul className="mt-4 space-y-2 text-sm">
-                {navSecondary.map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="inline-flex items-center gap-2 hover:underline underline-offset-4 hover:opacity-80"
-                    >
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 

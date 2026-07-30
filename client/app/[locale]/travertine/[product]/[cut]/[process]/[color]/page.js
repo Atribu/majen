@@ -192,7 +192,7 @@ function normalizePaverSizeSlug(raw) {
     
       // 3) Heuristik (son çare)
       if (/vein|damar/.test(target)) return "vein-cut";
-      if (/cross|yatay/.test(target)) return "cross-cut";
+      if (/cross|yatay|enine/.test(target)) return "cross-cut";
       return "vein-cut";
     }
 
@@ -299,7 +299,10 @@ const imagesForColor = React.useCallback((colorKeyEn) => {
   }
 
   /* ---- JSON / labels ---- */
-  const lookupProcKey = locale.startsWith("tr") ? trCombinedToEn(procKeyFull) : procKeyFull;
+  const lookupProcKey =
+    /^(dolgulu|dolgusuz)-/.test(procKeyFull) || procKeyFull === "dogal"
+      ? trCombinedToEn(procKeyFull)
+      : procKeyFull;
 
 let page = null;
 

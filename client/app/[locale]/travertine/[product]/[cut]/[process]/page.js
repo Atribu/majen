@@ -59,9 +59,17 @@ function InfoCard({
   );
 }
 
+const isUnresolvedTranslation = (value) =>
+  typeof value === "string" && value.startsWith("ProductPage.");
+
 // güvenli okuyucu
 const safe = (fn, fallback) => {
-  try { const v = fn(); return v ?? fallback; } catch { return fallback; }
+  try {
+    const v = fn();
+    return v == null || isUnresolvedTranslation(v) ? fallback : v;
+  } catch {
+    return fallback;
+  }
 };
 
 const pickFirst = (v) => (Array.isArray(v) ? v.find(Boolean) : v);
@@ -74,6 +82,11 @@ function normalizeProcKey(procSlug = "", locale = "en") {
   // natural/dogal → unfilled-natural/dolgusuz-dogal (kanonik)
   if (s === "natural" || s === "dogal") {
     return locale.startsWith("tr") ? "dolgusuz-dogal" : "unfilled-natural";
+  }
+
+  // Locale EN olsa bile eski/yanlış bir bağlantı Türkçe işlem slug'ı taşıyabilir.
+  if (/^(dolgulu|dolgusuz)-/.test(s)) {
+    return trCombinedToEn(s);
   }
 
   if (locale.startsWith("en")) {
@@ -658,7 +671,7 @@ function resolveBlogSlug(locale, slug) {
 
     // 3) heuristik
     if (/vein|damar/.test(target)) return "vein-cut";
-    if (/cross|yatay/.test(target)) return "cross-cut";
+    if (/cross|yatay|enine/.test(target)) return "cross-cut";
     return "vein-cut";
   }
 
@@ -722,9 +735,9 @@ function resolveBlogSlug(locale, slug) {
   const processNode =
     safe(
       () =>
-        t.raw(
-          `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`
-        ),
+        t.has(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`)
+          ? t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}`)
+          : {},
       {}
     ) || {};
 
@@ -758,7 +771,10 @@ function resolveBlogSlug(locale, slug) {
   const dh =
     processNode.detailsHeadings ||
     safe(
-      () => t.raw(`${productKey}.cuts.${cutKey}.detailsHeadings`),
+      () =>
+        t.has(`${productKey}.cuts.${cutKey}.detailsHeadings`)
+          ? t.raw(`${productKey}.cuts.${cutKey}.detailsHeadings`)
+          : {},
       {}
     ) ||
     {};
@@ -783,9 +799,9 @@ function resolveBlogSlug(locale, slug) {
 
   const qCut = safe(
     () =>
-      t.raw(
-        `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`
-      ),
+      t.has(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`)
+        ? t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.QuestionsItems`)
+        : null,
     null
   );
   const qTop = safe(() => t.raw(`${productKey}.QuestionsItems`), {});
@@ -980,9 +996,9 @@ function resolveBlogSlug(locale, slug) {
 
   const textSectionProcRaw = safe(
     () =>
-      t.raw(
-        `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.TextSection`
-      ),
+      t.has(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.TextSection`)
+        ? t.raw(`${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.TextSection`)
+        : null,
     null
   );
 
@@ -1027,9 +1043,10 @@ function resolveBlogSlug(locale, slug) {
   }
 
   const optRaw = (key, fallback = null) => {
+    if (typeof t.has === "function" && !t.has(key)) return fallback;
     try {
       const v = t.raw(key);
-      return v ?? fallback;
+      return v == null || isUnresolvedTranslation(v) ? fallback : v;
     } catch {
       return fallback;
     }

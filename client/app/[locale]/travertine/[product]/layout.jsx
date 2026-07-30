@@ -1,5 +1,5 @@
 // app/[locale]/(catalog)/product/layout.jsx
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import Script from "next/script";
 import {
   BASE_BY_LOCALE,
@@ -10,6 +10,12 @@ import { PRODUCT_IMG } from "@/app/[locale]/(catalog)/_images";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const toSrc = (img) => (typeof img === "string" ? img : img?.src || "");
+
+function getMessageNode(messages, path) {
+  return String(path)
+    .split(".")
+    .reduce((node, key) => node?.[key], messages);
+}
 
 // Ürün ve dil bazlı başlık + açıklama fallback’leri
 const META_BY_PRODUCT = {
@@ -67,7 +73,9 @@ export async function generateMetadata({ params }) {
 
   // URL ve productKey
   const productKey =
-    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
+    (PRODUCT_KEYS.includes(product) && product) ||
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) ||
+    "blocks";
 
   const baseSegment = BASE_BY_LOCALE[locale]; // "travertine" | "traverten"
   const productSlug = PRODUCT_SLUGS[locale]?.[productKey] ?? product;
@@ -75,7 +83,10 @@ export async function generateMetadata({ params }) {
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   // Başlık & açıklama: önce i18n → yoksa META_BY_PRODUCT fallback
-  const fallback = META_BY_PRODUCT[locale]?.[productKey] ?? META_BY_PRODUCT.en.block;
+  const fallback =
+    META_BY_PRODUCT[locale]?.[productKey] ??
+    (productKey === "blocks" ? META_BY_PRODUCT[locale]?.block : null) ??
+    META_BY_PRODUCT.en.block;
 
   const title = tSeo.has(`${productKey}.title`)
     ? tSeo(`${productKey}.title`)
@@ -125,7 +136,9 @@ export default async function ProductLayout({ children, params }) {
 
   // URL ve i18n temel değişkenler
   const productKey =
-    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) || "block";
+    (PRODUCT_KEYS.includes(product) && product) ||
+    PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) ||
+    "blocks";
 
   const baseSegment = BASE_BY_LOCALE[locale]; // travertine | traverten
   const baseUrl    = `${SITE_URL}/${locale}`;
@@ -139,12 +152,14 @@ export default async function ProductLayout({ children, params }) {
   // Ürün adları (breadcrumb ve Product.name için)
   const productNames = {
     en: {
+      blocks: "Travertine Blocks",
       block:  "Travertine Blocks",
       slabs:  "Travertine Slabs",
       tiles:  "Travertine Tiles",
       pavers:"Custom Travertine Designs",
     },
     tr: {
+      blocks: "Traverten Bloklar",
       block:  "Traverten Bloklar",
       slabs:  "Traverten Plakalar",
       tiles:  "Traverten Karolar",
@@ -196,20 +211,19 @@ export default async function ProductLayout({ children, params }) {
   // {aboutpage_s4_faq1_header, aboutpage_s4_faq1_text, ...}
   let faqJSONLD = null;
 try {
-  const tQA = await getTranslations({
-    locale,
-    namespace: `ProductPage.${productKey}.QuestionsItems`,
-  });
+  const messages = await getMessages({ locale });
+  const questions =
+    getMessageNode(messages, `ProductPage.${productKey}.QuestionsItems`) || {};
 
   const faqList = [];
   for (let i = 1; i <= 20; i++) {
     const qKey = `aboutpage_s4_faq${i}_header`;
     const aKey = `aboutpage_s4_faq${i}_text`;
-    if (tQA.has(qKey) && tQA.has(aKey)) {
+    if (questions[qKey] && questions[aKey]) {
       faqList.push({
         "@type": "Question",
-        name: tQA(qKey),
-        acceptedAnswer: { "@type": "Answer", text: tQA(aKey) },
+        name: questions[qKey],
+        acceptedAnswer: { "@type": "Answer", text: questions[aKey] },
       });
     } else {
       break;

@@ -16,23 +16,8 @@ const HomeMainSection = () => {
 
         <p className="text-[12px] md:text-[14px] lg:text-[18px] w-[97%] lg:w-[70%]">
           {t.rich("text", {
-            // FOB / CIF zaten vardı
-            fob: (chunks) => (
-              <Link
-                href="/howweexport/fob"
-                className="underline underline-offset-4"
-              >
-                {chunks}
-              </Link>
-            ),
-            cif: (chunks) => (
-              <Link
-                href="/howweexport/cif"
-                className="underline underline-offset-4 cursor-pointer"
-              >
-                {chunks}
-              </Link>
-            ),
+            fob: (chunks) => chunks,
+            cif: (chunks) => chunks,
 
             // 🆕 travertine supplier from Turkey
             supplier: (chunks) => (

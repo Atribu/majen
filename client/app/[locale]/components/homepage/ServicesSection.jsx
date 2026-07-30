@@ -81,11 +81,7 @@ export default function KeyFeatures() {
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
 
             {t.rich("items.export1.title", {
-                                fob: (chunks) => (
-                                  <Link href="/howweexport/fob" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                fob: (chunks) => chunks,
                                
                               })}
               </h5>
@@ -94,11 +90,7 @@ export default function KeyFeatures() {
             <div className="flex flex-col justify-center items-start gap-6  max-w-[90vw]">
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
            {t.rich("items.export1.description", {
-                                fob: (chunks) => (
-                                  <Link href="/howweexport/fob" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                fob: (chunks) => chunks,
                                
                               })}
               </div>
@@ -113,11 +105,7 @@ export default function KeyFeatures() {
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
                {t.rich("items.export2.title", {
-                                cif: (chunks) => (
-                                  <Link href="/howweexport/cif" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                cif: (chunks) => chunks,
                                
                               })}
               </h5>
@@ -126,14 +114,7 @@ export default function KeyFeatures() {
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
                {t.rich("items.export2.description", {
-  cif: (chunks) => (
-    <Link
-      href="/howweexport/cif"
-      className="underline underline-offset-4"
-    >
-      {chunks}
-    </Link>
-  ),
+  cif: (chunks) => chunks,
   turkey: (chunks) => (
     <Link
       href="/travertine-turkey"
@@ -156,11 +137,7 @@ export default function KeyFeatures() {
             <div className="justify-center">
               <h5 className="text-Main-White text-[20px] lg:text-[24px] font-bold font-inter leading-[120%] -tracking-[0.82px]">
             {t.rich("items.export3.title", {
-                                exw: (chunks) => (
-                                  <Link href="/howweexport/exw" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                exw: (chunks) => chunks,
                                
                               })}
               </h5>
@@ -169,11 +146,7 @@ export default function KeyFeatures() {
             <div className="flex flex-col justify-center items-start gap-3">
                <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
             {t.rich("items.export3.description", {
-                                exw: (chunks) => (
-                                  <Link href="/howweexport/exw" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                exw: (chunks) => chunks,
                                
                               })}
               </div>
@@ -438,21 +411,9 @@ useEffect(() => {
         <div className='flex flex-col w-[90%] lg:w-[52%] ml-0 lg:ml-[4%]  xl:ml-[10%] items-center justify-center lg:items-start lg:justify-start text-start relative gap-10'>
             <h3 className='text-[20px] md:text-[24px] lg:text-[26px] font-bold leading-[110%] -tracking-[1.12px] mt-28 text-black'> 
                {t.rich("title", {
-                                fob: (chunks) => (
-                                  <Link href="/howweexport/fob" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
-                                cif: (chunks) => (
-                                  <Link href="/howweexport/cif" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
-                                exw: (chunks) => (
-                                  <Link href="/howweexport/exw" className="underline underline-offset-4">
-                                    {chunks}
-                                  </Link>
-                                ),
+                                fob: (chunks) => chunks,
+                                cif: (chunks) => chunks,
+                                exw: (chunks) => chunks,
                                
                               })}
             </h3>
