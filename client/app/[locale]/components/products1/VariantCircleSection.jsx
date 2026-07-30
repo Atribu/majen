@@ -6,32 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import InlineLinks from "../generalcomponent/InlineLinks";
 
-/**
- * Dairesel kart grid (variant / cut / process için ortak)
- *
- * Props:
- * - heading?: string
- * - text?: string
- * - variantCards: Array<{
- *     slug: string;            // "blaundos-ivory" | "vein-cut" | "honed" ...
- *     vKey?: string;           // imgMap için "ivory" | "light" | "antico" gibi
- *     title: string;
- *     href: string | UrlObject;
- *     img?: StaticImport | string;
- *     youtubeUrl?: string;
- *     description?: string;    // opsiyonel kısa açıklama
- *   }>
- * - imgMap: PRODUCT_IMG[productKey]   // {cover, ivory, light, antico}...
- * - heroSrc: StaticImport | string
- * - productKey: "blocks" | "slabs" | "tiles" | "special-designs" | "process"
- * - imgAlt?: string
- * - IMAGE_BY_PRODUCT_AND_VARIANT?: obj
- *   // { slabs: { "blaundos-ivory": <img>, "blaundos-light": <img>, ... } }
- * - IMAGE_BY_PRODUCT_VARIANT_AND_CUT?: obj
- *   // { slabs: { "blaundos-ivory": { "vein-cut": <img>, "cross-cut": <img> } } }
- * - variantSlug?: string  // cut kartlarında: "blaundos-ivory" gibi (opsiyonel)
- */
-
 function normalizeHref(href, locale) {
   if (!href) return "#";
 

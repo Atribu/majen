@@ -342,15 +342,15 @@
       },
       "gallery": {
         "ivory": [
-          "/images/blocks/ivory/1. webp",
-          "/images/blocks/ivory/2. webp",
-          "/images/blocks/ivory/3. webp"
+          "/images/blocks/ivory/1.webp",
+          "/images/blocks/ivory/2.webp",
+          "/images/blocks/ivory/3.webp"
         ],
         "light": [
-          "/images/blocks/light/1. webp"
+          "/images/blocks/light/1.webp"
         ],
         "antico": [
-          "/images/blocks/antico/1. webp"
+          "/images/blocks/antico/1.webp"
         ]
       },
       "otherOptions": {
@@ -686,7 +686,7 @@
           "title2": "Why Choose Vein-Cut?",
           "intro2": "Parallel bands create visual continuity across large surfaces.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut. webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein Cut Travertine Blocks"
           },
           "description": "Large-size blocks selected at the quarry with consistent character.",
@@ -707,15 +707,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -1929,7 +1929,7 @@
           "title2": "Why Choose Cross-Cut?",
           "intro2": "Soft, non-directional texture for calm, uniform fields.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
           "description": "Large-size blocks selected at the quarry with consistent character.",
@@ -1950,15 +1950,15 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -3435,9 +3435,9 @@
           "seo": {
             "title": "Vein Cut Travertine Slabs | Premium Wholesale | Majen",
             "description": "Premium vein-cut travertine slabs direct from Turkey. Linear veining, filled or unfilled, in honed, polished, brushed or tumbled finishes. 2cm & 3cm options, custom sizes, reliable export from quarry to site.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/new/slab/antico/Antikveincut. webp",
+          "image": "/images/new/slab/antico/Antikveincut.webp",
           "title": "Vein Cut Travertine Slabs",
           "alt": "Vein-cut travertine slabs",
           "span": "",
@@ -3445,10 +3445,10 @@
           "title2": "What Is Vein Cut Travertine?",
           "intro2": "Vein Cut Travertine is produced by slicing the stone parallel to its natural bedding layers, revealing continuous linear veins. This technique creates a directional pattern that enhances architectural balance and spatial continuity. Ideal for modern interiors, facades, and commercial flooring, these slabs combine elegance and durability with consistent coloration and smooth finishing. Majen’s quarry-direct sourcing ensures reliable quality and sustainable export standards.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikveincut. webp",
+            "src": "/images/cut/antico/Slab/Antikveincut.webp",
             "alt": "Vein Cut Travertine Slabs"
           },
-          "youtube": "https://youtu. be/GNdnB-TN2uA",
+          "youtube": "https://youtu.be/Q2b-jPTZ2h4",
           "variants": {
             "title": "Filled and Unfilled Surface Options",
             "text": "Majen’s Vein Cut Travertine Slabs are available in filled and unfilled varieties to match different design needs. Filled slabs are treated with resin or cement for dense, polished surfaces ideal for luxury interiors. Unfilled slabs preserve natural pores, showcasing authentic texture preferred for rustic and outdoor spaces. Every slab is meticulously inspected, reinforced, and documented before shipment to guarantee flawless international delivery."
@@ -3496,17 +3496,17 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/new/slab/antico/antikoveinhonedfilled. webp",
-                "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled. webp",
-                "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished. webp",
-                "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished. webp",
-                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled. webp",
-                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled. webp",
-                "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled. webp",
-                "unfilled:tumbled": "/images/new/slab/antico/tumbledveincutunfilled. webp",
-                "natural": "/images/new/slab/antico/Antikveincut. webp",
-                "filled-natural": "/images/new/slab/antico/Antikveincut. webp",
-                "unfillednatural": "/images/new/slab/antico/Antikveincut. webp"
+                "filled:honed": "/images/new/slab/antico/antikoveinhonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikoveinhonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/Antikveintransparentunpolished.webp",
+                "filled:polished": "/images/new/slab/antico/Antikveintransparentpolished.webp",
+                "filled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/AnticoVeincutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/tumbledveincutfilled.webp",
+                "unfilled:tumbled": "/images/new/slab/antico/tumbledveincutunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikveincut.webp",
+                "filled-natural": "/images/new/slab/antico/Antikveincut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikveincut.webp"
               }
             },
             "youtube": {
@@ -3579,7 +3579,7 @@
               "seo": {
                 "title": "Unilled Natural Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unilled Natural Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein Cut Travertine Slabs",
               "title": "Unfilled Natural Vein Cut Travertine Slabs",
@@ -3750,7 +3750,7 @@
               "seo": {
                 "title": "Unilled Natural Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unilled Natural Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein Cut Travertine Slabs",
               "title": "Unfilled Natural Vein Cut Travertine Slabs",
@@ -4132,7 +4132,7 @@
               "seo": {
                 "title": "Filled Natural Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Filled Natural Vein Cut Travertine Slabs with linear veins and balanced natural texture. Ivory, Light, and Antico tones available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Vein Cut Travertine Slabs",
               "title": "Filled Natural Vein Cut Travertine Slabs",
@@ -4514,7 +4514,7 @@
               "seo": {
                 "title": "Unfilled Honed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Honed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Honed Vein Cut Travertine Slabs",
               "title": "Unfilled Honed Vein Cut Travertine Slabs",
@@ -4890,15 +4890,15 @@
               }
             },
             "filled-honed": {
-              "youtubeByColor": {
-                "ivory": "https://youtu. be/3jKDWg_L28E",
-                "light": "https://youtu. be/F09nLec3qok",
-                "antico": "https://youtu. be/Fhn1dAK2joE"
+               "youtubeByColor": {
+                "ivory": "https://youtu.be/zgBUHHtvqAg",
+                "light": "https://youtu.be/Q2b-jPTZ2h4",
+                "antico": "https://youtu.be/L3bKsuWN0ls"
               },
               "seo": {
                 "title": "Filled Honed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Honed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Honed Vein Cut Travertine Slabs",
               "title": "Filled Honed Vein Cut Travertine Slabs",
@@ -5264,14 +5264,14 @@
             },
             "filled-polished": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/Fwn20WYgSqw",
-                "light": "https://youtu. be/c6IvJHtB6K4",
-                "antico": "https://youtu. be/Fhn1dAK2joE"
+                "ivory": "https://youtu.be/XIgEF8k2CDQ",
+                "light": "https://youtu.be/V-tyXaEHb_Y",
+                "antico": "https://youtu.be/N1f17Bl_Tnk"
               },
               "seo": {
                 "title": "Filled Polished Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Polished Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Polished Vein Cut Travertine Slabs",
               "title": "Filled Polished Vein Cut Travertine Slabs",
@@ -5646,14 +5646,14 @@
             },
             "unfilled-polished": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/c9ditRV2Vdc",
-                "light": "https://youtu. be/xw-4oEp2Qjk",
-                "antico": "https://youtu. be/Fhn1dAK2joE"
+                "ivory": "https://youtu.be/vOrR3lu8Dts",
+                "light": "https://youtu.be/bi9TGWyQkTE",
+                "antico": "https://youtu.be/wcm_TFFKO1c"
               },
               "seo": {
                 "title": "Unfilled Polished Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover unfilled Polished Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Polished Vein Cut Travertine Slabs",
               "title": "Unfilled Polished Vein Cut Travertine Slabs",
@@ -6030,14 +6030,14 @@
             },
             "filled-brushed": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/R0Bou3Z0L_o",
-                "light": "https://youtu. be/_iRCtIm1LEM",
-                "antico": "https://youtu. be/OrYomVKlRlM"
+                "ivory": "https://youtu.be/lZP34-lJScc",
+                "light": "https://youtu.be/YF-auGg-hB0",
+                "antico": "https://youtu.be/jD3yOQfOlOE"
               },
               "seo": {
                 "title": "Filled Brushed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Brushed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/new/slab/antico/AnticoVeincutbrushedfilled. webp"
+                "image": "/images/new/slab/antico/AnticoVeincutbrushedfilled.webp"
               },
               "h1": "Filled Brushed Vein Cut Travertine Slabs",
               "title": "Filled Brushed Vein Cut Travertine Slabs",
@@ -6421,7 +6421,7 @@
               "seo": {
                 "title": "Unfilled Brushed Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Brushed Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Vein Cut Travertine Slabs",
               "title": "Unfilled Brushed Vein Cut Travertine Slabs",
@@ -6797,15 +6797,15 @@
               }
             },
             "filled-tumbled": {
-              "youtubeByColor": {
-                "ivory": "https://youtu. be/Umnv9wcYXI8",
-                "light": "https://youtu. be/3E40TykN544",
-                "antico": "https://youtu. be/e1Uh8r7Pa2c"
+               "youtubeByColor": {
+                "ivory": "https://youtu.be/kAjY5MjWUr8",
+                "light": "https://youtu.be/P_6B9cCKPZI",
+                "antico": "https://youtu.be/5MypguxbPeQ"
               },
               "seo": {
                 "title": "Filled Tumbled Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Tumbled Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Vein Cut Travertine Slabs",
               "title": "Filled Tumbled Vein Cut Travertine Slabs",
@@ -7180,14 +7180,14 @@
             },
             "unfilled-tumbled": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/4_uDyhB0M_c",
-                "light": "https://youtu. be/cnehaTx2Ra4",
-                "antico": "https://youtu. be/gqAI3XmgVCQ"
+                "ivory": "https://youtu.be/5zssqXjHWt4",
+                "light": "https://youtu.be/81tsdk9b8YM",
+                "antico": "https://youtu.be/lMbJNQfW2pI"
               },
               "seo": {
                 "title": "Unfilled Tumbled Vein Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Tumbled Vein Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Tumbled Vein Cut Travertine Slabs",
               "title": "Unfilled Tumbled Vein Cut Travertine Slabs",
@@ -7568,9 +7568,9 @@
           "seo": {
             "title": "Cross Cut Travertine Slabs | Premium Wholesale | Majen",
             "description": "Elegant cross-cut travertine slabs with soft, cloud-like movement. Filled or unfilled; honed, polished, brushed or tumbled finishes. 2cm & 3cm, project-ready selection, direct quarry supply from Turkey.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/new/slab/antico/Antikcrosscut. webp",
+          "image": "/images/new/slab/antico/Antikcrosscut.webp",
           "title": "Cross Cut Travertine Slabs",
           "alt": "Cross-cut travertine slabs",
           "span": "",
@@ -7578,14 +7578,14 @@
           "title2": "What Is Cross Cut Travertine?",
           "intro2": "Cross Cut Travertine is produced by slicing the stone perpendicular to its natural bedding layers, exposing circular and cloudy textures instead of linear veins. This technique creates a balanced, non-directional pattern ideal for spaces requiring visual calm and continuity. Each slab from Majen’s Uşak–Ulubey quarry undergoes meticulous selection and calibration to achieve uniform appearance and stability.",
           "hero": {
-            "src": "/images/cut/antico/Slab/Antikcrosscut. webp",
+            "src": "/images/cut/antico/Slab/Antikcrosscut.webp",
             "alt": "Cross-cut slab hero image"
           },
           "variants": {
             "title": "Filled and Unfilled Surface Options",
             "text": "Majen’s Cross Cut Travertine Slabs are available in both filled and unfilled versions to suit different project aesthetics. Filled slabs offer a dense and smooth surface, ideal for high-end interiors, while unfilled slabs showcase natural pores and depth. Both types undergo thorough quality checks, ensuring stable structures and flawless finishes before export. Each shipment is carefully documented with certificates of origin and reinforced wooden crate packaging."
           },
-          "youtube": "https://youtu. be/II8CJhIGhQo",
+          "youtube": "https://youtu.be/XIgEF8k2CDQ",
           "desc": "Cross Cut Travertine Slabs expose the stone’s soft cloud-like patterns, resulting in a balanced and consistent appearance. Perfect for calm, modern interiors and uniform facade applications.",
           "TextSection": {
             "header1": "Surface Finishes and Textures",
@@ -7629,31 +7629,31 @@
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/new/slab/antico/antikocrosshonedfilled. webp",
-                "unfilled:honed": "/images/new/slab/antico/antikocrosshonedunfilled. webp",
-                "unfilled:polished": "/images/new/slab/antico/antikocrosspolishedunfilled. webp",
-                "filled:polished": "/images/new/slab/antico/antikocrosspolishedfilled. webp",
-                "filled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedfilled. webp",
-                "unfilled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedunfilled. webp",
-                "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled. webp",
-                "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled. webp",
-                "natural": "/images/new/slab/antico/Antikcrosscut. webp",
-                "filled-natural": "/images/new/slab/antico/Antikcrosscut. webp",
-                "unfillednatural": "/images/new/slab/antico/Antikcrosscut. webp"
+                "filled:honed": "/images/new/slab/antico/antikocrosshonedfilled.webp",
+                "unfilled:honed": "/images/new/slab/antico/antikocrosshonedunfilled.webp",
+                "unfilled:polished": "/images/new/slab/antico/antikocrosspolishedunfilled.webp",
+                "filled:polished": "/images/new/slab/antico/antikocrosspolishedfilled.webp",
+                "filled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedfilled.webp",
+                "unfilled:brushed": "/images/new/slab/antico/Antiquecrosscutbrushedunfilled.webp",
+                "filled:tumbled": "/images/new/slab/antico/crosstumbledfilled.webp",
+                "unfilled:tumbled": "/images/new/slab/antico/crosstumbledunfilled.webp",
+                "natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "filled-natural": "/images/new/slab/antico/Antikcrosscut.webp",
+                "unfillednatural": "/images/new/slab/antico/Antikcrosscut.webp"
               }
             },
-            "youtube": {
+              "youtube": {
               "combined": {
-                "filled:honed": "https://youtu. be/cHyEvwrRhss",
-                "unfilled:honed": "https://youtu. be/fzISnChgrus",
-                "unfilled:natural": "https://youtu. be/Zo_jkfLhM7c",
-                "filled:natural": "https://youtu. be/Zo_jkfLhM7c",
-                "unfilled:brushed": "https://youtu. be/iRqr4GyX4TM",
-                "filled:brushed": "https://youtu. be/qpJSEfd8nHM",
-                "unfilled:tumbled": "https://youtu. be/jkK0mEPgGgM",
-                "filled:tumbled": "https://youtu. be/GjKMASu-o5E",
-                "unfilled:polished": "https://youtu. be/VTNjKBEAbn0",
-                "filled:polished": "https://youtu. be/_CjHAUvAu8U"
+                "filled:honed": "https://youtu.be/dvrxbolORok",
+                "unfilled:honed": "https://youtu.be/lxcdh3wro_k",
+                "unfilled:natural": "https://youtu.be/lxcdh3wro_k",
+                "filled:natural": "https://youtu.be/dvrxbolORok",
+                "unfilled:brushed": "https://youtu.be/s97vqxjBYU0",
+                "filled:brushed": "https://youtu.be/_qhoLo6hMvM",
+                "unfilled:tumbled": "https://youtu.be/l18zqZk96qg",
+                "filled:tumbled": "https://youtu.be/ZvQEbVbSp_0",
+                "unfilled:polished": "https://youtu.be/d7vWutnC-V0",
+                "filled:polished": "https://youtu.be/XA7BKd61_uY"
               }
             },
             "heading": "Choose Your Process",
@@ -7712,7 +7712,7 @@
               "seo": {
                 "title": "Unfilled Natural Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Natural Cross Cut Travertine Slabs with open-pore texture and soft cloud patterns. Ivory, Light, and Antico tones available for worldwide",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Cross Cut Travertine Slabs",
               "title": "Unfilled Brushed Vein Cut Travertine Slabs",
@@ -7886,7 +7886,7 @@
               "seo": {
                 "title": "Filled Natural Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Filled Natural Cross Cut Travertine Slabs with soft cloud patterns and balanced natural tones. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Cross Cut Travertine Slabs",
               "title": "Filled Natural Cross Cut Travertine Slabs",
@@ -8270,7 +8270,7 @@
               "seo": {
                 "title": "Unfilled Natural Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Natural Cross Cut Travertine Slabs with open-pore texture and soft cloud patterns. Ivory, Light, and Antico tones available for worldwide",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Cross Cut Travertine Slabs",
               "title": "Unfilled Brushed Vein Cut Travertine Slabs",
@@ -8647,14 +8647,14 @@
             },
             "unfilled-honed": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/pNfBBl23XEQ",
-                "light": "https://youtu. be/TYZj98sEQF8",
-                "antico": "https://youtu. be/fzISnChgrus"
+                "ivory": "https://youtu.be/Fv2NqPosgMg",
+                "light": "https://youtu.be/lxcdh3wro_k",
+                "antico": "https://youtu.be/V3iZBXW9EqE"
               },
               "seo": {
                 "title": "Unfilled Honed Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Unfilled Honed Cross Cut Travertine Slabs with natural matte surface and open pores. Available in Ivory, Light, and Antico tones for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Unfilled Honed Cross Cut Travertine Slabs",
               "title": "Unfilled Honed Cross Cut Travertine Slabs",
@@ -9030,15 +9030,15 @@
               }
             },
             "filled-honed": {
-              "youtubeByColor": {
-                "ivory": "https://youtu. be/pNfBBl23XEQ",
-                "light": "https://youtu. be/FbuQh679SbA",
-                "antico": "https://youtu. be/cHyEvwrRhss"
+               "youtubeByColor": {
+                "ivory": "https://youtu.be/Z8vifeIkCNo",
+                "light": "https://youtu.be/dvrxbolORok",
+                "antico": "https://youtu.be/xzaoOb97Xdo"
               },
               "seo": {
                 "title": "Filled Honed Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Honed Cross Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Filled Honed Cross Cut Travertine Slabs",
               "title": "Filled Honed Cross Cut Travertine Slabs",
@@ -9415,14 +9415,14 @@
             },
             "filled-polished": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/Fhn1dAK2joE",
-                "light": "https://youtu. be/c6IvJHtB6K4",
-                "antico": "https://youtu. be/_CjHAUvAu8U"
+                "ivory": "https://youtu.be/XA7BKd61_uY",
+                "light": "https://youtu.be/fWJZtMubTPI",
+                "antico": "https://youtu.be/_HyaKKvYc-A"
               },
               "seo": {
                 "title": "Filled Polished Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Filled Polished Cross Cut Travertine Slabs with mirror gloss, filled structure, and continuous linear veins. Ivory, Light, and Antico colors available for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Filled Polished Cross Cut Travertine Slabs",
               "title": "Filled Polished Cross Cut Travertine Slabs",
@@ -9798,15 +9798,15 @@
               }
             },
             "unfilled-polished": {
-              "youtubeByColor": {
-                "ivory": "https://youtu. be/6liPoxS4BMA",
-                "light": "https://youtu. be/dEyq8-GP3J0",
-                "antico": "https://youtu. be/VTNjKBEAbn0"
+               "youtubeByColor": {
+                "ivory": "https://youtu.be/3ldwSa3Hfzw",
+                "light": "https://youtu.be/JO5QGsOSRdY",
+                "antico": "https://youtu.be/d7vWutnC-V0"
               },
               "seo": {
                 "title": "Unfilled Polished Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Discover Unfilled Polished Cross Cut Travertine Slabs with cloud-like patterns and glossy elegance. Ivory, Light, and Antico tones available for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Unfilled Polished Cross Cut Travertine Slabs",
               "title": "Unfilled Polished Cross Cut Travertine Slabs",
@@ -10183,14 +10183,14 @@
             },
             "filled-brushed": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/Fhn1dAK2joE",
-                "light": "https://youtu. be/r0WkAHSiHFg",
-                "antico": "https://youtu. be/qpJSEfd8nHM"
+                "ivory": "https://youtu.be/_qhoLo6hMvM",
+                "light": "https://youtu.be/4DCq8ZuNnV4",
+                "antico": "https://youtu.be/6g5a_K6PiOA"
               },
               "seo": {
                 "title": "Filled Brushed Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Filled Brushed Cross Cut Travertine Slabs with matte texture and soft cloud patterns. Ivory, Light, and Antico tones available for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Filled Brushed Cross Cut Travertine Slabs",
               "title": "Filled Brushed Cross Cut Travertine Slabs",
@@ -10567,14 +10567,14 @@
             },
             "unfilled-brushed": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/Fhn1dAK2joE",
-                "light": "https://youtu. be/Fhn1dAK2joE",
-                "antico": "https://youtu. be/Fhn1dAK2joE"
+                "ivory": "https://youtu.be/X3nizBjrn_E",
+                "light": "https://youtu.be/s97vqxjBYU0",
+                "antico": "https://youtu.be/LOFLHK4xB_I"
               },
               "seo": {
                 "title": "Unfilled Brushed Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Unfilled Brushed Cross Cut Travertine Slabs with soft matte texture and natural pores. Available in Ivory, Light, and Antico tones for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Unfilled Brushed Cross Cut Travertine Slabs",
               "title": "Unfilled Brushed Cross Cut Travertine Slabs",
@@ -10951,14 +10951,14 @@
             },
             "filled-tumbled": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/nbcGYu8yvIE",
-                "light": "https://youtu. be/72VJUUELC7o",
-                "antico": "https://youtu. be/GjKMASu-o5E"
+                "ivory": "https://youtu.be/DeT-q6mNRHw",
+                "light": "https://youtu.be/xjZBH-CJFb8",
+                "antico": "https://youtu.be/ZvQEbVbSp_0"
               },
               "seo": {
                 "title": "Filled Tumbled Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Filled Tumbled Cross Cut Travertine Slabs with aged matte texture and soft cloud patterns. Ivory, Light, and Antico tones available for worldwide",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Filled Tumbled Cross Cut Travertine Slabs",
               "title": "Filled Tumbled Cross Cut Travertine Slabs",
@@ -11335,14 +11335,14 @@
             },
             "unfilled-tumbled": {
               "youtubeByColor": {
-                "ivory": "https://youtu. be/4_uDyhB0M_c",
-                "light": "https://youtu. be/NsY_ZVqI-QE",
-                "antico": "https://youtu. be/jkK0mEPgGgM"
+                "ivory": "https://youtu.be/HJtbyBkno4I",
+                "light": "https://youtu.be/HJtbyBkno4I",
+                "antico": "https://youtu.be/l18zqZk96qg"
               },
               "seo": {
                 "title": "Unfilled Tumbled Cross Cut Travertine Slabs – Quarry Supplier from Turkey | Majen",
                 "description": "Explore Unfilled Tumbled Cross Cut Travertine Slabs with aged matte texture and open natural pores. Available in Ivory, Light, and Antico tones for worldwide export.",
-                "image": "/images/og/cross-custom. webp"
+                "image": "/images/og/cross-custom.webp"
               },
               "h1": "Unfilled Tumbled Cross Cut Travertine Slabs",
               "title": "Unfilled Tumbled Cross Cut Travertine Slabs",
@@ -12196,13 +12196,13 @@
         "Available finishes: polished, honed, brushed, and tumbled. For export, tiles are packed in reinforced wooden crates, strapped and wrapped to ensure safe container loading and long-distance sea freight."
       ],
       "images": {
-        "antico": "/images/tiles/antikokesim. webp",
-        "light": "/images/homepage/lightblok3. webp",
-        "ivory": "/images/tiles/Ivorykesim. webp"
+        "antico": "/images/tiles/antikokesim.webp",
+        "light": "/images/homepage/lightblok3.webp",
+        "ivory": "/images/tiles/Ivorykesim.webp"
       },
       "youtube": {
         "antico": "https://youtu. be/R-Egyq7BjL4",
-        "light": "/images/homepage/kesim. webp",
+        "light": "/images/homepage/kesim.webp",
         "ivory": "https://youtu. be/7YoOIsMVUkw"
       },
       "variants": {
@@ -12273,14 +12273,14 @@
           "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
         ],
         "images": {
-          "vein-cut": "/images/tiles/Ivorykesim. webp",
-          "cross-cut": "/images/homepage/kesim. webp"
+          "vein-cut": "/images/tiles/Ivorykesim.webp",
+          "cross-cut": "/images/homepage/kesim.webp"
         },
         "vein-cut": {
           "seo": {
             "title": "Vein Cut Travertine Tiles | Natural Stone Supplier – Majen",
             "description": "Discover Majen’s vein cut travertine tiles – premium linear-pattern slabs for walls, floors, and facades. Sustainably sourced, precisely cut, and globally exported with unmatched quality.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
           "title": "Vein Cut Travertine Tiles",
           "alt": "Vein-cut travertine tiles",
@@ -12289,7 +12289,7 @@
           "title2": "What Is Vein Cut Travertine?",
           "intro2": "Vein Cut Travertine is produced by slicing the stone in parallel with its natural bedding layers. This reveals continuous linear veins that emphasize structure, rhythm, and movement. The result is a refined stone that enhances architectural balance and visual depth. It’s an excellent choice for luxury interiors, high-end facades, and commercial spaces seeking a modern yet organic appearance.",
           "hero": {
-            "src": "/images/new/tiles/antico/AnticoVeinBrushedFilled8x8. webp",
+            "src": "/images/new/tiles/antico/AnticoVeinBrushedFilled8x8.webp",
             "alt": "Vein Cut Travertine Tiles"
           },
           "desc": "Large-size blocks selected at the quarry with consistent character.",
@@ -12338,34 +12338,34 @@
             "Choose from multiple surface treatments—honed, polished, brushed, tumbled or natural—to achieve your desired look. Each option enhances the stone’s natural depth, adapting perfectly to both contemporary and classic design settings.",
             "Majen’s logistics and packaging meet international export standards. Reinforced wooden crates, moisture protection, and accurate documentation (FOB/CIF) ensure your travertine tiles arrive safely, ready for global-scale projects."
           ],
-          "image": "/images/tiles/antikokesim. webp",
-          "youtube": "https://youtu. be/GNdnB-TN2uA",
+          "image": "/images/tiles/antikokesim.webp",
+          "youtube": "https://youtu.be/Q2b-jPTZ2h4",
           "processes": {
-            "youtube": {
+             "youtube": {
               "combined": {
-                "filled:honed": "https://youtu. be/z2hHL90nCVg",
-                "unfilled:honed": "https://youtu. be/z2hHL90nCVg",
-                "unfilled:natural": "https://youtu. be/z2hHL90nCVg",
-                "filled:natural": "https://youtu. be/z2hHL90nCVg",
-                "unfilled:brushed": "https://youtu. be/z2hHL90nCVg",
-                "filled:brushed": "https://youtu. be/z2hHL90nCVg",
-                "unfilled:tumbled": "https://youtu. be/z2hHL90nCVg",
-                "filled:tumbled": "https://youtu. be/z2hHL90nCVg",
-                "unfilled:polished": "https://youtu. be/z2hHL90nCVg",
-                "filled:polished": "https://youtu. be/z2hHL90nCVg"
+                "filled:honed": "https://youtu.be/Q2b-jPTZ2h4",
+                "unfilled:honed": "https://youtu.be/tDM2OAJXaXs",
+                "unfilled:natural": "https://youtu.be/tDM2OAJXaXs",
+                "filled:natural": "https://youtu.be/Q2b-jPTZ2h4",
+                "unfilled:brushed": "https://youtu.be/mM4FsnfLVpQ",
+                "filled:brushed": "https://youtu.be/jD3yOQfOlOE",
+                "unfilled:tumbled": "https://youtu.be/lMbJNQfW2pI",
+                "filled:tumbled": "https://youtu.be/5MypguxbPeQ",
+                "unfilled:polished": "https://youtu.be/vOrR3lu8Dts",
+                "filled:polished": "https://youtu.be/N1f17Bl_Tnk"
               }
             },
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -12534,15 +12534,15 @@
               }
             },
             "unfilled-honed": {
-              "youtubeByColor": {
-                "ivory": "https://youtu. be/Fhn1dAK2joE",
-                "light": "https://youtu. be/Fhn1dAK2joE",
-                "antico": "https://youtu. be/Fhn1dAK2joE"
+               "youtubeByColor": {
+                "ivory": "https://youtu.be/tDM2OAJXaXs",
+                "light": "https://youtu.be/8Fc57el6ENc",
+                "antico": "https://youtu.be/nAfs-FX1hyA"
               },
               "seo": {
                 "title": "Unfilled Honed Vein Cut Travertine Tiles | Natural Matte Finish – Majen",
                 "description": "Discover Majen’s unfilled honed vein cut travertine tiles — natural pores, soft matte finish, and linear veins for modern rustic designs. Authentic beauty, global quality.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Honed Vein Cut Travertine Tiles",
               "title": "Unfilled Honed Vein Cut Travertine Tiles",
@@ -13658,7 +13658,7 @@
               "seo": {
                 "title": "Filled Honed Vein Cut Travertine Tiles | Premium Natural Stone – Majen",
                 "description": "Explore Majen’s filled honed vein cut travertine tiles — smooth, matte-finished slabs for luxury walls and floors. Precisely cut, filled, and globally exported with consistent quality.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Honed Vein Cut Travertine Tiles",
               "title": "Filled Honed Vein Cut Travertine Tiles",
@@ -14859,7 +14859,7 @@
               "seo": {
                 "title": "Filled Polished Vein Cut Travertine Tiles | Premium Glossy Finish – Majen",
                 "description": "Majen’s filled polished vein cut travertine tiles deliver glossy, elegant surfaces with linear patterns. Perfect for luxury interiors, precisely cut, and globally exported with top-tier quality.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Polished Vein Cut Travertine Tiles",
               "title": "Filled Polished Vein Cut Travertine Tiles",
@@ -16033,7 +16033,7 @@
               "seo": {
                 "title": "Unfilled Polished Vein Cut Travertine Tiles | Natural Shine & Authentic Texture – Majen",
                 "description": "Discover Majen’s unfilled polished vein cut travertine tiles — open-pore texture, glossy surface, and timeless linear veins. The perfect balance of raw beauty and luxury.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Polished Vein Cut Travertine Tiles",
               "title": "Unfilled Polished Vein Cut Travertine Tiles",
@@ -17149,7 +17149,7 @@
               "seo": {
                 "title": "Filled Brushed Vein Cut Travertine Tiles | Natural Texture & Strength – Majen",
                 "description": "Majen’s filled brushed vein cut travertine tiles combine natural warmth with durability. Perfect for interior and exterior designs — eco-sourced, filled, brushed, and globally exported.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Vein Cut Travertine Slabs",
               "title": "Filled Brushed Vein Cut Travertine Tiles",
@@ -18269,7 +18269,7 @@
               "seo": {
                 "title": "Unfilled Brushed Vein Cut Travertine Tiles | Natural Textured Elegance – Majen",
                 "description": "Majen’s unfilled brushed vein cut travertine tiles feature open pores and a soft brushed finish for timeless natural beauty. Ideal for modern rustic interiors and outdoor designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Vein Cut Travertine Tiles",
               "title": "Unfilled Brushed Vein Cut Travertine Tiles",
@@ -19385,7 +19385,7 @@
               "seo": {
                 "title": "Filled Natural Vein Cut Travertine Tiles | Authentic Matte Finish – Majen",
                 "description": "Majen’s filled natural vein cut travertine tiles combine strength with raw texture. Elegant linear veins and soft matte surface ideal for natural interiors and outdoor spaces.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Vein Cut Travertine Tiles",
               "title": "Filled Natural Vein Cut Travertine Tiles",
@@ -20505,7 +20505,7 @@
               "seo": {
                 "title": "Unfilled Natural Vein Cut Travertine Tiles | Raw Authentic Texture – Majen",
                 "description": "Majen’s unfilled natural vein cut travertine tiles preserve pure texture and linear veins. Raw beauty, authentic tone, and global quality — perfect for natural, rustic designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein Cut Travertine Tiles",
               "title": "Unfilled Natural Vein Cut Travertine Tiles",
@@ -21621,7 +21621,7 @@
               "seo": {
                 "title": "Filled Tumbled Vein Cut Travertine Tiles | Rustic Natural Finish – Majen",
                 "description": "Majen’s filled tumbled vein cut travertine tiles offer rustic charm with modern durability. Soft, aged texture with filled strength — ideal for luxury interiors and outdoor designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Vein Cut Travertine Tiles",
               "title": "Filled Tumbled Vein Cut Travertine Tiles",
@@ -22741,7 +22741,7 @@
               "seo": {
                 "title": "Unfilled Tumbled Vein Cut Travertine Tiles | Rustic Natural Elegance – Majen",
                 "description": "Majen’s unfilled tumbled vein cut travertine tiles feature open pores and aged texture. Naturally breathable, slip-resistant, and ideal for timeless rustic architecture.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Tumbled Vein Cut Travertine Tiles",
               "title": "Unfilled Tumbled Vein Cut Travertine Tiles",
@@ -23854,7 +23854,7 @@
           "seo": {
             "title": "Cross Cut Travertine Tiles | Natural Stone Supplier – Majen",
             "description": "Explore Majen’s cross cut travertine tiles – premium cloudy-pattern slabs for walls, floors, and interiors. Sustainably sourced, precisely cut, and globally exported with outstanding quality.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
           "title": "Cross Cut Travertine Tiles",
           "alt": "Cross-cut travertine tiles",
@@ -23863,7 +23863,7 @@
           "title2": "What Is Cross Cut Travertine?",
           "intro2": "Cross cut travertine is formed when the stone is sliced across its bedding plane, exposing circular and irregular patterns instead of linear veins. This natural formation creates a smooth, cloud-like design that enhances light and adds visual softness to interior and exterior spaces. Cross cut travertine is ideal for those seeking a neutral organic aesthetic that complements both contemporary and traditional designs.",
           "hero": {
-            "src": "/images/new/tiles/antico/AnticoCrossBrushedUnfilled8x8. webp",
+            "src": "/images/new/tiles/antico/AnticoCrossBrushedUnfilled8x8.webp",
             "alt": "Cross-cut slab hero image"
           },
           "desc": "Large-size blocks selected at the quarry with consistent character.",
@@ -23912,20 +23912,20 @@
             "Majen operates with sustainable quarry practices—water recycling, efficient energy use, and responsible extraction. Our approach minimizes environmental impact while ensuring long-term resource preservation and global compliance standards.",
             "Each order is securely packed in reinforced crates and moisture-protected for long-distance transport. Majen’s export team manages full documentation, customs, and logistics to deliver your travertine tiles safely to any destination."
           ],
-          "image": "/images/tiles/kesim. webp",
-          "youtube": "https://youtu. be/GNdnB-TN2uA",
+          "image": "/images/tiles/kesim.webp",
+          "youtube": "https://youtu.be/XIgEF8k2CDQ",
           "processes": {
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "youtube": {
@@ -24116,7 +24116,7 @@
               "seo": {
                 "title": "Unfilled Honed Cross Cut Travertine Tiles | Natural Matte Elegance – Majen",
                 "description": "Majen’s unfilled honed cross cut travertine tiles feature open pores, matte finish, and cloudy texture. Modern, natural, and globally exported for luxury interiors.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Honed Cross Cut Travertine Tiles",
               "title": "Unfilled Honed Cross Cut Travertine Tiles",
@@ -25232,7 +25232,7 @@
               "seo": {
                 "title": "Filled Honed Cross Cut Travertine Tiles | Natural Matte Finish – Majen",
                 "description": "Explore Majen’s filled honed cross cut travertine tiles — smooth matte surface, cloud-like pattern, and timeless natural elegance. Ideal for luxury interiors and global export.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Honed Cross Cut Travertine Tiles",
               "title": "Filled Honed Cross Cut Travertine Tiles",
@@ -26348,7 +26348,7 @@
               "seo": {
                 "title": "Filled Polished Cross Cut Travertine Tiles | Glossy Natural Elegance – Majen",
                 "description": "Majen’s filled polished cross cut travertine tiles feature a glossy finish and cloud-like texture. Elegant, durable, and ideal for luxury interiors and architectural projects.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Polished Cross Cut Travertine Tiles",
               "title": "Filled Polished Cross Cut Travertine Tiles",
@@ -27464,7 +27464,7 @@
               "seo": {
                 "title": "Unfilled Polished Cross Cut Travertine Tiles | Glossy Natural Texture – Majen",
                 "description": "Majen’s unfilled polished cross cut travertine tiles feature open pores, glossy finish, and cloudy natural texture. Elegant, authentic, and globally exported.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Polished Cross Cut Travertine Tiles",
               "title": "Unfilled Polished Cross Cut Travertine Tiles",
@@ -28580,7 +28580,7 @@
               "seo": {
                 "title": "Filled Brushed Cross Cut Travertine Tiles | Natural Warm Texture – Majen",
                 "description": "Majen’s filled brushed cross cut travertine tiles combine tactile softness with natural cloud-like patterns. Durable, elegant, and globally exported for refined interiors.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Brushed Cross Cut Travertine Tiles",
               "title": "Filled Brushed Cross Cut Travertine Tiles",
@@ -29696,7 +29696,7 @@
               "seo": {
                 "title": "Filled Natural Cross Cut Travertine Tiles | Organic Matte Finish – Majen",
                 "description": "Majen’s filled natural cross cut travertine tiles combine cloud-like texture with natural matte beauty. Durable, authentic, and ideal for modern and rustic interiors worldwide.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Cross Cut Travertine Tiles",
               "title": "Filled Natural Cross Cut Travertine Tiles",
@@ -30812,7 +30812,7 @@
               "seo": {
                 "title": "Unfilled Natural Cross Cut Travertine Tiles | Raw Authentic Texture – Majen",
                 "description": "Majen’s unfilled natural cross cut travertine tiles feature open pores, raw texture, and cloudy patterns. Pure, breathable stone ideal for natural, timeless interiors.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Cross Cut Travertine Tiles",
               "title": "Unfilled Natural Cross Cut Travertine Tiles",
@@ -31928,7 +31928,7 @@
               "seo": {
                 "title": "Unfilled Brushed Cross Cut Travertine Tiles | Warm Natural Texture – Majen",
                 "description": "Majen’s unfilled brushed cross cut travertine tiles feature open pores, tactile surface, and cloudy texture. Natural, warm, and durable — ideal for global interiors.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Cross Cut Travertine Tiles",
               "title": "Unfilled Brushed Cross Cut Travertine Tiles",
@@ -33044,7 +33044,7 @@
               "seo": {
                 "title": "Filled Tumbled Cross Cut Travertine Tiles | Timeless Natural Elegance – Majen",
                 "description": "Majen’s filled tumbled cross cut travertine tiles feature a soft aged texture and cloudy pattern. Durable, slip-resistant, and ideal for rustic luxury interiors worldwide.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Cross Cut Travertine Tiles",
               "title": "Filled Tumbled Cross Cut Travertine Tiles",
@@ -34160,7 +34160,7 @@
               "seo": {
                 "title": "Unfilled Tumbled Cross Cut Travertine Tiles | Rustic Natural Elegance – Majen",
                 "description": "Majen’s unfilled tumbled cross cut travertine tiles combine open pores, aged texture, and cloudy patterns. Naturally slip-resistant and perfect for timeless rustic designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Tumbled Cross Cut Travertine Tiles",
               "title": "Unfilled Tumbled Cross Cut Travertine Tiles",
@@ -35716,17 +35716,17 @@
           "Available finishes: polished, honed, brushed, tumbled. Slabs are packed in reinforced wooden crates, strapped and wrapped for safe container loading and long-distance sea freight."
         ],
         "images": {
-          "vein-cut": "/images/homepage/Pavers2. webp",
-          "cross-cut": "/images/homepage/Pavers1. webp"
+          "vein-cut": "/images/homepage/Pavers2.webp",
+          "cross-cut": "/images/homepage/Pavers1.webp"
         },
         "vein-cut": {
           "seo": {
             "title": "Vein Cut Travertine Pavers | Global Exporter of Premium Outdoor Stone",
             "description": "Discover premium vein cut travertine pavers for outdoor designs. Durable, non-slip, and globally supplied directly from Turkish quarries.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/homepage/Pavers2. webp",
-          "youtube": "https://youtu. be/II8CJhIGhQo",
+          "image": "/images/homepage/Pavers2.webp",
+          "youtube": "https://youtu.be/XIgEF8k2CDQ",
           "desc": "Vein Cut Travertine Pavers reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
           "title": "Vein Cut Travertine Pavers",
           "alt": "Vein Cut Travertine Pavers",
@@ -35735,7 +35735,7 @@
           "title2": "What Makes Vein Cut Travertine Unique?",
           "intro2": "Unlike cross-cut travertine, vein cut travertine highlights the stone’s natural layers, creating striking lines and grain flow. This formation provides a sense of depth and sophistication, making it a top choice for designers seeking architectural harmony. The material’s density and subtle variation make it durable and elegant for outdoor and indoor use alike.",
           "hero": {
-            "src": "/images/homepage/Pavers2. webp",
+            "src": "/images/homepage/Pavers2.webp",
             "alt": "Vein Cut Travertine Pavers"
           },
           "TextSection": {
@@ -35802,15 +35802,15 @@
             },
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut. webp",
-                "natural": "/images/cut/antico/Slab/Antikveincut. webp"
+                "filled:honed": "/images/cut/antico/filling/Veincut/Antikfillingveincutpolished.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:polished": "/images/cut/antico/epoxy/veincut/Antikveinepoxypolished.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikveincut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikveincut.webp",
+                "natural": "/images/cut/antico/Slab/Antikveincut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -35988,7 +35988,7 @@
               "seo": {
                 "title": "Unfilled Honed Vein Cut Travertine Pavers | Natural Matte Outdoor Stone Exporter",
                 "description": "Unfilled honed vein cut travertine pavers with soft matte texture and natural pores. Ideal for timeless outdoor flooring, globally supplied.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Honed Vein Cut Travertine Pavers",
               "title": "Unfilled Honed Vein Cut Travertine Pavers",
@@ -37311,7 +37311,7 @@
               "seo": {
                 "title": "Filled Honed Vein Cut Travertine Pavers | Global Supplier of Polished Outdoor Stone",
                 "description": "Filled honed vein cut travertine pavers for pool decks and patios. Smooth texture, sealed durability, and global export by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Honed Vein Cut Travertine Pavers",
               "title": "Filled Honed Vein Cut Travertine Pavers",
@@ -38602,7 +38602,7 @@
               "seo": {
                 "title": "Filled Natural Vein Cut Travertine Pavers | Authentic Outdoor Stone Exporter",
                 "description": "Filled natural vein cut travertine pavers combine raw beauty with modern strength. Ideal for outdoor spaces, globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Vein Cut Travertine Pavers",
               "title": "Filled Natural Vein Cut Travertine Pavers",
@@ -39925,7 +39925,7 @@
               "seo": {
                 "title": "Unfilled Natural Vein Cut Travertine Pavers | Authentic Outdoor Stone Exporter",
                 "description": "Unfilled natural vein cut travertine pavers with open texture and rustic charm. Ideal for eco-friendly outdoor designs, globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Vein Cut Travertine Pavers",
               "title": "Unfilled Natural Vein Cut Travertine Pavers",
@@ -41252,7 +41252,7 @@
               "seo": {
                 "title": "Filled Polished Vein Cut Travertine Pavers | Luxury Outdoor Stone Exporter",
                 "description": "Filled polished vein cut travertine pavers with mirror-like finish and durability. Global export for luxury outdoor and indoor projects.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Polished Vein Cut Travertine Pavers",
               "title": "Filled Polished Vein Cut Travertine Pavers",
@@ -42559,7 +42559,7 @@
               "seo": {
                 "title": "Unfilled Polished Vein Cut Travertine Pavers | Natural Gloss Outdoor Stone Exporter",
                 "description": "Unfilled polished vein cut travertine pavers combine natural texture with refined shine. Ideal for outdoor elegance, globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Polished Vein Cut Travertine Pavers",
               "title": "Unfilled Polished Vein Cut Travertine Pavers",
@@ -43866,7 +43866,7 @@
               "seo": {
                 "title": "Filled Brushed Vein Cut Travertine Pavers | Textured Outdoor Stone Exporter",
                 "description": "Filled brushed vein cut travertine pavers with soft texture and grip. Global export for outdoor landscapes, patios, and pool decks.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Brushed Vein Cut Travertine Pavers",
               "title": "Filled Brushed Vein Cut Travertine Pavers",
@@ -45189,7 +45189,7 @@
               "seo": {
                 "title": "Unfilled Brushed Vein Cut Travertine Pavers | Textured Natural Stone Exporter",
                 "description": "Unfilled brushed vein cut travertine pavers combine soft texture with natural pores. Durable, slip-resistant, and globally supplied by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Vein Cut Travertine Pavers",
               "title": "Unfilled Brushed Vein Cut Travertine Pavers",
@@ -46498,7 +46498,7 @@
               "seo": {
                 "title": "Filled Tumbled Vein Cut Travertine Pavers | Antique Outdoor Stone Exporter",
                 "description": "Filled tumbled vein cut travertine pavers for classic outdoor designs. Non-slip, weatherproof, and globally supplied by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Vein Cut Travertine Pavers",
               "title": "Filled Tumbled Vein Cut Travertine Pavers",
@@ -47821,7 +47821,7 @@
               "seo": {
                 "title": "Unfilled Tumbled Vein Cut Travertine Pavers | Rustic Outdoor Stone Exporter",
                 "description": "Unfilled tumbled vein cut travertine pavers with antique texture and open pores. Non-slip, timeless, and globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Tumbled Vein Cut Travertine Pavers",
               "title": "Unfilled Tumbled Vein Cut Travertine Pavers",
@@ -49123,10 +49123,10 @@
           "seo": {
             "title": "Cross Cut Travertine Pavers | Global Supplier of Natural Outdoor Stone",
             "description": "Elegant cross cut travertine pavers for patios, pool decks, and walkways. Uniform texture, soft tones, and global export by Majen.",
-            "image": "/images/og/vein-custom. webp"
+            "image": "/images/og/vein-custom.webp"
           },
-          "image": "/images/new/slab/antico/Antikveincut. webp",
-          "youtube": "https://youtu. be/II8CJhIGhQo",
+          "image": "/images/new/slab/antico/Antikveincut.webp",
+          "youtube": "https://youtu.be/XIgEF8k2CDQ",
           "desc": "Vein Cut Travertine Slabs reveal the natural linear veins of the stone, creating a striking, continuous flow across surfaces. Ideal for wall cladding, flooring, and large-format designs that emphasize movement and depth.",
           "title": "Cross Cut Travertine Pavers",
           "alt": "Cross-cut travertine Paverss",
@@ -49135,7 +49135,7 @@
           "title2": "What Defines Cross Cut Travertine?",
           "intro2": "Unlike vein cut travertine, cross cut pavers highlight natural color blending rather than linear patterns. The result is a soft, balanced appearance suitable for minimalist and modern designs. Its subtle tones make it a preferred option for pool decks, patios, and garden paths where uniformity and elegance are key.",
           "hero": {
-            "src": "/images/homepage/Pavers1. webp",
+            "src": "/images/homepage/Pavers1.webp",
             "alt": "Cross-cut slab hero image"
           },
           "variants": {
@@ -49202,15 +49202,15 @@
             },
             "images": {
               "combined": {
-                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut. webp",
-                "natural": "/images/cut/antico/Slab/Antikcrosscut. webp"
+                "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:polished": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:brushed": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "filled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "unfilled:tumbled": "/images/cut/antico/Slab/Antikcrosscut.webp",
+                "natural": "/images/cut/antico/Slab/Antikcrosscut.webp"
               }
             },
             "heading": "Choose Your Process",
@@ -49387,7 +49387,7 @@
               "seo": {
                 "title": "Filled Natural Cross Cut Travertine Pavers | Authentic Outdoor Stone Exporter",
                 "description": "Filled natural cross cut travertine pavers combine raw beauty with strength. Durable, easy-care outdoor stone, globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Natural Cross Cut Travertine Pavers",
               "title": "Filled Natural Cross Cut Travertine Pavers",
@@ -50696,7 +50696,7 @@
               "seo": {
                 "title": "Unfilled Natural Cross Cut Travertine Pavers | Authentic Outdoor Stone Supplier",
                 "description": "Unfilled natural cross cut travertine pavers with open pores and organic texture. Rustic, timeless, and globally supplied by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Natural Cross Cut Travertine Pavers",
               "title": "Unfilled Natural Cross Cut Travertine Pavers",
@@ -52005,7 +52005,7 @@
               "seo": {
                 "title": "Unfilled Honed Cross Cut Travertine Pavers | Natural Matte Outdoor Stone Supplier",
                 "description": "Unfilled honed cross cut travertine pavers with soft matte texture and natural pores. Durable, timeless, and globally supplied by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Honed Cross Cut Travertine Pavers",
               "title": "Unfilled Honed Cross Cut Travertine Pavers",
@@ -53314,7 +53314,7 @@
               "seo": {
                 "title": "Filled Honed Cross Cut Travertine Pavers | Global Supplier of Natural Outdoor Stone",
                 "description": "Filled honed cross cut travertine pavers with smooth matte texture and uniform pattern. Global export for modern outdoor designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Honed Cross Cut Travertine Pavers",
               "title": "Filled Honed Cross Cut Travertine Pavers",
@@ -54619,7 +54619,7 @@
               "seo": {
                 "title": "Filled Polished Cross Cut Travertine Pavers | Luxury Outdoor Stone Exporter",
                 "description": "Filled polished cross cut travertine pavers with glossy finish and strength. Global export for luxury outdoor and indoor designs.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Polished Cross Cut Travertine Pavers",
               "title": "Filled Polished Cross Cut Travertine Pavers",
@@ -55928,7 +55928,7 @@
               "seo": {
                 "title": "Unfilled Polished Cross Cut Travertine Pavers | Natural Gloss Stone Exporter",
                 "description": "Unfilled polished cross cut travertine pavers with glossy texture and natural pores. Timeless elegance and global export by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Polished Cross Cut Travertine Pavers",
               "title": "Unfilled Polished Cross Cut Travertine Pavers",
@@ -57237,7 +57237,7 @@
               "seo": {
                 "title": "Filled Brushed Cross Cut Travertine Pavers | Textured Outdoor Stone Exporter",
                 "description": "Filled brushed cross cut travertine pavers with natural texture and warm tone. Durable, slip-resistant, and globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Brushed Cross Cut Travertine Pavers",
               "title": "Filled Brushed Cross Cut Travertine Pavers",
@@ -58546,7 +58546,7 @@
               "seo": {
                 "title": "Unfilled Brushed Cross Cut Travertine Pavers | Textured Natural Stone Exporter",
                 "description": "Unfilled brushed cross cut travertine pavers with soft texture and natural pores. Rustic, durable, and globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Brushed Cross Cut Travertine Pavers",
               "title": "Unfilled Brushed Cross Cut Travertine Pavers",
@@ -59843,7 +59843,7 @@
               "seo": {
                 "title": "Filled Tumbled Cross Cut Travertine Pavers | Antique Outdoor Stone Exporter",
                 "description": "Filled tumbled cross cut travertine pavers with soft edges and antique texture. Durable, weatherproof, and globally exported by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Filled Tumbled Cross Cut Travertine Pavers",
               "title": "Filled Tumbled Cross Cut Travertine Pavers",
@@ -61148,7 +61148,7 @@
               "seo": {
                 "title": "Unfilled Tumbled Cross Cut Travertine Pavers | Rustic Outdoor Stone Exporter",
                 "description": "Unfilled tumbled cross cut travertine pavers with antique edges and natural texture. Authentic, slip-resistant, and globally supplied by Majen.",
-                "image": "/images/og/vein-custom. webp"
+                "image": "/images/og/vein-custom.webp"
               },
               "h1": "Unfilled Tumbled Cross Cut Travertine Pavers",
               "title": "Unfilled Tumbled Cross Cut Travertine Pavers",
@@ -63181,7 +63181,7 @@
         "excerpt": "How to create clean, contemporary spaces using light travertine surfaces.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/antikoarkplan. webp"
+        "cover": "/images/homepage/antikoarkplan.webp"
       },
       {
         "slug": "/travertine-tiles-guide",
@@ -63189,7 +63189,7 @@
         "excerpt": "Travertine tiles are widely used in flooring and wall coverings, combining natural aesthetics with durability. Available in multiple finishes, they suit modern and traditional designs in residential and commercial spaces.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/kesim. webp"
+        "cover": "/images/homepage/kesim.webp"
       },
       {
         "slug": "/travertine-slabs-guide",
@@ -63197,7 +63197,7 @@
         "excerpt": "Travertine slabs are ideal for large-scale projects requiring seamless surfaces like countertops and facades. Their wide dimensions highlight natural patterns, delivering a luxurious look for interiors and architecture.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/slabler2. webp"
+        "cover": "/images/homepage/slabler2.webp"
       },
       {
         "slug": "/travertine-blocks-guide",
@@ -63205,7 +63205,7 @@
         "excerpt": "Travertine blocks are the raw form extracted from quarries, then cut and processed into tiles or slabs. Valued by manufacturers and exporters, they are the base material for large projects and custom stonework.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/Ivoryblok. webp"
+        "cover": "/images/homepage/Ivoryblok.webp"
       },
       {
         "slug": "travertines/travertine-pavers-guide",
@@ -63213,7 +63213,7 @@
         "excerpt": "Travertine pavers are durable outdoor solutions for paths, driveways, patios, and pool decks. Their slip-resistant surface and weather endurance make them a preferred choice for landscaping and exterior projects.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/newblog/travertinepavers. webp"
+        "cover": "/images/newblog/travertinepavers.webp"
       },
       {
         "slug": "travertines/travertine-mosaics-guide",
@@ -63221,7 +63221,7 @@
         "excerpt": "Travertine mosaics combine small stone pieces into decorative patterns. Popular in bathrooms, kitchens, and feature walls, they add texture and style while maintaining the durability of natural stone.",
         "date": "2025-01-20",
         "category": "travertine",
-        "cover": "/images/homepage/antikarkaplan4. webp"
+        "cover": "/images/homepage/antikarkaplan4.webp"
       },
       {
         "slug": "travertines/polished-travertine-guide",
@@ -63229,7 +63229,7 @@
         "excerpt": "Polished travertine offers a glossy, reflective surface ideal for luxury interiors. It enhances the stone’s natural patterns while creating a modern, elegant atmosphere in residential and commercial spaces.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/Polishedtravertine. webp"
+        "cover": "/images/newblog/Polishedtravertine.webp"
       },
       {
         "slug": "travertines/honed-travertine",
@@ -63237,7 +63237,7 @@
         "excerpt": "Honed travertine has a smooth, matte surface that provides a softer, more natural look. Perfect for indoor floors, walls, and countertops where a subtle and contemporary appearance is preferred.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/blog/honed. jpg"
+        "cover": "/images/blog/honed.jpg"
       },
       {
         "slug": "travertines/tumbled-travertine",
@@ -63245,7 +63245,7 @@
         "excerpt": "Tumbled travertine features a weathered, rustic texture that adds character to spaces. Common in outdoor areas, patios, and pool surrounds, it creates a classic Mediterranean or antique style.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/travertinetumbled. webp"
+        "cover": "/images/newblog/travertinetumbled.webp"
       },
       {
         "slug": "travertines/brushed-travertine",
@@ -63253,7 +63253,7 @@
         "excerpt": "Brushed travertine has a gently textured surface achieved through special treatment. Suitable for both interior and exterior designs, it offers added grip and visual warmth.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/blog/Brushed. jpg"
+        "cover": "/images/blog/Brushed.jpg"
       },
       {
         "slug": "travertines/filled-travertine",
@@ -63261,7 +63261,7 @@
         "excerpt": "Filled travertine has natural pores sealed with resin or cement, creating a smoother surface. Often paired with polished finishes for modern interiors where a clean and refined look is desired.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/newblog/Filledtravertine. webp"
+        "cover": "/images/newblog/Filledtravertine.webp"
       },
       {
         "slug": "travertines/unfilled-travertine",
@@ -63269,7 +63269,7 @@
         "excerpt": "Unfilled travertine retains its natural pores and raw texture. Preferred for traditional or outdoor settings where authenticity and a rugged, natural aesthetic are desired.",
         "date": "2025-01-19",
         "category": "travertine",
-        "cover": "/images/blog/unfilled. jpg"
+        "cover": "/images/blog/unfilled.jpg"
       },
       {
         "slug": "travertines/ivory-travertine",
@@ -63277,7 +63277,7 @@
         "excerpt": "Ivory travertine is bright and elegant, a favorite for luxury interiors. Its light shade creates a spacious, airy feeling, ideal for bathrooms, kitchens, and pool surroundings across contemporary projects.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/ivory. webp"
+        "cover": "/images/homepage/Ivory/ivory.webp"
       },
       {
         "slug": "travertines/light-travertine",
@@ -63285,7 +63285,7 @@
         "excerpt": "Light travertine offers warm beige tones that blend seamlessly with modern and classic schemes. Versatile for flooring, wall cladding, and outdoor landscaping across residential and commercial spaces.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Light/light. webp"
+        "cover": "/images/homepage/Light/light.webp"
       },
       {
         "slug": "travertines/antico-travertine",
@@ -63293,7 +63293,7 @@
         "excerpt": "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
         "date": "2025-01-18",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/antik. webp"
+        "cover": "/images/homepage/Antik/antik.webp"
       },
       {
         "slug": "travertines/travertine-flooring",
@@ -63301,7 +63301,7 @@
         "excerpt": "Travertine flooring is prized for durability and natural beauty. With varied finishes and colors, it enhances modern and classic interiors and withstands daily use in homes and commercial spaces.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Light/lighttasarim3. webp"
+        "cover": "/images/homepage/Light/lighttasarim3.webp"
       },
       {
         "slug": "travertines/travertine-cladding",
@@ -63309,7 +63309,7 @@
         "excerpt": "Travertine cladding adds elegance to walls and facades, delivering natural insulation and timeless style. A popular choice for residential projects and commercial architecture alike.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Light/lighttasarim4. webp"
+        "cover": "/images/homepage/Light/lighttasarim4.webp"
       },
       {
         "slug": "travertines/travertine-facade",
@@ -63317,7 +63317,7 @@
         "excerpt": "Travertine facades create strong, stylish exteriors. Weather resistance and natural variation make them ideal for modern buildings and restoration work seeking authentic stone character.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/Antiktasarim4. webp"
+        "cover": "/images/homepage/Antik/Antiktasarim4.webp"
       },
       {
         "slug": "travertines/travertine-bathroom",
@@ -63325,7 +63325,7 @@
         "excerpt": "Travertine bathrooms evoke luxury and calm. Used in tiles, mosaics, and vanity tops, the stone brings spa-like warmth and texture to contemporary and classic spaces.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/Ivorytasarim1. webp"
+        "cover": "/images/homepage/Ivory/Ivorytasarim1.webp"
       },
       {
         "slug": "travertines/travertine-kitchen",
@@ -63333,7 +63333,7 @@
         "excerpt": "In kitchens, travertine works for countertops, backsplashes, and floors. Its natural tones pair beautifully with wood, metal, and minimalist cabinetry for enduring design.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Antik/Antiktasarim2. webp"
+        "cover": "/images/homepage/Antik/Antiktasarim2.webp"
       },
       {
         "slug": "travertines/travertine-pool",
@@ -63341,7 +63341,7 @@
         "excerpt": "Travertine pool surrounds are slip-resistant, heat-friendly, and refined. They provide a safe, elegant solution for outdoor leisure areas and resort-style landscapes.",
         "date": "2025-01-17",
         "category": "travertine",
-        "cover": "/images/homepage/Ivory/Ivorytasarim2. webp"
+        "cover": "/images/homepage/Ivory/Ivorytasarim2.webp"
       },
       {
         "slug": "travertines/travertine-turkey",
@@ -63349,7 +63349,7 @@
         "excerpt": "Travertine Turkey is synonymous with quality and scale. Vast reserves and skilled craftsmanship position the country as a top global source for natural stone products.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TravertineTurkey. webp"
+        "cover": "/images/blogs/TravertineTurkey.webp"
       },
       {
         "slug": "travertines/turkish-travertine",
@@ -63357,7 +63357,7 @@
         "excerpt": "Turkish travertine is globally recognized for color diversity and durability. Exported to major markets, it’s a leading material for construction and design projects worldwide.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TurkishTravertine. webp"
+        "cover": "/images/blogs/TurkishTravertine.webp"
       },
       {
         "slug": "travertines/travertine-quarry",
@@ -63365,7 +63365,7 @@
         "excerpt": "Travertine quarries in Turkey produce high-quality blocks at scale. These raw materials are processed into tiles, slabs, and custom products for global distribution.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/TravertineQuarry. webp"
+        "cover": "/images/blogs/TravertineQuarry.webp"
       },
       {
         "slug": "travertines/travertine-supplier",
@@ -63373,7 +63373,7 @@
         "excerpt": "A travertine supplier delivers ready-to-use tiles and slabs to buyers worldwide. Reliable partners ensure consistent quality assurance and on-time delivery.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/Travertinesupplier. webp"
+        "cover": "/images/blogs/Travertinesupplier.webp"
       },
       {
         "slug": "travertines/travertine-exporter",
@@ -63381,7 +63381,7 @@
         "excerpt": "Travertine exporters connect Turkish stone with international markets, managing logistics, documentation, and quality control throughout the supply chain.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/travertineexporter. webp"
+        "cover": "/images/blogs/travertineexporter.webp"
       },
       {
         "slug": "travertines/travertine-manufacturer",
@@ -63389,7 +63389,7 @@
         "excerpt": "Travertine manufacturers process raw blocks into finished products with advanced machinery. Precision cutting, polishing, and customization meet project demands.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/Travertinemanufacturer. webp"
+        "cover": "/images/blogs/Travertinemanufacturer.webp"
       },
       {
         "slug": "travertines/travertine-distributor",
@@ -63397,7 +63397,7 @@
         "excerpt": "Travertine distributors supply natural stone to contractors, retailers, and wholesalers, ensuring availability and after-sales support across regions.",
         "date": "2025-01-16",
         "category": "travertine",
-        "cover": "/images/blogs/travertinedistributor. webp"
+        "cover": "/images/blogs/travertinedistributor.webp"
       }
     ]
   },
@@ -63421,7 +63421,7 @@
     "light-travertine-modern-interiors": {
       "title": "Modern Interior Design with Light Travertine",
       "date": "2025-01-18",
-      "cover": "/images/blog/light-travertine-modern. webp",
+      "cover": "/images/blog/light-travertine-modern.webp",
       "sections": [
         {
           "h2": "Why Light Travertine?",
@@ -63446,7 +63446,7 @@
     "why-architects-prefer-silver-travertine": {
       "title": "Why Architects Prefer Silver Travertine?",
       "date": "2025-01-10",
-      "cover": "/images/blog/silver-travertine. webp",
+      "cover": "/images/blog/silver-travertine.webp",
       "sections": [
         {
           "h2": "Aesthetic Versatility",
@@ -63462,7 +63462,7 @@
     "travertine-vs-marble-which-is-better": {
       "title": "Travertine vs Marble: Which is Better?",
       "date": "2025-01-05",
-      "cover": "/images/blog/travertine-vs-marble. webp",
+      "cover": "/images/blog/travertine-vs-marble.webp",
       "sections": [
         {
           "h2": "Structure & Texture",
@@ -63483,7 +63483,7 @@
     "best-travertine-suppliers-turkey": {
       "title": "Best Travertine Suppliers in Turkey",
       "date": "2024-12-22",
-      "cover": "/images/blog/best-suppliers. webp",
+      "cover": "/images/blog/best-suppliers.webp",
       "sections": [
         {
           "h2": "What to Check",
@@ -63495,7 +63495,7 @@
     "why-choose-turkish-travertine": {
       "title": "Why Choose Turkish Travertine?",
       "date": "2024-12-10",
-      "cover": "/images/blog/why-turkish. webp",
+      "cover": "/images/blog/why-turkish.webp",
       "sections": [
         {
           "h2": "Advantages",
@@ -63507,7 +63507,7 @@
     "best-travertine-for-outdoor-projects": {
       "title": "Best Travertine for Outdoor Projects",
       "date": "2024-11-30",
-      "cover": "/images/blog/outdoor. webp",
+      "cover": "/images/blog/outdoor.webp",
       "sections": [
         {
           "h2": "Finishes",
@@ -63548,7 +63548,7 @@
         "metaDesc": "Explore Turkish travertine tiles: sizes, finishes, colors, applications, specs and care. Quarry-backed supplier with FOB/CIF export support.",
         "h1": "Travertine Tiles",
         "intro": "Travertine tiles are one of the most popular natural stone products, chosen for their elegance, durability, and timeless appeal. Used across floors, walls, bathrooms, kitchens, and outdoor spaces, Turkish travertine tiles combine centuries of architectural heritage with modern design versatility. Their wide range of colors, finishes, and sizes allow designers, contractors, and homeowners to adapt them to almost any style, from contemporary minimalism to classic Mediterranean charm.",
-        "socialImage": "https://majen. com. tr/media/travertine-tiles-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-tiles-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -63816,7 +63816,7 @@
         "metaDesc": "Explore Turkish Travertine Slabs in Ivory, Light & Antico. Compare polished, honed, brushed & tumbled finishes for countertops, cladding & facades. Specs, gallery & FAQs.",
         "h1": "Travertine Slabs",
         "intro": "Travertine slabs are large-format natural stone panels widely used in architecture and interior design. Their expansive dimensions highlight natural veining and allow for seamless applications in kitchens, bathrooms, facades, and commercial spaces. Turkish travertine slabs are internationally recognized for their durability, beauty, and versatility, making them the preferred choice for designers and builders worldwide.",
-        "socialImage": "https://majen. com. tr/media/travertine-slabs-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-slabs-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -64080,7 +64080,7 @@
         "metaDesc": "Explore Turkish Travertine Blocks in Ivory, Light & Antico. Learn how raw quarry blocks are cut into slabs and tiles. Specs, export info, pros & cons, and FAQs.",
         "h1": "Travertine Blocks",
         "intro": "Travertine blocks are the raw form of natural stone extracted directly from quarries. These massive pieces represent the first stage of travertine production, later cut into slabs, tiles or customized shapes for construction and design. Turkey, with its abundant travertine reserves, is one of the largest exporters of blocks worldwide, supplying material to factories, distributors, and projects across the globe.",
-        "socialImage": "https://majen. com. tr/media/travertine-blocks-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-blocks-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -64362,7 +64362,7 @@
         "metaDesc": "Explore Turkish Travertine Pavers in Ivory, Light & Antico. Durable and slip-resistant finishes for patios, driveways, and pool decks. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Pavers",
         "intro": "Travertine pavers are durable, slip-resistant natural stone tiles designed specifically for outdoor applications. They combine timeless aesthetics with practical performance, making them a top choice for patios, pool decks, driveways, and garden pathways. Turkish travertine pavers are highly valued for their weather resistance and versatility, helping homeowners and architects create elegant outdoor spaces that last for decades.",
-        "socialImage": "https://majen. com. tr/media/travertine-pavers-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-pavers-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -64602,7 +64602,7 @@
         "metaDesc": "Explore Turkish Travertine Mosaics in Ivory, Light & Antico. Perfect for kitchens, bathrooms, and feature walls. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Mosaics",
         "intro": "Travertine mosaics are small, decorative stone pieces arranged into patterns, sheets or designs for both interior and exterior use. They bring texture, character, and artistic expression to projects, combining the natural beauty of travertine with flexible applications. From kitchen backsplashes and bathroom walls to feature panels and flooring accents, Turkish travertine mosaics are a versatile choice for homeowners, architects, and designers worldwide.",
-        "socialImage": "https://majen. com. tr/media/travertine-mosaics-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-mosaics-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -64888,7 +64888,7 @@
         "metaDesc": "Explore Polished Travertine: reflective surfaces that highlight veining. Perfect for luxury floors, walls, bathrooms & commercial spaces. Specs, pros & cons, gallery & FAQs.",
         "h1": "Polished Travertine",
         "intro": "Polished travertine is a high-gloss finish that transforms natural stone into a luxurious surface. By mechanically polishing the stone, the surface becomes reflective, enhancing veining patterns and colors. This finish is especially popular in luxury interiors, including hotels, high-end residences, and commercial spaces, where elegance and sophistication are priorities.",
-        "socialImage": "https://majen. com. tr/media/polished-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/polished-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -65105,7 +65105,7 @@
         "metaDesc": "Discover Honed Travertine: a soft, matte finish ideal for floors, walls, and countertops. Non-reflective, slip-friendly, and perfect for contemporary designs. Specs, pros & cons, gallery & FAQs.",
         "h1": "Honed Travertine",
         "intro": "Honed travertine is a popular finish that delivers a smooth, matte surface without the reflective shine of polished stone. This finish provides a modern, understated elegance that works beautifully in both residential and commercial projects. Honed travertine is ideal for floors, walls, and countertops where a contemporary look and slip comfort are priorities.",
-        "socialImage": "https://majen. com. tr/media/honed-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/honed-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -65322,7 +65322,7 @@
         "metaDesc": "Discover Tumbled Travertine: aged, rustic finish perfect for patios, pools, bathrooms & Mediterranean-style interiors. Specs, pros & cons, gallery & FAQs.",
         "h1": "Tumbled Travertine",
         "intro": "Tumbled travertine is a natural stone finish that provides a rustic, antique appearance. Through a mechanical tumbling process, the stone develops softened edges, textured surfaces, and an aged look. This finish is highly valued for its authenticity and charm, often chosen for Mediterranean-inspired interiors and outdoor applications such as patios, pool decks, and courtyards. Tumbled travertine creates warm, inviting spaces with timeless character.",
-        "socialImage": "https://majen. com. tr/media/tumbled-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/tumbled-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -65526,8 +65526,8 @@
             "Ivory tumbled travertine patio flooring"
           ],
           "filenames": [
-            "tumbled-travertine-pool. webp",
-            "tumbled-travertine-patio. webp"
+            "tumbled-travertine-pool.webp",
+            "tumbled-travertine-patio.webp"
           ],
           "formats": [
             "webp",
@@ -65535,7 +65535,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/tumbled-travertine-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/tumbled-travertine-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/tumbled-travertine-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/tumbled-travertine-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "seoHead": {
           "title": "Tumbled Travertine from Turkey | Outdoor, Pool & Patio Guide",
@@ -65556,13 +65556,13 @@
             "title": "Tumbled Travertine from Turkey | Outdoor, Pool & Patio Guide",
             "description": "Rustic textured travertine: applications, specifications, slip resistance, durability, export info.",
             "url": "https://majen. com. tr/en/blog/travertines/tumbled-travertine",
-            "image": "https://majen. com. tr/media/tumbled-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/tumbled-travertine-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Tumbled Travertine from Turkey | Guide",
             "description": "Applications for patios, pools, paths, specifications and care.",
-            "image": "https://majen. com. tr/media/tumbled-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/tumbled-travertine-hero.webp"
           }
         },
         "ld": {
@@ -65605,7 +65605,7 @@
         "metaDesc": "Discover Brushed Travertine: a subtly textured finish that adds grip and warmth. Ideal for floors, terraces, bathrooms & transitional spaces. Specs, pros & cons, gallery & FAQs.",
         "h1": "Brushed Travertine",
         "intro": "Brushed travertine is a finish created by lightly treating the stone surface with brushes, giving it a soft texture and subtle aged look. This process enhances natural patterns while adding gentle grip, making brushed travertine both practical and visually appealing. It is a versatile finish used across floors, walls, and outdoor areas where slip resistance and warmth are desired.",
-        "socialImage": "https://majen. com. tr/media/brushed-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/brushed-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -65827,8 +65827,8 @@
             "Brushed travertine wall cladding detail"
           ],
           "filenames": [
-            "brushed-travertine-bathroom. webp",
-            "brushed-travertine-terrace. webp"
+            "brushed-travertine-bathroom.webp",
+            "brushed-travertine-terrace.webp"
           ],
           "formats": [
             "webp",
@@ -65836,7 +65836,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/brushed-travertine-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/brushed-travertine-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/brushed-travertine-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/brushed-travertine-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "seoHead": {
           "title": "Brushed Travertine from Turkey | Floors, Bathrooms & Terraces Guide",
@@ -65857,13 +65857,13 @@
             "title": "Brushed Travertine from Turkey | Floors, Bathrooms & Terraces Guide",
             "description": "Applications, specifications, slip resistance and care guidance for brushed travertine.",
             "url": "https://majen. com. tr/en/blog/travertines/brushed-travertine",
-            "image": "https://majen. com. tr/media/brushed-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/brushed-travertine-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Brushed Travertine from Turkey | Guide",
             "description": "Floors, bathrooms, terraces, cladding—specs and care.",
-            "image": "https://majen. com. tr/media/brushed-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/brushed-travertine-hero.webp"
           }
         },
         "ld": {
@@ -66025,7 +66025,7 @@
         "metaDesc": "Explore Ivory Travertine: bright, elegant stone for floors, walls, bathrooms, kitchens & pools. Finishes, specs, pros & cons, gallery & FAQs.",
         "h1": "Ivory Travertine",
         "intro": "Ivory travertine is one of the most popular natural stone varieties, known for its soft beige tones and timeless elegance. This versatile color brightens interiors, enhances architectural designs, and blends seamlessly with both modern and classic styles. Turkish ivory travertine is especially valued worldwide for its durability, consistency, and ability to elevate spaces with natural sophistication.",
-        "socialImage": "https://majen. com. tr/media/ivory-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/ivory-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -66211,7 +66211,7 @@
         "metaDesc": "Discover Light Travertine: warm beige tones for flooring, walls, bathrooms, kitchens & outdoor projects. Specs, pros & cons, gallery & FAQs.",
         "h1": "Light Travertine",
         "intro": "Light travertine is a warm beige variation of natural stone that bridges the gap between classic and modern design. Its versatile tone creates a welcoming and harmonious atmosphere, making it one of the most widely used travertine colors worldwide. Sourced from Turkey’s renowned quarries, light travertine is valued for its consistency, durability, and adaptability to various finishes and applications.",
-        "socialImage": "https://majen. com. tr/media/light-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/light-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -66428,8 +66428,8 @@
             "Light travertine facade cladding panels"
           ],
           "filenames": [
-            "light-travertine-bathroom. webp",
-            "light-travertine-facade. webp"
+            "light-travertine-bathroom.webp",
+            "light-travertine-facade.webp"
           ],
           "formats": [
             "webp",
@@ -66437,7 +66437,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/light-travertine-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/light-travertine-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/light-travertine-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/light-travertine-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "microProof": [
           "Consistent shade lots and sample boards available.",
@@ -66468,13 +66468,13 @@
             "title": "Light Travertine from Turkey | Floors, Bathrooms, Kitchens & Facades",
             "description": "Color traits, finishes, applications, specifications and export info for Light Travertine.",
             "url": "https://majen. com. tr/en/blog/travertines/light-travertine",
-            "image": "https://majen. com. tr/media/light-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/light-travertine-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Light Travertine from Turkey | Guide",
             "description": "Applications, specs, care and export terms.",
-            "image": "https://majen. com. tr/media/light-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/light-travertine-hero.webp"
           }
         },
         "ld": {
@@ -66492,7 +66492,7 @@
         "metaDesc": "Explore Antico Travertine: earthy, rustic tones for courtyards, terraces, bathrooms & facades. Perfect for Mediterranean-style architecture. Specs, pros & cons, gallery & FAQs.",
         "h1": "Antico Travertine",
         "intro": "Antico travertine is a rustic, antique variation of natural stone characterized by its earthy tones and weathered texture. This stone is a favorite for Mediterranean-inspired and traditional designs, adding timeless character to both indoor and outdoor spaces. Turkish antico travertine is highly valued for its authenticity, durability, and ability to bring old-world charm into modern architectural contexts.",
-        "socialImage": "https://majen. com. tr/media/antico-travertine-hero. webp",
+        "socialImage": "https://majen. com. tr/media/antico-travertine-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -66713,8 +66713,8 @@
             "Antico travertine fireplace surround"
           ],
           "filenames": [
-            "antico-travertine-floor. webp",
-            "antico-travertine-fireplace. webp"
+            "antico-travertine-floor.webp",
+            "antico-travertine-fireplace.webp"
           ],
           "formats": [
             "webp",
@@ -66722,7 +66722,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/antico-travertine-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/antico-travertine-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/antico-travertine-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/antico-travertine-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "seoHead": {
           "title": "Antico Travertine from Turkey | Rustic Floors, Patios & Fireplaces Guide",
@@ -66743,13 +66743,13 @@
             "title": "Antico Travertine from Turkey | Rustic Floors, Patios & Fireplaces Guide",
             "description": "Rustic travertine: applications, specs, sealing and export details.",
             "url": "https://majen. com. tr/en/blog/travertines/antico-travertine",
-            "image": "https://majen. com. tr/media/antico-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/antico-travertine-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Antico Travertine from Turkey | Guide",
             "description": "Rustic travertine floors, patios, feature walls, fireplaces and more.",
-            "image": "https://majen. com. tr/media/antico-travertine-hero. webp"
+            "image": "https://majen. com. tr/media/antico-travertine-hero.webp"
           }
         },
         "ld": {
@@ -66788,7 +66788,7 @@
         "metaDesc": "Explore Travertine Flooring: strong, elegant, and timeless. Perfect for living rooms, lobbies, kitchens & bathrooms. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Flooring",
         "intro": "Travertine flooring is a timeless choice for both residential and commercial interiors, combining natural elegance with long-term durability. Its earthy tones and unique veining create inviting spaces that feel both luxurious and warm. Travertine is widely used in homes, hotels, and office buildings, valued for its ability to withstand daily use while maintaining beauty over decades.",
-        "socialImage": "https://majen. com. tr/media/travertine-flooring-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-flooring-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -67000,15 +67000,15 @@
             "title": "Travertine Flooring from Turkey | Residential, Commercial & Outdoor Guide",
             "description": "Travertine flooring applications, specifications, finishes, slip resistance and export support.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-flooring",
-            "image": "https://majen. com. tr/media/travertine-flooring-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-flooring-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Flooring from Turkey | Guide",
             "description": "Specs, applications and finishes for travertine flooring.",
-            "image": "https://majen. com. tr/media/travertine-flooring-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-flooring-hero.webp"
           },
-          "heroPreloadTag": "<link rel=\"preload\" as=\"image\" href=\"https://majen. com. tr/media/travertine-flooring-hero. webp\" imagesrcset=\"https://majen. com. tr/media/travertine-flooring-hero. webp 1600w\" imagesizes=\"100vw\" fetchpriority=\"high\">"
+          "heroPreloadTag": "<link rel=\"preload\" as=\"image\" href=\"https://majen. com. tr/media/travertine-flooring-hero.webp\" imagesrcset=\"https://majen. com. tr/media/travertine-flooring-hero.webp 1600w\" imagesizes=\"100vw\" fetchpriority=\"high\">"
         },
         "imageSEO": {
           "heroAlt": "Travertine flooring in modern living room – Turkish supplier",
@@ -67018,8 +67018,8 @@
             "Tumbled travertine outdoor patio flooring"
           ],
           "filenames": [
-            "travertine-flooring-bathroom. webp",
-            "travertine-flooring-patio. webp"
+            "travertine-flooring-bathroom.webp",
+            "travertine-flooring-patio.webp"
           ],
           "formats": [
             "webp",
@@ -67064,7 +67064,7 @@
         "metaDesc": "Discover Travertine Cladding: elegant natural stone for interior walls and exterior facades. Durable, stylish, and timeless. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Cladding",
         "intro": "Travertine cladding is the use of natural travertine stone as a decorative and functional covering for walls, facades, and architectural surfaces. This application adds elegance, insulation benefits, and durability to both interiors and exteriors. Turkish travertine cladding is especially popular for luxury homes, hotels, and public buildings due to its timeless aesthetic and robust performance.",
-        "socialImage": "https://majen. com. tr/media/travertine-cladding-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-cladding-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -67289,7 +67289,7 @@
         "metaDesc": "Discover Travertine Facades: durable, elegant stone cladding for residential and commercial buildings. Weather-resistant and timeless. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Facade",
         "intro": "Travertine facades are a hallmark of luxury architecture, blending durability with timeless elegance. Used for centuries in classical buildings and now in modern constructions, travertine facades provide strength, natural insulation, and sophisticated appearance. Turkish travertine is especially valued for facade applications due to its abundance, quality, and international reputation.",
-        "socialImage": "https://majen. com. tr/media/travertine-facade-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-facade-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -67489,8 +67489,8 @@
             "Bookmatched vein-cut travertine facade panels"
           ],
           "filenames": [
-            "travertine-facade-villa. webp",
-            "travertine-facade-hotel. webp"
+            "travertine-facade-villa.webp",
+            "travertine-facade-hotel.webp"
           ],
           "formats": [
             "webp",
@@ -67545,15 +67545,15 @@
             "title": "Travertine Facade from Turkey | Modern & Classic Building Guide",
             "description": "Travertine facade applications, specs, anchoring and sealing guidance.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-facade",
-            "image": "https://majen. com. tr/media/travertine-facade-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-facade-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Facade from Turkey | Guide",
             "description": "Facade applications, specifications, anchoring and export support.",
-            "image": "https://majen. com. tr/media/travertine-facade-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-facade-hero.webp"
           },
-          "heroPreloadTag": "<link rel=\"preload\" as=\"image\" href=\"https://majen. com. tr/media/travertine-facade-hero. webp\" imagesrcset=\"https://majen. com. tr/media/travertine-facade-hero. webp 1600w\" imagesizes=\"100vw\" fetchpriority=\"high\">"
+          "heroPreloadTag": "<link rel=\"preload\" as=\"image\" href=\"https://majen. com. tr/media/travertine-facade-hero.webp\" imagesrcset=\"https://majen. com. tr/media/travertine-facade-hero.webp 1600w\" imagesizes=\"100vw\" fetchpriority=\"high\">"
         },
         "ld": {
           "keywords": [
@@ -67569,7 +67569,7 @@
         "metaDesc": "Discover Travertine Bathrooms: spa-like luxury with natural stone walls, floors, showers & vanities. Durable, elegant, and timeless. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Bathroom",
         "intro": "Travertine bathrooms combine natural stone elegance with spa-like luxury. The warm tones, natural veining, and timeless character of travertine create tranquil, inviting spaces. Used for floors, walls, showers, and vanities, travertine transforms bathrooms into wellness-inspired environments. Turkish travertine is particularly sought after for bathroom applications, offering durability, versatility, and beauty in both modern and classic designs.",
-        "socialImage": "https://majen. com. tr/media/travertine-bathroom-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-bathroom-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -67750,8 +67750,8 @@
             "Polished travertine vanity top in bathroom"
           ],
           "filenames": [
-            "travertine-bathroom-floor. webp",
-            "travertine-bathroom-shower. webp"
+            "travertine-bathroom-floor.webp",
+            "travertine-bathroom-shower.webp"
           ],
           "formats": [
             "webp",
@@ -67759,7 +67759,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-bathroom-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-bathroom-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-bathroom-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-bathroom-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -67808,13 +67808,13 @@
             "title": "Travertine Bathroom from Turkey | Floors, Showers & Vanities Guide",
             "description": "Travertine bathroom applications, specifications, slip resistance and care.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-bathroom",
-            "image": "https://majen. com. tr/media/travertine-bathroom-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-bathroom-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Bathroom from Turkey | Guide",
             "description": "Floors, showers, vanities and spa—specs and sealing tips.",
-            "image": "https://majen. com. tr/media/travertine-bathroom-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-bathroom-hero.webp"
           }
         },
         "ld": {
@@ -67832,7 +67832,7 @@
         "metaDesc": "Discover Travertine Kitchens: elegant stone for countertops, backsplashes & floors. Durable, timeless, and versatile. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Kitchen",
         "intro": "Travertine kitchens combine natural beauty with durability, creating timeless and functional spaces. Whether used for countertops, backsplashes or flooring, travertine brings elegance and warmth to the heart of the home. Turkish travertine is especially valued for kitchens due to its versatility in finishes and formats, allowing it to adapt to modern, rustic or classic designs with ease.",
-        "socialImage": "https://majen. com. tr/media/travertine-kitchen-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-kitchen-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -68013,8 +68013,8 @@
             "Polished travertine kitchen island slab"
           ],
           "filenames": [
-            "travertine-kitchen-floor. webp",
-            "travertine-kitchen-backsplash. webp"
+            "travertine-kitchen-floor.webp",
+            "travertine-kitchen-backsplash.webp"
           ],
           "formats": [
             "webp",
@@ -68022,7 +68022,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-kitchen-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-kitchen-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-kitchen-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-kitchen-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -68071,13 +68071,13 @@
             "title": "Travertine Kitchen from Turkey | Floors, Backsplashes & Countertops Guide",
             "description": "Travertine kitchen applications, specifications, sealing and export info.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-kitchen",
-            "image": "https://majen. com. tr/media/travertine-kitchen-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-kitchen-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Kitchen from Turkey | Guide",
             "description": "Applications, specs, finishes and care tips for travertine kitchens.",
-            "image": "https://majen. com. tr/media/travertine-kitchen-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-kitchen-hero.webp"
           }
         },
         "ld": {
@@ -68095,7 +68095,7 @@
         "metaDesc": "Discover Travertine Pools: slip-resistant, heat-friendly stone for decks, patios & spas. Durable, elegant, and timeless. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Pool",
         "intro": "Travertine pool surrounds are among the most popular choices for outdoor living spaces, combining safety, comfort, and timeless beauty. Naturally slip-resistant and cool underfoot, travertine is ideal for pool decks, patios, and spa areas. Turkish travertine is globally recognized for its durability and Mediterranean charm, making it a top material for both residential and resort-style pools.",
-        "socialImage": "https://majen. com. tr/media/travertine-pool-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-pool-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -68278,8 +68278,8 @@
             "Travertine poolside landscaping with pavers"
           ],
           "filenames": [
-            "travertine-pool-deck. webp",
-            "travertine-pool-coping. webp"
+            "travertine-pool-deck.webp",
+            "travertine-pool-coping.webp"
           ],
           "formats": [
             "webp",
@@ -68287,7 +68287,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-pool-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-pool-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-pool-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-pool-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -68336,13 +68336,13 @@
             "title": "Travertine Pool from Turkey | Decks, Copings & Outdoor Guide",
             "description": "Applications, specifications, slip resistance and care for travertine pool designs.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-pool",
-            "image": "https://majen. com. tr/media/travertine-pool-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-pool-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Pool from Turkey | Guide",
             "description": "Travertine pool decks, copings, interiors and landscaping.",
-            "image": "https://majen. com. tr/media/travertine-pool-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-pool-hero.webp"
           }
         },
         "ld": {
@@ -68359,7 +68359,7 @@
         "metaDesc": "Discover Travertine Turkey: the global hub for natural stone. Learn about Turkish travertine quality, quarries, exports & applications. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Turkey",
         "intro": "Turkey is the world’s leading source of travertine, accounting for a significant share of global supply. With vast reserves, advanced processing facilities, and a strong export network, Turkish travertine has become synonymous with quality, variety, and reliable supply. From ancient monuments to modern architecture, Turkey’s travertine has shaped design across the globe.",
-        "socialImage": "https://majen. com. tr/media/travertine-turkey-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-turkey-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -68542,8 +68542,8 @@
             "Travertine containers loaded at İzmir port"
           ],
           "filenames": [
-            "travertine-turkey-quarry. webp",
-            "travertine-turkey-export. webp"
+            "travertine-turkey-quarry.webp",
+            "travertine-turkey-export.webp"
           ],
           "formats": [
             "webp",
@@ -68551,7 +68551,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-turkey-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-turkey-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-turkey-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-turkey-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -68600,13 +68600,13 @@
             "title": "Travertine from Turkey | Quarries, Exports & Global Supply Guide",
             "description": "Turkish travertine quarries, specifications, finishes, supply capacity and exports.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-turkey",
-            "image": "https://majen. com. tr/media/travertine-turkey-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-turkey-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine from Turkey | Guide",
             "description": "Turkish travertine quarries, colors, finishes, export terms and global supply.",
-            "image": "https://majen. com. tr/media/travertine-turkey-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-turkey-hero.webp"
           }
         },
         "ld": {
@@ -68742,7 +68742,7 @@
         "metaDesc": "Learn about Travertine Quarries in Turkey: extraction, processing, and global exports. Discover how raw blocks are turned into slabs, tiles, and pavers. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Quarry",
         "intro": "Travertine quarries are the starting point of the natural stone supply chain, where raw blocks are extracted directly from the earth. Turkey is home to some of the world’s largest travertine quarries, producing millions of tons annually. From Denizli to Afyon, Turkish quarries supply the raw materials that are processed into slabs, tiles, and pavers for global export, fueling both modern construction and heritage restoration projects.",
-        "socialImage": "https://majen. com. tr/media/travertine-quarry-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-quarry-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -68938,8 +68938,8 @@
             "Travertine tiles produced from quarry blocks"
           ],
           "filenames": [
-            "travertine-quarry-blocks. webp",
-            "travertine-quarry-slabs. webp"
+            "travertine-quarry-blocks.webp",
+            "travertine-quarry-slabs.webp"
           ],
           "formats": [
             "webp",
@@ -68947,7 +68947,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-quarry-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-quarry-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-quarry-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-quarry-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -68996,13 +68996,13 @@
             "title": "Travertine Quarry in Turkey | Block Extraction & Global Supply",
             "description": "Travertine quarry regions, block extraction, sizes, density, finishes, production and exports.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-quarry",
-            "image": "https://majen. com. tr/media/travertine-quarry-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-quarry-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Quarry in Turkey | Guide",
             "description": "Travertine blocks, quarries, production and export logistics.",
-            "image": "https://majen. com. tr/media/travertine-quarry-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-quarry-hero.webp"
           }
         },
         "ld": {
@@ -69019,7 +69019,7 @@
         "metaDesc": "Find reliable Travertine Suppliers from Turkey. Learn how suppliers provide tiles, slabs, and blocks to international buyers. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Supplier",
         "intro": "A travertine supplier connects quarries and factories with buyers worldwide, ensuring that high-quality natural stone reaches homes, commercial projects, and distributors. Turkish travertine suppliers are known for their reliability, reliable supply, and ability to handle bulk exports while also catering to smaller, custom orders. Their role in the supply chain is critical to delivering premium stone products to architects, contractors, and end-users.",
-        "socialImage": "https://majen. com. tr/media/travertine-supplier-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-supplier-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -69237,8 +69237,8 @@
             "Container loading photo with seal number"
           ],
           "filenames": [
-            "travertine-supplier-qc. webp",
-            "travertine-supplier-loading. webp"
+            "travertine-supplier-qc.webp",
+            "travertine-supplier-loading.webp"
           ],
           "formats": [
             "webp",
@@ -69246,7 +69246,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-supplier-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-supplier-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-supplier-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-supplier-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "internalLinks": [
           {
@@ -69300,13 +69300,13 @@
             "title": "Travertine Supplier from Turkey | Wholesale, Projects & Export Guide",
             "description": "Supplier checklist: capacity, QC, finishes, packaging and export terms for global travertine sourcing.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-supplier",
-            "image": "https://majen. com. tr/media/travertine-supplier-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-supplier-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Supplier from Turkey | Guide",
             "description": "How to select a travertine supplier: capacity, QC, packaging, terms.",
-            "image": "https://majen. com. tr/media/travertine-supplier-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-supplier-hero.webp"
           }
         },
         "ld": {
@@ -69323,7 +69323,7 @@
         "metaDesc": "Work with a trusted Travertine Exporter from Turkey. Learn about export workflows, INCOTERMS, QC, packaging, documentation & global logistics. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Exporter",
         "intro": "A travertine exporter bridges Turkish quarries and factories with global buyers, coordinating product selection, quality control, packaging, and international logistics. Professional exporters manage documentation, customs compliance, and delivery terms so architects, distributors, and contractors receive stone on time and in spec. With extensive networks and reliable supply, Turkish travertine exporters support projects from boutique residences to large commercial developments worldwide.",
-        "socialImage": "https://majen. com. tr/media/travertine-exporter-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-exporter-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -69570,8 +69570,8 @@
             "Container loading with visible seal number"
           ],
           "filenames": [
-            "travertine-exporter-containers. webp",
-            "travertine-exporter-loading. webp"
+            "travertine-exporter-containers.webp",
+            "travertine-exporter-loading.webp"
           ],
           "formats": [
             "webp",
@@ -69579,7 +69579,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-exporter-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-exporter-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-exporter-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-exporter-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "microProof": [
           "Photo-documented container loading & seal numbers.",
@@ -69611,13 +69611,13 @@
             "title": "Travertine Exporter from Turkey | FOB, CIF, EXW & Logistics Guide",
             "description": "Exporter playbook: Incoterms, documents, packaging, container loading and ports for Turkish travertine.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-exporter",
-            "image": "https://majen. com. tr/media/travertine-exporter-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-exporter-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Exporter from Turkey | Guide",
             "description": "FOB/CIF/EXW terms, docs, packing and ports for travertine exports.",
-            "image": "https://majen. com. tr/media/travertine-exporter-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-exporter-hero.webp"
           }
         },
         "ld": {
@@ -69634,7 +69634,7 @@
         "metaDesc": "Discover Travertine Manufacturers in Turkey: advanced factories producing tiles, slabs, pavers & mosaics. Learn about production, specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Manufacturer",
         "intro": "Travertine manufacturers are the backbone of the natural stone industry, transforming raw quarry blocks into finished products such as tiles, slabs, pavers, and mosaics. Turkey is home to some of the world’s most advanced travertine factories, equipped with modern machinery for cutting, polishing, and finishing. Manufacturers ensure quality, precision, and variety, delivering stone products that meet international standards for residential, commercial, and public projects.",
-        "socialImage": "https://majen. com. tr/media/travertine-manufacturer-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-manufacturer-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -69851,8 +69851,8 @@
             "QC inspection of travertine slabs before packing"
           ],
           "filenames": [
-            "travertine-manufacturer-factory. webp",
-            "travertine-manufacturer-production. webp"
+            "travertine-manufacturer-factory.webp",
+            "travertine-manufacturer-production.webp"
           ],
           "formats": [
             "webp",
@@ -69860,7 +69860,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-manufacturer-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-manufacturer-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-manufacturer-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-manufacturer-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "microProof": [
           "Quarry-backed production with consistent capacity.",
@@ -69892,13 +69892,13 @@
             "title": "Travertine Manufacturer in Turkey | Blocks, Slabs & Tiles Production",
             "description": "Quarry-backed travertine manufacturing: slabs, tiles, finishes, QC and export terms.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-manufacturer",
-            "image": "https://majen. com. tr/media/travertine-manufacturer-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-manufacturer-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Manufacturer in Turkey | Guide",
             "description": "Travertine manufacturing process, QC, finishes, lead times and export terms.",
-            "image": "https://majen. com. tr/media/travertine-manufacturer-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-manufacturer-hero.webp"
           }
         },
         "ld": {
@@ -69915,7 +69915,7 @@
         "metaDesc": "Discover Travertine Distributors: how they supply tiles, slabs, and pavers to wholesalers, retailers, and contractors. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Distributor",
         "intro": "Travertine distributors play a vital role in the stone industry, acting as intermediaries between manufacturers and end markets. They ensure that travertine tiles, slabs, pavers, and mosaics are available to wholesalers, retailers, and contractors worldwide. Distributors manage logistics, maintain stock, and provide after-sales support, helping ensure smooth supply chains for both small and large projects.",
-        "socialImage": "https://majen. com. tr/media/travertine-distributor-hero. webp",
+        "socialImage": "https://majen. com. tr/media/travertine-distributor-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
         "lead": {
@@ -70133,8 +70133,8 @@
             "Travertine crates loaded for retail supply"
           ],
           "filenames": [
-            "travertine-distributor-warehouse. webp",
-            "travertine-distributor-slabs. webp"
+            "travertine-distributor-warehouse.webp",
+            "travertine-distributor-slabs.webp"
           ],
           "formats": [
             "webp",
@@ -70142,7 +70142,7 @@
           ],
           "lazy": true,
           "widthHeightRequired": true,
-          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-distributor-hero. webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-distributor-hero. webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
+          "heroPreloadTag": "<link rel=\\\"preload\\\" as=\\\"image\\\" href=\\\"https://majen. com. tr/media/travertine-distributor-hero.webp\\\" imagesrcset=\\\"https://majen. com. tr/media/travertine-distributor-hero.webp 1600w\\\" imagesizes=\\\"100vw\\\" fetchpriority=\\\"high\\\">"
         },
         "microProof": [
           "Regional warehouses ensure quick delivery.",
@@ -70174,13 +70174,13 @@
             "title": "Travertine Distributor in Turkey | Wholesale, Retail & Project Supply",
             "description": "Distributor guide: wholesale, retail, projects and warehousing for Turkish travertine.",
             "url": "https://majen. com. tr/en/blog/travertines/travertine-distributor",
-            "image": "https://majen. com. tr/media/travertine-distributor-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-distributor-hero.webp"
           },
           "twitter": {
             "card": "summary_large_image",
             "title": "Travertine Distributor in Turkey | Guide",
             "description": "Wholesale, retail, project supply and warehousing for travertine.",
-            "image": "https://majen. com. tr/media/travertine-distributor-hero. webp"
+            "image": "https://majen. com. tr/media/travertine-distributor-hero.webp"
           }
         },
         "ld": {

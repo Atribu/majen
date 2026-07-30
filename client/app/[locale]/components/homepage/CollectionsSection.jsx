@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { baseFor, productSlugFor } from "@/lib/travertine";
+import { colorSlugFor } from "@/lib/travertine";
 import antik from "@/public/images/slabs/antik.webp";
 import ivory from "@/public/images/slabs/Ivory.webp";
 import light from "@/public/images/slabs/light.webp";
@@ -13,7 +13,14 @@ export default function CollectionsSection() {
   const t = useTranslations("CollectionsSection");
   const locale = useLocale();
   const prefix = `/${locale}`;
-  const base = baseFor(locale);
+  const blockHref = (color) => {
+    const colorSlug = colorSlugFor(locale, color);
+    const productSlug = locale.startsWith("tr")
+      ? "traverten-bloklar"
+      : "travertine-blocks";
+
+    return `${prefix}/${colorSlug}-${productSlug}`;
+  };
 
   const labels = {
     block: locale === "tr" ? "Bloklar" : "Blocks",
@@ -22,15 +29,19 @@ export default function CollectionsSection() {
     special: locale === "tr" ? "Döşemeler" : "Pavers",
   };
 
-  const TILES_HREF = `${prefix}/travertine-tiles`;
-  const PAVERS_HREF = `${prefix}/travertine-pavers`;
+  const TILES_HREF = locale.startsWith("tr")
+    ? `${prefix}/8x8-dolgusuz-dogal-enine-kesim-traverten-karolar`
+    : `${prefix}/travertine-tiles`;
+  const PAVERS_HREF = locale.startsWith("tr")
+    ? `${prefix}/6x12-dolgusuz-dogal-damar-kesim-traverten-dosemeler`
+    : `${prefix}/travertine-pavers`;
 
   const collections = [
     {
       key: "antiko",
       title: t("titleAntiko"),
       alt: t("altAntiko"),
-      blockHref: `${prefix}/antico-travertine-blocks`,
+      blockHref: blockHref("antico"),
       slabsHref: `${prefix}/antico-filled-honed-vein-cut-travertine-slabs`,
       src: antik,
     },
@@ -38,7 +49,7 @@ export default function CollectionsSection() {
       key: "light",
       title: t("titleLight"),
       alt: t("altLight"),
-      blockHref: `${prefix}/light-travertine-blocks`,
+      blockHref: blockHref("light"),
       slabsHref: `${prefix}/light-filled-honed-vein-cut-travertine-slabs`,
       src: light,
     },
@@ -46,7 +57,7 @@ export default function CollectionsSection() {
       key: "ivory",
       title: t("titleIvory"),
       alt: t("altIvory"),
-      blockHref: `${prefix}/ivory-travertine-blocks`,
+      blockHref: blockHref("ivory"),
       slabsHref: `${prefix}/ivory-filled-honed-vein-cut-travertine-slabs`,
       src: ivory,
     },

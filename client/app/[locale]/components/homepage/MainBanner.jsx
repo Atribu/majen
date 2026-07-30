@@ -78,7 +78,7 @@ export default function MainBanner() {
       <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
 
       {/* ✅ Desktop: sol alt görsel */}
-      <div className="absolute left-4 bottom-4 z-30 hidden md:block">
+      {/* <div className="absolute left-4 bottom-4 z-30 hidden md:block">
         <div className="relative inline-block">
           <Image
             src={cornerImage}
@@ -87,10 +87,10 @@ export default function MainBanner() {
             priority
           />
         </div>
-      </div>
+      </div> */}
 
       {/* ✅ Mobil: iki görseli slider olarak göster */}
-      <div className="absolute left-4 bottom-4 z-30 md:hidden">
+      {/* <div className="absolute left-4 bottom-4 z-30 md:hidden">
         <div className="relative h-[170px] w-[210px] overflow-visible">
           <div
             className={`absolute inset-0 flex items-end justify-start transition-all duration-500 ${
@@ -124,17 +124,17 @@ export default function MainBanner() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ✅ Desktop: sağ alt köşe */}
-      <div className="absolute right-3 bottom-3 z-30 bg-white/85 backdrop-blur-sm p-1.5 rounded-md shadow-lg ring-1 ring-white/40 hidden md:block">
+      {/* <div className="absolute right-3 bottom-3 z-30 bg-white/85 backdrop-blur-sm p-1.5 rounded-md shadow-lg ring-1 ring-white/40 hidden md:block">
         <Image
           src={fuarImages[fuarIndex]}
           alt={`Fuar ${fuarIndex + 2}`}
           className="w-40 sm:w-56 lg:w-72 h-auto drop-shadow-lg"
           priority
         />
-      </div>
+      </div> */}
 
       <div
         className={`absolute inset-0 z-20 flex items-center justify-center pointer-events-none
