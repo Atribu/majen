@@ -149,12 +149,6 @@ export default async function AboutPage({ params }) {
                 {t(`explore.${key}`)}
               </Link>
             ))}
-            <Link
-              href={`/${locale}/${locale === "tr" ? "nasil-ihracat-yapiyoruz" : "how-we-export"}`}
-              className="rounded-xl border border-neutral-200 p-4 text-center hover:bg-neutral-50"
-            >
-              {t("explore.export")}
-            </Link>
           </div>
         </div>
 

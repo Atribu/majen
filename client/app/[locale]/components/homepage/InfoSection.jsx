@@ -14,6 +14,7 @@ import special from "@/public/images/homepage/Pavers3.webp";
 import InlineLinks from "@/app/[locale]/components/generalcomponent/InlineLinks";
 
 import { baseFor, productSlugFor, getLang } from "@/lib/travertine";
+import { localizedBlogPath, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 
 function Card({ t, img, href, tKey, linkPatterns }) {
   
@@ -149,7 +150,10 @@ const makeTilesPatterns = () =>
   };
 
 // Canonical blog href helper
-const blogHref = (slug) => `/${String(slug).replace(/^\/+/, "")}`;
+const blogHref = (slug) => {
+  const pageKey = resolveBlogPageKey("en", slug);
+  return localizedBlogPath(locale, pageKey);
+};
 
 // EN: blocks / slabs / tiles + bathrooms / kitchens / pools / outdoor spaces
 const mainLinkPatternsEn = [

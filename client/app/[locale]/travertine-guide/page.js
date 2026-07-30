@@ -4,6 +4,7 @@ import Link from "next/link";
 import QuestionsSection from "../components/generalcomponent/QuestionsSection";
 import { getTranslations } from "next-intl/server";
 import TravertineBlog from "./components/TravertineBlog";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 export const metadata = {
   title: "Travertine from Turkey | Complete Guide to Turkish Travertines",
@@ -145,7 +146,7 @@ export default async function Page({ params }) {
            </div>
 
             <div className="flex flex-wrap gap-3">
-              <Link href="/en/contactus" className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
+              <Link href={locale === "tr" ? "/tr/iletisim" : "/en/contactus"} className="rounded-full bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800">Get a Quote</Link>
               <Link href="https://wa.me/" target="_blank" className="rounded-full border border-teal-700 px-5 py-3 font-semibold text-teal-700 hover:bg-teal-50">WhatsApp</Link>
               <Link href="mailto:info@majen.com.tr" className="rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-white">info@majen.com.tr</Link>
             </div>
@@ -158,17 +159,17 @@ export default async function Page({ params }) {
         <div className="mx-auto w-[92%] max-w-[1160px]">
           <nav className="flex flex-wrap gap-3">
             {[
-              ["/travertine-tiles-guide", "Travertine Tiles"],
-              ["/en/travertine/slabs", "Travertine Slabs"],
-              ["/en/travertine/blocks", "Travertine Blocks"],
-              ["/en/travertine/pavers", "Travertine Pavers"],
-              ["/en/travertine/mosaics", "Travertine Mosaics"],
-              ["/en/travertine/ivory", "Ivory Travertine"],
-              ["/en/travertine/silver", "Silver Travertine"],
-              ["/en/travertine/noce", "Noce Travertine"],
-              ["/en/travertine/polished", "Polished Travertine"],
-              ["/en/travertine/honed", "Honed Travertine"],
-              ["/en/travertine/tumbled", "Tumbled Travertine"],
+              [localizedBlogPath(locale, "travertine-tiles"), "Travertine Tiles"],
+              [localizedBlogPath(locale, "travertine-slabs"), "Travertine Slabs"],
+              [localizedBlogPath(locale, "travertine-blocks"), "Travertine Blocks"],
+              [localizedBlogPath(locale, "travertine-pavers"), "Travertine Pavers"],
+              [localizedBlogPath(locale, "travertine-mosaics"), "Travertine Mosaics"],
+              [localizedBlogPath(locale, "ivory-travertine"), "Ivory Travertine"],
+              [`/${locale}/${locale === "tr" ? "traverten" : "travertine"}`, "Silver Travertine"],
+              [`/${locale}/${locale === "tr" ? "traverten" : "travertine"}`, "Noce Travertine"],
+              [localizedBlogPath(locale, "polished-travertine"), "Polished Travertine"],
+              [localizedBlogPath(locale, "honed-travertine"), "Honed Travertine"],
+              [localizedBlogPath(locale, "tumbled-travertine"), "Tumbled Travertine"],
             ].map(([href, label]) => (
               <Link key={href} href={href} className="text-teal-700 hover:underline">{label}</Link>
             ))}

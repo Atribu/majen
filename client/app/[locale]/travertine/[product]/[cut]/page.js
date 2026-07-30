@@ -2,6 +2,7 @@
 "use client";
 
 import React from "react";
+import { localizedBlogSlug, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 import Head from "next/head";                      // ⬅️ YENİ
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -109,24 +110,7 @@ export default function CutPage() {
   const baseHref    = `/${locale}/${baseSegment}`;
 
   function getIncotermPatterns(locale) {
-  const exportBase = locale.startsWith("tr")
-    ? "nasıl-ihracat-yapıyoruz"
-    : "how-we-export";
-
-  return [
-    {
-      pattern: /\bFOB\b/i,
-      href: `/${locale}/${exportBase}/fob`,
-    },
-    {
-      pattern: /\bCIF\b/i,
-      href: `/${locale}/${exportBase}/cif`,
-    },
-    {
-      pattern: /\bEXW\b/i,
-      href: `/${locale}/${exportBase}/exw`,
-    },
-  ];
+  return [];
 }
 
 // güvenli kaçış
@@ -501,13 +485,11 @@ const BLOG_SLUG_MAP = {
 };
 
 function resolveBlogSlug(locale, slug) {
-  const lang = locale.startsWith("tr") ? "tr" : "en";
   const clean = String(slug)
     .replace(/^travertines\//, "")  // eski prefix’leri temizle
     .replace(/^\//, "");            // baştaki /'ı kaldır
-
-  const map = BLOG_SLUG_MAP[lang] || {};
-  return map[clean] || clean;       // map’te yoksa olduğu gibi bırak
+  const pageKey = resolveBlogPageKey("en", clean);
+  return localizedBlogSlug(locale, pageKey) || clean;
 }
 
 
@@ -858,14 +840,6 @@ function productKeyTr(locale, productKey) {
   // travertine blocks / slabs / tiles / pavers
   if (locale.startsWith("tr")) {
     patterns.push(
-        {
-        pattern: /\bFOB?\b/gi,
-        href: blogPath(locale, "nasil-ihracat-yapiyoruz/fob"),
-      },
-            {
-        pattern: /\bCIF?\b/gi,
-        href: blogPath(locale, "nasil-ihracat-yapiyoruz/cif"),
-      },
       {
         pattern: /\btraverten blok(lar)?\b/gi,
         href: blogPath(locale, "traverten-bloklar"),
@@ -901,14 +875,6 @@ function productKeyTr(locale, productKey) {
     );
   } else {
     patterns.push(
-        {
-        pattern: /\bFOB?\b/gi,
-        href: blogPath(locale, "how-we-export/fob"),
-      },
-            {
-        pattern: /\bCIF?\b/gi,
-        href: blogPath(locale, "how-we-export/cif"),
-      },
       {
         pattern: /\btravertine blocks?\b/gi,
         href: blogPath(locale, "travertine-blocks"),

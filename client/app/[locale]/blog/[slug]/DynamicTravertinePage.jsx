@@ -10,106 +10,10 @@ import ContactFrom from "@/app/[locale]/components/generalcomponent/ContactFrom"
 import SocialMediaSection from "@/app/[locale]/components/products1/SocialMediaSection";
 // 🔗 product & process helperları
 import { baseFor, CUTS, getLang } from "@/lib/travertine";
+import { localizedBlogPath, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 /* -------------------------------------------
    HELPERS: route slug → pages key
 -------------------------------------------- */
-function normalizeRouteSlug(raw = "") {
-  return String(raw)
-    .trim()
-    .replace(/^\/+/, "")
-    .replace(/^(en|tr)\//i, "")
-    .replace(/^blog\//i, "")
-    .replace(/^travertines?\//i, "")
-    .toLowerCase();
-}
-
-function pageKeyFromSlug(routeSlug = "") {
-  return String(routeSlug).replace(/-guide$/, "");
-}
-
-// ✅ locale + slug → blog.pages key
-function resolvePageKey(locale, slug) {
-  const lang = String(locale || "en").toLowerCase().split("-")[0];
-
-  const base = pageKeyFromSlug(normalizeRouteSlug(slug));
-
-  const MAP = {
-    en: {
-      "travertine-guide": "travertine-guide",
-
-      "travertine-tiles": "travertine-tiles",
-      "travertine-slabs": "travertine-slabs",
-      "travertine-blocks": "travertine-blocks",
-      "travertine-pavers": "travertine-pavers",
-      "travertine-mosaics": "travertine-mosaics",
-
-      "polished-travertine": "polished-travertine",
-      "honed-travertine": "honed-travertine",
-      "tumbled-travertine": "tumbled-travertine",
-      "brushed-travertine": "brushed-travertine",
-      "filled-travertine": "filled-travertine",
-      "unfilled-travertine": "unfilled-travertine",
-
-      "ivory-travertine": "ivory-travertine",
-      "light-travertine": "light-travertine",
-      "antico-travertine": "antico-travertine",
-
-      "travertine-flooring": "travertine-flooring",
-      "travertine-cladding": "travertine-cladding",
-      "travertine-facade": "travertine-facade",
-      "travertine-bathroom": "travertine-bathroom",
-      "travertine-kitchen": "travertine-kitchen",
-      "travertine-pool": "travertine-pool",
-
-      "travertine-turkey": "travertine-turkey",
-      "turkish-travertine": "turkish-travertine",
-      "travertine-quarry": "travertine-quarry",
-      "travertine-supplier": "travertine-supplier",
-      "travertine-exporter": "travertine-exporter",
-      "travertine-manufacturer": "travertine-manufacturer",
-      "travertine-distributor": "travertine-distributor",
-    },
-
-    tr: {
-      "traverten-rehberi": "travertine-guide",
-
-      "karo-traverten-rehberi": "travertine-tiles",
-      "traverten-plakalar-rehberi": "travertine-slabs",
-      "traverten-bloklar-rehberi": "travertine-blocks",
-      "traverten-dosemeler-rehberi": "travertine-pavers",
-      "traverten-mozaik-rehberi": "travertine-mosaics",
-
-      "parlak-traverten-rehberi": "polished-travertine",
-      "honlanmis-traverten": "honed-travertine",
-      "eskitilmis-traverten": "tumbled-travertine",
-      "fircalanmis-traverten": "brushed-travertine",
-      "dolgulu-traverten": "filled-travertine",
-      "dolgusuz-traverten": "unfilled-travertine",
-
-      "fildisi-traverten": "ivory-travertine",
-      "acik-traverten": "light-travertine",
-      "antiko-traverten": "antico-travertine",
-
-      "traverten-zemin-kaplama": "travertine-flooring",
-      "traverten-kaplama": "travertine-cladding",
-      "traverten-cephe": "travertine-facade",
-      "traverten-banyo": "travertine-bathroom",
-      "traverten-mutfak": "travertine-kitchen",
-      "traverten-havuz": "travertine-pool",
-
-      "turkiye-traverteni": "travertine-turkey",
-      "turk-traverteni": "turkish-travertine",
-      "traverten-ocagi": "travertine-quarry",
-      "traverten-tedarikcisi": "travertine-supplier",
-      "traverten-ihracatcisi": "travertine-exporter",
-      "traverten-ureticisi": "travertine-manufacturer",
-      "traverten-dagiticisi": "travertine-distributor",
-    },
-  };
-
-  const table = MAP[lang] || {};
-  return table[base] || base;
-}
 
 // -------------------------------------------
 // LOCAL HELPERS: productSlugFor & procSlugForLocale
@@ -160,25 +64,6 @@ function procSlugForLocale(locale, combinedProcKey) {
 /* -------------------------------------------
    BLOG → PRODUCT / PROCESS LINK HELPERS
 -------------------------------------------- */
-
-// Incoterm + shipment/delivery → how-we-export
-function getIncotermPatterns(locale) {
-  const exportBase = locale.startsWith("tr")
-    ? "nasıl-ihracat-yapıyoruz"
-    : "how-we-export";
-
-  const rootHref = `/${locale}/${exportBase}`;
-
-  return [
-    { pattern: /\bFOB\b/gi, href: `${rootHref}/fob` },
-    { pattern: /\bCIF\b/gi, href: `${rootHref}/cif` },
-    { pattern: /\bEXW\b/gi, href: `${rootHref}/exw` },
-    // genel terimler → ana export sayfası
-    { pattern: /\bshipments?\b/gi, href: rootHref },
-    { pattern: /\bshipping\b/gi, href: rootHref },
-    { pattern: /\bdeliver(y|ies)\b/gi, href: rootHref },
-  ];
-}
 
 // Blogdan product listing'e linkler
 function blogToProductPatterns(locale) {
@@ -346,7 +231,6 @@ function BlogLinkify({ text, locale, className }) {
   if (!text) return null;
 
   const patterns = [
-    ...getIncotermPatterns(locale),
     ...blogToProductPatterns(locale),
     ...blogToProcessPatterns(locale),
     ...blogToColorPatterns(locale),   
@@ -456,7 +340,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
   const t = useTranslations("blog");
 
   const routeSlug = slug || "travertine-tiles-guide";
-  const pageKey = resolvePageKey(locale, routeSlug);
+  const pageKey = resolveBlogPageKey(locale, routeSlug);
 
   const pagesObj = t.raw?.("pages") || {};
   const pageRaw = pagesObj[pageKey];
@@ -477,11 +361,11 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
     safePage.socialImage || "/media/travertine-tiles-hero.webp";
   const heroSrc = imgMap?.hero?.src || socialImage;
 
-  const canonical = `/${locale}/blog/${routeSlug}`;
+  const canonical = localizedBlogPath(locale, pageKey);
   const bc = [
     { name: t("common.breadcrumbs.home"), href: `/${locale}` },
     { name: t("common.breadcrumbs.blog"), href: `/${locale}/blog` },
-    { name: safePage.h1, href: `/${locale}/blog/${routeSlug}` },
+    { name: safePage.h1, href: canonical },
   ].filter((b) => b && b.name && b.href);
 
   const datePublished = safePage.datePublished || "2025-01-15";
@@ -613,12 +497,12 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
         {/* Alternates */}
         <link
           rel="alternate"
-          href={`https://majen.com.tr/en/blog/${routeSlug}`}
+          href={`https://majen.com.tr${localizedBlogPath("en", pageKey)}`}
           hrefLang="en"
         />
         <link
           rel="alternate"
-          href={`https://majen.com.tr/tr/blog/${routeSlug}`}
+          href={`https://majen.com.tr${localizedBlogPath("tr", pageKey)}`}
           hrefLang="tr"
         />
         <link rel="alternate" href={canonical} hrefLang="x-default" />

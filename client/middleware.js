@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing.js';
+import { localizedBlogSlug, resolveBlogPageKey } from './lib/blogPageRoutes.js';
 
 const handleI18nRouting = createMiddleware(routing, { localeDetection: false });
 
@@ -43,6 +44,15 @@ function normalizeColorSlugForLocale(locale, raw) {
 
 }
 
+function asciiTurkishPath(pathname) {
+  const replacements = {
+    ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u',
+    Ç: 'C', Ğ: 'G', İ: 'I', Ö: 'O', Ş: 'S', Ü: 'U'
+  };
+
+  return pathname.replace(/[çğıöşüÇĞİÖŞÜ]/g, (char) => replacements[char]);
+}
+
 //---neww
 const EN_TOKENS = /(travertine|slabs?|tiles?|blocks?|pavers?|vein-cut|cross-cut|filled|unfilled|honed|polished|brushed|tumbled|natural)(?:$|[-/])/i;
 
@@ -67,6 +77,26 @@ function enProcToTr(proc) {
   return `${fillTr}-${pTr}`;
 }
 
+function trCutToEn(cut, product) {
+  const cutEn = cut === 'damar-kesim' ? 'vein-cut' : 'cross-cut';
+  const prodEn = product === 'plakalar' ? 'slabs'
+    : product === 'karolar' ? 'tiles'
+    : product === 'bloklar' ? 'blocks'
+    : product === 'dosemeler' ? 'pavers'
+    : product;
+  return `${cutEn}-travertine-${prodEn}`;
+}
+
+function trProcToEn(proc) {
+  if (!proc) return null;
+  const s = proc.toLowerCase();
+  if (s === 'dogal') return 'natural';
+  const [fill, p] = s.split('-');
+  const fillEn = fill === 'dolgulu' ? 'filled' : 'unfilled';
+  const pEn = {honlanmis:'honed', cilali:'polished', fircalanmis:'brushed', eskitilmis:'tumbled', dogal:'natural'}[p] || p;
+  return `${fillEn}-${pEn}`;
+}
+
 const CUT_EN = /^(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
 const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
 
@@ -80,6 +110,9 @@ const PROC_CUT_WITH_PRODUCT_TR =
 
 const PROC_ONLY_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
 const PROC_ONLY_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|dogal))$/i;
+
+const VARIANT_PROCESS_EN = /^(.+?)-((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|pavers)$/i;
+const VARIANT_PROCESS_TR = /^(.+?)-((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|dogal)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|dosemeler)$/i;
 
 const BLOCKS_COLOR_EN = /^([a-z0-9-]+)-travertine-blocks$/i;
 const BLOCKS_COLOR_TR = /^([a-z0-9-]+)-traverten-bloklar$/i;
@@ -142,10 +175,34 @@ export default function middleware(req) {
   const url = req.nextUrl;
   const parts = url.pathname.split('/').filter(Boolean); // ["tr","..."] / ["en","..."]
 
-  if (!parts[0] || !['en','tr'].includes(parts[0])) {
+  if (!parts[0]) {
     return handleI18nRouting(req);
   }
+
+  // Dil öneki olmayan anlamsız yolları ana sayfaya taşımak yerine geçerli
+  // locale içindeki 404 akışına gönder. Adres değişmez, yanıt 404 kalır.
+  if (!['en','tr'].includes(parts[0])) {
+    url.pathname = '/tr/blog/__not-found__';
+    return NextResponse.rewrite(url);
+  }
   const locale = parts[0];
+
+  // Türkçe URL standardı ASCII'dir. Eski Türkçe karakterli adresler aynı
+  // içeriğin ASCII karşılığına kalıcı yönlendirilir; query string korunur.
+  if (locale === 'tr') {
+    let decodedPathname = url.pathname;
+    try {
+      decodedPathname = decodeURIComponent(url.pathname);
+    } catch {
+      // Geçersiz percent-encoding varsa mevcut 404 akışı karar versin.
+    }
+    const canonicalPathname = asciiTurkishPath(decodedPathname);
+    if (canonicalPathname !== url.pathname) {
+      const canonicalUrl = url.clone();
+      canonicalUrl.pathname = canonicalPathname;
+      return NextResponse.redirect(canonicalUrl, 301);
+    }
+  }
 
   // İç FS kökü → artık uygulamaya geç
   if (parts[1] === FS_BASE) return NextResponse.next();
@@ -166,6 +223,10 @@ export default function middleware(req) {
     const seg2 = parts[1];
 
     if (CUT_EN.test(seg2)) {
+      if (locale === 'tr') {
+        const [, cutType, productEn] = seg2.match(CUT_EN);
+        return NextResponse.redirect(new URL(`/tr/${enCutToTr(cutType, productEn)}`, req.url), 301);
+      }
       const productEn = localizedProductFromCut('en', seg2);
       const productSeg = (locale === 'tr')
   ? (productEn === 'slabs'  ? 'plakalar'
@@ -181,6 +242,10 @@ export default function middleware(req) {
     }
 
     if (CUT_TR.test(seg2)) {
+      if (locale === 'en') {
+        const [, cutTypeTr, productTr] = seg2.match(CUT_TR);
+        return NextResponse.redirect(new URL(`/en/${trCutToEn(cutTypeTr, productTr)}`, req.url), 301);
+      }
       const productTr = localizedProductFromCut('tr', seg2);
       url.pathname = `/${locale}/${FS_BASE}/${productTr}/${seg2}`;
       return NextResponse.rewrite(url);
@@ -197,6 +262,11 @@ export default function middleware(req) {
     const processSlug = m[1];
     const cutType     = m[2];
     const productEn   = m[3].toLowerCase();
+    const tail = parts.slice(2).join('/');
+    if (locale === 'tr') {
+      const canonical = `${enProcToTr(processSlug)}-${enCutToTr(cutType, productEn)}`;
+      return NextResponse.redirect(new URL(`/tr/${canonical}${tail ? `/${tail}` : ''}`, req.url), 301);
+    }
 const productSeg  = locale === 'tr'
   ? (productEn === 'slabs'  ? 'slabs'
     : productEn === 'tiles' ? 'tiles'
@@ -205,7 +275,6 @@ const productSeg  = locale === 'tr'
     : productEn)
   : productEn;
     const cutSlugFull = `${cutType}-travertine-${productEn}`;
-    const tail = parts.slice(2).join('/');
     url.pathname = `/${locale}/${FS_BASE}/${productSeg}/${cutSlugFull}/${processSlug}${tail ? `/${tail}` : ''}`;
     return NextResponse.rewrite(url);
   }
@@ -216,6 +285,12 @@ const productSeg  = locale === 'tr'
     let processSlug = m[1];
     const cutTypeTr = m[2];
     const productTr = m[3].toLowerCase();
+    const tail = parts.slice(2).join('/');
+
+    if (locale === 'en') {
+      const canonical = `${trProcToEn(processSlug)}-${trCutToEn(cutTypeTr, productTr)}`;
+      return NextResponse.redirect(new URL(`/en/${canonical}${tail ? `/${tail}` : ''}`, req.url), 301);
+    }
 
     const EN2TR = { honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis' };
     if (processSlug.toLowerCase() === 'natural') processSlug = 'dogal';
@@ -225,8 +300,6 @@ const productSeg  = locale === 'tr'
     );
 
     const cutSlugFull = `${cutTypeTr}-traverten-${productTr}`;
-    const tail = parts.slice(2).join('/');
-    
     // ✅ İç route için EN key kullan
    const productSeg = 
   productTr === 'plakalar' ? 'slabs' :
@@ -240,10 +313,37 @@ const productSeg  = locale === 'tr'
   }
 }
 
-  // 3) COLOR-FIRST / SIZE-FIRST kısa URL
+// 3) COLOR-FIRST / SIZE-FIRST kısa URL
 // 3) COLOR-FIRST / SIZE-FIRST kısa URL
 if (parts.length >= 2) {
   const seg2 = parts[1];
+
+  // Karşı dile ait varyant URL'si geldiyse renk/boyut ve varsa tail'i
+  // koruyarak o dilin tam kanonik slug'ına 301 yönlendir.
+  if (locale === 'tr') {
+    const crossLocaleMatch = seg2.match(VARIANT_PROCESS_EN);
+    if (crossLocaleMatch) {
+      const [, head, processEn, cutEn, productEn] = crossLocaleMatch;
+      const localizedHead = normalizeColorSlugForLocale('tr', head) || head;
+      const localizedPath = `${localizedHead}-${enProcToTr(processEn)}-${enCutToTr(cutEn, productEn)}`;
+      return NextResponse.redirect(
+        new URL(`/tr/${localizedPath}${parts.length > 2 ? `/${parts.slice(2).join('/')}` : ''}`, req.url),
+        301
+      );
+    }
+  } else {
+    const crossLocaleMatch = seg2.match(VARIANT_PROCESS_TR);
+    if (crossLocaleMatch) {
+      const [, head, processTr, cutTr, productTr] = crossLocaleMatch;
+      const localizedHead = normalizeColorSlugForLocale('en', head) || head;
+      const localizedPath = `${localizedHead}-${trProcToEn(processTr)}-${trCutToEn(cutTr, productTr)}`;
+      return NextResponse.redirect(
+        new URL(`/en/${localizedPath}${parts.length > 2 ? `/${parts.slice(2).join('/')}` : ''}`, req.url),
+        301
+      );
+    }
+  }
+
   const tokens = seg2.split('-');
 
   if (tokens.length >= 6) {
@@ -320,6 +420,20 @@ if (parts.length === 2) {
   const seg2 = parts[1];
   let m;
 
+  if (locale === 'tr' && (m = seg2.match(BLOCKS_COLOR_EN))) {
+    const colorSlug = normalizeColorSlugForLocale('tr', m[1]);
+    if (colorSlug) {
+      return NextResponse.redirect(new URL(`/tr/${colorSlug}-traverten-bloklar`, req.url), 301);
+    }
+  }
+
+  if (locale === 'en' && (m = seg2.match(BLOCKS_COLOR_TR))) {
+    const colorSlug = normalizeColorSlugForLocale('en', m[1]);
+    if (colorSlug) {
+      return NextResponse.redirect(new URL(`/en/${colorSlug}-travertine-blocks`, req.url), 301);
+    }
+  }
+
   // EN: /en/ivory-travertine-blocks → /en/travertine/blocks/ivory
   if (locale === 'en' && (m = seg2.match(BLOCKS_COLOR_EN))) {
     const colorRaw = m[1]; // ivory | light | antico
@@ -393,6 +507,14 @@ if (parts.length === 2) {
   // 5) Ürün görünümlü ama whitelist dışı tekil slug’ı blog’a yolla
   if (parts.length === 2) {
     const slug = parts[1];
+    const otherLocale = locale === 'tr' ? 'en' : 'tr';
+    const otherPageKey = resolveBlogPageKey(otherLocale, slug);
+    const localizedSlug = otherPageKey ? localizedBlogSlug(locale, otherPageKey) : null;
+
+    if (localizedSlug && localizedSlug !== slug) {
+      return NextResponse.redirect(new URL(`/${locale}/${localizedSlug}`, req.url), 301);
+    }
+
     const looksLikeTrav = slug.startsWith('travertine-') || slug.startsWith('traverten-');
     const isWhitelisted = (locale === 'en' && EN_PRODUCTS.has(slug)) || (locale === 'tr' && TR_PRODUCTS.has(slug));
     if (looksLikeTrav && !isWhitelisted) {

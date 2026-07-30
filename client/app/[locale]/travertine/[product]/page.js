@@ -3,6 +3,7 @@ import { useParams, usePathname } from "next/navigation";
 import { notFound } from "next/navigation";
 import { useLocale, useTranslations, useMessages } from "next-intl";
 import React from "react";
+import { localizedBlogSlug, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 import { colorKeys, colorSlugFor, colorLabelFor } from "@/lib/travertine";
 import {
   baseFor,
@@ -39,24 +40,7 @@ import {
 // --- Blog & Incoterm inline link pattern'ları ---
 
 function getIncotermPatterns(locale) {
-  const exportBase = locale.startsWith("tr")
-    ? "nasıl-ihracat-yapıyoruz"
-    : "how-we-export";
-
-  return [
-    {
-      pattern: /\bFOB\b/i,
-      href: `/${locale}/${exportBase}/fob`,
-    },
-    {
-      pattern: /\bCIF\b/i,
-      href: `/${locale}/${exportBase}/cif`,
-    },
-    {
-      pattern: /\bEXW\b/i,
-      href: `/${locale}/${exportBase}/exw`,
-    },
-  ];
+  return [];
 }
 
 function blogPath(locale, slug) {
@@ -313,13 +297,11 @@ const BLOG_SLUG_MAP = {
 };
 
 function resolveBlogSlug(locale, slug) {
-  const lang = locale.startsWith("tr") ? "tr" : "en";
   const clean = String(slug)
     .replace(/^travertines\//, "")  // eski prefix’leri temizle
     .replace(/^\//, "");            // baştaki /'ı kaldır
-
-  const map = BLOG_SLUG_MAP[lang] || {};
-  return map[clean] || clean;       // map’te yoksa olduğu gibi bırak
+  const pageKey = resolveBlogPageKey("en", clean);
+  return localizedBlogSlug(locale, pageKey) || clean;
 }
 
 

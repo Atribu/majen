@@ -113,12 +113,6 @@ export default async function Page({ params }) {
               >
                 Get a Quote
               </Link>
-              <Link
-                href="/en/how-we-export"
-                className="rounded-2xl bg-white px-4 lg:px-5 py-2 lg:py-3 text-[14px] lg:text-[16px] font-semibold text-neutral-900 shadow"
-              >
-                How We Export
-              </Link>
             </div>
           </div>
         </div>
@@ -281,7 +275,6 @@ export default async function Page({ params }) {
           <span>FOB Export</span> {" • "}
           <span>CIF Export</span> {" • "}
           <span>EXW Export</span> {" • "}
-          <Link href="/en/how-we-export">How We Export</Link> {" • "}
           <Link href="/en/travertine">Travertine</Link>
         </nav>
       </section>

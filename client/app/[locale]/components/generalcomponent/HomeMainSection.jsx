@@ -1,9 +1,11 @@
 import React from "react";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation"; // locale prefix'i korur
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const HomeMainSection = () => {
   const t = useTranslations("HomeMainSection");
+  const locale = useLocale();
 
   return (
     <div className="flex w-screen items-center justify-center mt-6 lg:mt-20">
@@ -22,7 +24,7 @@ const HomeMainSection = () => {
             // 🆕 travertine supplier from Turkey
             supplier: (chunks) => (
               <Link
-                href="/travertine-supplier"
+                href={localizedBlogPath(locale, "travertine-supplier")}
                 className="underline underline-offset-4 font-semibold"
               >
                 {chunks}
@@ -32,7 +34,7 @@ const HomeMainSection = () => {
             // 🆕 wholesale travertine from Turkey
             wholesale: (chunks) => (
               <Link
-                href="/travertine-turkey"
+                href={localizedBlogPath(locale, "travertine-turkey")}
                 className="underline underline-offset-4 font-semibold"
               >
                 {chunks}

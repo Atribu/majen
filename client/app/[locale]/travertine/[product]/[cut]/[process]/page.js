@@ -4,6 +4,7 @@
 // resimler _images klasöründeki IMAGE_BY_PRODUCT burdan geliyor ve
 // variant kısmının resimleri colorThumbs dan (_images)
 import React from "react";
+import { localizedBlogSlug, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 import Head from "next/head";
 import { useParams, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -208,24 +209,7 @@ export default function ProcessPage() {
   const baseHref = `${prefix}/${baseSegment}`;
 
   function getIncotermPatterns(locale) {
-  const exportBase = locale.startsWith("tr")
-    ? "nasıl-ihracat-yapıyoruz"
-    : "how-we-export";
-
-  return [
-    {
-      pattern: /\bFOB\b/i,
-      href: `/${locale}/${exportBase}/fob`,
-    },
-    {
-      pattern: /\bCIF\b/i,
-      href: `/${locale}/${exportBase}/cif`,
-    },
-    {
-      pattern: /\bEXW\b/i,
-      href: `/${locale}/${exportBase}/exw`,
-    },
-  ];
+  return [];
 }
 
   function getBlogPatterns(productKey, sectionIndex, locale) {
@@ -481,10 +465,6 @@ export default function ProcessPage() {
             pattern: /\bquarry-direct supplier,?\b/i,
             href: base("travertine-quarry"),
           },
-              {
-            pattern: /\bdelivery\b/i,
-            href: base("how-we-export"),
-          },
        
         ];
 
@@ -538,10 +518,6 @@ export default function ProcessPage() {
             pattern: /\bdistributors\b/i,
             href: base("travertine-distributor"),
           },
-             {
-            pattern: /\bshipment\b/i,
-            href: base("how-we-export"),
-          },
         ];
      
       default:
@@ -580,8 +556,7 @@ const BLOG_SLUG_MAP = {
     "antico-travertine": "antico-travertine",
     "travertine-bathroom":  "travertine-bathroom",
     "filled-travertine":"filled-travertine",
-    "unfilled-travertine":"unfilled-travertine",
-    "how-we-export":"how-we-export"
+    "unfilled-travertine":"unfilled-travertine"
   },
   tr: {
     // 🔻 Bunları sen kendi gerçek TR URL’lerine göre ayarla
@@ -606,19 +581,16 @@ const BLOG_SLUG_MAP = {
     "antico-travertine": "antiko-traverten",
     "travertine-bathroom":  "traverten-banyo",
     "filled-travertine":"dolgulu-traverten",
-    "unfilled-travertine":"dolgusuz-traverten",
-     "how-we-export":"nasil-ihracat-yapiyoruz"
+    "unfilled-travertine":"dolgusuz-traverten"
   },
 };
 
 function resolveBlogSlug(locale, slug) {
-  const lang = locale.startsWith("tr") ? "tr" : "en";
   const clean = String(slug)
     .replace(/^travertines\//, "")  // eski prefix’leri temizle
     .replace(/^\//, "");            // baştaki /'ı kaldır
-
-  const map = BLOG_SLUG_MAP[lang] || {};
-  return map[clean] || clean;       // map’te yoksa olduğu gibi bırak
+  const pageKey = resolveBlogPageKey("en", clean);
+  return localizedBlogSlug(locale, pageKey) || clean;
 }
 
   // ---- Breadcrumb için path

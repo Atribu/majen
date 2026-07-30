@@ -2,6 +2,7 @@
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
+import { procSlugForLocale } from "@/lib/labels";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
@@ -33,15 +34,25 @@ function shortCutKey(full) {
   return "vein-cut";
 }
 
+function localizedCutSlug(locale, cutKey, product) {
+  const cutPrefix = cutKey === "vein-cut"
+    ? (locale === "tr" ? "damar-kesim" : "vein-cut")
+    : (locale === "tr" ? "enine-kesim" : "cross-cut");
+  const productTail = locale === "tr"
+    ? ({ slabs: "plakalar", tiles: "karolar", pavers: "dosemeler" }[product] || product)
+    : product;
+  return `${cutPrefix}-${locale === "tr" ? "traverten" : "travertine"}-${productTail}`;
+}
+
 /** EN/TR ürün adını cut slug'ında doğru son ekle normalize et */
 function ensureProductInCutSlug(locale, cut, product) {
   const isTR = locale === "tr";
   const p = product === "pavers" ? "pavers" : product;
   if (isTR) {
     return String(cut)
-      .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "ozel-tasarim"}`)
-      .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "ozel-tasarim"}`)
-      .replace(/-traverten-dosemeler$/i, `-traverten-${p === "pavers" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
+      .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "dosemeler"}`)
+      .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "dosemeler"}`)
+      .replace(/-traverten-(?:ozel-tasarim|dosemeler)$/i, `-traverten-${p === "pavers" ? "dosemeler" : p === "slabs" ? "plakalar" : "karolar"}`);
   }
   return String(cut)
     .replace(/-travertine-slabs$/i,   `-travertine-${p === "slabs" ? "slabs" : p === "tiles" ? "tiles" : "pavers"}`)
@@ -126,6 +137,11 @@ export async function generateMetadata({ params }) {
   // ProductPage.{product}.cuts.{vein-cut|cross-cut}.processes.{filled-polished|...}.seo
   const cutShort  = shortCutKey(normalizedCut);      // "vein-cut" | "cross-cut"
   const procLookup = toLookupProcKey(process);       // "filled-polished" | "natural" ...
+  const localizedProcessUrl = (targetLocale) => {
+    const targetProcess = procSlugForLocale(targetLocale, procLookup);
+    const targetCut = localizedCutSlug(targetLocale, cutShort, product);
+    return `${SITE_URL}/${targetLocale}/${targetProcess}-${targetCut}`;
+  };
 
   const messages = await getMessages({ locale });
   const seo =
@@ -159,8 +175,9 @@ export async function generateMetadata({ params }) {
       canonical: canonicalUrl,
       // Projede aktif olan diller: en & tr
       languages: {
-        en: canonicalUrl.replace(`/${locale}/`, `/en/`),
-        tr: canonicalUrl.replace(`/${locale}/`, `/tr/`),
+        en: localizedProcessUrl("en"),
+        tr: localizedProcessUrl("tr"),
+        "x-default": localizedProcessUrl("en"),
       },
     },
     openGraph: {

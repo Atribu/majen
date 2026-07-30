@@ -1,4 +1,5 @@
 // lib/internalLinks.js
+import { localizedBlogPath, resolveBlogPageKey } from "./blogPageRoutes";
 
 /** Blog slug'larını normalize et: baştaki / işaretini temizle */
 function normalizeBlogSlug(raw) {
@@ -109,7 +110,7 @@ const BLOG_KEYWORD_TO_SLUG_TR = {
 
 /**
  * InlineLinks için pattern dizisi üretir.
- * Son URL formatı: /{locale}/blog/{slug}
+ * Her dilde aynı yazıyı o dilin kanonik, üst-seviye blog slug'ına bağlar.
  */
 export function buildBlogLinkPatterns(locale) {
   const lang = String(locale).toLowerCase().startsWith("tr") ? "tr" : "en";
@@ -122,6 +123,9 @@ export function buildBlogLinkPatterns(locale) {
 
   return entries.map(([keyword, slug]) => ({
     pattern: keywordToRegex(keyword),
-    href: `/${lang}/blog/${normalizeBlogSlug(slug)}`,
+    href: localizedBlogPath(
+      lang,
+      resolveBlogPageKey("en", normalizeBlogSlug(slug))
+    ),
   }));
 }

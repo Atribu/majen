@@ -18,7 +18,8 @@ import SocialMediaSection from "../../components/products1/SocialMediaSection";
 import InlineLinks from "../../components/generalcomponent/InlineLinks";
 import QuestionsSection from "../../components/generalcomponent/QuestionsSection";
 import BreadcrumbsExact from "../../components/generalcomponent/BreadcrumbsExact";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
   const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
@@ -51,88 +52,88 @@ const richText = (key) =>
   t2.rich(key, {
     // BLOCKS / QUARRY / COLORS
     quarry: (chunks) => (
-      <Link href="/travertine-quarry" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-quarry")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     blocksGuide: (chunks) => (
-      <Link href="/travertine-blocks-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-blocks")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     antico: (chunks) => (
-      <Link href="/antico-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "antico-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     light: (chunks) => (
-      <Link href="/light-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "light-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     ivory: (chunks) => (
-      <Link href="/ivory-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "ivory-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
 
     // SLABS & FINISHES
     slabsGuide: (chunks) => (
-      <Link href="/travertine-slabs-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-slabs")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     polished: (chunks) => (
-      <Link href="/polished-travertine-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "polished-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     honed: (chunks) => (
-      <Link href="/honed-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "honed-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     brushed: (chunks) => (
-      <Link href="/brushed-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "brushed-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     tumbled: (chunks) => (
-      <Link href="/tumbled-travertine" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "tumbled-travertine")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
 
     // TILES & APPLICATIONS
     tilesGuide: (chunks) => (
-      <Link href="/travertine-tiles-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-tiles")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     bathroom: (chunks) => (
-      <Link href="/travertine-bathroom" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-bathroom")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     kitchen: (chunks) => (
-      <Link href="/travertine-kitchen" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-kitchen")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     pool: (chunks) => (
-      <Link href="/travertine-pool" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-pool")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
 
     // PAVERS / MOSAICS
     paversGuide: (chunks) => (
-      <Link href="/travertine-pavers-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-pavers")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),
     mosaicsGuide: (chunks) => (
-      <Link href="/travertine-mosaics-guide" className={blogLinkClass}>
+      <Link href={localizedBlogPath(locale, "travertine-mosaics")} className={blogLinkClass}>
         {chunks}
       </Link>
     ),

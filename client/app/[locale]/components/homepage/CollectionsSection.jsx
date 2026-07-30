@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { colorSlugFor } from "@/lib/travertine";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 import antik from "@/public/images/slabs/antik.webp";
 import ivory from "@/public/images/slabs/Ivory.webp";
 import light from "@/public/images/slabs/light.webp";
@@ -20,6 +21,12 @@ export default function CollectionsSection() {
       : "travertine-blocks";
 
     return `${prefix}/${colorSlug}-${productSlug}`;
+  };
+  const slabsHref = (color) => {
+    const colorSlug = colorSlugFor(locale, color);
+    return locale.startsWith("tr")
+      ? `${prefix}/${colorSlug}-dolgulu-honlanmis-damar-kesim-traverten-plakalar`
+      : `${prefix}/${colorSlug}-filled-honed-vein-cut-travertine-slabs`;
   };
 
   const labels = {
@@ -42,7 +49,7 @@ export default function CollectionsSection() {
       title: t("titleAntiko"),
       alt: t("altAntiko"),
       blockHref: blockHref("antico"),
-      slabsHref: `${prefix}/antico-filled-honed-vein-cut-travertine-slabs`,
+      slabsHref: slabsHref("antico"),
       src: antik,
     },
     {
@@ -50,7 +57,7 @@ export default function CollectionsSection() {
       title: t("titleLight"),
       alt: t("altLight"),
       blockHref: blockHref("light"),
-      slabsHref: `${prefix}/light-filled-honed-vein-cut-travertine-slabs`,
+      slabsHref: slabsHref("light"),
       src: light,
     },
     {
@@ -58,7 +65,7 @@ export default function CollectionsSection() {
       title: t("titleIvory"),
       alt: t("altIvory"),
       blockHref: blockHref("ivory"),
-      slabsHref: `${prefix}/ivory-filled-honed-vein-cut-travertine-slabs`,
+      slabsHref: slabsHref("ivory"),
       src: ivory,
     },
   ];
@@ -94,7 +101,7 @@ export default function CollectionsSection() {
           {t.rich("text", {
             antiko: (chunks) => (
               <Link
-                href={`${prefix}/antico-travertine`}
+                href={localizedBlogPath(locale, "antico-travertine")}
                 className=" text-teal-700 font-semibold"
               >
                 {chunks}
@@ -102,7 +109,7 @@ export default function CollectionsSection() {
             ),
             light: (chunks) => (
               <Link
-                href={`${prefix}/light-travertine`}
+                href={localizedBlogPath(locale, "light-travertine")}
                 className=" text-teal-700 font-semibold"
               >
                 {chunks}
@@ -110,7 +117,7 @@ export default function CollectionsSection() {
             ),
             ivory: (chunks) => (
               <Link
-                href={`${prefix}/ivory-travertine`}
+                href={localizedBlogPath(locale, "ivory-travertine")}
                 className=" text-teal-700 font-semibold"
               >
                 {chunks}
@@ -118,7 +125,7 @@ export default function CollectionsSection() {
             ),
             supplier: (chunks) => (
               <Link
-                href={`${prefix}/travertine-supplier`}
+                href={localizedBlogPath(locale, "travertine-supplier")}
                 className=" text-teal-700 font-semibold"
               >
                 {chunks}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { localizedBlogSlug, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 import Head from "next/head";
 import { Link } from "@/i18n/navigation";
 import { useParams, useRouter, usePathname } from "next/navigation";
@@ -604,12 +605,11 @@ const BLOG_SLUG_MAP = {
 };
 
 function resolveBlogSlug(locale, slug) {
-  const lang = locale.startsWith("tr") ? "tr" : "en";
   const clean = String(slug)
     .replace(/^travertines\//, "")
     .replace(/^\//, "");
-  const map = BLOG_SLUG_MAP[lang] || {};
-  return map[clean] || clean;
+  const pageKey = resolveBlogPageKey("en", clean);
+  return localizedBlogSlug(locale, pageKey) || clean;
 }
 
 function blogPath(locale, slug) {
@@ -619,22 +619,7 @@ function blogPath(locale, slug) {
 
 // FOB / CIF / EXW + shipment / delivery → how-we-export
 function getIncotermPatterns(locale) {
-  const exportBase = locale.startsWith("tr")
-    ? "nasıl-ihracat-yapıyoruz"
-    : "how-we-export";
-
-  const rootHref = `/${locale}/${exportBase}`;
-
-  return [
-    { pattern: /\bFOB\b/i, href: `/${locale}/${exportBase}/fob` },
-    { pattern: /\bCIF\b/i, href: `/${locale}/${exportBase}/cif` },
-    { pattern: /\bEXW\b/i, href: `/${locale}/${exportBase}/exw` },
-
-    // shipment / shipping / delivery → ana ihracat sayfası
-    { pattern: /\bshipments?\b/i, href: rootHref },
-    { pattern: /\bshipping\b/i, href: rootHref },
-    { pattern: /\bdelivery\b/i, href: rootHref },
-  ];
+  return [];
 }
 
 // Ürüne göre genel blog pattern’ları (guide, flooring, cladding, pool vs.)

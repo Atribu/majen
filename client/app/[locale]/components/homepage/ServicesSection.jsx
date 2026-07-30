@@ -1,7 +1,7 @@
 // app/components/KeyFeatures.jsx
 "use client";
 import React, {useState, useEffect, useRef} from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   FaRulerCombined,
   FaPalette,
@@ -13,7 +13,8 @@ import { FiSettings } from "react-icons/fi";
 import ServiceBlocks from "./blocksComponents/ServiceBlocks";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation"; // locale prefix'i korur
+import Link from "next/link";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const ICONS = {
   quality: FaRulerCombined,
@@ -30,6 +31,7 @@ const GAP = 90;
 
 export default function KeyFeatures() {
   const t = useTranslations("KeyFeatures");
+  const locale = useLocale();
 
    const [blocksOrder, setBlocksOrder] = useState([
         "0",
@@ -117,7 +119,7 @@ export default function KeyFeatures() {
   cif: (chunks) => chunks,
   turkey: (chunks) => (
     <Link
-      href="/travertine-turkey"
+      href={localizedBlogPath(locale, "travertine-turkey")}
       className="underline underline-offset-4 text-teal-700 font-semibold"
     >
       {chunks}

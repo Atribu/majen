@@ -1,9 +1,11 @@
 import React from "react";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const LogisticSection = () => {
   const t = useTranslations("LogisticSection");
+  const locale = useLocale();
 
   return (
     <div className="flex w-screen items-center justify-center lg:mt-10 mb-20 lg:mb-0 z-[99]">
@@ -20,7 +22,7 @@ const LogisticSection = () => {
             // 🔗 yeni blog linkleri
             exp: (chunks) => (
               <Link
-                href="/travertine-exporter"
+                href={localizedBlogPath(locale, "travertine-exporter")}
                 className=" text-teal-700"
               >
                 {chunks}
@@ -28,7 +30,7 @@ const LogisticSection = () => {
             ),
             docs: (chunks) => (
               <Link
-                href="/travertine-exporter"
+                href={localizedBlogPath(locale, "travertine-exporter")}
                 className=" text-teal-700"
               >
                 {chunks}
@@ -36,7 +38,7 @@ const LogisticSection = () => {
             ),
             manu: (chunks) => (
               <Link
-                href="/travertine-manufacturer"
+                href={localizedBlogPath(locale, "travertine-manufacturer")}
                 className=" text-teal-700"
               >
                 {chunks}
@@ -44,7 +46,7 @@ const LogisticSection = () => {
             ),
             dist: (chunks) => (
               <Link
-                href="/travertine-distributor"
+                href={localizedBlogPath(locale, "travertine-distributor")}
                 className=" text-teal-700"
               >
                 {chunks}
@@ -52,7 +54,7 @@ const LogisticSection = () => {
             ),
             sup: (chunks) => (
               <Link
-                href="/travertine-supplier"
+                href={localizedBlogPath(locale, "travertine-supplier")}
                 className=" text-teal-700"
               >
                 {chunks}

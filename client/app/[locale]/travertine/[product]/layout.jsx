@@ -81,6 +81,11 @@ export async function generateMetadata({ params }) {
   const productSlug = PRODUCT_SLUGS[locale]?.[productKey] ?? product;
     const canonicalPath = `/${locale}/${baseSegment}-${productSlug}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const localizedProductUrl = (targetLocale) => {
+    const targetBase = BASE_BY_LOCALE[targetLocale];
+    const targetProduct = PRODUCT_SLUGS[targetLocale]?.[productKey] ?? productKey;
+    return `${SITE_URL}/${targetLocale}/${targetBase}-${targetProduct}`;
+  };
 
   // Başlık & açıklama: önce i18n → yoksa META_BY_PRODUCT fallback
   const fallback =
@@ -108,8 +113,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: canonicalUrl.replace(`/${locale}/`, `/en/`),
-        tr: canonicalUrl.replace(`/${locale}/`, `/tr/`),
+        en: localizedProductUrl("en"),
+        tr: localizedProductUrl("tr"),
+        "x-default": localizedProductUrl("en"),
       },
     },
     openGraph: {

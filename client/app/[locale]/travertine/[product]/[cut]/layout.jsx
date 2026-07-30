@@ -42,11 +42,11 @@ function ensureProductInCutSlug(locale, cut, product) {
   const isTR = locale === "tr";
   const p = product === "pavers" ? "pavers" : product; // alias düzelt
   if (isTR) {
-    // ...-traverten-(plakalar|karolar|ozel-tasarim)
+    // ...-traverten-(plakalar|karolar|dosemeler)
     return cut
-      .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "ozel-tasarim"}`)
-      .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "ozel-tasarim"}`)
-      .replace(/-traverten-ozel-tasarim$/i, `-traverten-${p === "pavers" ? "ozel-tasarim" : p === "slabs" ? "plakalar" : "karolar"}`);
+      .replace(/-traverten-plakalar$/i, `-traverten-${p === "slabs" ? "plakalar" : p === "tiles" ? "karolar" : "dosemeler"}`)
+      .replace(/-traverten-karolar$/i,  `-traverten-${p === "tiles" ? "karolar" : p === "slabs" ? "plakalar" : "dosemeler"}`)
+      .replace(/-traverten-(?:ozel-tasarim|dosemeler)$/i, `-traverten-${p === "pavers" ? "dosemeler" : p === "slabs" ? "plakalar" : "karolar"}`);
   }
   // EN: ...-travertine-(slabs|tiles|pavers)
   return cut
@@ -83,6 +83,16 @@ function cutTypeKey(cut) {
   return /^vein-cut|^damar-kesim/.test(cut) ? "vein" : "cross";
 }
 
+function localizedCutSlug(locale, cutKey, product) {
+  const cutPrefix = cutKey === "vein-cut"
+    ? (locale === "tr" ? "damar-kesim" : "vein-cut")
+    : (locale === "tr" ? "enine-kesim" : "cross-cut");
+  const productTail = locale === "tr"
+    ? ({ slabs: "plakalar", tiles: "karolar", pavers: "dosemeler" }[product] || product)
+    : product;
+  return `${cutPrefix}-${locale === "tr" ? "traverten" : "travertine"}-${productTail}`;
+}
+
 export async function generateMetadata({ params }) {
   const { locale, product, cut } = await params;
   const isTR = locale === "tr";
@@ -104,6 +114,8 @@ export async function generateMetadata({ params }) {
   const cutShort = /^vein-cut|^damar-kesim/i.test(normalizedCut) ? "vein-cut"
                   : /^cross-cut|^enine-kesim/i.test(normalizedCut) ? "cross-cut"
                   : "vein-cut";
+  const localizedCutUrl = (targetLocale) =>
+    `${SITE_URL}/${targetLocale}/${localizedCutSlug(targetLocale, cutShort, product)}`;
 
   const messages = await getMessages({ locale });
   const seo =
@@ -136,8 +148,9 @@ export async function generateMetadata({ params }) {
       canonical: canonicalUrl,
       // yalnızca mevcut diller
       languages: {
-        en: canonicalUrl.replace(`/${locale}/`, `/en/`),
-        tr: canonicalUrl.replace(`/${locale}/`, `/tr/`),
+        en: localizedCutUrl("en"),
+        tr: localizedCutUrl("tr"),
+        "x-default": localizedCutUrl("en"),
       },
     },
     openGraph: {

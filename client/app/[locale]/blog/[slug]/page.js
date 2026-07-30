@@ -1,37 +1,33 @@
 // app/[locale]/[slug]/page.js
 import DynamicTravertinePage from "./DynamicTravertinePage";
-import { getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { localizedBlogPath, resolveBlogPageKey } from "@/lib/blogPageRoutes";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/export/export-hero.webp`;
 
 export async function generateMetadata({ params }) {
-  const { locale } = await params;
-  const isTR = locale === "tr";
+  const { locale, slug } = await params;
+  const messages = await getMessages({ locale });
+  const pageKey = resolveBlogPageKey(locale, slug);
+  const page = pageKey ? messages?.blog?.pages?.[pageKey] : null;
 
-  const title = isTR
-    ? "Dünya Çapında Traverten İhracatı Nasıl Yapıyoruz | Majen Ocak Tedarikçisi"
-    : "Travertine Export From Turkey | FOB CIF EXW Shipping – Majen";
+  if (!page) notFound();
 
-  const description = isTR
-    ? "Majen traverteni dünya geneline ihraç eder. FOB/CIF sevkiyat, ihracat dokümanları, güçlendirilmiş paketleme ve güvenilir teslimat."
-    : "Majen exports travertine worldwide with FOB, CIF, EXW shipping options. From pro-forma to container loading: export documentation, reinforced packaging, and reliable delivery from Uşak–Ulubey.";
-
-  // Bu URL’yi sadece OG/twitter için kullanıyoruz; canonical TAG YOK
-  const pagePath = isTR
-    ? "/tr/nasil-ihracat-yapiyoruz"
-    : "/en/how-we-export";
-  const pageUrl = `${SITE_URL}${pagePath}`;
+  const title = page.metaTitle || page.h1;
+  const description = page.metaDesc || page.intro || "";
+  const pageUrl = `${SITE_URL}${localizedBlogPath(locale, pageKey)}`;
 
   return {
     title,
     description,
-    // 🔹 canonical YOK, sadece hreflang istersen bırakabilirsin:
     alternates: {
+      canonical: pageUrl,
       languages: {
-        en: `${SITE_URL}/en/how-we-export`,
-        tr: `${SITE_URL}/tr/nasil-ihracat-yapiyoruz`,
-        "x-default": `${SITE_URL}/en/how-we-export`,
+        en: `${SITE_URL}${localizedBlogPath("en", pageKey)}`,
+        tr: `${SITE_URL}${localizedBlogPath("tr", pageKey)}`,
+        "x-default": `${SITE_URL}${localizedBlogPath("en", pageKey)}`,
       },
     },
     openGraph: {
@@ -54,5 +50,10 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { slug, locale } = await params;
+  const messages = await getMessages({ locale });
+  const pageKey = resolveBlogPageKey(locale, slug);
+
+  if (!pageKey || !messages?.blog?.pages?.[pageKey]) notFound();
+
   return <DynamicTravertinePage slug={slug} localeFromServer={locale} />;
 }

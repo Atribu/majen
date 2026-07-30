@@ -8,18 +8,8 @@ const nextConfig = {
     return [
       // Legacy export URLs -> canonical localized slugs
       {
-        source: '/howweexport',
-        destination: '/en/how-we-export',
-        permanent: true,
-      },
-      {
         source: '/howweexport/:term(fob|cif|exw)',
         destination: '/en/how-we-export/:term',
-        permanent: true,
-      },
-      {
-        source: '/en/howweexport',
-        destination: '/en/how-we-export',
         permanent: true,
       },
       {
@@ -28,18 +18,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/tr/howweexport',
-        destination: '/tr/nasil-ihracat-yapiyoruz',
-        permanent: true,
-      },
-      {
         source: '/tr/howweexport/:term(fob|cif|exw)',
         destination: '/tr/nasil-ihracat-yapiyoruz/:term',
-        permanent: true,
-      },
-      {
-        source: '/tr/how-we-export',
-        destination: '/tr/nasil-ihracat-yapiyoruz',
         permanent: true,
       },
       {
@@ -56,6 +36,16 @@ const nextConfig = {
       {
         source: '/tr/travertine/:path*',
         destination: '/tr/traverten/:path*',
+        permanent: true,
+      },
+      {
+        source: '/en/traverten',
+        destination: '/en/travertine',
+        permanent: true,
+      },
+      {
+        source: '/en/traverten/:path*',
+        destination: '/en/travertine/:path*',
         permanent: true,
       },
     ];

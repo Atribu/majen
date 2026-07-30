@@ -64,7 +64,6 @@ export const config = {
 },
 
     // (İstersen kalınlığı ayrıca route edebilirsin; şu an SEO gereği gerek yok)
-    '/howweexport': { en: '/how-we-export', tr: '/nasil-ihracat-yapiyoruz' },
     '/howweexport/fob': { en: '/how-we-export/fob', tr: '/nasil-ihracat-yapiyoruz/fob' },
     '/howweexport/cif': { en: '/how-we-export/cif', tr: '/nasil-ihracat-yapiyoruz/cif' },
     '/howweexport/exw': { en: '/how-we-export/exw', tr: '/nasil-ihracat-yapiyoruz/exw' },

@@ -3,7 +3,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
+import { useLocale } from "next-intl";
 import StickySectionNav from "./StickySectionNav";
+import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const TOP_OFFSET = 80; // header yüksekliğine göre ayarla
 
@@ -18,12 +20,13 @@ const tocItems = [
 
 
 export default function TravertineBlog() {
+  const locale = useLocale();
   // DATA ------------------------------------------------------------
   const productTypes = useMemo(
     () => [
       {
         title: "Travertine Tiles",
-        slug: "/travertine-tiles-guide",
+        slug: localizedBlogPath(locale, "travertine-tiles"),
         img: "/images/homepage/kesim.webp",
         alt: "Travertine tiles for floors and walls – Turkey supplier",
         excerpt:
@@ -31,7 +34,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Slabs",
-        slug: "/travertine-slabs-guide",
+        slug: localizedBlogPath(locale, "travertine-slabs"),
         img: "/images/homepage/slabler2.webp",
         alt: "Large travertine slabs for countertops and facades",
         excerpt:
@@ -39,7 +42,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Blocks",
-        slug: "/travertine-blocks-guide",
+        slug: localizedBlogPath(locale, "travertine-blocks"),
         img: "/images/homepage/Ivoryblok.webp",
         alt: "Travertine blocks from Turkish quarries",
         excerpt:
@@ -47,7 +50,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Pavers",
-        slug: "/travertine-pavers-guide",
+        slug: localizedBlogPath(locale, "travertine-pavers"),
         img: "/images/newblog/travertinepavers.webp",
         alt: "Outdoor travertine pavers for patios and pools",
         excerpt:
@@ -55,21 +58,21 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Mosaics",
-        slug: "/travertine-mosaics-guide",
+        slug: localizedBlogPath(locale, "travertine-mosaics"),
         img: "/images/homepage/antikarkaplan4.webp",
         alt: "Travertine mosaics for bathrooms and kitchens",
         excerpt:
           "Travertine mosaics combine small stone pieces into decorative patterns. Popular in bathrooms, kitchens, and feature walls, they add texture and style while maintaining the durability of natural stone.",
       },
     ],
-    []
+    [locale]
   );
 
   const finishes = useMemo(
     () => [
       {
         title: "Polished Travertine",
-        slug: "/polished-travertine-guide",
+        slug: localizedBlogPath(locale, "polished-travertine"),
         img: "/images/newblog/Polishedtravertine.webp",
         alt: "Polished travertine surface",
         excerpt:
@@ -77,7 +80,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Honed Travertine",
-        slug: "/honed-travertine-guide",
+        slug: localizedBlogPath(locale, "honed-travertine"),
         img: "/images/blog/honed.jpg",
         alt: "Honed travertine surface",
         excerpt:
@@ -85,7 +88,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Tumbled Travertine",
-        slug: "/tumbled-travertine-guide",
+        slug: localizedBlogPath(locale, "tumbled-travertine"),
         img: "/images/newblog/travertinetumbled.webp",
         alt: "Tumbled travertine edges",
         excerpt:
@@ -93,7 +96,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Brushed Travertine",
-        slug: "/brushed-travertine-guide",
+        slug: localizedBlogPath(locale, "brushed-travertine"),
         img: "/images/blog/Brushed.jpg",
         alt: "Brushed travertine texture",
         excerpt:
@@ -101,7 +104,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Filled Travertine",
-        slug: "/filled-travertine-guide",
+        slug: localizedBlogPath(locale, "filled-travertine"),
         img: "/images/newblog/Filledtravertine.webp",
         alt: "Filled travertine pores",
         excerpt:
@@ -109,21 +112,21 @@ export default function TravertineBlog() {
       },
       {
         title: "Unfilled Travertine",
-        slug: "/unfilled-travertine-guide",
+        slug: localizedBlogPath(locale, "unfilled-travertine"),
         img: "/images/blog/unfilled.jpg",
         alt: "Polished travertine slab close-up",
         excerpt:
           "Unfilled travertine retains its natural pores and raw texture. Preferred for traditional or outdoor settings where authenticity and a rugged, natural aesthetic are desired.",
       },
     ],
-    []
+    [locale]
   );
 
   const colors = useMemo(
     () => [
       {
         title: "Ivory Travertine",
-        slug: "/ivory-travertine-guide",
+        slug: localizedBlogPath(locale, "ivory-travertine"),
         img: "/images/homepage/Ivory/ivory.webp",
         alt: "Ivory travertine tile – bright modern interior",
         excerpt:
@@ -131,7 +134,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Light Travertine",
-        slug: "/light-travertine-guide",
+        slug: localizedBlogPath(locale, "light-travertine"),
         img: "/images/homepage/Light/light.webp",
         alt: "Light travertine tile – bright modern interior",
         excerpt:
@@ -139,21 +142,21 @@ export default function TravertineBlog() {
       },
       {
         title: "Antico Travertine",
-        slug: "/antico-travertine-guide",
+        slug: localizedBlogPath(locale, "antico-travertine"),
         img: "/images/homepage/antik/antik.webp",
         alt: "Antico travertine tile – bright modern interior",
         excerpt:
           "Antico travertine features rich, earthy hues with an antique effect. Perfect for rustic designs and Mediterranean-style architecture, adding timeless character indoors and outdoors.",
       },
     ],
-    []
+    [locale]
   );
 
   const applications = useMemo(
     () => [
       {
         title: "Travertine Flooring",
-        slug: "/travertine-flooring-guide",
+        slug: localizedBlogPath(locale, "travertine-flooring"),
           img: "/images/homepage/Light/lighttasarim3.webp",
         alt: "Travertine floor detail",
         excerpt:
@@ -161,7 +164,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Cladding",
-        slug: "/travertine-cladding-guide",
+        slug: localizedBlogPath(locale, "travertine-cladding"),
         img: "/images/homepage/Light/lighttasarim4.webp",
         alt: "Travertine wall cladding",
         excerpt:
@@ -169,7 +172,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Facade",
-        slug: "/travertine-facade-guide",
+        slug: localizedBlogPath(locale, "travertine-facade"),
         img: "/images/homepage/Antik/Antiktasarim4.webp",
         alt: "Building facade with travertine",
         excerpt:
@@ -177,7 +180,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Bathroom",
-        slug: "/travertine-bathroom-guide",
+        slug: localizedBlogPath(locale, "travertine-bathroom"),
           img: "/images/homepage/Ivory/Ivorytasarim1.webp",
         alt: "Bathroom with travertine",
         excerpt:
@@ -185,7 +188,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Kitchen",
-        slug: "/travertine-kitchen-guide",
+        slug: localizedBlogPath(locale, "travertine-kitchen"),
        img: "/images/homepage/Antik/Antiktasarim2.webp",
         alt: "Kitchen with travertine surfaces",
         excerpt:
@@ -193,21 +196,21 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Pool",
-        slug: "/travertine-pool-guide",
+        slug: localizedBlogPath(locale, "travertine-pool"),
         img: "/images/homepage/Ivory/Ivorytasarim2.webp",
         alt: "Pool deck with travertine",
         excerpt:
           "Travertine pool surrounds are slip-resistant, heat-friendly, and refined. They provide a safe, elegant solution for outdoor leisure areas and resort-style landscapes.",
       },
     ],
-    []
+    [locale]
   );
 
   const business = useMemo(
     () => [
       {
         title: "Travertine Turkey",
-        slug: "/travertine-turkey",
+        slug: localizedBlogPath(locale, "travertine-turkey"),
          img: "/images/blogs/TravertineTurkey.webp",
         alt: "Travertine quarry in Turkey",
         excerpt:
@@ -215,7 +218,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Turkish Travertine",
-        slug: "/turkish-travertine",
+        slug: localizedBlogPath(locale, "turkish-travertine"),
         img: "/images/blogs/TurkishTravertine.webp",
         alt: "Turkish travertine close-up",
         excerpt:
@@ -223,7 +226,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Quarry",
-        slug: "/travertine-quarry",
+        slug: localizedBlogPath(locale, "travertine-quarry"),
         img: "/images/blogs/TravertineQuarry.webp",
         alt: "Travertine quarry blocks",
         excerpt:
@@ -231,7 +234,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Supplier",
-        slug: "/travertine-supplier",
+        slug: localizedBlogPath(locale, "travertine-supplier"),
         img: "/images/blogs/Travertinesupplier.webp",
         alt: "Warehouse of travertine tiles",
         excerpt:
@@ -239,7 +242,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Exporter",
-        slug: "/travertine-exporter",
+        slug: localizedBlogPath(locale, "travertine-exporter"),
         img: "/images/blogs/travertineexporter.webp",
         alt: "Container shipping travertine",
         excerpt:
@@ -247,7 +250,7 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Manufacturer",
-        slug: "/travertine-manufacturer",
+        slug: localizedBlogPath(locale, "travertine-manufacturer"),
          img: "/images/blogs/Travertinemanufacturer.webp",
         alt: "Factory processing travertine slabs",
         excerpt:
@@ -255,14 +258,14 @@ export default function TravertineBlog() {
       },
       {
         title: "Travertine Distributor",
-        slug: "/travertine-distributor",
+        slug: localizedBlogPath(locale, "travertine-distributor"),
          img: "/images/blogs/travertinedistributor.webp",
         alt: "Distribution center with stone pallets",
         excerpt:
           "Travertine distributors supply natural stone to contractors, retailers, and wholesalers, ensuring availability and after-sales support across regions.",
       },
     ],
-    []
+    [locale]
   );
 
   // HELPERS ---------------------------------------------------------
@@ -456,35 +459,35 @@ const handleClick = (e, id) => {
         Turkish travertine comes in multiple product formats to match design
         intent and installation scale.{" "}
         <a
-          href="/travertine-tiles-guide"
+          href={localizedBlogPath(locale, "travertine-tiles")}
           className="text-teal-700 hover:underline"
         >
           Travertine tiles
         </a>{" "}
         suit floors and walls, while{" "}
         <a
-          href="/travertine-slabs-guide"
+          href={localizedBlogPath(locale, "travertine-slabs")}
           className="text-teal-700 hover:underline"
         >
           large-format slabs
         </a>{" "}
         deliver seamless surfaces for kitchens and facades. Raw{" "}
         <a
-          href="/travertine-blocks-guide"
+          href={localizedBlogPath(locale, "travertine-blocks")}
           className="text-teal-700 hover:underline"
         >
           travertine blocks
         </a>{" "}
         feed manufacturing lines;{" "}
         <a
-          href="/travertine-pavers-guide"
+          href={localizedBlogPath(locale, "travertine-pavers")}
           className="text-teal-700 hover:underline"
         >
           pavers
         </a>{" "}
         and{" "}
         <a
-          href="/travertine-mosaics-guide"
+          href={localizedBlogPath(locale, "travertine-mosaics")}
           className="text-teal-700 hover:underline"
         >
           mosaics
@@ -523,7 +526,7 @@ const handleClick = (e, id) => {
       <h3 className="mt-6 text-lg font-semibold">Polished vs. Honed</h3>
       <p>
         <a
-          href="/en/blog/travertines/polished-travertine"
+          href={localizedBlogPath(locale, "polished-travertine")}
           className="text-teal-700 hover:underline"
         >
           Polished travertine

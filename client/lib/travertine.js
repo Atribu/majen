@@ -28,7 +28,7 @@ export const PRODUCT_SLUGS = {
 // Sayfa içi gösterebilirsin
 export const COLOR_VARIANTS = {
   en: { ivory: "ivory", light: "light", antico: "antico" },
-  tr:  { ivory: "ivory", light: "light", antico: "antico" },
+  tr:  { ivory: "fildisi", light: "acik", antico: "antiko" },
 };
 
 // CUT’lar dış slug’ları: ürün tipi gömülü.
@@ -236,9 +236,7 @@ export const COLORS = {
     antico: { slug: "antico", label: "Antico" }
   },
   tr: {
-    // slug'ları SEO için sabit tutmak istersen EN ile aynı bırakabilirsin.
-    // Eğer TR'de URL'de yerelleştirilmiş slug istiyorsan burayı değiştir.
-    ivory:  { slug: "ivory",  label: "Ivory"  },
+    ivory:  { slug: "fildisi", label: "Ivory"  },
     light:  { slug: "acik",   label: "Açık"   },
     antico: { slug: "antiko", label: "Antiko" }
   }
