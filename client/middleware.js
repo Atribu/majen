@@ -75,11 +75,11 @@ const PROC_CUT_WITH_PRODUCT_EN =
   /^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i;
 
 const PROC_CUT_WITH_PRODUCT_TR =
-  /^((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
+  /^((?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|dogal)|dogal)-(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
 
 
 const PROC_ONLY_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
-const PROC_ONLY_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
+const PROC_ONLY_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|dogal))$/i;
 
 const BLOCKS_COLOR_EN = /^([a-z0-9-]+)-travertine-blocks$/i;
 const BLOCKS_COLOR_TR = /^([a-z0-9-]+)-traverten-bloklar$/i;

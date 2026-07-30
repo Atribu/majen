@@ -1985,8 +1985,8 @@
                   "tumbled"
                 ]
               }
-            },
-            "meta": {
+},
+"meta": {
               "natural": {
                 "title": "Natural",
                 "alt": "Natural vein-cut travertine slab"
@@ -8246,7 +8246,7 @@
                 "image": "/images/og/vein-custom.webp"
               },
               "h1": "Dolgusuz Doğal Cross Cut Traverten Plakalar",
-              "title": "Dolgusuz Fırçalı Vein Cut Traverten Plakalar",
+              "title": "Dolgusuz Doğal Cross Cut Traverten Plakalar",
               "lead": "Majen, Dolgusuz Doğal Cross Cut Traverten Plakaları Türkiye’deki Uşak–Ulubey ocağından doğrudan tedarik eder. Her plaka, doğal katmanlara dik kesilerek yüzey boyunca zarif, bulut benzeri desenler ortaya çıkarır. Dolgusuz doğal doku, açık gözenekleri koruyarak taşın otantik nefes alabilirliğini ve dokunsal sıcaklığını muhafaza eder. Rustik ve organik iç mekânlar, cepheler ve bahçe tasarımları için mükemmel olan bu plakalar, zamansız doğal güzelliği ve jeolojik karakteri yansıtır.",
               "intro": "Majen, Dolgusuz Doğal Cross Cut Traverten Plakaları Türkiye’deki Uşak–Ulubey ocağından doğrudan tedarik eder. Her plaka, doğal katmanlara dik kesilerek yüzey boyunca zarif, bulut benzeri desenler ortaya çıkarır. Dolgusuz doğal doku, açık gözenekleri koruyarak taşın otantik nefes alabilirliğini ve dokunsal sıcaklığını muhafaza eder. Rustik ve organik iç mekânlar, cepheler ve bahçe tasarımları için mükemmel olan bu plakalar, zamansız doğal güzelliği ve jeolojik karakteri yansıtır.",
               "title2": "Dolgusuz Doğal Cross Cut Traverten Nedir?",
@@ -14390,6 +14390,95 @@
           "image": "/images/tiles/kesim.webp",
           "youtube": "https://youtu. be/GNdnB-TN2uA",
           "processes": {
+            "unfilled-natural": {
+              "seo": {
+                "title": "Dolgusuz Doğal Enine Kesim Traverten Karolar | Majen",
+                "description": "Açık gözenekli, doğal mat dokulu ve bulut desenli dolgusuz doğal enine kesim traverten karolar.",
+                "image": "/images/new/tiles/antico/AnticoCrossNaturalUnfilled8x8.webp"
+              },
+              "h1": "Dolgusuz Doğal Enine Kesim Traverten Karolar",
+              "title": "Dolgusuz Doğal Enine Kesim Traverten Karolar",
+              "lead": "Majen dolgusuz doğal enine kesim traverten karoları, taşın açık gözeneklerini ve ham mat dokusunu korur. Enine kesim yüzeyde yumuşak, bulut benzeri geçişler oluşturur.",
+              "intro": "Majen dolgusuz doğal enine kesim traverten karoları, taşın açık gözeneklerini ve ham mat dokusunu korur. Ivory, Light ve Antico tonları doğal ve zamansız tasarımlara uyum sağlar.",
+              "title2": "Dolgusuz Doğal Enine Kesim Traverten Nedir?",
+              "intro2": "Traverten doğal tabakalarına dik kesildiğinde doğrusal damarlar yerine bulutumsu desenler ortaya çıkar. Gözeneklerin açık bırakıldığı ve parlatma uygulanmadığı bu yüzey, taşın nefes alabilen yapısını ve dokunsal karakterini korur.",
+              "description": [
+                "Taşın özgün gözeneklerini ve dokusunu koruyan ham ve doğal bir yüzey sunar.",
+                "Enine kesim yönü sakin bir ritim oluşturan yumuşak bulut desenlerini ortaya çıkarır.",
+                "Ivory, Light ve Antico tonları sıcak ve dengeli bir renk paleti sağlar.",
+                "Üretim partileri ölçü, ton ve yüzey bütünlüğü açısından kontrol edilir."
+              ],
+              "TextSection": {
+                "header1": "Kullanım Alanları ve Tasarım Senaryoları",
+                "text1": "Dolgusuz doğal enine kesim traverten; teraslar, avlular, banyolar, iç duvarlar ve vurgu yüzeyleri için uygundur.",
+                "header2": "Bakım ve Yüzey Koruması",
+                "text2": "pH nötr temizleyiciler kullanılmalı; nemli alanlarda nefes alabilen emprenye tercih edilmelidir."
+              },
+              "sizes": {
+                "8x8": {
+                  "desc": "",
+                  "metaTitle": "8×8 Dolgusuz Doğal Enine Kesim Traverten Karolar",
+                  "metaDesc": "Açık gözenekli ve doğal mat dokulu 8×8 dolgusuz doğal enine kesim traverten karolar.",
+                  "h1": "8×8 Dolgusuz Doğal Enine Kesim Traverten Karolar",
+                  "title": "8×8 Dolgusuz Doğal Enine Kesim Traverten Karolar",
+                  "title2": "Uygulama Alanları ve İdeal Kullanım Senaryoları",
+                  "lead": "8×8 dolgusuz doğal enine kesim traverten karolar, açık gözenekli ham yüzeyi ve bulutumsu desenleriyle doğal bir karakter oluşturur.",
+                  "intro": "Majen 8×8 dolgusuz doğal enine kesim traverten karoları, taşın özgün gözeneklerini ve mat dokusunu korur. Ivory, Light ve Antico seçenekleri farklı tasarım paletlerine uyum gösterir.",
+                  "intro2": "8×8 format; banyolar, mutfak araları, dekoratif duvarlar ve vurgu yüzeyleri için idealdir. Dolgusuz doğal yüzey malzemenin gerçek dokusunu ve organik sıcaklığını öne çıkarır.",
+                  "h3": "Kalınlık Seçenekleri ve Formatlar",
+                  "text3": "8×8 traverten karolar 2 cm ve 3 cm kalınlık seçenekleriyle hazırlanabilir.",
+                  "h4": "Teknik Özellikler: Dolgusuz • Doğal • Enine Kesim",
+                  "text4": "Dolgusuz yüzey gözenekleri açık bırakır; doğal işlem mat dokuyu korur; enine kesim ise yumuşak bulut desenleri oluşturur.",
+                  "h5": "Renk Seçenekleri: Ivory • Light • Antico",
+                  "text5": "Ivory açık krem, Light dengeli bej, Antico ise sıcak ve rustik bir karakter sunar. Partiler ton uyumu için sınıflandırılır.",
+                  "finishes": {
+                    "title": "İşleme ve Kalite Kontrol",
+                    "list1": "Doğal doku ve ton dengesi için sınıflandırma.",
+                    "list2": "Doğal gözenekleri koruyan kaplamasız yüzey.",
+                    "list3": "Tutarlı kalınlık için ölçü kontrolü.",
+                    "list4": "Yüzey ve yapısal bütünlük denetimi."
+                  },
+                  "export": {
+                    "title": "İhracat, Paketleme ve Sevkiyat",
+                    "list1": "Nem korumalı güçlendirilmiş ahşap kasalar.",
+                    "list2": "Dünya geneline FOB/CIF teslimat.",
+                    "list3": "Tam ihracat dokümantasyonu.",
+                    "list4": "Üretim partisi bazında izlenebilirlik."
+                  },
+                  "QuestionsItems": {
+                    "aboutpage_s4_faq_header1": "SSS",
+                    "aboutpage_s4_faq_span1": "8×8 Dolgusuz Doğal Enine Kesim Traverten Karolar",
+                    "aboutpage_s4_faq1_header": "Bu karoları özel kılan nedir?",
+                    "aboutpage_s4_faq1_text": "Açık gözenekli ham yüzey ve bulutumsu enine kesim deseni doğal dokuyu belirginleştirir.",
+                    "aboutpage_s4_faq2_header": "Nerelerde kullanılabilir?",
+                    "aboutpage_s4_faq2_text": "Banyo, mutfak, dekoratif duvar ve vurgu yüzeylerinde kullanıma uygundur."
+                  },
+                  "ui": {
+                    "chooseThickness": "Kalınlık Seçin",
+                    "applicationsLabel": "Kullanım Alanları",
+                    "specsLabel": "Teknik Özellikler",
+                    "faqLabel": "SSS"
+                  },
+                  "sections": {
+                    "applications": {
+                      "h2": "Kullanım Alanları",
+                      "p": "Banyolar, mutfak araları ve vurgu duvarları."
+                    },
+                    "specs": {
+                      "h2": "Teknik Özellikler",
+                      "rows": [
+                        { "prop": "Malzeme", "value": "Doğal Traverten" },
+                        { "prop": "Menşei", "value": "Türkiye" },
+                        { "prop": "Karo Ölçüsü", "value": "8×8 inç (20,3×20,3 cm)" },
+                        { "prop": "Kalınlık", "value": "2 cm, 3 cm" },
+                        { "prop": "Yüzey", "value": "Dolgusuz ve Doğal" },
+                        { "prop": "Kesim", "value": "Enine Kesim" }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
             "images": {
               "combined": {
                 "filled:honed": "/images/cut/antico/Slab/Antikcrosscut.webp",

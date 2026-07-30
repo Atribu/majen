@@ -52,7 +52,8 @@ function toLookupProcKey(procSlug) {
   const fill = { dolgulu: "filled", dolgusuz: "unfilled", filled: "filled", unfilled: "unfilled" }[fillRaw] || fillRaw;
   const proc = {
     honlanmis: "honed", cilali: "polished", fircalanmis: "brushed", eskitilmis: "tumbled",
-    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled"
+    honed: "honed", polished: "polished", brushed: "brushed", tumbled: "tumbled",
+    natural: "natural", dogal: "natural"
   }[procRaw] || procRaw;
   return s.includes("-") ? `${fill}-${proc}` : s; // "natural" gibi tek anahtar kalsın
 }

@@ -137,7 +137,9 @@ function trCombinedToEn(procKey = "") {
     honed: "honed",
     polished: "polished",
     brushed: "brushed",
-    tumbled: "tumbled"
+    tumbled: "tumbled",
+    natural: "natural",
+    dogal: "natural"
   }[procRaw] || procRaw;
   return `${fill}-${proc}`;
 }
@@ -700,14 +702,10 @@ function resolveBlogSlug(locale, slug) {
   const canonicalProcessSlug = procSlugForLocaleFn(locale, lookupProcKey);
   const processSlugLocalized = procSlugForLocaleFn(locale, process);
 
+  const youtubeByColorKey =
+    `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.youtubeByColor`;
   const youtubeByColor =
-    safe(
-      () =>
-        t.raw(
-          `${productKey}.cuts.${cutKey}.processes.${lookupProcKey}.youtubeByColor`
-        ),
-      {}
-    ) || {};
+    safe(() => (t.has(youtubeByColorKey) ? t.raw(youtubeByColorKey) : {}), {}) || {};
 
   /* ---------- ürün genel ---------- */
 

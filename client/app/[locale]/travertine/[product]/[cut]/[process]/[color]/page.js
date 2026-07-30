@@ -54,7 +54,8 @@ function trCombinedToEn(procKey = "") {
   const fill = { dolgulu:"filled", dolgusuz:"unfilled", filled:"filled", unfilled:"unfilled" }[fillRaw] || fillRaw;
   const proc = {
     honlanmis:"honed", cilali:"polished", fircalanmis:"brushed", eskitilmis:"tumbled",
-    honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled"
+    honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled",
+    natural:"natural", dogal:"natural"
   }[procRaw] || procRaw;
   return `${fill}-${proc}`;
 }
@@ -95,7 +96,8 @@ function combinedKeyFromProc(proc = "", locale = "en") {
   const fillMap = { dolgulu:"filled", dolgusuz:"unfilled", filled:"filled", unfilled:"unfilled" };
   const procMap = {
     honlanmis:"honed", cilali:"polished", fircalanmis:"brushed", eskitilmis:"tumbled",
-    honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled"
+    honed:"honed", polished:"polished", brushed:"brushed", tumbled:"tumbled",
+    natural:"natural", dogal:"natural"
   };
   const [fillRaw, procRaw] = s.split("-");
   const fill = fillMap[fillRaw] || fillRaw;
