@@ -10,8 +10,10 @@ import tilesIvory from "@/public/images/tiles/Ivorykesim.webp";
 import tilesLight from "@/public/images/homepage/kesim.webp";
 import tilesAntik from "@/public/images/tiles/antikokesim.webp";
 import QuestionsSection from "@/app/[locale]/components/generalcomponent/QuestionsSection";
+import { useTranslations } from "next-intl";
 
 export default function TravertineTilesPage() {
+  const t = useTranslations("blog.common");
   // --------- CONTENT DATA (edit safely) ---------------------------------
   const meta = {
     title:
@@ -197,7 +199,7 @@ export default function TravertineTilesPage() {
           {title}
         </h3>
         <p className="mt-2 text-sm text-neutral-700">{blurb}</p>
-        <span className="mt-3 inline-block text-sm">Read more →</span>
+        <span className="mt-3 inline-block text-sm">{t("ui.readMore")}</span>
       </div>
     </Link>
   );
@@ -281,16 +283,16 @@ export default function TravertineTilesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* TOC */}
           <aside className="lg:col-span-3 lg:sticky lg:top-24 h-max rounded-2xl border p-5">
-            <h2 className="text-base font-semibold">On this page</h2>
+            <h2 className="text-base font-semibold">{t("ui.onThisPage")}</h2>
             <nav className="mt-3 space-y-2 text-sm">
-              <a href="#colors" className="block hover:underline">Colors</a>
-              <a href="#finishes" className="block hover:underline">Finishes</a>
-              <a href="#applications" className="block hover:underline">Applications</a>
-              <a href="#specs" className="block hover:underline">Specifications</a>
-              <a href="#install" className="block hover:underline">Installation & Care</a>
-              <a href="#proscons" className="block hover:underline">Pros & Cons</a>
-              <a href="#gallery" className="block hover:underline">Gallery</a>
-              <a href="#faq" className="block hover:underline">FAQ</a>
+              <a href="#colors" className="block hover:underline">{t("toc.colors")}</a>
+              <a href="#finishes" className="block hover:underline">{t("toc.finishes")}</a>
+              <a href="#applications" className="block hover:underline">{t("toc.applications")}</a>
+              <a href="#specs" className="block hover:underline">{t("toc.specs")}</a>
+              <a href="#install" className="block hover:underline">{t("toc.install")}</a>
+              <a href="#proscons" className="block hover:underline">{t("toc.proscons")}</a>
+              <a href="#gallery" className="block hover:underline">{t("toc.gallery")}</a>
+              <a href="#faq" className="block hover:underline">{t("toc.faq")}</a>
             </nav>
           </aside>
 
@@ -329,17 +331,17 @@ export default function TravertineTilesPage() {
                 <div className="rounded-2xl border p-5">
                   <h3 className="text-base font-semibold">Flooring</h3>
                   <p className="mt-2">Durable, timeless surfaces for living rooms, corridors and hotel lobbies. Pairs well with underfloor heating.</p>
-                  <Link href="/en/blog/travertine-flooring" className="mt-3 inline-block underline">Learn more</Link>
+                  <Link href="/en/blog/travertine-flooring" className="mt-3 inline-block underline">{t("ui.learnMore")}</Link>
                 </div>
                 <div className="rounded-2xl border p-5">
                   <h3 className="text-base font-semibold">Bathrooms</h3>
                   <p className="mt-2">Spa‑like warmth and texture in showers, vanities and feature walls. Choose honed or tumbled for comfort.</p>
-                  <Link href="/en/blog/travertine-bathroom" className="mt-3 inline-block underline">Learn more</Link>
+                  <Link href="/en/blog/travertine-bathroom" className="mt-3 inline-block underline">{t("ui.learnMore")}</Link>
                 </div>
                 <div className="rounded-2xl border p-5">
                   <h3 className="text-base font-semibold">Kitchens & Outdoors</h3>
                   <p className="mt-2">Backsplashes and counters indoors; patios and pool decks outside with brushed/tumbled textures for grip.</p>
-                  <Link href="/en/blog/travertine-kitchen" className="mt-3 inline-block underline">Learn more</Link>
+                  <Link href="/en/blog/travertine-kitchen" className="mt-3 inline-block underline">{t("ui.learnMore")}</Link>
                 </div>
               </div>
             </Section>
@@ -353,9 +355,9 @@ export default function TravertineTilesPage() {
                 <table className="min-w-[640px] w-full text-sm border rounded-2xl overflow-hidden">
                   <thead>
                     <tr className="bg-neutral-50 text-left">
-                      <th className="p-3">Property</th>
-                      <th className="p-3">Typical Value</th>
-                      <th className="p-3">Notes</th>
+                      <th className="p-3">{t("table.property")}</th>
+                      <th className="p-3">{t("table.typicalValue")}</th>
+                      <th className="p-3">{t("table.notes")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -395,7 +397,7 @@ export default function TravertineTilesPage() {
             <Section id="proscons" title="Pros & Cons">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                 <div className="rounded-2xl border p-5">
-                  <h3 className="text-base font-semibold">Pros</h3>
+                  <h3 className="text-base font-semibold">{t("ui.pros")}</h3>
                   <ul className="mt-2 list-disc pl-5 space-y-1">
                     <li>Timeless natural look adds property value</li>
                     <li>Multiple colors and finishes for every design</li>
@@ -403,7 +405,7 @@ export default function TravertineTilesPage() {
                   </ul>
                 </div>
                 <div className="rounded-2xl border p-5">
-                  <h3 className="text-base font-semibold">Cons</h3>
+                  <h3 className="text-base font-semibold">{t("ui.cons")}</h3>
                   <ul className="mt-2 list-disc pl-5 space-y-1">
                     <li>Requires sealing and pH‑neutral cleaning</li>
                     <li>Polished finish may be slippery when wet</li>
@@ -451,17 +453,17 @@ export default function TravertineTilesPage() {
             {/* CTA */}
             <div className="my-10 rounded-2xl border p-6 md:p-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 className="text-xl md:text-2xl font-semibold">Request Samples or Details</h2>
+                <h2 className="text-xl md:text-2xl font-semibold">{t("cta.title")}</h2>
                 <p className="mt-2 text-sm text-neutral-700">
-                  Tell us color, finish, size and quantity. Our team will confirm availability, lead times and logistics terms for your project.
+                  {t("cta.desc")}
                 </p>
               </div>
               <div className="flex gap-3">
                 <Link href="/en/contact" className="px-4 py-2 rounded-xl border hover:bg-neutral-50">
-                  Contact Us
+                  {t("cta.contact")}
                 </Link>
                 <Link href="/en/catalog" className="px-4 py-2 rounded-xl border hover:bg-neutral-50">
-                  Download Catalog
+                  {t("cta.catalog")}
                 </Link>
               </div>
             </div>

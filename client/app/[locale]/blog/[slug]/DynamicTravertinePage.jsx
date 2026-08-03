@@ -305,7 +305,7 @@ const Section = ({ id, title, children }) => (
   </section>
 );
 
-const Card = ({ href, imgSrc, alt, title, blurb }) => {
+const Card = ({ href, imgSrc, alt, title, blurb, readMoreLabel }) => {
   const Wrapper = href ? Link : "div";
   const wrapperProps = href ? { href } : {};
   return (
@@ -329,7 +329,9 @@ const Card = ({ href, imgSrc, alt, title, blurb }) => {
             {blurb}
           </p>
         )}
-        {href && <span className="mt-3 inline-block text-sm">Read more →</span>}
+        {href && (
+          <span className="mt-3 inline-block text-sm">{readMoreLabel}</span>
+        )}
       </div>
     </Wrapper>
   );
@@ -593,7 +595,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
             >
               <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-1 md:pb-2 flex items-center justify-between">
                 <h2 className="text-[14px] md:text-[14px] lg:text-[16px] font-semibold text-neutral-800">
-                  On this page
+                  {t("common.ui.onThisPage")}
                 </h2>
                 {tocItems.length > 1 && (
                   <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden">
@@ -679,6 +681,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                       alt={imgAlt("colors", it.slug, it.h3)}
                       title={it.h3}
                       blurb={it.blurb}
+                      readMoreLabel={t("common.ui.readMore")}
                     />
                   ))}
                 </div>
@@ -727,6 +730,7 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                       alt={imgAlt("finishes", it.slug, it.h3 || it.slug)}
                       title={it.h3 || it.slug}
                       blurb={it.blurb}
+                      readMoreLabel={t("common.ui.readMore")}
                     />
                   ))}
                 </div>
@@ -802,9 +806,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                   <table className="min-w-[640px] w-full text-sm border rounded-2xl overflow-hidden">
                     <thead>
                       <tr className="bg-neutral-50 text-center">
-                        <th className="p-3">Property</th>
-                        <th className="p-3">Typical Value</th>
-                        <th className="p-3">Notes</th>
+                        <th className="p-3">{t("common.table.property")}</th>
+                        <th className="p-3">{t("common.table.typicalValue")}</th>
+                        <th className="p-3">{t("common.table.notes")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -867,7 +871,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
               <Section id="proscons" title={s.proscons.h2}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mt-4 ">
                   <div className="rounded-2xl border p-5">
-                    <h3 className="text-base font-semibold">Pros</h3>
+                    <h3 className="text-base font-semibold">
+                      {t("common.ui.pros")}
+                    </h3>
                     <ul className="mt-2 list-disc pl-5 space-y-1">
                       {(s.proscons.pros || []).map((p, i) => (
                         <li key={i}>
@@ -880,7 +886,9 @@ export default function DynamicTravertinePage({ slug, localeFromServer }) {
                     </ul>
                   </div>
                   <div className="rounded-2xl border p-5">
-                    <h3 className="text-base font-semibold">Cons</h3>
+                    <h3 className="text-base font-semibold">
+                      {t("common.ui.cons")}
+                    </h3>
                     <ul className="mt-2 list-disc pl-5 space-y-1">
                       {(s.proscons.cons || []).map((c, i) => (
                         <li key={i}>

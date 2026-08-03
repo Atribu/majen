@@ -4667,6 +4667,15 @@
                           "value": "Doğal dolgusuz + honlu yüzey"
                         }
                       ]
+                    },
+                    "faq": {
+                      "h2": "SSS",
+                      "items": [
+                        {
+                          "q": "Kaymazlık performansı nasıldır?",
+                          "a": "Islak alanlarda paspas kullanılması veya kaymazlık gereksinimine uygun yüzey seçimi önerilir."
+                        }
+                      ]
                     }
                   }
                 },
@@ -4765,6 +4774,15 @@
                           "value": "Doğal dolgusuz + ince honlama"
                         }
                       ]
+                    },
+                    "faq": {
+                      "h2": "SSS",
+                      "items": [
+                        {
+                          "q": "Kaymazlık performansı nasıldır?",
+                          "a": "Islak alanlarda paspas kullanılması veya kaymazlık gereksinimine uygun yüzey seçimi önerilir."
+                        }
+                      ]
                     }
                   }
                 },
@@ -4857,6 +4875,19 @@
                         {
                           "prop": "Yüzey Seçenekleri",
                           "value": "Dolgusuz & Honlu (mat)"
+                        },
+                        {
+                          "prop": "Fabrika Yüzey İşlemi",
+                          "value": "Doğal dolgusuz ve honlu yüzey; isteğe bağlı nefes alabilen emprenye"
+                        }
+                      ]
+                    },
+                    "faq": {
+                      "h2": "SSS",
+                      "items": [
+                        {
+                          "q": "Kaymazlık performansı nasıldır?",
+                          "a": "Islak alanlarda paspas kullanılması veya kaymazlık gereksinimine uygun yüzey seçimi önerilir."
                         }
                       ]
                     }
@@ -19163,6 +19194,10 @@
     "title": "Traverten Blogu",
     "intro": "Traverten tedariki, seçim kriterleri ve tasarım uygulamaları hakkında rehberler ve içgörüler.",
     "readMore": "Devamını oku",
+    "postCountRange": "Toplam {total} yazıdan {start}-{end} arası gösteriliyor",
+    "postCountTotal": "Toplam {total} yazı",
+    "empty": "Henüz blog yazısı bulunmuyor.",
+    "paginationLabel": "Blog sayfaları",
     "categories": {
       "travertine": "Traverten",
       "slabs": "Traverten Plakalar",
@@ -19516,26 +19551,40 @@
   "blog": {
     "common": {
       "toc": {
-        "colors": "Colors",
-        "finishes": "Finishes",
-        "applications": "Applications",
-        "specs": "Specifications",
-        "install": "Installation & Care",
-        "proscons": "Pros & Cons",
-        "gallery": "Gallery",
-        "faq": "FAQ",
-        "related": "Related Guides"
+        "types": "Ürün Türleri",
+        "colors": "Renkler",
+        "finishes": "Yüzey İşlemleri",
+        "applications": "Uygulamalar",
+        "specs": "Teknik Özellikler",
+        "install": "Montaj ve Bakım",
+        "proscons": "Avantajlar ve Dezavantajlar",
+        "gallery": "Galeri",
+        "faq": "SSS",
+        "related": "İlgili Rehberler",
+        "business": "Tedarik ve Ticaret"
+      },
+      "ui": {
+        "onThisPage": "Bu sayfada",
+        "readMore": "Devamını oku →",
+        "learnMore": "Daha fazla bilgi",
+        "pros": "Avantajlar",
+        "cons": "Dezavantajlar"
+      },
+      "table": {
+        "property": "Özellik",
+        "typicalValue": "Tipik Değer",
+        "notes": "Notlar"
       },
       "cta": {
-        "title": "Request Samples or Details",
-        "desc": "Tell us color, finish, size and quantity. We’ll confirm availability, lead times and logistics.",
-        "contact": "Contact Us",
-        "catalog": "Download Catalog"
+        "title": "Numune veya Detay Talep Edin",
+        "desc": "Renk, yüzey işlemi, ölçü ve miktar bilgilerini iletin. Stok, hazırlık süresi ve lojistik detaylarını teyit edelim.",
+        "contact": "Bize Ulaşın",
+        "catalog": "Kataloğu İndirin"
       },
       "breadcrumbs": {
-        "home": "Home",
+        "home": "Ana Sayfa",
         "blog": "Blog",
-        "travertines": "Travertines"
+        "travertines": "Travertenler"
       }
     },
     "pages": {
@@ -20756,6 +20805,16 @@
             ]
           }
         }
+      },
+      "filled-travertine": {
+        "metaTitle": "Dolgulu Traverten | Pürüzsüz ve Rafine Doğal Taş Yüzeyi",
+        "metaDesc": "Dolgulu travertende doğal boşluklar reçine veya çimento ile doldurularak daha düz ve kapalı bir yüzey elde edilir. Modern ve rafine iç mekânlar için uygundur.",
+        "h1": "Dolgulu Traverten",
+        "intro": "Dolgulu travertende doğal boşluklar reçine veya çimento ile doldurularak daha düz ve kapalı bir yüzey elde edilir. Özellikle parlak yüzeylerle birlikte, modern ve rafine iç mekânlarda tercih edilir.",
+        "socialImage": "/images/newblog/Filledtravertine.webp",
+        "datePublished": "2025-01-19",
+        "dateModified": "2025-01-19",
+        "sections": {}
       },
       "unfilled-travertine": {
         "metaTitle": "Unfilled Travertine | Natural Rustic Finish with Authentic Character",

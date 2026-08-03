@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import StickySectionNav from "./StickySectionNav";
 import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const TOP_OFFSET = 80; // header yüksekliğine göre ayarla
@@ -13,17 +12,18 @@ const TOP_OFFSET = 80; // header yüksekliğine göre ayarla
 export default function TravertineBlog() {
   const locale = useLocale();
   const blogT = useTranslations("BlogIndex");
+  const commonT = useTranslations("blog.common");
   const isTR = locale === "tr";
   const localizedPosts = blogT.raw("posts");
   const tocItems = useMemo(
     () => [
-      { id: "types", label: isTR ? "Ürün Türleri" : "Product Types" },
-      { id: "finishes", label: isTR ? "Yüzey İşlemleri" : "Finishes" },
-      { id: "colors", label: isTR ? "Renkler" : "Colors" },
-      { id: "applications", label: isTR ? "Kullanım Alanları" : "Applications" },
-      { id: "business", label: isTR ? "Tedarik & Ticaret" : "Supply & Business" },
+      { id: "types", label: commonT("toc.types") },
+      { id: "finishes", label: commonT("toc.finishes") },
+      { id: "colors", label: commonT("toc.colors") },
+      { id: "applications", label: commonT("toc.applications") },
+      { id: "business", label: commonT("toc.business") },
     ],
-    [isTR]
+    [commonT]
   );
   // DATA ------------------------------------------------------------
   const productTypes = useMemo(
@@ -323,7 +323,7 @@ const Section = ({ id, title, intro, children }) => (
           <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">{title}</h3>
           <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed text-neutral-700">{excerpt}</p>
           <span className="mt-4 inline-block text-sm font-medium">
-            {isTR ? "Devamını oku" : "Read more"} →
+            {commonT("ui.readMore")}
           </span>
         </div>
       </Link>
@@ -418,12 +418,12 @@ const handleClick = (e, id) => {
        <nav
       className="sticky z-20 mt-5 w-[95%] lg:w-[80%] rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)]"
       style={{ top: TOP_OFFSET }}
-      aria-label={isTR ? "Bu sayfada" : "On this page"}
+      aria-label={commonT("ui.onThisPage")}
     >
       {/* Başlık + ilerleme çubuğu */}
       <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-2 flex items-center justify-between">
         <h2 className="text-sm font-semibold text-neutral-800">
-          {isTR ? "Bu sayfada" : "On this page"}
+          {commonT("ui.onThisPage")}
         </h2>
         <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden">
           <div

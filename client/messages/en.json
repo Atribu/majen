@@ -4565,7 +4565,11 @@
                 "aboutpage_s4_faq3_header": "Is it suitable for outdoor use?",
                 "aboutpage_s4_faq3_text": "Yes, the unfilled honed texture offers moderate slip resistance, suitable for semi-outdoor and covered areas.",
                 "aboutpage_s4_faq4_header": "How should it be maintained?",
-                "aboutpage_s4_faq4_text": "Clean with neutral products, avoid acidic substances, and reseal lightly if exposed to moisture or heavy use."
+                "aboutpage_s4_faq4_text": "Clean with neutral products, avoid acidic substances, and reseal lightly if exposed to moisture or heavy use.",
+                "aboutpage_s4_faq5_header": "Which thickness should I choose?",
+                "aboutpage_s4_faq5_text": "We recommend 2 cm for standard interiors and 3 cm for high-traffic or more structurally demanding applications.",
+                "aboutpage_s4_faq6_header": "Do you export internationally?",
+                "aboutpage_s4_faq6_text": "Yes. Majen ships worldwide with insurance, documentation, and logistics support."
               },
               "colors": {
                 "ivory": {
@@ -63171,6 +63175,10 @@
     "title": "Travertine Blog",
     "intro": "Guides and insights on travertine sourcing, selection and design.",
     "readMore": "Read more",
+    "postCountRange": "Showing {start}-{end} of {total} posts",
+    "postCountTotal": "{total} posts",
+    "empty": "No blog posts are available yet.",
+    "paginationLabel": "Blog pages",
     "categories": {
       "travertine": "Travertine",
       "slabs": "Travertine Slabs",
@@ -63524,6 +63532,7 @@
   "blog": {
     "common": {
       "toc": {
+        "types": "Product Types",
         "colors": "Colors",
         "finishes": "Finishes",
         "applications": "Applications",
@@ -63532,7 +63541,20 @@
         "proscons": "Pros & Cons",
         "gallery": "Gallery",
         "faq": "FAQ",
-        "related": "Related Guides"
+        "related": "Related Guides",
+        "business": "Supply & Business"
+      },
+      "ui": {
+        "onThisPage": "On this page",
+        "readMore": "Read more →",
+        "learnMore": "Learn more",
+        "pros": "Pros",
+        "cons": "Cons"
+      },
+      "table": {
+        "property": "Property",
+        "typicalValue": "Typical Value",
+        "notes": "Notes"
       },
       "cta": {
         "title": "Request Samples or Details",
@@ -65514,10 +65536,6 @@
             "href": "/travertine-blocks-guide"
           },
           {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -65815,10 +65833,6 @@
             "href": "/en/blog/travertines/honed-travertine"
           },
           {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -65904,6 +65918,16 @@
           "technical": "92–95/100",
           "overall": "≈93/100"
         }
+      },
+      "filled-travertine": {
+        "metaTitle": "Filled Travertine | Smooth and Refined Natural Stone Surface",
+        "metaDesc": "Filled travertine has natural pores sealed with resin or cement to create a smoother, more uniform surface for modern and refined interiors.",
+        "h1": "Filled Travertine",
+        "intro": "Filled travertine has natural pores sealed with resin or cement, creating a smoother surface. Often paired with polished finishes for modern interiors where a clean and refined look is desired.",
+        "socialImage": "/images/newblog/Filledtravertine.webp",
+        "datePublished": "2025-01-19",
+        "dateModified": "2025-01-19",
+        "sections": {}
       },
       "unfilled-travertine": {
         "metaTitle": "Unfilled Travertine | Natural Rustic Finish with Authentic Character",
@@ -66160,6 +66184,8 @@
             ]
           },
           "install": {
+            "h2": "Installation & Care",
+            "intro": "Ivory travertine should be installed using cement-based adhesives for tiles and proper anchoring systems for slabs and facades. Sealing after installation is essential to protect against stains and moisture. Clean with neutral products and avoid acids. Resealing every 12–24 months helps preserve the stone’s bright, elegant appearance.",
             "careNotes": [
               "Seal after installation; renew sealer every 12–24 months depending on exposure.",
               "Use pH-neutral cleaners; avoid acidic products to prevent etching.",
@@ -66167,7 +66193,22 @@
               "For countertops, use cutting boards and trivets to protect from scratches and heat."
             ]
           },
+          "proscons": {
+            "h2": "Pros & Cons",
+            "pros": [
+              "Elegant, light beige tones enhance brightness",
+              "Versatile across styles and applications",
+              "Highly durable and globally recognized"
+            ],
+            "cons": [
+              "Requires sealing and periodic maintenance",
+              "May show dirt more easily due to light tones",
+              "Not ideal for projects seeking dark, bold aesthetics"
+            ]
+          },
           "gallery": {
+            "h2": "Gallery",
+            "intro": "See real-world examples of ivory travertine in floors, bathrooms, pools, and facades. These projects highlight how its elegance elevates both interiors and exteriors.",
             "alts": [
               "Ivory travertine bathroom with honed finish",
               "Polished Ivory travertine countertop and backsplash",
@@ -66175,6 +66216,26 @@
             ]
           },
           "faq": {
+            "h2": "Frequently Asked Questions",
+            "intro": "Answers to common questions about ivory travertine and its uses.",
+            "items": [
+              {
+                "q": "What is ivory travertine used for?",
+                "a": "Ivory travertine is used for floors, walls, bathrooms, kitchens, pools, terraces, and facades. Its light tones create bright and luxurious environments."
+              },
+              {
+                "q": "Does ivory travertine need sealing?",
+                "a": "Yes. Ivory travertine is porous and should be sealed after installation and resealed every 12–24 months to protect against stains and moisture."
+              },
+              {
+                "q": "Is ivory travertine good for outdoor use?",
+                "a": "Yes. Ivory travertine is excellent for outdoor applications such as pool decks and terraces, where its brightness enhances open spaces."
+              },
+              {
+                "q": "Which finishes are available for ivory travertine?",
+                "a": "Ivory travertine is available in polished, honed, tumbled, and brushed finishes, each offering unique aesthetic and functional benefits."
+              }
+            ],
             "extra": [
               {
                 "q": "What makes Ivory Travertine unique?",
@@ -66414,10 +66475,6 @@
           {
             "text": "travertine blocks",
             "href": "/travertine-blocks-guide"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -66699,10 +66756,6 @@
           {
             "text": "travertine blocks",
             "href": "/travertine-blocks-guide"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -67044,10 +67097,6 @@
           {
             "text": "travertine pavers",
             "href": "/travertine-pavers-guide"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -67517,10 +67566,6 @@
             "href": "/travertine-tiles-guide"
           },
           {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -67777,10 +67822,6 @@
           {
             "text": "travertine mosaics",
             "href": "/en/blog/travertines/travertine-mosaics"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -68040,10 +68081,6 @@
           {
             "text": "travertine mosaics",
             "href": "/en/blog/travertines/travertine-mosaics"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -68307,10 +68344,6 @@
             "href": "/en/blog/travertines/travertine-mosaics"
           },
           {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -68569,10 +68602,6 @@
           {
             "text": "travertine blocks",
             "href": "/travertine-blocks-guide"
-          },
-          {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
           },
           {
             "text": "travertine hub",
@@ -68967,10 +68996,6 @@
             "href": "/travertine-tiles-guide"
           },
           {
-            "text": "FOB/CIF/EXW",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -69266,10 +69291,6 @@
             "href": "/travertine-blocks-guide"
           },
           {
-            "text": "how we export (FOB/CIF/EXW)",
-            "href": "/en/how-we-export"
-          },
-          {
             "text": "travertine hub",
             "href": "/en/blog/travertines"
           }
@@ -69545,10 +69566,6 @@
           }
         },
         "internalLinks": [
-          {
-            "text": "how we export (FOB/CIF/EXW)",
-            "href": "/en/how-we-export"
-          },
           {
             "text": "travertine tiles",
             "href": "/travertine-tiles-guide"

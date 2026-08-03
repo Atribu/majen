@@ -1,18 +1,21 @@
 "use client";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const TOP_OFFSET = 80; // header yüksekliğine göre ayarla
 
-// Sayfanda zaten varsa bu listeyi oradan da verebilirsin
-const tocItems = [
-  { id: "types",         label: "Product Types" },
-  { id: "finishes",      label: "Finishes" },
-  { id: "colors",        label: "Colors" },
-  { id: "applications",  label: "Applications" },
-  { id: "business",      label: "Supply & Business" },
-];
-
 export default function StickySectionNav() {
+  const t = useTranslations("blog.common");
+  const tocItems = React.useMemo(
+    () => [
+      { id: "types", label: t("toc.types") },
+      { id: "finishes", label: t("toc.finishes") },
+      { id: "colors", label: t("toc.colors") },
+      { id: "applications", label: t("toc.applications") },
+      { id: "business", label: t("toc.business") },
+    ],
+    [t]
+  );
   const [active, setActive] = React.useState(tocItems[0].id);
 
   // Scrollspy (hangi bölüm görünürse onu aktif yap)
@@ -34,7 +37,7 @@ export default function StickySectionNav() {
     const els = tocItems.map((x) => document.getElementById(x.id)).filter(Boolean);
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [tocItems]);
 
   const handleClick = (e, id) => {
     e.preventDefault();
@@ -51,11 +54,13 @@ export default function StickySectionNav() {
     <nav
       className="sticky z-20 rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)]"
       style={{ top: TOP_OFFSET }}
-      aria-label="On this page"
+      aria-label={t("ui.onThisPage")}
     >
       {/* Başlık + ilerleme çubuğu */}
       <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-2 flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-neutral-800">On this page</h2>
+        <h2 className="text-sm font-semibold text-neutral-800">
+          {t("ui.onThisPage")}
+        </h2>
         <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-neutral-800/70 transition-all"

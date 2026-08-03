@@ -148,7 +148,7 @@ export async function generateMetadata({ params }) {
 
 
 // Pagination Component
-function Pagination({ currentPage, totalPages, locale }) {
+function Pagination({ currentPage, totalPages, locale, label }) {
   if (totalPages <= 1) return null;
 
   const pages = [];
@@ -166,7 +166,7 @@ function Pagination({ currentPage, totalPages, locale }) {
   }
 
   return (
-    <nav className="flex justify-center mt-12" aria-label="Pagination">
+    <nav className="flex justify-center mt-12" aria-label={label}>
       <div className="flex items-center space-x-1">
         {/* Previous button */}
         {currentPage > 1 && (
@@ -273,10 +273,13 @@ export default async function Page({ params, searchParams }) {
         {/* Post count info */}
         {totalPosts > 0 && (
           <div className="mt-4 text-sm text-neutral-600">
-            {totalPosts > POSTS_PER_PAGE 
-              ? `Toplam ${totalPosts} yazıdan ${startIndex + 1}-${Math.min(endIndex, totalPosts)} arası gösteriliyor`
-              : `Toplam ${totalPosts} yazı`
-            }
+            {totalPosts > POSTS_PER_PAGE
+              ? t("postCountRange", {
+                  total: totalPosts,
+                  start: startIndex + 1,
+                  end: Math.min(endIndex, totalPosts),
+                })
+              : t("postCountTotal", { total: totalPosts })}
           </div>
         )}
       </header>
@@ -381,7 +384,7 @@ export default async function Page({ params, searchParams }) {
         </section>
       ) : (
         <div className="mx-auto mt-10 max-w-5xl text-center">
-          <p className="text-neutral-600">Henüz blog yazısı bulunmuyor.</p>
+          <p className="text-neutral-600">{t("empty")}</p>
         </div>
       )}
 
@@ -390,6 +393,7 @@ export default async function Page({ params, searchParams }) {
         currentPage={currentPage}
         totalPages={totalPages}
         locale={locale}
+        label={t("paginationLabel")}
       />
 
       <ContactFrom />
