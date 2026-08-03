@@ -460,35 +460,27 @@ const title  = t(`${productKey}.title`);
   const isBlocks = productKey === "blocks";
 let colorCards = [];
 if (isBlocks) {
-   // i18n’den toplu görsel ve YouTube map’leri
+   // i18n’den blok görselleri
     const blockImages =
       optRaw(`blocks.images`, null)    // "block" yazılmış olabilir; önce blocks
       || optRaw(`block.images`, null)  // fallback "block"
       || {};
-    const blockYoutube =
-      optRaw(`blocks.youtube`, null)
-      || optRaw(`block.youtube`, null)
-      || {};
-
-
   const colors = colorKeys(); // örn: ["ivory","light","antico"]
   colorCards = colors.map((ckey) => {
     const slug  = colorSlugFor(locale, ckey);             // "ivory" → "ivory" | "fildisi"
     const label = colorLabelFor(locale, ckey);  
      // Kısa SEO URL: /{locale}/{color}-travertine-blocks  (TR: /{locale}/{color}-traverten-bloklar)
  const pretty = locale.startsWith("tr")
-   ? `/fildisi-traverten-bloklar`
+   ? `/${slug}-traverten-bloklar`
    : `/${slug}-travertine-blocks`;
 
-  // Görsel & YouTube (i18n → image map → fallback)
+  // Görsel (i18n → image map → fallback)
       const byVariantMap = (IMAGE_BY_PRODUCT_AND_VARIANT?.[productKey] || {});
       const i18nImg = blockImages?.[ckey] || blockImages?.[slug];
       const mapImg  = byVariantMap?.[ckey] || byVariantMap?.[slug];
       const image   = i18nImg || mapImg ||
    (typeof imgMap === "object" ? imgMap?.[ckey] : undefined) ||
    `/images/blocks/${slug}.webp`;
-      const youtubeUrl = blockYoutube?.[ckey] || blockYoutube?.[slug] || "";
-
     return {
       slug,
       vKey: ckey,
@@ -502,7 +494,7 @@ if (isBlocks) {
       // Yeni: kısa SEO link (string). Middleware bunu FS rotasına REWRITE edecek.
      href: pretty,
      img:image,
-     youtubeUrl
+     youtubeUrl: ""
     };
   });
 }

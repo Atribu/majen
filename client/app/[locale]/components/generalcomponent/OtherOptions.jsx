@@ -112,7 +112,12 @@ const resolveHref = (hrefLike) => {
     tiles: t("variantSentence.tiles.start"),
     pavers: t("variantSentence.pavers.start"),
   };
-  const endCommon = t("variantSentence.end");
+  const endByProduct = {
+    blocks: t("variantSentence.blocks.end"),
+    slabs: t("variantSentence.slabs.end"),
+    tiles: t("variantSentence.tiles.end"),
+    pavers: t("variantSentence.pavers.end"),
+  };
 
   const visibleOrder = excludeProduct
     ? productOrder.filter((k) => k !== excludeProduct)
@@ -202,13 +207,13 @@ const resolveHref = (hrefLike) => {
                             blocks: t("variantsubtitle1"),
                             slabs: t("variantsubtitle2"),
                             tiles: t("variantsubtitle3"),
-                            special: t("variantsubtitle4"),
+                            pavers: t("variantsubtitle4"),
                           }
                         : {
                             blocks: t("variantsubtitle1"),
                             slabs: t("variantsubtitle2"),
                             tiles: t("variantsubtitle3"),
-                            special: t("variantsubtitle4"),
+                            pavers: t("variantsubtitle4"),
                           })[pkey]}
                     </h4>
 
@@ -223,7 +228,7 @@ const resolveHref = (hrefLike) => {
                           {i < variantSlugs.length - 1 ? ", " : ""}
                         </span>
                       ))}{" "}
-                      {endCommon}
+                      {endByProduct[pkey]}
                     </p>
 
                     <Link

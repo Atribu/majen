@@ -157,7 +157,12 @@ export default function VariantCircleSection2(props) {
     tiles: t("variantSentence.tiles.start"),
     pavers: t("variantSentence.pavers.start"),
   };
-  const endCommon = t("variantSentence.end");
+  const endByProduct = {
+    blocks: t("variantSentence.blocks.end"),
+    slabs: t("variantSentence.slabs.end"),
+    tiles: t("variantSentence.tiles.end"),
+    pavers: t("variantSentence.pavers.end"),
+  };
 
   const variantHref = (productKey, colorSlug, index) => {
     const p = CANON[productKey] || productKey;
@@ -255,7 +260,7 @@ export default function VariantCircleSection2(props) {
                         </span>
                       );
                     })}{" "}
-                    {endCommon}
+                    {endByProduct[pkey]}
                   </p>
                 ) : null}
 

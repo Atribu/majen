@@ -5,6 +5,7 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import { FiShare2, FiCheck, FiLink, FiX } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 export default function ShareButton({
   title,
@@ -15,6 +16,7 @@ export default function ShareButton({
   variant = "button", // "icon" | "button" | "floating"
 }) {
   const pathname = usePathname();
+  const socialT = useTranslations("Footer.social");
   const [origin, setOrigin] = useState("");
   const [pageTitle, setPageTitle] = useState(title || "Majen"); // <-- SSR-safe
   const [open, setOpen] = useState(false);
@@ -126,7 +128,16 @@ export default function ShareButton({
             </div>
 
             <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
-              <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a
+                className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50"
+                href={links.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={socialT("whatsappShareAction")}
+                title={socialT("whatsappShareAction")}
+              >
+                {socialT("whatsappShareAction")}
+              </a>
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.x} target="_blank" rel="noopener noreferrer">X</a>
               <a className="rounded-md border px-2 py-2 text-center hover:bg-neutral-50" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>

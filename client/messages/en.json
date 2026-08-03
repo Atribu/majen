@@ -52,7 +52,13 @@
       "facebook": "Facebook",
       "linkedin": "LinkedIn",
       "whatsapp": "WhatsApp",
-      "instagram": "Instagram"
+      "instagram": "Instagram",
+      "youtubeAction": "Watch on YouTube",
+      "instagramAction": "Follow on Instagram",
+      "whatsappAction": "Message us on WhatsApp",
+      "whatsappShareAction": "Share on WhatsApp",
+      "emailAction": "Send an email",
+      "moreInformation": "More information"
     },
     "whatsappText": "Hello Majen team!",
     "poweredBy": "Powered by:",
@@ -305,22 +311,22 @@
         }
       },
       "TextSection": {
-        "header1": "Travertine Block Export Process",
-        "text1": "Majen ensures a seamless export process for travertine blocks, from quarry extraction to international delivery. Each block is inspected, reinforced, and documented with commercial invoices, packing lists, and certificates of origin. With FOB and CIF shipping terms, buyers worldwide can rely on a transparent, efficient, and secure supply chain for their travertine block orders.",
-        "header2": "Quality Control & Grading",
-        "text2": "Every travertine block is carefully graded to meet international standards. Factors such as color consistency, surface quality, and block integrity are checked before shipment. Majen’s strict quality control guarantees that only top-grade travertine blocks are exported, reducing waste during processing and ensuring predictable results for large-scale projects.",
-        "header3": "Global Markets & Applications",
-        "text3": "Travertine blocks are in high demand across markets in Europe, the USA, and the Middle East. These blocks are widely used for factory processing into slabs and tiles, as well as landmark architectural projects requiring natural stone. Majen’s consistent block supply makes us a preferred partner for importers, wholesalers, and construction companies worldwide.",
-        "header4": "Why Partner with Majen for Travertine Blocks?",
-        "text4": "Majen is more than a quarry – we are an experienced export partner for international buyers. By sourcing directly from Uşak–Ulubey, importers benefit from stable production, reliable supply, and responsive customer support. With reinforced packaging, reliable documentation, and long-term relationships, Majen is trusted by global buyers of travertine blocks.",
+        "header1": "Quarry-to-Sawmill Block Shipments",
+        "text1": "Block orders are selected around the buyer’s gang-saw or block-cutter capacity. Dimensions, estimated tonnage and loading sequence are recorded before dispatch, and weight distribution is considered when each block is secured inside the container. Processing plants can therefore place an arriving lot directly into a realistic production schedule.",
+        "header2": "Recovery Potential and Structural Grading",
+        "text2": "Block grading considers more than color: fracture direction, vein continuity, void structure and expected slab recovery are reviewed together. Blocks assigned to one production lot are compared for visual compatibility. This selection helps reduce unexpected breakage and low-yield cutting at the factory.",
+        "header3": "Raw Material for Slab and Tile Lines",
+        "text3": "Travertine blocks are feedstock for downstream slab and tile production rather than finished coverings. Antiko supports more expressive, antique collections, while Light and Ivory suit quieter pale ranges. Manufacturers can use these distinctions to develop finishes and dimensions for their own target markets.",
+        "header4": "Recurring Block Programs and Quarry Visibility",
+        "text4": "Majen focuses on repeat raw-material programs as well as individual loads. Quarry availability, suitable block count and estimated tonnage are shared ahead of loading. This visibility helps importers coordinate saw capacity, stock levels and the timing of their next container.",
         "subheader1": "Standard Block Dimensions",
         "subtext1": "Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-        "subheader2": "Applications of Slabs",
-        "subtext2": "Countertops, wall cladding, flooring, and exterior facades where durability and natural elegance are required.",
-        "subheader3": "Tile Finishes",
-        "subtext3": "Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-        "subheader4": "Value-Added Production",
-        "subtext4": "Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+        "subheader2": "Cutting Recovery",
+        "subtext2": "Block integrity and vein direction are assessed against the usable slab volume expected from gang-saw cutting.",
+        "subheader3": "Lot Matching",
+        "subtext3": "Blocks in one shipment are grouped for compatible color, pore structure and visual movement.",
+        "subheader4": "Loading Plan",
+        "subtext4": "Tonnage and center of gravity guide the use of timber supports and steel restraints inside the container."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -11742,22 +11748,22 @@
         }
       },
       "TextSection": {
-        "header1": "Travertine Slab Export Process",
-        "text1": "Majen ensures a seamless export process for travertine slabs, from precise quarry cutting to international delivery. Each slab is inspected, reinforced, and documented with commercial invoices, packing lists, and certificates of origin. With FOB and CIF shipping terms, buyers worldwide can rely on a transparent, efficient, and secure supply chain for their travertine slab orders.",
-        "header2": "Quality Control & Grading of Slabs",
-        "text2": "Every travertine slab is carefully graded to meet international standards. Factors such as thickness accuracy, surface finish, and color consistency are checked before shipment. Majen’s strict quality control guarantees that only A-grade travertine slabs are exported, reducing waste during installation and ensuring predictable results for projects of all scales.",
-        "header3": "Global Markets & Applications for Slabs",
-        "text3": "Travertine slabs are in high demand across markets in Europe, the USA, and the Middle East. These slabs are widely used for countertops, wall cladding, flooring, and exterior facades in residential, commercial, and hospitality projects. Majen’s consistent slab supply makes us a preferred partner for importers, wholesalers, and construction firms worldwide.",
-        "header4": "Why Partner with Majen for Travertine Slabs?",
-        "text4": "Majen is more than a quarry – we are an experienced export partner for international buyers. By sourcing directly from Uşak–Ulubey, importers benefit from stable production, reliable supply, and responsive customer support. With reinforced packaging, reliable documentation, and long-term relationships, Majen is trusted by global buyers of travertine slabs.",
-        "subheader1": "Standard Block Dimensions",
-        "subtext1": "Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-        "subheader2": "Applications of Slabs",
-        "subtext2": "Countertops, wall cladding, flooring, and exterior facades where durability and natural elegance are required.",
-        "subheader3": "Tile Finishes",
-        "subtext3": "Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-        "subheader4": "Value-Added Production",
-        "subtext4": "Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+        "header1": "Slab Sequencing, Numbering and Matching",
+        "text1": "Slabs are numbered in cutting order so the movement across a block remains traceable. Linear bands are monitored in vein-cut lots, while the softer cloud pattern is followed in cross-cut production. Keeping a lot together gives fabricators better control when selecting adjoining slabs for bookmatch walls or other large surfaces.",
+        "header2": "Thickness, Calibration and Finish Inspection",
+        "text2": "Inspection focuses on 2 cm, 3 cm or 5 cm thickness tolerance, calibration, fill integrity and an even surface finish—not color alone. Edge fissures and usable net area are also marked. Countertop, façade and wall-cladding fabricators can then plan cuts around the area that is actually available.",
+        "header3": "Pattern Continuity in Large-Format Design",
+        "text3": "Travertine slabs display natural movement across reception desks, bathroom walls, lift lobbies, fireplace surrounds and façade panels. Antiko creates a more expressive field, while Light and Ivory support quieter pale compositions. Cut direction and sequential matching let designers control how that movement continues across the installation.",
+        "header4": "A-Frame Packing and Project Selection",
+        "text4": "Orders are assembled by color range, cut direction, finish and thickness. Slab faces are separated and secured to an A-frame or reinforced crate to avoid contact damage. Clear slab counts and dimensions on the packing list speed up receiving and stock control at the fabrication shop.",
+        "subheader1": "Slab Thicknesses",
+        "subtext1": "Options in 2 cm, 3 cm and 5 cm are selected around the support system, edge profile and fabrication method.",
+        "subheader2": "Vein Cut and Cross Cut",
+        "subtext2": "Vein cut exposes linear bands; cross cut creates a softer, cloud-like field.",
+        "subheader3": "Finish and Fill",
+        "subtext3": "Polished, honed, brushed and tumbled surfaces can be paired with filled or unfilled selections.",
+        "subheader4": "Slab Matching",
+        "subtext4": "Sequentially cut and numbered slabs can be selected together for bookmatch layouts and continuous large-format patterns."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -12221,22 +12227,22 @@
         }
       },
       "TextSection": {
-        "header1": "Travertine Tile Export Process",
-        "text1": "Majen ensures a smooth travertine tile export process, from quarry cutting to international delivery. Each tile is inspected, packaged, and documented with invoices, packing lists, and certificates of origin. With FOB and CIF shipping terms, importers benefit from a transparent supply chain, reinforced packaging, and reliable delivery schedules for large-scale tile consignments.",
-        "header2": "Quality Control & Grading of Tiles",
-        "text2": "Our strict quality control and grading of travertine tiles guarantees consistent thickness, accurate cutting, and surface excellence. Before shipping, each batch is checked for color uniformity and finish quality. Only A-grade tiles pass inspection, ensuring importers and wholesalers receive durable, reliable products that meet international standards for residential, commercial, and hospitality use.",
-        "header3": "Global Markets & Applications for Tiles",
-        "text3": "Global markets and applications for travertine tiles include flooring, wall cladding, bathrooms, patios, and pool decks. Demand is strong in Europe, the USA, and the Middle East. Majen’s consistent production and export capacity make our tiles a preferred choice for distributors, architects, and contractors seeking versatile natural stone for both small and large-scale construction projects worldwide.",
-        "header4": "Why Partner with Majen for Travertine Tiles?",
-        "text4": "Partnering with Majen for travertine tiles means working with an experienced quarry-direct exporter. From Uşak–Ulubey, we provide stable production, reliable supply, and responsive customer service. Our reinforced packaging and complete documentation ensure safe global shipments. Long-term partnerships and reliable supply make Majen a trusted supplier for international buyers of natural stone tiles.",
-        "subheader1": "Standard Block Dimensions",
-        "subtext1": "Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-        "subheader2": "Applications of Slabs",
-        "subtext2": "Countertops, wall cladding, flooring, and exterior facades where durability and natural elegance are required.",
-        "subheader3": "Tile Finishes",
-        "subtext3": "Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-        "subheader4": "Value-Added Production",
-        "subtext4": "Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+        "header1": "Modular Tile Production and Lot Planning",
+        "text1": "Tile orders are prepared around size distribution, laying pattern and the required spare allowance—not square meterage alone. Modular formats such as 8×8, 12×24 and 24×24, as well as Versailles sets, are planned from a compatible color lot. Separating size and quantity on crate labels simplifies site distribution and installation sequencing.",
+        "header2": "Dimensional Tolerance, Squareness and Shade Control",
+        "text2": "Tile inspection covers thickness calibration, corner squareness, edge accuracy and finish consistency. Dimensional tolerances are monitored to protect grout alignment, while shade range is reviewed to avoid isolated patches across large floors. Texture and underfoot comfort receive extra attention for wet-area selections.",
+        "header3": "Applications from Interiors to Pool Areas",
+        "text3": "Travertine tiles bring natural warmth to bathrooms and kitchens and provide modular flexibility in hotel lobbies and retail floors. Honed, brushed or tumbled textures can be selected for terraces and pool surrounds. Multiple sizes from one color family help create visual continuity between interior and exterior areas.",
+        "header4": "Crate Organization for Installation",
+        "text4": "Tiles are packed with separators that reduce face abrasion and corner damage. Different formats within one project are divided and clearly labelled. This organization helps distributors count stock and lets installers direct the correct crate to the correct area with less sorting on site.",
+        "subheader1": "Modular Formats",
+        "subtext1": "Square, rectangular and Versailles modules can be installed separately or combined around the room and joint layout.",
+        "subheader2": "Calibrated Thickness",
+        "subtext2": "Consistent thickness and squareness help reduce adhesive variation and lippage during installation.",
+        "subheader3": "Finish by Environment",
+        "subtext3": "Honed surfaces create a quiet interior look, while brushed and tumbled textures provide a more tactile outdoor surface.",
+        "subheader4": "Shade Blending",
+        "subtext4": "Blending tiles from several crates before installation distributes travertine’s natural shade movement evenly across the floor."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -12597,7 +12603,7 @@
                 "8x8": {
                   "desc": "",
                   "metaTitle": "8″x8″ Unfilled Honed Vein Cut Travertine Tiles",
-                  "metaDesc": "8″x8″ Unfilled Honed Vein Cut Travertine Tiles — kompakt format, honed mat yüzey, açık doğal gözenekler. Ivory, Light, Antico.",
+                  "metaDesc": "8″x8″ Unfilled Honed Vein Cut Travertine Tiles — compact format, matte honed surface and open natural pores. Ivory, Light and Antico.",
                   "h1": "8″x8″ Unfilled Honed Vein Cut Travertine Tiles",
                   "title": "8″x8″ Unfilled Honed Vein Cut Travertine Tiles",
                   "title2": "Applications and Ideal Use Cases",
@@ -35658,24 +35664,22 @@
         }
       },
       "TextSection": {
-        "header1": "Global Wholesale & Export Expertise",
-        "text1": "Majen supplies travertine pavers to architects, wholesalers, and contractors across 35+ countries. Our export network ensures reliable logistics, safe packaging, and consistent product quality from quarry to container. Whether you need bulk shipments for distribution or customized cuts for architectural projects, our team manages every stage of the process with precision and care.",
-        "header2": "Available Sizes & Surface Finishes",
-        "text2": "Our travertine pavers come in multiple standard and custom sizes: 6x12”, 8x16”, and 12x24”, with thickness options from 3 cm to 5 cm. Surface finishes include tumbled, brushed, and honed textures, ideal for various outdoor applications. Each stone is carefully processed to achieve the perfect balance of natural beauty and slip resistance.",
-        "header3": "Applications: From Pools to Patios",
-        "text3": "Travertine pavers are widely used in pool decks, driveways, courtyards, walkways, and terraces. Their ability to stay cool and resist moisture makes them the perfect outdoor paving solution. Whether you’re designing a modern resort or a classic villa garden, travertine’s versatility complements every architectural style.",
-        "header4": "Sustainability & Long-Term Value",
-        "text4": "As a naturally sourced material, travertine offers an eco-friendly alternative to manufactured pavers. With minimal processing, it retains its natural beauty and reduces environmental impact. Its long lifespan, low maintenance needs, and timeless appearance make travertine pavers a sustainable investment for global projects.",
-        "header5": "Partner with Majen: Your Trusted Travertine Supplier",
-        "text5": "At Majen, we combine local quarry expertise with global distribution power. Our focus on consistent quality and reliable export timelines makes us a trusted partner for buyers seeking natural stone from Turkey. From sampling to shipment, we ensure your travertine pavers arrive on time and exceed expectations.",
-        "subheader1": "Standard Block Dimensions",
-        "subtext1": "Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-        "subheader2": "Applications of Slabs",
-        "subtext2": "Countertops, wall cladding, flooring, and exterior facades where durability and natural elegance are required.",
-        "subheader3": "Tile Finishes",
-        "subtext3": "Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-        "subheader4": "Value-Added Production",
-        "subtext4": "Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+        "header1": "Selecting Pavers for Outdoor Loads",
+        "text1": "Paver thickness and format should respond to the substrate and expected load, not appearance alone. Smaller modules follow slopes efficiently on walkways, while large formats create calmer terraces. Vehicle approaches require a heavier section and an installation bed designed for the anticipated traffic.",
+        "header2": "Grip, Edge Strength and Freeze Conditions",
+        "text2": "Outdoor inspection considers texture, edge stability, thickness and pore structure together. Pool surrounds require a balance between wet grip and barefoot comfort. In cold climates, drainage, suitable joints and the complete installation system are part of selecting the right paver.",
+        "header3": "Modular Patterns and Water Management",
+        "text3": "Running bond, staggered layouts and Versailles Pattern can adapt to different site geometries. Format combinations should be planned with cutting loss, joint width and drainage fall in mind. A suitable module reduces unnecessary small cuts around pools and terrace boundaries.",
+        "header4": "Packing by Installation Sequence",
+        "text4": "On mixed-format projects, every module is counted, labelled and listed separately. Edges are protected against impact, and crates can be organized by installation zone or pattern set. Site teams can then move the correct stone to the correct area with less sorting.",
+        "subheader1": "Outdoor Thickness",
+        "subtext1": "Thickness is selected around pedestrian, landscape or vehicle loads and the intended bedding system.",
+        "subheader2": "Pool Surrounds",
+        "subtext2": "Texture selection balances wet grip, barefoot comfort and surface feel under direct sun.",
+        "subheader3": "Versailles Pattern",
+        "subtext3": "A multi-format set adds natural rhythm and distributes travertine shade variation across wide areas.",
+        "subheader4": "Drainage and Joints",
+        "subtext4": "Correct falls, joint width and water evacuation are as important as the stone itself for long-term outdoor performance."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -44693,7 +44697,7 @@
                   "h5": "Color Options: Ivory • Light • Antico",
                   "text5": "Ivory: Light beige hue that delivers Mediterranean elegance and brightness. Light: Neutral beige-gray tone for minimalist and contemporary projects. Antico: Warm beige-golden tone with rich, rustic character for classical landscapes. All colors are carefully tone-calibrated and batch-matched to ensure cohesive visuals and consistent quality across large surfaces.",
                   "h4": "Technical Features: Filled • Brushed • Vein Cut",
-                  "text4": "Filled: Pores sealed to improve density, stability, and moisture resistance. Brushed: Fırçalanmış yüzey, taşın damarlarını ortaya çıkararak yumuşak, doğal bir doku sunar. Vein Cut: Paralel damar kesimi, lineer akış ve dengeli görsel yön kazandırır. Birlikte, bu üç özellik hem zarif hem de dayanıklı bir yüzey oluşturur; özellikle dış mekân mimarisi için idealdir.",
+                  "text4": "Filled: Pores are sealed to improve density, stability and moisture resistance. Brushed: The textured finish reveals the stone’s veins and creates a soft, natural feel. Vein Cut: Parallel cutting produces linear flow and balanced visual direction. Together, these features create an elegant, durable surface suited to exterior architecture.",
                   "h3": "Vein Cut vs Cross Cut • Brushed vs Tumbled",
                   "text3": "Vein Cut vs Cross Cut: Vein cut offers linear direction and modern refinement; cross cut provides organic, cloud-like visuals. Brushed vs Tumbled: Brushed delivers modern texture and subtle warmth; tumbled brings antique authenticity. Brushed travertine offers a sophisticated, tactile, and slip-resistant surface perfect for luxury outdoor use.",
                   "finishes": {
@@ -62790,13 +62794,13 @@
     "variantsubtitle1": "Travertine Blocks",
     "variantsubtitle2": "Travertine Slabs",
     "variantsubtitle3": "Travertine Tiles",
-    "variantsubtitle4": "Custom Travertine Pavers",
+    "variantsubtitle4": "Travertine Pavers",
     "goToPage": "Go to page",
     "productCopy": {
       "block": "Available color options: <links/>. Each reflects the quarry’s character and adds a strong, authentic presence to your project.",
       "slabs": "This slab series offers: <links/>. With consistent surfaces and curated veining, it delivers a flawless look in large areas.",
       "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
-      "pavers": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
+      "pavers": "Outdoor paver colors include: <links/>. Format, thickness and texture are specified around site loading and drainage."
     },
     "variants": {
       "processes": "Processes",
@@ -62805,16 +62809,20 @@
     },
     "variantSentence": {
       "blocks": {
-        "start": "As Majen, we offer Travertine Blocks in varieties such as"
+        "start": "As Majen, we offer Travertine Blocks in varieties such as",
+        "end": "selected for quarry character, structural integrity and factory cutting recovery."
       },
       "slabs": {
-        "start": "As Majen, we supply Travertine Slabs in premium varieties including"
+        "start": "As Majen, we supply Travertine Slabs in premium varieties including",
+        "end": "prepared around vein direction, thickness and finish matching for large-format design."
       },
       "tiles": {
-        "start": "As Majen, we provide Travertine Tiles in elegant varieties such as"
+        "start": "As Majen, we provide Travertine Tiles in elegant varieties such as",
+        "end": "produced with modular sizing, shade blending and finishes suited to the installation area."
       },
       "pavers": {
-        "start": "As Majen, we craft Travertine Pavers in durable varieties such as"
+        "start": "As Majen, we craft Travertine Pavers in durable varieties such as",
+        "end": "specified around outdoor loading, drainage layout and surface grip."
       },
       "end": "to suit diverse projects and performance needs."
     },
@@ -62822,7 +62830,7 @@
       "block": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
       "slabs": "Travertine slabs Turkey – 2cm polished Blaundos Light for interiors",
       "tiles": "Travertine tiles – 30×60 honed Blaundos Ivory for bathrooms and pools",
-      "pavers": "Travertine Pavers – steps, mosaics, borders packed for sea freight",
+      "pavers": "Outdoor travertine pavers for patios, walkways and pool surrounds",
       "blocks": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
       "special-designs": "Travertine Pavers – steps, mosaics, borders packed for sea freight"
     },
@@ -65575,9 +65583,9 @@
           "Photo-documented block/paver loading & seal numbers."
         ],
         "performance": [
-          "Hero görsele preload veya fetchpriority=\"high\" ekleyin.",
-          "Tüm img’lerde loading=\"lazy\" + sabit width/height kullanın.",
-          "WebP/AVIF ve mümkünse srcset/sizes ile responsive servis edin."
+          "Add preload or fetchpriority=\"high\" to the hero image.",
+          "Use loading=\"lazy\" and fixed width/height attributes for all images.",
+          "Serve WebP/AVIF with responsive srcset/sizes where possible."
         ],
         "checklist": [
           "Title ≤ 65, Meta ≤ 160",
@@ -65876,9 +65884,9 @@
           "FOB İzmir (Alsancak/Aliağa), CIF available worldwide."
         ],
         "performance": [
-          "Hero görsele preload veya fetchpriority=\"high\" ekleyin.",
-          "Tüm img’lerde loading=\"lazy\" ve sabit width/height kullanın.",
-          "WebP/AVIF ve mümkünse srcset/sizes ile responsive servis edin."
+          "Add preload or fetchpriority=\"high\" to the hero image.",
+          "Use loading=\"lazy\" and fixed width/height attributes for all images.",
+          "Serve WebP/AVIF with responsive srcset/sizes where possible."
         ],
         "checklist": [
           "Title ≤ 65, Meta ≤ 160",
@@ -69371,27 +69379,27 @@
           },
           "services": {
             "h2": "Services & Capabilities",
-            "intro": "Trade terms, QC ve dokümantasyon süreçleriyle tam kapsamlı ihracat desteği.",
+            "intro": "Comprehensive export support covering trade terms, quality control and documentation.",
             "details": [
               {
                 "slug": "incoterms",
                 "h3": "FOB, CIF & EXW",
-                "p": "FOB İzmir (Alsancak/Aliağa), CIF varış limanı veya EXW fabrika teslim; sigorta ve navlun tercihinize göre seçim yapın."
+                "p": "Choose FOB İzmir (Alsancak/Aliağa), CIF to the destination port or EXW factory delivery according to your freight and insurance requirements."
               },
               {
                 "slug": "qc",
                 "h3": "Quality Control & Shade Matching",
-                "p": "Lot seçim fotoğrafları, ebat/finish doğrulaması, ambalaj QA ve çıkıştan önce mühür numaralı yükleme fotoğrafları."
+                "p": "Lot selection photos, size and finish verification, packaging QA and seal-number loading photos before departure."
               },
               {
                 "slug": "mixed",
                 "h3": "Mixed Containers",
-                "p": "Ağırlık ve paketleme kısıtlarına bağlı olarak aynı konteynere tiles + slabs + blocks kombinasyonu. Palet planları ve packing list sağlanır."
+                "p": "Tiles, slabs and blocks can share one container subject to weight and packaging limits. Pallet plans and packing lists are provided."
               },
               {
                 "slug": "aftersales",
                 "h3": "After-Sales & Claims Support",
-                "p": "B/L, Invoice, Packing List, CoO dâhil doküman seti ve uygun durumlarda sigorta taleplerine destek."
+                "p": "Documentation includes the bill of lading, commercial invoice, packing list and certificate of origin, with insurance claim support where applicable."
               }
             ]
           },
@@ -69424,7 +69432,7 @@
               {
                 "prop": "Incoterms",
                 "value": "FOB · CIF · EXW",
-                "notes": "Bütçe ve risk paylaşımına göre seçin"
+                "notes": "Select according to budget and risk allocation"
               },
               {
                 "prop": "Ports",
@@ -69434,12 +69442,12 @@
               {
                 "prop": "Documents",
                 "value": "Commercial Invoice · Packing List · Certificate of Origin",
-                "notes": "Ek belgeler talep üzerine"
+                "notes": "Additional documents are available on request"
               },
               {
                 "prop": "Bill of Lading",
-                "value": "Original veya telex release",
-                "notes": "Konteyner & mühür numaraları ile"
+                "value": "Original or telex release",
+                "notes": "Includes container and seal numbers"
               },
               {
                 "prop": "Packaging",
@@ -69471,7 +69479,7 @@
                   "notes": "1–2 blok / 20' OT/FR; rota ağırlık kuralları"
                 }
               ],
-              "disclaimer": "Değerler göstergedir; hat ve rotaya göre güncel limitleri taşıyıcı ile teyit ediniz."
+              "disclaimer": "Values are indicative; confirm current limits with the carrier for the selected line and route."
             }
           },
           "install": {
@@ -69523,15 +69531,15 @@
               },
               {
                 "q": "What documents are included?",
-                "a": "Commercial Invoice, Packing List, Certificate of Origin ve B/L (mühür numaralarıyla). Ek belgeler talebe göre."
+                "a": "Commercial Invoice, Packing List, Certificate of Origin and Bill of Lading with seal numbers. Additional documents are available on request."
               },
               {
                 "q": "How do you ensure quality?",
-                "a": "Shade/size kontrolü, finish doğrulaması, paketleme QA ve mühür numaralı yükleme fotoğrafları sağlanır."
+                "a": "We provide shade and size checks, finish verification, packaging QA and loading photos with seal numbers."
               },
               {
                 "q": "Can I mix tiles, slabs and blocks?",
-                "a": "Evet; ağırlık ve paketleme kısıtlarına bağlı olarak mixed container yapılabilir. Palet planı ve packing list verilir."
+                "a": "Yes. Mixed containers are available subject to weight and packaging limits. Pallet plans and packing lists are provided."
               }
             ]
           }

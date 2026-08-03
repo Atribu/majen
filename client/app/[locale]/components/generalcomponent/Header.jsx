@@ -271,7 +271,8 @@ export default function Header() {
         <div className="absolute flex items-center justify-center gap-4  w-full bottom-16">
                         <a
                           href="https://www.youtube.com/@MajenMadencilik"
-                          aria-label={t2("social.youtube")}
+                          aria-label={t2("social.youtubeAction")}
+                          title={t2("social.youtubeAction")}
                            target="_blank"
                               rel="noopener noreferrer"
                           className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
@@ -282,7 +283,8 @@ export default function Header() {
                           href="https://www.instagram.com/p/DOn657JjD08/"
                            target="_blank"
                               rel="noopener noreferrer"
-                          aria-label={t2("social.instagram")}
+                          aria-label={t2("social.instagramAction")}
+                          title={t2("social.instagramAction")}
                           className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                         >
                           <FaInstagram size={18} />
@@ -309,7 +311,8 @@ export default function Header() {
                           href={whatsappHref}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={t2("social.whatsapp")}
+                          aria-label={t2("social.whatsappAction")}
+                          title={t2("social.whatsappAction")}
                           className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                         >
                           <FaWhatsapp size={18} />

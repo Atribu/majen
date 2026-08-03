@@ -110,7 +110,8 @@ export default function Footer() {
                   href="https://www.youtube.com/@MajenMadencilik"
                    target="_blank"
                               rel="noopener noreferrer"
-                  aria-label={t("social.youtube")}
+                  aria-label={t("social.youtubeAction")}
+                  title={t("social.youtubeAction")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaYoutube size={18} />
@@ -119,7 +120,8 @@ export default function Footer() {
                   href="https://www.instagram.com/p/DOn657JjD08/"
                    target="_blank"
                               rel="noopener noreferrer"
-                  aria-label={t("social.instagram")}
+                  aria-label={t("social.instagramAction")}
+                  title={t("social.instagramAction")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaInstagram size={18} />
@@ -146,7 +148,8 @@ export default function Footer() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={t("social.whatsapp")}
+                  aria-label={t("social.whatsappAction")}
+                  title={t("social.whatsappAction")}
                   className="p-2 rounded-full ring-1 ring-black/10 hover:ring-black/20 transition hover:-translate-y-0.5"
                 >
                   <FaWhatsapp size={18} />

@@ -3,24 +3,28 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import StickySectionNav from "./StickySectionNav";
 import { localizedBlogPath } from "@/lib/blogPageRoutes";
 
 const TOP_OFFSET = 80; // header yüksekliğine göre ayarla
 
 // Sayfanda zaten varsa bu listeyi oradan da verebilirsin
-const tocItems = [
-  { id: "types",         label: "Product Types" },
-  { id: "finishes",      label: "Finishes" },
-  { id: "colors",        label: "Colors" },
-  { id: "applications",  label: "Applications" },
-  { id: "business",      label: "Supply & Business" },
-];
-
-
 export default function TravertineBlog() {
   const locale = useLocale();
+  const blogT = useTranslations("BlogIndex");
+  const isTR = locale === "tr";
+  const localizedPosts = blogT.raw("posts");
+  const tocItems = useMemo(
+    () => [
+      { id: "types", label: isTR ? "Ürün Türleri" : "Product Types" },
+      { id: "finishes", label: isTR ? "Yüzey İşlemleri" : "Finishes" },
+      { id: "colors", label: isTR ? "Renkler" : "Colors" },
+      { id: "applications", label: isTR ? "Kullanım Alanları" : "Applications" },
+      { id: "business", label: isTR ? "Tedarik & Ticaret" : "Supply & Business" },
+    ],
+    [isTR]
+  );
   // DATA ------------------------------------------------------------
   const productTypes = useMemo(
     () => [
@@ -268,6 +272,23 @@ export default function TravertineBlog() {
     [locale]
   );
 
+  const localizeCards = (cards, postStartIndex) =>
+    cards.map((card, index) => {
+      const post = localizedPosts[postStartIndex + index];
+      return {
+        ...card,
+        title: post?.title || card.title,
+        excerpt: post?.excerpt || card.excerpt,
+        alt: post?.title || card.alt,
+      };
+    });
+
+  const localizedProductTypes = localizeCards(productTypes, 1);
+  const localizedFinishes = localizeCards(finishes, 6);
+  const localizedColors = localizeCards(colors, 12);
+  const localizedApplications = localizeCards(applications, 15);
+  const localizedBusiness = localizeCards(business, 21);
+
   // HELPERS ---------------------------------------------------------
   // Section.jsx
 const Section = ({ id, title, intro, children }) => (
@@ -301,7 +322,9 @@ const Section = ({ id, title, intro, children }) => (
         <div className="p-5">
           <h3 className="text-lg font-semibold group-hover:underline underline-offset-4">{title}</h3>
           <p className="mt-2 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed text-neutral-700">{excerpt}</p>
-          <span className="mt-4 inline-block text-sm font-medium">Read more →</span>
+          <span className="mt-4 inline-block text-sm font-medium">
+            {isTR ? "Devamını oku" : "Read more"} →
+          </span>
         </div>
       </Link>
     </article>
@@ -353,7 +376,7 @@ const Section = ({ id, title, intro, children }) => (
     window.removeEventListener("scroll", onScroll);
     window.removeEventListener("resize", onScroll);
   };
-}, []);
+}, [tocItems]);
 
 const handleClick = (e, id) => {
   e.preventDefault();
@@ -370,16 +393,20 @@ const handleClick = (e, id) => {
       {/* HERO */}
       <header className="relative isolate flex flex-col w-full">
         <div className="mx-auto max-w-6xl px-4 pt-4 pb-10 items-center justify-center text-center flex flex-col">
-          <h1 className="font-bold tracking-tight text-[28px] md:text-[36px] lg:text-[40px]">Travertine</h1>
+          <h1 className="font-bold tracking-tight text-[28px] md:text-[36px] lg:text-[40px]">
+            {isTR ? "Traverten" : "Travertine"}
+          </h1>
           <p className="mt-1 md:mt-2 lg:mt-4 max-w-3xl text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed text-neutral-700">
-            Travertine is one of the most sought-after natural stones in architecture and design, valued for its durability, unique patterns, and timeless beauty. This blog explores product types, finishes, colors, applications, and the Turkish supply chain — guiding you from specification to sourcing.
+            {isTR
+              ? "Traverten; dayanıklılığı, özgün desenleri ve zamansız görünümüyle mimari ve tasarımda öne çıkan doğal taşlardan biridir. Bu rehber ürün türlerini, yüzey işlemlerini, renkleri, kullanım alanlarını ve Türkiye’deki tedarik sürecini ele alır."
+              : "Travertine is one of the most sought-after natural stones in architecture and design, valued for its durability, unique patterns, and timeless beauty. This blog explores product types, finishes, colors, applications, and the Turkish supply chain — guiding you from specification to sourcing."}
           </p>
         </div>
         {/* Decorative banner image */}
         <div className="relative h-56 md:h-72 ">
           <Image
             src="/images/homepage/antikarkaplan4.webp"
-            alt="Turkish travertine blocks, slabs and tiles supplier – Majen"
+            alt={isTR ? "Türkiye’den traverten blok, plaka ve karo tedariki – Majen" : "Turkish travertine blocks, slabs and tiles supplier – Majen"}
             fill
             className="object-cover opacity-95"
             priority
@@ -391,11 +418,13 @@ const handleClick = (e, id) => {
        <nav
       className="sticky z-20 mt-5 w-[95%] lg:w-[80%] rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur shadow-[0_6px_24px_-12px_rgba(0,0,0,0.25)]"
       style={{ top: TOP_OFFSET }}
-      aria-label="On this page"
+      aria-label={isTR ? "Bu sayfada" : "On this page"}
     >
       {/* Başlık + ilerleme çubuğu */}
       <div className="px-2 lg:px-4 pt-2 lg:pt-3 pb-2 flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-neutral-800">On this page</h2>
+        <h2 className="text-sm font-semibold text-neutral-800">
+          {isTR ? "Bu sayfada" : "On this page"}
+        </h2>
         <div className="ml-3 h-1 flex-1 bg-neutral-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-neutral-800/70 transition-all"
@@ -445,8 +474,22 @@ const handleClick = (e, id) => {
       {/* PRODUCT TYPES */}
       <Section
         id="types"
-        title="Travertine Product Types"
+        title={isTR ? "Traverten Ürün Türleri" : "Travertine Product Types"}
         intro={
+    isTR ? (
+      <>
+        <p>
+          Traverten; karo, plaka, blok, dış mekân döşemesi ve mozaik olarak
+          işlenebilir. Her ürün türü ölçü, kullanım alanı ve uygulama yöntemine
+          göre farklı bir ihtiyaca karşılık verir.
+        </p>
+        <p>
+          Doğru ürün türünü seçmek kesim kaybını azaltır, uygulama süresini
+          iyileştirir ve yüzey işlemiyle kalınlığın proje koşullarına uygun
+          belirlenmesini sağlar.
+        </p>
+      </>
+    ) : (
     <>
       <p>
         Travertine can be processed into different products to meet design and
@@ -502,10 +545,11 @@ const handleClick = (e, id) => {
         resistance, thickness, and budget.
       </p>
     </>
+    )
   }
         
       >
-        {productTypes.map((item) => (
+        {localizedProductTypes.map((item) => (
           <Card key={item.slug} {...item} />
         ))}
       </Section>
@@ -513,8 +557,22 @@ const handleClick = (e, id) => {
       {/* FINISHES */}
       <Section
         id="finishes"
-        title="Travertine Finishes"
+        title={isTR ? "Traverten Yüzey İşlemleri" : "Travertine Finishes"}
         intro={
+    isTR ? (
+      <>
+        <p>
+          Yüzey işlemi travertenin hem görünümünü hem de kullanım performansını
+          belirler. Cilalı, honlanmış, eskitilmiş, fırçalanmış, dolgulu ve
+          dolgusuz seçenekler farklı iç ve dış mekân ihtiyaçlarına uyarlanır.
+        </p>
+        <p>
+          Cilalı ve honlanmış yüzeyler iç mekânda daha düzenli bir görünüm
+          sunarken, eskitilmiş ve fırçalanmış yüzeyler dış alanlarda daha
+          belirgin bir doku sağlar.
+        </p>
+      </>
+    ) : (
     <>
       <p>
         Surface finish defines the appearance and performance of travertine.
@@ -546,9 +604,10 @@ const handleClick = (e, id) => {
         matter, these finishes balance performance with style.
       </p>
     </>
+    )
   }
       >
-        {finishes.map((item) => (
+        {localizedFinishes.map((item) => (
           <Card key={item.slug} {...item} />
         ))}
       </Section>
@@ -556,8 +615,21 @@ const handleClick = (e, id) => {
       {/* COLORS */}
       <Section
         id="colors"
-        title="Travertine Colors & Variations"
+        title={isTR ? "Traverten Renkleri & Doğal Değişimler" : "Travertine Colors & Variations"}
         intro={
+    isTR ? (
+      <>
+        <p>
+          Ivory, Light ve Antiko tonları çağdaş, klasik ve rustik projelere
+          uyum sağlayan farklı renk seçenekleri sunar. Doğal ton ve damar
+          değişimleri travertenin kendine özgü karakterinin bir parçasıdır.
+        </p>
+        <p>
+          Proje öncesinde numune ve parti fotoğraflarını karşılaştırmak, geniş
+          yüzeylerde beklenen renk dağılımını doğru planlamaya yardımcı olur.
+        </p>
+      </>
+    ) : (
     <>
       <p>
         Natural shades such as Ivory, Light, and Antico complement a wide range
@@ -574,9 +646,10 @@ const handleClick = (e, id) => {
         part of travertine’s charm.
       </p>
     </>
+    )
   }
       >
-        {colors.map((item) => (
+        {localizedColors.map((item) => (
           <Card key={item.slug} {...item} />
         ))}
       </Section>
@@ -584,8 +657,23 @@ const handleClick = (e, id) => {
       {/* APPLICATIONS */}
       <Section
         id="applications"
-        title="Travertine Applications"
+        title={isTR ? "Traverten Kullanım Alanları" : "Travertine Applications"}
         intro={
+    isTR ? (
+      <>
+        <p>
+          Traverten; zemin, duvar kaplaması, cephe, banyo, mutfak ve havuz
+          çevresi gibi çok farklı alanlarda kullanılabilir. Uygun kalınlık ve
+          yüzey işlemi seçildiğinde konut ve ticari projelerde uzun ömürlü bir
+          çözüm sunar.
+        </p>
+        <p>
+          İç mekânda cilalı veya honlanmış, dış mekânda ise fırçalanmış ya da
+          eskitilmiş dokular tercih edilebilir. Islak alanlarda yüzey tutuşu,
+          derz ve bakım koşulları birlikte değerlendirilmelidir.
+        </p>
+      </>
+    ) : (
     <>
       <p>
         Thanks to its strength and beauty, travertine performs across flooring,
@@ -610,9 +698,10 @@ const handleClick = (e, id) => {
         conditions.
       </div>
     </>
+    )
   }
       >
-        {applications.map((item) => (
+        {localizedApplications.map((item) => (
           <Card key={item.slug} {...item} />
         ))}
       </Section>
@@ -620,8 +709,23 @@ const handleClick = (e, id) => {
       {/* SUPPLY & BUSINESS */}
       <Section
         id="business"
-        title="Travertine Supply & Business"
+        title={isTR ? "Traverten Tedariki & Ticaret" : "Travertine Supply & Business"}
         intro={
+    isTR ? (
+      <>
+        <p>
+          Türkiye, zengin ocakları ve gelişmiş işleme altyapısıyla küresel
+          traverten tedarikinde önemli bir konuma sahiptir. Bloktan bitmiş
+          ürüne kadar kalite kontrol, paketleme ve ihracat belgeleri tedarik
+          sürecinin temel parçalarıdır.
+        </p>
+        <p>
+          Uluslararası siparişlerde ürün sınıflandırması, güçlendirilmiş
+          paketleme, konteyner yükleme kayıtları ve eksiksiz dokümantasyon
+          sevkiyatın öngörülebilir ilerlemesini sağlar.
+        </p>
+      </>
+    ) : (
     <>
       <p>
         Turkey leads global travertine production with rich quarries, advanced
@@ -645,9 +749,10 @@ const handleClick = (e, id) => {
         documentation.
       </p>
     </>
+    )
   }
       >
-        {business.map((item) => (
+        {localizedBusiness.map((item) => (
           <Card key={item.slug} {...item} />
         ))}
       </Section>

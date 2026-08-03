@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import InlineLinks from "../generalcomponent/InlineLinks";
 
 function normalizeHref(href, locale) {
@@ -36,6 +36,7 @@ export default function VariantCircleSection({
   
 }) {
   const locale = useLocale();
+  const socialT = useTranslations("Footer.social");
   // Tailwind’in compile-time sınırlaması için grid kolonlarını basit tutalım
   const colBase = "grid-cols-1";
   const colSm = variantCards.length <= 1 ? "sm:grid-cols-1" : "sm:grid-cols-2";
@@ -234,10 +235,12 @@ export default function VariantCircleSection({
                     href={youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={socialT("youtubeAction")}
+                    title={socialT("youtubeAction")}
                     className="flex gap-1 mt-1 text-[12px] md:text-sm underline-offset-2 hover:underline text-red-600"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <FaYoutube size={20} /> YouTube
+                    <FaYoutube size={20} /> {socialT("youtubeAction")}
                   </a>
                 )}
 

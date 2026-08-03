@@ -52,7 +52,13 @@
       "facebook": "Facebook",
       "linkedin": "LinkedIn",
       "whatsapp": "WhatsApp",
-      "instagram": "Instagram"
+      "instagram": "Instagram",
+      "youtubeAction": "YouTube’da izleyin",
+      "instagramAction": "Instagram’da takip edin",
+      "whatsappAction": "WhatsApp’tan yazın",
+      "whatsappShareAction": "WhatsApp’ta paylaşın",
+      "emailAction": "E-posta gönderin",
+      "moreInformation": "Daha fazla bilgi"
     },
     "whatsappText": "Merhaba Majen ekibi!",
     "poweredBy": "Altyapı:",
@@ -94,25 +100,25 @@
       "product1": {
         "title": "Traverten Bloklar",
         "description": "Ocaktan özenle seçilmiş, homojen doku ve renk sürdürülebilirliğine sahip büyük ebat bloklar; fabrikasyon ve yüksek hacimli projeler için ideal verim sunar.",
-        "alt": "Wholesale Travertine Blocks",
+        "alt": "Toptan traverten bloklar",
         "cta": "İncele"
       },
       "product2": {
         "title": "Traverten Plakalar",
         "description": "2 cm ve 3 cm kalınlık seçenekleriyle cilalı, honlu veya fırçalı yüzeyler; hassas kalibrasyon ve güçlendirme işlemleriyle bookmatch uygulamalarına uygundur.",
-        "alt": "Wholesale Travertine Slabs",
+        "alt": "Toptan traverten plakalar",
         "cta": "İncele"
       },
       "product3": {
         "title": "Traverten Karolar",
         "description": "30×60,60×60,60×120 gibi standart ebatlarda; iç/dış mekâna uygun, düzgün kenarlı ve yüksek ölçü hassasiyetine sahip karolarla hızlı ve temiz uygulama.",
-        "alt": "Wholesale Travertine Tiles",
+        "alt": "Toptan traverten karolar",
         "cta": "İncele"
       },
       "product4": {
         "title": "Traverten Döşemeler",
         "description": "Waterjet kesimler, mozaik kombinasyonlar, CNC oyma ve 3D paneller gibi kişiye özel çözümler; proje detaylarınıza göre ölçülendirilip anahtar teslim hazırlanır.",
-        "alt": "Wholesale Travertine Special Design",
+        "alt": "Toptan traverten döşemeler",
         "cta": "İncele"
       }
     }
@@ -133,7 +139,7 @@
     "titlePrefix": "Profesyonel",
     "titleAccent": "Hizmetler",
     "explore": "İncele",
-    "title": "Travertine Export Methods from Turkey – <fob>FOB</fob>, <cif>CIF</cif> & <exw>EXW</exw>",
+    "title": "Türkiye’den Traverten İhracat Yöntemleri – <fob>FOB</fob>, <cif>CIF</cif> & <exw>EXW</exw>",
     "items": {
       "export1": {
         "title": "<fob>FOB</fob> (Free on Board) – Traverten İhracatı",
@@ -305,22 +311,22 @@
         }
       },
       "TextSection": {
-        "header1": "Traverten Blok İhracat Süreci",
-        "text1": "Majen, traverten bloklarda ocaktan çıkarma aşamasından uluslararası teslimata kadar kesintisiz bir ihracat süreci sunar. Her blok sevkiyattan önce kontrol edilir, güçlendirilir ve ticari fatura, çeki listesi ve menşe şahadetnamesi gibi belgelerle dokümante edilir. FOB ve CIF teslim şartlarıyla, dünya genelindeki alıcılar traverten blok siparişlerinde şeffaf, verimli ve güvenli bir tedarik zincirine güvenebilir.",
-        "header2": "Kalite Kontrol & Sınıflandırma",
-        "text2": "Her traverten blok, uluslararası standartlara uygun olacak şekilde dikkatle sınıflandırılır. Renk tutarlılığı, yüzey kalitesi ve blok bütünlüğü gibi kriterler sevkiyat öncesinde kontrol edilir. Majen’in sıkı kalite kontrol süreci sayesinde yalnızca üst sınıf traverten bloklar ihraç edilir; bu da işleme sırasında fireyi azaltır ve büyük ölçekli projelerde öngörülebilir sonuçlar sağlar.",
-        "header3": "Global Pazarlar & Kullanım Alanları",
-        "text3": "Traverten bloklara Avrupa, ABD ve Orta Doğu pazarlarında yoğun talep vardır. Bu bloklar; plaka ve karo üretimi için fabrika işlemlerinde, ayrıca doğal taş gerektiren prestijli mimari projelerde yaygın olarak kullanılır. Majen’in istikrarlı blok tedariği, bizi ithalatçılar, toptancılar ve inşaat firmaları için tercih edilen bir çözüm ortağı yapar.",
-        "header4": "Traverten Bloklarda Neden Majen ile Çalışmalısınız?",
-        "text4": "Majen yalnızca bir ocak değil, aynı zamanda uluslararası alıcılar için deneyimli bir ihracat partneridir. Uşak–Ulubey’den doğrudan tedarik ile ithalatçılar, istikrarlı üretim, istikrarlı tedarik ve hızlı müşteri desteğinden faydalanır. Güçlendirilmiş paketleme, güvenilir dokümantasyon ve uzun vadeli iş ilişkileri ile Majen, traverten blok alan küresel alıcılar tarafından güvenilir bir tedarikçi olarak görülür.",
+        "header1": "Ocaktan Fabrikaya Blok Sevkiyatı",
+        "text1": "Blok siparişleri, alıcının katrak veya ST kesim kapasitesine göre ocakta seçilir. Ölçü, yaklaşık tonaj ve yükleme sırası sevkiyat öncesinde kayıt altına alınır; bloklar konteyner içindeki ağırlık dağılımı gözetilerek sabitlenir. Böylece işleme tesisleri, teslim aldıkları partiyi üretim planına doğrudan dâhil edebilir.",
+        "header2": "Blok Verimi ve Yapısal Sınıflandırma",
+        "text2": "Sınıflandırmada yalnızca renk değil; çatlak yönü, damar devamlılığı, boşluk yapısı ve kesimden alınabilecek plaka verimi birlikte değerlendirilir. Aynı üretim partisine ayrılan blokların görsel karakteri karşılaştırılır. Bu seçim, fabrikada beklenmeyen kırılmaları ve düşük randımanlı kesimleri azaltmaya yardımcı olur.",
+        "header3": "Plaka ve Karo Üretimi İçin Hammadde",
+        "text3": "Traverten bloklar nihai kaplama ürünü değil, plaka ve karo hatlarının temel hammaddesidir. Antiko daha hareketli ve antik karakterli yüzeyler için; Light ve Ivory ise açık, dengeli koleksiyonlar için seçilir. Üreticiler bu farklılıkları hedef pazarlarına uygun yüzey ve ebat serileri oluşturmak için kullanabilir.",
+        "header4": "Düzenli Blok Programı ve Ocak Takibi",
+        "text4": "Majen, tek seferlik blok satışından çok düzenli hammadde programına odaklanır. Ocaktaki üretim durumu, uygun blok adedi ve tahmini tonaj yükleme öncesinde paylaşılır. Bu görünürlük, ithalatçıların kesim hattı kapasitesini, stok seviyesini ve sonraki konteyner planını daha sağlıklı yönetmesini sağlar.",
         "subheader1": "Standart Blok Ölçüleri",
         "subtext1": "Ortalama blok ölçüsü 280×220×200 cm olup doğal yüzeylere sahiptir. İhracata hazırdır, toplu siparişler için uygundur ve konteyner yüklemeye elverişli güçlendirilmiş paketleme ile sevk edilir.",
-        "subheader2": "Plaka Uygulama Alanları",
-        "subtext2": "Tezgâhlar, duvar kaplamaları, zeminler ve dış cephelerde; dayanıklılık ve doğal şıklığın gerektiği tüm alanlar.",
-        "subheader3": "Karo Yüzey İşlemleri",
-        "subtext3": "Cilalı, honlu, eskitilmiş ve fırçalanmış yüzeyler; farklı tasarım gereksinimlerine ve performans ihtiyaçlarına uygun çözümler sunar.",
-        "subheader4": "Katma Değerli Üretim",
-        "subtext4": "Özel tasarımlar; travertenin doğal dayanıklılığını ve dokusunu korurken, projelere özgünlük ve estetik değer katar."
+        "subheader2": "Kesim Verimi",
+        "subtext2": "Blok bütünlüğü ve damar yönü, katrak kesiminde alınabilecek kullanılabilir plaka miktarı dikkate alınarak değerlendirilir.",
+        "subheader3": "Parti Eşleştirme",
+        "subtext3": "Aynı konteynerdeki bloklar renk, gözenek yapısı ve görsel hareket bakımından uyumlu gruplar hâlinde planlanır.",
+        "subheader4": "Yükleme Planı",
+        "subtext4": "Tonaj ve ağırlık merkezi hesaplanarak bloklar konteyner içinde ahşap destek ve çelik sabitlemelerle güvence altına alınır."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -11715,22 +11721,22 @@
         }
       },
       "TextSection": {
-        "header1": "Traverten Plaka İhracat Süreci",
-        "text1": "Majen, traverten plaka siparişlerinde ocaktan hassas kesimden başlayarak uluslararası teslimata kadar sorunsuz bir ihracat süreci sağlar. Her plaka sevkiyat öncesinde kontrol edilir, güçlendirilir ve ticari faturalar, çeki listeleri ve menşe belgeleri ile birlikte dokümante edilir. FOB ve CIF sevkiyat şartları sayesinde, dünya genelindeki alıcılar traverten plaka siparişlerinde şeffaf, verimli ve güvenli bir tedarik zincirine güvenebilir.",
-        "header2": "Plakalarda Kalite Kontrol & Sınıflandırma",
-        "text2": "Her traverten plaka, uluslararası standartları karşılayacak şekilde özenle sınıflandırılır. Kalınlık hassasiyeti, yüzey finişi ve renk tutarlılığı gibi kriterler sevkiyat öncesinde tek tek kontrol edilir. Majen’in sıkı kalite kontrol süreci, yalnızca A-grade traverten plakaların ihraç edilmesini sağlar; böylece montaj sırasında fire oranı düşer ve her ölçekteki projede öngörülebilir sonuçlar elde edilir.",
-        "header3": "Plakalar İçin Global Pazarlar & Uygulamalar",
-        "text3": "Traverten plakalar, Avrupa, ABD ve Orta Doğu pazarlarında yüksek talep görür. Bu plakalar; konut, ticari ve otel projelerinde tezgah, duvar kaplaması, zemin ve dış cephe uygulamalarında yaygın olarak kullanılır. Majen’in düzenli ve tutarlı plaka tedariki, bizi ithalatçılar, toptancılar ve inşaat firmaları için tercih edilen bir iş ortağı haline getirir.",
-        "header4": "Traverten Plakalar İçin Neden Majen ile Çalışmalısınız?",
-        "text4": "Majen yalnızca bir ocak değil, uluslararası alıcılar için deneyimli bir ihracat ortağıdır. Doğrudan Uşak–Ulubey’den tedarik ile ithalatçılar; stabil üretim, istikrarlı tedarik ve hızlı, ilgili müşteri desteği avantajlarından yararlanır. Güçlendirilmiş paketleme, güvenilir dokümantasyon ve uzun vadeli iş ilişkileriyle Majen, traverten plakalar için global alıcıların güvendiği markadır.",
-        "subheader1": "Standart Blok Ölçüleri",
-        "subtext1": "Ortalama blok ölçüsü doğal yüzeylerle 280×220×200 cm’dir. Toplu siparişlere uygun, konteyner yüklemesine hazır ve güçlendirilmiş paketleme ile sevkiyata hazırlanır.",
-        "subheader2": "Plakaların Kullanım Alanları",
-        "subtext2": "Dayanım ve doğal zarafetin beklendiği tezgahlar, duvar kaplamaları, zeminler ve dış cephe uygulamaları.",
-        "subheader3": "Plaka Yüzey Seçenekleri",
-        "subtext3": "Farklı tasarım beklentileri ve performans ihtiyaçlarını karşılamak üzere cilalı, honlanmış, eskitilmiş ve fırçalanmış yüzeyler.",
-        "subheader4": "Katma Değerli Üretim",
-        "subtext4": "Özel tasarımlar, travertenin doğal dayanım ve dokusunu korurken projelere özgün bir estetik ve ayrıcalıklı çözümler kazandırır."
+        "header1": "Plaka Üretimi, Numaralandırma ve Eşleme",
+        "text1": "Plakalar bloktan kesildikleri sıraya göre numaralandırılır ve yüzey hareketinin takip edilebilmesi için parti bütünlüğü korunur. Damar kesimde doğrusal bantların, enine kesimde ise bulutlu desenlerin devamlılığı gözetilir. Bu sistem, bookmatch uygulamalarında ve geniş yüzeylerde yan yana gelecek plakaların daha kontrollü seçilmesini sağlar.",
+        "header2": "Kalınlık, Kalibrasyon ve Yüzey Kontrolü",
+        "text2": "Kalite kontrol; plakanın yalnızca rengine değil, 2 cm, 3 cm veya 5 cm üretim toleransına, kalibrasyonuna, dolgu bütünlüğüne ve yüzey işleminin homojenliğine odaklanır. Kenar çatlakları ve kullanılabilir net alan ayrıca işaretlenir. Böylece tezgâh, cephe veya duvar kaplaması üreten atölyeler kesim planını gerçek kullanılabilir alana göre hazırlayabilir.",
+        "header3": "Büyük Format Tasarımlarda Desen Sürekliliği",
+        "text3": "Traverten plakalar; resepsiyon bankoları, banyo duvarları, asansör holleri, şömine çevreleri ve dış cephe panelleri gibi büyük yüzeylerde taşın doğal hareketini kesintisiz göstermeye imkân verir. Antiko güçlü damar karakteri sunarken Light ve Ivory daha sakin, açık tonlu kompozisyonlara uyum sağlar.",
+        "header4": "A-Frame Paketleme ve Proje Bazlı Seçim",
+        "text4": "Siparişler renk aralığı, kesim yönü, yüzey işlemi ve kalınlık kriterlerine göre parti hâlinde hazırlanır. Plakalar yüzeyleri birbirine zarar vermeyecek şekilde ayrılır, A-frame veya güçlendirilmiş kasa üzerine sabitlenir. Paket listesinde plaka adedi ve ölçülerinin açıkça belirtilmesi, atölyede mal kabul ve stok takibini hızlandırır.",
+        "subheader1": "Plaka Kalınlıkları",
+        "subtext1": "2 cm, 3 cm ve 5 cm seçenekleri; uygulamanın taşıyıcı sistemi, kenar detayı ve işleme ihtiyacına göre seçilir.",
+        "subheader2": "Damar ve Enine Kesim",
+        "subtext2": "Damar kesim doğrusal bir görünüm, enine kesim ise daha yumuşak ve bulutlu bir desen oluşturur.",
+        "subheader3": "Yüzey ve Dolgu Seçimi",
+        "subtext3": "Cilalı, honlanmış, fırçalanmış ve eskitilmiş yüzeyler dolgulu veya dolgusuz seçeneklerle projeye göre eşleştirilir.",
+        "subheader4": "Plaka Eşleme",
+        "subtext4": "Ardışık kesilen ve numaralandırılan plakalar, bookmatch ya da desen devamlılığı istenen geniş yüzeyler için birlikte seçilebilir."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "SSS",
@@ -12194,22 +12200,22 @@
         }
       },
       "TextSection": {
-        "header1": "Traverten Karo İhracat Süreci",
-        "text1": "Majen, traverten karo ihracat sürecini ocakta kesimden uluslararası teslimata kadar sorunsuz şekilde yönetir. Her karo sevkiyat öncesinde kontrol edilir, paketlenir ve faturalar, çeki listeleri ile menşe belgeleri hazırlanır. FOB ve CIF sevkiyat şartları sayesinde ithalatçılar; şeffaf bir tedarik zinciri, güçlendirilmiş paketleme ve büyük hacimli karo sevkiyatlarında güvenilir teslimat takvimlerinden faydalanır.",
-        "header2": "Karolarda Kalite Kontrol & Sınıflandırma",
-        "text2": "Traverten karolar için uyguladığımız sıkı kalite kontrol ve sınıflandırma süreçleri; tutarlı kalınlık, hassas kesim ve üstün yüzey kalitesi garanti eder. Sevkiyat öncesinde her parti renk bütünlüğü ve yüzey finişi açısından kontrol edilir. Yalnızca A-grade karolar kalite kontrolden geçerek sevk edilir; böylece ithalatçı ve toptancılara, konut, ticari ve otel projelerinin uluslararası standartlarını karşılayan dayanıklı ve güvenilir ürünler sunulur.",
-        "header3": "Karolar İçin Global Pazarlar & Uygulamalar",
-        "text3": "Traverten karolar; zemin kaplamaları, duvar kaplamaları, banyolar, teraslar ve havuz kenarları gibi pek çok alanda kullanılır. Avrupa, ABD ve Orta Doğu pazarlarında talep oldukça güçlüdür. Majen’in istikrarlı üretim ve ihracat kapasitesi, küçük ve büyük ölçekli inşaat projeleri için çok yönlü doğal taş arayan distribütörler, mimarlar ve yükleniciler tarafından tercih edilmemizi sağlar.",
-        "header4": "Traverten Karolar İçin Neden Majen ile Çalışmalısınız?",
-        "text4": "Traverten karolar için Majen ile çalışmak, deneyimli bir ocak–ihracatçısı ile çalışmak anlamına gelir. Uşak–Ulubey’den doğrudan tedarik sayesinde; düzenli üretim, istikrarlı tedarik ve hızlı, ilgili müşteri desteği sunarız. Güçlendirilmiş paketleme ve eksiksiz dokümantasyon, güvenli global sevkiyatları garanti eder. Uzun vadeli iş birlikleri ve düzenli tedarik, Majen’i uluslararası doğal taş karo alıcıları için güvenilir bir tedarikçi haline getirir.",
-        "subheader1": "Standart Blok Ölçüleri",
-        "subtext1": "Ortalama blok ölçüsü doğal yüzeylerle 280×220×200 cm’dir. Toplu siparişlere uygun, güçlendirilmiş paketleme ile konteyner yüklemesine hazır şekilde hazırlanır.",
-        "subheader2": "Plakaların Kullanım Alanları",
-        "subtext2": "Dayanım ve doğal zarafetin beklendiği tezgahlar, duvar kaplamaları, zeminler ve dış cephe uygulamaları.",
-        "subheader3": "Karo Yüzey Seçenekleri",
-        "subtext3": "Farklı tasarım beklentileri ve performans ihtiyaçlarını karşılamak üzere cilalı, honlanmış, eskitilmiş ve fırçalanmış yüzeyler.",
-        "subheader4": "Katma Değerli Üretim",
-        "subtext4": "Özel tasarımlar, travertenin doğal dayanım ve dokusunu korurken projelere özgün bir estetik ve ayrıcalıklı çözümler kazandırır."
+        "header1": "Modüler Karo Üretimi ve Parti Planlaması",
+        "text1": "Karo siparişleri yalnızca toplam metrekareye göre değil; ebat dağılımı, döşeme planı ve yedek oranı dikkate alınarak hazırlanır. 8×8, 12×24 ve 24×24 gibi modüler ölçüler ile Versailles setlerinin aynı renk partisinden üretilmesi hedeflenir. Kasa etiketlerinde ebat ve miktarın ayrılması, sahadaki dağıtımı ve uygulama sırasını kolaylaştırır.",
+        "header2": "Ölçü Toleransı, Gönye ve Ton Kontrolü",
+        "text2": "Karolarda kalınlık kalibrasyonu, köşe gönyesi, kenar doğruluğu ve yüzey işlemi parti bazında kontrol edilir. Uygulama sırasında derz çizgisinin bozulmaması için ölçü toleransları; geniş alanlarda lekeli görünüm oluşmaması için de ton aralığı izlenir. Islak hacimler için seçilen yüzeylerde doku ve kayma konforu ayrıca değerlendirilir.",
+        "header3": "İç Mekândan Havuz Çevresine Uygulamalar",
+        "text3": "Traverten karolar banyolarda ve mutfaklarda sıcak bir doğal taş yüzeyi oluştururken otel lobileri ve mağazalarda modüler döşeme esnekliği sağlar. Teras ve havuz çevresinde honlanmış, fırçalanmış veya eskitilmiş dokular tercih edilebilir. Aynı renk ailesinin farklı ebatları, iç ve dış mekân arasında görsel süreklilik kurmaya yardımcı olur.",
+        "header4": "Uygulamaya Hazır Kasa Düzeni",
+        "text4": "Karolar, yüzeylerinin sürtünmesini ve köşe kırıklarını azaltacak ayırıcılarla kasalanır. Aynı proje içindeki farklı ebatlar ayrı bölümlerde ve okunabilir etiketlerle hazırlanır. Bu düzen, distribütörün stok sayımını ve uygulamacının sahada doğru kasayı doğru alana yönlendirmesini kolaylaştırır.",
+        "subheader1": "Modüler Ebatlar",
+        "subtext1": "Kare, dikdörtgen ve Versailles setleri; derz planı ve alan ölçülerine göre tek başına veya birlikte kullanılabilir.",
+        "subheader2": "Kalibre Kalınlık",
+        "subtext2": "Tutarlı kalınlık ve gönye kontrolü, yapıştırıcı tüketimini ve uygulama sırasında seviye farklarını azaltmaya yardımcı olur.",
+        "subheader3": "Mekâna Uygun Yüzey",
+        "subtext3": "Honlanmış yüzey iç mekânda sakin bir görünüm; fırçalanmış ve eskitilmiş dokular dış alanlarda daha belirgin yüzey hissi sunar.",
+        "subheader4": "Ton Harmanlama",
+        "subtext4": "Uygulamadan önce farklı kasalardan karo harmanlamak, travertenin doğal ton geçişlerini geniş yüzeye dengeli biçimde dağıtır."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "SSS",
@@ -15938,14 +15944,14 @@
       }
     },
     "pavers": {
-      "title": "Wholesale Travertine Special Designs",
+      "title": "Toptan Traverten Döşemeler",
       "name": "dosemeler",
       "span": "Direct Quarry Supplier",
       "alt": "Custom design product image",
-      "intro": "Majen designs and manufactures Custom Travertine Designs, including steps, stair treads, risers, pool copings, mosaics, borders, thresholds, sills, columns, and other cut-to-size pieces. Produced in Blaundos Antiko, Light, and Ivory, each item is crafted to project specs with CNC profiling and edge detailing. Reinforced crates and clear labelling make installation faster on site. Importers rely on Majen for Custom Travertine Designs with consistent quality and FOB/CIF export options.",
-      "title2": "Why Choose Wholesale Travertine Special Designs?",
+      "intro": "Majen, teras, bahçe yolu, avlu ve havuz çevresi projeleri için Blaundos Antiko, Light ve Ivory traverten döşemeler üretir. 3 cm ve üzeri kalınlık seçenekleri, dış mekâna uygun dokulu yüzeyler ve modüler ebatlar proje koşullarına göre hazırlanır. Döşemeler palet ve kasalarda ebat bazında ayrılarak uluslararası sevkiyata hazır hâle getirilir.",
+      "title2": "Neden Traverten Döşemeler?",
       "alt2": "Custom design product image",
-      "intro2": "Custom Travertine Designs offer unique value for villas, hotels, retail and public spaces where standard tiles or slabs are not enough. Majen’s quarry-direct supply, certified inspections and CAD-to-production workflow reduce errors and lead times. Our team collaborates with architects and contractors to match finishes, edges and radiuses across the project, ensuring design consistency and predictable outcomes at scale.",
+      "intro2": "Traverten döşemeler, açık alanlarda doğal taş görünümünü taşıma kapasitesi ve yüzey tutuşuyla birleştirir. Kalınlık, kenar detayı ve yüzey dokusu; yaya yolu, araç yaklaşımı veya havuz çevresi gibi kullanım senaryolarına göre seçilir. Modüler ölçüler ve Versailles desenleri, geniş peyzaj alanlarında farklı döşeme ritimleri oluşturmaya imkân verir.",
       "sizes": [
         "Project-based dimensions"
       ],
@@ -15958,56 +15964,56 @@
         "Turnkey delivery"
       ],
       "detailsHeadings": {
-        "title1": "Why Our Travertine Special Designs?",
-        "title2": "Applications of Travertine Special Designs",
-        "title3": "Sizes & Dimensions of Special Designs",
-        "title4": "Surface & Packaging of Special Designs",
+        "title1": "Dış Mekân İçin Traverten Döşemeler",
+        "title2": "Döşeme Kullanım Alanları",
+        "title3": "Döşeme Ebatları & Kalınlıkları",
+        "title4": "Yüzey, Kenar & Paketleme",
         "sizes": "Ebatlar",
         "finishes": "Yüzeyler",
         "features": "Öne Çıkanlar"
       },
       "description": [
-        "Majen is a trusted supplier of Wholesale Travertine Special Designs, offering steps, mosaics, borders, and unique architectural elements crafted from Blaundos travertine. Our designs combine durability with timeless aesthetics and are reinforced for secure international shipments.",
-        "Special travertine pieces are ideal for staircases, poolsides, hotel lobbies, villas, and custom architectural projects. Blaundos Antiko, Light, and Ivory provide versatile tones, enabling designers and importers to meet diverse creative needs.",
-        "Travertine special designs are available in thicknesses from 2–5 cm, with custom dimensions available on request. Every bespoke piece is cut and finished with precision to ensure accuracy, stability, and consistency across large projects.",
-        "Custom designs are available in polished, honed, brushed, and tumbled finishes. For export, each item is carefully packed in reinforced wooden crates with nylon wrapping and metal strapping, ensuring safe container loading and delivery worldwide."
+        "Traverten döşemeler, dış mekânda yoğun kullanıma uygun kalın kesitleri ve dokulu yüzey seçenekleriyle karolardan ayrılır. Ocak kaynağından gelen ton devamlılığı, geniş peyzaj alanlarında doğal ve dengeli bir görünüm oluşturur.",
+        "Teraslar, avlular, bahçe yolları, otel girişleri ve havuz çevreleri başlıca kullanım alanlarıdır. Projeye göre düz sıra, şaşırtmalı düzen veya Versailles deseni uygulanabilir.",
+        "6×12, 8×8, 12×12, 12×24, 16×24, 18×36, 24×24 ve 24×36 gibi modüler ölçüler ile Versailles Pattern seçenekleri sunulur. Kalınlık, zemin altyapısı ve beklenen yüke göre belirlenir.",
+        "Fırçalanmış, eskitilmiş ve honlanmış yüzeyler; düz, kırma veya yuvarlatılmış kenar seçenekleriyle eşleştirilebilir. Döşemeler ebat bazında ayrılır ve dış mekân taşımacılığına uygun güçlendirilmiş kasa veya paletlerde sevk edilir."
       ],
       "variants": {
-        "heading": "Travertine Special Desing Varieties",
-        "text": "Majen offers three primary types of Wholesale Travertine Special Designs: Blaundos Antiko, Blaundos Light, and Blaundos Ivory. Each variety is crafted with precision at our Uşak–Ulubey quarry, ensuring durability, consistent texture, and aesthetic value. Export-ready and reinforced for sea freight, these bespoke travertine designs are trusted by architects, importers, and wholesalers worldwide.",
+        "heading": "Traverten Döşeme Renkleri",
+        "text": "Blaundos Antiko, hareketli gri-bej tonlarıyla avlu ve geleneksel peyzajlarda; Blaundos Light açık bej görünümüyle teras ve yürüyüş yollarında; Blaundos Ivory ise krem tonlarıyla havuz çevresi ve aydınlık dış mekânlarda öne çıkar. Renk seçimi, yüzey dokusu ve döşeme deseniyle birlikte proje bazında planlanır.",
         "variant1": {
-          "title": "Travertine Special Design Blaundos Antico",
-          "alt": "Blaundos Antico special design",
-          "href": "/en/travertine/special-designs/blaundos-antiko"
+          "title": "Blaundos Antiko Traverten Döşeme",
+          "alt": "Blaundos Antiko dış mekân döşemesi",
+          "href": "/tr/traverten-dosemeler"
         },
         "variant2": {
-          "title": "Travertine Special Design Blaundos Light",
-          "alt": "Blaundos Light special design",
-          "href": "/en/travertine/special-designs/blaundos-light"
+          "title": "Blaundos Light Traverten Döşeme",
+          "alt": "Blaundos Light dış mekân döşemesi",
+          "href": "/tr/traverten-dosemeler"
         },
         "variant3": {
-          "title": "Travertine Special Design Blaundos Ivory",
-          "alt": "Blaundos Ivory special design",
-          "href": "/en/travertine/special-designs/blaundos-ivory"
+          "title": "Blaundos Ivory Traverten Döşeme",
+          "alt": "Blaundos Ivory dış mekân döşemesi",
+          "href": "/tr/traverten-dosemeler"
         }
       },
       "TextSection": {
-        "header1": "Travertine Special Design Export Process",
-        "text1": "Majen manages the Travertine Special Design Export Process from precise quarry cutting to container loading. Each piece is documented with invoices, packing lists, and certificates of origin, then secured in reinforced wooden crates for sea freight. With FOB and CIF terms, importers benefit from a transparent, safe, and reliable supply chain, ensuring stair steps, mosaics, borders, and decorative elements arrive on time.",
-        "header2": "Quality Control & Grading of Special Designs",
-        "text2": "Quality Control & Grading of Special Designs includes inspections of thickness tolerance, surface finish, edge stability, and color consistency. Only A-grade pieces pass final checks and are packed in protective crates to reduce breakage risks. This process minimizes waste on-site and ensures architects and contractors receive reliable products for villas, hotels, and signature projects.",
-        "header3": "Global Markets & Applications for Special Designs",
-        "text3": "Global Markets & Applications for Special Designs include high-end residential, hospitality, and commercial projects across Europe, the USA, and the Middle East. Travertine steps, pool surrounds, mosaics, and façade elements in Blaundos Antiko, Light, and Ivory are used to enhance both interior and exterior spaces. Consistent production and reinforced packing guarantee secure supply for large-scale shipments.",
-        "header4": "Why Partner with Majen for Travertine Special Designs?",
-        "text4": "Why Partner with Majen for Travertine Special Designs? Because Majen is more than a quarry — we are an experienced export partner. Direct sourcing from Uşak–Ulubey ensures stable production, reliable supply, and flexible custom options. With reinforced packaging, complete documentation, and long-term client relationships, Majen is trusted worldwide for bespoke travertine elements.",
-        "subheader1": "Standard Block Dimensions",
-        "subtext1": "Average block size is 280×220×200 cm with natural surfaces. Export-ready, suitable for bulk orders, with reinforced packaging for container loading.",
-        "subheader2": "Applications of Slabs",
-        "subtext2": "Countertops, wall cladding, flooring, and exterior façades where durability and natural elegance are required.",
-        "subheader3": "Tile Finishes",
-        "subtext3": "Polished, honed, tumbled, and brushed surfaces to match diverse design requirements and performance needs.",
-        "subheader4": "Value-Added Production",
-        "subtext4": "Custom designs elevate aesthetics and provide exclusive solutions while preserving travertine’s natural durability and texture."
+        "header1": "Dış Mekân Yüküne Göre Döşeme Seçimi",
+        "text1": "Döşeme kalınlığı ve ebatı, alanın yalnızca görünümüne göre değil, altyapısına ve taşıyacağı yüke göre belirlenir. Yaya yollarında daha küçük modüller eğimlere uyum sağlarken geniş teraslarda büyük formatlar daha sakin bir yüzey oluşturur. Araç yaklaşımı bulunan alanlarda daha kalın kesit ve uygun yataklama detayı tercih edilir.",
+        "header2": "Kayma Konforu, Kenar ve Donma Koşulları",
+        "text2": "Dış mekân kalite kontrolünde yüzey dokusu, kenar dayanımı, kalınlık ve gözenek yapısı birlikte değerlendirilir. Havuz çevresinde çıplak ayak konforu ile tutuş arasında denge aranır; soğuk iklim projelerinde su tahliyesi, uygun derz ve doğru uygulama sistemi ürün seçiminin parçasıdır.",
+        "header3": "Modüler Desenler ve Su Tahliyesi",
+        "text3": "Düz sıra, şaşırtmalı döşeme ve Versailles Pattern farklı alan geometrilerine uyarlanabilir. Ebat kombinasyonu yapılırken kesim kaybı, derz genişliği ve drenaj eğimi birlikte planlanmalıdır. Doğru modül seçimi, özellikle havuz kenarı ve teraslarda gereksiz küçük parça kullanımını azaltır.",
+        "header4": "Saha Sırasına Göre Paketleme",
+        "text4": "Farklı ebatlardan oluşan projelerde her modül ayrı sayılır, etiketlenir ve paket listesinde belirtilir. Kenarlar taşıma sırasında darbe almayacak şekilde korunur; kasalar uygulama bölgesi veya desen setine göre ayrılabilir. Böylece saha ekibi doğru taşı doğru alana daha az ayıklama yaparak ulaştırır.",
+        "subheader1": "Dış Mekân Kalınlığı",
+        "subtext1": "Kalınlık seçimi yaya, peyzaj veya araç yüküne ve uygulanacak zemin sistemine göre yapılır.",
+        "subheader2": "Havuz Çevresi",
+        "subtext2": "Yüzey dokusu seçilirken ıslak zeminde tutuş, çıplak ayak konforu ve güneş altında yüzey hissi birlikte değerlendirilir.",
+        "subheader3": "Versailles Pattern",
+        "subtext3": "Birden fazla ebatla kurulan desen, geniş alanlara doğal ritim kazandırır ve traverten tonlarının dengeli dağılmasını sağlar.",
+        "subheader4": "Drenaj ve Derz",
+        "subtext4": "Uygun eğim, derz genişliği ve su tahliyesi, dış mekân döşemesinin uzun dönem performansında ürün kadar önemlidir."
       },
       "QuestionsItems": {
         "aboutpage_s4_faq_header1": "FAQ",
@@ -18670,13 +18676,13 @@
   },
   "TravertinePage": {
     "buttonText": "Sayfaya git",
-    "metaTitle": "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
-    "metaDescription": "Majen supplies wholesale travertine blocks, slabs & tiles from Uşak–Ulubey. Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping.",
+    "metaTitle": "Türkiye’den Toptan Traverten | Blok, Plaka, Karo – Majen",
+    "metaDescription": "Majen, Uşak–Ulubey’den Blaundos Antiko, Light ve Ivory traverten blok, plaka, karo ve döşeme tedarik eder.",
     "title": "Traverten – Türkiye’den Toptan Traverten",
-    "span": "Direct Quarry Supplier in Uşak",
-    "intro": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve döşeme seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve döşeme seçenekleriyle proje odaklı üretim sağlıyoruz.",
-    "title2": "Why Choose Travertine From Turkey?",
-    "intro2": "Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve döşeme seçenekleriyle proje odaklı üretim sağlıyoruz. Majen olarak, Türkiye’nin seçkin ocaklarından projelerinize uygun traverten tedarik ediyoruz. Blok, slab, karo ve döşeme seçenekleriyle proje odaklı üretim sağlıyoruz.",
+    "span": "Uşak’tan Doğrudan Ocak Tedariki",
+    "intro": "Majen, Uşak–Ulubey kaynağından blok, plaka, karo ve dış mekân döşemesi tedarik eder. Blaundos Antiko, Light ve Ivory; ham bloktan kalibre karoya kadar her ürün grubunun üretim gereksinimine göre seçilir. Böylece fabrikalar, uygulamacılar ve proje ekipleri aynı taş ailesini farklı ölçek ve yüzeylerde kullanabilir.",
+    "title2": "Hangi Traverten Ürünü Projenize Uygun?",
+    "intro2": "Bloklar fabrika kesimi için hammadde, plakalar büyük formatlı yüzeyler, karolar modüler iç ve dış mekân uygulamaları, döşemeler ise daha kalın kesit gerektiren teras ve peyzaj alanları için hazırlanır. Ürün seçimi; kullanım yeri, ölçü, kesim yönü, yüzey işlemi ve beklenen yük birlikte değerlendirilerek yapılır.",
     "home": "Anasayfa",
     "travertine": "Traverten",
     "cards": {
@@ -18690,16 +18696,16 @@
       "finishesText": "Cilalı, honlu, eskitilmiş, fırçalanmış ve daha fazlası."
     },
     "variantsHeading": "Ürünler & Renkler",
-    "variantsubtitle1": "Travertine Blocks",
-    "variantsubtitle2": "Travertine Slabs",
-    "variantsubtitle3": "Travertine Tiles",
-    "variantsubtitle4": "Custom Travertine Designs",
-    "goToPage": "Go to page",
+    "variantsubtitle1": "Traverten Bloklar",
+    "variantsubtitle2": "Traverten Plakalar",
+    "variantsubtitle3": "Traverten Karolar",
+    "variantsubtitle4": "Traverten Döşemeler",
+    "goToPage": "Sayfaya git",
     "productCopy": {
-      "block": "Available color options: <links/>. Each reflects the quarry’s character and adds a strong, authentic presence to your project.",
-      "slabs": "This slab series offers: <links/>. With consistent surfaces and curated veining, it delivers a flawless look in large areas.",
-      "tiles": "In-stock colors: <links/>. Ideal for both indoor and outdoor tile installations with durability and refined aesthetics.",
-      "pavers": "For bespoke concepts, available colors: <links/>. We produce custom sizes and forms to achieve truly unique results."
+      "block": "Mevcut renk seçenekleri: <links/>. Her seçenek ocak karakterini yansıtır ve fabrika kesimine uygun blok alternatifi sunar.",
+      "slabs": "Plaka renk seçenekleri: <links/>. Seçilen damar yapısı ve yüzey işlemi geniş formatlı uygulamalara uyarlanır.",
+      "tiles": "Stoktaki karo renkleri: <links/>. İç ve dış mekân uygulamaları için farklı ebat ve yüzeylerle hazırlanır.",
+      "pavers": "Dış mekân döşemeleri için renk seçenekleri: <links/>. Ebat, kalınlık ve yüzey dokusu kullanım yüküne göre hazırlanır."
     },
     "variants": {
       "processes": "İşlemler",
@@ -18708,58 +18714,62 @@
     },
     "variantSentence": {
       "blocks": {
-        "start": "Majen olarak, Traverten Bloklarda şu çeşitleri sunuyoruz:"
+        "start": "Majen olarak, Traverten Bloklarda şu çeşitleri sunuyoruz:",
+        "end": "ocak karakteri, blok bütünlüğü ve kesim verimi hedeflerine göre fabrika üretimi için seçilir."
       },
       "slabs": {
-        "start": "Majen olarak, Traverten Plakalarda öne çıkan çeşitlerimiz:"
+        "start": "Majen olarak, Traverten Plakalarda öne çıkan çeşitlerimiz:",
+        "end": "damar yönü, kalınlık ve yüzey eşlemesiyle büyük formatlı tasarımlara hazırlanır."
       },
       "tiles": {
-        "start": "Majen olarak, Traverten Karolarda zarif çeşitler sunuyoruz:"
+        "start": "Majen olarak, Traverten Karolarda zarif çeşitler sunuyoruz:",
+        "end": "modüler ebat, ton harmanlama ve kullanım alanına uygun yüzey seçenekleriyle üretilir."
       },
       "pavers": {
-        "start": "Majen olarak, Traverten Döşemelerde dayanıklı çeşitler sunuyoruz:"
+        "start": "Majen olarak, Traverten Döşemelerde dayanıklı çeşitler sunuyoruz:",
+        "end": "dış mekân yükü, drenaj düzeni ve yüzey tutuşu dikkate alınarak projelendirilir."
       },
       "end": "farklı proje ve performans ihtiyaçlarına uyum sağlar."
     },
     "altTexts": {
-      "block": "Travertine Blocks for Export",
-      "slabs": "Travertine Slabs Supplier",
-      "tiles": "Wholesale Travertine Tiles",
-      "pavers": "Custom Travertine Designs",
-      "blocks": "Travertine blocks Turkey – Blaundos Antiko 280×220×200 cm, export-ready",
-      "special-designs": "Custom travertine designs – steps, mosaics, borders packed for sea freight"
+      "block": "İhracata hazır traverten bloklar",
+      "slabs": "Traverten plaka tedariki",
+      "tiles": "Toptan traverten karolar",
+      "pavers": "Dış Mekân Traverten Döşemeleri",
+      "blocks": "Türkiye’den traverten bloklar – Blaundos Antiko 280×220×200 cm, ihracata hazır",
+      "special-designs": "Deniz taşımacılığına uygun paketlenmiş özel traverten üretimleri"
     },
     "TextSection": {
-      "header1": "Travertine Blocks for Export",
-      "text1": "Blocks extracted from our Uşak–Ulubey quarry are ideal for factories and wholesalers. Available in Blaundos Antiko, Light, and Ivory, our travertine blocks deliver consistent texture and large sizes for further processing and global shipment. Reinforced packaging ensures safe loading for international container transport.",
-      "header2": "Travertine Slabs Supplier",
-      "text2": "Premium travertine slabs are available in 2,3, and 5 cm thickness with finishes including polished, honed, brushed or tumbled. These slabs are designed for both interior and exterior applications, combining strength with natural elegance for architects and builders.",
-      "header3": "Wholesale Travertine Tiles",
-      "text3": "Travertine tiles are produced in sizes such as 30×60,60×60, and 40×80 cm, offering flexibility for different designs. They are ideal for bathrooms, kitchens, patios, and pool areas, combining durability with natural slip-resistant surfaces.",
-      "header4": "Custom Travertine Designs",
-      "text4": "Custom travertine designs include steps, mosaics, borders, and unique architectural cuts tailored for villas, hotels, and signature projects. These bespoke pieces highlight both creativity and the durability of natural stone.",
-      "subheader1": "Standard Block Dimensions",
-      "subtext1": "Average travertine block size is 280×220×200 cm with natural surfaces. Bulk orders are export-ready and suitable for international buyers requiring stability, volume, and reliable supply.",
-      "subheader2": "Applications of Slabs",
-      "subtext2": "Countertops, wall cladding, flooring, and façades are among the most popular uses of travertine slabs. Their durability and aesthetic value make them essential for residential, commercial, and hospitality projects worldwide.",
-      "subheader3": "Tile Finishes",
-      "subtext3": "Available in polished, honed, brushed, and tumbled options, travertine tiles can be adapted to both modern and traditional design concepts. These finishes provide variety and performance for diverse architectural needs.",
-      "subheader4": "Value-Added Production",
-      "subtext4": "Custom productions enhance the natural beauty of travertine while delivering exclusive architectural solutions. They elevate living and working spaces with distinctive designs that preserve long-term strength and elegance."
+      "header1": "İhracata Hazır Traverten Bloklar",
+      "text1": "Uşak–Ulubey ocağından çıkarılan Blaundos Antiko, Light ve Ivory bloklar fabrika üretimi ve toptan siparişler için seçilir. Büyük ebatlı bloklar, uluslararası konteyner taşımacılığına uygun biçimde kontrol edilip güçlendirilir.",
+      "header2": "Traverten Plaka Tedariki",
+      "text2": "Traverten plakalar 2, 3 ve 5 cm kalınlıklarda; cilalı, honlanmış, fırçalanmış veya eskitilmiş yüzeylerle hazırlanabilir. İç ve dış mekân projelerinde geniş formatlı uygulamalara uygun seçenekler sunulur.",
+      "header3": "Toptan Traverten Karolar",
+      "text3": "Traverten karolar 30×60, 60×60 ve 40×80 cm gibi farklı ebatlarda üretilir. Banyo, mutfak, teras ve havuz çevresi uygulamaları için kullanım alanına uygun yüzey seçenekleriyle hazırlanır.",
+      "header4": "Traverten Döşemeler",
+      "text4": "Traverten döşemeler; teras, yürüyüş yolu, avlu ve havuz çevresi gibi dış alanlar için farklı kalınlık, ebat ve yüzey seçenekleriyle proje bazında üretilir.",
+      "subheader1": "Standart Blok Ölçüleri",
+      "subtext1": "Ortalama traverten blok ölçüsü 280×220×200 cm’dir. Toplu siparişler kontrol edilerek uluslararası sevkiyata hazır hâle getirilir.",
+      "subheader2": "Plaka Kullanım Alanları",
+      "subtext2": "Tezgâh, duvar kaplaması, zemin ve cepheler traverten plakaların başlıca kullanım alanları arasındadır.",
+      "subheader3": "Karo Yüzey İşlemleri",
+      "subtext3": "Cilalı, honlanmış, fırçalanmış ve eskitilmiş seçeneklerle karolar modern veya geleneksel tasarım ihtiyaçlarına uyarlanabilir.",
+      "subheader4": "Katma Değerli Üretim",
+      "subtext4": "Özel ebat, kenar ve yüzey uygulamaları travertenin doğal görünümünü korurken projeye özgü çözümler sunar."
     },
     "QuestionsItems": {
       "aboutpage_s4_faq_header1": "FAQ",
-      "aboutpage_s4_faq_span1": "From Turkey",
-      "aboutpage_s4_faq1_header": "What sizes are available for travertine blocks?",
-      "aboutpage_s4_faq1_text": "Standard block size is ~280×220×200 cm; average 30–35 tons depending on density. Export-ready and reinforced for container loading.",
-      "aboutpage_s4_faq2_header": "Which slab thicknesses and finishes do you offer?",
-      "aboutpage_s4_faq2_text": "Slabs in 2/3/5 cm; finishes: polished, honed, brushed, tumbled. Cut-to-size is available for project-specific requirements.",
-      "aboutpage_s4_faq3_header": "Do you export worldwide and which terms are available?",
-      "aboutpage_s4_faq3_text": "Yes. We ship worldwide with FOB and CIF terms and full documentation (invoice, packing list, certificate of origin, inspection reports).",
-      "aboutpage_s4_faq4_header": "How do you pack blocks, slabs and tiles for sea freight?",
-      "aboutpage_s4_faq4_text": "Reinforced wooden frames, nylon wrapping and metal strapping minimize movement and breakage during transport.",
-      "aboutpage_s4_faq5_header": "What are the main applications?",
-      "aboutpage_s4_faq5_text": "Flooring, wall cladding, countertops, landscaping elements and custom architectural designs for residential and commercial projects."
+      "aboutpage_s4_faq_span1": "Türkiye’den",
+      "aboutpage_s4_faq1_header": "Traverten bloklarda hangi ölçüler sunuluyor?",
+      "aboutpage_s4_faq1_text": "Standart blok ölçüsü yaklaşık 280×220×200 cm, ortalama ağırlığı ise yoğunluğa bağlı olarak 30–35 tondur.",
+      "aboutpage_s4_faq2_header": "Hangi plaka kalınlıkları ve yüzey işlemleri mevcut?",
+      "aboutpage_s4_faq2_text": "Plakalar 2, 3 ve 5 cm kalınlıklarda; cilalı, honlanmış, fırçalanmış veya eskitilmiş olarak hazırlanabilir.",
+      "aboutpage_s4_faq3_header": "Dünya geneline ihracat yapıyor musunuz?",
+      "aboutpage_s4_faq3_text": "Evet. Siparişler fatura, paketleme listesi, menşe belgesi ve gerekli kontrol raporlarıyla birlikte sevk edilir.",
+      "aboutpage_s4_faq4_header": "Blok, plaka ve karolar deniz taşımacılığı için nasıl paketleniyor?",
+      "aboutpage_s4_faq4_text": "Güçlendirilmiş ahşap destekler, koruyucu ambalaj ve metal çemberler taşıma sırasındaki hareketi ve kırılma riskini azaltır.",
+      "aboutpage_s4_faq5_header": "Başlıca kullanım alanları nelerdir?",
+      "aboutpage_s4_faq5_text": "Zemin, duvar kaplaması, tezgâh, peyzaj ve konut ya da ticari projelere yönelik mimari uygulamalardır."
     }
   },
   "Gallery": {
@@ -18801,8 +18811,8 @@
     "aboutpage_s4_faq2_text": "Evet. Majen, Türkiye'den ABD, Avrupa ve Orta Doğu'ya FOB ve CIF teslim şartlarıyla toptan traverten ihraç eder.",
     "aboutpage_s4_faq3_header": "Sevkiyatların güvenliğini nasıl sağlıyorsunuz?",
     "aboutpage_s4_faq3_text": "Tüm ürünler ahşap karkas, naylon ambalaj ve metal çember ile güçlendirilir; ardından deniz taşımacılığı için konteynırlara özenle yüklenir.",
-    "aboutpage_s4_faq4_header": "Who is a leading Travertine Supplier from Turkey?",
-    "aboutpage_s4_faq4_text": "Majen is a quarry-direct Travertine Supplier from Turkey, offering blocks, slabs, and tiles with FOB/CIF worldwide export."
+    "aboutpage_s4_faq4_header": "Türkiye’den doğrudan ocak tedariki sunan traverten firması hangisidir?",
+    "aboutpage_s4_faq4_text": "Majen; blok, plaka, karo ve döşeme ürünlerini Uşak–Ulubey kaynağından uluslararası projelere tedarik eder."
   },
   "HowWeExportPage": {
     "title": "How We Export Travertine Worldwide",
@@ -19391,18 +19401,18 @@
     "readAlso": "Bunları da okuyun",
     "back": "Blog’a dön",
     "Questions": {
-      "q1": "What makes Turkish Travertine unique?",
-      "answer1": "Turkey offers high-density material and a wide palette of colors such as Ivory, Silver and Noce. Competitive quarry output supports large-scale projects.",
-      "q2": "Where is travertine mostly used?",
-      "answer2": "Common uses include flooring, wall cladding, facades, pool surrounds, bathrooms and gardens.",
-      "q3": "What are the differences between filled & unfilled?",
-      "answer3": "Filled travertine has pores filled with resin/cement for a smooth finish. Unfilled keeps natural cavities for a rustic texture.",
-      "q4": "How do I maintain travertine?",
-      "answer4": "Seal periodically, use pH-neutral cleaners, and avoid acidic products. Outdoor pavers may require re-sealing based on climate.",
-      "q5": "Is travertine from Turkey suitable for commercial projects?",
-      "answer5": "Yes. Thanks to density and color range, Turkish travertine performs in hotels, offices and retail spaces when specified with the right finish and thickness.",
-      "q6": "How do I choose between tiles, slabs and pavers?",
-      "answer6": "Use tiles for interiors and walls, slabs for seamless surfaces or countertops, and pavers for outdoor traffic areas. Share drawings and we’ll suggest the most efficient mix."
+      "q1": "Türk travertenini farklı kılan nedir?",
+      "answer1": "Türkiye; Ivory, Silver ve Noce gibi geniş bir renk yelpazesinde, yüksek yoğunluklu traverten seçenekleri sunar. Güçlü ocak üretimi büyük ölçekli projeleri destekler.",
+      "q2": "Traverten en çok nerelerde kullanılır?",
+      "answer2": "Zemin, duvar ve cephe kaplamaları; havuz çevreleri, banyolar ve bahçeler başlıca kullanım alanlarıdır.",
+      "q3": "Dolgulu ve dolgusuz traverten arasındaki fark nedir?",
+      "answer3": "Dolgulu travertende gözenekler daha düzgün bir yüzey için reçine veya çimentoyla kapatılır. Dolgusuz traverten doğal boşluklarını ve rustik dokusunu korur.",
+      "q4": "Traverten bakımı nasıl yapılır?",
+      "answer4": "Yüzeyi belirli aralıklarla koruyucu uygulamayla yenileyin, pH nötr temizleyiciler kullanın ve asitli ürünlerden kaçının. Dış mekân döşemeleri iklime bağlı olarak yeniden koruma gerektirebilir.",
+      "q5": "Türkiye’den traverten ticari projeler için uygun mudur?",
+      "answer5": "Evet. Doğru yüzey ve kalınlık seçildiğinde Türk traverteni; otel, ofis ve mağaza gibi ticari alanlarda kullanılabilir.",
+      "q6": "Karo, plaka ve döşeme arasında nasıl seçim yapmalıyım?",
+      "answer6": "İç mekân ve duvarlarda karoları, geniş ve az derzli yüzeylerde plakaları, dış mekân trafiğinde ise döşemeleri tercih edebilirsiniz. Proje çizimlerine göre uygun ürün dağılımı belirlenebilir."
     },
     "light-traverten-ile-modern-ic-mekan": {
       "title": "Light Traverten ile Modern İç Mekan Tasarımı",

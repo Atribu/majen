@@ -6,9 +6,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiX } from "react-icons/fi";
 import { Home, LayoutGrid, ShoppingBag, FolderKanban, Newspaper, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
   const pathname = usePathname();
+  const socialT = useTranslations("Footer.social");
   const dialogRef = useRef(null);
   const firstLinkRef = useRef(null);
   const lastFocusableRef = useRef(null);
@@ -165,7 +167,14 @@ export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
               <div className="flex items-center justify-between">
                 <span>© {new Date().getFullYear()} Majen</span>
                 <div className="flex items-center gap-3">
-                  <a href="https://instagram.com" className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded" aria-label="Instagram">IG</a>
+                  <a
+                    href="https://instagram.com"
+                    className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded"
+                    aria-label={socialT("instagramAction")}
+                    title={socialT("instagramAction")}
+                  >
+                    IG
+                  </a>
                   <a href="https://dribbble.com" className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded" aria-label="Dribbble">DB</a>
                 </div>
               </div>

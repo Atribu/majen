@@ -4,6 +4,10 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Keep all metadata in <head> in the initial HTML response. This prevents
+  // HTML-only SEO crawlers from treating Next.js streamed metadata as body
+  // content (for example the internal next-size-adjust font metadata).
+  htmlLimitedBots: /.*/,
   async redirects() {
     return [
       // Legacy export URLs -> canonical localized slugs
