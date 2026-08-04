@@ -18705,6 +18705,47 @@
       "link": "https://api.whatsapp.com/send?phone=905335561092&text=Merhaba%20Majen%20ekibi!"
     }
   },
+  "SampleBoard": {
+    "button": "Numune Panosu Talep Edin",
+    "title": "Numune Panosu Talep Edin",
+    "description": "Projenize uygun renk ve yüzey seçeneklerini hazırlayabilmemiz için iletişim bilgilerinizi paylaşın.",
+    "productLabel": "Seçilen ürün",
+    "fields": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "company": "Firma",
+      "country": "Ülke",
+      "phone": "Telefon (opsiyonel)",
+      "message": "Ek açıklama (opsiyonel)"
+    },
+    "placeholders": {
+      "name": "Adınız Soyadınız",
+      "email": "ornek@eposta.com",
+      "company": "Firma adınız",
+      "country": "Ülke",
+      "phone": "+90 555 555 55 55",
+      "message": "İstediğiniz renk, yüzey veya proje detaylarını ekleyebilirsiniz."
+    },
+    "consent": "Göndererek <privacy>Gizlilik</privacy> ve <terms>Koşullar</terms> metinlerini okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.",
+    "buttons": {
+      "submit": "Talebi Gönder",
+      "sending": "Gönderiliyor...",
+      "cancel": "Vazgeç",
+      "close": "Kapat"
+    },
+    "errors": {
+      "required": "Bu alan zorunludur.",
+      "email": "Geçerli bir e-posta girin.",
+      "consent": "Devam etmek için onay vermelisiniz.",
+      "mailConfig": "Bu ortamda mail ayarları eksik görünüyor. SMTP bilgilerini kontrol edin.",
+      "submit": "Talep gönderilemedi. Lütfen tekrar deneyin."
+    },
+    "status": {
+      "successTitle": "Numune talebiniz alındı",
+      "success": "Teşekkürler! Ekibimiz numune seçenekleri ve gönderim detayları için sizinle iletişime geçecektir.",
+      "errorTitle": "Gönderim başarısız"
+    }
+  },
   "TravertinePage": {
     "buttonText": "Sayfaya git",
     "metaTitle": "Türkiye’den Toptan Traverten | Blok, Plaka, Karo – Majen",

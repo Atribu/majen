@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Script from "next/script";
 import ShareButton from "../ShareButton";
+import SampleBoardButton from "../generalcomponent/SampleBoardButton";
 
 /**
  * IntroSection tasarımının aynısı, dinamik içerikle:
@@ -104,8 +105,9 @@ export default function ProductIntroSection({
 
           {title2 ? <h2 className="mt-2 text-[22px] font-semibold leading-[110%] md:text-[24px] lg:mt-3">{title2}</h2> : null}
           {intro2 ? <p className="mt-2 text-[12px] leading-tight md:text-[14px] lg:mt-3 lg:leading-[140%]">{intro2}</p> : null}
-          <div className="mt-3 lg:ml-2 lg:mt-4">
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-2 lg:ml-2 lg:mt-4 lg:justify-start">
             <ShareButton label="Share" />
+            <SampleBoardButton productTitle={title} />
           </div>
         </div>
       </header>

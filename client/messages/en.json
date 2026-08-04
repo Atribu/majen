@@ -62773,6 +62773,47 @@
       "link": "https://api.whatsapp.com/send?phone=905335561092&text=Hello%20Majen%20team!"
     }
   },
+  "SampleBoard": {
+    "button": "Request a Sample Board",
+    "title": "Request a Sample Board",
+    "description": "Share your contact details so we can prepare the right color and finish options for your project.",
+    "productLabel": "Selected product",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email",
+      "company": "Company",
+      "country": "Country",
+      "phone": "Phone (optional)",
+      "message": "Additional details (optional)"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "example@email.com",
+      "company": "Company name",
+      "country": "Country",
+      "phone": "+90 555 555 55 55",
+      "message": "Add any preferred color, finish, or project details."
+    },
+    "consent": "By submitting, you confirm you have read and agree to our <privacy>Privacy</privacy> and <terms>Terms</terms>.",
+    "buttons": {
+      "submit": "Send Request",
+      "sending": "Sending...",
+      "cancel": "Cancel",
+      "close": "Close"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email.",
+      "consent": "You must accept to continue.",
+      "mailConfig": "Mail setup is incomplete in this environment. Check the SMTP settings.",
+      "submit": "The request could not be sent. Please try again."
+    },
+    "status": {
+      "successTitle": "Your sample request has been received",
+      "success": "Thank you! Our team will contact you about sample options and shipping details.",
+      "errorTitle": "Submission failed"
+    }
+  },
   "TravertinePage": {
     "buttonText": "Go to page",
     "metaTitle": "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
