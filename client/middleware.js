@@ -73,7 +73,7 @@ function enProcToTr(proc) {
   if (s === 'natural') return 'dogal';
   const [fill, p] = s.split('-'); // filled-honed
   const fillTr = fill === 'filled' ? 'dolgulu' : 'dolgusuz';
-  const pTr = {honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis'}[p] || p;
+  const pTr = {honed:'honlanmis', polished:'cilali', brushed:'fircalanmis', tumbled:'eskitilmis', natural:'dogal'}[p] || p;
   return `${fillTr}-${pTr}`;
 }
 
@@ -469,7 +469,7 @@ if (parts.length === 2) {
     }
 
     // 2) PROC + CUT
-    m = seg2.match(/^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
+    m = seg2.match(/^((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
     if (m) {
       const procTr = enProcToTr(m[1]);
       const cutTrFull = enCutToTr(m[2], m[3]);
@@ -480,7 +480,7 @@ if (parts.length === 2) {
     }
 
     // 3) COLOR/SIZE + PROC + CUT
-    m = seg2.match(/^([a-z0-9-]+)-((?:filled|unfilled)-(?:honed|polished|brushed|tumbled)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
+    m = seg2.match(/^([a-z0-9-]+)-((?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural)|natural)-(vein-cut|cross-cut)-travertine-(slabs|tiles|blocks|pavers)$/i);
     if (m) {
       const colorOrSize = m[1];
       const procTr = enProcToTr(m[2]);

@@ -72,7 +72,7 @@ function friendlyProcessLabelForLocale(procKey, locale) {
   if (s === "natural") return locale.startsWith("tr") ? "Dolgusuz · Doğal" : "Unfilled · Natural";
   const [fill, proc] = s.split("-");
   const fillTR = fill === "filled" ? "Dolgulu" : "Dolgusuz";
-  const procTR = { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş" }[proc] || proc;
+  const procTR = { honed:"Honlanmış", polished:"Cilalı", brushed:"Fırçalanmış", tumbled:"Eskitilmiş", natural:"Doğal" }[proc] || proc;
   const procEN = proc.charAt(0).toUpperCase() + proc.slice(1);
   const fillEN = fill.charAt(0).toUpperCase() + fill.slice(1);
   return locale.startsWith("tr") ? `${fillTR} · ${procTR}` : `${fillEN} · ${procEN}`;
@@ -692,12 +692,12 @@ function makeBlogPatterns(locale, productKey) {
       pattern: /\bkitchens?\b/i,
       href: blogPath(locale, "travertine-kitchen"),
     },
-     {
-      pattern: /\bfilled?\b/i,
+    {
+      pattern: locale.startsWith("tr") ? /\bdolgulu\b/gi : /\bfilled?\b/gi,
       href: blogPath(locale, "filled-travertine"),
     },
-     {
-      pattern: /\bunfilled?\b/i,
+    {
+      pattern: locale.startsWith("tr") ? /\bdolgusuz\b/gi : /\bunfilled?\b/gi,
       href: blogPath(locale, "unfilled-travertine"),
     },
     {

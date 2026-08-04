@@ -23,6 +23,12 @@ export default function OtherOptions(props) {
 
   const t = useTranslations("TravertinePage");
 
+  const withLocale = (href) => {
+    if (!href || href === "#" || /^https?:\/\//i.test(href)) return href;
+    if (/^\/(?:tr|en)(?:\/|$)/i.test(href)) return href;
+    return `/${locale}${href.startsWith("/") ? href : `/${href}`}`;
+  };
+
   // 🔧 Yardımcı: dinamik href objesini SEO kısa URL string’ine çevir
   // Locale-aware SEO path builder (LOCALE PREFIX EKLEME — i18n <Link> ekler)
   const PRODUCT_TAIL = locale.startsWith("tr")
@@ -42,7 +48,7 @@ export default function OtherOptions(props) {
 
 const resolveHref = (hrefLike) => {
   if (!hrefLike) return "#";
-  if (typeof hrefLike === "string") return hrefLike;
+  if (typeof hrefLike === "string") return withLocale(hrefLike);
 
   const { pathname, params = {} } = hrefLike || {};
   const product = canon(params.product);
@@ -62,12 +68,12 @@ const resolveHref = (hrefLike) => {
     let out = `/${color}-${fill}-${finish}-${cut}-${tail}`;
     // güvenlik: kuyruk iki kez eklenmişse düzelt
     out = out.replace(new RegExp(`-${tail}-${tail}$`), `-${tail}`);
-    return out;
+    return withLocale(out);
   }
 
   // 2) /travertine/[product]
   if (pathname === "/travertine/[product]") {
-    return `/${tail}`;
+    return withLocale(`/${tail}`);
   }
 
   // 3) /travertine/[product]/[cut]
@@ -75,7 +81,7 @@ const resolveHref = (hrefLike) => {
     const rawCut = String(params.cut).toLowerCase();
     const cutNormInTr = locale.startsWith("tr") ? (rawCut === "enine-kesim" ? "enine-kesim" : rawCut) : rawCut;
     const cut = CUT[cutNormInTr] || cutNormInTr;
-    return `/${cut}-${tail}`;
+    return withLocale(`/${cut}-${tail}`);
   }
 
   // 4) /travertine/[product]/[cut]/[process]
@@ -88,12 +94,12 @@ const resolveHref = (hrefLike) => {
     const finish = FINISH[finishRaw] || finishRaw;
     let out = `/${fill}-${finish}-${cut}-${tail}`;
     out = out.replace(new RegExp(`-${tail}-${tail}$`), `-${tail}`);
-    return out;
+    return withLocale(out);
   }
 
   // fallback
   const tailUnknown = Object.values(params).filter(Boolean).join("/");
-  return `/${tailUnknown}`;
+  return withLocale(`/${tailUnknown}`);
 };
 
 
@@ -103,7 +109,7 @@ const resolveHref = (hrefLike) => {
   const hrefFor = (productKey, variantSlug) => {
     const seg = productSegments?.[productKey] ?? productKey;
     const finalSlug = VARIANT_SLUG_MAP[variantSlug] || variantSlug;
-    return `${baseHref}/${seg}/${finalSlug}`;
+    return withLocale(`${baseHref}/${seg}/${finalSlug}`);
   };
 
   const startByProduct = {
@@ -171,7 +177,9 @@ const resolveHref = (hrefLike) => {
                       href={cardHref}
                       className="px-5 py-[6px] bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
                     >
-                      {t("buttonText", { default: "Go to page" })}
+                      {t("buttonText", {
+                        default: locale.startsWith("tr") ? "Sayfaya git" : "Go to page",
+                      })}
                     </Link>
                   </div>
                 );
@@ -235,7 +243,9 @@ const resolveHref = (hrefLike) => {
                       href={productHref}
                       className="px-5 py-[6px] bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
                     >
-                      {t("buttonText", { default: "Go to page" })}
+                      {t("buttonText", {
+                        default: locale.startsWith("tr") ? "Sayfaya git" : "Go to page",
+                      })}
                     </Link>
                   </div>
                 );

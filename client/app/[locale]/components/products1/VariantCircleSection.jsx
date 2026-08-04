@@ -36,6 +36,7 @@ export default function VariantCircleSection({
   
 }) {
   const locale = useLocale();
+  const t = useTranslations("TravertinePage");
   const socialT = useTranslations("Footer.social");
   // Tailwind’in compile-time sınırlaması için grid kolonlarını basit tutalım
   const colBase = "grid-cols-1";
@@ -249,7 +250,9 @@ export default function VariantCircleSection({
                   href={href}
                   className="px-5 py-[6px] bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
                 >
-                  Go to page
+                  {t("buttonText", {
+                    default: locale.startsWith("tr") ? "Sayfaya git" : "Go to page",
+                  })}
                 </Link>
               </div>
             );

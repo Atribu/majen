@@ -107,7 +107,7 @@ function buildLocalizedPath(path, targetLocale) {
   const CUT_TR = /^(damar-kesim|enine-kesim)-traverten-(plakalar|karolar|bloklar|dosemeler)$/i;
 
   const PROC_EN = /^(?:natural|(?:filled|unfilled)-(?:honed|polished|brushed|tumbled|natural))$/i;
-  const PROC_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis))$/i;
+  const PROC_TR = /^(?:dogal|(?:dolgulu|dolgusuz)-(?:honlanmis|cilali|fircalanmis|eskitilmis|dogal))$/i;
 
   // ✅ Kesimi slug’dan parse eden helper
   function parseCutSlug(slug) {
@@ -183,6 +183,7 @@ function buildLocalizedPath(path, targetLocale) {
       brushed: "brushed",
       tumbled: "tumbled",
       natural: "natural",
+      dogal: "natural",
     };
 
     const [f, p] = s.split("-");
@@ -201,6 +202,7 @@ function buildLocalizedPath(path, targetLocale) {
         polished: "cilali",
         brushed: "fircalanmis",
         tumbled: "eskitilmis",
+        natural: "dogal",
       };
       return `${fMap[f] || f}-${pMap[p] || p}`;
     }

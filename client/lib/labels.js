@@ -118,13 +118,14 @@ export function procSlugForLocale(locale, proc) {
       polished: "polished",
       brushed: "brushed",
       tumbled: "tumbled",
+      natural: "natural",
     }[pRaw] || pRaw);
 
   if (!locale.startsWith("tr")) return `${fillEn}-${procEn}`;
 
   const fillTr = fillEn === "filled" ? "dolgulu" : "dolgusuz";
   const procTr =
-    { honed: "honlanmis", polished: "cilali", brushed: "fircalanmis", tumbled: "eskitilmis" }[
+    { honed: "honlanmis", polished: "cilali", brushed: "fircalanmis", tumbled: "eskitilmis", natural: "dogal" }[
       procEn
     ] || procEn;
   return `${fillTr}-${procTr}`;
