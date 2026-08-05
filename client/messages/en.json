@@ -70256,6 +70256,157 @@
       }
     }
   },
+  "CompanyPages": {
+    "common": {
+      "eyebrow": "MAJEN / COMPANY",
+      "home": "Home",
+      "contact": "Contact Us",
+      "next": "Next page"
+    },
+    "nav": {
+      "overview": "About",
+      "stonePhilosophy": "Stone Philosophy",
+      "history": "History",
+      "quarries": "Quarries",
+      "stoneProcessing": "Stone Processing"
+    },
+    "hub": {
+      "title": "Discover Majen",
+      "text": "Explore our approach to natural stone, our journey, the origin of the material and the processes that transform it into a finished product."
+    },
+    "pages": {
+      "stonePhilosophy": {
+        "seo": {
+          "title": "Stone Philosophy | Majen",
+          "description": "An introduction to Majen's approach to natural stone and travertine."
+        },
+        "hero": {
+          "title": "Stone Philosophy",
+          "subtitle": "We interpret surfaces shaped by nature over millions of years with an approach that respects time.",
+          "alt": "Majen natural stone texture"
+        },
+        "intro": {
+          "kicker": "Our approach to material",
+          "title": "Every stone carries a story of its own",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, augue sed tempor consequat, velit libero luctus lorem, vitae suscipit arcu sapien a justo.",
+          "text2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Temporibus autem quibusdam et aut officiis debitis."
+        },
+        "detailAlt": "Natural travertine surface",
+        "section": {
+          "title": "The foundations of our philosophy",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit; material creates a lasting connection between space and time."
+        },
+        "cards": [
+          { "title": "Authenticity", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae neque sit amet erat luctus posuere." },
+          { "title": "Balance", "text": "Quisque finibus, nibh non luctus consequat, sem sapien faucibus justo, vel interdum ligula mi vitae arcu." },
+          { "title": "Continuity", "text": "Maecenas dignissim augue ut sem varius, sed commodo erat aliquet. Donec vitae diam sed lorem facilisis." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit; natural stone is a living material that accompanies time.",
+        "closing": {
+          "title": "Let us give stone a new meaning together",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contact the Majen team to discuss your project and material requirements."
+        }
+      },
+      "history": {
+        "seo": {
+          "title": "History | Majen",
+          "description": "The corporate journey of Majen in the natural stone industry."
+        },
+        "hero": {
+          "title": "History",
+          "subtitle": "A journey from local knowledge to international natural stone projects.",
+          "alt": "Travertine surface reflecting Majen's history"
+        },
+        "intro": {
+          "kicker": "From past to future",
+          "title": "A lasting relationship with stone",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Curabitur non ligula vel metus interdum vulputate quis vitae libero.",
+          "text2": "Nunc tincidunt, augue id interdum rhoncus, magna enim cursus lectus, ut faucibus eros lectus et justo. Integer ut sem vitae neque varius tincidunt."
+        },
+        "detailAlt": "Majen's natural stone journey",
+        "section": {
+          "title": "Milestones in our journey",
+          "text": "Dates and approved corporate milestones will be added to this timeline when the final content is delivered."
+        },
+        "timeline": [
+          { "label": "Milestone 01", "title": "The Beginning", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae arcu sed tortor luctus." },
+          { "label": "Milestone 02", "title": "Growth", "text": "Integer eu risus nec mauris pretium viverra. Sed aliquam nibh vel augue feugiat." },
+          { "label": "Milestone 03", "title": "Transformation", "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae." },
+          { "label": "Milestone 04", "title": "Today", "text": "Curabitur ullamcorper erat a tortor fermentum, vitae tristique neque feugiat." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; we bring experience from the past together with the projects of the future.",
+        "closing": {
+          "title": "Our journey continues",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Learn more about Majen and our natural stone solutions."
+        }
+      },
+      "quarries": {
+        "seo": {
+          "title": "Travertine Quarries | Majen",
+          "description": "An overview of Majen's travertine source and quarry approach."
+        },
+        "hero": {
+          "title": "Travertine Quarries",
+          "subtitle": "The character of the material begins in its native layer; our selection starts at the source.",
+          "alt": "Travertine quarry and natural stone blocks"
+        },
+        "intro": {
+          "kicker": "Quality at the source",
+          "title": "From geological layers to architectural surfaces",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget diam quis enim accumsan egestas. Aliquam erat volutpat, etiam vitae justo.",
+          "text2": "Phasellus suscipit libero non ipsum porttitor, ut sodales ligula vulputate. Cras consequat urna a risus posuere, sed congue orci ullamcorper."
+        },
+        "detailAlt": "Travertine block extracted from the quarry",
+        "section": {
+          "title": "From quarry to selection",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every layer is assessed individually for colour, vein and structure."
+        },
+        "cards": [
+          { "title": "Geological character", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non metus vitae mauris posuere." },
+          { "title": "Selective production", "text": "Morbi consequat diam sed augue aliquet, sed malesuada nisi pulvinar. Aenean vitae erat." },
+          { "title": "Traceability", "text": "Donec volutpat nisi at quam blandit, non ullamcorper magna luctus. Duis elementum risus." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; travertine takes its character from the source and every block carries its own pattern.",
+        "closing": {
+          "title": "Select the right material at its source",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contact the Majen team for block and project enquiries."
+        }
+      },
+      "stoneProcessing": {
+        "seo": {
+          "title": "Stone Processing | Majen",
+          "description": "An overview of the stone-processing stages that transform travertine blocks into architectural products."
+        },
+        "hero": {
+          "title": "Stone Processing",
+          "subtitle": "Precise cutting, surface finishing and quality-control processes that preserve the natural character.",
+          "alt": "Travertine stone processing and production area"
+        },
+        "intro": {
+          "kicker": "From block to product",
+          "title": "Technical precision, natural result",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis neque eget enim sollicitudin, vitae suscipit neque condimentum.",
+          "text2": "Proin ut nibh nec turpis posuere vestibulum. Vestibulum vulputate, neque vitae cursus malesuada, lacus justo convallis libero, id gravida arcu."
+        },
+        "detailAlt": "Cut travertine surface sample",
+        "section": {
+          "title": "Steps in the processing journey",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every stage is checked for dimensional, surface and shade consistency."
+        },
+        "steps": [
+          { "title": "Block selection", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet purus quis massa varius." },
+          { "title": "Cutting", "text": "Praesent malesuada nisl nec eros consequat, vitae pulvinar ligula ultricies. Nulla facilisi." },
+          { "title": "Surface finishing", "text": "Aliquam erat volutpat. Curabitur id mauris eu sapien posuere aliquet sed eget justo." },
+          { "title": "Control and packing", "text": "Sed porttitor nibh at tellus egestas, quis interdum justo mattis. Fusce vitae nibh." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; we use technology to reveal the natural character of stone.",
+        "closing": {
+          "title": "Let us define the right surface for your project",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contact the Majen team for dimensions, cuts and finish options."
+        }
+      }
+    }
+  },
   "AboutPage": {
     "seo": {
       "title": "About Majen | Quarry-Direct Travertine Supplier from Turkey",

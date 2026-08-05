@@ -12,6 +12,7 @@ import {
   CUTS,
   COLOR_VARIANTS
 } from "@/lib/travertine";
+import { companyKeyFromPath, companyPath } from "@/lib/companyPages";
 
 export default function LocaleSwitcherSelect({
   children,
@@ -51,6 +52,9 @@ export default function LocaleSwitcherSelect({
 // ...
 // app/components/LocaleSwitcherSelect.jsx içi
 function buildLocalizedPath(path, targetLocale) {
+  const companyKey = companyKeyFromPath(path);
+  if (companyKey) return companyPath(targetLocale, companyKey);
+
   const segs = (path || "/").split("/").filter(Boolean); // ["en","vein-cut-travertine-tiles"] gibi
   if (segs.length === 0) return `/${targetLocale}`;
 

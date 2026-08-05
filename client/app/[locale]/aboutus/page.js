@@ -5,6 +5,8 @@ import { getTranslations } from "next-intl/server";
 import { BASE_BY_LOCALE, PRODUCT_SLUGS } from "@/lib/travertine";
 import QuestionsSection from "../components/generalcomponent/QuestionsSection";
 import SocialMediaSection from "../components/products1/SocialMediaSection";
+import CompanyNavigation from "./_components/CompanyNavigation";
+import CompanyHub from "./_components/CompanyHub";
 
 /* -------------------------------------------------------------------------- */
 /*                           🔹 SEO / METADATA BLOKU 🔹                       */
@@ -14,7 +16,7 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: "AboutPage" });
 
  const pathByLocale = {
-    en: "/en/about",
+    en: "/en/about-us",
     tr: "/tr/hakkimizda",
   };
   const canonicalPath = pathByLocale[locale] || pathByLocale.en;
@@ -74,7 +76,7 @@ export default async function AboutPage({ params }) {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Majen Quarry",
-      url: `https://majen.com.tr${locale === "tr" ? "/tr/hakkimizda" : "/en/about"}`,
+      url: `https://majen.com.tr${locale === "tr" ? "/tr/hakkimizda" : "/en/about-us"}`,
       logo: "/images/logo.svg",
       sameAs: [
         "https://www.linkedin.com/company/majen",
@@ -117,6 +119,9 @@ export default async function AboutPage({ params }) {
           </p>
         </div>
       </section>
+
+      <CompanyNavigation locale={locale} current="overview" />
+      <CompanyHub locale={locale} />
 
       {/* HAKKIMIZDA BLOKLARI */}
       <section className="max-w-[1100px] mx-auto px-5 md:px-8 py-10 md:py-14">

@@ -26548,6 +26548,157 @@
 }
     }
   },
+  "CompanyPages": {
+    "common": {
+      "eyebrow": "MAJEN / KURUMSAL",
+      "home": "Ana Sayfa",
+      "contact": "Bize Ulaşın",
+      "next": "Sonraki sayfa"
+    },
+    "nav": {
+      "overview": "Hakkımızda",
+      "stonePhilosophy": "Taş Felsefemiz",
+      "history": "Tarihçemiz",
+      "quarries": "Ocaklarımız",
+      "stoneProcessing": "Taş İşleme"
+    },
+    "hub": {
+      "title": "Majen'i yakından tanıyın",
+      "text": "Doğal taşa yaklaşımımızı, yolculuğumuzu, üretimin kaynağını ve taşı ürüne dönüştüren süreçleri keşfedin."
+    },
+    "pages": {
+      "stonePhilosophy": {
+        "seo": {
+          "title": "Taş Felsefemiz | Majen",
+          "description": "Majen'in doğal taş yaklaşımını ve travertene bakışını anlatan kurumsal sayfa."
+        },
+        "hero": {
+          "title": "Taş Felsefemiz",
+          "subtitle": "Doğanın milyonlarca yılda biçimlendirdiği yüzeyleri, zamana saygılı bir anlayışla yorumluyoruz.",
+          "alt": "Majen doğal taş dokusu"
+        },
+        "intro": {
+          "kicker": "Malzemeye yaklaşım",
+          "title": "Her taş, kendine özgü bir hikâye taşır",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, augue sed tempor consequat, velit libero luctus lorem, vitae suscipit arcu sapien a justo.",
+          "text2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Temporibus autem quibusdam et aut officiis debitis."
+        },
+        "detailAlt": "Doğal traverten yüzeyi",
+        "section": {
+          "title": "Felsefemizin temel taşları",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit; malzeme, mekân ve zaman arasında kalıcı bir bağ kurar."
+        },
+        "cards": [
+          { "title": "Doğallık", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae neque sit amet erat luctus posuere." },
+          { "title": "Denge", "text": "Quisque finibus, nibh non luctus consequat, sem sapien faucibus justo, vel interdum ligula mi vitae arcu." },
+          { "title": "Süreklilik", "text": "Maecenas dignissim augue ut sem varius, sed commodo erat aliquet. Donec vitae diam sed lorem facilisis." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit; doğal taş zamana eşlik eden yaşayan bir malzemedir.",
+        "closing": {
+          "title": "Taşa birlikte yeni bir anlam verelim",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Projeniz ve malzeme ihtiyaçlarınız için Majen ekibiyle iletişime geçin."
+        }
+      },
+      "history": {
+        "seo": {
+          "title": "Tarihçemiz | Majen",
+          "description": "Majen'in doğal taş alanındaki kurumsal yolculuğunu anlatan tarihçe sayfası."
+        },
+        "hero": {
+          "title": "Tarihçemiz",
+          "subtitle": "Yerel bilgi birikiminden uluslararası doğal taş projelerine uzanan bir yolculuk.",
+          "alt": "Majen tarihçesini yansıtan traverten yüzeyi"
+        },
+        "intro": {
+          "kicker": "Geçmişten geleceğe",
+          "title": "Taşla kurulan uzun soluklu bir bağ",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Curabitur non ligula vel metus interdum vulputate quis vitae libero.",
+          "text2": "Nunc tincidunt, augue id interdum rhoncus, magna enim cursus lectus, ut faucibus eros lectus et justo. Integer ut sem vitae neque varius tincidunt."
+        },
+        "detailAlt": "Majen'in doğal taş yolculuğu",
+        "section": {
+          "title": "Yolculuğumuzun durakları",
+          "text": "Tarih ve kilometre taşı bilgileri, onaylı kurumsal metinler ulaştığında bu zaman çizgisine eklenecektir."
+        },
+        "timeline": [
+          { "label": "Aşama 01", "title": "Başlangıç", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae arcu sed tortor luctus." },
+          { "label": "Aşama 02", "title": "Gelişim", "text": "Integer eu risus nec mauris pretium viverra. Sed aliquam nibh vel augue feugiat." },
+          { "label": "Aşama 03", "title": "Dönüşüm", "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae." },
+          { "label": "Aşama 04", "title": "Bugün", "text": "Curabitur ullamcorper erat a tortor fermentum, vitae tristique neque feugiat." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; geçmişten gelen deneyimi geleceğin projeleriyle buluşturuyoruz.",
+        "closing": {
+          "title": "Yolculuğumuz devam ediyor",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Majen ve doğal taş çözümleri hakkında daha fazla bilgi alın."
+        }
+      },
+      "quarries": {
+        "seo": {
+          "title": "Traverten Ocaklarımız | Majen",
+          "description": "Majen'in traverten kaynağına ve ocak yaklaşımına genel bakış."
+        },
+        "hero": {
+          "title": "Traverten Ocaklarımız",
+          "subtitle": "Malzemenin karakteri, doğduğu katmanda başlar; seçimin ilk adımını kaynağında yapıyoruz.",
+          "alt": "Traverten ocağı ve doğal taş blokları"
+        },
+        "intro": {
+          "kicker": "Kaynağında kalite",
+          "title": "Toprağın katmanlarından mimari yüzeylere",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget diam quis enim accumsan egestas. Aliquam erat volutpat, etiam vitae justo.",
+          "text2": "Phasellus suscipit libero non ipsum porttitor, ut sodales ligula vulputate. Cras consequat urna a risus posuere, sed congue orci ullamcorper."
+        },
+        "detailAlt": "Ocaktan çıkarılmış traverten blok",
+        "section": {
+          "title": "Ocaktan seçime uzanan yaklaşım",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Her katman renk, damar ve yapı bakımından ayrı değerlendirilir."
+        },
+        "cards": [
+          { "title": "Jeolojik karakter", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non metus vitae mauris posuere." },
+          { "title": "Seçici üretim", "text": "Morbi consequat diam sed augue aliquet, sed malesuada nisi pulvinar. Aenean vitae erat." },
+          { "title": "İzlenebilirlik", "text": "Donec volutpat nisi at quam blandit, non ullamcorper magna luctus. Duis elementum risus." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; traverten karakterini kaynağından alır ve her blok kendi desenini taşır.",
+        "closing": {
+          "title": "Doğru malzemeyi kaynağında seçin",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blok ve proje talepleriniz için Majen ekibine ulaşın."
+        }
+      },
+      "stoneProcessing": {
+        "seo": {
+          "title": "Taş İşleme | Majen",
+          "description": "Travertenin bloktan mimari ürüne dönüşümündeki taş işleme adımlarına genel bakış."
+        },
+        "hero": {
+          "title": "Taş İşleme",
+          "subtitle": "Doğal karakteri koruyan hassas kesim, yüzey işleme ve kalite kontrol süreçleri.",
+          "alt": "Traverten taş işleme ve üretim alanı"
+        },
+        "intro": {
+          "kicker": "Bloktan ürüne",
+          "title": "Teknik hassasiyet, doğal sonuç",
+          "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis neque eget enim sollicitudin, vitae suscipit neque condimentum.",
+          "text2": "Proin ut nibh nec turpis posuere vestibulum. Vestibulum vulputate, neque vitae cursus malesuada, lacus justo convallis libero, id gravida arcu."
+        },
+        "detailAlt": "Kesilmiş traverten yüzey örneği",
+        "section": {
+          "title": "İşleme sürecinin adımları",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Üretimin her aşaması ölçü, yüzey ve ton tutarlılığı için kontrol edilir."
+        },
+        "steps": [
+          { "title": "Blok seçimi", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet purus quis massa varius." },
+          { "title": "Kesim", "text": "Praesent malesuada nisl nec eros consequat, vitae pulvinar ligula ultricies. Nulla facilisi." },
+          { "title": "Yüzey işleme", "text": "Aliquam erat volutpat. Curabitur id mauris eu sapien posuere aliquet sed eget justo." },
+          { "title": "Kontrol ve paketleme", "text": "Sed porttitor nibh at tellus egestas, quis interdum justo mattis. Fusce vitae nibh." }
+        ],
+        "quote": "Lorem ipsum dolor sit amet; teknolojiyi taşın doğal karakterini görünür kılmak için kullanıyoruz.",
+        "closing": {
+          "title": "Projenize uygun yüzeyi birlikte belirleyelim",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ölçü, kesim ve yüzey seçenekleri için Majen ekibiyle iletişime geçin."
+        }
+      }
+    }
+  },
   "AboutPage": {
     "seo": {
       "title": "Majen Hakkında | Türkiye’den Ocak Çıkışlı Traverten Tedarikçisi",

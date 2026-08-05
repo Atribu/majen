@@ -9,6 +9,22 @@ export const config = {
     '/': { tr: '/', en: '/' },
     '/contactus': { tr: '/iletisim', en: '/contactus' },
     '/aboutus': { tr: '/hakkimizda', en: '/about-us' },
+    '/aboutus/stone-philosophy': {
+      tr: '/hakkimizda/tas-felsefemiz',
+      en: '/about-us/stone-philosophy'
+    },
+    '/aboutus/history': {
+      tr: '/hakkimizda/tarihcemiz',
+      en: '/about-us/history'
+    },
+    '/aboutus/quarries': {
+      tr: '/hakkimizda/traverten-ocaklarimiz',
+      en: '/about-us/travertine-quarries'
+    },
+    '/aboutus/stone-processing': {
+      tr: '/hakkimizda/tas-isleme',
+      en: '/about-us/stone-processing'
+    },
 
      '/gallery': { en: '/gallery', tr: '/galeri' },   
 
