@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { pickMessages } from "@/lib/i18nMessages";
 
 import Header from "./components/generalcomponent/Header";
 import Footer from "./components/generalcomponent/Footer";
@@ -102,6 +103,11 @@ export default async function RootLayout({ children, params }) {
 
   const isProd = process.env.NODE_ENV === "production";
   const messages = (await import(`../../messages/${locale}.json`)).default;
+  const commonClientMessages = pickMessages(messages, [
+    "LocaleSwitcher",
+    "Header",
+    "Footer",
+  ]);
 
   return (
     <html lang={locale}>
@@ -110,7 +116,7 @@ export default async function RootLayout({ children, params }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={commonClientMessages}>
           <Header />
           <BookSection />
           {children}

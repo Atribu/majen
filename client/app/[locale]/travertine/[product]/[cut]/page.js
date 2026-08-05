@@ -538,11 +538,26 @@ function resolveBlogSlug(locale, slug) {
   const cutTitle = safe(() => t(`${productKey}.cuts.${cutKey}.title`), CUTS[lang]?.[cutKey] || cutKey);
   const cutIntro = safe(
     () => t(`${productKey}.cuts.${cutKey}.intro`),
-    safe(() => t(`${productKey}.cuts.${cutKey}.processes.subtext`), "")
+    safe(
+      () =>
+        t.has(`${productKey}.cuts.${cutKey}.processes.subtext`)
+          ? t(`${productKey}.cuts.${cutKey}.processes.subtext`)
+          : "",
+      ""
+    )
   );
-  const title2   = safe(() => t(`${productKey}.cuts.${cutKey}.title2`), safe(() => t(`slabs.title2`), null));
-  const intro2   = safe(() => t(`${productKey}.cuts.${cutKey}.intro2`),  safe(() => t(`slabs.intro2`),  null));
-  const span     = safe(() => t(`${productKey}.cuts.${cutKey}.span`),    safe(() => t(`slabs.span`),null));
+  const title2 = safe(
+    () => t(`${productKey}.cuts.${cutKey}.title2`),
+    safe(() => (t.has(`${productKey}.title2`) ? t(`${productKey}.title2`) : null), null)
+  );
+  const intro2 = safe(
+    () => t(`${productKey}.cuts.${cutKey}.intro2`),
+    safe(() => (t.has(`${productKey}.intro2`) ? t(`${productKey}.intro2`) : null), null)
+  );
+  const span = safe(
+    () => t(`${productKey}.cuts.${cutKey}.span`),
+    safe(() => (t.has(`${productKey}.span`) ? t(`${productKey}.span`) : null), null)
+  );
 
   const cardTextClass = "text-[14px] leading-[120%] text-neutral-700 text-center";
 
@@ -606,7 +621,11 @@ function resolveBlogSlug(locale, slug) {
   const groups = processNode?.groups || {};
   const meta   = processNode?.meta   || {};
 
-  const ytCombined  = safe(() => t.raw(`${productKey}.cuts.${cutKey}.processes.youtube.combined`), {}) || {};
+  const youtubeCombinedKey = `${productKey}.cuts.${cutKey}.processes.youtube.combined`;
+  const ytCombined = safe(
+    () => (t.has(youtubeCombinedKey) ? t.raw(youtubeCombinedKey) : {}),
+    {}
+  ) || {};
 
   // i18n’de filled-natural var mı?
   const hasFilledNatural =

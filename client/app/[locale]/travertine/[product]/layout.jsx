@@ -1,6 +1,8 @@
 // app/[locale]/(catalog)/product/layout.jsx
 import { getMessages, getTranslations } from "next-intl/server";
 import Script from "next/script";
+import ScopedIntlProvider from "../../components/ScopedIntlProvider";
+import { pickProductMessages } from "@/lib/i18nMessages";
 import {
   BASE_BY_LOCALE,
   PRODUCT_KEYS,
@@ -145,6 +147,10 @@ export default async function ProductLayout({ children, params }) {
     (PRODUCT_KEYS.includes(product) && product) ||
     PRODUCT_KEYS.find((k) => PRODUCT_SLUGS[locale]?.[k] === product) ||
     "blocks";
+  const clientMessages = pickProductMessages(
+    await getMessages({ locale }),
+    productKey
+  );
 
   const baseSegment = BASE_BY_LOCALE[locale]; // travertine | traverten
   const baseUrl    = `${SITE_URL}/${locale}`;
@@ -251,7 +257,7 @@ try {
 }
 
   return (
-    <>
+    <ScopedIntlProvider locale={locale} messages={clientMessages}>
       {children}
 
       {/* JSON-LD: Breadcrumb */}
@@ -276,6 +282,6 @@ try {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJSONLD) }}
         />
       )}
-    </>
+    </ScopedIntlProvider>
   );
 }

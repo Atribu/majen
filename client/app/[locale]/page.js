@@ -1,6 +1,7 @@
 // app/[locale]/page.jsx
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import ScopedIntlProvider from "./components/ScopedIntlProvider";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 const OG_IMAGE = `${SITE_URL}/images/og-home.jpg`;
@@ -105,7 +106,22 @@ export default async function HomePage({ params }) {
 
   return (
     <>
-      <HomeClient />
+      <ScopedIntlProvider
+        locale={locale}
+        namespaces={[
+          "HomeMainSection",
+          "LogisticSection",
+          "InfoSection",
+          "CollectionsSection",
+          "KeyFeatures",
+          "HighlightSection",
+          "BlaundosIntro",
+          "ContactForm",
+          "QuestionsSection",
+        ]}
+      >
+        <HomeClient />
+      </ScopedIntlProvider>
 
       {/* WebSite + Organization (sen zaten eklemişsin, koruyorum) */}
       <Script

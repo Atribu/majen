@@ -1,6 +1,8 @@
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
+import ScopedIntlProvider from "../../../components/ScopedIntlProvider";
+import { pickProductCutMessages } from "@/lib/i18nMessages";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://majen.com.tr";
 
@@ -182,6 +184,12 @@ export default async function CutLayout({ children, params }) {
   const isTR = locale === "tr";
 
   const normalizedCut = ensureProductInCutSlug(locale, cut, product);
+  const cutShort = shortCutKey(normalizedCut);
+  const clientMessages = pickProductCutMessages(
+    await getMessages({ locale }),
+    product,
+    cutShort
+  );
 
   // URL’ler
   const homeUrl = `${SITE_URL}/${locale}`;
@@ -266,7 +274,7 @@ try {
 }
 
   return (
-    <>
+    <ScopedIntlProvider locale={locale} messages={clientMessages}>
       {children}
 
       {/* JSON-LD: Breadcrumb */}
@@ -291,6 +299,6 @@ try {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJSONLD) }}
         />
       )}
-    </>
+    </ScopedIntlProvider>
   );
 }
