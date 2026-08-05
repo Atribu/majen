@@ -1,149 +1,110 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
-import cornerImage from "@/public/images/Majensolalt.webp"; // ✅ EKLE
-import fuar2 from "@/public/images/fuar2.jpeg";
-import fuar3 from "@/public/images/fuar3.jpeg";
+import desktopPoster from "@/public/images/homepage/hero-desktop-poster.webp";
+import mobilePoster from "@/public/images/homepage/hero-mobile-poster.webp";
+
+const HIDE_DELAY_MS = 5000;
+const DESKTOP_QUERY = "(min-width: 768px)";
+
+const HERO_MEDIA = {
+  desktop: {
+    webm: "/videos/desktop.webm",
+    mp4: "/videos/desktop.mp4",
+    poster: desktopPoster.src,
+  },
+  mobile: {
+    webm: "/videos/mobile.webm",
+    mp4: "/videos/mobile.mp4",
+    poster: mobilePoster.src,
+  },
+};
 
 export default function MainBanner() {
-  const videoSrc = "/videos/desktop.mp4"; 
-  const videomobileSrc = "/videos/mobile.mp4"; 
-  const HIDE_DELAY_MS = 5000;
-  const ROTATE_MS = 3500;
-  const fuarImages = [fuar2, fuar3];
-
+  const [activeMedia, setActiveMedia] = useState(null);
   const [showLogo, setShowLogo] = useState(true);
-  const [fuarIndex, setFuarIndex] = useState(0);
-  const [mobileSlideIndex, setMobileSlideIndex] = useState(0);
   const startedRef = useRef(false);
   const timerRef = useRef(null);
   const backupTimerRef = useRef(null);
 
   useEffect(() => {
-    backupTimerRef.current = setTimeout(() => setShowLogo(false), HIDE_DELAY_MS + 1000);
+    const mediaQuery = window.matchMedia(DESKTOP_QUERY);
+    const selectMedia = () => {
+      setActiveMedia(mediaQuery.matches ? HERO_MEDIA.desktop : HERO_MEDIA.mobile);
+    };
+
+    selectMedia();
+    mediaQuery.addEventListener("change", selectMedia);
+
+    return () => mediaQuery.removeEventListener("change", selectMedia);
+  }, []);
+
+  useEffect(() => {
+    backupTimerRef.current = setTimeout(
+      () => setShowLogo(false),
+      HIDE_DELAY_MS + 1000,
+    );
+
     return () => {
       clearTimeout(backupTimerRef.current);
       clearTimeout(timerRef.current);
     };
   }, []);
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setFuarIndex((i) => (i + 1) % fuarImages.length);
-    }, ROTATE_MS);
-    return () => clearInterval(id);
-  }, [fuarImages.length]);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setMobileSlideIndex((i) => (i + 1) % 2);
-    }, ROTATE_MS);
-    return () => clearInterval(id);
-  }, []);
-
   const startHideTimer = () => {
     if (startedRef.current) return;
+
     startedRef.current = true;
     clearTimeout(backupTimerRef.current);
     timerRef.current = setTimeout(() => setShowLogo(false), HIDE_DELAY_MS);
   };
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden">
-      <video
-        src={videomobileSrc}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onLoadedData={startHideTimer}
-        onCanPlay={startHideTimer}
-        className="absolute inset-0 w-full h-full object-cover object-center flex md:hidden"
-      />
-
-      <video
-        src={videoSrc}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onLoadedData={startHideTimer}
-        onCanPlay={startHideTimer}
-        className="absolute inset-0 w-full h-full object-cover object-center md:flex hidden"
-      />
-
-      <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
-
-      {/* ✅ Desktop: sol alt görsel */}
-      {/* <div className="absolute left-4 bottom-4 z-30 hidden md:block">
-        <div className="relative inline-block">
-          <Image
-            src={cornerImage}
-            alt="Corner image"
-            className="w-52 sm:w-70 lg:w-120 h-auto drop-shadow-lg"
-            priority
-          />
-        </div>
-      </div> */}
-
-      {/* ✅ Mobil: iki görseli slider olarak göster */}
-      {/* <div className="absolute left-4 bottom-4 z-30 md:hidden">
-        <div className="relative h-[170px] w-[210px] overflow-visible">
-          <div
-            className={`absolute inset-0 flex items-end justify-start transition-all duration-500 ${
-              mobileSlideIndex === 0
-                ? "translate-x-0 opacity-100"
-                : "pointer-events-none translate-x-5 opacity-0"
-            }`}
-          >
-            <Image
-              src={cornerImage}
-              alt="Corner image"
-              className="w-52 h-auto drop-shadow-lg"
-              priority
-            />
-          </div>
-
-          <div
-            className={`absolute inset-0 flex items-end justify-start transition-all duration-500 ${
-              mobileSlideIndex === 1
-                ? "translate-x-0 opacity-100"
-                : "pointer-events-none translate-x-5 opacity-0"
-            }`}
-          >
-            <div className="rounded-md bg-white/88 p-1.5 shadow-xl ring-1 ring-white/40 backdrop-blur-sm">
-              <Image
-                src={fuarImages[fuarIndex]}
-                alt={`Fuar ${fuarIndex + 2}`}
-                className="w-40 h-auto drop-shadow-lg"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* ✅ Desktop: sağ alt köşe */}
-      {/* <div className="absolute right-3 bottom-3 z-30 bg-white/85 backdrop-blur-sm p-1.5 rounded-md shadow-lg ring-1 ring-white/40 hidden md:block">
+    <section className="relative h-screen w-screen overflow-hidden">
+      <picture className="absolute inset-0 block h-full w-full">
+        <source media="(max-width: 767px)" srcSet={mobilePoster.src} />
         <Image
-          src={fuarImages[fuarIndex]}
-          alt={`Fuar ${fuarIndex + 2}`}
-          className="w-40 sm:w-56 lg:w-72 h-auto drop-shadow-lg"
-          priority
+          src={desktopPoster}
+          alt=""
+          width={desktopPoster.width}
+          height={desktopPoster.height}
+          fetchPriority="high"
+          sizes="100vw"
+          className="h-full w-full object-cover object-center"
         />
-      </div> */}
+      </picture>
+
+      {activeMedia && (
+        <video
+          key={activeMedia.webm}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={activeMedia.poster}
+          onLoadedData={startHideTimer}
+          onCanPlay={startHideTimer}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        >
+          <source src={activeMedia.webm} type="video/webm" />
+          <source src={activeMedia.mp4} type="video/mp4" />
+        </video>
+      )}
+
+      <div className="pointer-events-none absolute inset-0 z-10 bg-black/30" />
 
       <div
-        className={`absolute inset-0 z-20 flex items-center justify-center pointer-events-none
-        transition-opacity duration-700 ${showLogo ? "opacity-100" : "opacity-0"}`}
+        className={`pointer-events-none absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-700 ${
+          showLogo ? "opacity-100" : "opacity-0"
+        }`}
       >
         <Image
           src={logoWhite}
           alt="Majen logo"
-          className="w-40 sm:w-56 lg:w-72 h-auto drop-shadow-xl"
+          className="h-auto w-40 drop-shadow-xl sm:w-56 lg:w-72"
           priority
         />
       </div>
