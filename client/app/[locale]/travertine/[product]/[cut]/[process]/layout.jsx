@@ -252,7 +252,6 @@ const productJSONLD = {
   brand: { "@type": "Organization", name: "Majen" },
   category: "Natural Stone",
   url: pageUrl,
-  offers: { "@type": "Offer", availability: "http://schema.org/InStock" },
 };
 
   // FAQ JSON-LD — process-level (varsa)

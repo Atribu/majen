@@ -18,7 +18,18 @@ function getMissingMailEnv() {
 
 export async function POST(req) {
   try {
-    const { name, email, phone, subject, message, locale } = await req.json();
+    const {
+      name,
+      email,
+      company,
+      country,
+      phone,
+      productGroup,
+      quantity,
+      subject,
+      message,
+      locale,
+    } = await req.json();
 
     // Basit sunucu tarafı doğrulama
     if (!name?.trim() || !email?.includes("@") || !message?.trim()) {
@@ -58,7 +69,11 @@ export async function POST(req) {
     const safe = {
       name: htmlEscape(name),
       email: htmlEscape(email),
+      company: htmlEscape(company || ""),
+      country: htmlEscape(country || ""),
       phone: htmlEscape(phone || ""),
+      productGroup: htmlEscape(productGroup || ""),
+      quantity: htmlEscape(quantity || ""),
       subject: htmlEscape(subject || ""),
       message: htmlEscape(message),
       locale: htmlEscape(locale || ""),
@@ -69,7 +84,11 @@ export async function POST(req) {
 
 Ad Soyad: ${safe.name}
 E-posta: ${safe.email}
+Firma: ${safe.company || "-"}
+Teslimat Ülkesi: ${safe.country || "-"}
 Telefon: ${safe.phone}
+Ürün Grubu: ${safe.productGroup || "-"}
+Tahmini Miktar: ${safe.quantity || "-"}
 Dil: ${safe.locale}
 Konu: ${safe.subject}
 
@@ -83,7 +102,11 @@ ${message}
         <table cellspacing="0" cellpadding="6" style="border-collapse:collapse">
           <tr><td><strong>Ad Soyad</strong></td><td>${safe.name}</td></tr>
           <tr><td><strong>E-posta</strong></td><td>${safe.email}</td></tr>
+          <tr><td><strong>Firma</strong></td><td>${safe.company || "-"}</td></tr>
+          <tr><td><strong>Teslimat Ülkesi</strong></td><td>${safe.country || "-"}</td></tr>
           <tr><td><strong>Telefon</strong></td><td>${safe.phone || "-"}</td></tr>
+          <tr><td><strong>Ürün Grubu</strong></td><td>${safe.productGroup || "-"}</td></tr>
+          <tr><td><strong>Tahmini Miktar</strong></td><td>${safe.quantity || "-"}</td></tr>
           <tr><td><strong>Dil</strong></td><td>${safe.locale || "-"}</td></tr>
           <tr><td><strong>Konu</strong></td><td>${safe.subject || "-"}</td></tr>
         </table>

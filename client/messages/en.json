@@ -94,32 +94,32 @@
     "subtitle": "PRODUCT GROUPS",
     "heading": "Wholesale Travertine Blocks, Slabs & Tiles",
     "description": "Our product portfolio covers the full spectrum of Turkish travertine blocks, slabs, and tiles. Blocks average 280×220×200 cm, weighing 30–35 tons, reinforced for international shipping. Travertine slabs are available in 2 cm, 3 cm, and 5 cm thicknesses with finishes such as polished, honed, brushed or tumbled. Travertine tiles come in popular formats like 30×60 and 60×60 cm, ideal for bathrooms, kitchens, pools, and outdoor spaces. Majen offers Blaundos Antiko, Blaundos Light, and Blaundos Ivory colors, ensuring diverse options for every project that needs reliable natural stone from Turkey.",
-    "explore": "Explore",
-    "contact": "Contact Us",
+    "explore": "View Product",
+    "contact": "Start a Project Inquiry",
     "products": {
       "product1": {
         "title": "Travertine Blocks",
         "description": "As Majen, we offer Travertine Blocks in varieties such as Antico, Light, Ivory to suit diverse projects and performance needs.",
         "alt": "Wholesale Travertine Blocks",
-        "cta": "Explore"
+        "cta": "View Product"
       },
       "product2": {
         "title": "Travertine Slabs",
         "description": "As Majen, we supply Travertine Slabs in premium varieties including Antico, Light, Ivory to suit diverse projects and performance needs.",
         "alt": "Wholesale Travertine Slabs",
-        "cta": "Explore"
+        "cta": "View Product"
       },
       "product3": {
         "title": "Travertine Tiles",
         "description": "As Majen, we provide Travertine Tiles in elegant varieties such as Antico, Light, and Ivory to suit diverse projects and performance needs.",
         "alt": "Wholesale Travertine Tiles",
-        "cta": "Explore"
+        "cta": "View Product"
       },
       "product4": {
         "title": "Travertine Pavers",
         "description": "As Majen, we craft Travertine Pavers in durable varieties such as Antico, Light, and Ivory to suit diverse projects and performance needs.",
         "alt": "Wholesale Travertine Pavers",
-        "cta": "Explore"
+        "cta": "View Product"
       }
     }
   },
@@ -138,7 +138,6 @@
     "eyebrow": "KEY FEATURES",
     "titlePrefix": "Professional",
     "titleAccent": "Services",
-    "explore": "Explore",
     "title": "Travertine Export Methods from Turkey – <fob>FOB</fob>, <cif>CIF</cif> & <exw>EXW</exw>",
     "items": {
       "export1": {
@@ -6976,7 +6975,7 @@
                   "title2": "Applications and Ideal Use Cases",
                   "lead": "Mirror-like sheen elevates contemporary interiors.",
                   "intro": "Light Filled Tumbled Vein Cut Travertine Slabs exude natural softness and warmth through their light cream tone, filled surface, and antique finish. The tumbled texture gives a handcrafted feel, while the vein-cut structure provides linear harmony and flow. The filled surface ensures durability and easy maintenance, making it suitable for both interiors and exteriors. Sourced from premium Turkish quarries, Majen delivers precision-processed slabs with consistent tone, smooth edges, and export-ready packaging for global architectural applications.",
-                  "intro2": "This finish is ideal for homeowners, architects, and designers seeking a balance of natural elegance and practicality. Indoors, it enhances living rooms, hallways, and spa areas with its matte, soft-touch surface. Outdoors, the tumbled texture offers natural traction for terraces, garden paths, and pool surroundings. The light tone reflects warmth and complements neutral, rustic or Mediterranean design themes. Over time, Light Tumbled Travertine develops a graceful patina, enhancing its timeless charm in both residential and commercial settings.",
+                  "intro2": "This finish is ideal for architects, developers and design teams seeking a balance of natural elegance and practicality. Indoors, its matte, soft-touch surface enhances living areas, corridors and spa projects. Outdoors, the tumbled texture provides natural traction for terraces, landscaped paths and pool surrounds. Its light tone complements neutral, rustic and Mediterranean design concepts. Over time, Light Tumbled Travertine develops a graceful patina, providing a durable surface specification for residential and commercial projects.",
                   "h3": "Thickness Options & Formats",
                   "text3": "Light Filled Tumbled Vein Cut Travertine Slabs are available in 2 cm and 3 cm thicknesses. Large slabs reduce cutting waste and installation time. Majen provides transparent, clear project communication that detail quarry selection, processing, and freight costs, helping project planners maintain budget accuracy and material consistency at every stage.",
                   "h4": "Technical Features: Filled • Tumbled • Vein Cut",
@@ -62421,33 +62420,49 @@
   },
   "ContactForm": {
     "title": "Contact Us",
-    "getintouch": "Get in touch",
-    "text": "Thank you for your interest in our services! If you have any questions or would like to book a service, please don’t hesitate to contact us. Our team is dedicated to providing you with the highest level of service and support, and we are committed to working with you to make your business a success.",
+    "getintouch": "Project and Supply Inquiries",
+    "text": "Share the product group, color, cut, finish, dimensions, estimated quantity and destination country you require. Our export team will contact you regarding production availability, the sample process and FOB, CIF or EXW delivery options.",
     "emailaddress": "Email Address",
     "phonenumber": "Phone Number",
     "ouraddress": "Our Address",
-    "subtitle": "We’ll get back to you shortly.",
+    "subtitle": "Contact our export team for wholesale supply and project inquiries.",
     "labelText": "I consent to email tracking for a better experience.",
     "fields": {
       "name": "Full Name",
       "email": "Email",
+      "company": "Company",
+      "country": "Destination Country",
       "phone": "Phone",
-      "subject": "Subject",
-      "message": "Your Message"
+      "productGroup": "Product Group",
+      "quantity": "Estimated Quantity",
+      "subject": "Inquiry Subject",
+      "message": "Project / Supply Details"
     },
     "placeholders": {
       "name": "Your full name",
-      "email": "example@email. com",
+      "email": "example@email.com",
+      "company": "Company name",
+      "country": "Country",
       "phone": "+90 555 555 55 55",
-      "subject": "A short headline",
-      "message": "Tell us briefly about your project or request."
+      "quantity": "e.g. 1 container or 500 m²",
+      "subject": "e.g. Travertine slab quotation and lead-time request",
+      "message": "Share the product, color, cut, finish, dimensions, estimated quantity and destination country."
+    },
+    "options": {
+      "productPlaceholder": "Select a product group",
+      "blocks": "Travertine Blocks",
+      "slabs": "Travertine Slabs",
+      "tiles": "Travertine Tiles",
+      "pavers": "Travertine Pavers",
+      "other": "Other / Custom Production"
     },
     "helps": {
-      "phone": "Optional but helpful if we need to call you."
+      "phone": "Optional but helpful if we need to call you.",
+      "quantity": "You can leave this blank if it is not confirmed yet."
     },
     "buttons": {
-      "send": "Send",
-      "sending": "Sending.",
+      "send": "Send Inquiry",
+      "sending": "Sending Inquiry...",
       "whatsapp": "Message on WhatsApp",
       "replyWithin24Hours": "We respond within 24 hours"
     },
@@ -62461,8 +62476,8 @@
       "submit": "Something went wrong. Please try again."
     },
     "status": {
-      "successTitle": "Message sent",
-      "success": "Thanks! Your message has been sent. We’ll be in touch soon.",
+      "successTitle": "Your inquiry has been sent",
+      "success": "Thank you! We have received your inquiry. Our export team will review the project and supply details you provided and contact you.",
       "errorTitle": "Submission failed"
     },
     "map": {
@@ -62472,7 +62487,7 @@
       "cta": "Open in Google Maps"
     },
     "whatsapp": {
-      "link": "https://api.whatsapp.com/send?phone=905335561092&text=Hello%20Majen%20team!"
+      "link": "https://api.whatsapp.com/send?phone=905335561092&text=Hello%20Majen%20team%2C%20I%20would%20like%20information%20about%20a%20travertine%20supply%20inquiry."
     }
   },
   "SampleBoard": {
@@ -62517,7 +62532,7 @@
     }
   },
   "TravertinePage": {
-    "buttonText": "Go to page",
+    "buttonText": "View Product",
     "metaTitle": "Wholesale Travertine From Turkey | Blocks, Slabs, Tiles – Majen",
     "metaDescription": "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light, Ivory. FOB/CIF worldwide shipping",
     "title": "Wholesale Travertine",
@@ -62542,7 +62557,7 @@
     "variantsubtitle2": "Travertine Slabs",
     "variantsubtitle3": "Travertine Tiles",
     "variantsubtitle4": "Travertine Pavers",
-    "goToPage": "Go to page",
+    "goToPage": "View Product",
     "productCopy": {
       "block": "Available color options: <links/>. Each reflects the quarry’s character and adds a strong, authentic presence to your project.",
       "slabs": "This slab series offers: <links/>. With consistent surfaces and curated veining, it delivers a flawless look in large areas.",
@@ -62917,7 +62932,7 @@
   "BlogIndex": {
     "title": "Travertine Blog",
     "intro": "Guides and insights on travertine sourcing, selection and design.",
-    "readMore": "Read more",
+    "readMore": "Read Article",
     "postCountRange": "Showing {start}-{end} of {total} posts",
     "postCountTotal": "{total} posts",
     "empty": "No blog posts are available yet.",
@@ -63289,7 +63304,7 @@
       },
       "ui": {
         "onThisPage": "On this page",
-        "readMore": "Read more →",
+        "readMore": "Read Article →",
         "learnMore": "Learn more",
         "pros": "Pros",
         "cons": "Cons"
@@ -63302,7 +63317,7 @@
       "cta": {
         "title": "Request Samples or Details",
         "desc": "Tell us color, finish, size and quantity. We’ll confirm availability, lead times and logistics.",
-        "contact": "Contact Us",
+        "contact": "Contact Our Export Team",
         "catalog": "Download Catalog"
       },
       "breadcrumbs": {
@@ -63316,7 +63331,7 @@
         "metaTitle": "Travertine Tiles from Turkey | Sizes, Finishes & Guide",
         "metaDesc": "Explore Turkish travertine tiles: sizes, finishes, colors, applications, specs and care. Quarry-backed supplier with FOB/CIF export support.",
         "h1": "Travertine Tiles",
-        "intro": "Travertine tiles are one of the most popular natural stone products, chosen for their elegance, durability, and timeless appeal. Used across floors, walls, bathrooms, kitchens, and outdoor spaces, Turkish travertine tiles combine centuries of architectural heritage with modern design versatility. Their wide range of colors, finishes, and sizes allow designers, contractors, and homeowners to adapt them to almost any style, from contemporary minimalism to classic Mediterranean charm.",
+        "intro": "Travertine tiles are widely specified in architectural projects for their elegance, durability and timeless appeal. Used across floors, walls, bathrooms, kitchens and outdoor spaces, Turkish travertine tiles combine centuries of architectural heritage with modern design versatility. Their range of colors, finishes and sizes enables architects, contractors, distributors and project teams to select suitable products for styles ranging from contemporary minimalism to classic Mediterranean design.",
         "socialImage": "https://majen. com. tr/media/travertine-tiles-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
@@ -63418,7 +63433,7 @@
           },
           "applications": {
             "h2": "Applications",
-            "intro": "Travertine tiles are prized for their adaptability in both residential and commercial projects. Indoors, they are commonly used for flooring in living rooms and hallways, wall coverings in bathrooms and kitchens, and decorative backsplashes. Outdoors, they withstand weather exposure and serve as durable solutions for patios, pool decks, and landscaped pathways. Their natural texture reduces glare and blends seamlessly with other design materials, such as wood, glass, and metal. This versatility makes travertine tiles a go-to option for architects and homeowners alike.",
+            "intro": "Travertine tiles are prized for their adaptability in both residential and commercial projects. Indoors, they are commonly used for flooring in living areas and corridors, wall coverings in bathrooms and kitchens, and decorative backsplashes. Outdoors, they withstand weather exposure and serve as durable solutions for patios, pool decks and landscaped pathways. Their natural texture reduces glare and blends with materials such as wood, glass and metal. This versatility makes travertine tiles a strong option for architects, contractors and project procurement teams.",
             "cards": [
               {
                 "slug": "flooring",
@@ -63595,7 +63610,7 @@
         "sections": {
           "colors": {
             "h2": "Travertine Slab Colors",
-            "intro": "Travertine slabs come in timeless colors such as Ivory, Light, and Antico, each offering distinct aesthetics. Ivory provides brightness and sophistication for elegant interiors. Light brings warm beige tones that blend seamlessly into modern and classic environments. Antico delivers earthy, rustic character that evokes Mediterranean and traditional architecture. These natural variations ensure every slab is unique, allowing architects and homeowners to create surfaces that balance functionality with authentic beauty.",
+            "intro": "Travertine slabs come in timeless colors such as Ivory, Light and Antico, each offering a distinct aesthetic. Ivory provides brightness and sophistication for elegant interiors. Light brings warm beige tones that integrate into modern and classic environments. Antico delivers an earthy, rustic character associated with Mediterranean and traditional architecture. These natural variations make every slab unique, allowing architects and project teams to create surfaces that balance functionality with authentic beauty.",
             "items": [
               {
                 "slug": "ivory",
@@ -64130,7 +64145,7 @@
         "metaTitle": "Travertine Pavers | Outdoor Tiles for Patios, Pathways & Pools",
         "metaDesc": "Explore Turkish Travertine Pavers in Ivory, Light & Antico. Durable and slip-resistant finishes for patios, driveways, and pool decks. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Pavers",
-        "intro": "Travertine pavers are durable, slip-resistant natural stone tiles designed specifically for outdoor applications. They combine timeless aesthetics with practical performance, making them a top choice for patios, pool decks, driveways, and garden pathways. Turkish travertine pavers are highly valued for their weather resistance and versatility, helping homeowners and architects create elegant outdoor spaces that last for decades.",
+        "intro": "Travertine pavers are durable, slip-resistant natural stone products designed specifically for outdoor applications. They combine timeless aesthetics with practical performance, making them a strong choice for patios, pool decks, driveways and landscaped pathways. Valued for their weather resistance and versatility, Turkish travertine pavers provide architects, landscape teams and project contractors with long-lasting exterior solutions.",
         "socialImage": "https://majen. com. tr/media/travertine-pavers-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
@@ -64195,7 +64210,7 @@
           },
           "applications": {
             "h2": "Applications",
-            "intro": "Travertine pavers are built for exterior performance, adapting to patios, pools, driveways, and pathways. Their natural porosity makes them cooler underfoot in hot climates, while their slip resistance enhances safety around water features. They withstand temperature changes and weather conditions, making them a sustainable, long-term solution for landscaping. Architects and homeowners value travertine pavers for their blend of beauty and practicality in outdoor living spaces.",
+            "intro": "Travertine pavers are built for exterior performance, adapting to patios, pools, driveways and pathways. Their natural porosity helps them remain cooler underfoot in hot climates, while appropriate finish selection can support slip resistance around water features. Their ability to withstand temperature changes and weather exposure makes them a long-term solution for landscaping. Architects, landscape designers and contractors value travertine pavers for combining visual character with practical exterior performance.",
             "cards": [
               {
                 "slug": "patios",
@@ -64370,7 +64385,7 @@
         "metaTitle": "Travertine Mosaics | Decorative Natural Stone for Walls, Floors & Features",
         "metaDesc": "Explore Turkish Travertine Mosaics in Ivory, Light & Antico. Perfect for kitchens, bathrooms, and feature walls. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Mosaics",
-        "intro": "Travertine mosaics are small, decorative stone pieces arranged into patterns, sheets or designs for both interior and exterior use. They bring texture, character, and artistic expression to projects, combining the natural beauty of travertine with flexible applications. From kitchen backsplashes and bathroom walls to feature panels and flooring accents, Turkish travertine mosaics are a versatile choice for homeowners, architects, and designers worldwide.",
+        "intro": "Travertine mosaics are small decorative stone pieces arranged into patterns, sheets or designs for interior and exterior use. They bring texture, character and artistic expression to projects while combining the natural beauty of travertine with flexible application options. From kitchen backsplashes and bathroom walls to feature panels and flooring details, Turkish travertine mosaics are a versatile choice for architects, interior designers, contractors and project suppliers worldwide.",
         "socialImage": "https://majen. com. tr/media/travertine-mosaics-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
@@ -65827,7 +65842,7 @@
           },
           "applications": {
             "h2": "Applications",
-            "intro": "Ivory travertine is suitable for both interior and exterior use. Indoors, it enhances living room floors, bathrooms, and kitchens with a clean, elegant atmosphere. Outdoors, it is widely used in pool surrounds, terraces, and facades where brightness and timeless design are desired. Its adaptability makes it a material of choice for architects and homeowners seeking luxury and functionality in one solution.",
+            "intro": "Ivory travertine is suitable for both interior and exterior applications. Indoors, it brings a clean, elegant atmosphere to living-area floors, bathrooms and kitchens. Outdoors, it is widely specified for pool surrounds, terraces and facades where brightness and timeless design are required. Its adaptability makes it a strong material choice for architects, design teams and developers seeking luxury and functionality in one solution.",
             "cards": [
               {
                 "slug": "floors",
@@ -66029,7 +66044,7 @@
         "sections": {
           "features": {
             "h2": "Features of Light Travertine",
-            "intro": "Light travertine is defined by its warm beige background with subtle veining, offering both elegance and practicality. Its neutral color works beautifully in traditional Mediterranean-style projects as well as sleek modern interiors. Light travertine balances brightness with warmth, creating inviting spaces without overwhelming contrast. Its widespread availability and adaptability make it a go-to choice for architects, designers, and homeowners.",
+            "intro": "Light travertine is defined by a warm beige background with subtle veining, offering both elegance and practicality. Its neutral color works well in traditional Mediterranean-style projects and restrained modern interiors. Light travertine balances brightness with warmth, creating inviting spaces without excessive contrast. Its supply continuity and adaptability make it a reliable choice for architects, designers and project teams.",
             "items": [
               {
                 "slug": "appearance",
@@ -67619,7 +67634,7 @@
         "metaTitle": "Travertine Kitchen | Natural Stone Countertops, Backsplashes & Floors",
         "metaDesc": "Discover Travertine Kitchens: elegant stone for countertops, backsplashes & floors. Durable, timeless, and versatile. Specs, pros & cons, gallery & FAQs.",
         "h1": "Travertine Kitchen",
-        "intro": "Travertine kitchens combine natural beauty with durability, creating timeless and functional spaces. Whether used for countertops, backsplashes or flooring, travertine brings elegance and warmth to the heart of the home. Turkish travertine is especially valued for kitchens due to its versatility in finishes and formats, allowing it to adapt to modern, rustic or classic designs with ease.",
+        "intro": "Travertine kitchen applications combine natural beauty with durability in timeless, functional spaces. Used for countertops, backsplashes and flooring, travertine brings visual warmth to residential, hospitality and multi-unit development projects. Turkish travertine is valued for its range of finishes and formats, allowing architects and fabricators to adapt it to modern, rustic and classic design concepts.",
         "socialImage": "https://majen. com. tr/media/travertine-kitchen-hero.webp",
         "datePublished": "2025-01-15",
         "dateModified": "2025-09-25",
@@ -67754,7 +67769,7 @@
           },
           "gallery": {
             "h2": "Gallery",
-            "intro": "See examples of travertine kitchens featuring countertops, backsplashes, floors, and islands. These projects showcase how travertine balances luxury and function in the heart of the home."
+            "intro": "Review travertine kitchen applications featuring countertops, backsplashes, floors and islands. These project references show how travertine balances premium appearance, fabrication requirements and everyday performance."
           },
           "faq": {
             "h2": "Frequently Asked Questions",
@@ -69962,7 +69977,7 @@
     "common": {
       "eyebrow": "MAJEN / COMPANY",
       "home": "Home",
-      "contact": "Contact Us",
+      "contact": "Contact Our Export Team",
       "next": "Next page"
     },
     "nav": {

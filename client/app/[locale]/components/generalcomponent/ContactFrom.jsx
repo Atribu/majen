@@ -7,7 +7,11 @@ import Link from "next/link";
 const initialState = {
   name: "",
   email: "",
+  company: "",
+  country: "",
   phone: "",
+  productGroup: "",
+  quantity: "",
   subject: "",
   message: "",
   consent: false,
@@ -38,7 +42,7 @@ function FormSkeleton() {
       className="grid grid-cols-1 lg:grid-cols-2 md:gap-6 w-full animate-pulse"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {[0, 1, 2, 3].map((item) => (
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((item) => (
           <div key={item}>
             <div className="mb-2 h-4 w-24 rounded bg-neutral-200" />
             <div className="h-[38px] rounded-md bg-neutral-100" />
@@ -48,7 +52,7 @@ function FormSkeleton() {
 
       <div className="mt-4 lg:mt-0 lg:pl-6">
         <div className="mb-2 h-4 w-28 rounded bg-neutral-200" />
-        <div className="h-[140px] rounded-md bg-neutral-100" />
+        <div className="h-[270px] rounded-md bg-neutral-100" />
       </div>
     </div>
   );
@@ -77,6 +81,9 @@ export default function ContactFrom() {
     const e = {};
     if (!v.name.trim()) e.name = t("errors.required");
     if (!v.email.trim() || !/^\S+@\S+\.\S+$/.test(v.email)) e.email = t("errors.email");
+    if (!v.company.trim()) e.company = t("errors.required");
+    if (!v.country.trim()) e.country = t("errors.required");
+    if (!v.productGroup) e.productGroup = t("errors.required");
     if (!v.message.trim() || v.message.trim().length < 10) e.message = t("errors.message");
     if (!v.consent) e.consent = t("errors.consent");
     return e;
@@ -99,7 +106,11 @@ export default function ContactFrom() {
         body: JSON.stringify({
           name: values.name,
           email: values.email,
+          company: values.company,
+          country: values.country,
           phone: values.phone,
+          productGroup: values.productGroup,
+          quantity: values.quantity,
           subject: values.subject,
           message: values.message,
           locale,
@@ -160,7 +171,7 @@ export default function ContactFrom() {
             {/* Honeypot: gizli alan */}
             <input
               type="text"
-              name="company"
+              name="website"
               autoComplete="off"
               tabIndex={-1}
               aria-hidden="true"
@@ -222,6 +233,74 @@ export default function ContactFrom() {
                 </div>
 
                 <div>
+                  <label className={labelClass} htmlFor="company">
+                    {t("fields.company")}
+                  </label>
+                  <input
+                    id="company"
+                    type="text"
+                    {...passwordManagerIgnoreProps}
+                    className={fieldClass}
+                    value={values.company}
+                    onChange={(e) => setValues((s) => ({ ...s, company: e.target.value }))}
+                    placeholder={t("placeholders.company")}
+                  />
+                  {errors.company && <p className={errorClass}>{errors.company}</p>}
+                </div>
+
+                <div>
+                  <label className={labelClass} htmlFor="country">
+                    {t("fields.country")}
+                  </label>
+                  <input
+                    id="country"
+                    type="text"
+                    {...passwordManagerIgnoreProps}
+                    className={fieldClass}
+                    value={values.country}
+                    onChange={(e) => setValues((s) => ({ ...s, country: e.target.value }))}
+                    placeholder={t("placeholders.country")}
+                  />
+                  {errors.country && <p className={errorClass}>{errors.country}</p>}
+                </div>
+
+                <div>
+                  <label className={labelClass} htmlFor="productGroup">
+                    {t("fields.productGroup")}
+                  </label>
+                  <select
+                    id="productGroup"
+                    className={fieldClass}
+                    value={values.productGroup}
+                    onChange={(e) => setValues((s) => ({ ...s, productGroup: e.target.value }))}
+                  >
+                    <option value="">{t("options.productPlaceholder")}</option>
+                    <option value={t("options.blocks")}>{t("options.blocks")}</option>
+                    <option value={t("options.slabs")}>{t("options.slabs")}</option>
+                    <option value={t("options.tiles")}>{t("options.tiles")}</option>
+                    <option value={t("options.pavers")}>{t("options.pavers")}</option>
+                    <option value={t("options.other")}>{t("options.other")}</option>
+                  </select>
+                  {errors.productGroup && <p className={errorClass}>{errors.productGroup}</p>}
+                </div>
+
+                <div>
+                  <label className={labelClass} htmlFor="quantity">
+                    {t("fields.quantity")}
+                  </label>
+                  <input
+                    id="quantity"
+                    type="text"
+                    {...passwordManagerIgnoreProps}
+                    className={fieldClass}
+                    value={values.quantity}
+                    onChange={(e) => setValues((s) => ({ ...s, quantity: e.target.value }))}
+                    placeholder={t("placeholders.quantity")}
+                  />
+                  <p className={helpClass}>{t("helps.quantity")}</p>
+                </div>
+
+                <div>
                   <label className={labelClass} htmlFor="subject">
                     {t("fields.subject")}
                   </label>
@@ -245,7 +324,7 @@ export default function ContactFrom() {
                   id="message"
                   rows={5}
                   {...passwordManagerIgnoreProps}
-                  className={fieldClass + " lg:min-h-[110px]"}
+                  className={fieldClass + " lg:min-h-[270px]"}
                   value={values.message}
                   onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
                   placeholder={t("placeholders.message")}

@@ -269,7 +269,7 @@ export default function VariantCircleSection2(props) {
                   className="px-5 py-[6px] bg-black text-center text-white text-[14px] lg:text-[16px] mt-2 lg:mt-4 rounded-xl"
                 >
                   {t("buttonText", {
-                    default: locale.startsWith("tr") ? "Sayfaya git" : "Go to page",
+                    default: locale.startsWith("tr") ? "Ürünü İncele" : "View Product",
                   })}
                 </Link>
               </div>

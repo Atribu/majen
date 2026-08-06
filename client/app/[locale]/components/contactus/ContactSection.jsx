@@ -8,7 +8,11 @@ import { useLocale, useTranslations } from "next-intl";
 const initialState = {
   name: "",
   email: "",
+  company: "",
+  country: "",
   phone: "",
+  productGroup: "",
+  quantity: "",
   subject: "",
   message: "",
   consent: false,
@@ -35,7 +39,7 @@ function FormSkeleton() {
   return (
     <div aria-hidden="true" className="space-y-6 animate-pulse">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {[0, 1, 2, 3].map((item) => (
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((item) => (
           <div key={item}>
             <div className="h-4 w-24 rounded bg-gray-200" />
             <div className="mt-2 h-[42px] rounded-md bg-gray-100" />
@@ -64,6 +68,9 @@ export default function ContactSection() {
     const e = {};
     if (!v.name.trim()) e.name = t("errors.required");
     if (!v.email.trim() || !/^\S+@\S+\.\S+$/.test(v.email)) e.email = t("errors.email");
+    if (!v.company.trim()) e.company = t("errors.required");
+    if (!v.country.trim()) e.country = t("errors.required");
+    if (!v.productGroup) e.productGroup = t("errors.required");
     if (!v.message.trim() || v.message.trim().length < 10) e.message = t("errors.message");
     if (!v.consent) e.consent = t("errors.consent");
     return e;
@@ -85,7 +92,11 @@ export default function ContactSection() {
         body: JSON.stringify({
           name: values.name,
           email: values.email,
+          company: values.company,
+          country: values.country,
           phone: values.phone,
+          productGroup: values.productGroup,
+          quantity: values.quantity,
           subject: values.subject,
           message: values.message,
           locale,
@@ -171,7 +182,7 @@ export default function ContactSection() {
             <form onSubmit={onSubmit} noValidate className="space-y-6">
               <input
                 type="text"
-                name="company"
+                name="website"
                 autoComplete="off"
                 tabIndex={-1}
                 aria-hidden="true"
@@ -233,6 +244,78 @@ export default function ContactSection() {
                 </div>
 
                 <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                    {t("fields.company")}
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    {...passwordManagerIgnoreProps}
+                    value={values.company}
+                    onChange={(e) => setValues((s) => ({ ...s, company: e.target.value }))}
+                    placeholder={t("placeholders.company")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                  {errors.company && <p className={errorClass}>{errors.company}</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                    {t("fields.country")}
+                  </label>
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    {...passwordManagerIgnoreProps}
+                    value={values.country}
+                    onChange={(e) => setValues((s) => ({ ...s, country: e.target.value }))}
+                    placeholder={t("placeholders.country")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                  {errors.country && <p className={errorClass}>{errors.country}</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="productGroup" className="block text-sm font-medium text-gray-700">
+                    {t("fields.productGroup")}
+                  </label>
+                  <select
+                    id="productGroup"
+                    name="productGroup"
+                    value={values.productGroup}
+                    onChange={(e) => setValues((s) => ({ ...s, productGroup: e.target.value }))}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  >
+                    <option value="">{t("options.productPlaceholder")}</option>
+                    <option value={t("options.blocks")}>{t("options.blocks")}</option>
+                    <option value={t("options.slabs")}>{t("options.slabs")}</option>
+                    <option value={t("options.tiles")}>{t("options.tiles")}</option>
+                    <option value={t("options.pavers")}>{t("options.pavers")}</option>
+                    <option value={t("options.other")}>{t("options.other")}</option>
+                  </select>
+                  {errors.productGroup && <p className={errorClass}>{errors.productGroup}</p>}
+                </div>
+
+                <div>
+                  <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
+                    {t("fields.quantity")}
+                  </label>
+                  <input
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                    {...passwordManagerIgnoreProps}
+                    value={values.quantity}
+                    onChange={(e) => setValues((s) => ({ ...s, quantity: e.target.value }))}
+                    placeholder={t("placeholders.quantity")}
+                    className="mt-1 block w-full bg-gray-50 border border-gray-200 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
+                  />
+                  <p className="mt-1 text-xs text-gray-500">{t("helps.quantity")}</p>
+                </div>
+
+                <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
                     {t("fields.subject")}
                   </label>
@@ -287,7 +370,7 @@ export default function ContactSection() {
                   disabled={status.loading}
                   className="lg:min-w-[150px] inline-flex justify-center bg-green-900 text-white py-2 lg:py-3 px-5 lg:px-6 rounded-md hover:bg-green-800 transition whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {status.loading ? t("buttons.sending") : t("getintouch")}
+                  {status.loading ? t("buttons.sending") : t("buttons.send")}
                 </button>
 
                 <a

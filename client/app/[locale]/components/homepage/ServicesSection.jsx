@@ -96,9 +96,6 @@ export default function KeyFeatures() {
                                
                               })}
               </div>
-              <div className="px-8 py-2 rounded-2xl outline outline-2 outline-offset-[-2px] inline-flex justify-center items-center ">
-                <p className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</p>
-              </div>
             </div>
           </div>
         ),
@@ -128,9 +125,6 @@ export default function KeyFeatures() {
 })}
 
               </div>
-              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
-              </div>
             </div>
           </div>
         ),
@@ -152,9 +146,6 @@ export default function KeyFeatures() {
                                
                               })}
               </div>
-              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
-              </div>
             </div>
           </div>
         ),
@@ -170,9 +161,6 @@ export default function KeyFeatures() {
               <div className="lg:w-[500px] justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-[140%]">
              {t("items.export4.description")}
               </div>
-              <div className="px-8 py-2 rounded-[10px] outline  outline-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]">{t("explore")}</div>
-              </div>
             </div>
           </div>
         ),
@@ -187,9 +175,6 @@ export default function KeyFeatures() {
             <div className="flex flex-col justify-center items-start gap-3">
               <div className="lg:w-[500px] opacity-75 justify-center text-Main-White text-[12px] md:text-[14px] lg:text-[14px] font-normal font-inter leading-tight">
                 {t("items.export5.description")}
-              </div>
-              <div className="px-8 py-2 rounded-[10px] outline  outlpine-offset-[-1px]  inline-flex justify-center items-center gap-2.5">
-                <div className="justify-start text-black text-[14px] font-bold font-inter leading-[120%] -tracking-[0.24px]"> {t("explore")}</div>
               </div>
             </div>
           </div>

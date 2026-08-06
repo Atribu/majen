@@ -5,13 +5,16 @@ import {
   FaInstagram
 } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-const whatsappText = encodeURIComponent("Merhaba Majen ekibi!");
-  const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
-  
 const SocialMediaSection = () => {
   const t = useTranslations("Footer.social");
+  const locale = useLocale();
+  const whatsappText = encodeURIComponent(
+    locale.startsWith("tr") ? "Merhaba Majen ekibi!" : "Hello Majen team!"
+  );
+  const whatsappHref = `https://api.whatsapp.com/send?phone=905335561092&text=${whatsappText}`;
+
   return (
     <div className="w-full flex flex-col gap-5 items-center justify-center text-center mt-10 lg:mt-20">
       <span className="text-[18px] lg:text-[20px] text-semibold text-black">{t("moreInformation")}</span>

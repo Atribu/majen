@@ -203,7 +203,8 @@ export default async function ProductLayout({ children, params }) {
     ],
   };
 
-  // Product JSON-LD (temel alanlar; fiyat vs. vermiyoruz)
+  // Product JSON-LD: B2B ürünlerde fiyat ve stok teklif bazlı olduğu için
+  // doğrulanamayan Offer/availability verisi yayınlanmaz.
   const productJSONLD = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -212,10 +213,6 @@ export default async function ProductLayout({ children, params }) {
     category: "Natural Stone",
     image: [`${SITE_URL}${imageUrl}`],
     url: productUrl,
-    offers: {
-      "@type": "Offer",
-      availability: "http://schema.org/InStock",
-    },
   };
 
   // FAQ JSON-LD (varsa i18n’den çek)

@@ -221,7 +221,6 @@ const catUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}`;
     brand: { "@type": "Organization", name: "Majen" },
     category: "Natural Stone",
     url: pageUrl,
-    offers: { "@type": "Offer", availability: "http://schema.org/InStock" },
   };
 
   // FAQ JSON-LD — i18n (opsiyonel)

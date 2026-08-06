@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiX } from "react-icons/fi";
-import { Home, LayoutGrid, ShoppingBag, FolderKanban, Newspaper, Phone } from "lucide-react";
+import { Home, LayoutGrid, ShoppingBag, Newspaper, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
@@ -67,7 +67,6 @@ export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
     { href: "/", label: t("home"), icon: <Home className="h-5 w-5" /> },
     { href: "/pages", label: t("pages"), icon: <LayoutGrid className="h-5 w-5" /> },
     { href: "/shop", label: t("shop"), icon: <ShoppingBag className="h-5 w-5" /> },
-    { href: "/projects", label: t("projects"), icon: <FolderKanban className="h-5 w-5" /> },
     { href: "/blog", label: t("blog"), icon: <Newspaper className="h-5 w-5" /> },
     { href: "/contactus", label: t("contactUs"), icon: <Phone className="h-5 w-5" /> },
   ];
