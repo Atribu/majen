@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import { buildContactMailto } from "@/lib/contactMailto";
 
 const initialState = {
   name: "",
@@ -17,12 +18,6 @@ const initialState = {
   consent: false,
   botField: "", // honeypot
 };
-
-const createInitialStatus = () => ({
-  loading: false,
-  ok: false,
-  error: "",
-});
 
 const fieldClass =
   "w-full rounded-md border border-neutral-300 bg-white px-3 py-[5px] text-[15px] outline-none focus:border-black focus:ring-1 focus:ring-black transition";
@@ -64,8 +59,6 @@ export default function ContactFrom() {
   const [mounted, setMounted] = useState(false);
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(createInitialStatus);
-  const isDev = process.env.NODE_ENV !== "production";
 
   const base = locale?.startsWith("tr")
     ? {
@@ -89,7 +82,7 @@ export default function ContactFrom() {
     return e;
   }
 
-  async function onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
     const eMap = validate(values);
     setErrors(eMap);
@@ -98,59 +91,16 @@ export default function ContactFrom() {
     // honeypot (botField doluysa post etme)
     if (values.botField) return;
 
-    setStatus({ loading: true, ok: false, error: "" });
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: values.name,
-          email: values.email,
-          company: values.company,
-          country: values.country,
-          phone: values.phone,
-          productGroup: values.productGroup,
-          quantity: values.quantity,
-          subject: values.subject,
-          message: values.message,
-          locale,
-        }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        const errorMessage =
-          data?.error === "mail_config_missing" && isDev
-            ? t("errors.mailConfig")
-            : t("errors.submit");
-        throw new Error(errorMessage);
-      }
-
-      setStatus({ loading: false, ok: true, error: "" });
-      setErrors({});
-      setValues(initialState);
-    } catch (err) {
-      setStatus({
-        loading: false,
-        ok: false,
-        error: err instanceof Error ? err.message : t("errors.submit"),
-      });
-    }
+    window.location.href = buildContactMailto({
+      locale,
+      values,
+      pageUrl: window.location.href,
+    });
   }
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (!status.ok && !status.error) return undefined;
-
-    const timer = window.setTimeout(() => {
-      setStatus(createInitialStatus());
-    }, 6000);
-
-    return () => window.clearTimeout(timer);
-  }, [status.ok, status.error]);
 
   return (
     <section className="relative mt-7 lg:mt-12 mb-12">
@@ -361,10 +311,9 @@ export default function ContactFrom() {
             <div className="mt-6 flex flex-wrap items-center justify-center lg:items-start lg:justify-start gap-3">
               <button
                 type="submit"
-                disabled={status.loading}
                 className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-[13px] lg:text-sm font-semibold hover:bg-white hover:text-black border border-black transition"
               >
-                {status.loading ? t("buttons.sending") : t("buttons.send")}
+                {t("buttons.send")}
               </button>
 
               <a
@@ -377,24 +326,6 @@ export default function ContactFrom() {
               </a>
             </div>
 
-            {(status.ok || status.error) && (
-              <div
-                role={status.ok ? "status" : "alert"}
-                aria-live="polite"
-                className={`mt-4 rounded-lg border px-4 py-3 text-left ${
-                  status.ok
-                    ? "border-green-200 bg-green-50 text-green-800"
-                    : "border-red-200 bg-red-50 text-red-800"
-                }`}
-              >
-                <p className="text-sm font-semibold">
-                  {status.ok ? t("status.successTitle") : t("status.errorTitle")}
-                </p>
-                <p className="mt-1 text-sm">
-                  {status.ok ? t("status.success") : status.error}
-                </p>
-              </div>
-            )}
           </form>
         )}
       </div>

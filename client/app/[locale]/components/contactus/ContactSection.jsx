@@ -4,6 +4,7 @@
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { buildContactMailto } from "@/lib/contactMailto";
 
 const initialState = {
   name: "",
@@ -18,12 +19,6 @@ const initialState = {
   consent: false,
   botField: "", // honeypot
 };
-
-const createInitialStatus = () => ({
-  loading: false,
-  ok: false,
-  error: "",
-});
 
 const errorClass = "mt-1 text-xs text-red-600";
 const passwordManagerIgnoreProps = {
@@ -61,8 +56,6 @@ export default function ContactSection() {
   const [mounted, setMounted] = useState(false);
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(createInitialStatus);
-  const isDev = process.env.NODE_ENV !== "production";
 
   function validate(v) {
     const e = {};
@@ -76,7 +69,7 @@ export default function ContactSection() {
     return e;
   }
 
-  async function onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
     const eMap = validate(values);
     setErrors(eMap);
@@ -84,59 +77,16 @@ export default function ContactSection() {
 
     if (values.botField) return;
 
-    setStatus({ loading: true, ok: false, error: "" });
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: values.name,
-          email: values.email,
-          company: values.company,
-          country: values.country,
-          phone: values.phone,
-          productGroup: values.productGroup,
-          quantity: values.quantity,
-          subject: values.subject,
-          message: values.message,
-          locale,
-        }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        const errorMessage =
-          data?.error === "mail_config_missing" && isDev
-            ? t("errors.mailConfig")
-            : t("errors.submit");
-        throw new Error(errorMessage);
-      }
-
-      setStatus({ loading: false, ok: true, error: "" });
-      setErrors({});
-      setValues(initialState);
-    } catch (err) {
-      setStatus({
-        loading: false,
-        ok: false,
-        error: err instanceof Error ? err.message : t("errors.submit"),
-      });
-    }
+    window.location.href = buildContactMailto({
+      locale,
+      values,
+      pageUrl: window.location.href,
+    });
   }
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (!status.ok && !status.error) return undefined;
-
-    const timer = window.setTimeout(() => {
-      setStatus(createInitialStatus());
-    }, 6000);
-
-    return () => window.clearTimeout(timer);
-  }, [status.ok, status.error]);
 
   return (
     <section className="max-w-7xl mx-auto flex min-h-[88vh] flex-col items-center justify-center gap-5 px-4 py-5 text-center sm:px-6 lg:items-start lg:gap-12 lg:px-8 lg:text-start">
@@ -367,10 +317,9 @@ export default function ContactSection() {
               <div className="flex flex-wrap items-center gap-3">
                 <button
                   type="submit"
-                  disabled={status.loading}
                   className="lg:min-w-[150px] inline-flex justify-center bg-green-900 text-white py-2 lg:py-3 px-5 lg:px-6 rounded-md hover:bg-green-800 transition whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {status.loading ? t("buttons.sending") : t("buttons.send")}
+                  {t("buttons.send")}
                 </button>
 
                 <a
@@ -383,24 +332,6 @@ export default function ContactSection() {
                 </a>
               </div>
 
-              {(status.ok || status.error) && (
-                <div
-                  role={status.ok ? "status" : "alert"}
-                  aria-live="polite"
-                  className={`rounded-lg border px-4 py-3 text-left ${
-                    status.ok
-                      ? "border-green-200 bg-green-50 text-green-800"
-                      : "border-red-200 bg-red-50 text-red-800"
-                  }`}
-                >
-                  <p className="text-sm font-semibold">
-                    {status.ok ? t("status.successTitle") : t("status.errorTitle")}
-                  </p>
-                  <p className="mt-1 text-sm">
-                    {status.ok ? t("status.success") : status.error}
-                  </p>
-                </div>
-              )}
             </form>
           )}
         </div>
