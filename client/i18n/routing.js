@@ -26,7 +26,8 @@ export const config = {
       en: '/about-us/stone-processing'
     },
 
-     '/gallery': { en: '/gallery', tr: '/galeri' },   
+    '/gallery': { en: '/gallery', tr: '/galeri' },
+    '/projects': { en: '/projects', tr: '/projeler' },
 
     // Base
     '/travertine': {

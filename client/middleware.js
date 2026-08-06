@@ -27,6 +27,8 @@ const EXEMPT_TOP_LEVEL = new Set([
   'traverten-rehberi',   // tr ✅
   'gallery',
   'galeri',
+  'projects',
+  'projeler',
 ]);
 
 const COLOR_KEY_FROM_ANY = new Map([
