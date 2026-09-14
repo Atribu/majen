@@ -62,7 +62,7 @@ export default function MainBanner() {
   };
 
   return (
-    <section className="relative h-screen w-screen overflow-hidden">
+    <section className="relative h-[100svh] w-full overflow-hidden">
       <picture className="absolute inset-0 block h-full w-full">
         <source media="(max-width: 767px)" srcSet={mobilePoster.src} />
         <Image
@@ -110,20 +110,21 @@ export default function MainBanner() {
       </div>
 
             {/* Sol alt reklam videosu */}
-      <div className="absolute lg:bottom-3 lg:right-3 z-30 overflow-hidden shadow-2xl bottom-2 right-2 h-[340px] sm:h-[400px] md:h-[500px] lg:h-[634px] xl:h-[644px] 2xl:h-[654px]">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Tanıtım videosu"
-          className="h-full w-full object-cover"
-        >
-          <source src="/videos/marmo.webm" type="video/webm" />
-          <source src="/videos/marmo.webm" type="video/webm" />
-        </video>
-      </div>
+      {/* Sağ alt reklam videosu */}
+<div className="absolute right-2 bottom-2 z-30 aspect-[9/16] w-[46vw] max-w-[190px] overflow-hidden shadow-2xl sm:right-3 sm:bottom-3 sm:w-[225px] sm:max-w-none md:w-[281px] lg:w-[357px] xl:w-[362px] 2xl:w-[368px]">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    aria-label="Marmomac 2026 tanıtım videosu"
+    className="block h-full w-full object-cover"
+  >
+    <source src="/videos/marmo.webm" type="video/webm" />
+    <source src="/videos/marmo.mp4" type="video/mp4" />
+  </video>
+</div>
 
     </section>
   );
