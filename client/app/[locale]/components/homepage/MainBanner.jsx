@@ -108,6 +108,23 @@ export default function MainBanner() {
           priority
         />
       </div>
+
+            {/* Sol alt reklam videosu */}
+      <div className="absolute lg:bottom-3 lg:left-3 z-30 overflow-hidden shadow-2xl bottom-2 left-2 h-[220px] sm:h-[250px] md:h-[280px] lg:h-[340px] xl:h-[384px]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Tanıtım videosu"
+          className="h-full w-full object-cover"
+        >
+          <source src="/videos/marmo.webm" type="video/webm" />
+          <source src="/videos/marmo.webm" type="video/webm" />
+        </video>
+      </div>
+
     </section>
   );
 }
