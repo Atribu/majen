@@ -69,6 +69,24 @@
     "title": "Majen | Wholesale Travertine from Turkey — Blocks, Slabs, Tiles",
     "description": "Majen supplies wholesale travertine from Uşak–Ulubey, Turkey: blocks, slabs & tiles in Blaundos Antiko, Light & Ivory. FOB/CIF worldwide shipping, reinforced packaging, A-grade quality."
   },
+  "Announcement": {
+    "badge": "Marmomac 2026",
+    "dateLocation": "September 22–25 · Verona, Italy",
+    "title": "We're heading to Marmomac 2026!",
+    "intro": "Join us in Verona at <strong>Hall 11, Stand E4</strong> to discover Chiaro® by Majen — our signature natural stone collection quarried in Uşak, Türkiye.",
+    "collections": "Two selections, one story: <strong>Chiaro Bianco</strong>'s soft, homogeneous cream and <strong>Chiaro Brecciato</strong>'s bold, natural pattern.",
+    "invitation": "Come see the stone, touch the samples, and talk projects with our team. See you in Verona!",
+    "saveTheDate": "Save the date",
+    "date": "22–25 September",
+    "location": "Verona, Italy",
+    "hashtagsLabel": "Instagram hashtags",
+    "hashtags": {
+      "marmomac": "#Marmomac2026",
+      "chiaro": "#ChiaroStone",
+      "naturalStone": "#NaturalStone",
+      "majen": "#Majen"
+    }
+  },
   "MainBanner": {
     "alt1": "Banner 1",
     "title1": "Transforming Spaces\nwith Exceptional Natural Stone.",

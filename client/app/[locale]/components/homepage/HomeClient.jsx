@@ -11,6 +11,7 @@ import HomeMainSection from '../generalcomponent/HomeMainSection';
 import LogisticSection from '../generalcomponent/LogisticsSection';
 import QuestionsSection from '../generalcomponent/QuestionsSection';
 import { useTranslations } from "next-intl";
+import AnnouncementComponent from './AnnouncementComponent';
 
 const HomeClient = () => {
   const t = useTranslations("QuestionsSection");
@@ -24,6 +25,7 @@ const HomeClient = () => {
    return (
     <div className="bg-white overflow-hidden items-center justify-center flex flex-col">
       <MainBanner/>
+      <AnnouncementComponent/>
       <HomeMainSection/>
       <InfoSection/>
       <LogisticSection/>

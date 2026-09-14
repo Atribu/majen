@@ -69,6 +69,24 @@
     "title": "Majen | Türkiye’den Toptan Traverten — Blok, Plaka ve Karo",
     "description": "Majen, Uşak–Ulubey’den toptan traverten tedarik eder: Blaundos Antiko, Light ve Ivory renklerinde blok, plaka ve karo seçenekleri. FOB/CIF dünya geneline sevkiyat, güçlendirilmiş paketleme ve A-sınıfı kalite garantisi."
   },
+  "Announcement": {
+    "badge": "Marmomac 2026",
+    "dateLocation": "22–25 Eylül · Verona, İtalya",
+    "title": "Marmomac 2026'ya gidiyoruz!",
+    "intro": "Uşak, Türkiye'deki ocaklarımızdan çıkarılan ve Majen'in imza niteliğindeki doğal taş koleksiyonu olan Chiaro® by Majen'i keşfetmek için Verona'da <strong>Salon 11, Stand E4</strong> alanında bize katılın.",
+    "collections": "İki farklı seçki, tek bir hikâye: <strong>Chiaro Bianco</strong>'nun yumuşak ve homojen krem tonları ile <strong>Chiaro Brecciato</strong>'nun cesur ve doğal desenleri.",
+    "invitation": "Doğal taşı yakından görmek, numunelere dokunmak ve projelerinizi ekibimizle konuşmak için standımızı ziyaret edin. Verona'da görüşmek üzere!",
+    "saveTheDate": "Tarihi kaydedin",
+    "date": "22–25 Eylül",
+    "location": "Verona, İtalya",
+    "hashtagsLabel": "Instagram etiketleri",
+    "hashtags": {
+      "marmomac": "#Marmomac2026",
+      "chiaro": "#ChiaroStone",
+      "naturalStone": "#NaturalStone",
+      "majen": "#Majen"
+    }
+  },
   "MainBanner": {
     "alt1": "Afiş 1",
     "title1": "Mekanları Dönüştürün\nSeçkin Doğal Taşlarla.",

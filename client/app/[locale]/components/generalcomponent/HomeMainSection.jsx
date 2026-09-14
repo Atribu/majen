@@ -8,7 +8,7 @@ const HomeMainSection = () => {
   const locale = useLocale();
 
   return (
-    <div className="flex w-screen items-center justify-center mt-6 lg:mt-20">
+    <div className="flex w-screen items-center justify-center mt-6 lg:mt-16">
       <div className="flex flex-col max-w-[1400px] items-center justify-center text-center w-[95%] gap-2">
         <div className="w-full">
           <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-bold leading-[110%]">
