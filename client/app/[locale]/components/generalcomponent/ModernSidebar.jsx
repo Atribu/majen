@@ -167,7 +167,7 @@ export default function ModernSidebar({ menuOpen, setMenuOpen, t, logoWhite }) {
                 <span>© {new Date().getFullYear()} Majen</span>
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/majenmadencilik/"
                     className="hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 rounded"
                     aria-label={socialT("instagramAction")}
                     title={socialT("instagramAction")}

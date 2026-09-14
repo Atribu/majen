@@ -49,7 +49,7 @@ const SocialMediaSection = () => {
     
                              <div className='flex items-center justify-center  gap-8 md:gap-12'>
                                <a
-                              href="https://www.instagram.com/p/DOn657JjD08/"
+                              href="https://www.instagram.com/majenmadencilik/"
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label={t("instagramAction")}

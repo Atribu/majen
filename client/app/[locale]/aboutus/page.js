@@ -80,7 +80,7 @@ export default async function AboutPage({ params }) {
       logo: "/images/logo.svg",
       sameAs: [
         "https://www.linkedin.com/company/majen",
-        "https://www.instagram.com/majen",
+        "https://www.instagram.com/majenmadencilik/",
       ],
       contactPoint: [
         {

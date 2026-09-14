@@ -117,7 +117,7 @@ export default function Footer() {
                   <FaYoutube size={18} />
                 </a>
                 <a
-                  href="https://www.instagram.com/p/DOn657JjD08/"
+                  href="https://www.instagram.com/majenmadencilik/"
                    target="_blank"
                               rel="noopener noreferrer"
                   aria-label={t("social.instagramAction")}
