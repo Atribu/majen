@@ -52,7 +52,7 @@ export default function AnnouncementComponent() {
 
               <h2
                 id="marmomac-announcement-title"
-                className="font-serif text-2xl text-stone-900 sm:text-3xl"
+                className="font-semibold text-2xl text-stone-900 sm:text-3xl"
               >
                 {t("title")}
               </h2>
