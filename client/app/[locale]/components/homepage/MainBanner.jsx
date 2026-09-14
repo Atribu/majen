@@ -110,7 +110,7 @@ export default function MainBanner() {
       </div>
 
             {/* Sol alt reklam videosu */}
-      <div className="absolute lg:bottom-3 lg:right-3 z-30 overflow-hidden shadow-2xl bottom-2 right-2 h-[240px] sm:h-[270px] md:h-[300px] lg:h-[384px] xl:h-[434px] 2xl:h-[450px]">
+      <div className="absolute lg:bottom-3 lg:right-3 z-30 overflow-hidden shadow-2xl bottom-2 right-2 h-[340px] sm:h-[400px] md:h-[500px] lg:h-[634px] xl:h-[644px] 2xl:h-[654px]">
         <video
           autoPlay
           muted
