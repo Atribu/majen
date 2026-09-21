@@ -246,7 +246,7 @@ export default async function ProcessLayout({ children, params }) {
   // Product JSON-LD (process seviyesinde)
 const productJSONLD = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "WebPage",
   // ör: "Unfilled Honed - Cross Cut | Majen"
   name: `${humanProcessName(process, locale)} - ${cutName} | Majen`,
   brand: { "@type": "Organization", name: "Majen" },

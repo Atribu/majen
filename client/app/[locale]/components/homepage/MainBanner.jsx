@@ -3,22 +3,21 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logoWhite from "@/public/images/logobeyaz.webp";
-import desktopPoster from "@/public/images/homepage/hero-desktop-poster.webp";
-import mobilePoster from "@/public/images/homepage/hero-mobile-poster.webp";
+import heroPoster from "@/public/images/homepage/hero-desktop-posternew.webp";
 
 const HIDE_DELAY_MS = 5000;
 const DESKTOP_QUERY = "(min-width: 768px)";
 
 const HERO_MEDIA = {
   desktop: {
-    webm: "/videos/desktop.webm",
-    mp4: "/videos/desktop.mp4",
-    poster: desktopPoster.src,
+    webm: "/videos/desktopnew.mp4",
+    mp4: "/videos/desktopnew.mp4",
+    poster: heroPoster.src,
   },
   mobile: {
-    webm: "/videos/mobile.webm",
-    mp4: "/videos/mobile.mp4",
-    poster: mobilePoster.src,
+    webm: "/videos/desktopnew.mp4",
+    mp4: "/videos/desktopnew.mp4",
+    poster: heroPoster.src,
   },
 };
 
@@ -64,12 +63,12 @@ export default function MainBanner() {
   return (
     <section className="relative h-[100svh] w-full overflow-hidden">
       <picture className="absolute inset-0 block h-full w-full">
-        <source media="(max-width: 767px)" srcSet={mobilePoster.src} />
+        <source media="(max-width: 767px)" srcSet={heroPoster.src} />
         <Image
-          src={desktopPoster}
+          src={heroPoster}
           alt=""
-          width={desktopPoster.width}
-          height={desktopPoster.height}
+          width={heroPoster.width}
+          height={heroPoster.height}
           fetchPriority="high"
           sizes="100vw"
           className="h-full w-full object-cover object-center"

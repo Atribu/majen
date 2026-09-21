@@ -207,7 +207,7 @@ export default async function ProductLayout({ children, params }) {
   // doğrulanamayan Offer/availability verisi yayınlanmaz.
   const productJSONLD = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "WebPage",
     name: productSchemaName,
     brand: { "@type": "Organization", name: "Majen" },
     category: "Natural Stone",

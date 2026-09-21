@@ -90,7 +90,7 @@ export default function SizePage() {
         })),
       },
       {
-        "@type": "Product",
+        "@type": "WebPage",
         name: `${vTitle} – ${title}`,
         category: title,
         image: [`${SITE_URL}${heroSrc?.src || ""}`],

@@ -216,7 +216,7 @@ const catUrl = `${homeUrl}/${isTR ? "traverten" : "travertine"}`;
   // Product JSON-LD (fiyatsız temel alanlar)
   const productJSONLD = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "WebPage",
     name: isTR ? `${cutName} | Majen` : `${cutName} from Turkey | Majen`,
     brand: { "@type": "Organization", name: "Majen" },
     category: "Natural Stone",
