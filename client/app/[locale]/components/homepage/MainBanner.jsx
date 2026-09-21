@@ -10,13 +10,13 @@ const DESKTOP_QUERY = "(min-width: 768px)";
 
 const HERO_MEDIA = {
   desktop: {
-    webm: "/videos/desktopnew.mp4",
-    mp4: "/videos/desktopnew.mp4",
+    webm: "/videos/majenneww.webm",
+    mp4: "/videos/majenneww.webm",
     poster: heroPoster.src,
   },
   mobile: {
-    webm: "/videos/desktopnew.mp4",
-    mp4: "/videos/desktopnew.mp4",
+    webm: "/videos/majenneww.webm",
+    mp4: "/videos/majenneww.webm",
     poster: heroPoster.src,
   },
 };
